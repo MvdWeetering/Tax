@@ -13,7 +13,7 @@ public class AlgemeneVragen {
 
 	public static void main(String[] args) throws InterruptedException {
 			
-		InvullenVragen("Test Jonathan");
+		//InvullenVragen("Test Jonathan");
 		
 	}
 

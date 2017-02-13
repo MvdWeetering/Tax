@@ -40,18 +40,20 @@ public class Steps {
 		assertTrue(User.equals("MW"));
 	}
 
-	@When("^Select the Tax engament module$")
-	public void select_the_Tax_engament_module() throws Throwable {
+	@When("^Select the Tax engagement module$")
+	public void select_the_Tax_engagement_module() throws Throwable {
+		
 		NavigerenObjecten.ClickCloud(driver).click();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		NavigerenObjecten.NavigerenTax(driver).click();
-
+		Thread.sleep(3000);
+		System.out.println("click op tax");
 	}
 
 	@When("^open the Project \"([^\"]*)\"$")
 	public void open_the_Project(String Project) throws Throwable {
 
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String oldTab = driver.getWindowHandle();
 
@@ -73,7 +75,7 @@ public class Steps {
 		String Module = (HuidigeModule.getText());
 		assertTrue(Module.equals("NL Tax Engagement"));
 
-		driver.quit();
+		
 	}
 
 	@Then("^i can work on the project$")
@@ -86,6 +88,7 @@ public class Steps {
 
 	@When("^open the form Algemene Vragen$")
 	public void open_the_form_Algemene_Vragen() throws Throwable {
+		Thread.sleep(1500);
 		NavigerenObjecten.NavigerenAlgemeneVragen(driver).click();
 		Thread.sleep(1500);
 	}

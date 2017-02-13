@@ -9,7 +9,7 @@ Feature: vullen formulier
   Scenario: vullen formulier
     Given I want to login
     When I use username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
-    And Select the Tax engament module
+    And Select the Tax engagement module
     And open the Project "Test Jonathan"
     And open the form Algemene Vragen
     Then i can evaluate the process fill form
