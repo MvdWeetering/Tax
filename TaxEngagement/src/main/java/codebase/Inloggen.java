@@ -1,23 +1,34 @@
 package codebase;
 
-import java.util.ArrayList;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import pageObjects.AlgemeneVragenObjecten;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import pageObjects.LoginObjecten;
-import pageObjects.NavigerenObjecten;
+import java.net.MalformedURLException;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Inloggen {
 
 	public static WebDriver GetDriver() {
 
+		//Lokaal
 		WebDriver driver = new ChromeDriver();
+		
+		
+		//Server 
+		/*
+		WebDriver driver = null;
+		try {
+			driver = new RemoteWebDriver(
+			        new URL("http://10.10.0.51:4444/wd/hub"), DesiredCapabilities.chrome());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
 		return driver;
 	}
 

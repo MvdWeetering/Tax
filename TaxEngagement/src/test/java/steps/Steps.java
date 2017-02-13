@@ -42,9 +42,9 @@ public class Steps {
 
 	@When("^Select the Tax engament module$")
 	public void select_the_Tax_engament_module() throws Throwable {
-
-		Thread.sleep(2000);
-		NavigerenObjecten.NavigerenTax(driver);
+		NavigerenObjecten.ClickCloud(driver).click();
+		Thread.sleep(800);
+		NavigerenObjecten.NavigerenTax(driver).click();
 
 	}
 
@@ -108,7 +108,7 @@ public class Steps {
 		AlgemeneVragenObjecten.vraag13_yes(driver).click();
 		AlgemeneVragenObjecten.vraag14_yes(driver).click();
 		AlgemeneVragenObjecten.vraag15_yes(driver).click();
-		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("en weer terug");
+		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("regel 1");
 
 		Thread.sleep(1500);
 
@@ -128,7 +128,7 @@ public class Steps {
 		AlgemeneVragenObjecten.vraag14_no(driver).click();
 		AlgemeneVragenObjecten.vraag15_no(driver).click();
 		AlgemeneVragenObjecten.Toelichting(driver).clear();
-		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("WHIEEEEEEEE !!!!");
+		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("regel 2");
 
 	}
 
