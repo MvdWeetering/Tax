@@ -74,7 +74,7 @@ public class Steps {
 		WebElement HuidigeModule = ValidatieObjecten.BeoordelenHuidigeModule(driver);
 		String Module = (HuidigeModule.getText());
 		assertTrue(Module.equals("NL Tax Engagement"));
-
+		driver.quit();
 		
 	}
 

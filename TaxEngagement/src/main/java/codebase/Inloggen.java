@@ -22,7 +22,7 @@ public class Inloggen {
 		WebDriver driver = null;
 		try {
 			driver = new RemoteWebDriver(
-			        new URL("http://10.10.0.51:4444/wd/hub"), DesiredCapabilities.chrome());
+			        new URL("http://192.168.5.163:4444/wd/hub"), DesiredCapabilities.chrome());
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
