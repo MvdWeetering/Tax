@@ -6,6 +6,6 @@ Feature: Inloggen Tax
   @Login @Login_Tax_Engagement
   Scenario: Login Tax engagement
     Given I want to login
-    When I use username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
     Then I am succesfully logged into the Tax engagement module

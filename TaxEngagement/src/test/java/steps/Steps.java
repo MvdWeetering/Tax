@@ -7,13 +7,10 @@ import codebase.Inloggen;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pageObjects.AlgemeneVragenObjecten;
-import pageObjects.LoginObjecten;
-import pageObjects.NavigerenObjecten;
-import pageObjects.ValidatieObjecten;
 import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import pageObjects.*;
 
 public class Steps {
 
@@ -28,8 +25,8 @@ public class Steps {
 		driver.manage().window().maximize();
 	}
 
-	@When("^I use username \"([^\"]*)\" and password \"([^\"]*)\"$")
-	public void i_use_username_and_password(String UserName, String Password) throws Throwable {
+	@When("^I type username \"([^\"]*)\" and password \"([^\"]*)\"$")
+	public void i_type_username_and_password(String UserName, String Password) throws Throwable {
 
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
@@ -56,7 +53,11 @@ public class Steps {
 		Thread.sleep(1000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String oldTab = driver.getWindowHandle();
-
+		
+		NavigerenObjecten.Zoekveld(driver).sendKeys(Project);
+				
+		Thread.sleep(1500);
+			
 		driver.findElement(By.linkText(Project)).click();
 
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
@@ -93,8 +94,8 @@ public class Steps {
 		Thread.sleep(1500);
 	}
 	
-	@Then("^i can evaluate the process fill form$")
-	public void i_can_evaluate_the_process_fill_form() throws Throwable {
+	@Then("^i can fill out the form Algemene Vragen$")
+	public void i_can_fill_out_the_form_Algemene_Vragen() throws Throwable {
 
 		AlgemeneVragenObjecten.vraag1_yes(driver).click();
 		AlgemeneVragenObjecten.vraag2_yes(driver).click();
@@ -111,6 +112,7 @@ public class Steps {
 		AlgemeneVragenObjecten.vraag13_yes(driver).click();
 		AlgemeneVragenObjecten.vraag14_yes(driver).click();
 		AlgemeneVragenObjecten.vraag15_yes(driver).click();
+		AlgemeneVragenObjecten.Toelichting(driver).clear();
 		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("regel 1");
 
 		Thread.sleep(1500);
@@ -134,5 +136,60 @@ public class Steps {
 		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("regel 2");
 
 	}
+	
+	@When("^open the form Algemene Gegevens$")
+	public void open_the_form_Algemene_Gegevens() throws Throwable {
 
+		NavigerenObjecten.NavigerenAlgemeneGegevens(driver).click();
+				
+	}
+
+	@Then("^i can fill out the form Algemene Gegevens$")
+	public void i_can_fill_out_the_form_Algemene_Gegevens() throws Throwable {
+		AlgemeneGegevensObjecten.HandelsnaamOnderneming(driver).clear();
+		AlgemeneGegevensObjecten.HandelsnaamOnderneming(driver).sendKeys("Handelsnaam onderneming");
+		AlgemeneGegevensObjecten.RSIN(driver).clear();
+		AlgemeneGegevensObjecten.RSIN(driver).sendKeys("RSIN");
+		AlgemeneGegevensObjecten.BoekjaarBegin(driver).sendKeys("01-01-2016");
+		AlgemeneGegevensObjecten.BoekjaarEind(driver).sendKeys("31-12-2016");
+		AlgemeneGegevensObjecten.StandpuntExplicieteUitspraak_Ja(driver).click();
+		AlgemeneGegevensObjecten.Toelichtingverzoek(driver).clear();
+		AlgemeneGegevensObjecten.Toelichtingverzoek(driver).sendKeys("toelichting verzoek");
+		AlgemeneGegevensObjecten.AangifteFiscaleEenheid_Ja(driver).click();
+		AlgemeneGegevensObjecten.FunctioneleValuta_Ja(driver).click();
+		AlgemeneGegevensObjecten.Beconnummer(driver).clear();
+		AlgemeneGegevensObjecten.Beconnummer(driver).sendKeys("1234");
+		AlgemeneGegevensObjecten.Clientgroep(driver).clear();
+		AlgemeneGegevensObjecten.Clientgroep(driver).sendKeys("clientgroep");
+		AlgemeneGegevensObjecten.Aanhef(driver).sendKeys("mevrouw");
+		AlgemeneGegevensObjecten.VoorlettersContact(driver).clear();
+		AlgemeneGegevensObjecten.VoorlettersContact(driver).sendKeys("voorletters");
+		AlgemeneGegevensObjecten.TussenvoegselContact(driver).clear();
+		AlgemeneGegevensObjecten.TussenvoegselContact(driver).sendKeys("tussenvoegsel");
+		AlgemeneGegevensObjecten.AchternaamContact(driver).clear();
+		AlgemeneGegevensObjecten.AchternaamContact(driver).sendKeys("achternaam");
+		AlgemeneGegevensObjecten.TelefoonnummerContact(driver).clear();
+		AlgemeneGegevensObjecten.TelefoonnummerContact(driver).sendKeys("0611");
+		AlgemeneGegevensObjecten.Straatnaam(driver).clear();
+		AlgemeneGegevensObjecten.Straatnaam(driver).sendKeys("straatnaam");
+		AlgemeneGegevensObjecten.Huisnummer(driver).clear();
+		AlgemeneGegevensObjecten.Huisnummer(driver).sendKeys("huisnummer");
+		AlgemeneGegevensObjecten.Postcode(driver).clear();
+		AlgemeneGegevensObjecten.Postcode(driver).sendKeys("1000AA");
+	    AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).clear();
+	    AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).sendKeys("toev");
+		AlgemeneGegevensObjecten.Plaats(driver).clear();
+		AlgemeneGegevensObjecten.Plaats(driver).sendKeys("plaats");
+		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).clear();
+		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).sendKeys("Voorletters");
+	    AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).clear();
+	    AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).sendKeys("tussenvoegsel");
+	    AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).clear();
+	    AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).sendKeys("achternaam");
+	    AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).clear();
+	    AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).sendKeys("functie ondertekenaar");
+	    AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).clear();
+	    AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys("0612");
+	}
+	
 }
