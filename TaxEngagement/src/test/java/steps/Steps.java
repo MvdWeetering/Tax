@@ -191,5 +191,122 @@ public class Steps {
 	    AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).clear();
 	    AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys("0612");
 	}
+	@When("^open the form Specificatie Aandeelhouders$")
+	public void open_the_form_Specificatie_Aandeelhouders() throws Throwable {
+	   NavigerenObjecten.NavigerenSpecificatieAandeelhouders(driver).click();
+	    
+	}
+
+	@Then("^i can fill out the form Specificatie Aandeelhouders$")
+	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders() throws Throwable {
+	    
 	
+		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
+		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys("naam aandeelhouder");
+		SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon(driver).click();
+		SpecificatieAandeelhoudersObjecten.BSN(driver).clear();
+		SpecificatieAandeelhoudersObjecten.BSN(driver).sendKeys("BSN");
+		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).clear();
+		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).sendKeys("Straatnaam");
+		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).clear();
+		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).sendKeys("nr");
+		SpecificatieAandeelhoudersObjecten.Postcode(driver).clear();
+		SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys("1000AA");
+		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).clear();
+		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).sendKeys("Toev");
+		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).clear();
+		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).sendKeys("Woonplaats");
+		SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys("Nederland");
+		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).clear();
+		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).sendKeys("10,00");
+		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).clear();
+		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).sendKeys("20.00");
+		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).clear();
+		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).sendKeys("30,00");
+		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).clear();
+		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).sendKeys("40.00");
+		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).clear();
+		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).sendKeys("10,000");
+		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).clear();
+		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).sendKeys("20.000");
+		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).clear();
+		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys("30,000");
+		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).clear();
+		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys("40.000");
+	    
+	}
+	
+	@When("^open the form Specificatie Deelnemingen$")
+	public void open_the_form_Specificatie_Deelnemingen() throws Throwable {
+	    NavigerenObjecten.NavigerenSpecificatie_Deelnemingen(driver).click();
+	    
+	}
+
+	@Then("^i can fill out the form Specificatie Deelnemingen$")
+	public void i_can_fill_out_the_form_Specificatie_Deelnemingen() throws Throwable {
+	 
+		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).sendKeys("Naam Deelneming");
+		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).sendKeys("RSIN");
+		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys("Vestigingsplaats deelneming");
+		SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys("Nederland");
+		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).clear();
+		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).sendKeys("10");
+		SpecificatieDeelnemingenObjecten.NominaleWaardeAandelenBezit(driver).clear();
+		SpecificatieDeelnemingenObjecten.NominaleWaardeAandelenBezit(driver).sendKeys("1000");
+		SpecificatieDeelnemingenObjecten.OpgeofferdBedrag(driver).clear();
+		SpecificatieDeelnemingenObjecten.OpgeofferdBedrag(driver).sendKeys("2000");
+		SpecificatieDeelnemingenObjecten.BalanswaarderingDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.BalanswaarderingDeelneming(driver).sendKeys("3000");
+		SpecificatieDeelnemingenObjecten.VoordelenDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.VoordelenDeelneming(driver).sendKeys("4000");
+		SpecificatieDeelnemingenObjecten.BedragVorderingenDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.BedragVorderingenDeelneming(driver).sendKeys("5000");
+		SpecificatieDeelnemingenObjecten.BedragSchuldDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.BedragSchuldDeelneming(driver).sendKeys("6000");
+		SpecificatieDeelnemingenObjecten.OntvRenteDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.OntvRenteDeelneming(driver).sendKeys("7000");
+		SpecificatieDeelnemingenObjecten.BetRenteDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.BetRenteDeelneming(driver).sendKeys("8000");
+		SpecificatieDeelnemingenObjecten.DeelnemingGevoegd_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.Voegingsdatum(driver).sendKeys("01-01-2016");
+		SpecificatieDeelnemingenObjecten.Ontvoegingsdatum(driver).sendKeys("31-12-2016");
+		SpecificatieDeelnemingenObjecten.DeelnemingVerworven_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.PercentageVerwervingn(driver).clear();
+		SpecificatieDeelnemingenObjecten.PercentageVerwervingn(driver).sendKeys("10");
+		SpecificatieDeelnemingenObjecten.NominaleWaardeVerwerving(driver).clear();
+		SpecificatieDeelnemingenObjecten.NominaleWaardeVerwerving(driver).sendKeys("9000");
+		SpecificatieDeelnemingenObjecten.OpgeofferdbedragVerwerving(driver).clear();
+		SpecificatieDeelnemingenObjecten.OpgeofferdbedragVerwerving(driver).sendKeys("10000");
+		SpecificatieDeelnemingenObjecten.BelangDeelnemingVerworven_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.DeelnemingVervreemd_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).clear();
+		SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).sendKeys("20");
+		SpecificatieDeelnemingenObjecten.NominaleWaardeVervreemding(driver).clear();
+		SpecificatieDeelnemingenObjecten.NominaleWaardeVervreemding(driver).sendKeys("11000");
+		SpecificatieDeelnemingenObjecten.OpbrengstVervreemding(driver).clear();
+		SpecificatieDeelnemingenObjecten.OpbrengstVervreemding(driver).sendKeys("12000");
+		SpecificatieDeelnemingenObjecten.BelangVervreemdInBoekjaar_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.VereffeningsdatumDeelneming(driver).sendKeys("06-06-216");
+		SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).sendKeys("13000");
+		SpecificatieDeelnemingenObjecten.WaarderingsvoorschriftArt13_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.DeelnemingNietKwalificerende_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.WaardeEconomischVerkeer(driver).clear();
+		SpecificatieDeelnemingenObjecten.WaardeEconomischVerkeer(driver).sendKeys("14000");
+		SpecificatieDeelnemingenObjecten.BelangDeelnemingGedaald25Procent_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).clear();
+		SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).sendKeys("15000");
+		SpecificatieDeelnemingenObjecten.BedragBruteringVoordeel(driver).clear();
+		SpecificatieDeelnemingenObjecten.BedragBruteringVoordeel(driver).sendKeys("16000");
+		SpecificatieDeelnemingenObjecten.BeleggingsdeelnemingEULidstaat_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.VerzoektVerrekening_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.VerzoektAfwijkendeVerrekening_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys("Toelichting meer dan 99 deelnemingen");
+		}
+
 }

@@ -23,3 +23,22 @@ Feature: vullen formulieren
     And open the Project "dossier 15-02-2017 1015"
     And open the form Algemene Vragen
     Then i can fill out the form Algemene Vragen
+
+      @vullen_formulier @Specificatie_Aandeelhouders
+  Scenario: vullen formulier Specificatie Aandeelhouders
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 15-02-2017 1015"
+    And open the form Specificatie Aandeelhouders
+    Then i can fill out the form Specificatie Aandeelhouders
+    
+    @vullen_formulier @Specificatie_Deelnemingen
+  Scenario: vullen formulier Specificatie Deelnemingen
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 15-02-2017 1015"
+    And open the form Specificatie Deelnemingen
+    Then i can fill out the form Specificatie Deelnemingen
+    

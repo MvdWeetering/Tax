@@ -30,7 +30,15 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Algemene Gegevens"));
 		return element;
 	}
+	public static WebElement NavigerenSpecificatieAandeelhouders(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Specificatie Aandeelhouders"));
+		return element;
+	}
 	
+	public static WebElement NavigerenSpecificatie_Deelnemingen(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Specificatie Deelnemingen"));
+		return element;
+	}
 	
 	public static WebElement ClickCloud(WebDriver driver){
 	    element = driver.findElement(By.className(("GOMEOCKDB3C")));
