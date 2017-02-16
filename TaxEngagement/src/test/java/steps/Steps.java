@@ -1,16 +1,27 @@
 package steps;
 
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
 import codebase.Inloggen;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import static org.junit.Assert.assertTrue;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-import pageObjects.*;
+import junit.framework.Assert;
+import pageObjects.AlgemeneGegevensObjecten;
+import pageObjects.AlgemeneVragenObjecten;
+import pageObjects.LoginObjecten;
+import pageObjects.NavigerenObjecten;
+import pageObjects.SpecificatieAandeelhoudersObjecten;
+import pageObjects.SpecificatieDeelnemingenObjecten;
+import pageObjects.ValidatieObjecten;
 
 public class Steps {
 
@@ -226,14 +237,39 @@ public class Steps {
 		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).clear();
 		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).sendKeys("40.00");
 		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).clear();
-		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).sendKeys("10,000");
+		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).sendKeys("-10,000");
 		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).clear();
-		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).sendKeys("20.000");
+		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).sendKeys("-20.000");
 		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys("30,000");
+		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys("-30,000");
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys("40.000");
+		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys("-40.000");
 	    
+		
+		// SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).click();
+		Thread.sleep(1000);
+		
+		Actions action = new Actions(driver);
+		WebElement element = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
+		action.moveToElement(element).build().perform();
+				
+		WebElement toolTipElement = driver.findElement(By.id("idxdt9tzsw-popover"));
+		String toolTipText = toolTipElement.getText();
+		
+		System.out.println(toolTipText);
+		
+				
+		String NewtoolTipElement = toolTipText.toString();  
+		String ModifiedToolTip = NewtoolTipElement.replace("\"", "");
+				
+		System.out.println(ModifiedToolTip);
+		
+		
+		assertTrue(ModifiedToolTip.equals("[Negatief bedrag] Het veld Vordering belastingplichtige op aandeelhouder mag niet negatief zijn"));
+
+		
+		
+		
 	}
 	
 	@When("^open the form Specificatie Deelnemingen$")
