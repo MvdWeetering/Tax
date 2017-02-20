@@ -5,7 +5,6 @@ Feature: vullen formulieren
   And fill out a form
   So that I can evaluate the forms
 
-
 @vullen_formulier @Algemene_gegevens
   Scenario: vullen formulier Algemene gegevens
     Given I want to login
@@ -32,6 +31,7 @@ Feature: vullen formulieren
     And open the Project "dossier 15-02-2017 1015"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders
+    Then i can validate the error messages for the Specificatie Aandeelhouders form
     
     @vullen_formulier @Specificatie_Deelnemingen
   Scenario: vullen formulier Specificatie Deelnemingen

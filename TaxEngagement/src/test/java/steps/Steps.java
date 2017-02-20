@@ -20,6 +20,7 @@ import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
+import pageObjects.SpecificatieAandeelhoudersTooltipObjects;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ValidatieObjecten;
 
@@ -210,8 +211,7 @@ public class Steps {
 
 	@Then("^i can fill out the form Specificatie Aandeelhouders$")
 	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders() throws Throwable {
-	    
-	
+	  	
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys("naam aandeelhouder");
 		SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon(driver).click();
@@ -244,33 +244,56 @@ public class Steps {
 		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys("-30,000");
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).clear();
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys("-40.000");
-	    
-		
-		// SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).click();
-		Thread.sleep(1000);
-		
-		Actions action = new Actions(driver);
-		WebElement element = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
-		action.moveToElement(element).build().perform();
-				
-		WebElement toolTipElement = driver.findElement(By.id("idxdt9tzsw-popover"));
-		String toolTipText = toolTipElement.getText();
-		
-		System.out.println(toolTipText);
-		
-				
-		String NewtoolTipElement = toolTipText.toString();  
-		String ModifiedToolTip = NewtoolTipElement.replace("\"", "");
-				
-		System.out.println(ModifiedToolTip);
-		
-		
-		assertTrue(ModifiedToolTip.equals("[Negatief bedrag] Het veld Vordering belastingplichtige op aandeelhouder mag niet negatief zijn"));
-
-		
-		
-		
+	   		
 	}
+
+	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")
+	public void i_can_validate_the_error_messages_for_the_Specificatie_Aandeelhouders_form() throws Throwable {
+	
+		 
+		Thread.sleep(1000);
+		Actions action = new Actions(driver);
+		
+		// Vordering belastingplichtige op aandeelhouder
+		WebElement SpecificatieAandeelhouders = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
+		action.moveToElement(SpecificatieAandeelhouders).build().perform();
+		Thread.sleep(1000);
+		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).click();
+		String StrVorderingBelastingverplichting = SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver).getText();
+		assertTrue(StrVorderingBelastingverplichting.equals("[Negatief bedrag] Het veld \"Vordering belastingplichtige op aandeelhouder\" mag niet negatief zijn"));
+		System.out.println(StrVorderingBelastingverplichting);
+				
+		// Schuld belastingplichtige aan aandeelhouder 
+		WebElement SchuldBelastingplichtige = SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver);
+		action.moveToElement(SchuldBelastingplichtige).build().perform();
+		Thread.sleep(1000);
+		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).click();
+		String StrSchuldBelastingplichtige = SpecificatieAandeelhoudersTooltipObjects.SchuldbelastingplichtigeOpaandeelhouder(driver).getText();
+		assertTrue(StrSchuldBelastingplichtige.equals("[Negatief bedrag] Het veld \"Schuld belastingplichtige aan aandeelhouder\" mag niet negatief zijn"));
+		System.out.println(StrSchuldBelastingplichtige);
+				
+		// In het boekjaar ontvangen rente van de aandeelhouder
+		
+		WebElement BoekjaarOntvangenRente = SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver);
+		action.moveToElement(BoekjaarOntvangenRente).build().perform();
+		Thread.sleep(1000);
+		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).click();
+		String StrBoekjaarOntvangenRente = SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(driver).getText();
+		assertTrue(StrBoekjaarOntvangenRente.equals("[Negatief bedrag] Het veld \"In het boekjaar ontvangen rente van de aandeelhouder\" mag niet negatief zijn"));
+		System.out.println(StrBoekjaarOntvangenRente);		
+				
+		// boekjaar betaalde rente
+		
+		WebElement BoekjaarBetaaldeRente = SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver);
+		action.moveToElement(BoekjaarBetaaldeRente).build().perform();
+		Thread.sleep(1000);
+		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).click();
+		String StrBoekjaarBetaaldeRente = SpecificatieAandeelhoudersTooltipObjects.BoekjaarBetaaldeRente(driver).getText();
+		assertTrue(StrBoekjaarBetaaldeRente.equals("[Negatief bedrag] Het veld \"In het boekjaar betaalde rente aan de aandeelhouder\" mag niet negatief zijn"));
+		System.out.println(StrBoekjaarBetaaldeRente);
+				
+	}
+
 	
 	@When("^open the form Specificatie Deelnemingen$")
 	public void open_the_form_Specificatie_Deelnemingen() throws Throwable {
