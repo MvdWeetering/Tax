@@ -25,6 +25,4 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		return element;
 	}
 	
-	
-	
 }

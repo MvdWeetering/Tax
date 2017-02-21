@@ -8,7 +8,7 @@ public class SpecificatieAandeelhoudersObjecten {
 	private static WebElement element = null;
 
 	public static WebElement NaamAandeelhouder(WebDriver driver){
-		element = driver.findElement(By.id("idShareholderName"));
+		element = driver.findElement(By.id("idxdt9tzse"));
 		return element;
 	}
 	public static WebElement Natuurlijkpersoon(WebDriver driver){

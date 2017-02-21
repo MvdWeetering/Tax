@@ -3,8 +3,10 @@ package steps;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.omg.CosNaming.NamingContextPackage.NotEmpty;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -209,60 +211,94 @@ public class Steps {
 	    
 	}
 
-	@Then("^i can fill out the form Specificatie Aandeelhouders$")
-	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders() throws Throwable {
+	@Then("^i can fill out the form Specificatie Aandeelhouders with config (\\d+)$")
+	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders_with_config(int configId) throws Throwable {
 	  	
+		String [] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
+		
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys("naam aandeelhouder");
-		SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon(driver).click();
+		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys(invuldata[1]);
+				
+		if (invuldata[2].equals("ja")) {
+			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon(driver).click();
+		}
+		else {
+			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon_nee(driver).click();	
+		}
+
 		SpecificatieAandeelhoudersObjecten.BSN(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BSN(driver).sendKeys("BSN");
+		SpecificatieAandeelhoudersObjecten.BSN(driver).sendKeys(invuldata[3]);
 		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).sendKeys("Straatnaam");
+		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).sendKeys(invuldata[4]);
 		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).sendKeys("nr");
+		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).sendKeys(invuldata[5]);
 		SpecificatieAandeelhoudersObjecten.Postcode(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys("1000AA");
+		SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys(invuldata[6]);
 		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).clear();
-		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).sendKeys("Toev");
+		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).sendKeys(invuldata[7]);
 		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).sendKeys("Woonplaats");
-		SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys("Nederland");
+		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).sendKeys(invuldata[8]);
+		SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys(invuldata[9]);
 		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).sendKeys("10,00");
+		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).sendKeys(invuldata[10]);
 		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).sendKeys("20.00");
+		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).sendKeys(invuldata[11]);
 		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).sendKeys("30,00");
+		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).sendKeys(invuldata[12]);
 		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).clear();
-		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).sendKeys("40.00");
+		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).sendKeys(invuldata[13]);
 		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).clear();
-		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).sendKeys("-10,000");
+		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).sendKeys(invuldata[14]);
 		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).clear();
-		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).sendKeys("-20.000");
+		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).sendKeys(invuldata[15]);
 		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys("-30,000");
+		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys(invuldata[16]);
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys("-40.000");
+		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys(invuldata[17]);
 	   		
 	}
 
 	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")
 	public void i_can_validate_the_error_messages_for_the_Specificatie_Aandeelhouders_form() throws Throwable {
-	
-		 
+		
 		Thread.sleep(1000);
 		Actions action = new Actions(driver);
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
 		// Vordering belastingplichtige op aandeelhouder
+		
 		WebElement SpecificatieAandeelhouders = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
 		action.moveToElement(SpecificatieAandeelhouders).build().perform();
 		Thread.sleep(1000);
 		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).click();
-		String StrVorderingBelastingverplichting = SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver).getText();
-		assertTrue(StrVorderingBelastingverplichting.equals("[Negatief bedrag] Het veld \"Vordering belastingplichtige op aandeelhouder\" mag niet negatief zijn"));
-		System.out.println(StrVorderingBelastingverplichting);
+		
+		//checkers
+		ArrayList<String> checker = codebase.ValidatieChecker.CheckValue(SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).getAttribute("value"),20,false);
+		if (!checker.isEmpty()) { 
+		
+			if (checker.contains("Negatief")) {
+		
+				String StrVorderingBelastingverplichting = SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver).getText();
+				String ControleText = "[Negatief] Dit veld moet een positief getal bevatten";
 				
+				if (!StrVorderingBelastingverplichting.equals(ControleText)) {
+					
+					System.out.println(StrVorderingBelastingverplichting);
+					System.out.println(ControleText);
+					ValidatieResultaat.add("Tooltip Specificatie Aandeelhouders onjuist");
+				}
+				
+				if (StrVorderingBelastingverplichting.equals(ControleText)) {
+					
+					System.out.println("zelfde");
+				}
+			}
+		}
+
+		
+		//System.out.println(StrVorderingBelastingverplichting);
+
+		/*
 		// Schuld belastingplichtige aan aandeelhouder 
 		WebElement SchuldBelastingplichtige = SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver);
 		action.moveToElement(SchuldBelastingplichtige).build().perform();
@@ -291,7 +327,13 @@ public class Steps {
 		String StrBoekjaarBetaaldeRente = SpecificatieAandeelhoudersTooltipObjects.BoekjaarBetaaldeRente(driver).getText();
 		assertTrue(StrBoekjaarBetaaldeRente.equals("[Negatief bedrag] Het veld \"In het boekjaar betaalde rente aan de aandeelhouder\" mag niet negatief zijn"));
 		System.out.println(StrBoekjaarBetaaldeRente);
-				
+		*/		
+		
+		System.out.println(ValidatieResultaat);
+		assertTrue(ValidatieResultaat.isEmpty());
+		
+		
+
 	}
 
 	
