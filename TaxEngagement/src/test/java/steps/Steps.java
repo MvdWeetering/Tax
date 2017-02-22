@@ -53,7 +53,7 @@ public class Steps {
 
 	@When("^Select the Tax engagement module$")
 	public void select_the_Tax_engagement_module() throws Throwable {
-		
+
 		NavigerenObjecten.ClickCloud(driver).click();
 		Thread.sleep(2000);
 		NavigerenObjecten.NavigerenTax(driver).click();
@@ -67,11 +67,11 @@ public class Steps {
 		Thread.sleep(1000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String oldTab = driver.getWindowHandle();
-		
+
 		NavigerenObjecten.Zoekveld(driver).sendKeys(Project);
-				
+
 		Thread.sleep(1500);
-			
+
 		driver.findElement(By.linkText(Project)).click();
 
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
@@ -90,7 +90,7 @@ public class Steps {
 		String Module = (HuidigeModule.getText());
 		assertTrue(Module.equals("NL Tax Engagement"));
 		driver.quit();
-		
+
 	}
 
 	@Then("^i can work on the project$")
@@ -107,7 +107,7 @@ public class Steps {
 		NavigerenObjecten.NavigerenAlgemeneVragen(driver).click();
 		Thread.sleep(1500);
 	}
-	
+
 	@Then("^i can fill out the form Algemene Vragen$")
 	public void i_can_fill_out_the_form_Algemene_Vragen() throws Throwable {
 
@@ -150,12 +150,12 @@ public class Steps {
 		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("regel 2");
 
 	}
-	
+
 	@When("^open the form Algemene Gegevens$")
 	public void open_the_form_Algemene_Gegevens() throws Throwable {
 
 		NavigerenObjecten.NavigerenAlgemeneGegevens(driver).click();
-				
+
 	}
 
 	@Then("^i can fill out the form Algemene Gegevens$")
@@ -190,40 +190,40 @@ public class Steps {
 		AlgemeneGegevensObjecten.Huisnummer(driver).sendKeys("huisnummer");
 		AlgemeneGegevensObjecten.Postcode(driver).clear();
 		AlgemeneGegevensObjecten.Postcode(driver).sendKeys("1000AA");
-	    AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).clear();
-	    AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).sendKeys("toev");
+		AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).clear();
+		AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).sendKeys("toev");
 		AlgemeneGegevensObjecten.Plaats(driver).clear();
 		AlgemeneGegevensObjecten.Plaats(driver).sendKeys("plaats");
 		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).clear();
 		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).sendKeys("Voorletters");
-	    AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).clear();
-	    AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).sendKeys("tussenvoegsel");
-	    AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).clear();
-	    AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).sendKeys("achternaam");
-	    AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).clear();
-	    AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).sendKeys("functie ondertekenaar");
-	    AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).clear();
-	    AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys("0612");
+		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).clear();
+		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).sendKeys("tussenvoegsel");
+		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).clear();
+		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).sendKeys("achternaam");
+		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).clear();
+		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).sendKeys("functie ondertekenaar");
+		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).clear();
+		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys("0612");
 	}
+
 	@When("^open the form Specificatie Aandeelhouders$")
 	public void open_the_form_Specificatie_Aandeelhouders() throws Throwable {
-	   NavigerenObjecten.NavigerenSpecificatieAandeelhouders(driver).click();
-	    
+		NavigerenObjecten.NavigerenSpecificatieAandeelhouders(driver).click();
+
 	}
 
 	@Then("^i can fill out the form Specificatie Aandeelhouders with config (\\d+)$")
 	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders_with_config(int configId) throws Throwable {
-	  	
-		String [] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
-		
+
+		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
+
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys(invuldata[1]);
-				
+
 		if (invuldata[2].equals("ja")) {
 			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon(driver).click();
-		}
-		else {
-			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon_nee(driver).click();	
+		} else {
+			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon_nee(driver).click();
 		}
 
 		SpecificatieAandeelhoudersObjecten.BSN(driver).clear();
@@ -255,97 +255,111 @@ public class Steps {
 		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys(invuldata[16]);
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).clear();
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys(invuldata[17]);
-	   		
+
 	}
 
 	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")
 	public void i_can_validate_the_error_messages_for_the_Specificatie_Aandeelhouders_form() throws Throwable {
-		
+
 		Thread.sleep(1000);
 		Actions action = new Actions(driver);
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-		
+		ArrayList<String> checker = new ArrayList<String>();
+
 		// Vordering belastingplichtige op aandeelhouder
-		
 		WebElement SpecificatieAandeelhouders = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
 		action.moveToElement(SpecificatieAandeelhouders).build().perform();
 		Thread.sleep(1000);
 		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).click();
-		
-		//checkers
-		ArrayList<String> checker = codebase.ValidatieChecker.CheckValue(SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).getAttribute("value"),20,false);
-		if (!checker.isEmpty()) { 
-		
+
+		// checker
+		checker = codebase.ValidatieChecker.CheckValue(
+				SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).getAttribute("value"), 20,
+				false);
+		if (!checker.isEmpty()) {
 			if (checker.contains("Negatief")) {
-		
-				String StrVorderingBelastingverplichting = SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver).getText();
-				String ControleText = "[Negatief] Dit veld moet een positief getal bevatten";
-				
-				if (!StrVorderingBelastingverplichting.equals(ControleText)) {
-					
-					System.out.println(StrVorderingBelastingverplichting);
-					System.out.println(ControleText);
-					ValidatieResultaat.add("Tooltip Specificatie Aandeelhouders onjuist");
+				if (!SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver)
+						.getText().equals("[Negatief] Dit veld moet een positief getal bevatten")) {
+					ValidatieResultaat.add("Tooltip Specificatie Aandeelhouders onjuist: Negatief getal");
 				}
-				
-				if (StrVorderingBelastingverplichting.equals(ControleText)) {
-					
-					System.out.println("zelfde");
+				if (checker.contains("Te lang")) {
+					if (!SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver)
+							.getText().equals("[Aantal tekens] Dit veld mag maximaal 5 karakter bevatten")) {
+						ValidatieResultaat.add("Tooltip Specificatie Aandeelhouders onjuist: te veel karakters");
+					}
 				}
 			}
 		}
 
-		
-		//System.out.println(StrVorderingBelastingverplichting);
-
-		/*
-		// Schuld belastingplichtige aan aandeelhouder 
+		// Schuld belastingplichtige aan aandeelhouder
 		WebElement SchuldBelastingplichtige = SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver);
 		action.moveToElement(SchuldBelastingplichtige).build().perform();
 		Thread.sleep(1000);
 		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).click();
-		String StrSchuldBelastingplichtige = SpecificatieAandeelhoudersTooltipObjects.SchuldbelastingplichtigeOpaandeelhouder(driver).getText();
-		assertTrue(StrSchuldBelastingplichtige.equals("[Negatief bedrag] Het veld \"Schuld belastingplichtige aan aandeelhouder\" mag niet negatief zijn"));
-		System.out.println(StrSchuldBelastingplichtige);
-				
-		// In het boekjaar ontvangen rente van de aandeelhouder
-		
-		WebElement BoekjaarOntvangenRente = SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver);
-		action.moveToElement(BoekjaarOntvangenRente).build().perform();
-		Thread.sleep(1000);
-		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).click();
-		String StrBoekjaarOntvangenRente = SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(driver).getText();
-		assertTrue(StrBoekjaarOntvangenRente.equals("[Negatief bedrag] Het veld \"In het boekjaar ontvangen rente van de aandeelhouder\" mag niet negatief zijn"));
-		System.out.println(StrBoekjaarOntvangenRente);		
-				
-		// boekjaar betaalde rente
-		
-		WebElement BoekjaarBetaaldeRente = SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver);
-		action.moveToElement(BoekjaarBetaaldeRente).build().perform();
-		Thread.sleep(1000);
-		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).click();
-		String StrBoekjaarBetaaldeRente = SpecificatieAandeelhoudersTooltipObjects.BoekjaarBetaaldeRente(driver).getText();
-		assertTrue(StrBoekjaarBetaaldeRente.equals("[Negatief bedrag] Het veld \"In het boekjaar betaalde rente aan de aandeelhouder\" mag niet negatief zijn"));
-		System.out.println(StrBoekjaarBetaaldeRente);
-		*/		
-		
+
+		// checkers
+		checker = codebase.ValidatieChecker.CheckValue(
+				SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).getAttribute("value"), 20, false);
+
+		if (!checker.isEmpty()) {
+			if (checker.contains("Negatief")) {
+				if (!SpecificatieAandeelhoudersTooltipObjects.SchuldbelastingplichtigeOpaandeelhouder(driver).getText()
+						.contains("[Negatief] Dit veld moet een positief getal bevatten")) {
+					ValidatieResultaat
+							.add("Tooltip Schuld belastingplichtige aan aandeelhouder onjuist: Negatief getal");
+				}
+				if (checker.contains("Te lang")) {
+					if (!SpecificatieAandeelhoudersTooltipObjects.SchuldbelastingplichtigeOpaandeelhouder(driver)
+							.getText().contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
+						ValidatieResultaat
+								.add("Tooltip Schuld belastingplichtige aan aandeelhouder onjuist: te veel karakters");
+					}
+				}
+			}
+		}
+
+		/*
+		 * // In het boekjaar ontvangen rente van de aandeelhouder
+		 * 
+		 * WebElement BoekjaarOntvangenRente =
+		 * SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver);
+		 * action.moveToElement(BoekjaarOntvangenRente).build().perform();
+		 * Thread.sleep(1000);
+		 * SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).
+		 * click(); String StrBoekjaarOntvangenRente =
+		 * SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(
+		 * driver).getText(); assertTrue(StrBoekjaarOntvangenRente.
+		 * equals("[Negatief bedrag] Het veld \"In het boekjaar ontvangen rente van de aandeelhouder\" mag niet negatief zijn"
+		 * )); System.out.println(StrBoekjaarOntvangenRente);
+		 * 
+		 * // boekjaar betaalde rente
+		 * 
+		 * WebElement BoekjaarBetaaldeRente =
+		 * SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver);
+		 * action.moveToElement(BoekjaarBetaaldeRente).build().perform();
+		 * Thread.sleep(1000);
+		 * SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).
+		 * click(); String StrBoekjaarBetaaldeRente =
+		 * SpecificatieAandeelhoudersTooltipObjects.BoekjaarBetaaldeRente(driver
+		 * ).getText(); assertTrue(StrBoekjaarBetaaldeRente.
+		 * equals("[Negatief bedrag] Het veld \"In het boekjaar betaalde rente aan de aandeelhouder\" mag niet negatief zijn"
+		 * )); System.out.println(StrBoekjaarBetaaldeRente);
+		 */
+
 		System.out.println(ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());
-		
-		
 
 	}
 
-	
 	@When("^open the form Specificatie Deelnemingen$")
 	public void open_the_form_Specificatie_Deelnemingen() throws Throwable {
-	    NavigerenObjecten.NavigerenSpecificatie_Deelnemingen(driver).click();
-	    
+		NavigerenObjecten.NavigerenSpecificatie_Deelnemingen(driver).click();
+
 	}
 
 	@Then("^i can fill out the form Specificatie Deelnemingen$")
 	public void i_can_fill_out_the_form_Specificatie_Deelnemingen() throws Throwable {
-	 
+
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).sendKeys("Naam Deelneming");
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).clear();
@@ -407,7 +421,8 @@ public class Steps {
 		SpecificatieDeelnemingenObjecten.VerzoektVerrekening_Ja(driver).click();
 		SpecificatieDeelnemingenObjecten.VerzoektAfwijkendeVerrekening_Ja(driver).click();
 		SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys("Toelichting meer dan 99 deelnemingen");
-		}
+		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver)
+				.sendKeys("Toelichting meer dan 99 deelnemingen");
+	}
 
 }
