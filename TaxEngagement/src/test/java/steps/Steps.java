@@ -318,20 +318,36 @@ public class Steps {
 			}
 		}
 
-		/*
-		 * // In het boekjaar ontvangen rente van de aandeelhouder
-		 * 
-		 * WebElement BoekjaarOntvangenRente =
-		 * SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver);
-		 * action.moveToElement(BoekjaarOntvangenRente).build().perform();
-		 * Thread.sleep(1000);
-		 * SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).
-		 * click(); String StrBoekjaarOntvangenRente =
-		 * SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(
-		 * driver).getText(); assertTrue(StrBoekjaarOntvangenRente.
-		 * equals("[Negatief bedrag] Het veld \"In het boekjaar ontvangen rente van de aandeelhouder\" mag niet negatief zijn"
-		 * )); System.out.println(StrBoekjaarOntvangenRente);
-		 * 
+		
+		  // In het boekjaar ontvangen rente van de aandeelhouder
+		  
+		  WebElement BoekjaarOntvangenRente = SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver);
+		  action.moveToElement(BoekjaarOntvangenRente).build().perform();
+		  Thread.sleep(1000);
+		  SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).click();
+		  
+		  //checkers
+		  checker = codebase.ValidatieChecker.CheckValue(SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).getAttribute("value"), 20, false);
+		  
+		  if (!checker.isEmpty()) {
+				if (checker.contains("Negatief")) {
+					if (!SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(driver).getText()
+							.contains("[Negatief] Dit veld moet een positief getal bevatten")) {
+						ValidatieResultaat
+								.add("Tooltip In het boekjaar ontvangen rente van de aandeelhouder onjuist: Negatief getal");
+					}
+					if (checker.contains("Te lang")) {
+						if (!SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(driver)
+								.getText().contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
+							ValidatieResultaat
+									.add("Tooltip In het boekjaar ontvangen rente van de aandeelhouder onjuist: te veel karakters");
+						}
+					}
+				}
+			}
+		  
+ 
+		 /*
 		 * // boekjaar betaalde rente
 		 * 
 		 * WebElement BoekjaarBetaaldeRente =
