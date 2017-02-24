@@ -269,7 +269,7 @@ public class Steps {
 		// naam aandeelhouders
 		WebElement NaamAandeelhouder = SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver);
 		action.moveToElement(NaamAandeelhouder).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).click();
 
 		// checker
@@ -295,12 +295,12 @@ public class Steps {
 		
 		WebElement StraatNaam = SpecificatieAandeelhoudersObjecten.Straatnaam(driver);
 		action.moveToElement(StraatNaam).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).click();
 
 		// checker
 		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.Straatnaam(driver).getAttribute("value"), 24,
+				SpecificatieAandeelhoudersObjecten.Straatnaam(driver).getAttribute("value"),70,
 				true);
 		
 		if (!checker.isEmpty()) {
@@ -410,7 +410,7 @@ public class Steps {
 				
 		WebElement NominalewaardeAandelen = SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver);
 		action.moveToElement(NominalewaardeAandelen).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).click();
 
 		// checker
@@ -432,7 +432,7 @@ public class Steps {
 		
 		WebElement NominalewaardePreferente = SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver);
 		action.moveToElement(NominalewaardePreferente).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).click();
 
 		// checker
@@ -453,7 +453,7 @@ public class Steps {
 		
 		WebElement NominalewaardePrioriteits = SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver);
 		action.moveToElement(NominalewaardePrioriteits).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).click();
 
 		// checker
@@ -477,7 +477,7 @@ public class Steps {
 		// Vordering belastingplichtige op aandeelhouder
 		WebElement VorderingBelastingplichtige = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
 		action.moveToElement(VorderingBelastingplichtige).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).click();
 
 		// checker
@@ -502,7 +502,7 @@ public class Steps {
 		// Schuld belastingplichtige aan aandeelhouder
 		WebElement SchuldBelastingplichtige = SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver);
 		action.moveToElement(SchuldBelastingplichtige).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).click();
 
 		// checkers
@@ -529,7 +529,7 @@ public class Steps {
 		// In het boekjaar ontvangen rente van de aandeelhouder
 		WebElement BoekjaarOntvangenRente = SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver);
 		action.moveToElement(BoekjaarOntvangenRente).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).click();
 
 		// checkers
@@ -556,7 +556,7 @@ public class Steps {
 		// boekjaar betaalde rente
 		WebElement BoekjaarBetaaldeRente = SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver);
 		action.moveToElement(BoekjaarBetaaldeRente).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).click();
 
 		// checkers
