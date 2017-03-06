@@ -223,21 +223,22 @@ public class Steps {
 			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon(driver).click();
 		} else {
 			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon_nee(driver).click();
+			SpecificatieAandeelhoudersObjecten.Straatnaam(driver).clear();
+			SpecificatieAandeelhoudersObjecten.Straatnaam(driver).sendKeys(invuldata[4]);
+			SpecificatieAandeelhoudersObjecten.Huisnummer(driver).clear();
+			SpecificatieAandeelhoudersObjecten.Huisnummer(driver).sendKeys(invuldata[5]);
+			SpecificatieAandeelhoudersObjecten.Postcode(driver).clear();
+			SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys(invuldata[6]);
+			SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).clear();
+			SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).sendKeys(invuldata[7]);
+			SpecificatieAandeelhoudersObjecten.Woonplaats(driver).clear();
+			SpecificatieAandeelhoudersObjecten.Woonplaats(driver).sendKeys(invuldata[8]);
+			SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys(invuldata[9]);
 		}
 
 		SpecificatieAandeelhoudersObjecten.BSN(driver).clear();
 		SpecificatieAandeelhoudersObjecten.BSN(driver).sendKeys(invuldata[3]);
-		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).sendKeys(invuldata[4]);
-		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).sendKeys(invuldata[5]);
-		SpecificatieAandeelhoudersObjecten.Postcode(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys(invuldata[6]);
-		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).clear();
-		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).sendKeys(invuldata[7]);
-		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).clear();
-		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).sendKeys(invuldata[8]);
-		SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys(invuldata[9]);
+		
 		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).clear();
 		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).sendKeys(invuldata[10]);
 		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).clear();
@@ -255,6 +256,42 @@ public class Steps {
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).clear();
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys(invuldata[17]);
 
+		
+		 // informele kapitaalstorting = nee
+		/*
+		SpecificatieAandeelhoudersObjecten.informeleKapitaalstortingNee(driver).click();
+		SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys("naamrechtspersoon");
+		SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys("Straatnaamrechtspersoon");
+		SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys("huisnr");
+		SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys("toev");
+		SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys("vestigingsplaats");
+		SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys("vestigingsland");
+		*/
+		
+		 // informele kapitaalstorting = ja
+		SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).click();
+		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).clear();
+		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys("bedragkapitaalstorting");
+		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).clear(); 
+		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).sendKeys("waarom storting");
+		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).clear();
+		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).sendKeys("Naam moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).clear();
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).sendKeys("Straatnaam moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).clear();
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).sendKeys("huisnummer moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).clear();
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).sendKeys("huisnrToev moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).clear();
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys("vestigingsplaats moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).clear();
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).sendKeys("vestigingsland moedermaatschappij");
+			
+		SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderJa(driver).click();
+		
+		SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).click();
+		
+		
 	}
 
 	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")
@@ -264,7 +301,6 @@ public class Steps {
 		Actions action = new Actions(driver);
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		ArrayList<String> checker = new ArrayList<String>();
-
 		
 		// naam aandeelhouders
 		WebElement NaamAandeelhouder = SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver);
@@ -286,8 +322,7 @@ public class Steps {
 				}
 			}
 		
-		
-		
+				
 		// BSN
 		
 				
@@ -493,7 +528,7 @@ public class Steps {
 				if (checker.contains("Te lang")) {
 					if (!SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver)
 							.getText().contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat.add("Tooltip Vordering belastingplichtige op aandeelhouder  onjuist: te veel karakters");
+						ValidatieResultaat.add("Tooltip Vordering belastingplichtige op aandeelhouder onjuist: te veel karakters");
 					}
 				}
 			}

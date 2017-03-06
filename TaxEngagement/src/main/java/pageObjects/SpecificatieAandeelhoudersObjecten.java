@@ -75,10 +75,87 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzsy"));
 		return element;
 	}
+
 	public static WebElement BoekjaarBetaaldeRente(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzt3"));
 		return element;
 	}
+	
+	public static WebElement informeleKapitaalstorting(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68gz"));
+		return element;
+	}
 
+	public static WebElement informeleKapitaalstortingNee(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68gz-no"));
+		return element;
+	}
+	
+	public static WebElement NaamRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idtable_TK_NO:0-0"));
+		return element;
+	}
+	public static WebElement StraatnaamRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idtable_TK_NO:0-2"));
+		return element;
+	}
+	public static WebElement HuisnummerRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idtable_TK_NO:0-4"));
+		return element;
+	}
+	public static WebElement ToevHuisnummerRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idtable_TK_NO:0-6"));
+		return element;
+	}
+	public static WebElement VestigingsplaatsRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idtable_TK_NO:0-8"));
+		return element;
+	}	
+	public static WebElement VestigingslandRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idtable_TK_NO:0-10"));
+		return element;
+	}
      
+	public static WebElement BedragInformeleKapitaalStorting(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h0"));
+		return element;
+	}
+	
+	public static WebElement WaaromInformeleKapitaalstorting(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h1"));
+		return element;
+	}
+	
+	public static WebElement NaamMoedermaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h2"));
+		return element;
+	}
+	public static WebElement MoederMaatschappijStraatnaam(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h3"));
+		return element;
+	}
+	public static WebElement MoederMaatschappijHuisnummer(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h4"));
+		return element;
+	}
+	public static WebElement MoederMaatschappijHuisnummerToev(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h5"));
+		return element;
+	}
+	public static WebElement MoederMaatschappijVestigingsplaats(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h6"));
+		return element;
+	}
+	public static WebElement MoederMaatschappijVestigingsland(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h7"));
+		return element;
+	}
+	public static WebElement BevoordelingvanAandeelhouderJa(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h8"));
+		return element;
+	}
+	public static WebElement BevoordelingvanAandeelhouderNee(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h8-no"));
+		return element;
+	}
 }

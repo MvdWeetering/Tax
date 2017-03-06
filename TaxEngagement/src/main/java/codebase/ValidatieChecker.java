@@ -19,23 +19,6 @@ public class ValidatieChecker {
 		}
 		return Feedback;
 	}
-
-	public static void main(String[] args) {
-		//System.out.println(CheckValue("123", 10, false));
-		
-		String A = "[Negatief] Dit veld moet een positief getal bevatten";
-		String B = "[Negatief] Dit veld moet een positief getal bevatten";
-		
-		
-		if (A.equals(B)) {
-			
-			
-			System.out.println("zelfde");
-		}
-		
-		
-	}
-
 }
 
 
