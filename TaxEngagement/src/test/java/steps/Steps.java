@@ -16,15 +16,7 @@ import codebase.Inloggen;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pageObjects.AbstractSteps;
-import pageObjects.AlgemeneGegevensObjecten;
-import pageObjects.AlgemeneVragenObjecten;
-import pageObjects.LoginObjecten;
-import pageObjects.NavigerenObjecten;
-import pageObjects.SpecificatieAandeelhoudersObjecten;
-import pageObjects.SpecificatieAandeelhoudersTooltipObjects;
-import pageObjects.SpecificatieDeelnemingenObjecten;
-import pageObjects.ValidatieObjecten;
+import pageObjects.*;
 
 public class Steps extends AbstractSteps {
 
@@ -210,6 +202,7 @@ public class Steps extends AbstractSteps {
 
 	@When("^open the form Specificatie Aandeelhouders$")
 	public void open_the_form_Specificatie_Aandeelhouders() throws Throwable {
+		Thread.sleep(1000);
 		NavigerenObjecten.NavigerenSpecificatieAandeelhouders(driver).click();
 
 	}
@@ -221,7 +214,9 @@ public class Steps extends AbstractSteps {
 
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys(invuldata[1]);
-
+		SpecificatieAandeelhoudersObjecten.BSN(driver).clear();
+		SpecificatieAandeelhoudersObjecten.BSN(driver).sendKeys(invuldata[3]);
+		
 		if (invuldata[2].equals("ja")) {
 			SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon(driver).click();
 		} else {
@@ -239,8 +234,7 @@ public class Steps extends AbstractSteps {
 			SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys(invuldata[9]);
 		}
 
-		SpecificatieAandeelhoudersObjecten.BSN(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BSN(driver).sendKeys(invuldata[3]);
+
 		
 		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).clear();
 		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).sendKeys(invuldata[10]);
@@ -336,24 +330,10 @@ public class Steps extends AbstractSteps {
 				
 		// Straatnaam
 		
-		WebElement StraatNaam = invoke(SpecificatieAandeelhoudersObjecten.class, "StraatNaam");
-		action.moveToElement(StraatNaam).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.Straatnaam(driver).getAttribute("value"),70,
-				true);
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));
 		
-		if (!checker.isEmpty()) {
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.StraatNaam(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal 24 karakter bevatten")) {
-						ValidatieResultaat.add("Tooltip Straatnaam onjuist: te veel karakters");
-					}
-				}
-			}		
+		
+		
 		
 		/*	Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 		
@@ -450,7 +430,12 @@ public class Steps extends AbstractSteps {
 		*/
 		
 		// nominale waarde aandelen
-				
+
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardeAandelen", 20, true));
+		
+		
+		
+		/*
 		WebElement NominalewaardeAandelen = SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver);
 		action.moveToElement(NominalewaardeAandelen).build().perform();
 		Thread.sleep(800);
@@ -469,7 +454,7 @@ public class Steps extends AbstractSteps {
 					}
 				}
 			}
-		
+		*/
 				
 		// Nominale waarde preferente aandelen einde boekjaar 
 		
@@ -518,6 +503,10 @@ public class Steps extends AbstractSteps {
 		
 		
 		// Vordering belastingplichtige op aandeelhouder
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("VorderingBelastingplichtige", 20, false));
+		
+		/*
 		WebElement VorderingBelastingplichtige = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
 		action.moveToElement(VorderingBelastingplichtige).build().perform();
 		Thread.sleep(800);
@@ -541,6 +530,7 @@ public class Steps extends AbstractSteps {
 				}
 			}
 		}
+		 */
 
 		// Schuld belastingplichtige aan aandeelhouder
 		WebElement SchuldBelastingplichtige = SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver);
@@ -554,13 +544,13 @@ public class Steps extends AbstractSteps {
 
 		if (!checker.isEmpty()) {
 			if (checker.contains("Negatief")) {
-				if (!SpecificatieAandeelhoudersTooltipObjects.SchuldbelastingplichtigeOpaandeelhouder(driver).getText()
+				if (!SpecificatieAandeelhoudersTooltipObjects.SchuldBelastingplichtige(driver).getText()
 						.contains("[Negatief] Dit veld moet een positief getal bevatten")) {
 					ValidatieResultaat
 							.add("Tooltip Schuld belastingplichtige aan aandeelhouder onjuist: Negatief getal");
 				}
 				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.SchuldbelastingplichtigeOpaandeelhouder(driver)
+					if (!SpecificatieAandeelhoudersTooltipObjects.SchuldBelastingplichtige(driver)
 							.getText().contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
 						ValidatieResultaat
 								.add("Tooltip Schuld belastingplichtige aan aandeelhouder onjuist: te veel karakters");

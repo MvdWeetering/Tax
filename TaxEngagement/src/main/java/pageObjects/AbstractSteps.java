@@ -11,9 +11,9 @@ public abstract class AbstractSteps {
 	
 	//invoke(SpecificatieAandeelhoudersObjecten.class, "NaamAandeelhouder").sendKeys("nieuwe waarde");
 	
-	protected WebDriver driver = Inloggen.GetDriver();
+	protected static WebDriver driver = Inloggen.GetDriver();
 
-	public WebElement invoke(@SuppressWarnings("rawtypes") Class objectClass,String lookupName) throws Exception{
+	public static WebElement invoke(@SuppressWarnings("rawtypes") Class objectClass,String lookupName) throws Exception{
 		try {
 			Method foundMethod = getMethodByName(objectClass, lookupName);
 			return ((WebElement)foundMethod.invoke(null,driver));
@@ -28,7 +28,7 @@ public abstract class AbstractSteps {
 	 * @param objectClass
 	 * @return
 	 */
-	protected Method getMethodByName(@SuppressWarnings("rawtypes") Class objectClass,String lookupName ){
+	protected static Method getMethodByName(@SuppressWarnings("rawtypes") Class objectClass,String lookupName ){
 
 		
         for (Method method : objectClass.getDeclaredMethods()) {

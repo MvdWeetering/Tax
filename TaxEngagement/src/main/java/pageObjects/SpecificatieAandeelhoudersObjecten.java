@@ -19,6 +19,7 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idCWNLShareholder"));
 		return element;
 	}
+	
 		public static WebElement Natuurlijkpersoon_nee(WebDriver driver){
 			element = driver.findElement(By.id("idCWNLShareholder-no"));
 			return element;
@@ -52,6 +53,7 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzsm"));
 		return element;
 	}
+	@FieldName(name = "NominalewaardeAandelen")
 	public static WebElement NominalewaardeAandelen(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzso"));
 		return element;
@@ -68,19 +70,25 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzsu"));
 		return element;
 	}
+	
+	@FieldName(name = "VorderingBelastingplichtige")
 	public static WebElement VorderingBelastingplichtige(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsw"));
 		return element;
 	}
+	@FieldName(name = "SchuldBelastingplichtige")
 	public static WebElement SchuldBelastingplichtige(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzt1"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarOntvangenRente")
 	public static WebElement BoekjaarOntvangenRente(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsy"));
 		return element;
 	}
 
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement BoekjaarBetaaldeRente(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzt3"));
 		return element;

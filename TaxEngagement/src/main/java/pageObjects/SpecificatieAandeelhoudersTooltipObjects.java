@@ -8,18 +8,23 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 	
 	private static WebElement element = null;
 	
-	public static WebElement VorderingbelastingplichtigeOpaandeelhouder (WebDriver driver){
+	@FieldName(name = "VorderingBelastingplichtige")
+	public static WebElement VorderingBelastingplichtige (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsw-popover"));
 		return element;
 	}
-	public static WebElement SchuldbelastingplichtigeOpaandeelhouder (WebDriver driver){
+	@FieldName(name = "SchuldBelastingplichtige")
+	public static WebElement SchuldBelastingplichtige (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzt1-popover"));
 		return element;
 	}
+	@FieldName(name = "BoekjaarOntvangenRente")
 	public static WebElement BoekjaarOntvangenRente (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsy-popover"));
 		return element;
 	}	
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement BoekjaarBetaaldeRente (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzt3-popover"));
 		return element;
@@ -29,6 +34,7 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tzse-popover"));
 		return element;
 	}
+	@FieldName(name = "StraatNaam")
 	public static WebElement StraatNaam (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsg-popover"));
 		return element;
@@ -52,7 +58,7 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		return element;
 	}
 	
-	
+	@FieldName(name = "NominalewaardeAandelen")
 	public static WebElement NominalewaardeAandelen (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzso-popover"));
 		return element;
