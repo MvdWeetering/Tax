@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 
 public class SpecificatieAandeelhoudersObjecten {
 	private static WebElement element = null;
+	
 
+	@FieldName(name = "NaamAandeelhouder")
 	public static WebElement NaamAandeelhouder(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzse"));
 		return element;

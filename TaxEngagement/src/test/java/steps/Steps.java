@@ -16,6 +16,7 @@ import codebase.Inloggen;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pageObjects.AbstractSteps;
 import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.LoginObjecten;
@@ -25,9 +26,9 @@ import pageObjects.SpecificatieAandeelhoudersTooltipObjects;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ValidatieObjecten;
 
-public class Steps {
+public class Steps extends AbstractSteps {
 
-	WebDriver driver = Inloggen.GetDriver();
+	
 
 	@Given("^I want to login$")
 	public void i_want_to_login() throws Throwable {
@@ -110,6 +111,8 @@ public class Steps {
 	@Then("^i can fill out the form Algemene Vragen$")
 	public void i_can_fill_out_the_form_Algemene_Vragen() throws Throwable {
 
+		invoke(SpecificatieAandeelhoudersObjecten.class, "Straatnaam").click();
+		
 		AlgemeneVragenObjecten.vraag1_yes(driver).click();
 		AlgemeneVragenObjecten.vraag2_yes(driver).click();
 		AlgemeneVragenObjecten.vraag3_yes(driver).click();
