@@ -111,7 +111,7 @@ public class Steps extends AbstractSteps {
 	@Then("^i can fill out the form Algemene Vragen$")
 	public void i_can_fill_out_the_form_Algemene_Vragen() throws Throwable {
 
-		invoke(SpecificatieAandeelhoudersObjecten.class, "Straatnaam").click();
+		
 		
 		AlgemeneVragenObjecten.vraag1_yes(driver).click();
 		AlgemeneVragenObjecten.vraag2_yes(driver).click();
@@ -272,6 +272,11 @@ public class Steps extends AbstractSteps {
 		*/
 		
 		 // informele kapitaalstorting = ja
+		
+		
+		invoke(SpecificatieAandeelhoudersObjecten.class, "NaamAandeelhouder").sendKeys("nieuwe waarde");
+		
+		
 		SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).click();
 		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).clear();
 		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys("bedragkapitaalstorting");
@@ -331,7 +336,7 @@ public class Steps extends AbstractSteps {
 				
 		// Straatnaam
 		
-		WebElement StraatNaam = SpecificatieAandeelhoudersObjecten.Straatnaam(driver);
+		WebElement StraatNaam = invoke(SpecificatieAandeelhoudersObjecten.class, "StraatNaam");
 		action.moveToElement(StraatNaam).build().perform();
 		Thread.sleep(800);
 		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).click();

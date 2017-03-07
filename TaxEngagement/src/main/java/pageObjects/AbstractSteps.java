@@ -9,11 +9,14 @@ import codebase.Inloggen;
 
 public abstract class AbstractSteps {
 	
+	//invoke(SpecificatieAandeelhoudersObjecten.class, "NaamAandeelhouder").sendKeys("nieuwe waarde");
+	
 	protected WebDriver driver = Inloggen.GetDriver();
 
 	public WebElement invoke(@SuppressWarnings("rawtypes") Class objectClass,String lookupName) throws Exception{
 		try {
-			return ((WebElement)getMethodByName(objectClass, lookupName).invoke(driver));
+			Method foundMethod = getMethodByName(objectClass, lookupName);
+			return ((WebElement)foundMethod.invoke(null,driver));
 		} catch (Exception e) {
 			throw new Exception(e);
 		}
@@ -27,7 +30,7 @@ public abstract class AbstractSteps {
 	 */
 	protected Method getMethodByName(@SuppressWarnings("rawtypes") Class objectClass,String lookupName ){
 
-
+		
         for (Method method : objectClass.getDeclaredMethods()) {
               if (method.isAnnotationPresent(FieldName.class)) {
                      
@@ -37,13 +40,12 @@ public abstract class AbstractSteps {
             	  FieldName fieldNameAnnotation = method.getAnnotation(FieldName.class);
             	  
             	  if(fieldNameAnnotation.name().equalsIgnoreCase(lookupName)){
-            		  return method;
+            		  //method.getName()
+              		  return method;
             	  }
-            	  
               }
         }
         return null;
-
 	}
 	
 }

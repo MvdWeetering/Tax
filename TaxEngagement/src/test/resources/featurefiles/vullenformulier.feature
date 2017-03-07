@@ -31,7 +31,7 @@ Feature: vullen formulieren
     And open the Project "dossier 1-3-2017 1029"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config 1
-    
+    Then i can validate the error messages for the Specificatie Aandeelhouders form
 
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario: vullen formulier Specificatie Deelnemingen

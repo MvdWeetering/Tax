@@ -13,6 +13,8 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzse"));
 		return element;
 	}
+	
+	@FieldName(name = "Natuurlijkpersoon")
 	public static WebElement Natuurlijkpersoon(WebDriver driver){
 		element = driver.findElement(By.id("idCWNLShareholder"));
 		return element;
@@ -25,6 +27,7 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzsc"));
 		return element;
 	}
+	@FieldName(name = "Straatnaam")
 	public static WebElement Straatnaam(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsg"));
 		return element;
