@@ -30,6 +30,7 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		return element;
 	}
 	
+	@FieldName(name = "NaamAandeelhouder")
 	public static WebElement NaamAandeelhouder (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzse-popover"));
 		return element;
@@ -39,20 +40,26 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tzsg-popover"));
 		return element;
 	}
+	
+	@FieldName(name = "Huisnummer")
 	public static WebElement Huisnummer (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsi-popover"));
 		return element;
 	}
 	
+	@FieldName(name = "Postcode")
 	public static WebElement Postcode (WebDriver driver){
 		element = driver.findElement(By.id(""));
 		return element;
 	}
-		
+	
+	@FieldName(name = "HuisnrToev")
 	public static WebElement HuisnrToev (WebDriver driver){
 		element = driver.findElement(By.id(""));
 		return element;
-	}	
+	}
+	
+	@FieldName(name = "Woonplaats")
 	public static WebElement Woonplaats (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsk-popover"));
 		return element;
@@ -63,10 +70,14 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tzso-popover"));
 		return element;
 	}
+	
+	@FieldName(name = "NominalewaardePreferente")
 	public static WebElement NominalewaardePreferente (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsq-popover"));
 		return element;
 	}
+	
+	@FieldName(name = "NominalewaardePrioriteits")
 	public static WebElement NominalewaardePrioriteits (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzss-popover"));
 		return element;

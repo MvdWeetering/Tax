@@ -20,9 +20,11 @@ public class SpecificatieAandeelhoudersObjecten {
 		return element;
 	}
 	
-		public static WebElement Natuurlijkpersoon_nee(WebDriver driver){
-			element = driver.findElement(By.id("idCWNLShareholder-no"));
-			return element;
+	@FieldName(name = "NatuurlijkpersoonNo")
+	public static WebElement Natuurlijkpersoon_nee(WebDriver driver){
+	element = driver.findElement(By.id("idCWNLShareholder-no"));
+	return element;
+	
 	}
 	public static WebElement BSN(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsc"));
@@ -94,79 +96,109 @@ public class SpecificatieAandeelhoudersObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement informeleKapitaalstorting(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68gz"));
 		return element;
 	}
 
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement informeleKapitaalstortingNee(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68gz-no"));
 		return element;
 	}
 	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement NaamRechtspersoon(WebDriver driver){
 		element = driver.findElement(By.id("idtable_TK_NO:0-0"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement StraatnaamRechtspersoon(WebDriver driver){
 		element = driver.findElement(By.id("idtable_TK_NO:0-2"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement HuisnummerRechtspersoon(WebDriver driver){
 		element = driver.findElement(By.id("idtable_TK_NO:0-4"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement ToevHuisnummerRechtspersoon(WebDriver driver){
 		element = driver.findElement(By.id("idtable_TK_NO:0-6"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement VestigingsplaatsRechtspersoon(WebDriver driver){
 		element = driver.findElement(By.id("idtable_TK_NO:0-8"));
 		return element;
 	}	
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement VestigingslandRechtspersoon(WebDriver driver){
 		element = driver.findElement(By.id("idtable_TK_NO:0-10"));
 		return element;
 	}
      
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement BedragInformeleKapitaalStorting(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h0"));
 		return element;
 	}
 	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement WaaromInformeleKapitaalstorting(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h1"));
 		return element;
 	}
 	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement NaamMoedermaatschappij(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h2"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement MoederMaatschappijStraatnaam(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h3"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement MoederMaatschappijHuisnummer(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h4"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement MoederMaatschappijHuisnummerToev(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h5"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement MoederMaatschappijVestigingsplaats(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h6"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement MoederMaatschappijVestigingsland(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h7"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement BevoordelingvanAandeelhouderJa(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h8"));
 		return element;
 	}
+	
+	@FieldName(name = "BoekjaarBetaaldeRente")
 	public static WebElement BevoordelingvanAandeelhouderNee(WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h8-no"));
 		return element;
