@@ -2,6 +2,8 @@ package codebase;
 
 import pageObjects.*;
 import java.util.ArrayList;
+
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 
 public class TooltipChecker extends AbstractSteps {
@@ -20,9 +22,23 @@ public class TooltipChecker extends AbstractSteps {
 
 		invoke(SpecificatieAandeelhoudersObjecten.class, Naamobject).click();
 
+		
+		
+		try {
+			invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject);
+		} catch (NoSuchElementException e) {
+			System.out.println("leeg");
+			
+		}
+		
 		// checker
 		checker = codebase.ValidatieChecker.CheckValue(invoke(SpecificatieAandeelhoudersObjecten.class, Naamobject).getAttribute("value"), lengte, leegJaNee);
 
+		
+		
+		
+		
+		
 		if (!checker.isEmpty()) {
 			if (checker.contains("Te lang")) {
 				if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject).getText().contains("[Aantal tekens] Dit veld mag maximaal " + lengte + " karakters bevatten")) {

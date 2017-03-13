@@ -2,12 +2,14 @@ package steps;
 
 import static org.junit.Assert.assertTrue;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.omg.CosNaming.NamingContextPackage.NotEmpty;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -327,8 +329,21 @@ public class Steps extends AbstractSteps {
 				
 		// BSN
 		
-				
+			
 		// Straatnaam
+		
+		String text =null;
+		Thread.sleep(1000);
+		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).click();
+		Thread.sleep(1000);
+		try {
+		text = invoke(SpecificatieAandeelhoudersTooltipObjects.class, "Straatnaam").getText();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			System.out.println("no element found");
+		}
+		System.out.println(text);
+		
 		
 		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));
 		

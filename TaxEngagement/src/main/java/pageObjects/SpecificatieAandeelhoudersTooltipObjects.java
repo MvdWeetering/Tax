@@ -35,8 +35,8 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tzse-popover"));
 		return element;
 	}
-	@FieldName(name = "StraatNaam")
-	public static WebElement StraatNaam (WebDriver driver){
+	@FieldName(name = "Straatnaam")
+	public static WebElement Straatnaam (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsg-popover"));
 		return element;
 	}

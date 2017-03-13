@@ -29,7 +29,6 @@ public abstract class AbstractSteps {
 	 * @return
 	 */
 	protected static Method getMethodByName(@SuppressWarnings("rawtypes") Class objectClass,String lookupName ){
-
 		
         for (Method method : objectClass.getDeclaredMethods()) {
               if (method.isAnnotationPresent(FieldName.class)) {
