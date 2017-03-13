@@ -2,23 +2,26 @@ package steps;
 
 import static org.junit.Assert.assertTrue;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.omg.CosNaming.NamingContextPackage.NotEmpty;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import codebase.Inloggen;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pageObjects.*;
+import pageObjects.AbstractSteps;
+import pageObjects.AlgemeneGegevensObjecten;
+import pageObjects.AlgemeneVragenObjecten;
+import pageObjects.LoginObjecten;
+import pageObjects.NavigerenObjecten;
+import pageObjects.SpecificatieAandeelhoudersObjecten;
+import pageObjects.SpecificatieAandeelhoudersTooltipObjects;
+import pageObjects.SpecificatieDeelnemingenObjecten;
+import pageObjects.ValidatieObjecten;
 
 public class Steps extends AbstractSteps {
 
@@ -337,12 +340,20 @@ public class Steps extends AbstractSteps {
 		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).click();
 		Thread.sleep(1000);
 		try {
-		text = invoke(SpecificatieAandeelhoudersTooltipObjects.class, "Straatnaam").getText();
-		} catch (InvocationTargetException e) {
+			WebElement elem = invoke(SpecificatieAandeelhoudersTooltipObjects.class, "Straatnaam");
+			// Null indicates: expected tooltip text balloon is missing
+			if (elem == null) {
+				ValidatieResultaat.add("Tooltip ontbreekt ....");
+			} else {
+				text = elem.getText();
+				System.out.println(text);
+			}
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
 			// TODO Auto-generated catch block
 			System.out.println("no element found");
 		}
-		System.out.println(text);
+		
 		
 		
 		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import org.openqa.selenium.WebDriver;
@@ -17,8 +18,14 @@ public abstract class AbstractSteps {
 		try {
 			Method foundMethod = getMethodByName(objectClass, lookupName);
 			return ((WebElement)foundMethod.invoke(null,driver));
-		} catch (Exception e) {
-			throw new Exception(e);
+		}
+		catch (InvocationTargetException ite) {
+			// This is an error situation, occurs when tooltip text balloon is absent 
+			return null;
+		}
+		catch (Exception f) {
+			f.printStackTrace();
+			throw new Exception(f);
 		}
 	}
 	

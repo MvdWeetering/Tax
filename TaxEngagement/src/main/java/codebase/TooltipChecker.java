@@ -4,6 +4,7 @@ import pageObjects.*;
 import java.util.ArrayList;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class TooltipChecker extends AbstractSteps {
@@ -22,18 +23,25 @@ public class TooltipChecker extends AbstractSteps {
 
 		invoke(SpecificatieAandeelhoudersObjecten.class, Naamobject).click();
 
-		
-		
-		try {
-			invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject);
-		} catch (NoSuchElementException e) {
-			System.out.println("leeg");
-			
-		}
-		
 		// checker
 		checker = codebase.ValidatieChecker.CheckValue(invoke(SpecificatieAandeelhoudersObjecten.class, Naamobject).getAttribute("value"), lengte, leegJaNee);
 
+		try {
+			WebElement elem = invoke(SpecificatieAandeelhoudersTooltipObjects.class, "Straatnaam");
+			// Null indicates: expected tooltip text balloon is missing
+			if (elem == null) {
+				ValidatieResultaat.add("Tooltip ontbreekt ....");
+			} else {
+			
+				
+				
+				
+			}
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			// TODO Auto-generated catch block
+			System.out.println("no element found");
+		}
 		
 		
 		
