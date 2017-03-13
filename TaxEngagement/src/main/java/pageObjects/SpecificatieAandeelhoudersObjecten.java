@@ -26,6 +26,7 @@ public class SpecificatieAandeelhoudersObjecten {
 	return element;
 	
 	}
+	@FieldName(name = "BSN")
 	public static WebElement BSN(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsc"));
 		return element;
@@ -35,39 +36,50 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzsg"));
 		return element;
 	}
+	@FieldName(name = "Huisnummer")
 	public static WebElement Huisnummer(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsi"));
 		return element;
 	}
+	@FieldName(name = "Huisnummer")
 	public static WebElement Postcode(WebDriver driver){
 		element = driver.findElement(By.id("idCWNLAandeelhouderPostcode"));
 		return element;
 	}
+	
+	@FieldName(name = "HuisnrToev")
 	public static WebElement HuisnrToev(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsj"));
 		return element;
 	}
+	
+	@FieldName(name = "Woonplaats")
 	public static WebElement Woonplaats(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsk"));
 		return element;
 	}
+	@FieldName(name = "Land")
 	public static WebElement Land(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsm"));
 		return element;
 	}
+	
 	@FieldName(name = "NominalewaardeAandelen")
 	public static WebElement NominalewaardeAandelen(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzso"));
 		return element;
 	}
+	@FieldName(name = "NominalewaardePreferente")
 	public static WebElement NominalewaardePreferente(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsq"));
 		return element;
 	}
+	@FieldName(name = "NominalewaardePrioriteits")
 	public static WebElement NominalewaardePrioriteits(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzss"));
 		return element;
 	}
+	@FieldName(name = "PercentageNominaal")
 	public static WebElement PercentageNominaal(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsu"));
 		return element;

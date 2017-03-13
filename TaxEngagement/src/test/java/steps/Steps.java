@@ -310,337 +310,72 @@ public class Steps extends AbstractSteps {
 		ArrayList<String> checker = new ArrayList<String>();
 		
 		// naam aandeelhouders
-		WebElement NaamAandeelhouder = SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver);
-		action.moveToElement(NaamAandeelhouder).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).getAttribute("value"), 69,
-				true);
 		
-		if (!checker.isEmpty()) {
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.NaamAandeelhouder(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal 69 karakters bevatten")) {
-						ValidatieResultaat.add("Tooltip Naam aandeelhouder onjuist: te veel karakters");
-					}
-				}
-			}
-		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NaamAandeelhouder", 69, true));
 				
 		// BSN
 		
 			
 		// Straatnaam
 		
-		String text =null;
-		Thread.sleep(1000);
-		SpecificatieAandeelhoudersObjecten.Straatnaam(driver).click();
-		Thread.sleep(1000);
-		try {
-			WebElement elem = invoke(SpecificatieAandeelhoudersTooltipObjects.class, "Straatnaam");
-			// Null indicates: expected tooltip text balloon is missing
-			if (elem == null) {
-				ValidatieResultaat.add("Tooltip ontbreekt ....");
-			} else {
-				text = elem.getText();
-				System.out.println(text);
-			}
-		} catch (NoSuchElementException e) {
-			e.printStackTrace();
-			// TODO Auto-generated catch block
-			System.out.println("no element found");
-		}
-		
-		
-		
 		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));
-		
-		
-		
-		
-		/*	Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
-		
-		// Huisnummer
-		WebElement Huisnummer = SpecificatieAandeelhoudersObjecten.Huisnummer(driver);
-		action.moveToElement(Huisnummer).build().perform();
-		Thread.sleep(1000);
-		SpecificatieAandeelhoudersObjecten.Huisnummer(driver).click();
 
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.Huisnummer(driver).getAttribute("value"), 5,
-				true);
 		
-		if (!checker.isEmpty()) {
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.Huisnummer(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal 5 karakter bevatten")) {
-						ValidatieResultaat.add("Tooltip Huisnummer onjuist: te veel karakters");
-					}
-				}
-			}
-		*/
+		//	Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Huisnummer", 24, true));
 		
-		/* postcode validatie nog niet geimplementeerd. na implementatie controleren.
+		// postcode validatie nog niet geimplementeerd. na implementatie controleren.
 		 
 		// Postcode
 		
-		WebElement Postcode = SpecificatieAandeelhoudersObjecten.Postcode(driver);
-		action.moveToElement(Postcode).build().perform();
-		Thread.sleep(1000);
-		SpecificatieAandeelhoudersObjecten.Postcode(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.Postcode(driver).getAttribute("value"), 5,
-				true);
-		
-		if (!checker.isEmpty()) {
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.Postcode(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal x karakter bevatten")) {
-						ValidatieResultaat.add("Tooltip Postcode onjuist: te veel karakters");
-					}
-				}
-			}
-		*/
-		
-		/* Huisnummer toev validatie nog niet geimplementeerd. na implementatie controleren. 		
+				
+		// Huisnummer toev validatie nog niet geimplementeerd. na implementatie controleren. 		
 		
 		// Huisnummer toev
-		WebElement HuisnrToev = SpecificatieAandeelhoudersObjecten.HuisnrToev(driver);
-		action.moveToElement(HuisnrToev).build().perform();
-		Thread.sleep(1000);
-		SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).getAttribute("value"), 5,
-				true);
 		
-		if (!checker.isEmpty()) {
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.HuisnrToev(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal x karakter bevatten")) {
-						ValidatieResultaat.add("Tooltip HuisnrToev onjuist: te veel karakters");
-					}
-				}
-			}
-		*/
 		
-		/*	Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
+		// Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 		// Woonplaats
 		
-		WebElement Woonplaats = SpecificatieAandeelhoudersObjecten.Woonplaats(driver);
-		action.moveToElement(Woonplaats).build().perform();
-		Thread.sleep(1000);
-		SpecificatieAandeelhoudersObjecten.Woonplaats(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.Woonplaats(driver).getAttribute("value"), 5,
-				true);
-		
-		if (!checker.isEmpty()) {
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.Woonplaats(driver)
-							.getText().contains("[Aantal tekens] Dit veld mag maximaal 5 karakter bevatten")) {
-						ValidatieResultaat.add("Tooltip Woonplaats onjuist: te veel karakters");
-					}
-				}
-			}
-		*/
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Woonplaats", 20, false));
 		
 		// nominale waarde aandelen
 
-		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardeAandelen", 20, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardeAandelen", 20, false));
 		
-		
-		
-		/*
-		WebElement NominalewaardeAandelen = SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver);
-		action.moveToElement(NominalewaardeAandelen).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).getAttribute("value"), 20,
-				true);
-		if (!checker.isEmpty()) {
-			
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.NominalewaardeAandelen(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat.add("Tooltip Nominale waarde aandelen  onjuist: te veel karakters");
-					}
-				}
-			}
-		*/
 				
 		// Nominale waarde preferente aandelen einde boekjaar 
 		
-		WebElement NominalewaardePreferente = SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver);
-		action.moveToElement(NominalewaardePreferente).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).getAttribute("value"), 20,
-				true);
-		if (!checker.isEmpty()) {
-			
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.NominalewaardePreferente(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat.add("Tooltip Nominale waarde preferente aandelen einde boekjaar onjuist: te veel karakters");
-					}
-				}
-			}
-	
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePreferente", 20, false));
+		
+		
 		// Nominale waarde prioriteitsaandelen einde boekjaar 
 		
-		WebElement NominalewaardePrioriteits = SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver);
-		action.moveToElement(NominalewaardePrioriteits).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).getAttribute("value"), 20,
-				true);
-		if (!checker.isEmpty()) {
-			
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.NominalewaardePrioriteits(driver)
-							.getText().equals("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat.add("Tooltip Nominale waarde prioriteitsaandelen einde boekjaar onjuist: te veel karakters");
-					}
-				}
-			}	
-			
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePrioriteits", 20, false));
+		
+		
 		// Percentage nominaal geplaatst kapitaal 
-		
-		
+				
 		
 		// Vordering belastingplichtige op aandeelhouder
 		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("VorderingBelastingplichtige", 20, false));
 		
-		/*
-		WebElement VorderingBelastingplichtige = SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver);
-		action.moveToElement(VorderingBelastingplichtige).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).click();
-
-		// checker
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).getAttribute("value"), 20,
-				false);
-		if (!checker.isEmpty()) {
-			if (checker.contains("Negatief")) {
-				if (!SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver)
-						.getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-					ValidatieResultaat.add("Tooltip Vordering belastingplichtige op aandeelhouder onjuist: Negatief getal");
-				}
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.VorderingbelastingplichtigeOpaandeelhouder(driver)
-							.getText().contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat.add("Tooltip Vordering belastingplichtige op aandeelhouder onjuist: te veel karakters");
-					}
-				}
-			}
-		}
-		 */
-
 		// Schuld belastingplichtige aan aandeelhouder
-		WebElement SchuldBelastingplichtige = SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver);
-		action.moveToElement(SchuldBelastingplichtige).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).click();
-
-		// checkers
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).getAttribute("value"), 20, false);
-
-		if (!checker.isEmpty()) {
-			if (checker.contains("Negatief")) {
-				if (!SpecificatieAandeelhoudersTooltipObjects.SchuldBelastingplichtige(driver).getText()
-						.contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-					ValidatieResultaat
-							.add("Tooltip Schuld belastingplichtige aan aandeelhouder onjuist: Negatief getal");
-				}
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.SchuldBelastingplichtige(driver)
-							.getText().contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat
-								.add("Tooltip Schuld belastingplichtige aan aandeelhouder onjuist: te veel karakters");
-					}
-				}
-			}
-		}
-
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("SchuldBelastingplichtige", 20, false));
+		
 		// In het boekjaar ontvangen rente van de aandeelhouder
-		WebElement BoekjaarOntvangenRente = SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver);
-		action.moveToElement(BoekjaarOntvangenRente).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).click();
-
-		// checkers
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).getAttribute("value"), 20, false);
-
-		if (!checker.isEmpty()) {
-			if (checker.contains("Negatief")) {
-				if (!SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(driver).getText()
-						.contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-					ValidatieResultaat.add(
-							"Tooltip In het boekjaar ontvangen rente van de aandeelhouder onjuist: Negatief getal");
-				}
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.BoekjaarOntvangenRente(driver).getText()
-							.contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat.add(
-								"Tooltip In het boekjaar ontvangen rente van de aandeelhouder onjuist: te veel karakters");
-					}
-				}
-			}
-		}
-
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BoekjaarOntvangenRente", 20, false));
+		
+		
 		// boekjaar betaalde rente
-		WebElement BoekjaarBetaaldeRente = SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver);
-		action.moveToElement(BoekjaarBetaaldeRente).build().perform();
-		Thread.sleep(800);
-		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).click();
-
-		// checkers
-		checker = codebase.ValidatieChecker.CheckValue(
-				SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).getAttribute("value"), 20, false);
-
-		if (!checker.isEmpty()) {
-			if (checker.contains("Negatief")) {
-				if (!SpecificatieAandeelhoudersTooltipObjects.BoekjaarBetaaldeRente(driver).getText()
-						.contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-					ValidatieResultaat
-							.add("Tooltip In het boekjaar betaalde rente van de aandeelhouder onjuist: Negatief getal");
-				}
-				if (checker.contains("Te lang")) {
-					if (!SpecificatieAandeelhoudersTooltipObjects.BoekjaarBetaaldeRente(driver).getText()
-							.contains("[Aantal tekens] Dit veld mag maximaal 20 karakters bevatten")) {
-						ValidatieResultaat.add(
-								"Tooltip In het boekjaar betaalde rente van de aandeelhouder onjuist: te veel karakters");
-					}
-				}
-			}
-		}
-
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BoekjaarBetaaldeRente", 20, false));
+		
+		
 		// als validatieresultaat niet leeg is dan melding genereren.
-		System.out.println(ValidatieResultaat);
+		System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());
 
 	}
