@@ -10,6 +10,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -310,7 +313,6 @@ public class Steps extends AbstractSteps {
 		ArrayList<String> checker = new ArrayList<String>();
 		
 		// naam aandeelhouders
-		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NaamAandeelhouder", 69, true));
 				
 		// BSN
@@ -321,8 +323,7 @@ public class Steps extends AbstractSteps {
 		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));
 
 		
-		//	Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
-		
+		// Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Huisnummer", 24, true));
 		
 		// postcode validatie nog niet geimplementeerd. na implementatie controleren.
@@ -337,21 +338,17 @@ public class Steps extends AbstractSteps {
 		
 		// Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 		// Woonplaats
-		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Woonplaats", 20, false));
 		
 		// nominale waarde aandelen
-
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardeAandelen", 20, false));
 		
 				
 		// Nominale waarde preferente aandelen einde boekjaar 
-		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePreferente", 20, false));
 		
 		
 		// Nominale waarde prioriteitsaandelen einde boekjaar 
-		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePrioriteits", 20, false));
 		
 		
@@ -361,19 +358,16 @@ public class Steps extends AbstractSteps {
 		// Vordering belastingplichtige op aandeelhouder
 		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("VorderingBelastingplichtige", 20, false));
-		
 		// Schuld belastingplichtige aan aandeelhouder
 		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("SchuldBelastingplichtige", 20, false));
-		
+
 		// In het boekjaar ontvangen rente van de aandeelhouder
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BoekjaarOntvangenRente", 20, false));
-		
-		
+				
 		// boekjaar betaalde rente
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BoekjaarBetaaldeRente", 20, false));
-		
-		
+				
 		// als validatieresultaat niet leeg is dan melding genereren.
 		System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());
@@ -453,5 +447,6 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver)
 				.sendKeys("Toelichting meer dan 99 deelnemingen");
 	}
+	
 
 }

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = {"steps"},
         features = "classpath:featurefiles/",
         tags = {"@Specificatie_Aandeelhouders"}
-        
+       
 )
 public class TestRunner {
 
