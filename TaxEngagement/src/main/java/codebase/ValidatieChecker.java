@@ -2,8 +2,6 @@ package codebase;
 
 import java.util.ArrayList;
 
-import pageObjects.SpecificatieAandeelhoudersObjecten;
-
 public class ValidatieChecker {
 
 	public static ArrayList<String> CheckValue(String inputwaarde, int Max, boolean NegAllowed) {

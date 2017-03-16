@@ -6,13 +6,9 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -22,7 +18,6 @@ import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
-import pageObjects.SpecificatieAandeelhoudersTooltipObjects;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ValidatieObjecten;
 
