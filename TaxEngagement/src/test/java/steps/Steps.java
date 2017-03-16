@@ -203,13 +203,33 @@ public class Steps extends AbstractSteps {
 		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys("0612");
 	}
 
+	@Then("^i can validate the error messages for the Algemene gegevens form$")
+	public void i_can_validate_the_error_messages_for_the_Algemene_gegevens_form() throws Throwable {
+	   
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("RSIN", 9, true));
+		
+		
+		System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		assertTrue(ValidatieResultaat.isEmpty());	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	@When("^open the form Specificatie Aandeelhouders$")
 	public void open_the_form_Specificatie_Aandeelhouders() throws Throwable {
 		Thread.sleep(1000);
 		NavigerenObjecten.NavigerenSpecificatieAandeelhouders(driver).click();
 
 	}
-
+	
+	
 	@Then("^i can fill out the form Specificatie Aandeelhouders with config (\\d+)$")
 	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders_with_config(int configId) throws Throwable {
 
@@ -303,52 +323,46 @@ public class Steps extends AbstractSteps {
 	public void i_can_validate_the_error_messages_for_the_Specificatie_Aandeelhouders_form() throws Throwable {
 
 		Thread.sleep(1000);
-		Actions action = new Actions(driver);
-		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-		ArrayList<String> checker = new ArrayList<String>();
 		
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+
 		// naam aandeelhouders
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NaamAandeelhouder", 69, true));
 				
 		// BSN
-		
-			
+					
 		// Straatnaam
 		
-		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));
-
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));
 		
 		// Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Huisnummer", 24, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Huisnummer", 5, true));
 		
 		// postcode validatie nog niet geimplementeerd. na implementatie controleren.
 		 
 		// Postcode
-		
 				
 		// Huisnummer toev validatie nog niet geimplementeerd. na implementatie controleren. 		
-		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("HuisnrToev", 5, true));
 		// Huisnummer toev
-		
 		
 		// Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 		// Woonplaats
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Woonplaats", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Woonplaats", 20, true));
 		
 		// nominale waarde aandelen
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardeAandelen", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardeAandelen", 20, true));
 		
 				
 		// Nominale waarde preferente aandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePreferente", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePreferente", 20, true));
 		
 		
 		// Nominale waarde prioriteitsaandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePrioriteits", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePrioriteits", 20, true));
 		
 		
 		// Percentage nominaal geplaatst kapitaal 
-				
 		
 		// Vordering belastingplichtige op aandeelhouder
 		
@@ -362,7 +376,14 @@ public class Steps extends AbstractSteps {
 				
 		// boekjaar betaalde rente
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BoekjaarBetaaldeRente", 20, false));
-				
+		
+		//informele kapitaalstorting
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BedragInformeleKapitaalStorting", 20, false));
+		
+		//huisnummer toevoeging
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("MoederMaatschappijHuisnummer", 4, true));	
+		
+		
 		// als validatieresultaat niet leeg is dan melding genereren.
 		System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());

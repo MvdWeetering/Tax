@@ -82,6 +82,14 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tzss-popover"));
 		return element;
 	}
-	
-
+	@FieldName(name = "BedragInformeleKapitaalStorting")
+	public static WebElement BedragInformeleKapitaalStorting (WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h0-popover"));
+		return element;
+	}
+	@FieldName(name = "MoederMaatschappijHuisnummer")
+	public static WebElement MoederMaatschappijHuisnummer (WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h4-popover"));
+		return element;
+	}
 }

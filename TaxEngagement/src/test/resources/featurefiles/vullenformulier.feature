@@ -10,9 +10,10 @@ Feature: vullen formulieren
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 15-02-2017 1015"
+    And open the Project "dossier 1-3-2017 1029"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens
+    Then i can validate the error messages for the Algemene gegevens form
 
   @vullen_formulier @Algemene_vragen
   Scenario: vullen formulier Algemene Vragen

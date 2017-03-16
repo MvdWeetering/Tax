@@ -12,7 +12,7 @@ public class AlgemeneGegevensObjecten {
 		element = driver.findElement(By.id("idxdt9tz5o"));
 		return element;
 	}
-	
+	@FieldName(name = "RSIN")
 	public static WebElement RSIN(WebDriver driver){
 		element = driver.findElement(By.id("idcontextIdentifier"));
 		return element;
