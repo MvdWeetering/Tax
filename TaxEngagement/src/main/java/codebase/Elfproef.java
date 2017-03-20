@@ -1,4 +1,8 @@
 package codebase;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Elfproef {
    
 	/** Validate BSN according to http://nl.wikipedia.org/wiki/Burgerservicenummer */
@@ -15,16 +19,4 @@ public class Elfproef {
 
         return sum != 0 && sum % 11 == 0;
     }
-    
-    
-    public static void main(String[] args) {
-		
-    	if (isValidBSN(384049497) == true) {
-    			System.out.println("true");
-    	}
-    	else {
-    		System.out.println("false");
-    	}
-	}
-   
 }

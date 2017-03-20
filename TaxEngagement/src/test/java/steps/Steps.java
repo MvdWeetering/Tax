@@ -1,14 +1,10 @@
 package steps;
 
 import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -208,7 +204,7 @@ public class Steps extends AbstractSteps {
 	   
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("RSIN", 9, true));
+		
 		
 		
 		System.out.println("Validatie resultaat: " + ValidatieResultaat);
@@ -327,61 +323,61 @@ public class Steps extends AbstractSteps {
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 
 		// naam aandeelhouders
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NaamAandeelhouder", 69, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 69, true, false));
 				
 		// BSN
 					
 		// Straatnaam
 		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Straatnaam", 24, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam",1, 24, true, false));
 		
 		// Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Huisnummer", 5, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5, true, false));
 		
 		// postcode validatie nog niet geimplementeerd. na implementatie controleren.
 		 
 		// Postcode
 				
 		// Huisnummer toev validatie nog niet geimplementeerd. na implementatie controleren. 		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("HuisnrToev", 5, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnrToev",1, 5, true, false));
 		// Huisnummer toev
 		
 		// Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 		// Woonplaats
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("Woonplaats", 20, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Woonplaats", 1, 20, true, false));
 		
 		// nominale waarde aandelen
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardeAandelen", 20, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, true, false));
 		
 				
 		// Nominale waarde preferente aandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePreferente", 20, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente",1 , 20, true, false));
 		
 		
 		// Nominale waarde prioriteitsaandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("NominalewaardePrioriteits", 20, true));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePrioriteits", 1, 20, true, false));
 		
 		
 		// Percentage nominaal geplaatst kapitaal 
 		
 		// Vordering belastingplichtige op aandeelhouder
 		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("VorderingBelastingplichtige", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("VorderingBelastingplichtige", 1, 20, false, false));
 		// Schuld belastingplichtige aan aandeelhouder
 		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("SchuldBelastingplichtige", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("SchuldBelastingplichtige",1 , 20, false, false));
 
 		// In het boekjaar ontvangen rente van de aandeelhouder
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BoekjaarOntvangenRente", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarOntvangenRente",1 , 20, false, false));
 				
 		// boekjaar betaalde rente
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BoekjaarBetaaldeRente", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarBetaaldeRente",1 , 20, false, false));
 		
 		//informele kapitaalstorting
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("BedragInformeleKapitaalStorting", 20, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BedragInformeleKapitaalStorting",1 , 20, false, false));
 		
 		//huisnummer toevoeging
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltip("MoederMaatschappijHuisnummer", 4, true));	
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 4, true, false));	
 		
 		
 		// als validatieresultaat niet leeg is dan melding genereren.

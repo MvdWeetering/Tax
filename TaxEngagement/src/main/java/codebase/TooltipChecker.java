@@ -15,7 +15,7 @@ public class TooltipChecker extends AbstractSteps {
 
 	static ArrayList<String> checker = new ArrayList<String>();
 
-	public static ArrayList<String> CheckTooltip(String Naamobject, int lengte, boolean leegJaNee) throws Exception {
+	public static ArrayList<String> CheckTooltipSpecAandeelhouders(String Naamobject, int Minlengte, int Maxlengte, boolean leegJaNee, boolean BSNJa) throws Exception {
 
 		TooltipResult.clear();
 		Thread.sleep(600);
@@ -25,26 +25,31 @@ public class TooltipChecker extends AbstractSteps {
 		invoke(SpecificatieAandeelhoudersObjecten.class, Naamobject).click();
 
 		// checker
-		checker = codebase.ValidatieChecker.CheckValue(invoke(SpecificatieAandeelhoudersObjecten.class, Naamobject).getAttribute("value"), lengte, leegJaNee);
+		checker = codebase.ValidatieChecker.CheckValue(invoke(SpecificatieAandeelhoudersObjecten.class, Naamobject).getAttribute("value"), Minlengte, Maxlengte, leegJaNee, BSNJa);
 
 		try {
 			WebElement elem = invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject);
 			// Null indicates: expected tooltip text balloon is missing
 			if (elem == null) {
 				TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
-				
+
 			} else {
 				if (!checker.isEmpty()) {
 					if (checker.contains("Te lang")) {
-						if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject).getText().contains("[Aantal tekens] Dit veld mag maximaal " + lengte + " karakters bevatten")) {
-							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld mag maximaal " + lengte + " karakters bevatten\" \r\n");
+						if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject).getText().contains("[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
 						}
-						if (checker.contains("Negatief")) {
-							if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+					if (checker.contains("Negatief")) {
+						if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
 							}
 						}
 					}
+					if (checker.contains("Te Kort")) {
+						if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject).getText().contains("[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+							}
+						}
 				}
 						
 			}
@@ -53,8 +58,54 @@ public class TooltipChecker extends AbstractSteps {
 			// TODO Auto-generated catch block
 			System.out.println("no element found");
 		}
-		
-		
 		return TooltipResult;
 	}
+	
+	
+	public static ArrayList<String> CheckTooltipAlgemeneGegevens(String Naamobject, int Minlengte, int Maxlengte, boolean leegJaNee, boolean BSNJa) throws Exception {
+
+		TooltipResult.clear();
+		Thread.sleep(600);
+		// mous-over naar naamobject
+		action.moveToElement(invoke(AlgemeneGegevensObjecten.class, Naamobject)).build().perform();
+	
+		invoke(AlgemeneGegevensObjecten.class, Naamobject).click();
+
+		// checker
+		checker = codebase.ValidatieChecker.CheckValue(invoke(AlgemeneGegevensObjecten.class, Naamobject).getAttribute("value"), Minlengte, Maxlengte, leegJaNee, BSNJa);
+		System.out.println(checker);
+		try {
+			WebElement elem = invoke(AlgemeneGegevensTooltipObjects.class, Naamobject);
+			// Null indicates: expected tooltip text balloon is missing
+			if (elem == null) {
+				TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
+				
+			} else {
+				if (!checker.isEmpty()) {
+					if (checker.contains("Te lang")) {
+						if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject).getText().contains("[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+						}
+					if (checker.contains("Negatief")) {
+						if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+							}
+						}
+					}
+					if (checker.contains("Te Kort")) {
+						if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject).getText().contains("[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+							}
+						}
+				}
+			}
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			// TODO Auto-generated catch block
+			System.out.println("no element found");
+		}
+		return TooltipResult;
+	}
+	
+	
 }
