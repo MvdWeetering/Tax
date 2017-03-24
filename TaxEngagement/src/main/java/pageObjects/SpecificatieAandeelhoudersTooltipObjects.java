@@ -92,4 +92,13 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idn26n68h4-popover"));
 		return element;
 	}
+	@FieldName(name = "BSN")
+	public static WebElement BSN (WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzsc-popover"));
+		return element;
+	}
 }
+
+
+
+

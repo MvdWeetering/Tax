@@ -204,9 +204,25 @@ public class Steps extends AbstractSteps {
 	   
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
+		// RSIN
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, true, true));
+		
+		// Beconnummer
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 9, true, true));
 		
 		
+		// Voorletters contactpersoon
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("VoorlettersContact", 1, 10, false, false));
+		/*
+		// Tussenvoegsel contactpersoon
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TussenvoegselContact", 1, 10, false, false));
 		
+		// Voorletters ondertekenaar
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("VoorlettersOndertekenaar", 1, 10, false, false));
+		
+		// Tussenvoegsel ondertekenaar
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TussenvoegselOndertekenaar", 1, 10, false, false));
+		*/
 		System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());	
 		
@@ -321,14 +337,14 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(1000);
 		
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-
+		
 		// naam aandeelhouders
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 69, true, false));
 				
 		// BSN
-					
-		// Straatnaam
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BSN", 9, 9, true, true));			
 		
+		// Straatnaam
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam",1, 24, true, false));
 		
 		// Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
@@ -374,14 +390,14 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarBetaaldeRente",1 , 20, false, false));
 		
 		//informele kapitaalstorting
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BedragInformeleKapitaalStorting",1 , 20, false, false));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BedragInformeleKapitaalStorting", 1 , 99, true, false));
 		
 		//huisnummer toevoeging
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 4, true, false));	
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 99, true, false));	
 		
 		
 		// als validatieresultaat niet leeg is dan melding genereren.
-		System.out.println("Validatie resultaat: " + ValidatieResultaat);
+	//	System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());
 
 	}
