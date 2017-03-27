@@ -40,6 +40,11 @@ public class NavigerenObjecten {
 		return element;
 	}
 	
+	public static WebElement NavigerenToelichting_Balans(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Toelichting balans"));
+		return element;
+	}
+	
 	public static WebElement ClickCloud(WebDriver driver){
 	    element = driver.findElement(By.className(("GOMEOCKDB3C")));
 		return element;

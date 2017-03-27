@@ -10,7 +10,7 @@ Feature: vullen formulieren
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 1-3-2017 1029"
+    And open the Project "dossier 27-03-2017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens
     Then i can validate the error messages for the Algemene gegevens form
@@ -20,7 +20,7 @@ Feature: vullen formulieren
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 1-3-2017 1029"
+    And open the Project "dossier 27-03-2017"
     And open the form Algemene Vragen
     Then i can fill out the form Algemene Vragen
 
@@ -29,7 +29,7 @@ Feature: vullen formulieren
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 1-3-2017 1029"
+    And open the Project "dossier 27-03-2017"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config 1
     Then i can validate the error messages for the Specificatie Aandeelhouders form
@@ -39,7 +39,7 @@ Feature: vullen formulieren
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 15-02-2017 1015"
+    And open the Project "dossier 27-03-2017"
     And open the form Specificatie Deelnemingen
     Then i can fill out the form Specificatie Deelnemingen
 
@@ -57,3 +57,13 @@ Feature: vullen formulieren
       | username                            | password | projectnaam             | Id |
       | michel.van.de.weetering@caseware.nl | Welkom01 | dossier 15-02-2017 1015 |  1 |
       | gebruiker2@caseware.nl              | Welkom01 | dossier 16-02-2017      |  1 |
+
+  @vullen_formulier @Toelichting_Balans
+  Scenario: vullen formulier Toelichting Balans
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 27-03-2017"
+    And open the form Toelichting Balans
+    Then i can fill out the form Toelichting Balans
+    
