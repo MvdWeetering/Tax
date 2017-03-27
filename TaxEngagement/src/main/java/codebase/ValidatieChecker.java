@@ -7,7 +7,7 @@ public class ValidatieChecker {
 	public static ArrayList<String> CheckValue(String inputwaarde, int Min, int Max, boolean PosHeelGetal,boolean BSNJa) {
 		ArrayList<String> Feedback = new ArrayList<String>();
 
-		if (!PosHeelGetal) {
+		if (PosHeelGetal) {
 			{
 				try {
 					Integer.parseInt(inputwaarde);

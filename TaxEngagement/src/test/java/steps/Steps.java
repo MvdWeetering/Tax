@@ -213,16 +213,33 @@ public class Steps extends AbstractSteps {
 		
 		// Voorletters contactpersoon
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("VoorlettersContact", 1, 10, false, false));
-		/*
+		
 		// Tussenvoegsel contactpersoon
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TussenvoegselContact", 1, 10, false, false));
+		
+		// Achternaam contact
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("AchternaamContact", 1, 10, false, false));
+		
+		// telefoonnummer contact
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TelefoonnummerContact", 1, 14, false, false));
 		
 		// Voorletters ondertekenaar
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("VoorlettersOndertekenaar", 1, 10, false, false));
 		
 		// Tussenvoegsel ondertekenaar
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TussenvoegselOndertekenaar", 1, 10, false, false));
-		*/
+		
+		
+		// Achternaam ondertekenaar
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("AchternaamOndertekenaar", 1, 200, false, false));
+		
+		// Functie ondertekenaar
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("FunctieOndertekenaar", 1, 35, false, false));
+		
+		// Telefoonnummer ondertekenaar
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TelefoonnummerOndertekenaar", 1, 35, false, false));		 
+		
+						
 		System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());	
 		
