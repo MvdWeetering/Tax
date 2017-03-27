@@ -20,7 +20,7 @@ public class SpecificatieAandeelHoudersXLS {
 			// Open the Excel file
 			FileInputStream fis = new FileInputStream("C:\\testdata\\SpecificatieAandeelhoudersTestdata.xlsx");
 			wb = new XSSFWorkbook(fis);
-			XSSFSheet sheet = wb.getSheet("testdata");
+			XSSFSheet sheet = wb.getSheet("Spec_aandeelh");
 			XSSFRow row = sheet.getRow(RijNummer);
 
 			String[] opsommingresultaat; 
@@ -53,27 +53,7 @@ public class SpecificatieAandeelHoudersXLS {
 		}
 		return resultaat;
 	}
-	public static String getBsn() {
-		
-		String opsommingresultaat = null;
-		
-		try {
-			// Open the Excel file
-			FileInputStream fis = new FileInputStream("C:\\testdata\\SpecificatieAandeelhoudersTestdata.xlsx");
-			wb = new XSSFWorkbook(fis);
-			XSSFSheet sheet = wb.getSheet("testdata");
-			XSSFRow row = sheet.getRow(1);
-
 			
-			opsommingresultaat= new DataFormatter().formatCellValue(row.getCell(3));		
-			fis.close();
-		} catch (IOException e) {
-			System.out.println("Test data file not found");
-		}
-		
-		return opsommingresultaat;	
-		
-	}
 	public static void main(String[] args) {
 
 		

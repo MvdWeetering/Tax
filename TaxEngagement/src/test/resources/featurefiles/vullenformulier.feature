@@ -65,5 +65,5 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 27-03-2017"
     And open the form Toelichting Balans
-    Then i can fill out the form Toelichting Balans
+    Then i can fill out the form Toelichting Balans with configId 1
     
