@@ -126,19 +126,46 @@ public class AlgemeneVragenObjecten {
 	public static WebElement vraag14_no(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzde-no"));
 		return element;
-	}	public static WebElement vraag15_yes(WebDriver driver){
+	}	
+	public static WebElement vraag15_yes(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzdh"));
 		return element;
 	}
 	public static WebElement vraag15_no(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzdh-no"));
 		return element;
-	
 	}
+	public static WebElement vraag16_yes(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68ds"));
+		return element;
+	}
+	public static WebElement vraag16_no(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68ds-no"));
+		return element;
+	}
+	
+		
+	public static WebElement Bedragmateriele(WebDriver driver){
+	element = driver.findElement(By.id("idxdt9tzdg"));
+	return element;
+		}
+	
+	public static WebElement vraag17_yes(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzdh"));
+		return element;
+	}
+	public static WebElement vraag17_no(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzdh-no"));
+		return element;
+	}
+	
+	
+	
+	
 	public static WebElement Toelichting(WebDriver driver){
 	element = driver.findElement(By.id("idxdt9tzdj"));
 	return element;
-}
+	}
 
 	
 	

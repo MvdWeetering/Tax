@@ -100,48 +100,130 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(1500);
 	}
 
-	@Then("^i can fill out the form Algemene Vragen$")
-	public void i_can_fill_out_the_form_Algemene_Vragen() throws Throwable {
+	@Then("^i can fill out the form Algemene Vragen with config (\\d+)$")
+	public void i_can_fill_out_the_form_Algemene_Vragen_with_config(int configId) throws Throwable {
 
+		String[] invuldata = codebase.AlgemeneVragenXLS.HaalData(configId);
+		
+		if (invuldata[1].equals("ja")) {
+			AlgemeneVragenObjecten.vraag1_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag1_no(driver).click();
+		}
+
+		if (invuldata[2].equals("ja")) {
+			AlgemeneVragenObjecten.vraag2_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag2_no(driver).click();
+		}
+		if (invuldata[3].equals("ja")) {
+			AlgemeneVragenObjecten.vraag3_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag3_no(driver).click();
+		}
+		if (invuldata[4].equals("ja")) {
+			AlgemeneVragenObjecten.vraag4_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag4_no(driver).click();
+		}
+		if (invuldata[5].equals("ja")) {
+			AlgemeneVragenObjecten.vraag5_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag5_no(driver).click();
+		}
+		if (invuldata[6].equals("ja")) {
+			AlgemeneVragenObjecten.vraag6_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag6_no(driver).click();
+		}
+		if (invuldata[7].equals("ja")) {
+			AlgemeneVragenObjecten.vraag7_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag7_no(driver).click();
+		}
+		if (invuldata[8].equals("ja")) {
+			AlgemeneVragenObjecten.vraag8_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag8_no(driver).click();
+		}
+
+		if (invuldata[9].equals("ja")) {
+			AlgemeneVragenObjecten.vraag9_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag9_no(driver).click();
+		}
+
+		if (invuldata[10].equals("ja")) {
+			AlgemeneVragenObjecten.vraag10_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag10_no(driver).click();
+		}
+
+		if (invuldata[11].equals("ja")) {
+			AlgemeneVragenObjecten.vraag11_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag11_no(driver).click();
+		}
+
+		if (invuldata[12].equals("ja")) {
+			AlgemeneVragenObjecten.vraag12_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag12_no(driver).click();
+		}
+
+		if (invuldata[13].equals("ja")) {
+			AlgemeneVragenObjecten.vraag13_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag13_no(driver).click();
+		}
+
+		if (invuldata[14].equals("ja")) {
+			AlgemeneVragenObjecten.vraag14_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag14_no(driver).click();
+		}
+
+		if (invuldata[15].equals("ja")) {
+			AlgemeneVragenObjecten.vraag15_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag15_no(driver).click();
+		}
+		if (invuldata[16].equals("ja")) {
+			AlgemeneVragenObjecten.vraag16_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag16_no(driver).click();
+		}
+		
+		AlgemeneVragenObjecten.Bedragmateriele(driver).clear();
+		AlgemeneVragenObjecten.Bedragmateriele(driver).sendKeys(invuldata[17]);
+		
+		if (invuldata[18].equals("ja")) {
+			AlgemeneVragenObjecten.vraag17_yes(driver).click();
+		}
+		else {
+			AlgemeneVragenObjecten.vraag17_no(driver).click();
+		}
+		
+		AlgemeneVragenObjecten.Toelichting(driver).clear();
+		AlgemeneVragenObjecten.Toelichting(driver).sendKeys(invuldata[19]);
 		
 		
-		AlgemeneVragenObjecten.vraag1_yes(driver).click();
-		AlgemeneVragenObjecten.vraag2_yes(driver).click();
-		AlgemeneVragenObjecten.vraag3_yes(driver).click();
-		AlgemeneVragenObjecten.vraag4_yes(driver).click();
-		AlgemeneVragenObjecten.vraag5_yes(driver).click();
-		AlgemeneVragenObjecten.vraag6_yes(driver).click();
-		AlgemeneVragenObjecten.vraag7_yes(driver).click();
-		AlgemeneVragenObjecten.vraag8_yes(driver).click();
-		AlgemeneVragenObjecten.vraag9_yes(driver).click();
-		AlgemeneVragenObjecten.vraag10_yes(driver).click();
-		AlgemeneVragenObjecten.vraag11_yes(driver).click();
-		AlgemeneVragenObjecten.vraag12_yes(driver).click();
-		AlgemeneVragenObjecten.vraag13_yes(driver).click();
-		AlgemeneVragenObjecten.vraag14_yes(driver).click();
-		AlgemeneVragenObjecten.vraag15_yes(driver).click();
-		AlgemeneVragenObjecten.Toelichting(driver).clear();
-		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("regel 1");
-
-		Thread.sleep(1500);
-
-		AlgemeneVragenObjecten.vraag1_no(driver).click();
-		AlgemeneVragenObjecten.vraag2_no(driver).click();
-		AlgemeneVragenObjecten.vraag3_no(driver).click();
-		AlgemeneVragenObjecten.vraag4_no(driver).click();
-		AlgemeneVragenObjecten.vraag5_no(driver).click();
-		AlgemeneVragenObjecten.vraag6_no(driver).click();
-		AlgemeneVragenObjecten.vraag7_no(driver).click();
-		AlgemeneVragenObjecten.vraag8_no(driver).click();
-		AlgemeneVragenObjecten.vraag9_no(driver).click();
-		AlgemeneVragenObjecten.vraag10_no(driver).click();
-		AlgemeneVragenObjecten.vraag11_no(driver).click();
-		AlgemeneVragenObjecten.vraag12_no(driver).click();
-		AlgemeneVragenObjecten.vraag13_no(driver).click();
-		AlgemeneVragenObjecten.vraag14_no(driver).click();
-		AlgemeneVragenObjecten.vraag15_no(driver).click();
-		AlgemeneVragenObjecten.Toelichting(driver).clear();
-		AlgemeneVragenObjecten.Toelichting(driver).sendKeys("regel 2");
 
 	}
 

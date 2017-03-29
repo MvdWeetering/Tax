@@ -22,7 +22,7 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 27-03-2017"
     And open the form Algemene Vragen
-    Then i can fill out the form Algemene Vragen
+    Then i can fill out the form Algemene Vragen with config 1
 
   @vullen_formulier @Specificatie_Aandeelhouders
   Scenario: vullen formulier Specificatie Aandeelhouders
