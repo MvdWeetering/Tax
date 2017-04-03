@@ -18,14 +18,14 @@ public class SpecificatieAandeelHoudersXLS {
 		
 		try {
 			// Open the Excel file
-			FileInputStream fis = new FileInputStream("C:\\testdata\\SpecificatieAandeelhoudersTestdata.xlsx");
+			FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
 			wb = new XSSFWorkbook(fis);
 			XSSFSheet sheet = wb.getSheet("Spec_aandeelh");
 			XSSFRow row = sheet.getRow(RijNummer);
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [18];
+			opsommingresultaat = new String [34];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -44,6 +44,22 @@ public class SpecificatieAandeelHoudersXLS {
 			opsommingresultaat[15]= new DataFormatter().formatCellValue(row.getCell(15));
 			opsommingresultaat[16]= new DataFormatter().formatCellValue(row.getCell(16));
 			opsommingresultaat[17]= new DataFormatter().formatCellValue(row.getCell(17));
+			opsommingresultaat[18]= new DataFormatter().formatCellValue(row.getCell(18));
+			opsommingresultaat[19]= new DataFormatter().formatCellValue(row.getCell(19));
+			opsommingresultaat[20]= new DataFormatter().formatCellValue(row.getCell(20));
+			opsommingresultaat[21]= new DataFormatter().formatCellValue(row.getCell(21));
+			opsommingresultaat[22]= new DataFormatter().formatCellValue(row.getCell(22));
+			opsommingresultaat[23]= new DataFormatter().formatCellValue(row.getCell(23));
+			opsommingresultaat[24]= new DataFormatter().formatCellValue(row.getCell(24));
+			opsommingresultaat[25]= new DataFormatter().formatCellValue(row.getCell(25));
+			opsommingresultaat[26]= new DataFormatter().formatCellValue(row.getCell(26));
+			opsommingresultaat[27]= new DataFormatter().formatCellValue(row.getCell(27));
+			opsommingresultaat[28]= new DataFormatter().formatCellValue(row.getCell(28));
+			opsommingresultaat[29]= new DataFormatter().formatCellValue(row.getCell(29));
+			opsommingresultaat[30]= new DataFormatter().formatCellValue(row.getCell(30));
+			opsommingresultaat[31]= new DataFormatter().formatCellValue(row.getCell(31));
+			opsommingresultaat[32]= new DataFormatter().formatCellValue(row.getCell(32));
+			opsommingresultaat[33]= new DataFormatter().formatCellValue(row.getCell(33));
 			
 			resultaat = opsommingresultaat;			
 
@@ -59,7 +75,7 @@ public class SpecificatieAandeelHoudersXLS {
 		
 		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(1);
 		
-		System.out.println(invuldata[3]);
+		System.out.println(invuldata[33]);
 		
 		}
 }

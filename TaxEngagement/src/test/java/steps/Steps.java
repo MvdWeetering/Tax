@@ -248,45 +248,54 @@ public class Steps extends AbstractSteps {
 		AlgemeneGegevensObjecten.BoekjaarBegin(driver).sendKeys(invuldata[3]);
 		AlgemeneGegevensObjecten.BoekjaarEind(driver).sendKeys(invuldata[4]);
 		
-		AlgemeneGegevensObjecten.StandpuntExplicieteUitspraak_Ja(driver).click();
+		if (invuldata[5].equals("ja")) { 
+			AlgemeneGegevensObjecten.StandpuntExplicieteUitspraak_Ja(driver).click();
+			AlgemeneGegevensObjecten.Toelichtingverzoek(driver).clear();
+			AlgemeneGegevensObjecten.Toelichtingverzoek(driver).sendKeys(invuldata[6]);
+		} 
+		else { AlgemeneGegevensObjecten.StandpuntExplicieteUitspraak_Nee(driver).click(); }
+			
+		if (invuldata[7].equals("ja")) { AlgemeneGegevensObjecten.AangifteFiscaleEenheid_Ja(driver).click(); }
+		else {AlgemeneGegevensObjecten.AangifteFiscaleEenheid_Nee(driver).click();}
 		
-		AlgemeneGegevensObjecten.Toelichtingverzoek(driver).clear();
-		AlgemeneGegevensObjecten.Toelichtingverzoek(driver).sendKeys("toelichting verzoek");
-		AlgemeneGegevensObjecten.AangifteFiscaleEenheid_Ja(driver).click();
-		AlgemeneGegevensObjecten.FunctioneleValuta_Ja(driver).click();
+		if (invuldata[8].equals("ja")) {AlgemeneGegevensObjecten.FunctioneleValuta_Ja(driver).click(); }
+		else {AlgemeneGegevensObjecten.FunctioneleValuta_Nee(driver).click();}
+		
+		
 		AlgemeneGegevensObjecten.Beconnummer(driver).clear();
-		AlgemeneGegevensObjecten.Beconnummer(driver).sendKeys("1234");
+		AlgemeneGegevensObjecten.Beconnummer(driver).sendKeys(invuldata[9]);
+		
 		AlgemeneGegevensObjecten.Clientgroep(driver).clear();
-		AlgemeneGegevensObjecten.Clientgroep(driver).sendKeys("clientgroep");
-		AlgemeneGegevensObjecten.Aanhef(driver).sendKeys("mevrouw");
+		AlgemeneGegevensObjecten.Clientgroep(driver).sendKeys(invuldata[10]);
+		AlgemeneGegevensObjecten.Aanhef(driver).sendKeys(invuldata[11]);
 		AlgemeneGegevensObjecten.VoorlettersContact(driver).clear();
-		AlgemeneGegevensObjecten.VoorlettersContact(driver).sendKeys("voorletters");
+		AlgemeneGegevensObjecten.VoorlettersContact(driver).sendKeys(invuldata[12]);
 		AlgemeneGegevensObjecten.TussenvoegselContact(driver).clear();
-		AlgemeneGegevensObjecten.TussenvoegselContact(driver).sendKeys("tussenvoegsel");
+		AlgemeneGegevensObjecten.TussenvoegselContact(driver).sendKeys(invuldata[13]);
 		AlgemeneGegevensObjecten.AchternaamContact(driver).clear();
-		AlgemeneGegevensObjecten.AchternaamContact(driver).sendKeys("achternaam");
+		AlgemeneGegevensObjecten.AchternaamContact(driver).sendKeys(invuldata[14]);
 		AlgemeneGegevensObjecten.TelefoonnummerContact(driver).clear();
-		AlgemeneGegevensObjecten.TelefoonnummerContact(driver).sendKeys("0611");
+		AlgemeneGegevensObjecten.TelefoonnummerContact(driver).sendKeys(invuldata[15]);
 		AlgemeneGegevensObjecten.Straatnaam(driver).clear();
-		AlgemeneGegevensObjecten.Straatnaam(driver).sendKeys("straatnaam");
+		AlgemeneGegevensObjecten.Straatnaam(driver).sendKeys(invuldata[16]);
 		AlgemeneGegevensObjecten.Huisnummer(driver).clear();
-		AlgemeneGegevensObjecten.Huisnummer(driver).sendKeys("huisnummer");
+		AlgemeneGegevensObjecten.Huisnummer(driver).sendKeys(invuldata[17]);
 		AlgemeneGegevensObjecten.Postcode(driver).clear();
-		AlgemeneGegevensObjecten.Postcode(driver).sendKeys("1000AA");
+		AlgemeneGegevensObjecten.Postcode(driver).sendKeys(invuldata[18]);
 		AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).clear();
-		AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).sendKeys("toev");
+		AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).sendKeys(invuldata[19]);
 		AlgemeneGegevensObjecten.Plaats(driver).clear();
-		AlgemeneGegevensObjecten.Plaats(driver).sendKeys("plaats");
+		AlgemeneGegevensObjecten.Plaats(driver).sendKeys(invuldata[20]);
 		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).sendKeys("Voorletters");
+		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).sendKeys(invuldata[21]);
 		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).sendKeys("tussenvoegsel");
+		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).sendKeys(invuldata[22]);
 		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).sendKeys("achternaam");
+		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).sendKeys(invuldata[23]);
 		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).sendKeys("functie ondertekenaar");
+		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).sendKeys(invuldata[24]);
 		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys("0612");
+		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys(invuldata[25]);
 	}
 
 	@Then("^i can validate the error messages for the Algemene gegevens form$")
@@ -394,46 +403,63 @@ public class Steps extends AbstractSteps {
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys(invuldata[17]);
 
 		
-		 // informele kapitaalstorting = nee
-		/*
+		// informele kapitaalstorting = nee
+		
+		if (invuldata[18].equals("nee")) {
+		
 		SpecificatieAandeelhoudersObjecten.informeleKapitaalstortingNee(driver).click();
-		SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys("naamrechtspersoon");
-		SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys("Straatnaamrechtspersoon");
-		SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys("huisnr");
-		SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys("toev");
-		SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys("vestigingsplaats");
-		SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys("vestigingsland");
-		*/
+			
+		SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).clear();
+		SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys(invuldata[28]);
 		
-		 // informele kapitaalstorting = ja
+		SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).clear();
+		SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys(invuldata[29]);
 		
+		SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).clear();
+		SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys(invuldata[30]);
 		
-		invoke(SpecificatieAandeelhoudersObjecten.class, "NaamAandeelhouder").sendKeys("nieuwe waarde");
+		SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).clear();
+		SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys(invuldata[31]);
 		
+		SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).clear(); 
+		SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys(invuldata[32]);
 		
+		SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).clear();
+		SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys(invuldata[33]);
+		}
+		
+		// informele kapitaalstorting = ja
+		
+		else {
+			
+						
 		SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).click();
 		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys("bedragkapitaalstorting");
+		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys(invuldata[19]);
+		
 		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).clear(); 
-		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).sendKeys("waarom storting");
+		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).sendKeys(invuldata[20]);
 		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).sendKeys("Naam moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).sendKeys(invuldata[21]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).sendKeys("Straatnaam moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).sendKeys(invuldata[22]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).sendKeys("huisnummer moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).sendKeys(invuldata[23]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).sendKeys("huisnrToev moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).sendKeys(invuldata[24]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys("vestigingsplaats moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys(invuldata[25]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).sendKeys("vestigingsland moedermaatschappij");
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).sendKeys(invuldata[26]);
 			
-		SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderJa(driver).click();
-		
-		SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).click();
-		
-		
+			if (invuldata[27].equals("ja")) {
+			SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderJa(driver).click();
+			}
+			else {
+			SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).click();
+			}
+		}
+		driver.close();
 	}
 
 	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")

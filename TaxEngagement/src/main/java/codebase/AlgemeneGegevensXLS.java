@@ -25,7 +25,7 @@ public class AlgemeneGegevensXLS {
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [24];
+			opsommingresultaat = new String [26];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -50,6 +50,8 @@ public class AlgemeneGegevensXLS {
 			opsommingresultaat[21]= new DataFormatter().formatCellValue(row.getCell(21));
 			opsommingresultaat[22]= new DataFormatter().formatCellValue(row.getCell(22));
 			opsommingresultaat[23]= new DataFormatter().formatCellValue(row.getCell(23));
+			opsommingresultaat[24]= new DataFormatter().formatCellValue(row.getCell(24));
+			opsommingresultaat[25]= new DataFormatter().formatCellValue(row.getCell(25));
 			
 			resultaat = opsommingresultaat;			
 
@@ -65,7 +67,7 @@ public class AlgemeneGegevensXLS {
 		
 		String[] invuldata = codebase.AlgemeneGegevensXLS.HaalData(1);
 		
-		System.out.println(invuldata[23]);
+		System.out.println(invuldata[18]);
 		
 		}
 }
