@@ -10,10 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class TooltipChecker extends AbstractSteps {
 
-	
-
 	static ArrayList<String> TooltipResult = new ArrayList<String>();
-
 	static ArrayList<String> checker = new ArrayList<String>();
 
 	public static ArrayList<String> CheckTooltipSpecAandeelhouders(String Naamobject, int Minlengte, int Maxlengte, boolean PosHeelGetal, boolean BSNJa, WebDriver driver) throws Exception {

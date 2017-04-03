@@ -51,7 +51,8 @@ Feature: vullen formulieren
     And open the Project "dossier 27-03-2017"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config <Id>
-
+		Then i can validate the error messages for the Specificatie Aandeelhouders form
+		
     Examples: 
       | Id |
       |  1 |

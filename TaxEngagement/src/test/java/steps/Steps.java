@@ -462,7 +462,7 @@ public class Steps extends AbstractSteps {
 			SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).click();
 			}
 		}
-		driver.quit();
+		
 	}
 
 	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")
@@ -471,42 +471,45 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(1000);
 		
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-		
+		ValidatieResultaat.clear();
+	
 		// naam aandeelhouders
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 69, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 69, false, false, driver));
 				
 		// BSN
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BSN", 9, 9, true, true, driver));			
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BSN", 9, 9, false, true, driver));			
 		
-		// Straatnaam
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam",1, 24, true, false, driver));
+		if (SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon_nee(driver).isSelected()) {
+			// Straatnaam
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam",1, 24, false, false, driver));
+			
+			// Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5, false, false, driver));
+			
+			// postcode validatie nog niet geimplementeerd. na implementatie controleren.
+			 
+			// Postcode
+					
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Postcode", 1, 6, false, false, driver));
+			
+			// Huisnummer toev validatie nog niet geimplementeerd. na implementatie controleren. 		
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnrToev",1, 5, false, false, driver));
+			// Huisnummer toev
+			
+			// Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
+			// Woonplaats
+			
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Woonplaats", 1, 20, false, false, driver));
 		
-		// Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5, true, false, driver));
-		
-		// postcode validatie nog niet geimplementeerd. na implementatie controleren.
-		 
-		// Postcode
-				
-		// Huisnummer toev validatie nog niet geimplementeerd. na implementatie controleren. 		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnrToev",1, 5, true, false, driver));
-		// Huisnummer toev
-		
-		// Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
-		// Woonplaats
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Woonplaats", 1, 20, true, false, driver));
-		
+		}
 		// nominale waarde aandelen
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, true, false, driver));
-		
-				
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, false, false, driver));
+						
 		// Nominale waarde preferente aandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente",1 , 20, true, false, driver));
-		
-		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente",1 , 20, false, false, driver));
+				
 		// Nominale waarde prioriteitsaandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePrioriteits", 1, 20, true, false, driver));
-		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePrioriteits", 1, 20, false, false, driver));
 		
 		// Percentage nominaal geplaatst kapitaal 
 		
@@ -523,15 +526,23 @@ public class Steps extends AbstractSteps {
 		// boekjaar betaalde rente
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarBetaaldeRente",1 , 20, false, false, driver));
 		
+		
+		if (SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).isSelected()) {
 		//informele kapitaalstorting
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BedragInformeleKapitaalStorting", 1 , 99, true, false, driver));
 		
+		//moeder maatschappij huisnummer
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 99, true, false, driver));
+		}
+				
+		if (SpecificatieAandeelhoudersObjecten.informeleKapitaalstortingNee(driver).isSelected()) {
 		//huisnummer toevoeging
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 99, true, false, driver));	
+		}
 		
 		
 		// als validatieresultaat niet leeg is dan melding genereren.
-	//	System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 		
 	}

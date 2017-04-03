@@ -41,7 +41,7 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzsi"));
 		return element;
 	}
-	@FieldName(name = "Huisnummer")
+	@FieldName(name = "Postcode")
 	public static WebElement Postcode(WebDriver driver){
 		element = driver.findElement(By.id("idCWNLAandeelhouderPostcode"));
 		return element;

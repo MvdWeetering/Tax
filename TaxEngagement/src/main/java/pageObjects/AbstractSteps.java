@@ -6,8 +6,6 @@ import java.lang.reflect.Method;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import codebase.Inloggen;
-
 public abstract class AbstractSteps {
 	
 	//invoke(SpecificatieAandeelhoudersObjecten.class, "NaamAandeelhouder").sendKeys("nieuwe waarde");
