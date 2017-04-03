@@ -12,9 +12,10 @@ public abstract class AbstractSteps {
 	
 	//invoke(SpecificatieAandeelhoudersObjecten.class, "NaamAandeelhouder").sendKeys("nieuwe waarde");
 	
-	protected static WebDriver driver = Inloggen.GetDriver();
+	
+	//protected static WebDriver driver = Inloggen.GetDriver();
 
-	public static WebElement invoke(@SuppressWarnings("rawtypes") Class objectClass,String lookupName) throws Exception{
+	public static WebElement invoke(@SuppressWarnings("rawtypes") Class objectClass,String lookupName, WebDriver driver) throws Exception{
 		try {
 			Method foundMethod = getMethodByName(objectClass, lookupName);
 			return ((WebElement)foundMethod.invoke(null,driver));
