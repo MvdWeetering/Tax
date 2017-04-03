@@ -234,15 +234,22 @@ public class Steps extends AbstractSteps {
 
 	}
 
-	@Then("^i can fill out the form Algemene Gegevens$")
-	public void i_can_fill_out_the_form_Algemene_Gegevens() throws Throwable {
+	@Then("^i can fill out the form Algemene Gegevens with config (\\d+)$")
+	public void i_can_fill_out_the_form_Algemene_Gegevens_with_config(int configId) throws Throwable {
+		
+		String[] invuldata = codebase.AlgemeneGegevensXLS.HaalData(configId);
+		
+		
+		
 		AlgemeneGegevensObjecten.HandelsnaamOnderneming(driver).clear();
-		AlgemeneGegevensObjecten.HandelsnaamOnderneming(driver).sendKeys("Handelsnaam onderneming");
+		AlgemeneGegevensObjecten.HandelsnaamOnderneming(driver).sendKeys(invuldata[1]);
 		AlgemeneGegevensObjecten.RSIN(driver).clear();
-		AlgemeneGegevensObjecten.RSIN(driver).sendKeys("RSIN");
-		AlgemeneGegevensObjecten.BoekjaarBegin(driver).sendKeys("01-01-2016");
-		AlgemeneGegevensObjecten.BoekjaarEind(driver).sendKeys("31-12-2016");
+		AlgemeneGegevensObjecten.RSIN(driver).sendKeys(invuldata[2]);
+		AlgemeneGegevensObjecten.BoekjaarBegin(driver).sendKeys(invuldata[3]);
+		AlgemeneGegevensObjecten.BoekjaarEind(driver).sendKeys(invuldata[4]);
+		
 		AlgemeneGegevensObjecten.StandpuntExplicieteUitspraak_Ja(driver).click();
+		
 		AlgemeneGegevensObjecten.Toelichtingverzoek(driver).clear();
 		AlgemeneGegevensObjecten.Toelichtingverzoek(driver).sendKeys("toelichting verzoek");
 		AlgemeneGegevensObjecten.AangifteFiscaleEenheid_Ja(driver).click();
