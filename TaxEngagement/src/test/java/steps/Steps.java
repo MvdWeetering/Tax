@@ -41,9 +41,9 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 		LoginObjecten.buttonInloggen(driver).click();
 		Thread.sleep(2000);
-		WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
-		String User = (HuidigeUser.getText());
-		assertTrue(User.equals("MW"));
+		//WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
+		//String User = (HuidigeUser.getText());
+		//assertTrue(User.equals("MW"));
 	}
 
 	@When("^Select the Tax engagement module$")
@@ -226,7 +226,7 @@ public class Steps extends AbstractSteps {
 		AlgemeneVragenObjecten.Toelichting(driver).clear();
 		AlgemeneVragenObjecten.Toelichting(driver).sendKeys(invuldata[19]);
 		
-		
+		driver.quit();
 
 	}
 
@@ -343,14 +343,11 @@ public class Steps extends AbstractSteps {
 		
 					
 		System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		driver.quit();
+		
 		assertTrue(ValidatieResultaat.isEmpty());	
 		
 	}
-	
-	
-	
-	
-	
 	
 	
 	@When("^open the form Specificatie Aandeelhouders$")
@@ -621,6 +618,9 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
 		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver)
 				.sendKeys("Toelichting meer dan 99 deelnemingen");
+		
+		driver.quit();
+		
 	}
 	
 	@When("^open the form Toelichting Balans$")
@@ -774,7 +774,8 @@ public class Steps extends AbstractSteps {
 		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(driver).clear();
 		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(driver).sendKeys(invuldata[39]);
 		
-				
+		driver.quit();
+		
 	}
 
 }
