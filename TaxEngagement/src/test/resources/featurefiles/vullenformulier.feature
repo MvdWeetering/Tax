@@ -69,21 +69,7 @@ Feature: vullen formulieren
     And open the form Specificatie Deelnemingen
     Then i can fill out the form Specificatie Deelnemingen
 
-  @vullen_formulier @Specificatie_Aandeelhouders_params
-  Scenario Outline: vullen formulier Specificatie Aandeelhouders met parameters
-    Given I want to login
-    When I type username "<username>" and password "<password>"
-    And Select the Tax engagement module
-    And open the Project "<projectnaam>"
-    And open the form Specificatie Aandeelhouders
-    Then i can fill out the form Specificatie Aandeelhouders with config <Id>
-    Then i can validate the error messages for the Specificatie Aandeelhouders form
-
-    Examples: 
-      | username                            | password | projectnaam             | Id |
-      | michel.van.de.weetering@caseware.nl | Welkom01 | dossier 15-02-2017 1015 |  1 |
-      | gebruiker2@caseware.nl              | Welkom01 | dossier 16-02-2017      |  1 |
-
+ 
   @vullen_formulier @Toelichting_Balans
   Scenario: vullen formulier Toelichting Balans
     Given I want to login
