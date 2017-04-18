@@ -8,4 +8,4 @@ Feature: Inloggen Tax
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-   
+    Then I am succesfully logged into the Tax engagement module
