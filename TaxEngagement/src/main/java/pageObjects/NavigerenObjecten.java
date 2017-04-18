@@ -17,7 +17,11 @@ public class NavigerenObjecten {
 		return element;
 	    */
 		
-		element =  driver.findElement(By.xpath("/html/body/div[@class='GOMEOCKDICD']/div[@class='GOMEOCKDECD speechBubbleWidget GOMEOCKDHCD']/div/div[@class='GOMEOCKDEJD']/div[@class='GOMEOCKDDJD'][1]/div[@class='GOMEOCKDCJD'][11]/a[@class='gwt-Anchor']/div[@class='gwt-Label']"));
+		//element =  driver.findElement(By.xpath("/html/body/div[@class='GOMEOCKDICD']/div[@class='GOMEOCKDECD speechBubbleWidget GOMEOCKDHCD']/div/div[@class='GOMEOCKDEJD']/div[@class='GOMEOCKDDJD'][1]/div[@class='GOMEOCKDCJD'][11]/a[@class='gwt-Anchor']/div[@class='gwt-Label']"));
+		
+		element = driver.findElement(By.linkText("NL Tax Engagement"));
+		
+		
 		return element;
 	}
 	
@@ -46,11 +50,12 @@ public class NavigerenObjecten {
 	}
 	
 	public static WebElement ClickCloud(WebDriver driver){
-	    element = driver.findElement(By.className(("GOMEOCKDB3C")));
+	    element = driver.findElement(By.className(("GAQ-1UMBA5C")));
 		return element;
 	}
 	public static WebElement Zoekveld(WebDriver driver){
-	    element = driver.findElement(By.xpath("/html/body/div[@id='content']/div[@class='GOMEOCKDJBD']/div[@class='GOMEOCKDGBD']/div[@class='GOMEOCKDFBD']/div/div[2]/div[@id='main']/div[@class='GOMEOCKDLXC boxFix']/div/div[4]/div[@class='gwt-SplitLayoutPanel GOMEOCKDPXE']/div[4]/div[@class='GOMEOCKDO4']/div[@class='GOMEOCKDAEF']/div[@class='GOMEOCKDIDF cw-ButtonBar']/div[@class='GOMEOCKDMDF GOMEOCKDH3 GOMEOCKDA4 GOMEOCKDF4 GOMEOCKDDBB']/div[@class='GOMEOCKDDDF GOMEOCKDK3']/div[@class='GOMEOCKDEBD GOMEOCKDH3']/div[@class='GOMEOCKDBBD GOMEOCKDCBD GOMEOCKDH3 GOMEOCKDA4']/div[@class='GOMEOCKDPAD']/input[@class='gwt-TextBox GOMEOCKDOAD']"));
+	    WebElement parent = driver.findElement(By.id("main"));
+	    element = parent.findElement(By.cssSelector("[class='gwt-TextBox GAQ-1UMBFDD']"));
 		return element;
 	}
 }
