@@ -774,8 +774,72 @@ public class Steps extends AbstractSteps {
 		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(driver).clear();
 		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(driver).sendKeys(invuldata[39]);
 		
-		driver.quit();
-		
+				
 	}
-
+	@Then("^i can validate the error messages for the Toelichting Balans form$")
+		public void i_can_validate_the_error_messages_for_the_Toelichting_Balans_form() throws Throwable {
+	  
+			ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+			
+	 		//Gebouwen zonder bodemwaarde
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Gebouwenzonderbodemwaarde_Aanschafkosten", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Gebouwenzonderbodemwaarde_FiscaleBoekwaarde3112", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Gebouwenzonderbodemwaarde_RestWaarde3112", 1, 99, true, false, driver));
+	 		
+	 		//Gebouwen in eigen gebruik
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenInEigenGebruikAanschafkosten", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenInEigenGebruik_FiscaleBoekwaarde3112", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenInEigenGebruik_Restwaarde3112", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenInEigenGebruik_Bodemwaarde3112", 1, 99, true, false, driver));
+	 		
+	 		//Gebouwen ter belegging gehouden
+	 		
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenTerBeleggingGehouden_Aanschafkosten", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenTerBeleggingGehouden_FiscaleBoekwaarde3112", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenTerBeleggingGehouden_Restwaarde3112", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenTerBeleggingGehouden_Bodemwaarde3112", 1, 99, true, false, driver));
+	 		
+	 		//Gebouwen zonder afschrijving
+	 		
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenZonderafschrijving_Aanschafkosten", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("GebouwenZonderafschrijving_FiscaleBoekwaarde3112", 1, 99, true, false, driver));
+	 				
+	 		//Bedrijfsterreinen
+	 		
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Bedrijfsterreinen_Aanschafkosten", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Bedrijfsterreinen_FiscaleBoekwaarde3112", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Bedrijfsterreinen_Restwaarde3112", 1, 99, true, false, driver));
+	 				
+	 		//Machines
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Machines_Aanschafwaarde", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Machines_Restwaarde3112", 1, 99, true, false, driver));
+	 				
+	 		//Andere vaste bedrijfsmiddelen
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("AndereVasteBedrijfsmiddelen_Aanschafwaarde", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("AndereVasteBedrijfsmiddelen_Restwaarde3112", 1, 99, true, false, driver));
+	 						
+	 		//Toeliching ondernemingsvermogen
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_JaarVervreemdingbedrijfsmiddel", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_Boekwinstvervreemdebedrijfsmiddel", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding", 1, 99, true, false, driver));
+	 		
+	 		//Toelichting voorziening
+	 		
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_DotatieGarantievoorziening", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OnttrekkingGarantieVoorzieningen", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_GarantieVoorzieningEindeBoekjaar", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_DotatieOverigeVoorzieningen", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OnttrekkingOverigeVoorzieningen", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OverigeVoorzieningEindeBoekjaar", 1, 99, true, false, driver));
+	 				
+	 		//Toelichting omzetbelasting
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening", 1, 99, true, false, driver));
+	 		
+	 	}
+	 
 }
