@@ -23,9 +23,23 @@ public class SpecificatieDeelnemingenObjecten {
 		element = driver.findElement(By.id("idxdt9tzh1"));
 		return element;
 	}
+
 	public static WebElement PercentageAandelenbezit(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzh2"));
 		return element;
+	}
+	public static WebElement Straatnaam(WebDriver driver){
+			element = driver.findElement(By.id("idn26n68es"));
+			return element;
+	}
+	public static WebElement Huisnummer(WebDriver driver){
+				element = driver.findElement(By.id("idn26n68et"));
+				return element;
+	}
+	public static WebElement HuisnummerBuitenlandsAdres(WebDriver driver) {
+		element = driver.findElement(By.id("idn26n68eu"));
+		return element;
+		
 	}	public static WebElement NominaleWaardeAandelenBezit(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzh4"));
 		return element;
@@ -34,6 +48,17 @@ public class SpecificatieDeelnemingenObjecten {
 		element = driver.findElement(By.id("idxdt9tzh6"));
 		return element;
 	}
+
+	public static WebElement BrutoVoordelenMetDeelneming(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68fj"));
+		return element;
+	}
+	
+	public static WebElement KostenVerwervingDeelneming(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68fk"));
+		return element;
+	}
+	
 	public static WebElement BalanswaarderingDeelneming(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzh7"));
 		return element;

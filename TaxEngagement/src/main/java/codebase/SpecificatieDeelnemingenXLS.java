@@ -8,7 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class AlgemeneGegevensXLS {
+public class SpecificatieDeelnemingenXLS {
 
 	private static XSSFWorkbook wb;
 
@@ -19,13 +19,14 @@ public class AlgemeneGegevensXLS {
 		try {
 			// Open the Excel file
 			FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
+			RijNummer = RijNummer + 1; 
 			wb = new XSSFWorkbook(fis);
-			XSSFSheet sheet = wb.getSheet("algemene_gegevens");
+			XSSFSheet sheet = wb.getSheet("Spec_deelneming");
 			XSSFRow row = sheet.getRow(RijNummer);
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [26];
+			opsommingresultaat = new String [55];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -52,6 +53,36 @@ public class AlgemeneGegevensXLS {
 			opsommingresultaat[23]= new DataFormatter().formatCellValue(row.getCell(23));
 			opsommingresultaat[24]= new DataFormatter().formatCellValue(row.getCell(24));
 			opsommingresultaat[25]= new DataFormatter().formatCellValue(row.getCell(25));
+			opsommingresultaat[26]= new DataFormatter().formatCellValue(row.getCell(26));
+			opsommingresultaat[27]= new DataFormatter().formatCellValue(row.getCell(27));
+			opsommingresultaat[28]= new DataFormatter().formatCellValue(row.getCell(28));
+			opsommingresultaat[29]= new DataFormatter().formatCellValue(row.getCell(29));
+			opsommingresultaat[30]= new DataFormatter().formatCellValue(row.getCell(30));
+			opsommingresultaat[31]= new DataFormatter().formatCellValue(row.getCell(31));
+			opsommingresultaat[32]= new DataFormatter().formatCellValue(row.getCell(32));
+			opsommingresultaat[33]= new DataFormatter().formatCellValue(row.getCell(33));
+			opsommingresultaat[34]= new DataFormatter().formatCellValue(row.getCell(34));
+			opsommingresultaat[35]= new DataFormatter().formatCellValue(row.getCell(35));
+			opsommingresultaat[36]= new DataFormatter().formatCellValue(row.getCell(36));
+			opsommingresultaat[37]= new DataFormatter().formatCellValue(row.getCell(37));
+			opsommingresultaat[38]= new DataFormatter().formatCellValue(row.getCell(38));
+			opsommingresultaat[39]= new DataFormatter().formatCellValue(row.getCell(39));
+			opsommingresultaat[40]= new DataFormatter().formatCellValue(row.getCell(40));
+			opsommingresultaat[41]= new DataFormatter().formatCellValue(row.getCell(41));
+			opsommingresultaat[42]= new DataFormatter().formatCellValue(row.getCell(42));
+			opsommingresultaat[43]= new DataFormatter().formatCellValue(row.getCell(43));
+			opsommingresultaat[44]= new DataFormatter().formatCellValue(row.getCell(44));
+			opsommingresultaat[45]= new DataFormatter().formatCellValue(row.getCell(45));
+			opsommingresultaat[46]= new DataFormatter().formatCellValue(row.getCell(46));
+			opsommingresultaat[47]= new DataFormatter().formatCellValue(row.getCell(47));
+			opsommingresultaat[48]= new DataFormatter().formatCellValue(row.getCell(48));
+			opsommingresultaat[49]= new DataFormatter().formatCellValue(row.getCell(49));
+			opsommingresultaat[50]= new DataFormatter().formatCellValue(row.getCell(50));
+			opsommingresultaat[51]= new DataFormatter().formatCellValue(row.getCell(51));
+			opsommingresultaat[52]= new DataFormatter().formatCellValue(row.getCell(52));
+			opsommingresultaat[53]= new DataFormatter().formatCellValue(row.getCell(53));
+			opsommingresultaat[54]= new DataFormatter().formatCellValue(row.getCell(54));
+						
 			
 			resultaat = opsommingresultaat;			
 
@@ -61,13 +92,14 @@ public class AlgemeneGegevensXLS {
 		}
 		return resultaat;
 	}
-			
+	
 	public static void main(String[] args) {
 
 		
-		String[] invuldata = codebase.AlgemeneGegevensXLS.HaalData(1);
+		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(1);
 		
-		System.out.println(invuldata[3]);
+		System.out.println(invuldata[21]);
 		
-		}
+		
+	}
 }

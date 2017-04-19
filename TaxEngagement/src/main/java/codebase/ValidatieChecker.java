@@ -45,7 +45,7 @@ public class ValidatieChecker {
 
 	public static void main(String[] args) {
 
-		System.out.println(CheckValue("asdaaaaasaadasdasdasdasdj", 1, 24, false, false));
+		System.out.println(CheckValue("231903", 1, 24, false, true));
 
 	}
 

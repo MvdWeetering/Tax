@@ -61,7 +61,7 @@ public class AlgemeneVragenXLS {
 		
 		String[] invuldata = codebase.AlgemeneVragenXLS.HaalData(1);
 		
-		System.out.println(invuldata[18]);
+		System.out.println(invuldata[3]);
 		
 		}
 }

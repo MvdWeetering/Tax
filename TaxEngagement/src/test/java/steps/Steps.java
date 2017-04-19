@@ -552,45 +552,84 @@ public class Steps extends AbstractSteps {
 
 	@Then("^i can fill out the form Specificatie Deelnemingen$")
 	public void i_can_fill_out_the_form_Specificatie_Deelnemingen() throws Throwable {
-
+		
+		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(1);
 		
 		
+		// algemene vragen
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).sendKeys("Naam Deelneming");
+		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).sendKeys(invuldata[1]);
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).sendKeys("RSIN");
+		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).sendKeys(invuldata[2]);
 		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys("Vestigingsplaats deelneming");
-		SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys("Nederland");
+		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
+		SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys(invuldata[4]);
 		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).clear();
-		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).sendKeys("10");
+		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).sendKeys(invuldata[5]);
+		SpecificatieDeelnemingenObjecten.Straatnaam(driver).clear();
+		SpecificatieDeelnemingenObjecten.Straatnaam(driver).sendKeys(invuldata[6]);
+		SpecificatieDeelnemingenObjecten.Huisnummer(driver).clear();
+		SpecificatieDeelnemingenObjecten.Huisnummer(driver).sendKeys(invuldata[7]);		
+		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).clear();
+		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).sendKeys(invuldata[8]);
+		
+		//Schulden en vorderingen
+		
 		SpecificatieDeelnemingenObjecten.NominaleWaardeAandelenBezit(driver).clear();
-		SpecificatieDeelnemingenObjecten.NominaleWaardeAandelenBezit(driver).sendKeys("1000");
+		SpecificatieDeelnemingenObjecten.NominaleWaardeAandelenBezit(driver).sendKeys(invuldata[9]);
 		SpecificatieDeelnemingenObjecten.OpgeofferdBedrag(driver).clear();
-		SpecificatieDeelnemingenObjecten.OpgeofferdBedrag(driver).sendKeys("2000");
+		SpecificatieDeelnemingenObjecten.OpgeofferdBedrag(driver).sendKeys(invuldata[10]);
 		SpecificatieDeelnemingenObjecten.BalanswaarderingDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.BalanswaarderingDeelneming(driver).sendKeys("3000");
+		SpecificatieDeelnemingenObjecten.BalanswaarderingDeelneming(driver).sendKeys(invuldata[11]);
 		SpecificatieDeelnemingenObjecten.VoordelenDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.VoordelenDeelneming(driver).sendKeys("4000");
+		SpecificatieDeelnemingenObjecten.VoordelenDeelneming(driver).sendKeys(invuldata[12]);
 		SpecificatieDeelnemingenObjecten.BedragVorderingenDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.BedragVorderingenDeelneming(driver).sendKeys("5000");
+		SpecificatieDeelnemingenObjecten.BedragVorderingenDeelneming(driver).sendKeys(invuldata[13]);
 		SpecificatieDeelnemingenObjecten.BedragSchuldDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.BedragSchuldDeelneming(driver).sendKeys("6000");
+		SpecificatieDeelnemingenObjecten.BedragSchuldDeelneming(driver).sendKeys(invuldata[14]);
 		SpecificatieDeelnemingenObjecten.OntvRenteDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.OntvRenteDeelneming(driver).sendKeys("7000");
+		SpecificatieDeelnemingenObjecten.OntvRenteDeelneming(driver).sendKeys(invuldata[15]);
 		SpecificatieDeelnemingenObjecten.BetRenteDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.BetRenteDeelneming(driver).sendKeys("8000");
-		SpecificatieDeelnemingenObjecten.DeelnemingGevoegd_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.Voegingsdatum(driver).sendKeys("01-01-2016");
-		SpecificatieDeelnemingenObjecten.Ontvoegingsdatum(driver).sendKeys("31-12-2016");
+		SpecificatieDeelnemingenObjecten.BetRenteDeelneming(driver).sendKeys(invuldata[16]);
+		
+		
+		//Vragen inzake deelnemingen
+		
+		//Is de deelneming in het boekjaar gevoegd in en/ of ontvoegd uit een fiscale eenheid met de belastingplichtige?
+		if (invuldata[17].equals("ja")) {
+			SpecificatieDeelnemingenObjecten.DeelnemingGevoegd_Ja(driver).click();
+			SpecificatieDeelnemingenObjecten.Voegingsdatum(driver).sendKeys(invuldata[18]);
+			SpecificatieDeelnemingenObjecten.Ontvoegingsdatum(driver).sendKeys(invuldata[19]);
+		}
+		else {
+			SpecificatieDeelnemingenObjecten.DeelnemingGevoegd_Nee(driver).click();
+		}
+		
+		// Is de deelneming in het boekjaar verworven of is het belang in de deelneming in het boekjaar vergroot?
+		
+		if (invuldata[20].equals("ja")) {
 		SpecificatieDeelnemingenObjecten.DeelnemingVerworven_Ja(driver).click();
+		
 		SpecificatieDeelnemingenObjecten.PercentageVerwervingn(driver).clear();
-		SpecificatieDeelnemingenObjecten.PercentageVerwervingn(driver).sendKeys("10");
+		SpecificatieDeelnemingenObjecten.PercentageVerwervingn(driver).sendKeys(invuldata[21]);
 		SpecificatieDeelnemingenObjecten.NominaleWaardeVerwerving(driver).clear();
-		SpecificatieDeelnemingenObjecten.NominaleWaardeVerwerving(driver).sendKeys("9000");
+		SpecificatieDeelnemingenObjecten.NominaleWaardeVerwerving(driver).sendKeys(invuldata[22]);
 		SpecificatieDeelnemingenObjecten.OpgeofferdbedragVerwerving(driver).clear();
-		SpecificatieDeelnemingenObjecten.OpgeofferdbedragVerwerving(driver).sendKeys("10000");
+		SpecificatieDeelnemingenObjecten.OpgeofferdbedragVerwerving(driver).sendKeys(invuldata[23]);
+		SpecificatieDeelnemingenObjecten.BrutoVoordelenMetDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.BrutoVoordelenMetDeelneming(driver).sendKeys(invuldata[24]);
+		SpecificatieDeelnemingenObjecten.KostenVerwervingDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.KostenVerwervingDeelneming(driver).sendKeys(invuldata[25]);
 		SpecificatieDeelnemingenObjecten.BelangDeelnemingVerworven_Ja(driver).click();
+		
+		}
+		else {
+			SpecificatieDeelnemingenObjecten.DeelnemingVerworven_Nee(driver).click();
+		}
+		
+	
+		
+		//Is de deelneming in het boekjaar vervreemd of is het belang in de deelneming in het boekjaar verkleind?
 		SpecificatieDeelnemingenObjecten.DeelnemingVervreemd_Ja(driver).click();
 		SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).clear();
 		SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).sendKeys("20");
@@ -616,10 +655,9 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.VerzoektVerrekening_Ja(driver).click();
 		SpecificatieDeelnemingenObjecten.VerzoektAfwijkendeVerrekening_Ja(driver).click();
 		SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver)
-				.sendKeys("Toelichting meer dan 99 deelnemingen");
+		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys("Toelichting meer dan 99 deelnemingen");
 		
-		driver.quit();
+	//	driver.quit();
 		
 	}
 	
