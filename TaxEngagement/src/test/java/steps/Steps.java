@@ -627,18 +627,36 @@ public class Steps extends AbstractSteps {
 			SpecificatieDeelnemingenObjecten.DeelnemingVerworven_Nee(driver).click();
 		}
 		
-	
-		
 		//Is de deelneming in het boekjaar vervreemd of is het belang in de deelneming in het boekjaar verkleind?
+
+		if (invuldata[27].equals("ja")) {
 		SpecificatieDeelnemingenObjecten.DeelnemingVervreemd_Ja(driver).click();
 		SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).clear();
-		SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).sendKeys("20");
+		SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).sendKeys(invuldata[28]);
 		SpecificatieDeelnemingenObjecten.NominaleWaardeVervreemding(driver).clear();
-		SpecificatieDeelnemingenObjecten.NominaleWaardeVervreemding(driver).sendKeys("11000");
+		SpecificatieDeelnemingenObjecten.NominaleWaardeVervreemding(driver).sendKeys(invuldata[29]);
 		SpecificatieDeelnemingenObjecten.OpbrengstVervreemding(driver).clear();
-		SpecificatieDeelnemingenObjecten.OpbrengstVervreemding(driver).sendKeys("12000");
+		SpecificatieDeelnemingenObjecten.OpbrengstVervreemding(driver).sendKeys(invuldata[30]);
+		SpecificatieDeelnemingenObjecten.BrutoVoordelenDelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.BrutoVoordelenDelneming(driver).sendKeys(invuldata[31]);
+		SpecificatieDeelnemingenObjecten.KostenVervreemdingDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.KostenVervreemdingDeelneming(driver).sendKeys(invuldata[32]);
 		SpecificatieDeelnemingenObjecten.BelangVervreemdInBoekjaar_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Ja(driver).click();
+		}
+		else {
+			SpecificatieDeelnemingenObjecten.DeelnemingVervreemd_Nee(driver).click();			
+		}
+		
+		
+		if (invuldata[33].equals("true")) {
+			SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Ja(driver).click();			
+		}
+		else {
+			
+			SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Nee(driver).click();
+		}
+		
+
 		SpecificatieDeelnemingenObjecten.VereffeningsdatumDeelneming(driver).sendKeys("06-06-216");
 		SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).clear();
 		SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).sendKeys("13000");

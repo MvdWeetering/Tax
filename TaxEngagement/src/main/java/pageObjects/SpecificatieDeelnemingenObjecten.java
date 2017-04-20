@@ -132,7 +132,7 @@ public class SpecificatieDeelnemingenObjecten {
 		return element;
 	}
 	public static WebElement DeelnemingVervreemd_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzi0-no"));
+		element = driver.findElement(By.id("idxdt9tzhi-no"));
 		return element;
 	}
 	public static WebElement PercentageVervreemding(WebDriver driver){
@@ -147,6 +147,16 @@ public class SpecificatieDeelnemingenObjecten {
 		element = driver.findElement(By.id("idxdt9tzhz"));
 		return element;
 	}
+	public static WebElement BrutoVoordelenDelneming(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68fp"));
+		return element;
+	}
+	public static WebElement KostenVervreemdingDeelneming(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68fq"));
+		return element;
+	}
+	
+	
 	public static WebElement BelangVervreemdInBoekjaar_Ja(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzi0"));
 		return element;

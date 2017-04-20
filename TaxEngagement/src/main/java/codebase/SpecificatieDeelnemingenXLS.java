@@ -26,7 +26,7 @@ public class SpecificatieDeelnemingenXLS {
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [55];
+			opsommingresultaat = new String [61];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -82,7 +82,13 @@ public class SpecificatieDeelnemingenXLS {
 			opsommingresultaat[52]= new DataFormatter().formatCellValue(row.getCell(52));
 			opsommingresultaat[53]= new DataFormatter().formatCellValue(row.getCell(53));
 			opsommingresultaat[54]= new DataFormatter().formatCellValue(row.getCell(54));
-						
+			opsommingresultaat[55]= new DataFormatter().formatCellValue(row.getCell(55));
+			opsommingresultaat[56]= new DataFormatter().formatCellValue(row.getCell(56));
+			opsommingresultaat[57]= new DataFormatter().formatCellValue(row.getCell(57));
+			opsommingresultaat[58]= new DataFormatter().formatCellValue(row.getCell(58));
+			opsommingresultaat[59]= new DataFormatter().formatCellValue(row.getCell(59));
+			opsommingresultaat[60]= new DataFormatter().formatCellValue(row.getCell(60));
+									
 			
 			resultaat = opsommingresultaat;			
 
@@ -98,7 +104,7 @@ public class SpecificatieDeelnemingenXLS {
 		
 		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(1);
 		
-		System.out.println(invuldata[21]);
+		System.out.println(invuldata[33]);
 		
 		
 	}
