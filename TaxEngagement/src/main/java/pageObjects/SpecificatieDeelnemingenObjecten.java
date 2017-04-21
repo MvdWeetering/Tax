@@ -177,6 +177,17 @@ public class SpecificatieDeelnemingenObjecten {
 		element = driver.findElement(By.id("idxdt9tzi2"));
 		return element;
 	}
+	
+	public static WebElement VerkaptDivident_ja(WebDriver driver){
+		element = driver.findElement(By.id("idnum_PIHDR"));
+		return element;
+	}
+	public static WebElement VerkaptDivident_nee(WebDriver driver){
+		element = driver.findElement(By.id("idnum_PIHDR-no"));
+		return element;
+	}
+		
+	
 	public static WebElement LiquidatieVerliesDeelneming(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzi3"));
 		return element;
@@ -251,6 +262,76 @@ public class SpecificatieDeelnemingenObjecten {
 	}
 	public static WebElement ToelichtingMeerdan99Deelnemingen(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzin"));
+		return element;
+	}
+	
+	// verkapt divident
+	
+	public static WebElement VerkaptDividentBedrag(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g0"));
+		return element;
+	}
+	public static WebElement WaaromVerkaptDivident(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g1"));
+		return element;
+	}
+	public static WebElement NaamMoedermaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g2"));
+		return element;
+	}
+	public static WebElement StraatnaamMoederMaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g3"));
+		return element;
+	}
+	public static WebElement HuisnummerMoederMaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g4"));
+		return element;
+	}
+	public static WebElement HuisnummerToevingMoederMaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g5"));
+		return element;
+	}
+	public static WebElement VestingsPlaatsMoederMaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g6"));
+		return element;
+	}
+	public static WebElement VestigingslandMoederMaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g7"));
+		return element;
+	}
+	public static WebElement DirecteDeelnemingOntgaan_ja(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g8"));
+		return element;
+	}
+	public static WebElement DirecteDeelnemingOntgaan_nee(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68g8-no"));
+		return element;
+	}
+	
+	// Gegevens rechtspersonen
+	
+	public static WebElement RechtspersoonVoordeelOntgaan(WebDriver driver){
+		element = driver.findElement(By.id("idtable_GR:0-0"));
+		return element;
+	}
+	public static WebElement RechtspersoonStraatnaam(WebDriver driver){
+		element = driver.findElement(By.id("idtable_GR:0-2"));
+		return element;
+	}
+	public static WebElement RechtspersoonHuisnummer(WebDriver driver){
+		element = driver.findElement(By.id("idtable_GR:0-4"));
+		return element;
+	}
+	public static WebElement RechtspersoonHuisnummerToevoeging(WebDriver driver){
+		element = driver.findElement(By.id("idtable_GR:0-6"));
+		return element;
+	}
+	public static WebElement RechtspersoonVestigingsplaats(WebDriver driver){
+		element = driver.findElement(By.id("idtable_GR:0-8"));
+		return element;
+	}
+	public static WebElement RechtspersoonVestigingsLand(WebDriver driver){
+		element = driver.findElement(By.id("idtable_GR:0-10"));
 		return element;
 	}
 	

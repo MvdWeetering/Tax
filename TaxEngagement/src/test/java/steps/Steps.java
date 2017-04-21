@@ -648,33 +648,132 @@ public class Steps extends AbstractSteps {
 		}
 		
 		
-		if (invuldata[33].equals("true")) {
-			SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Ja(driver).click();			
+		if (invuldata[33].equals("ja")) {
+			SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Ja(driver).click();	
+			SpecificatieDeelnemingenObjecten.VereffeningsdatumDeelneming(driver).sendKeys(invuldata[34]);
+			SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).clear();
+			SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).sendKeys(invuldata[35]);
 		}
 		else {
 			
 			SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Nee(driver).click();
 		}
 		
-
-		SpecificatieDeelnemingenObjecten.VereffeningsdatumDeelneming(driver).sendKeys("06-06-216");
-		SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.LiquidatieVerliesDeelneming(driver).sendKeys("13000");
 		SpecificatieDeelnemingenObjecten.WaarderingsvoorschriftArt13_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.DeelnemingNietKwalificerende_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.WaardeEconomischVerkeer(driver).clear();
-		SpecificatieDeelnemingenObjecten.WaardeEconomischVerkeer(driver).sendKeys("14000");
-		SpecificatieDeelnemingenObjecten.BelangDeelnemingGedaald25Procent_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).clear();
-		SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).sendKeys("15000");
-		SpecificatieDeelnemingenObjecten.BedragBruteringVoordeel(driver).clear();
-		SpecificatieDeelnemingenObjecten.BedragBruteringVoordeel(driver).sendKeys("16000");
-		SpecificatieDeelnemingenObjecten.BeleggingsdeelnemingEULidstaat_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.VerzoektVerrekening_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.VerzoektAfwijkendeVerrekening_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
-		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys("Toelichting meer dan 99 deelnemingen");
+
 		
+		if (invuldata[37].equals("ja")) {
+			
+			SpecificatieDeelnemingenObjecten.DeelnemingNietKwalificerende_Ja(driver).click();
+			
+			SpecificatieDeelnemingenObjecten.WaardeEconomischVerkeer(driver).clear();
+			SpecificatieDeelnemingenObjecten.WaardeEconomischVerkeer(driver).sendKeys(invuldata[38]);
+			
+			if (invuldata[39].equals("ja")) {
+				SpecificatieDeelnemingenObjecten.BelangDeelnemingGedaald25Procent_Ja(driver).click();
+				}
+				else {
+					SpecificatieDeelnemingenObjecten.BelangDeelnemingGedaald25Procent_Nee(driver).click();
+				}
+			SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).clear();
+			SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).sendKeys(invuldata[38]);
+			SpecificatieDeelnemingenObjecten.BedragBruteringVoordeel(driver).clear();
+			SpecificatieDeelnemingenObjecten.BedragBruteringVoordeel(driver).sendKeys(invuldata[39]);
+		}
+		
+		// Verkapt divident radio button - onderin het scherm verschijnen 2 verschillende invul tabellen
+		if (invuldata[40].equals("ja")) {
+			SpecificatieDeelnemingenObjecten.VerkaptDivident_ja(driver).click();	
+		}
+		else {		
+			SpecificatieDeelnemingenObjecten.VerkaptDivident_nee(driver).click();
+		}	
+				
+		if (invuldata[41].equals("ja")) {
+		SpecificatieDeelnemingenObjecten.BeleggingsdeelnemingEULidstaat_Ja(driver).click();
+			if (invuldata[42].equals("ja")) {
+				SpecificatieDeelnemingenObjecten.VerzoektVerrekening_Ja(driver).click();
+			}
+			else {
+				SpecificatieDeelnemingenObjecten.VerzoektVerrekening_Nee(driver).click();
+			}
+			
+			if(invuldata[43].equals("ja")) {
+				SpecificatieDeelnemingenObjecten.VerzoektAfwijkendeVerrekening_Ja(driver).click();
+			}
+			else {
+				SpecificatieDeelnemingenObjecten.VerzoektAfwijkendeVerrekening_Nee(driver).click();
+			}
+		}
+		else {
+			SpecificatieDeelnemingenObjecten.BeleggingsdeelnemingEULidstaat_Nee(driver).click();
+		}
+		
+		if (invuldata[44].equals("ja")) {
+		SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
+		SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys(invuldata[45]);
+		}
+		else {
+			SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Nee(driver).click();
+		}
+		
+		// Implementatie verkapt divident of Gegevens Rechtspersonen
+		
+		// Verkapt Divident
+		if (invuldata[40].equals("ja")) {
+		
+			SpecificatieDeelnemingenObjecten.VerkaptDividentBedrag(driver).clear();
+			SpecificatieDeelnemingenObjecten.VerkaptDividentBedrag(driver).sendKeys(invuldata[52]);
+			
+			SpecificatieDeelnemingenObjecten.WaaromVerkaptDivident(driver).clear();
+			SpecificatieDeelnemingenObjecten.WaaromVerkaptDivident(driver).sendKeys(invuldata[53]);
+			
+			SpecificatieDeelnemingenObjecten.NaamMoedermaatschappij(driver).clear();
+			SpecificatieDeelnemingenObjecten.NaamMoedermaatschappij(driver).sendKeys(invuldata[54]);
+			
+			SpecificatieDeelnemingenObjecten.StraatnaamMoederMaatschappij(driver).clear();
+			SpecificatieDeelnemingenObjecten.StraatnaamMoederMaatschappij(driver).sendKeys(invuldata[55]);
+			
+			SpecificatieDeelnemingenObjecten.HuisnummerMoederMaatschappij(driver).clear();
+			SpecificatieDeelnemingenObjecten.HuisnummerMoederMaatschappij(driver).sendKeys(invuldata[56]);
+			
+			SpecificatieDeelnemingenObjecten.HuisnummerToevingMoederMaatschappij(driver).clear();
+			SpecificatieDeelnemingenObjecten.HuisnummerToevingMoederMaatschappij(driver).sendKeys(invuldata[57]);
+			
+			SpecificatieDeelnemingenObjecten.VestingsPlaatsMoederMaatschappij(driver).clear();
+			SpecificatieDeelnemingenObjecten.VestingsPlaatsMoederMaatschappij(driver).sendKeys(invuldata[58]);
+			
+			SpecificatieDeelnemingenObjecten.VestigingslandMoederMaatschappij(driver).sendKeys(invuldata[59]);
+			
+			if (invuldata[60].equals("ja")) {
+				SpecificatieDeelnemingenObjecten.DirecteDeelnemingOntgaan_ja(driver).click();
+			}
+			else {
+				SpecificatieDeelnemingenObjecten.DirecteDeelnemingOntgaan_nee(driver).click();
+			}
+		}
+		
+		//Gegevens Rechtspersonen
+		
+		if (invuldata[40].equals("nee")) {
+		SpecificatieDeelnemingenObjecten.RechtspersoonVoordeelOntgaan(driver).clear();
+		SpecificatieDeelnemingenObjecten.RechtspersoonVoordeelOntgaan(driver).sendKeys(invuldata[46]);
+		
+		SpecificatieDeelnemingenObjecten.RechtspersoonStraatnaam(driver).clear();
+		SpecificatieDeelnemingenObjecten.RechtspersoonStraatnaam(driver).sendKeys(invuldata[47]);
+		
+		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummer(driver).clear();
+		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummer(driver).sendKeys(invuldata[48]);
+		
+		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummerToevoeging(driver).clear();
+		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummerToevoeging(driver).sendKeys(invuldata[49]);
+		
+		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsplaats(driver).clear();
+		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsplaats(driver).sendKeys(invuldata[50]);
+		
+		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).clear();
+		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).sendKeys(invuldata[51]);
+		}
 	//	driver.quit();
 		
 	}
