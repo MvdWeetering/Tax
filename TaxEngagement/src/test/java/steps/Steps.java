@@ -20,6 +20,7 @@ import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
 import pageObjects.ValidatieObjecten;
+import pageObjects.WinstenVerliesRekeningObjecten;
 
 public class Steps extends AbstractSteps {
 
@@ -996,5 +997,106 @@ public class Steps extends AbstractSteps {
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening", 1, 99, true, false, driver));
 	 		
 	 	}
-	 
+	@When("^open the form Winst en Verlies rekening$")
+	public void open_the_form_Winst_en_Verlies_rekening() throws Throwable {
+		
+		NavigerenObjecten.NavigerenWinstEnVerliesRekening(driver).click();
+		
+	}
+
+	@Then("^i can fill out the form Winst en Verlies rekening$")
+	public void i_can_fill_out_the_form_Winst_en_Verlies_rekening() throws Throwable {
+	
+		//bedrijfsopbrengsten
+		
+		WinstenVerliesRekeningObjecten.NettoOmzetCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.NettoOmzetCommercieel(driver).sendKeys("1001");
+		
+		WinstenVerliesRekeningObjecten.NettoOmzetCF(driver).clear();
+		WinstenVerliesRekeningObjecten.NettoOmzetCF(driver).sendKeys("1002");
+		
+		WinstenVerliesRekeningObjecten.WijzigingVoorraadCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.WijzigingVoorraadCommercieel(driver).sendKeys("1003");
+		
+		WinstenVerliesRekeningObjecten.WijzigingVoorraadCF(driver).clear();
+		WinstenVerliesRekeningObjecten.WijzigingVoorraadCF(driver).sendKeys("1004");
+		
+		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCommercieel(driver).sendKeys("1005");
+		
+		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCF(driver).clear();
+		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCF(driver).sendKeys("1006");
+		
+		WinstenVerliesRekeningObjecten.OverigeOpbrengstenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeOpbrengstenCommercieel(driver).sendKeys("1007");
+
+		WinstenVerliesRekeningObjecten.OverigeOpbrengstenProductieCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeOpbrengstenProductieCF(driver).sendKeys("1008");
+		
+		
+		//Kosten grond en hulpstoffen
+		
+		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCommercieel(driver).sendKeys("1009");
+		
+		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCF(driver).sendKeys("1010");
+		
+		WinstenVerliesRekeningObjecten.KostenUitbesteedCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenUitbesteedCommercieel(driver).sendKeys("1011");
+		
+		WinstenVerliesRekeningObjecten.KostenUitbesteedCF(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenUitbesteedCF(driver).sendKeys("1012");
+				
+		//Personeelskosten
+		
+		WinstenVerliesRekeningObjecten.LonenSalarissenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.LonenSalarissenCommercieel(driver).sendKeys("1013");
+
+		WinstenVerliesRekeningObjecten.LonenSalarissenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.LonenSalarissenCF(driver).sendKeys("1014");
+		
+		WinstenVerliesRekeningObjecten.SocialeLastenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.SocialeLastenCommercieel(driver).sendKeys("1015");
+		
+		WinstenVerliesRekeningObjecten.SocialeLastenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.SocialeLastenCF(driver).sendKeys("1016");
+		
+		WinstenVerliesRekeningObjecten.PensioenLastenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.PensioenLastenCommercieel(driver).sendKeys("1017");
+		
+		WinstenVerliesRekeningObjecten.PensioenLastenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.PensioenLastenCF(driver).sendKeys("1018");
+		
+		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCommercieel(driver).sendKeys("1019");
+		
+		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver).sendKeys("1020");
+		
+		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).sendKeys("1021");
+		
+		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys("1022");
+		
+		
+		//Afschrijvingen
+		
+		//Overige waardeverandering van immateriele en materiele vaste activa
+		
+		//Bijzondere waardevermindering van vlottende activa
+		
+		//Overige bedrijfskosten
+		
+		//Financiele baten en lasten
+		
+		//Financiele lasten
+		
+		//Buitengewone bedrijfsbaten
+		
+		//Buitengewone bedrijfslasten
+		
+	}
+	
 }

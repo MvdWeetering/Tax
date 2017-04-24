@@ -58,4 +58,8 @@ public class NavigerenObjecten {
 	    element = parent.findElement(By.cssSelector("[class='gwt-TextBox GAQ-1UMBFDD']"));
 		return element;
 	}
+	public static WebElement NavigerenWinstEnVerliesRekening(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Winst- en verliesrekening"));
+		return element;
+	}
 }

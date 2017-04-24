@@ -48,7 +48,6 @@ Feature: vullen formulieren
     And open the Project "dossier 27-03-2017"
     And open the form Specificatie Deelnemingen
     Then i can fill out the form Specificatie Deelnemingen
-
  
   @vullen_formulier @Toelichting_Balans
   Scenario: vullen formulier Toelichting Balans
@@ -59,3 +58,17 @@ Feature: vullen formulieren
     And open the form Toelichting Balans
     Then i can fill out the form Toelichting Balans with configId 1
     Then i can validate the error messages for the Toelichting Balans form
+
+  @vullen_formulier @Winst_en_verlies_rekening
+  Scenario: vullen formulier Winst en Verlies rekening
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 27-03-2017"
+    And open the form Winst en Verlies rekening
+    Then i can fill out the form Winst en Verlies rekening
+    
+    
+    
+    
+    
