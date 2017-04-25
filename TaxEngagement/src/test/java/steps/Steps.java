@@ -1079,15 +1079,69 @@ public class Steps extends AbstractSteps {
 		
 		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys("1022");
-		
-		
+				
 		//Afschrijvingen
+		
+		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).sendKeys("1023");
+		
+		WinstenVerliesRekeningObjecten.GoodWillCF(driver).clear();
+		WinstenVerliesRekeningObjecten.GoodWillCF(driver).sendKeys("1024");
+		
+		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCommercieel(driver).sendKeys("1025");
+		
+		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCF(driver).sendKeys("1026");
+		
+		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCommercieel(driver).sendKeys("1027");
+				
+		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).sendKeys("1028");
+				
+		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCommercieel(driver).sendKeys("1029");
+		
+		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCF(driver).clear();
+		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCF(driver).sendKeys("1030");
+		
+		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCommercieel(driver).sendKeys("1031");
+		
+		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCF(driver).sendKeys("1032");		
 		
 		//Overige waardeverandering van immateriele en materiele vaste activa
 		
+		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver).sendKeys("1033");
+		
+		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).sendKeys("1033");
+				
 		//Bijzondere waardevermindering van vlottende activa
 		
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).sendKeys("1034");
+		
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).clear();
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).sendKeys("1035");
+				
 		//Overige bedrijfskosten
+		
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).sendKeys("1036");
+		
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys("1037");
+		
+		
+		
+		
+		
+		
+		
 		
 		//Financiele baten en lasten
 		
@@ -1100,3 +1154,4 @@ public class Steps extends AbstractSteps {
 	}
 	
 }
+
