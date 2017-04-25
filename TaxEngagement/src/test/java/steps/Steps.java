@@ -1130,20 +1130,88 @@ public class Steps extends AbstractSteps {
 				
 		//Overige bedrijfskosten
 		
+		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).sendKeys("1036");
+		
+		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).sendKeys("1037");
+		
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).sendKeys("1038");
+		
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys("1039");
+				
+		
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).sendKeys("1040");
+		
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys("1041");
+				
+		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).sendKeys("1042");
+		
+		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys("1043");
+		
+		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).sendKeys("1044");
+		
+		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys("1045");
+				
+		//Financiele baten en lasten
+		
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).sendKeys("1036");
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).sendKeys("1046");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys("1037");
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys("1047");
+		
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).sendKeys("1048");
+		
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).clear();
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).sendKeys("1049");
+		
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).sendKeys("1050");
+		
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).sendKeys("1051");
+		
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).sendKeys("1052");
+		
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).sendKeys("1053");
+		
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).sendKeys("1054");
+		
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).sendKeys("1055");
+		
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).sendKeys("1056");
+				
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).sendKeys("1057");
+				
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).sendKeys("1058");
+		
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).sendKeys("1059");
+		
+		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).sendKeys("1060");
+		
+		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys("1061");
 		
 		
-		
-		
-		
-		
-		
-		
-		//Financiele baten en lasten
 		
 		//Financiele lasten
 		

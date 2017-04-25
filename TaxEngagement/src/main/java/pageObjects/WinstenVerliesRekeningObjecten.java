@@ -175,43 +175,43 @@ public class WinstenVerliesRekeningObjecten {
 	//Overige bedrijfskosten
 	
 	public static WebElement TransportKostenCommercieel(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR0C1"));
 		   return element;
 		}
 	public static WebElement TransportKostenCF(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR0C3"));
 		   return element;
 		}
 	public static WebElement HuisvestingkostenCommercieel(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR1C1"));
 		   return element;
 		}
 	public static WebElement HuisvestingkostenCF(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR1C3"));
 		   return element;
 		}
 	public static WebElement OnderhoudOverigCommercieel(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR2C1"));
 		   return element;
 		}
 	public static WebElement OnderhoudOverigCF(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR2C3"));
 		   return element;
 		}
 	public static WebElement VerkoopKostenCommercieel(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR3C1"));
 		   return element;
 		}
 	public static WebElement VerkoopKostenCF(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR3C3"));
 		   return element;
 		}
 	public static WebElement AndereKostenCommercieel(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR4C1"));
 		   return element;
 		}
 	public static WebElement AndereKostenCF(WebDriver driver){
-		   element = driver.findElement(By.id(""));
+		   element = driver.findElement(By.id("idOvBeKR4C3"));
 		   return element;
 		}
 		
