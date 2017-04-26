@@ -284,14 +284,87 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	
-	
 	//Financiele lasten
 	
+	public static WebElement KostenParticipantCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR0C1"));
+		   return element;
+		}
+	public static WebElement KostenParticipantCF(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR0C3"));
+		   return element;
+		}
+
+	public static WebElement KostenSchuldenRentelastenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR1C1"));
+		   return element;
+		}
+	public static WebElement KostenSchuldenRentelastenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR1C3"));
+		   return element;
+		}
+	
+	public static WebElement KostenSchuldenGroepsmaatschappijenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR2C1"));
+		   return element;
+		}
+	public static WebElement KostenSchuldenGroepsmaatschappijenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR2C3"));
+		   return element;
+		}
+	
 	//Buitengewone bedrijfsbaten
+	public static WebElement VoordelenOntvoegingDochterMaatschCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR0C1"));
+		   return element;
+		}
+	public static WebElement VoordelenOntvoegingDochterMaatschCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR0C3"));
+		   return element;
+		}
+	
+	public static WebElement OverigeBuitenGewoneBatenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR1C1"));
+		   return element;
+		}
+	public static WebElement OverigeBuitenGewoneBatenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR1C3"));
+		   return element;
+		}
+	public static WebElement BoekWinstActivaCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR2C1"));
+		   return element;
+		}
+	public static WebElement BoekWinstActivaCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR2C3"));
+		   return element;
+		}
 	
 	//Buitengewone bedrijfslasten
 	
-	
-	
+	public static WebElement AfboekingHerinvesteringsReserveCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR0C1"));
+		   return element;
+		}
+	public static WebElement AfboekingHerinvesteringsReserveCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR0C3"));
+		   return element;
+		}
+	public static WebElement UitkeringenANBICommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR1C1"));
+		   return element;
+		}
+	public static WebElement UitkeringenANBICF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR1C3"));
+		   return element;
+		}
+	public static WebElement OverigeBuitenGewoneLastenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR2C1"));
+		   return element;
+		}
+	public static WebElement OverigeBuitenGewoneLastenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR2C3"));
+		   return element;
+		}
 	
 }

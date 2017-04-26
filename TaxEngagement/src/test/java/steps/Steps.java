@@ -1142,7 +1142,6 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys("1039");
 				
-		
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).sendKeys("1040");
 		
@@ -1211,13 +1210,66 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys("1061");
 		
-		
-		
 		//Financiele lasten
 		
+		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).sendKeys("1062");
+		
+		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).sendKeys("1063");
+		
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).sendKeys("1064");
+		
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).sendKeys("1065");
+		
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).sendKeys("1066");
+		
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).sendKeys("1067");
+				
 		//Buitengewone bedrijfsbaten
 		
+		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver).sendKeys("1068");
+		
+		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCF(driver).clear();
+		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCF(driver).sendKeys("1069");
+		
+		
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCommercieel(driver).sendKeys("1071");
+		
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCF(driver).sendKeys("1072");
+				
+		WinstenVerliesRekeningObjecten.BoekWinstActivaCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.BoekWinstActivaCommercieel(driver).sendKeys("1073");
+		
+		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).clear();
+		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).sendKeys("1074");
+		
 		//Buitengewone bedrijfslasten
+		
+		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCommercieel(driver).sendKeys("1075");
+		
+		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCF(driver).clear();
+		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCF(driver).sendKeys("1076");
+		
+		WinstenVerliesRekeningObjecten.UitkeringenANBICommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.UitkeringenANBICommercieel(driver).sendKeys("1077");
+		
+		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).clear();
+		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).sendKeys("1078");
+		
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCommercieel(driver).sendKeys("1079");
+		
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver).sendKeys("1080");
 		
 	}
 	
