@@ -143,31 +143,31 @@ public class ToelichtingBalansObjecten {
 	
 	@FieldName(name = "ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel")
 	public static WebElement ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TOV:0-0"));
+		element = driver.findElement(By.id("idtableToeOndVerm:0-0"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingOndernemingsvermogen_JaarVervreemdingbedrijfsmiddel")
 	public static WebElement ToelichtingOndernemingsvermogen_JaarVervreemdingbedrijfsmiddel(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TOV:0-2"));
+		element = driver.findElement(By.id("idtableToeOndVerm:0-2"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingOndernemingsvermogen_Boekwinstvervreemdebedrijfsmiddel")
 	public static WebElement ToelichtingOndernemingsvermogen_Boekwinstvervreemdebedrijfsmiddel(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TOV:0-4"));
+		element = driver.findElement(By.id("idtableToeOndVerm:0-4"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingOndernemingsvermogen_Afschrijvingspercentage")
 	public static WebElement ToelichtingOndernemingsvermogen_Afschrijvingspercentage(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TOV:0-6"));
+		element = driver.findElement(By.id("idtableToeOndVerm:0-6"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding")
 	public static WebElement ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TOV:0-8"));
+		element = driver.findElement(By.id("idtableToeOndVerm:0-8"));
 		return element;
 	}
 		
@@ -175,49 +175,49 @@ public class ToelichtingBalansObjecten {
 	
 	@FieldName(name = "ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening")
 	public static WebElement ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSG:0-0"));
+		element = driver.findElement(By.id("idtableToeVooSpecGar:0-0"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingVoorziening_DotatieGarantievoorziening")
 	public static WebElement ToelichtingVoorziening_DotatieGarantievoorziening(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSG:0-2"));
+		element = driver.findElement(By.id("idtableToeVooSpecGar:0-2"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingVoorziening_OnttrekkingGarantieVoorzieningen")
 	public static WebElement ToelichtingVoorziening_OnttrekkingGarantieVoorzieningen(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSG:0-4"));
+		element = driver.findElement(By.id("idtableToeVooSpecGar:0-4"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingVoorziening_GarantieVoorzieningEindeBoekjaar")
 	public static WebElement ToelichtingVoorziening_GarantieVoorzieningEindeBoekjaar(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSG:0-6"));
+		element = driver.findElement(By.id("idtableToeVooSpecGar:0-6"));
 		return element;
 	}
 		
 	@FieldName(name = "ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen")
 	public static WebElement ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSOV:0-0"));
+		element = driver.findElement(By.id("idtableToeVooSpecOvVoo:0-0"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingVoorziening_DotatieOverigeVoorzieningen")
 	public static WebElement ToelichtingVoorziening_DotatieOverigeVoorzieningen(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSOV:0-2"));
+		element = driver.findElement(By.id("idtableToeVooSpecOvVoo:0-2"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingVoorziening_OnttrekkingOverigeVoorzieningen")
 	public static WebElement ToelichtingVoorziening_OnttrekkingOverigeVoorzieningen(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSOV:0-4"));
+		element = driver.findElement(By.id("idtableToeVooSpecOvVoo:0-4"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingVoorziening_OverigeVoorzieningEindeBoekjaar")
 	public static WebElement ToelichtingVoorziening_OverigeVoorzieningEindeBoekjaar(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TVSOV:0-6"));
+		element = driver.findElement(By.id("idtableToeVooSpecOvVoo:0-6"));
 		return element;
 	}	
 	
@@ -225,36 +225,36 @@ public class ToelichtingBalansObjecten {
 	
 	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalbeginboekjaar")
 	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalbeginboekjaar(WebDriver driver){
-		element = driver.findElement(By.id("idSchuld_Dit"));
+		element = driver.findElement(By.id("idCWNLOmzSchVorCurYear"));
 		return element;
 	}
 	
-	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening")
-	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening(WebDriver driver){
+	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar")
+	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzrc"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalbeginboekjaar")
 	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalbeginboekjaar(WebDriver driver){
-		element = driver.findElement(By.id("idSchuld_Vorig"));
+		element = driver.findElement(By.id("idCWNLOmzSchVorPrevYear"));
 		return element;
 	}
 	
-	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening")
-	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening(WebDriver driver){
+	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar")
+	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzrg"));
 		return element;
 	}
 	
 	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalbeginboekjaar")
 	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalbeginboekjaar(WebDriver driver){
-		element = driver.findElement(By.id("idSchuld_Oudere"));
+		element = driver.findElement(By.id("idCWNLOmzSchVorPreviousYears"));
 		return element;
 	}
 	
-	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening")
-	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(WebDriver driver){
+	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar")
+	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzrk"));
 		return element;
 	}	

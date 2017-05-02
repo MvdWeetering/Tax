@@ -122,37 +122,37 @@ public class SpecificatieAandeelhoudersObjecten {
 	
 	@FieldName(name = "NaamRechtspersoon")
 	public static WebElement NaamRechtspersoon(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TK_NO:0-0"));
+		element = driver.findElement(By.id("idn26n68ha"));
 		return element;
 	}
 	
 	@FieldName(name = "StraatnaamRechtspersoon")
 	public static WebElement StraatnaamRechtspersoon(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TK_NO:0-2"));
+		element = driver.findElement(By.id("idn26n68hb"));
 		return element;
 	}
 	
 	@FieldName(name = "HuisnummerRechtspersoon")
 	public static WebElement HuisnummerRechtspersoon(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TK_NO:0-4"));
+		element = driver.findElement(By.id("idn26n68hc"));
 		return element;
 	}
 	
 	@FieldName(name = "ToevHuisnummerRechtspersoon")
 	public static WebElement ToevHuisnummerRechtspersoon(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TK_NO:0-6"));
+		element = driver.findElement(By.id("idn26n68hd"));
 		return element;
 	}
 	
 	@FieldName(name = "VestigingsplaatsRechtspersoon")
 	public static WebElement VestigingsplaatsRechtspersoon(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TK_NO:0-8"));
+		element = driver.findElement(By.id("idn26n68he"));
 		return element;
 	}	
 	
 	@FieldName(name = "VestigingslandRechtspersoon")
 	public static WebElement VestigingslandRechtspersoon(WebDriver driver){
-		element = driver.findElement(By.id("idtable_TK_NO:0-10"));
+		element = driver.findElement(By.id("idn26n68hf"));
 		return element;
 	}
      
@@ -200,7 +200,7 @@ public class SpecificatieAandeelhoudersObjecten {
 	
 	@FieldName(name = "MoederMaatschappijVestigingsland")
 	public static WebElement MoederMaatschappijVestigingsland(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68h7"));
+		element = driver.findElement(By.id("idn26n68h6"));
 		return element;
 	}
 	

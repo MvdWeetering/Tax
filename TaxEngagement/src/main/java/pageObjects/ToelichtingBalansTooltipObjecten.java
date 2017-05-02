@@ -246,19 +246,19 @@ public class ToelichtingBalansTooltipObjecten {
 	}
 	*/
 	
-	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening")
+	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar")
 	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzrc-popover"));
 		return element;
 	}
 	
-	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening")
+	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar")
 	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzrg-popover"));
 		return element;
 	}
 	
-	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening")
+	@FieldName(name = "ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar")
 	public static WebElement ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzrk-popover"));
 		return element;

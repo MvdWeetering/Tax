@@ -340,6 +340,18 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	
+	public static WebElement ResultaatDeelnemingenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idDeelR0C1"));
+		   return element;
+		}
+	public static WebElement ResultaatDeelnemingenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idDeelR0C3"));
+		   return element;
+		}
+	
+	
+	
+	
 	//Buitengewone bedrijfslasten
 	
 	public static WebElement AfboekingHerinvesteringsReserveCommercieel(WebDriver driver){

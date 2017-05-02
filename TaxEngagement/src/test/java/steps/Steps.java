@@ -409,31 +409,12 @@ public class Steps extends AbstractSteps {
 		if (invuldata[18].equals("nee")) {
 		
 		SpecificatieAandeelhoudersObjecten.informeleKapitaalstortingNee(driver).click();
-			
-		SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys(invuldata[28]);
 		
-		SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).clear();
-		SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys(invuldata[29]);
-		
-		SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).clear();
-		SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys(invuldata[30]);
-		
-		SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).clear();
-		SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys(invuldata[31]);
-		
-		SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).clear(); 
-		SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys(invuldata[32]);
-		
-		SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).clear();
-		SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys(invuldata[33]);
 		}
 		
 		// informele kapitaalstorting = ja
-		
 		else {
 			
-						
 		SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).click();
 		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).clear();
 		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys(invuldata[19]);
@@ -448,9 +429,8 @@ public class Steps extends AbstractSteps {
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).sendKeys(invuldata[23]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).clear();
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).sendKeys(invuldata[24]);
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys(invuldata[25]);
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).clear();
+		//SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).clear();
+		//SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys(invuldata[25]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).sendKeys(invuldata[26]);
 			
 			if (invuldata[27].equals("ja")) {
@@ -458,6 +438,24 @@ public class Steps extends AbstractSteps {
 			}
 			else {
 			SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).click();
+			
+			SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).clear();
+			SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys(invuldata[28]);
+			
+			SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).clear();
+			SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys(invuldata[29]);
+			
+			SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).clear();
+			SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys(invuldata[30]);
+			
+			SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).clear();
+			SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys(invuldata[31]);
+						
+			SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).clear(); 
+			SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys(invuldata[32]);
+			
+			SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys(invuldata[33]);
+			
 			}
 		}
 		
@@ -481,7 +479,6 @@ public class Steps extends AbstractSteps {
 			// Straatnaam
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam",1, 24, false, false, driver));
 			
-			// Huisnummer uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5, false, false, driver));
 			
 			// postcode validatie nog niet geimplementeerd. na implementatie controleren.
@@ -501,8 +498,11 @@ public class Steps extends AbstractSteps {
 		
 		}
 		// nominale waarde aandelen
+		
+		/* Check uit ivm bug.
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, false, false, driver));
-						
+		*/
+		
 		// Nominale waarde preferente aandelen einde boekjaar 
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente",1 , 20, false, false, driver));
 				
@@ -512,10 +512,9 @@ public class Steps extends AbstractSteps {
 		// Percentage nominaal geplaatst kapitaal 
 		
 		// Vordering belastingplichtige op aandeelhouder
-		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("VorderingBelastingplichtige", 1, 20, false, false, driver));
-		// Schuld belastingplichtige aan aandeelhouder
 		
+		// Schuld belastingplichtige aan aandeelhouder
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("SchuldBelastingplichtige",1 , 20, false, false, driver));
 
 		// In het boekjaar ontvangen rente van de aandeelhouder
@@ -530,17 +529,20 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BedragInformeleKapitaalStorting", 1 , 99, true, false, driver));
 		
 		//moeder maatschappij huisnummer
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 5, false, false, driver));
+		
+		
+			if (SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).isSelected()) {
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnummerRechtspersoon",1 , 5, false, false, driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("ToevHuisnummerRechtspersoon",1 , 4, false, false, driver));
+			}
+		
 		}
 				
-		if (SpecificatieAandeelhoudersObjecten.informeleKapitaalstortingNee(driver).isSelected()) {
-		//huisnummer toevoeging
-		}
-		
-		
+			
 		// als validatieresultaat niet leeg is dan melding genereren.
-		System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		driver.quit();
+		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		//driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 		
 	}
@@ -562,9 +564,13 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).sendKeys(invuldata[1]);
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).clear();
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).sendKeys(invuldata[2]);
+		
+		/* Uitzetten ivm bug melding 281
 		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
 		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
 		SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys(invuldata[4]);
+		*/
+		
 		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).clear();
 		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).sendKeys(invuldata[5]);
 		SpecificatieDeelnemingenObjecten.Straatnaam(driver).clear();
@@ -921,14 +927,14 @@ public class Steps extends AbstractSteps {
 		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalbeginboekjaar(driver).clear();
 		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalbeginboekjaar(driver).sendKeys(invuldata[36]);
 		
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening(driver).sendKeys(invuldata[37]);
+		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar(driver).clear();
+		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar(driver).sendKeys(invuldata[37]);
 		
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening(driver).sendKeys(invuldata[38]);
+		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar(driver).clear();
+		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar(driver).sendKeys(invuldata[38]);
 		
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening(driver).sendKeys(invuldata[39]);
+		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar(driver).clear();
+		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar(driver).sendKeys(invuldata[39]);
 		
 				
 	}
@@ -975,26 +981,31 @@ public class Steps extends AbstractSteps {
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("AndereVasteBedrijfsmiddelen_Restwaarde3112", 1, 99, true, false, driver));
 	 						
 	 		//Toeliching ondernemingsvermogen
-	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel", 1, 70, false, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_JaarVervreemdingbedrijfsmiddel", 1, 99, true, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_Boekwinstvervreemdebedrijfsmiddel", 1, 99, true, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding", 1, 99, true, false, driver));
 	 		
 	 		//Toelichting voorziening
 	 		
-	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening", 1, 70, false, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_DotatieGarantievoorziening", 1, 99, true, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OnttrekkingGarantieVoorzieningen", 1, 99, true, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_GarantieVoorzieningEindeBoekjaar", 1, 99, true, false, driver));
-	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen", 1, 70, false, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_DotatieOverigeVoorzieningen", 1, 99, true, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OnttrekkingOverigeVoorzieningen", 1, 99, true, false, driver));
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingVoorziening_OverigeVoorzieningEindeBoekjaar", 1, 99, true, false, driver));
 	 				
 	 		//Toelichting omzetbelasting
-	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarDotatieOverigevoorziening", 1, 99, true, false, driver));
-	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarDotatieOverigevoorziening", 1, 99, true, false, driver));
-	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenDotatieOverigevoorziening", 1, 99, true, false, driver));
+	 		
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar", 1, 99, true, false, driver));
+	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar", 1, 99, true, false, driver));
+	 		
+	 		//System.out.println(ValidatieResultaat);
+	 		assertTrue(ValidatieResultaat.isEmpty());
+	 		
 	 		
 	 	}
 	@When("^open the form Winst en Verlies rekening$")
@@ -1118,158 +1129,165 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver).sendKeys("1033");
 		
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).sendKeys("1033");
+		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).sendKeys("1034");
 				
 		//Bijzondere waardevermindering van vlottende activa
 		
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).sendKeys("1034");
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).sendKeys("1035");
 		
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).clear();
-		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).sendKeys("1035");
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).sendKeys("1036");
 				
 		//Overige bedrijfskosten
 		
 		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).sendKeys("1036");
+		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).sendKeys("1037");
 		
 		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).sendKeys("1037");
+		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).sendKeys("1038");
 		
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).sendKeys("1038");
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).sendKeys("1039");
 		
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys("1039");
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys("1040");
 				
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).sendKeys("1040");
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).sendKeys("1041");
 		
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys("1041");
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys("1042");
 				
 		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).sendKeys("1042");
+		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).sendKeys("1043");
 		
 		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys("1043");
+		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys("1044");
 		
 		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).sendKeys("1044");
+		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).sendKeys("1045");
 		
 		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys("1045");
+		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys("1046");
 				
 		//Financiele baten en lasten
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).sendKeys("1046");
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).sendKeys("1047");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys("1047");
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys("1048");
 		
 		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).sendKeys("1048");
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).sendKeys("1049");
 		
 		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).sendKeys("1049");
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).sendKeys("1050");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).sendKeys("1050");
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).sendKeys("1051");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).sendKeys("1051");
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).sendKeys("1052");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).sendKeys("1052");
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).sendKeys("1053");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).sendKeys("1053");
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).sendKeys("1054");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).sendKeys("1054");
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).sendKeys("1055");
 		
 		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).sendKeys("1055");
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).sendKeys("1056");
 		
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).sendKeys("1056");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).sendKeys("1057");
 				
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).sendKeys("1057");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).sendKeys("1058");
 				
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).sendKeys("1058");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).sendKeys("1059");
 		
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).sendKeys("1059");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).sendKeys("1060");
 		
 		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).sendKeys("1060");
+		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).sendKeys("1061");
 		
 		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys("1061");
+		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys("1062");
 		
 		//Financiele lasten
 		
 		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).sendKeys("1062");
+		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).sendKeys("1063");
 		
 		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).sendKeys("1063");
+		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).sendKeys("1064");
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).sendKeys("1064");
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).sendKeys("1065");
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).sendKeys("1065");
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).sendKeys("1066");
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).sendKeys("1066");
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).sendKeys("1067");
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).sendKeys("1067");
-				
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).sendKeys("1068");
+			
+		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCommercieel(driver).clear();
+		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCommercieel(driver).sendKeys("1069");
+		
+		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).clear();
+		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).sendKeys("1070");
+		
+		
 		//Buitengewone bedrijfsbaten
 		
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver).sendKeys("1068");
+		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver).sendKeys("1071");
 		
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCF(driver).clear();
-		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCF(driver).sendKeys("1069");
+		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCF(driver).sendKeys("1072");
 		
 		
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCommercieel(driver).sendKeys("1071");
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCommercieel(driver).sendKeys("1073");
 		
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCF(driver).sendKeys("1072");
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCF(driver).sendKeys("1074");
 				
 		WinstenVerliesRekeningObjecten.BoekWinstActivaCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.BoekWinstActivaCommercieel(driver).sendKeys("1073");
+		WinstenVerliesRekeningObjecten.BoekWinstActivaCommercieel(driver).sendKeys("1075");
 		
 		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).clear();
-		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).sendKeys("1074");
+		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).sendKeys("1076");
 		
 		//Buitengewone bedrijfslasten
 		
 		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCommercieel(driver).sendKeys("1075");
+		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCommercieel(driver).sendKeys("1077");
 		
 		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCF(driver).clear();
-		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCF(driver).sendKeys("1076");
+		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCF(driver).sendKeys("1078");
 		
 		WinstenVerliesRekeningObjecten.UitkeringenANBICommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.UitkeringenANBICommercieel(driver).sendKeys("1077");
+		WinstenVerliesRekeningObjecten.UitkeringenANBICommercieel(driver).sendKeys("1079");
 		
 		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).clear();
-		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).sendKeys("1078");
+		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).sendKeys("1080");
 		
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCommercieel(driver).sendKeys("1079");
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCommercieel(driver).sendKeys("1081");
 		
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver).sendKeys("1080");
+		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver).sendKeys("1082");
 		
 	}
 	

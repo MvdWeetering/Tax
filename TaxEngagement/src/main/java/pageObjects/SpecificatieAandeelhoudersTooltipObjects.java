@@ -97,6 +97,19 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tzsc-popover"));
 		return element;
 	}
+	
+	@FieldName(name = "HuisnummerRechtspersoon")
+	public static WebElement HuisnummerRechtspersoon (WebDriver driver){
+		element = driver.findElement(By.id("idn26n68hc-popover"));
+		return element;
+	}
+	@FieldName(name = "ToevHuisnummerRechtspersoon")
+	public static WebElement ToevHuisnummerRechtspersoon (WebDriver driver){
+		element = driver.findElement(By.id("idn26n68hd-popover"));
+		return element;
+	}	
+	
+	
 }
 
 

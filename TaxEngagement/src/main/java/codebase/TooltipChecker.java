@@ -31,6 +31,7 @@ public class TooltipChecker extends AbstractSteps {
 				// Null indicates: expected tooltip text balloon is missing
 				if (elem == null) {
 					TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
+					System.out.println("Tooltip ontbreekt voor element:" + Naamobject);
 				} 
 				
 				else {
@@ -41,11 +42,11 @@ public class TooltipChecker extends AbstractSteps {
 						}
 						else {
 							if (checker.contains("Te lang")) {
-									if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
-										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+									if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
 										System.out.println(Naamobject);
 										System.out.println("gelezen:" + invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText());
-										System.out.println("verwacht:[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
+										System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
 									}
 									
 							}
@@ -60,11 +61,11 @@ public class TooltipChecker extends AbstractSteps {
 							}
 								
 							if (checker.contains("Te Kort")) {
-									if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
-										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+									if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
 										System.out.println(Naamobject);
 										System.out.println("gelezen:" +invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText());
-										System.out.println("verwacht:[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
+										System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
 									}
 							}
 					}
@@ -99,6 +100,7 @@ public class TooltipChecker extends AbstractSteps {
 				// Null indicates: expected tooltip text balloon is missing
 				if (elem == null) {
 					TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
+					System.out.println("Tooltip ontbreekt voor element:" + Naamobject);
 				} 
 				
 				else {
@@ -109,11 +111,11 @@ public class TooltipChecker extends AbstractSteps {
 						}
 						else {
 							if (checker.contains("Te lang")) {
-									if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
-										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+									if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
 										System.out.println(Naamobject);
 										System.out.println("gelezen:" + invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText());
-										System.out.println("verwacht:[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
+										System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
 									}
 									
 							}
@@ -128,11 +130,11 @@ public class TooltipChecker extends AbstractSteps {
 							}
 								
 							if (checker.contains("Te Kort")) {
-									if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
-										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+									if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
 										System.out.println(Naamobject);
 										System.out.println("gelezen:" +invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText());
-										System.out.println("verwacht:[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
+										System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
 									}
 							}
 					}
@@ -164,6 +166,7 @@ public class TooltipChecker extends AbstractSteps {
 				// Null indicates: expected tooltip text balloon is missing
 				if (elem == null) {
 					TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
+					System.out.println("Tooltip ontbreekt voor element:" + Naamobject);
 				} 
 				
 				else {
@@ -174,11 +177,11 @@ public class TooltipChecker extends AbstractSteps {
 						}
 						else {
 							if (checker.contains("Te lang")) {
-									if (!invoke(ToelichtingBalansTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
-										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+									if (!invoke(ToelichtingBalansTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
 										System.out.println(Naamobject);
 										System.out.println("gelezen:" + invoke(ToelichtingBalansTooltipObjecten.class, Naamobject, driver).getText());
-										System.out.println("verwacht:[Aantal tekens] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
+										System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
 									}
 									
 							}
@@ -193,11 +196,11 @@ public class TooltipChecker extends AbstractSteps {
 							}
 								
 							if (checker.contains("Te Kort")) {
-									if (!invoke(ToelichtingBalansTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
-										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+									if (!invoke(ToelichtingBalansTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+										TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
 										System.out.println(Naamobject);
 										System.out.println("gelezen:" +invoke(ToelichtingBalansTooltipObjecten.class, Naamobject, driver).getText());
-										System.out.println("verwacht:[Aantal tekens] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
+										System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
 									}
 							}
 					}
