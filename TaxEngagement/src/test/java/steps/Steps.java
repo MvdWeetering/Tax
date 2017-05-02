@@ -21,6 +21,7 @@ import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
 import pageObjects.ValidatieObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
+import codebase.*;
 
 public class Steps extends AbstractSteps {
 
@@ -1021,231 +1022,231 @@ public class Steps extends AbstractSteps {
 		//bedrijfsopbrengsten
 		
 		WinstenVerliesRekeningObjecten.NettoOmzetCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.NettoOmzetCommercieel(driver).sendKeys("1001");
+		WinstenVerliesRekeningObjecten.NettoOmzetCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",7));
 		
 		WinstenVerliesRekeningObjecten.NettoOmzetCF(driver).clear();
-		WinstenVerliesRekeningObjecten.NettoOmzetCF(driver).sendKeys("1002");
+		WinstenVerliesRekeningObjecten.NettoOmzetCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",7));
 		
 		WinstenVerliesRekeningObjecten.WijzigingVoorraadCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.WijzigingVoorraadCommercieel(driver).sendKeys("1003");
+		WinstenVerliesRekeningObjecten.WijzigingVoorraadCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",8));
 		
 		WinstenVerliesRekeningObjecten.WijzigingVoorraadCF(driver).clear();
-		WinstenVerliesRekeningObjecten.WijzigingVoorraadCF(driver).sendKeys("1004");
+		WinstenVerliesRekeningObjecten.WijzigingVoorraadCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",8));
 		
 		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCommercieel(driver).sendKeys("1005");
+		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",9));
 		
 		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCF(driver).clear();
-		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCF(driver).sendKeys("1006");
+		WinstenVerliesRekeningObjecten.GeactiveerdeProductieCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",9));
 		
 		WinstenVerliesRekeningObjecten.OverigeOpbrengstenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeOpbrengstenCommercieel(driver).sendKeys("1007");
+		WinstenVerliesRekeningObjecten.OverigeOpbrengstenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",10));
 
 		WinstenVerliesRekeningObjecten.OverigeOpbrengstenProductieCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeOpbrengstenProductieCF(driver).sendKeys("1008");
+		WinstenVerliesRekeningObjecten.OverigeOpbrengstenProductieCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",10));
 		
 		
 		//Kosten grond en hulpstoffen
 		
 		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCommercieel(driver).sendKeys("1009");
+		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",20));
 		
 		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCF(driver).sendKeys("1010");
+		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",20));
 		
 		WinstenVerliesRekeningObjecten.KostenUitbesteedCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenUitbesteedCommercieel(driver).sendKeys("1011");
+		WinstenVerliesRekeningObjecten.KostenUitbesteedCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",21));
 		
 		WinstenVerliesRekeningObjecten.KostenUitbesteedCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenUitbesteedCF(driver).sendKeys("1012");
+		WinstenVerliesRekeningObjecten.KostenUitbesteedCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",21));
 				
 		//Personeelskosten
 		
 		WinstenVerliesRekeningObjecten.LonenSalarissenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.LonenSalarissenCommercieel(driver).sendKeys("1013");
+		WinstenVerliesRekeningObjecten.LonenSalarissenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",27));
 
 		WinstenVerliesRekeningObjecten.LonenSalarissenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.LonenSalarissenCF(driver).sendKeys("1014");
+		WinstenVerliesRekeningObjecten.LonenSalarissenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",27));
 		
 		WinstenVerliesRekeningObjecten.SocialeLastenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.SocialeLastenCommercieel(driver).sendKeys("1015");
+		WinstenVerliesRekeningObjecten.SocialeLastenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",28));
 		
 		WinstenVerliesRekeningObjecten.SocialeLastenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.SocialeLastenCF(driver).sendKeys("1016");
+		WinstenVerliesRekeningObjecten.SocialeLastenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",28));
 		
 		WinstenVerliesRekeningObjecten.PensioenLastenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.PensioenLastenCommercieel(driver).sendKeys("1017");
+		WinstenVerliesRekeningObjecten.PensioenLastenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",29));
 		
 		WinstenVerliesRekeningObjecten.PensioenLastenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.PensioenLastenCF(driver).sendKeys("1018");
+		WinstenVerliesRekeningObjecten.PensioenLastenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",29));
 		
 		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCommercieel(driver).sendKeys("1019");
+		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",30));
 		
 		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver).sendKeys("1020");
+		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",30));
 		
 		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).sendKeys("1021");
+		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",31));
 		
 		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys("1022");
+		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",31));
 				
 		//Afschrijvingen
 		
 		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).sendKeys("1023");
+		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",37));
 		
 		WinstenVerliesRekeningObjecten.GoodWillCF(driver).clear();
-		WinstenVerliesRekeningObjecten.GoodWillCF(driver).sendKeys("1024");
+		WinstenVerliesRekeningObjecten.GoodWillCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",37));
 		
 		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCommercieel(driver).sendKeys("1025");
+		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",38));
 		
 		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCF(driver).sendKeys("1026");
+		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",38));
 		
 		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCommercieel(driver).sendKeys("1027");
+		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",39));
 				
 		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).sendKeys("1028");
+		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",39));
 				
 		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCommercieel(driver).sendKeys("1029");
+		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",40));
 		
 		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCF(driver).clear();
-		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCF(driver).sendKeys("1030");
+		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",40));
 		
 		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCommercieel(driver).sendKeys("1031");
+		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",41));
 		
 		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCF(driver).sendKeys("1032");		
+		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",41));		
 		
 		//Overige waardeverandering van immateriele en materiele vaste activa
 		
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver).sendKeys("1033");
+		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",47));
 		
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).sendKeys("1034");
+		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",47));
 				
 		//Bijzondere waardevermindering van vlottende activa
 		
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).sendKeys("1035");
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",52));
 		
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).clear();
-		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).sendKeys("1036");
+		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",52));
 				
 		//Overige bedrijfskosten
 		
 		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).sendKeys("1037");
+		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",56));
 		
 		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).sendKeys("1038");
+		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",56));
 		
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).sendKeys("1039");
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",57));
 		
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys("1040");
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",57));
 				
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).sendKeys("1041");
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",58));
 		
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys("1042");
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",58));
 				
 		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).sendKeys("1043");
+		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",59));
 		
 		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys("1044");
+		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",59));
 		
 		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).sendKeys("1045");
+		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",60));
 		
 		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys("1046");
+		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",60));
 				
 		//Financiele baten en lasten
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).sendKeys("1047");
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",71));
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys("1048");
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",71));
 		
 		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).sendKeys("1049");
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",72));
 		
 		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).sendKeys("1050");
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",72));
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).sendKeys("1051");
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",73));
 		
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).sendKeys("1052");
+		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",73));
 		
 		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).sendKeys("1053");
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",74));
 		
 		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).sendKeys("1054");
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",74));
 		
 		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).sendKeys("1055");
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",75));
 		
 		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).sendKeys("1056");
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",75));
 		
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).sendKeys("1057");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",76));
 				
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).sendKeys("1058");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",76));
 				
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).sendKeys("1059");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",77));
 		
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).sendKeys("1060");
+		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",77));
 		
 		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).sendKeys("1061");
+		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",78));
 		
 		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys("1062");
+		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",78));
 		
 		//Financiele lasten
 		
 		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).sendKeys("1063");
+		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",84));
 		
 		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).sendKeys("1064");
+		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",84));
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).sendKeys("1065");
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",85));
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).sendKeys("1066");
+		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",85));
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).sendKeys("1067");
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",86));
 		
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).sendKeys("1068");
+		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",86));
 			
 		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCommercieel(driver).sendKeys("1069");
+		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("E",94));
 		
 		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).sendKeys("1070");
+		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).sendKeys(WinstVerliesXLS.HaalData("F",94));
 		
 		
 		//Buitengewone bedrijfsbaten
@@ -1291,5 +1292,16 @@ public class Steps extends AbstractSteps {
 		
 	}
 	
+	@Then("^i can validate the totals for each column$")
+	public void i_can_validate_the_totals_for_each_column() throws Throwable {
+
+		
+		
+		
+		
+		
+		
+		
+	}
 }
 

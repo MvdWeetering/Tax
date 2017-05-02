@@ -70,7 +70,7 @@ Feature: vullen formulieren
     And open the Project "dossier 27-03-2017"
     And open the form Winst en Verlies rekening
     Then i can fill out the form Winst en Verlies rekening
-    
+    Then i can validate the totals for each column
     
     
     
