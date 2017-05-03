@@ -2,7 +2,12 @@ package codebase;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
+import static org.junit.Assert.assertTrue;
+import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -49,8 +54,8 @@ public class WinstVerliesXLS {
 				Column = 7;
 			}
 			
-			resultaat = new DataFormatter().formatCellValue(row.getCell(Column));		
-
+			resultaat =String.valueOf((row.getCell(Column).getNumericCellValue()));		
+						
 			fis.close();
 		} catch (IOException e) {
 			return "Test data file not found";
@@ -61,8 +66,30 @@ public class WinstVerliesXLS {
 		
 		return resultaat;
 	}	
-	public static void main(String[] args) {
-		
-	System.out.println(codebase.WinstVerliesXLS.HaalData("A", 2));
+
+		public static ArrayList<String> Vergelijk(String WebWaarden, Double XlsWaarden) {
+			
+			ArrayList<String> VergelijkResult = new ArrayList<String>();
+			
+			String WebText = WebWaarden.toString().replaceAll(",", "");
+			
+			double XLSformatter = XlsWaarden;
+			DecimalFormat df = new DecimalFormat("###.#");
+			String XlsText = df.format(XLSformatter);
+			  
+			if (!WebText.equals(XlsText)) {  
+				VergelijkResult.add("Waarden niet gelijk");
+			}
+			return VergelijkResult;
+		}
+
+		public static void main(String[] args) {
+		/*
+		Web = 2,003
+		Excel = 2003.0
+		*/
+			  
+		  
+		  
 	}
 }

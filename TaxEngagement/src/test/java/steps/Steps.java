@@ -1,8 +1,13 @@
 package steps;
 
 import static org.junit.Assert.assertTrue;
+
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.lang3.builder.CompareToBuilder;
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -1295,10 +1300,16 @@ public class Steps extends AbstractSteps {
 	@Then("^i can validate the totals for each column$")
 	public void i_can_validate_the_totals_for_each_column() throws Throwable {
 
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
-		
-		
-		
+		//Bedrijfsopbrengsten
+
+		String a = driver.findElement(By.id("idxdt9tzis")).getAttribute("value");
+		double b = Double.parseDouble(WinstVerliesXLS.HaalData("D",7));
+
+		ValidatieResultaat.addAll(codebase.WinstVerliesXLS.Vergelijk(a, b));
+			
+		System.out.println(ValidatieResultaat);
 		
 		
 		
