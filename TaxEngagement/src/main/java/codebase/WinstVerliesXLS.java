@@ -67,7 +67,7 @@ public class WinstVerliesXLS {
 		return resultaat;
 	}	
 
-		public static ArrayList<String> Vergelijk(String WebWaarden, Double XlsWaarden) {
+		public static ArrayList<String> Vergelijk(String WebWaarden, Double XlsWaarden, String Cel) {
 			
 			ArrayList<String> VergelijkResult = new ArrayList<String>();
 			
@@ -78,7 +78,7 @@ public class WinstVerliesXLS {
 			String XlsText = df.format(XLSformatter);
 			  
 			if (!WebText.equals(XlsText)) {  
-				VergelijkResult.add("Waarden niet gelijk");
+				VergelijkResult.add("Web waarden wijken af van Cel " + Cel + "\r\n");
 			}
 			return VergelijkResult;
 		}

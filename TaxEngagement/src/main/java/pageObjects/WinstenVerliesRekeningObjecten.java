@@ -350,8 +350,6 @@ public class WinstenVerliesRekeningObjecten {
 		}
 	
 	
-	
-	
 	//Buitengewone bedrijfslasten
 	
 	public static WebElement AfboekingHerinvesteringsReserveCommercieel(WebDriver driver){
@@ -378,5 +376,89 @@ public class WinstenVerliesRekeningObjecten {
 		   element = driver.findElement(By.id("idBuiLasR2C3"));
 		   return element;
 		}
+	
+	//Totalen *******
+	
+	// Bedrijfsopbrengsten fiscaal 31-12
+	
+	public static WebElement NettoOmzetFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzis"));
+		   return element;
+		}
+	
+	public static WebElement WijzigingVoorraadOnderhWerkFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzit"));
+		   return element;
+		}
+	
+	public static WebElement GeactiveerdeProdFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tziu"));
+		   return element;
+		}
+	
+	public static WebElement OverigeOpbrFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tziw"));
+		   return element;
+		}
+	
+
+	// Totaal bedrijfsopbrengsten
+	
+	public static WebElement TotaalBedrOpbrCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBeOToR0C2"));
+		   return element;
+		}
+	public static WebElement TotaalBedrOpbrCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBeOToR0C4"));
+		   return element;
+		}
+	public static WebElement TotaalBedrOpbrFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzix"));
+		   return element;
+		}
+
+	
+	// bedrijfslasten
+	
+	//Kosten grond- en hulpstoffen, uitbesteed werk en dergelijke
+	
+	public static WebElement KostenGrondHulpStFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzj2"));
+		   return element;
+		}
+	public static WebElement KostenUitbesteedWerkFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzj3"));
+		   return element;
+		}
+	
+	
+	//Totaal kosten grond- en hulpstoffen, uitbesteed werk en dergelijke
+	
+	public static WebElement TotaalKostenGrondHulpstCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idGrHulpUitR2C1"));
+		   return element;
+		}
+	
+	public static WebElement TotaalKostenGrondHulpstCF(WebDriver driver){
+		   element = driver.findElement(By.id("idGrHulpUitR2C3"));
+		   return element;
+		}
+	
+	public static WebElement TotaalKostenGrondHulpstFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idGrHulpUitR2C5"));
+		   return element;
+		}
+	
+	//Personeelskosten
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
