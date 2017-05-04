@@ -451,14 +451,371 @@ public class WinstenVerliesRekeningObjecten {
 	
 	//Personeelskosten
 	
+	public static WebElement LonenSalarissenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzj6"));
+		   return element;
+		}
+	
+	public static WebElement SocialeLastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzj7"));
+		   return element;
+		}
 	
 	
+	public static WebElement PensioenLastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzj9"));
+		   return element;
+		}
 	
 	
+	public static WebElement OverigePersoneelsKostenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzja"));
+		   return element;
+		}
+	
+	public static WebElement OntvUitkeringLoonSubsFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjb"));
+		   return element;
+		}
+		
+	public static WebElement TotaalPersKostenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idPerR5C1"));
+		   return element;
+		}
+	
+	public static WebElement TotaalPersKostenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idPerR5C3"));
+		   return element;
+		}
+	public static WebElement TotaalPersKostenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idPerR5C5"));
+		   return element;
+		}
 	
 	
+	//Afschrijvingen
+	
+	public static WebElement GoodWillFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzje"));
+		   return element;
+		}
+	
+	public static WebElement OverigeImmaterielActFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjg"));
+		   return element;
+		}
+	
+	public static WebElement BedrijfsgebouwenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjh"));
+		   return element;
+		}
+	
+	public static WebElement MachinesInstallatiesFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzji"));
+		   return element;
+		}
+	
+	public static WebElement AndereVasteActFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjk"));
+		   return element;
+		}
+	
+	public static WebElement TotaalAfschrijvCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idAfsR5C1"));
+		   return element;
+		}
+	
+	public static WebElement TotaalAfschrijvCF(WebDriver driver){
+		   element = driver.findElement(By.id("idAfsR5C3"));
+		   return element;
+		}
+	
+	public static WebElement TotaalAfschrijvFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idAfsR5C5"));
+		   return element;
+		}
+	
+	//Overige waardeveranderingen van immateriële en materiêle vaste activa 
 	
 	
+	public static WebElement OverigeWaardeVeranderingFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjl"));
+		   return element;
+		}
+	
+	//Bijzondere waardevermindering van vlottende activa 
+	
+	public static WebElement BijzondereWaardeVerminderingFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjm"));
+		   return element;
+		}
+	
+	//Overige bedrijfskosten
+	
+	public static WebElement AutoTransportKostenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjq"));
+		   return element;
+		}
+	
+	public static WebElement HuisvestingsKostenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjr"));
+		   return element;
+		}
+	
+	public static WebElement onderhoudOverigeMatrActFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjt"));
+		   return element;
+		}
+	
+	public static WebElement VerkoopkostenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzju"));
+		   return element;
+		}
+	
+	public static WebElement AndereKostenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzjv"));
+		   return element;
+		}
+	
+	public static WebElement TotaaloverigeBedrKostenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idOvBeKR5C1"));
+		   return element;
+		}
+	
+	public static WebElement TotaaloverigeBedrKostenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idOvBeKR5C3"));
+		   return element;
+		}
+	
+	public static WebElement TotaaloverigeBedrKostenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idOvBeKR5C5"));
+		   return element;
+		}
+	
+	//Financiele baten en lasten ***
+	
+	//Financiele baten
+	
+	public static WebElement OpbrengstVordGroepMaatschFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzk5"));
+		   return element;
+		}
+	public static WebElement KwijtscheldingsWinstFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzk8"));
+		   return element;
+		}
+	
+	public static WebElement OpbrengstVordParticipantFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzka"));
+		   return element;
+		}
+	
+	public static WebElement OpbrengstOverigeVordFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzkc"));
+		   return element;
+		}
+	
+	public static WebElement OpbrengstBanktegoedFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzkf"));
+		   return element;
+		}
+	
+	public static WebElement WaardeVeranderingVordFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzkh"));
+		   return element;
+		}
+	
+	public static WebElement WaardeVeranderingEffectenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzki"));
+		   return element;
+		}
+	
+	public static WebElement OntvangenDividentFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzkk"));
+		   return element;
+		}
+	
+	public static WebElement TotaleFinancieleBatenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idFinBatR8C1"));
+		   return element;
+		}
+	
+	public static WebElement TotaleFinancieleBatenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idFinBatR8C3"));
+		   return element;
+		}
+	
+	public static WebElement TotaleFinancieleBatenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idFinBatR8C5"));
+		   return element;
+		}
 	
 	
+	//Financiele lasten
+	
+	
+	public static WebElement KostenSchuldenParticipantFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzko"));
+		   return element;
+		}
+	public static WebElement KostenSchuldenRentelastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzkp"));
+		   return element;
+		}
+	public static WebElement KostenSchuldenGroepsMaatschFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzkq"));
+		   return element;
+		}
+	public static WebElement TotaalFinLastenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR3C1"));
+		   return element;
+		}
+	public static WebElement TotaalFinLastenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR3C3"));
+		   return element;
+		}
+	public static WebElement TotaalFinLastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idFinLasR3C5"));
+		   return element;
+		}
+	
+	
+	//Totaal financiele baten en lasten
+	
+	public static WebElement TotaalfinanciëleBatenLastenCommercieel (WebDriver driver){
+		   element = driver.findElement(By.id("idTotFinBatLasR0C1"));
+		   return element;
+		}
+
+	public static WebElement TotaalfinanciëleBatenLastenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idTotFinBatLasR0C3"));
+		   return element;
+		}
+	
+	public static WebElement TotaalfinanciëleBatenLastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzks"));
+		   return element;
+		}
+	
+	public static WebElement ResultaatGewoneBedrijfsuitoefCommercieel (WebDriver driver){
+		   element = driver.findElement(By.id("idResBedrR0C2"));
+		   return element;
+		}
+	
+	public static WebElement ResultaatGewoneBedrijfsuitoefCF(WebDriver driver){
+		   element = driver.findElement(By.id("idResBedrR0C4"));
+		   return element;
+		}
+	
+	public static WebElement ResultaatGewoneBedrijfsuitoefFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzku"));
+		   return element;
+		}
+	
+	public static WebElement ResultaatDeelnemingFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idDeelR0C5"));
+		   return element;
+		}
+	
+	//Buitengewone bedrijfsbaten en lasten ****
+	
+	//Buitengewone bedrijfsbaten 
+	
+	public static WebElement VoordelenOntvoegDochterFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl1"));
+		   return element;
+		}
+	
+	public static WebElement OverigeBuitenGewBatenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl2"));
+		   return element;
+		}
+	
+	public static WebElement BoekwinstActivaFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl4"));
+		   return element;
+		}
+	
+	public static WebElement TotaalBuitenGewBedrijfsBatenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR3C1"));
+		   return element;
+		}
+	
+	public static WebElement TotaalBuitenGewBedrijfsBatenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR3C3"));
+		   return element;
+		}
+	
+	public static WebElement TotaalBuitenGewBedrijfsBatenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiBatR3C5"));
+		   return element;
+		}
+	
+	
+	//Buitengewone bedrijfslasten
+	
+	public static WebElement AfboekenHerinvesteringReserveFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl7"));
+		   return element;
+		}
+	
+	public static WebElement UitkeringANBIFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl8"));
+		   return element;
+		}
+	
+	public static WebElement OverigeBuitengewoneLastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl9"));
+		   return element;
+		}
+	
+	public static WebElement TotaalBuitengewBedrLastenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR3C1"));
+		   return element;
+		}
+	
+	public static WebElement TotaalBuitengewBedrLastenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR3C3"));
+		   return element;
+		}
+	
+	public static WebElement TotaalBuitengewBedrLastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idBuiLasR3C5"));
+		   return element;
+		}
+	
+	//Buitengewone resultaten
+
+	public static WebElement BuitenGewoneResultatenCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idTotBuiResR0C1"));
+		   return element;
+		}
+	
+	public static WebElement BuitenGewoneResultatenCF(WebDriver driver){
+		   element = driver.findElement(By.id("idTotBuiResR0C3"));
+		   return element;
+		}
+	
+	public static WebElement BuitenGewoneResultatenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzlb"));
+		   return element;
+		}
+	
+	//Saldo fiscale winstberekening
+	
+	public static WebElement SaldoFiscWinstBerCommercieel(WebDriver driver){
+		   element = driver.findElement(By.id("idTotFisWinstR0C1"));
+		   return element;
+		}
+	
+	public static WebElement SaldoFiscWinstBerCF(WebDriver driver){
+		   element = driver.findElement(By.id("idTotFisWinstR0C3"));
+		   return element;
+		}
+	
+	public static WebElement SaldoFiscWinstBerFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzlc"));
+		   return element;
+		}
+		
 }
