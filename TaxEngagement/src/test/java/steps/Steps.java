@@ -356,6 +356,55 @@ public class Steps extends AbstractSteps {
 		
 	}
 	
+	@Then("^i can validate the error messages for Specificatie Deelnemingen form$")
+	public void i_can_validate_the_error_messages_for_Specificatie_Deelnemingen_form() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		
+		
+		Thread.sleep(1500);
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("NaamDeelneming", 1, 70, false, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RSINdeelneming", 1, 9, false, true, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("Huisnummer", 1, 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("NominaleWaardeAandelenBezit", 1, 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("OpgeofferdBedrag", 1, 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BalanswaarderingDeelneming", 1, 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("VoordelenDeelneming", 1, 99, true, false, driver));
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BedragVorderingenDeelneming", 1, 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BedragSchuldDeelneming", 1, 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("OntvRenteDeelneming", 1, 99, true, false, driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BetRenteDeelneming", 1, 99, true, false, driver));
+		
+		// **
+		
+		if (pageObjects.SpecificatieDeelnemingenObjecten.DeelnemingVerworven_Ja(driver).isSelected()) {
+			
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("PercentageVerwerving", 1, 99, true, false, driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("NominaleWaardeVerwerving", 1, 99, true, false, driver));
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		// **
+		
+		System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		
+		//driver.quit();
+		
+		assertTrue(ValidatieResultaat.isEmpty());	
+		
+		
+		
+		
+	}
 	
 	@When("^open the form Specificatie Aandeelhouders$")
 	public void open_the_form_Specificatie_Aandeelhouders() throws Throwable {
@@ -623,8 +672,8 @@ public class Steps extends AbstractSteps {
 		if (invuldata[20].equals("ja")) {
 		SpecificatieDeelnemingenObjecten.DeelnemingVerworven_Ja(driver).click();
 		
-		SpecificatieDeelnemingenObjecten.PercentageVerwervingn(driver).clear();
-		SpecificatieDeelnemingenObjecten.PercentageVerwervingn(driver).sendKeys(invuldata[21]);
+		SpecificatieDeelnemingenObjecten.PercentageVerwerving(driver).clear();
+		SpecificatieDeelnemingenObjecten.PercentageVerwerving(driver).sendKeys(invuldata[21]);
 		SpecificatieDeelnemingenObjecten.NominaleWaardeVerwerving(driver).clear();
 		SpecificatieDeelnemingenObjecten.NominaleWaardeVerwerving(driver).sendKeys(invuldata[22]);
 		SpecificatieDeelnemingenObjecten.OpgeofferdbedragVerwerving(driver).clear();

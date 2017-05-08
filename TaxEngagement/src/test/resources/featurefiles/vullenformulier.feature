@@ -13,6 +13,7 @@ Feature: vullen formulieren
     And open the Project "dossier 27-03-2017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config 1
+    Then i can validate the error messages for the Algemene gegevens form
 
   @vullen_formulier @Algemene_vragen
   Scenario: vullen formulier Algemene Vragen
@@ -41,8 +42,7 @@ Feature: vullen formulieren
       |  4|
       |  5|
       |  6|
-      
-
+ 
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario: vullen formulier Specificatie Deelnemingen
     Given I want to login
@@ -50,7 +50,9 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 27-03-2017"
     And open the form Specificatie Deelnemingen
-    Then i can fill out the form Specificatie Deelnemingen
+  
+ 		Then i can validate the error messages for Specificatie Deelnemingen form
+ 
  
   @vullen_formulier @Toelichting_Balans
   Scenario: vullen formulier Toelichting Balans
