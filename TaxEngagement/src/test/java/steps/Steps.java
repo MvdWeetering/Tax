@@ -384,6 +384,9 @@ public class Steps extends AbstractSteps {
 			
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("PercentageVerwerving", 1, 99, true, false, driver));
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("NominaleWaardeVerwerving", 1, 99, true, false, driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("OpgeofferdbedragVerwerving", 1, 99, true, false, driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BrutoVoordelenMetDeelneming", 1, 99, true, false, driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("KostenVerwervingDeelneming", 1, 99, true, false, driver));
 			
 			
 			
@@ -395,9 +398,7 @@ public class Steps extends AbstractSteps {
 		
 		// **
 		
-		System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		
-		//driver.quit();
+		driver.quit();
 		
 		assertTrue(ValidatieResultaat.isEmpty());	
 		
@@ -484,8 +485,8 @@ public class Steps extends AbstractSteps {
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).sendKeys(invuldata[23]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).clear();
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).sendKeys(invuldata[24]);
-		//SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).clear();
-		//SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys(invuldata[25]);
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).clear();
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys(invuldata[25]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).sendKeys(invuldata[26]);
 			
 			if (invuldata[27].equals("ja")) {
@@ -597,7 +598,7 @@ public class Steps extends AbstractSteps {
 			
 		// als validatieresultaat niet leeg is dan melding genereren.
 		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		//driver.quit();
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 		
 	}
@@ -836,7 +837,7 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).clear();
 		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).sendKeys(invuldata[51]);
 		}
-	//	driver.quit();
+		driver.quit();
 		
 	}
 	
@@ -1468,6 +1469,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.AfboekenHerinvesteringReserveFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("D",107)), "D107"));
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.UitkeringANBIFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("D",108)), "D108"));
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.OverigeBuitengewoneLastenFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("D",109)), "D109"));
+
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalBuitengewBedrLastenCommercieel(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("B",110)), "B110"));
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalBuitengewBedrLastenCF(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("C",110)), "C110"));
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalBuitengewBedrLastenFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("D",110)), "D110"));
@@ -1486,7 +1488,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("G",118)), "G118"));
 		
 			
-		//driver.quit();
+		driver.quit();
 		System.out.println(ValidatieResultaat);
 		
 		

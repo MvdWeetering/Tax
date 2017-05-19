@@ -256,13 +256,13 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "VerkaptDivident_ja")
 	public static WebElement VerkaptDivident_ja(WebDriver driver){
-		element = driver.findElement(By.id("idnum_PIHDR"));
+		element = driver.findElement(By.id("idn26n68fc"));
 		return element;
 	}
 	
 	@FieldName(name = "VerkaptDivident_nee")
 	public static WebElement VerkaptDivident_nee(WebDriver driver){
-		element = driver.findElement(By.id("idnum_PIHDR-no"));
+		element = driver.findElement(By.id("idn26n68fc-no"));
 		return element;
 	}
 		
