@@ -19,6 +19,7 @@ import cucumber.api.java.en.When;
 import pageObjects.AbstractSteps;
 import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
+import pageObjects.BalansActivaObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
@@ -388,22 +389,13 @@ public class Steps extends AbstractSteps {
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BrutoVoordelenMetDeelneming", 1, 99, true, false, driver));
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("KostenVerwervingDeelneming", 1, 99, true, false, driver));
 			
-			
-			
-			
-			
 		}
 		
-		
-		
-		// **
+			// **
 		
 		driver.quit();
 		
 		assertTrue(ValidatieResultaat.isEmpty());	
-		
-		
-		
 		
 	}
 	
@@ -837,7 +829,7 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).clear();
 		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).sendKeys(invuldata[51]);
 		}
-		driver.quit();
+		
 		
 	}
 	
@@ -1490,9 +1482,315 @@ public class Steps extends AbstractSteps {
 			
 		driver.quit();
 		System.out.println(ValidatieResultaat);
-		
-		
-		
 	}
+	
+
+@When("^open the form Balans Activa$")
+public void open_the_form_Balans_Activa() throws Throwable {
+   
+	NavigerenObjecten.BalansActiva(driver).click();
+   
 }
+
+@Then("^i can fill out the form Balans Activa$")
+public void i_can_fill_out_the_form_Balans_Activa() throws Throwable {
+    
+	BalansActivaObjecten.NaamOnderneming(driver).clear();
+	BalansActivaObjecten.NaamOnderneming(driver).sendKeys("Naam onderneming");
+	BalansActivaObjecten.OmschrijvingActiviteit(driver).clear();
+	BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys("omschrijving activiteiten");
+	BalansActivaObjecten.DochterMaatschappij_Ja(driver).click();
+	BalansActivaObjecten.BoekjaarAgrarische_ja(driver).click();
+	
+	//goodwill fiscaal
+	
+	BalansActivaObjecten.GoodwillAanschaf(driver).clear();
+	BalansActivaObjecten.GoodwillAanschaf(driver).sendKeys("1001");
+	
+	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).sendKeys("1002");
+	
+	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).sendKeys("1003");
+	
+	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).sendKeys("1004");
+	
+	BalansActivaObjecten.GoodwillCF(driver).clear();
+	BalansActivaObjecten.GoodwillCF(driver).sendKeys("1005");
+		
+	//Overige immateriële vaste activa
+   	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).clear();
+	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).sendKeys("2001");
+	
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).sendKeys("2002");
+	
+	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).sendKeys("2003");
+	
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).sendKeys("2004");
+	
+	BalansActivaObjecten.OverigeImmaterieleCF(driver).clear();
+	BalansActivaObjecten.OverigeImmaterieleCF(driver).sendKeys("2005");
+		
+	//Gebouwen en terreinen 
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).sendKeys("3001");
+	
+	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).sendKeys("3002");
+	
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).sendKeys("3003");
+	
+	BalansActivaObjecten.GebouwenTerreinenCF(driver).clear();
+	BalansActivaObjecten.GebouwenTerreinenCF(driver).sendKeys("3004");
+		
+	//Machines en installaties 
+	BalansActivaObjecten.MachinesCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.MachinesCommercieel_1_1(driver).sendKeys("4001");
+	
+	BalansActivaObjecten.MachinesFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.MachinesFiscaal_1_1(driver).sendKeys("4002");
+	
+	BalansActivaObjecten.MachinesCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.MachinesCommercieel_31_12(driver).sendKeys("4003");
+	
+	BalansActivaObjecten.MachinesCF(driver).clear();
+	BalansActivaObjecten.MachinesCF(driver).sendKeys("4004");
+	
+	//Andere vaste bedrijfsmiddelen 
+	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).sendKeys("5001");
+	
+	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).sendKeys("5002");
+	
+	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).sendKeys("5003");
+	
+	BalansActivaObjecten.AndereBedrijfsCF(driver).clear();
+	BalansActivaObjecten.AndereBedrijfsCF(driver).sendKeys("5004");
+
+	//Deelnemingen 
+	
+	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).sendKeys("6001");
+	
+	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).sendKeys("6002");
+	
+	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).sendKeys("6003");
+	
+	BalansActivaObjecten.DeelnemingenCF(driver).clear();
+	BalansActivaObjecten.DeelnemingenCF(driver).sendKeys("6004");
+		
+	//Langlopende vorderingen op groepsmaatschappijen
+	
+	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).clear();
+	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).sendKeys("7001");
+	
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).sendKeys("7002");
+	
+	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).sendKeys("7003");
+	
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).sendKeys("7004");
+	
+	BalansActivaObjecten.langlopendevordGroepsCF(driver).clear();
+	BalansActivaObjecten.langlopendevordGroepsCF(driver).sendKeys("7005");
+		
+	//Langlopende vorderingen participanten/maatschappijen
+	
+	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).clear();
+	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).sendKeys("8001");
+	
+	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).sendKeys("8002");
+	
+	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).sendKeys("8003");
+	
+	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).sendKeys("8004");
+	
+	BalansActivaObjecten.langlopendevordPartCF(driver).clear();
+	BalansActivaObjecten.langlopendevordPartCF(driver).sendKeys("8005");
+		
+	//Overige financiële vaste activa 
+	
+	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).clear();
+	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).sendKeys("9001");
+	
+	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).sendKeys("9002");
+	
+	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).sendKeys("9003");
+	
+	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).sendKeys("9004");
+	
+	BalansActivaObjecten.OverigeFinActivaCF(driver).clear();
+	BalansActivaObjecten.OverigeFinActivaCF(driver).sendKeys("9005");
+	
+	//Voorraden, excl onderhanden werk 
+		
+	BalansActivaObjecten.VoorradenCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.VoorradenCommercieel_1_1(driver).sendKeys("10001");
+	
+	BalansActivaObjecten.VoorradenFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.VoorradenFiscaal_1_1(driver).sendKeys("10002");
+		
+	BalansActivaObjecten.VoorradenCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.VoorradenCommercieel_31_12(driver).sendKeys("10003");
+	
+	BalansActivaObjecten.VoorradenCF(driver).clear();
+	BalansActivaObjecten.VoorradenCF(driver).sendKeys("10004");
+	
+	//Onderhanden werk
+	
+	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).sendKeys("11001");
+	
+	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).sendKeys("11002");
+	
+	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).sendKeys("11003");
+	
+	BalansActivaObjecten.OnderhandenCF(driver).clear();
+	BalansActivaObjecten.OnderhandenCF(driver).sendKeys("11004");
+		
+	//Handelsdebiteuren 
+	
+	
+	BalansActivaObjecten.HandelsdebiteurenNominale(driver).clear();
+	BalansActivaObjecten.HandelsdebiteurenNominale(driver).sendKeys("12001");
+	
+	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).clear();
+	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).sendKeys("12002");
+	
+	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).sendKeys("12003");
+	
+	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).sendKeys("12004");
+	
+	BalansActivaObjecten.HandelsdebiteurenCF(driver).clear();
+	BalansActivaObjecten.HandelsdebiteurenCF(driver).sendKeys("12005");
+	
+	//Omzetbelasting
+	
+	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).sendKeys("13001");
+	
+	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).sendKeys("13002");
+	
+	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).sendKeys("13003");
+	
+	BalansActivaObjecten.OmzetBelastingCF(driver).clear();
+	BalansActivaObjecten.OmzetBelastingCF(driver).sendKeys("13004");
+	
+	//Kortlopende vorderingen op groepsmaatschappijen
+	
+	BalansActivaObjecten.KortVordGroepNominale(driver).clear();
+	BalansActivaObjecten.KortVordGroepNominale(driver).sendKeys("14001");
+	
+	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).sendKeys("14002");
+	
+	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).sendKeys("14003");
+	
+	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).sendKeys("14004");
+	
+	BalansActivaObjecten.KortVordGroepCF(driver).clear();
+	BalansActivaObjecten.KortVordGroepCF(driver).sendKeys("14005");
+	
+	//Kortlopende vorderingen participanten/ maatschappijen
+	
+	BalansActivaObjecten.KortVordPartNominaal(driver).clear();
+	BalansActivaObjecten.KortVordPartNominaal(driver).sendKeys("15001");
+	
+	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).sendKeys("15002");
+	
+	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).sendKeys("15003");
+	
+	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).sendKeys("15004");
+	
+	BalansActivaObjecten.KortVordPartCF(driver).clear();
+	BalansActivaObjecten.KortVordPartCF(driver).sendKeys("15005");	
+	
+	//Overige vorderingen 
+	
+	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).sendKeys("16001");
+	
+	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).sendKeys("16002");
+	
+	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).sendKeys("16003");
+		
+	BalansActivaObjecten.OverigeVordCF(driver).clear();
+	BalansActivaObjecten.OverigeVordCF(driver).sendKeys("16004");
+	
+	//Effecten
+	
+	BalansActivaObjecten.EffectenCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.EffectenCommercieel_1_1(driver).sendKeys("17001");
+	
+	BalansActivaObjecten.EffectenFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.EffectenFiscaal_1_1(driver).sendKeys("17002");
+	
+	BalansActivaObjecten.EffectenCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.EffectenCommercieel_31_12(driver).sendKeys("17003");
+	
+	BalansActivaObjecten.EffectenCF(driver).clear();
+	BalansActivaObjecten.EffectenCF(driver).sendKeys("17004");
+		
+	//liquide middelen
+	
+	
+	BalansActivaObjecten.LiquideCommercieel_1_1(driver).clear();
+	BalansActivaObjecten.LiquideCommercieel_1_1(driver)	.sendKeys("18001");
+	
+	BalansActivaObjecten.LiquideFiscaal_1_1(driver).clear();
+	BalansActivaObjecten.LiquideFiscaal_1_1(driver).sendKeys("18002");
+	
+	BalansActivaObjecten.LiquideCommercieel_31_12(driver).clear();
+	BalansActivaObjecten.LiquideCommercieel_31_12(driver).sendKeys("18003");
+	
+	BalansActivaObjecten.LiquideCF(driver).clear();
+	BalansActivaObjecten.LiquideCF(driver).sendKeys("18004");
+	
+	//toelichting balans
+	
+	BalansActivaObjecten.Toelichtingbalans(driver).clear();
+	BalansActivaObjecten.Toelichtingbalans(driver).sendKeys("Toelichting balans");
+	
+}
+
+@Then("^i can validate the totals for Balans Activa$")
+public void i_can_validate_the_totals_for_Balans_Activa() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+   
+}
+	
+}
+
+
+
 

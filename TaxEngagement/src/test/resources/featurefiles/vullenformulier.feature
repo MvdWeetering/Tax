@@ -73,7 +73,17 @@ Feature: vullen formulieren
     And open the form Winst en Verlies rekening
     Then i can fill out the form Winst en Verlies rekening
     Then i can validate the totals for each column
-    
+ 
+   @vullen_formulier @Balans_Activa
+  Scenario: vullen formulier Balans Activa
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 19-05"
+    And open the form Balans Activa
+    Then i can fill out the form Balans Activa
+    Then i can validate the totals for Balans Activa
+       
     
     
     

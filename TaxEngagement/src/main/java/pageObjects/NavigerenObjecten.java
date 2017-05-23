@@ -62,4 +62,13 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Winst- en verliesrekening"));
 		return element;
 	}
+	
+	public static WebElement BalansActiva(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Balans: Activa"));
+		return element;
+	}
+	
+	
+	
+	
 }
