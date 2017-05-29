@@ -1496,7 +1496,7 @@ public void open_the_form_Balans_Activa() throws Throwable {
 public void i_can_fill_out_the_form_Balans_Activa() throws Throwable {
     
 	BalansActivaObjecten.NaamOnderneming(driver).clear();
-	BalansActivaObjecten.NaamOnderneming(driver).sendKeys("Naam onderneming");
+	BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalData("B", 5));
 	BalansActivaObjecten.OmschrijvingActiviteit(driver).clear();
 	BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys("omschrijving activiteiten");
 	BalansActivaObjecten.DochterMaatschappij_Ja(driver).click();
