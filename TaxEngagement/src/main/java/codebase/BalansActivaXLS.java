@@ -32,11 +32,8 @@ package codebase;
 
 				String[] opsommingresultaat; 
 			
-				opsommingresultaat = new String [4];
+				opsommingresultaat = new String [1];
 				opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(1));
-				opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
-				opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(1));
-				opsommingresultaat[3]= new DataFormatter().formatCellValue(row.getCell(1));
 			
 				resultaat = opsommingresultaat;		
 				
@@ -120,9 +117,9 @@ package codebase;
 
 		public static void main(String[] args) {
 
-		String[] HaalText =codebase.BalansActivaXLS.HaalText(6);
+		String[] HaalText =codebase.BalansActivaXLS.HaalText(80);
 			
-		System.out.println(HaalText[1]);
+		System.out.println(HaalText[0]);
 
 		}
 	}
