@@ -682,17 +682,17 @@ public class WinstenVerliesRekeningObjecten {
 	
 	//Totaal financiele baten en lasten
 	
-	public static WebElement TotaalfinanciëleBatenLastenCommercieel (WebDriver driver){
+	public static WebElement TotaalfinancieleBatenLastenCommercieel (WebDriver driver){
 		   element = driver.findElement(By.id("idTotFinBatLasR0C1"));
 		   return element;
 		}
 
-	public static WebElement TotaalfinanciëleBatenLastenCF(WebDriver driver){
+	public static WebElement TotaalfinancieleBatenLastenCF(WebDriver driver){
 		   element = driver.findElement(By.id("idTotFinBatLasR0C3"));
 		   return element;
 		}
 	
-	public static WebElement TotaalfinanciëleBatenLastenFiscaal(WebDriver driver){
+	public static WebElement TotaalfinancieleBatenLastenFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzks"));
 		   return element;
 		}
