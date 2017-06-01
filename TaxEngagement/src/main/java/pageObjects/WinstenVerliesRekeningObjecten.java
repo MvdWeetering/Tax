@@ -535,7 +535,7 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	
-	//Overige waardeveranderingen van immateriële en materiêle vaste activa 
+	//Overige waardeveranderingen van immateriï¿½le en materiï¿½le vaste activaï¿½
 	
 	
 	public static WebElement OverigeWaardeVeranderingFiscaal(WebDriver driver){
@@ -543,7 +543,7 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	
-	//Bijzondere waardevermindering van vlottende activa 
+	//Bijzondere waardevermindering van vlottende activaï¿½
 	
 	public static WebElement BijzondereWaardeVerminderingFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzjm"));
