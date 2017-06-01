@@ -20,8 +20,6 @@ public class NavigerenObjecten {
 		//element =  driver.findElement(By.xpath("/html/body/div[@class='GOMEOCKDICD']/div[@class='GOMEOCKDECD speechBubbleWidget GOMEOCKDHCD']/div/div[@class='GOMEOCKDEJD']/div[@class='GOMEOCKDDJD'][1]/div[@class='GOMEOCKDCJD'][11]/a[@class='gwt-Anchor']/div[@class='gwt-Label']"));
 		
 		element = driver.findElement(By.linkText("NL Tax Engagement"));
-		
-		
 		return element;
 	}
 	
@@ -68,7 +66,9 @@ public class NavigerenObjecten {
 		return element;
 	}
 	
-	
-	
+	public static WebElement BalansPassiva(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Balans: Passiva"));
+		return element;
+	}
 	
 }

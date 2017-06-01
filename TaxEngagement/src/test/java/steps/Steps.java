@@ -20,6 +20,7 @@ import pageObjects.AbstractSteps;
 import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.BalansActivaObjecten;
+import pageObjects.BalansPassivaObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
@@ -318,7 +319,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, true, true, driver));
 		
 		// Beconnummer
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 9, true, true, driver));
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 9, true, true, driver));
 		
 		
 		// Voorletters contactpersoon
@@ -391,7 +392,7 @@ public class Steps extends AbstractSteps {
 			
 		}
 		
-			// **
+		// **
 		
 		driver.quit();
 		
@@ -1788,7 +1789,141 @@ public void i_can_validate_the_totals_for_Balans_Activa() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
    
 }
+
+@When("^open the form Balans Passiva$")
+public void open_the_form_Balans_Passiva() throws Throwable {
+    NavigerenObjecten.BalansPassiva(driver).click();    
+}
+
+@Then("^i can fill out the form Balans Passiva$")
+public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
+    
 	
+	//Gestort en opgevraagd kapitaal 
+	
+	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver).sendKeys("1001");
+	
+	BalansPassivaObjecten.GestortOpgevraagdFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.GestortOpgevraagdFiscaal_1_1(driver).sendKeys("1002");
+	
+	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_31_12(driver).sendKeys("1003");
+	
+	BalansPassivaObjecten.GestortOpgevraagdCF(driver).clear();
+	BalansPassivaObjecten.GestortOpgevraagdCF(driver).sendKeys("1004");
+	
+	//Informeel kapitaal 
+		
+	BalansPassivaObjecten.InformeelKapitaalCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.InformeelKapitaalCommercieeel_1_1(driver).sendKeys("2001");
+	
+	BalansPassivaObjecten.InformeelKapitaalFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.InformeelKapitaalFiscaal_1_1(driver).sendKeys("2002");
+	
+	BalansPassivaObjecten.InformeelKapitaalCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.InformeelKapitaalCommercieeel_31_12(driver).sendKeys("2003");	
+	
+	BalansPassivaObjecten.InformeelKapitaalCF(driver).clear();
+	BalansPassivaObjecten.InformeelKapitaalCF(driver).sendKeys("2004");
+		
+	//Agio
+	
+	BalansPassivaObjecten.AgioCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.AgioCommercieeel_1_1(driver).sendKeys("3001");
+	
+	BalansPassivaObjecten.AgioFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.AgioFiscaal_1_1(driver).sendKeys("3002");
+	
+	BalansPassivaObjecten.AgioCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.AgioCommercieeel_31_12(driver).sendKeys("3003");
+	
+	BalansPassivaObjecten.AgioCF(driver).clear();
+	BalansPassivaObjecten.AgioCF(driver).sendKeys("3004");
+		
+	//Winstreserve
+
+	BalansPassivaObjecten.WinstReserveCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.WinstReserveCommercieeel_1_1(driver).sendKeys("4001");
+	
+	BalansPassivaObjecten.WinstReserveFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.WinstReserveFiscaal_1_1(driver).sendKeys("4002");
+	
+	BalansPassivaObjecten.WinstReserveCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.WinstReserveCommercieeel_31_12(driver).sendKeys("4003");
+	
+	BalansPassivaObjecten.WinstReserveCF(driver).clear();
+	BalansPassivaObjecten.WinstReserveCF(driver).sendKeys("4004");
+	
+	//Kostenegalisatiereserve
+	
+	BalansPassivaObjecten.KostenegalisatiereserveCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.KostenegalisatiereserveCommercieeel_1_1(driver).sendKeys("5001");
+	
+	BalansPassivaObjecten.KostenegalisatiereserveFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.KostenegalisatiereserveFiscaal_1_1(driver).sendKeys("5002");
+	
+	BalansPassivaObjecten.KostenegalisatiereserveCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.KostenegalisatiereserveCommercieeel_31_12(driver).sendKeys("5003");
+	
+	BalansPassivaObjecten.KostenegalisatiereserveCF(driver).clear();
+	BalansPassivaObjecten.KostenegalisatiereserveCF(driver).sendKeys("5004");
+	
+	//Herinvesteringsreserve
+	
+	BalansPassivaObjecten.HerinvesteringsreserveCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.HerinvesteringsreserveCommercieeel_1_1(driver).sendKeys("6001");
+	
+	BalansPassivaObjecten.HerinvesteringsreserveFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.HerinvesteringsreserveFiscaal_1_1(driver).sendKeys("6002");
+	
+	BalansPassivaObjecten.HerinvesteringsreserveCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.HerinvesteringsreserveCommercieeel_31_12(driver).sendKeys("6003");
+	
+	BalansPassivaObjecten.HerinvesteringsreserveCF(driver).clear();
+	BalansPassivaObjecten.HerinvesteringsreserveCF(driver).sendKeys("6004");
+	
+	//Belaste compartimenteringsreserve 
+	
+	BalansPassivaObjecten.CompartimenteringsreserveCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.CompartimenteringsreserveCommercieeel_1_1(driver).sendKeys("7001");
+	
+	BalansPassivaObjecten.CompartimenteringsreserveFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.CompartimenteringsreserveFiscaal_1_1(driver).sendKeys("7002");
+	
+	BalansPassivaObjecten.CompartimenteringsreserveCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.CompartimenteringsreserveCommercieeel_31_12(driver).sendKeys("7003");
+	
+	BalansPassivaObjecten.CompartimenteringsreserveCF(driver).clear();
+	BalansPassivaObjecten.CompartimenteringsreserveCF(driver).sendKeys("7004");
+		
+	//Overige fiscale reserves 
+	
+	BalansPassivaObjecten.FiscaleReservesCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.FiscaleReservesCommercieeel_1_1(driver).sendKeys("8001");
+	
+	BalansPassivaObjecten.FiscaleReservesFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.FiscaleReservesFiscaal_1_1(driver).sendKeys("8002");
+	
+	BalansPassivaObjecten.FiscaleReservesCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.FiscaleReservesCommercieeel_31_12(driver).sendKeys("8003");
+	
+	BalansPassivaObjecten.FiscaleReservesCF(driver).clear();
+	BalansPassivaObjecten.FiscaleReservesCF(driver).sendKeys("8004");
+	
+	
+	
+	
+}
+
+@Then("^i can validate the totals for Balans Passiva$")
+public void i_can_validate_the_totals_for_Balans_Passiva() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    
+}
+
+
+
 }
 
 

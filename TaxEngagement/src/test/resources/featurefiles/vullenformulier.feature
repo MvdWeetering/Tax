@@ -84,6 +84,14 @@ Feature: vullen formulieren
     Then i can fill out the form Balans Activa
     Then i can validate the totals for Balans Activa
        
-    
+    @vullen_formulier @Balans_Passiva
+  Scenario: vullen formulier Balans Passiva
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 19-05"
+    And open the form Balans Passiva
+    Then i can fill out the form Balans Passiva
+    Then i can validate the totals for Balans Passiva   
     
     
