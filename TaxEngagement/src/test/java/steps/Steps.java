@@ -1388,7 +1388,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalAfschrijvCF(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("C",42)), "C42"));
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalAfschrijvFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("D",42)), "D42"));
 		
-		//Overige waardeveranderingen van immateriële en materiêle vaste activa 
+		//Overige waardeveranderingen van immateriï¿½le en materiï¿½le vaste activaï¿½
 		
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.OverigeWaardeVeranderingFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("D",47)), "D47"));
 		
@@ -1430,11 +1430,11 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalFinLastenCF(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("C",87)), "C87"));
 		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalFinLastenFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("D",87)), "D87"));
 		
-		//Totaal financiële baten en lasten 
+		//Totaal financiï¿½le baten en lasten 
 		
-		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalfinanciëleBatenLastenCommercieel(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("E",90)), "E90"));
-		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalfinanciëleBatenLastenCF(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("F",90)), "F90"));
-		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalfinanciëleBatenLastenFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("G",90)), "G90"));
+		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalfinancieleBatenLastenCommercieel(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("E",90)), "E90"));
+		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalfinancieleBatenLastenCF(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("F",90)), "F90"));
+		ValidatieResultaat.addAll(WinstVerliesXLS.Vergelijk(WinstenVerliesRekeningObjecten.TotaalfinancieleBatenLastenFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("G",90)), "G90"));
 		
 		//Resultaat uit gewone bedrijfsuitoefening 
 		
@@ -1497,290 +1497,326 @@ public void open_the_form_Balans_Activa() throws Throwable {
 public void i_can_fill_out_the_form_Balans_Activa() throws Throwable {
     
 	BalansActivaObjecten.NaamOnderneming(driver).clear();
-	BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalData("B", 5));
+	BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalText(5));
 	BalansActivaObjecten.OmschrijvingActiviteit(driver).clear();
-	BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys("omschrijving activiteiten");
-	BalansActivaObjecten.DochterMaatschappij_Ja(driver).click();
-	BalansActivaObjecten.BoekjaarAgrarische_ja(driver).click();
+	BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys(BalansActivaXLS.HaalText(6));
+	
+	
+	String[] DochterMaatsch =codebase.BalansActivaXLS.HaalText(7);
+			
+	if (DochterMaatsch[0].equals("Ja")) 
+		{ BalansActivaObjecten.DochterMaatschappij_Ja(driver).click();	
+		}
+	else {BalansActivaObjecten.DochterMaatschappij_Nee(driver).click();
+		}
+		
+	String[] BoekjaarAgr =codebase.BalansActivaXLS.HaalText(8);
+			
+	if (BoekjaarAgr[0].equals("Ja")) 
+		{ BalansActivaObjecten.BoekjaarAgrarische_ja(driver).click();	
+		}
+	else
+		{ BalansActivaObjecten.BoekjaarAgrarische_nee(driver).click();
+		}
+		
 	
 	//goodwill fiscaal
 	
 	BalansActivaObjecten.GoodwillAanschaf(driver).clear();
-	BalansActivaObjecten.GoodwillAanschaf(driver).sendKeys("1001");
+	BalansActivaObjecten.GoodwillAanschaf(driver).sendKeys(BalansActivaXLS.HaalData("B", 16));
 	
 	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).sendKeys("1002");
+	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 16));
 	
 	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).sendKeys("1003");
+	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 16));
 	
 	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).sendKeys("1004");
-	
+	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 16));
+	 
 	BalansActivaObjecten.GoodwillCF(driver).clear();
-	BalansActivaObjecten.GoodwillCF(driver).sendKeys("1005");
+	BalansActivaObjecten.GoodwillCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 16));
 		
-	//Overige immateriële vaste activa
+	//Overige immateriele vaste activa
    	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).sendKeys("2001");
+	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).sendKeys(BalansActivaXLS.HaalData("B", 17));
 	
 	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).sendKeys("2002");
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 17));
 	
 	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).sendKeys("2003");
+	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 17));
 	
 	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).sendKeys("2004");
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 17));
 	
 	BalansActivaObjecten.OverigeImmaterieleCF(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleCF(driver).sendKeys("2005");
-		
+	BalansActivaObjecten.OverigeImmaterieleCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 17));
+	
+	
+	 	
 	//Gebouwen en terreinen 
 	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).sendKeys("3001");
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 26));
 	
 	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).sendKeys("3002");
+	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 26));
 	
 	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).sendKeys("3003");
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 26));
 	
 	BalansActivaObjecten.GebouwenTerreinenCF(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenCF(driver).sendKeys("3004");
+	BalansActivaObjecten.GebouwenTerreinenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 26));
+	
 		
+	
 	//Machines en installaties 
 	BalansActivaObjecten.MachinesCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.MachinesCommercieel_1_1(driver).sendKeys("4001");
+	BalansActivaObjecten.MachinesCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 27));
 	
 	BalansActivaObjecten.MachinesFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.MachinesFiscaal_1_1(driver).sendKeys("4002");
+	BalansActivaObjecten.MachinesFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 27));
 	
 	BalansActivaObjecten.MachinesCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.MachinesCommercieel_31_12(driver).sendKeys("4003");
+	BalansActivaObjecten.MachinesCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 27));
 	
 	BalansActivaObjecten.MachinesCF(driver).clear();
-	BalansActivaObjecten.MachinesCF(driver).sendKeys("4004");
+	BalansActivaObjecten.MachinesCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 27));
+	
+	
 	
 	//Andere vaste bedrijfsmiddelen 
 	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).sendKeys("5001");
+	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 28));
 	
 	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).sendKeys("5002");
+	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 28));
 	
 	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).sendKeys("5003");
+	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 28));
 	
 	BalansActivaObjecten.AndereBedrijfsCF(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsCF(driver).sendKeys("5004");
+	BalansActivaObjecten.AndereBedrijfsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 28));
 
+	
 	//Deelnemingen 
 	
 	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).sendKeys("6001");
+	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 37));
 	
 	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).sendKeys("6002");
+	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 37));
 	
 	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).sendKeys("6003");
+	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 37));
 	
 	BalansActivaObjecten.DeelnemingenCF(driver).clear();
-	BalansActivaObjecten.DeelnemingenCF(driver).sendKeys("6004");
+	BalansActivaObjecten.DeelnemingenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 37));
+	
 		
 	//Langlopende vorderingen op groepsmaatschappijen
 	
 	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).sendKeys("7001");
+	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 38));
 	
 	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).sendKeys("7002");
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 38));
 	
 	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).sendKeys("7003");
+	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 38));
 	
 	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).sendKeys("7004");
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 38));
 	
 	BalansActivaObjecten.langlopendevordGroepsCF(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsCF(driver).sendKeys("7005");
+	BalansActivaObjecten.langlopendevordGroepsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 38));
+	
 		
+	 
 	//Langlopende vorderingen participanten/maatschappijen
 	
 	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).clear();
-	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).sendKeys("8001");
+	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 39));
 	
 	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).sendKeys("8002");
+	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 39));
 	
 	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).sendKeys("8003");
+	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 39));
 	
 	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).sendKeys("8004");
+	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 39));
 	
 	BalansActivaObjecten.langlopendevordPartCF(driver).clear();
-	BalansActivaObjecten.langlopendevordPartCF(driver).sendKeys("8005");
+	BalansActivaObjecten.langlopendevordPartCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 39));
+	
+	
 		
-	//Overige financiële vaste activa 
+	//Overige financiï¿½le vaste activa 
 	
 	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).sendKeys("9001");
+	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 40));
 	
 	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).sendKeys("9002");
+	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 40));
 	
 	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).sendKeys("9003");
+	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 40));
 	
 	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).sendKeys("9004");
+	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 40));
 	
 	BalansActivaObjecten.OverigeFinActivaCF(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaCF(driver).sendKeys("9005");
+	BalansActivaObjecten.OverigeFinActivaCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 40));
+	
 	
 	//Voorraden, excl onderhanden werk 
 		
 	BalansActivaObjecten.VoorradenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.VoorradenCommercieel_1_1(driver).sendKeys("10001");
+	BalansActivaObjecten.VoorradenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("B", 48));
 	
 	BalansActivaObjecten.VoorradenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.VoorradenFiscaal_1_1(driver).sendKeys("10002");
+	BalansActivaObjecten.VoorradenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 48));
 		
 	BalansActivaObjecten.VoorradenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.VoorradenCommercieel_31_12(driver).sendKeys("10003");
+	BalansActivaObjecten.VoorradenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("D", 48));
 	
 	BalansActivaObjecten.VoorradenCF(driver).clear();
-	BalansActivaObjecten.VoorradenCF(driver).sendKeys("10004");
-	
+	BalansActivaObjecten.VoorradenCF(driver).sendKeys(BalansActivaXLS.HaalData("E", 48));
+		
 	//Onderhanden werk
 	
 	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).sendKeys("11001");
+	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 49));
 	
 	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).sendKeys("11002");
+	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 49));
 	
 	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).sendKeys("11003");
+	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 49));
 	
 	BalansActivaObjecten.OnderhandenCF(driver).clear();
-	BalansActivaObjecten.OnderhandenCF(driver).sendKeys("11004");
+	BalansActivaObjecten.OnderhandenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 49));
+	
 		
 	//Handelsdebiteuren 
 	
 	
 	BalansActivaObjecten.HandelsdebiteurenNominale(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenNominale(driver).sendKeys("12001");
+	BalansActivaObjecten.HandelsdebiteurenNominale(driver).sendKeys(BalansActivaXLS.HaalData("B", 57));
 	
 	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).sendKeys("12002");
+	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 57));
 	
 	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).sendKeys("12003");
+	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 57));
 	
 	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).sendKeys("12004");
+	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 57));
 	
 	BalansActivaObjecten.HandelsdebiteurenCF(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenCF(driver).sendKeys("12005");
+	BalansActivaObjecten.HandelsdebiteurenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 57));
+	
 	
 	//Omzetbelasting
 	
 	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).sendKeys("13001");
+	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 58));
 	
 	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).sendKeys("13002");
+	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 58));
 	
 	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).sendKeys("13003");
+	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 58));
 	
 	BalansActivaObjecten.OmzetBelastingCF(driver).clear();
-	BalansActivaObjecten.OmzetBelastingCF(driver).sendKeys("13004");
+	BalansActivaObjecten.OmzetBelastingCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 58));
+	
 	
 	//Kortlopende vorderingen op groepsmaatschappijen
 	
 	BalansActivaObjecten.KortVordGroepNominale(driver).clear();
-	BalansActivaObjecten.KortVordGroepNominale(driver).sendKeys("14001");
+	BalansActivaObjecten.KortVordGroepNominale(driver).sendKeys(BalansActivaXLS.HaalData("B", 59));
 	
 	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).sendKeys("14002");
+	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 59));
 	
 	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).sendKeys("14003");
+	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 59));
 	
 	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).sendKeys("14004");
+	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 59));
 	
 	BalansActivaObjecten.KortVordGroepCF(driver).clear();
-	BalansActivaObjecten.KortVordGroepCF(driver).sendKeys("14005");
+	BalansActivaObjecten.KortVordGroepCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 59));
+	
 	
 	//Kortlopende vorderingen participanten/ maatschappijen
 	
 	BalansActivaObjecten.KortVordPartNominaal(driver).clear();
-	BalansActivaObjecten.KortVordPartNominaal(driver).sendKeys("15001");
+	BalansActivaObjecten.KortVordPartNominaal(driver).sendKeys(BalansActivaXLS.HaalData("B", 60));
 	
 	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).sendKeys("15002");
+	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 60));
 	
 	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).sendKeys("15003");
+	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 60));
 	
 	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).sendKeys("15004");
+	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 60));
 	
 	BalansActivaObjecten.KortVordPartCF(driver).clear();
-	BalansActivaObjecten.KortVordPartCF(driver).sendKeys("15005");	
+	BalansActivaObjecten.KortVordPartCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 60));	
+	
 	
 	//Overige vorderingen 
 	
 	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).sendKeys("16001");
+	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 61));
 	
 	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).sendKeys("16002");
+	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 61));
 	
 	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).sendKeys("16003");
+	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 61));
 		
 	BalansActivaObjecten.OverigeVordCF(driver).clear();
-	BalansActivaObjecten.OverigeVordCF(driver).sendKeys("16004");
+	BalansActivaObjecten.OverigeVordCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 61));
+	
 	
 	//Effecten
 	
 	BalansActivaObjecten.EffectenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.EffectenCommercieel_1_1(driver).sendKeys("17001");
+	BalansActivaObjecten.EffectenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 67));
 	
 	BalansActivaObjecten.EffectenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.EffectenFiscaal_1_1(driver).sendKeys("17002");
+	BalansActivaObjecten.EffectenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 67));
 	
 	BalansActivaObjecten.EffectenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.EffectenCommercieel_31_12(driver).sendKeys("17003");
+	BalansActivaObjecten.EffectenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 67));
 	
 	BalansActivaObjecten.EffectenCF(driver).clear();
-	BalansActivaObjecten.EffectenCF(driver).sendKeys("17004");
+	BalansActivaObjecten.EffectenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 67));
+	
 		
 	//liquide middelen
 	
-	
 	BalansActivaObjecten.LiquideCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.LiquideCommercieel_1_1(driver)	.sendKeys("18001");
+	BalansActivaObjecten.LiquideCommercieel_1_1(driver)	.sendKeys(BalansActivaXLS.HaalData("C", 72));
 	
 	BalansActivaObjecten.LiquideFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.LiquideFiscaal_1_1(driver).sendKeys("18002");
+	BalansActivaObjecten.LiquideFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 72));
 	
 	BalansActivaObjecten.LiquideCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.LiquideCommercieel_31_12(driver).sendKeys("18003");
+	BalansActivaObjecten.LiquideCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 72));
 	
 	BalansActivaObjecten.LiquideCF(driver).clear();
-	BalansActivaObjecten.LiquideCF(driver).sendKeys("18004");
+	BalansActivaObjecten.LiquideCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 72));
 	
 	//toelichting balans
 	
 	BalansActivaObjecten.Toelichtingbalans(driver).clear();
-	BalansActivaObjecten.Toelichtingbalans(driver).sendKeys("Toelichting balans");
+	BalansActivaObjecten.Toelichtingbalans(driver).sendKeys(BalansActivaXLS.HaalText(80));
 	
 }
 
