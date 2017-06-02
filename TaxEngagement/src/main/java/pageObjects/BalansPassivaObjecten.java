@@ -169,4 +169,88 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	//Garantievoorziening 
+	
+	public static WebElement GarantieVoorzieningCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R0C1"));
+		return element;
+	}
+	
+	public static WebElement GarantieVoorzieningFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R0C3"));
+		return element;
+	}
+	public static WebElement GarantieVoorzieningCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R0C5"));
+		return element;
+	}
+	public static WebElement GarantieVoorzieningCF(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R0C7"));
+		return element;
+	}
+		
+	//Voorziening voor lijfrenten, pensioen en stamrecht
+	
+	public static WebElement VoorzieningLijfrenteCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R1C1"));
+		return element;
+	}
+	
+	public static WebElement VoorzieningLijfrenteFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R1C3"));
+		return element;
+	}
+	public static WebElement VoorzieningLijfrenteCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R1C5"));
+		return element;
+	}
+	public static WebElement VoorzieningLijfrenteCF(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R1C7"));
+		return element;
+	}
+		
+	//Overige voorzieningen
+	
+	public static WebElement OverigeVoorzieningCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R2C1"));
+		return element;
+	}
+	
+	public static WebElement OverigeVoorzieningFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R2C3"));
+		return element;
+	}
+	public static WebElement OverigeVoorzieningCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R2C5"));
+		return element;
+	}
+	public static WebElement OverigeVoorzieningCF(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R2C7"));
+		return element;
+	}
+	
+	//Converteerbare leningen 
+	
+	//Schulden aan kredietinstellingen
+	
+	//Obligaties
+	
+	//Langlopende schulden groepsmaatschappijen
+	
+	//Langlopende schulden participanten/maatschappijen waarin wordt deelgenomen
+	
+	//Overige langlopende schulden
+	
+	//Schulden aan leveranciers en handelskredieten
+	
+	//Omzetbelasting
+	
+	//Loonheffingen
+	
+	//Kortlopende schulden groepsmaatschappijen 
+	
+	//Kortlopende schulden op participanten/maatschappijen waarin wordt deelgenomen
+	
+	//Overige kortlopende schulden 
+	
 }

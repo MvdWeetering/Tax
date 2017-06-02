@@ -1947,6 +1947,48 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
 	BalansPassivaObjecten.FiscaleReservesCF(driver).clear();
 	BalansPassivaObjecten.FiscaleReservesCF(driver).sendKeys("8004");
 	
+	//Garantievoorziening
+	
+	BalansPassivaObjecten.GarantieVoorzieningCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.GarantieVoorzieningCommercieeel_1_1(driver).sendKeys("9001");
+	
+	BalansPassivaObjecten.GarantieVoorzieningFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.GarantieVoorzieningFiscaal_1_1(driver).sendKeys("9002");
+	
+	BalansPassivaObjecten.GarantieVoorzieningCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.GarantieVoorzieningCommercieeel_31_12(driver).sendKeys("9003");
+	
+	BalansPassivaObjecten.GarantieVoorzieningCF(driver).clear();
+	BalansPassivaObjecten.GarantieVoorzieningCF(driver).sendKeys("9004");
+		
+	//Voorziening voor lijfrenten, pensioen en stamrecht 
+	
+	BalansPassivaObjecten.VoorzieningLijfrenteCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.VoorzieningLijfrenteCommercieeel_1_1(driver).sendKeys("10001");
+	
+	BalansPassivaObjecten.VoorzieningLijfrenteFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.VoorzieningLijfrenteFiscaal_1_1(driver).sendKeys("10002");
+	
+	BalansPassivaObjecten.VoorzieningLijfrenteCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.VoorzieningLijfrenteCommercieeel_31_12(driver).sendKeys("10003");
+	
+	BalansPassivaObjecten.VoorzieningLijfrenteCF(driver).clear();
+	BalansPassivaObjecten.VoorzieningLijfrenteCF(driver).sendKeys("10004");
+	
+	//Overige voorzieningen
+	
+	
+	BalansPassivaObjecten.OverigeVoorzieningCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.OverigeVoorzieningCommercieeel_1_1(driver).sendKeys("11001");
+	
+	BalansPassivaObjecten.OverigeVoorzieningFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.OverigeVoorzieningFiscaal_1_1(driver).sendKeys("11002");
+	
+	BalansPassivaObjecten.OverigeVoorzieningCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.OverigeVoorzieningCommercieeel_31_12(driver).sendKeys("11003");
+	
+	BalansPassivaObjecten.OverigeVoorzieningCF(driver).clear();
+	BalansPassivaObjecten.OverigeVoorzieningCF(driver).sendKeys("11004");
 	
 	
 	
@@ -1961,6 +2003,7 @@ public void i_can_validate_the_totals_for_Balans_Passiva() throws Throwable {
 
 
 }
+
 
 
 
