@@ -231,26 +231,250 @@ public class BalansPassivaObjecten {
 	
 	//Converteerbare leningen 
 	
+	public static WebElement ConverteerbareleningenCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R0C1"));
+		return element;
+	}
+	
+	public static WebElement ConverteerbareleningenFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R0C3"));
+		return element;
+	}
+	public static WebElement ConverteerbareleningenCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R0C5"));
+		return element;
+	}
+	public static WebElement ConverteerbareleningenCF(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R0C7"));
+		return element;
+	}
+	
+		
 	//Schulden aan kredietinstellingen
+	
+	public static WebElement SchuldenKredietInstCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R1C1"));
+		return element;
+	}
+	
+	public static WebElement SchuldenKredietInstFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R1C3"));
+		return element;
+	}
+	public static WebElement SchuldenKredietInstCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R1C5"));
+		return element;
+	}
+	public static WebElement SchuldenKredietInstCF(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R1C7"));
+		return element;
+	}
 	
 	//Obligaties
 	
+	public static WebElement ObligatiesCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R2C1"));
+		return element;
+	}
+	
+	public static WebElement ObligatiesFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R2C3"));
+		return element;
+	}
+	public static WebElement ObligatiesCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R2C5"));
+		return element;
+	}
+	public static WebElement ObligatiesCF(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R2C7"));
+		return element;
+	}
+	
 	//Langlopende schulden groepsmaatschappijen
 	
+	
+	public static WebElement LanglopendeSchuldenGrMaatschCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R3C1"));
+		return element;
+	}
+	
+	public static WebElement LanglopendeSchuldenGrMaatschFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R3C3"));
+		return element;
+	}
+	public static WebElement LanglopendeSchuldenGrMaatschCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R3C5"));
+		return element;
+	}
+	public static WebElement LanglopendeSchuldenGrMaatschCF(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R3C7"));
+		return element;
+	}
+	
 	//Langlopende schulden participanten/maatschappijen waarin wordt deelgenomen
+		
+	
+	public static WebElement LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R4C1"));
+		return element;
+	}
+	
+	public static WebElement LanglopendeSchuldenPartMaatschDeelnemingFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R4C3"));
+		return element;
+	}
+	public static WebElement LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R4C5"));
+		return element;
+	}
+	public static WebElement LanglopendeSchuldenPartMaatschDeelnemingCF(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R4C7"));
+		return element;
+	}
+	
 	
 	//Overige langlopende schulden
 	
+	
+	public static WebElement OverigeLangLopendeSchCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R5C1"));
+		return element;
+	}
+	
+	public static WebElement OverigeLangLopendeSchFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R5C3"));
+		return element;
+	}
+	public static WebElement OverigeLangLopendeSchCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R5C5"));
+		return element;
+	}
+	public static WebElement OverigeLangLopendeSchCF(WebDriver driver){
+		element = driver.findElement(By.id("idLls2R5C7"));
+		return element;
+	}	
+	
 	//Schulden aan leveranciers en handelskredieten
+	
+		
+	public static WebElement SchuldenLeveranciersHandelsKrCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R0C1"));
+		return element;
+	}
+	
+	public static WebElement SchuldenLeveranciersHandelsKrFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R0C3"));
+		return element;
+	}
+	public static WebElement SchuldenLeveranciersHandelsKrCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R0C5"));
+		return element;
+	}
+	public static WebElement SchuldenLeveranciersHandelsKrCF(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R0C7"));
+		return element;
+	}
 	
 	//Omzetbelasting
 	
+	public static WebElement OmzetbelastingCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R1C1"));
+		return element;
+	}
+	
+	public static WebElement OmzetbelastingFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R1C3"));
+		return element;
+	}
+	public static WebElement OmzetbelastingCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R1C5"));
+		return element;
+	}
+	public static WebElement OmzetbelastingCF(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R1C7"));
+		return element;
+	}
+	
 	//Loonheffingen
+	
+	public static WebElement LoonheffingenCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R2C1"));
+		return element;
+	}
+	
+	public static WebElement LoonheffingenFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R2C3"));
+		return element;
+	}
+	public static WebElement LoonheffingenCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R2C5"));
+		return element;
+	}
+	public static WebElement LoonheffingenCF(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R2C7"));
+		return element;
+	}
 	
 	//Kortlopende schulden groepsmaatschappijen 
 	
+	
+	public static WebElement KortlopendeSchuldGroepsmaatschCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R3C1"));
+		return element;
+	}
+	
+	public static WebElement KortlopendeSchuldGroepsmaatschFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R3C3"));
+		return element;
+	}
+	public static WebElement KortlopendeSchuldGroepsmaatschCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R3C5"));
+		return element;
+	}
+	public static WebElement KortlopendeSchuldGroepsmaatschCF(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R3C7"));
+		return element;
+	}
+	
 	//Kortlopende schulden op participanten/maatschappijen waarin wordt deelgenomen
 	
+		
+	public static WebElement KortlopendeSchuldParticiantCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R4C1"));
+		return element;
+	}
+	
+	public static WebElement KortlopendeSchuldParticiantFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R4C3"));
+		return element;
+	}
+	public static WebElement KortlopendeSchuldParticiantCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R4C5"));
+		return element;
+	}
+	public static WebElement KortlopendeSchuldParticiantCF(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R4C7"));
+		return element;
+	}
+	
 	//Overige kortlopende schulden 
+	
+	public static WebElement OverigeKortlSchuldCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R5C1"));
+		return element;
+	}
+	
+	public static WebElement OverigeKortlSchuldFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R5C3"));
+		return element;
+	}
+	public static WebElement OverigeKortlSchuldCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R5C5"));
+		return element;
+	}
+	public static WebElement OverigeKortlSchuldCF(WebDriver driver){
+		element = driver.findElement(By.id("idKls2R5C7"));
+		return element;
+	}
 	
 }

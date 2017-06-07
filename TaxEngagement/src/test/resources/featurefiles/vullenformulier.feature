@@ -37,11 +37,7 @@ Feature: vullen formulieren
     Examples: 
       | Id |
       |  1|
-      |  2|
-      |  3|
-      |  4|
-      |  5|
-      |  6|
+   
  
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario: vullen formulier Specificatie Deelnemingen

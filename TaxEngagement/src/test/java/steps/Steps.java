@@ -1977,7 +1977,6 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
 	
 	//Overige voorzieningen
 	
-	
 	BalansPassivaObjecten.OverigeVoorzieningCommercieeel_1_1(driver).clear();
 	BalansPassivaObjecten.OverigeVoorzieningCommercieeel_1_1(driver).sendKeys("11001");
 	
@@ -1989,6 +1988,178 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
 	
 	BalansPassivaObjecten.OverigeVoorzieningCF(driver).clear();
 	BalansPassivaObjecten.OverigeVoorzieningCF(driver).sendKeys("11004");
+	
+	//Converteerbare leningen 
+
+	
+	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_1_1(driver).sendKeys("12001");
+	
+	BalansPassivaObjecten.ConverteerbareleningenFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.ConverteerbareleningenFiscaal_1_1(driver).sendKeys("12002");
+	
+	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_31_12(driver).sendKeys("12003");
+	
+	BalansPassivaObjecten.ConverteerbareleningenCF(driver).clear();
+	BalansPassivaObjecten.ConverteerbareleningenCF(driver).sendKeys("12004");
+	
+	//Schulden aan kredietinstellingen 
+	
+	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_1_1(driver).sendKeys("13001");
+	
+	BalansPassivaObjecten.SchuldenKredietInstFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.SchuldenKredietInstFiscaal_1_1(driver).sendKeys("13002");
+	
+	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_31_12(driver).sendKeys("13003");
+	
+	BalansPassivaObjecten.SchuldenKredietInstCF(driver).clear();
+	BalansPassivaObjecten.SchuldenKredietInstCF(driver).sendKeys("13004");
+		
+	//Obligaties
+	
+	BalansPassivaObjecten.ObligatiesCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.ObligatiesCommercieeel_1_1(driver).sendKeys("14001");
+	
+	BalansPassivaObjecten.ObligatiesFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.ObligatiesFiscaal_1_1(driver).sendKeys("14002");
+	
+	BalansPassivaObjecten.ObligatiesCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.ObligatiesCommercieeel_31_12(driver).sendKeys("14003");
+	
+	BalansPassivaObjecten.ObligatiesCF(driver).clear();
+	BalansPassivaObjecten.ObligatiesCF(driver).sendKeys("14004");	
+	
+	//Langlopende schulden groepsmaatschappijen 
+	
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_1_1(driver).sendKeys("15001");
+	
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschFiscaal_1_1(driver).sendKeys("15002");
+	
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_31_12(driver).sendKeys("15003");
+	
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCF(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCF(driver).sendKeys("15004");
+	
+	//Langlopende schulden participanten/maatschappijen waarin wordt deelgenomen
+	
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_1_1(driver).sendKeys("16001");
+	
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingFiscaal_1_1(driver).sendKeys("16002");
+	
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_31_12(driver).sendKeys("16003");
+	
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCF(driver).clear();
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCF(driver).sendKeys("16004");
+	
+	//Overige langlopende schulden
+	
+	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_1_1(driver).sendKeys("17001");
+	
+	BalansPassivaObjecten.OverigeLangLopendeSchFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.OverigeLangLopendeSchFiscaal_1_1(driver).sendKeys("17002");
+	
+	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_31_12(driver).sendKeys("17003");
+	
+	BalansPassivaObjecten.OverigeLangLopendeSchCF(driver).clear();
+	BalansPassivaObjecten.OverigeLangLopendeSchCF(driver).sendKeys("17004");
+		
+	//Schulden aan leveranciers en handelskredieten
+	
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).sendKeys("18001");
+	
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrFiscaal_1_1(driver).sendKeys("18002");
+	
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_31_12(driver).sendKeys("18003");
+	
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCF(driver).clear();
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCF(driver).sendKeys("18004");	
+	
+	//Omzetbelasting 
+	
+	BalansPassivaObjecten.OmzetbelastingCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.OmzetbelastingCommercieeel_1_1(driver).sendKeys("19001");
+	
+	BalansPassivaObjecten.OmzetbelastingFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.OmzetbelastingFiscaal_1_1(driver).sendKeys("19002");
+	
+	BalansPassivaObjecten.OmzetbelastingCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.OmzetbelastingCommercieeel_31_12(driver).sendKeys("19003");
+	
+	BalansPassivaObjecten.OmzetbelastingCF(driver).clear();
+	BalansPassivaObjecten.OmzetbelastingCF(driver).sendKeys("19004");
+		
+	//Loonheffingen 
+	
+	BalansPassivaObjecten.LoonheffingenCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.LoonheffingenCommercieeel_1_1(driver).sendKeys("20001");
+	
+	BalansPassivaObjecten.LoonheffingenFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.LoonheffingenFiscaal_1_1(driver).sendKeys("20002");
+	
+	BalansPassivaObjecten.LoonheffingenCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.LoonheffingenCommercieeel_31_12(driver).sendKeys("20003");
+	
+	BalansPassivaObjecten.LoonheffingenCF(driver).clear();
+	BalansPassivaObjecten.LoonheffingenCF(driver).sendKeys("20004");
+		
+	//Kortlopende schulden groepsmaatschappijen
+	
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_1_1(driver).sendKeys("21001");
+	
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschFiscaal_1_1(driver).sendKeys("21002");
+	
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_31_12(driver).sendKeys("21003");
+	
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCF(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCF(driver).sendKeys("21004");
+		
+	//Kortlopende schulden op participanten/maatschappijen waarin wordt deelgenomen
+	
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_1_1(driver).sendKeys("22001");
+	
+	BalansPassivaObjecten.KortlopendeSchuldParticiantFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldParticiantFiscaal_1_1(driver).sendKeys("22002");
+	
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_31_12(driver).sendKeys("22003");
+	
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCF(driver).clear();
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCF(driver).sendKeys("22004");
+
+	//Overige kortlopende schulden 
+	
+	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_1_1(driver).clear();
+	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_1_1(driver).sendKeys("23001");
+	
+	BalansPassivaObjecten.OverigeKortlSchuldFiscaal_1_1(driver).clear();
+	BalansPassivaObjecten.OverigeKortlSchuldFiscaal_1_1(driver).sendKeys("23002");
+	
+	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_31_12(driver).clear();
+	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_31_12(driver).sendKeys("23003");
+	
+	BalansPassivaObjecten.OverigeKortlSchuldCF(driver).clear();
+	BalansPassivaObjecten.OverigeKortlSchuldCF(driver).sendKeys("23004");
+	
+	
+	
 	
 	
 	
@@ -2003,6 +2174,7 @@ public void i_can_validate_the_totals_for_Balans_Passiva() throws Throwable {
 
 
 }
+
 
 
 
