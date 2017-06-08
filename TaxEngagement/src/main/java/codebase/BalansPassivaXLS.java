@@ -13,7 +13,7 @@ package codebase;
 	import org.apache.poi.xssf.usermodel.XSSFSheet;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-	public class BalansActivaXLS {
+	public class BalansPassivaXLS {
 		
 		private static XSSFWorkbook wb;
 
@@ -25,7 +25,7 @@ package codebase;
 			
 			try {
 				// Open the Excel file
-				FileInputStream fis = new FileInputStream("C:\\testdata\\balans activa.xlsx");
+				FileInputStream fis = new FileInputStream("C:\\testdata\\balans passiva.xlsx");
 				wb = new XSSFWorkbook(fis);
 				XSSFSheet sheet = wb.getSheet("TC01");
 				XSSFRow row = sheet.getRow(RijNummer);
@@ -53,7 +53,7 @@ package codebase;
 			
 			try {
 				// Open the Excel file
-				FileInputStream fis = new FileInputStream("C:\\testdata\\balans activa.xlsx");
+				FileInputStream fis = new FileInputStream("C:\\testdata\\balans passiva.xlsx");
 				
 				wb = new XSSFWorkbook(fis);
 				XSSFSheet sheet = wb.getSheet("TC01");
@@ -99,10 +99,13 @@ package codebase;
 
 		public static void main(String[] args) {
 
-		String[] HaalText =codebase.BalansActivaXLS.HaalText(80);
+		System.out.println(codebase.BalansPassivaXLS.HaalData("B",11));
+		
 			
-		System.out.println(HaalText[0]);
+
 
 		}
 	}
+
+
 
