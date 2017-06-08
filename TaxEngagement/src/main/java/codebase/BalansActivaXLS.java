@@ -100,7 +100,6 @@ package codebase;
 		public static void main(String[] args) {
 
 		String[] HaalText =codebase.BalansActivaXLS.HaalText(80);
-			
 		System.out.println(HaalText[0]);
 
 		}

@@ -476,5 +476,8 @@ public class BalansPassivaObjecten {
 		element = driver.findElement(By.id("idKls2R5C7"));
 		return element;
 	}
-	
+	public static WebElement ToelichtingBalansPassiva(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzrn"));
+		return element;
+	}
 }

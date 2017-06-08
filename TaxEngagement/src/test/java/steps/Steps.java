@@ -1836,7 +1836,7 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
     
 	
 	//Gestort en opgevraagd kapitaal 
-	
+	/*
 	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver).clear();
 	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",9));
 	
@@ -1850,9 +1850,7 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
 	BalansPassivaObjecten.GestortOpgevraagdCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",9));
 	
 	//Informeel kapitaal 
-		
-	
-	
+			
 	BalansPassivaObjecten.InformeelKapitaalCommercieeel_1_1(driver).clear();
 	BalansPassivaObjecten.InformeelKapitaalCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",10));
 	
@@ -1992,180 +1990,180 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
 	
 	BalansPassivaObjecten.OverigeVoorzieningCF(driver).clear();
 	BalansPassivaObjecten.OverigeVoorzieningCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",27));
-	
+
 	//Converteerbare leningen 
-/*
-	
+
 	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_1_1(driver).sendKeys("12001");
+	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",36));
 	
 	BalansPassivaObjecten.ConverteerbareleningenFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.ConverteerbareleningenFiscaal_1_1(driver).sendKeys("12002");
+	BalansPassivaObjecten.ConverteerbareleningenFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",36));
 	
 	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_31_12(driver).sendKeys("12003");
+	BalansPassivaObjecten.ConverteerbareleningenCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",36));
 	
 	BalansPassivaObjecten.ConverteerbareleningenCF(driver).clear();
-	BalansPassivaObjecten.ConverteerbareleningenCF(driver).sendKeys("12004");
+	BalansPassivaObjecten.ConverteerbareleningenCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",36));
 	
 	//Schulden aan kredietinstellingen 
 	
 	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_1_1(driver).sendKeys("13001");
+	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",37));
 	
 	BalansPassivaObjecten.SchuldenKredietInstFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.SchuldenKredietInstFiscaal_1_1(driver).sendKeys("13002");
+	BalansPassivaObjecten.SchuldenKredietInstFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",37));
 	
 	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_31_12(driver).sendKeys("13003");
+	BalansPassivaObjecten.SchuldenKredietInstCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",37));
 	
 	BalansPassivaObjecten.SchuldenKredietInstCF(driver).clear();
-	BalansPassivaObjecten.SchuldenKredietInstCF(driver).sendKeys("13004");
+	BalansPassivaObjecten.SchuldenKredietInstCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",37));
 		
 	//Obligaties
 	
 	BalansPassivaObjecten.ObligatiesCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.ObligatiesCommercieeel_1_1(driver).sendKeys("14001");
+	BalansPassivaObjecten.ObligatiesCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",38));
 	
 	BalansPassivaObjecten.ObligatiesFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.ObligatiesFiscaal_1_1(driver).sendKeys("14002");
+	BalansPassivaObjecten.ObligatiesFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",38));
 	
 	BalansPassivaObjecten.ObligatiesCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.ObligatiesCommercieeel_31_12(driver).sendKeys("14003");
+	BalansPassivaObjecten.ObligatiesCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",38));
 	
 	BalansPassivaObjecten.ObligatiesCF(driver).clear();
-	BalansPassivaObjecten.ObligatiesCF(driver).sendKeys("14004");	
+	BalansPassivaObjecten.ObligatiesCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",38));	
 	
 	//Langlopende schulden groepsmaatschappijen 
 	
 	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_1_1(driver).sendKeys("15001");
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",39));
 	
 	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschFiscaal_1_1(driver).sendKeys("15002");
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",39));
 	
 	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_31_12(driver).sendKeys("15003");
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",39));
 	
 	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCF(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCF(driver).sendKeys("15004");
+	BalansPassivaObjecten.LanglopendeSchuldenGrMaatschCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",39));
 	
 	//Langlopende schulden participanten/maatschappijen waarin wordt deelgenomen
 	
 	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_1_1(driver).sendKeys("16001");
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",40));
 	
 	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingFiscaal_1_1(driver).sendKeys("16002");
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",40));
 	
 	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_31_12(driver).sendKeys("16003");
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",40));
 	
 	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCF(driver).clear();
-	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCF(driver).sendKeys("16004");
+	BalansPassivaObjecten.LanglopendeSchuldenPartMaatschDeelnemingCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",40));
 	
 	//Overige langlopende schulden
 	
 	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_1_1(driver).sendKeys("17001");
+	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",41));
 	
 	BalansPassivaObjecten.OverigeLangLopendeSchFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.OverigeLangLopendeSchFiscaal_1_1(driver).sendKeys("17002");
+	BalansPassivaObjecten.OverigeLangLopendeSchFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",41));
 	
 	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_31_12(driver).sendKeys("17003");
+	BalansPassivaObjecten.OverigeLangLopendeSchCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",41));
 	
 	BalansPassivaObjecten.OverigeLangLopendeSchCF(driver).clear();
-	BalansPassivaObjecten.OverigeLangLopendeSchCF(driver).sendKeys("17004");
-		
-	//Schulden aan leveranciers en handelskredieten
+	BalansPassivaObjecten.OverigeLangLopendeSchCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",41));
 	
+		
+	
+	//Schulden aan leveranciers en handelskredieten
+	*/
 	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).sendKeys("18001");
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",49));
 	
 	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrFiscaal_1_1(driver).sendKeys("18002");
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",49));
 	
 	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_31_12(driver).sendKeys("18003");
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",49));
 	
 	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCF(driver).clear();
-	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCF(driver).sendKeys("18004");	
+	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",49));	
 	
 	//Omzetbelasting 
 	
 	BalansPassivaObjecten.OmzetbelastingCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.OmzetbelastingCommercieeel_1_1(driver).sendKeys("19001");
+	BalansPassivaObjecten.OmzetbelastingCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",50));
 	
 	BalansPassivaObjecten.OmzetbelastingFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.OmzetbelastingFiscaal_1_1(driver).sendKeys("19002");
+	BalansPassivaObjecten.OmzetbelastingFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",50));
 	
 	BalansPassivaObjecten.OmzetbelastingCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.OmzetbelastingCommercieeel_31_12(driver).sendKeys("19003");
+	BalansPassivaObjecten.OmzetbelastingCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",50));
 	
 	BalansPassivaObjecten.OmzetbelastingCF(driver).clear();
-	BalansPassivaObjecten.OmzetbelastingCF(driver).sendKeys("19004");
+	BalansPassivaObjecten.OmzetbelastingCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",50));
 		
 	//Loonheffingen 
 	
 	BalansPassivaObjecten.LoonheffingenCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.LoonheffingenCommercieeel_1_1(driver).sendKeys("20001");
+	BalansPassivaObjecten.LoonheffingenCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",51));
 	
 	BalansPassivaObjecten.LoonheffingenFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.LoonheffingenFiscaal_1_1(driver).sendKeys("20002");
+	BalansPassivaObjecten.LoonheffingenFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",51));
 	
 	BalansPassivaObjecten.LoonheffingenCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.LoonheffingenCommercieeel_31_12(driver).sendKeys("20003");
+	BalansPassivaObjecten.LoonheffingenCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",51));
 	
 	BalansPassivaObjecten.LoonheffingenCF(driver).clear();
-	BalansPassivaObjecten.LoonheffingenCF(driver).sendKeys("20004");
+	BalansPassivaObjecten.LoonheffingenCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",51));
 		
 	//Kortlopende schulden groepsmaatschappijen
 	
 	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_1_1(driver).sendKeys("21001");
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",52));
 	
 	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschFiscaal_1_1(driver).sendKeys("21002");
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",52));
 	
 	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_31_12(driver).sendKeys("21003");
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",52));
 	
 	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCF(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCF(driver).sendKeys("21004");
+	BalansPassivaObjecten.KortlopendeSchuldGroepsmaatschCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",52));
 		
 	//Kortlopende schulden op participanten/maatschappijen waarin wordt deelgenomen
 	
 	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_1_1(driver).sendKeys("22001");
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",53));
 	
 	BalansPassivaObjecten.KortlopendeSchuldParticiantFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldParticiantFiscaal_1_1(driver).sendKeys("22002");
+	BalansPassivaObjecten.KortlopendeSchuldParticiantFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",53));
 	
 	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_31_12(driver).sendKeys("22003");
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",53));
 	
 	BalansPassivaObjecten.KortlopendeSchuldParticiantCF(driver).clear();
-	BalansPassivaObjecten.KortlopendeSchuldParticiantCF(driver).sendKeys("22004");
+	BalansPassivaObjecten.KortlopendeSchuldParticiantCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",53));
 
 	//Overige kortlopende schulden 
 	
 	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_1_1(driver).clear();
-	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_1_1(driver).sendKeys("23001");
+	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",54));
 	
 	BalansPassivaObjecten.OverigeKortlSchuldFiscaal_1_1(driver).clear();
-	BalansPassivaObjecten.OverigeKortlSchuldFiscaal_1_1(driver).sendKeys("23002");
+	BalansPassivaObjecten.OverigeKortlSchuldFiscaal_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("C",54));
 	
 	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_31_12(driver).clear();
-	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_31_12(driver).sendKeys("23003");
+	BalansPassivaObjecten.OverigeKortlSchuldCommercieeel_31_12(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("D",54));
 	
 	BalansPassivaObjecten.OverigeKortlSchuldCF(driver).clear();
-	BalansPassivaObjecten.OverigeKortlSchuldCF(driver).sendKeys("23004");
+	BalansPassivaObjecten.OverigeKortlSchuldCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",54));
 	
-	
-	*/
-	
-	
+	BalansPassivaObjecten.ToelichtingBalansPassiva(driver).clear();
+	BalansPassivaObjecten.ToelichtingBalansPassiva(driver).sendKeys(codebase.BalansPassivaXLS.HaalText(62));
+		
 	
 }
 
