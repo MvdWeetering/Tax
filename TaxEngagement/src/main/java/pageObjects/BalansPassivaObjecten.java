@@ -211,24 +211,24 @@ public class BalansPassivaObjecten {
 		
 	//Overige fiscale reserves 
 	 
-	public static WebElement FiscaleReservesCommercieeel_1_1(WebDriver driver){
+	public static WebElement OverigeFiscaleReservesCommercieeel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idOnv2R7C1"));
 		return element;
 	}
 	
-	public static WebElement FiscaleReservesFiscaal_1_1(WebDriver driver){
+	public static WebElement OverigeFiscaleReservesFiscaal_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idOnv2R7C3"));
 		return element;
 	}
-	public static WebElement FiscaleReservesCommercieeel_31_12(WebDriver driver){
+	public static WebElement OverigeFiscaleReservesCommercieeel_31_12(WebDriver driver){
 		element = driver.findElement(By.id("idOnv2R7C5"));
 		return element;
 	}
-	public static WebElement FiscaleReservesCF(WebDriver driver){
+	public static WebElement OverigeFiscaleReservesCF(WebDriver driver){
 		element = driver.findElement(By.id("idOnv2R7C7"));
 		return element;
 	}
-	public static WebElement FiscaleReservesFiscaal31_12(WebDriver driver){
+	public static WebElement OverigeFiscaleReservesFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzny"));
 		return element;
 	}
@@ -358,11 +358,34 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	//Totaal Voorzieningen
+	
+	public static WebElement TotaalVoorzieningCommercieeel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R3C1"));
+		return element;
+	}
+	
+	public static WebElement TotaalVoorzieningFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R3C3"));
+		return element;
+	}
+	public static WebElement TotaalVoorzieningCommercieeel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R3C5"));
+		return element;
+	}
+	public static WebElement TotaalVoorzieningCF(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R3C7"));
+		return element;
+	}
+	
+	public static WebElement TotaalVoorzieningFiscaal31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoz2R3C9"));
+		return element;
+	}
+	
 	
 	//Langlopende schulden
-	
-	
-	
+		
 	public static WebElement LanglopendeSchuldenCommercieeel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idLls1R0C1"));
 		return element;
@@ -572,25 +595,25 @@ public class BalansPassivaObjecten {
 	//Kortlopende schulden
 	
 	public static WebElement KortLopendeSchuldCommercieeel_1_1(WebDriver driver){
-		element = driver.findElement(By.id("idLls2R6C1"));
+		element = driver.findElement(By.id("idKls1R0C1"));
 		return element;
 	}
 	
 	public static WebElement KortLopendeSchuldFiscaal_1_1(WebDriver driver){
-		element = driver.findElement(By.id("idLls2R6C3"));
+		element = driver.findElement(By.id("idKls1R0C3"));
 		return element;
 	}
 	public static WebElement KortLopendeSchuldCommercieeel_31_12(WebDriver driver){
-		element = driver.findElement(By.id("idLls2R6C5"));
+		element = driver.findElement(By.id("idKls1R0C5"));
 		return element;
 	}
 	public static WebElement KortLopendeSchuldCF(WebDriver driver){
-		element = driver.findElement(By.id("idLls2R6C7"));
+		element = driver.findElement(By.id("idKls1R0C7"));
 		return element;
 	}	
 	
 	public static WebElement KortLopendeSchuldFiscaal31_12(WebDriver driver){
-		element = driver.findElement(By.id("idLls2R6C9"));
+		element = driver.findElement(By.id("idxdt9tzoy"));
 		return element;
 	}
 	
