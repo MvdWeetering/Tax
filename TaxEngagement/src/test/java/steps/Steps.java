@@ -1836,7 +1836,7 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
     
 	
 	//Gestort en opgevraagd kapitaal 
-	/*
+	
 	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver).clear();
 	BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",9));
 	
@@ -2078,7 +2078,7 @@ public void i_can_fill_out_the_form_Balans_Passiva() throws Throwable {
 		
 	
 	//Schulden aan leveranciers en handelskredieten
-	*/
+	
 	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).clear();
 	BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",49));
 	
