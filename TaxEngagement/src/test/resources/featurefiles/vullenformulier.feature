@@ -77,7 +77,7 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Balans Activa
-    Then i can fill out the form Balans Activa
+    
     Then i can validate the totals for Balans Activa
        
   @vullen_formulier @Balans_Passiva
@@ -87,7 +87,7 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Balans Passiva
-    
+    Then i can fill out the form Balans Passiva
     Then i can validate the totals for Balans Passiva   
     
     

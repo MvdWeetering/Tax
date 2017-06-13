@@ -760,7 +760,7 @@ public class BalansActivaObjecten {
 	}
 	
 	public static WebElement EffectenFiscaal_31_12(WebDriver driver){
-		element = driver.findElement(By.id("idEff1R0C7"));
+		element = driver.findElement(By.id("idxdt9tzn9"));
 		return element;
 	}
 	
