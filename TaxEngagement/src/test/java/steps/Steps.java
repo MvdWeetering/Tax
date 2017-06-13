@@ -1494,16 +1494,16 @@ public void open_the_form_Balans_Activa() throws Throwable {
    
 }
 
-@Then("^i can fill out the form Balans Activa$")
-public void i_can_fill_out_the_form_Balans_Activa() throws Throwable {
+@Then("^i can fill out the form Balans Activa from tab \"(.*?)\"$")
+public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Throwable {
     
 	BalansActivaObjecten.NaamOnderneming(driver).clear();
-	BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalText(5));
+	BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalText(5, Tab));
 	BalansActivaObjecten.OmschrijvingActiviteit(driver).clear();
-	BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys(BalansActivaXLS.HaalText(6));
+	BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys(BalansActivaXLS.HaalText(6, Tab));
 	
 	
-	String[] DochterMaatsch =codebase.BalansActivaXLS.HaalText(7);
+	String[] DochterMaatsch =codebase.BalansActivaXLS.HaalText(7, Tab);
 			
 	if (DochterMaatsch[0].equals("Ja")) 
 		{ BalansActivaObjecten.DochterMaatschappij_Ja(driver).click();	
@@ -1511,7 +1511,7 @@ public void i_can_fill_out_the_form_Balans_Activa() throws Throwable {
 	else {BalansActivaObjecten.DochterMaatschappij_Nee(driver).click();
 		}
 		
-	String[] BoekjaarAgr =codebase.BalansActivaXLS.HaalText(8);
+	String[] BoekjaarAgr =codebase.BalansActivaXLS.HaalText(8, "TC01");
 			
 	if (BoekjaarAgr[0].equals("Ja")) 
 		{ BalansActivaObjecten.BoekjaarAgrarische_ja(driver).click();	
@@ -1817,7 +1817,7 @@ public void i_can_fill_out_the_form_Balans_Activa() throws Throwable {
 	//toelichting balans
 	
 	BalansActivaObjecten.Toelichtingbalans(driver).clear();
-	BalansActivaObjecten.Toelichtingbalans(driver).sendKeys(BalansActivaXLS.HaalText(80));
+	BalansActivaObjecten.Toelichtingbalans(driver).sendKeys(BalansActivaXLS.HaalText(80, "TC01"));
 	
 }
 

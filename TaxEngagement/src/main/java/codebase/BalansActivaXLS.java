@@ -18,7 +18,7 @@ package codebase;
 		private static XSSFWorkbook wb;
 
 		
-		public static String[] HaalText(int RijNummer) {
+		public static String[] HaalText(int RijNummer, String Tab) {
 			
 			String[] resultaat = null;
 			RijNummer = RijNummer - 1; 
@@ -27,7 +27,7 @@ package codebase;
 				// Open the Excel file
 				FileInputStream fis = new FileInputStream("C:\\testdata\\balans activa.xlsx");
 				wb = new XSSFWorkbook(fis);
-				XSSFSheet sheet = wb.getSheet("TC01");
+				XSSFSheet sheet = wb.getSheet(Tab);
 				XSSFRow row = sheet.getRow(RijNummer);
 
 				String[] opsommingresultaat; 
@@ -99,7 +99,7 @@ package codebase;
 
 		public static void main(String[] args) {
 
-		String[] HaalText =codebase.BalansActivaXLS.HaalText(80);
+		String[] HaalText =codebase.BalansActivaXLS.HaalText(80, "TC01");
 		System.out.println(HaalText[0]);
 
 		}

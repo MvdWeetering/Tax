@@ -48,7 +48,6 @@ Feature: vullen formulieren
     And open the form Specificatie Deelnemingen
   	Then i can fill out the form Specificatie Deelnemingen
  		Then i can validate the error messages for Specificatie Deelnemingen form
-
  
   @vullen_formulier @Toelichting_Balans
   Scenario: vullen formulier Toelichting Balans
@@ -77,7 +76,7 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Balans Activa
-    
+  	Then i can fill out the form Balans Activa from tab "TC01" 
     Then i can validate the totals for Balans Activa
        
   @vullen_formulier @Balans_Passiva

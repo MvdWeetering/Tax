@@ -35,7 +35,6 @@ public class BalansActivaObjecten {
 		return element;
 	}
 		
-	
 	//Immateriele vaste activa 
 	public static WebElement ImmaterieleVasteActivaCommercieel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idIva1R0C1"));
