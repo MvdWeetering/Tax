@@ -34,6 +34,34 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idxdt9tzll-no"));
 		return element;
 	}
+		
+	
+	//Immateriele vaste activa 
+	public static WebElement ImmaterieleVasteActivaCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idIva1R0C1"));
+		return element;
+	}
+	
+	public static WebElement ImmaterieleVasteActivaFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idIva1R0C3"));
+		return element;
+	}
+	
+	public static WebElement ImmaterieleVasteActivaCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idIva1R0C5"));
+		return element;
+	}
+	
+	public static WebElement ImmaterieleVasteActivaCF(WebDriver driver){
+		element = driver.findElement(By.id("idIva1R0C7"));
+		return element;
+	}
+	
+	public static WebElement ImmaterieleVasteActivaFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzlv"));
+		return element;
+	}
+	
 	
 	//goodwill fiscaal
 	public static WebElement GoodwillAanschaf(WebDriver driver){
@@ -61,6 +89,11 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	
+	public static WebElement GoodwillFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzlr"));
+		return element;
+	}
+	
 	//overige immateriele vaste activa
 	public static WebElement OverigeImmaterieleAanschaf(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzp6"));
@@ -85,7 +118,38 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idIva2R1C9"));
 		return element;
 	}
+	public static WebElement OverigeImmaterieleFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzls"));
+		return element;
+	}	
 	
+	//Totaal immateriele vaste activa
+	
+	public static WebElement TotaalImmaterieleVasteActivaCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idIva2R2C3"));
+		return element;
+	}
+	
+	public static WebElement TotaalImmaterieleVasteActivaFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idIva2R2C5"));
+		return element;
+	}
+	
+	public static WebElement TotaalImmaterieleVasteActivaCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idIva2R2C7"));
+		return element;
+	}
+	
+	public static WebElement TotaalImmaterieleVasteActivaCF(WebDriver driver){
+		element = driver.findElement(By.id("idIva2R2C9"));
+		return element;
+	}
+	
+	public static WebElement TotaalImmaterieleVasteActivaFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idIva2R2C11"));
+		return element;
+	}
+		
 	//gebouwen en terreinen
 	public static WebElement GebouwenTerreinenCommercieel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idMva2R0C1"));
@@ -106,7 +170,13 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idMva2R0C7"));
 		return element;
 	}
+
+	public static WebElement GebouwenTerreinenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzm2"));
+		return element;
+	}
 	
+		
 	//machines
 	public static WebElement MachinesCommercieel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idMva2R1C1"));
@@ -125,6 +195,10 @@ public class BalansActivaObjecten {
 	
 	public static WebElement MachinesCF(WebDriver driver){
 		element = driver.findElement(By.id("idMva2R1C7"));
+		return element;
+	}
+	public static WebElement MachinesFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzm4"));
 		return element;
 	}
 	
@@ -148,9 +222,64 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idMva2R2C7"));
 		return element;
 	}
+	public static WebElement AndereBedrijfsFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzm6"));
+		return element;
+	}
+		
+	//Totaal materiële vaste activa
+		
+	public static WebElement TotaalMaterieleVasteActivaCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idMva2R3C1"));
+		return element;
+	}
 	
+	public static WebElement TotaalMaterieleVasteActivaFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idMva2R3C3"));
+		return element;
+	}
+	
+	public static WebElement TotaalMaterieleVasteActivaCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idMva2R3C5"));
+		return element;
+	}
+	
+	public static WebElement TotaalMaterieleVasteActivaCF(WebDriver driver){
+		element = driver.findElement(By.id("idMva2R3C7"));
+		return element;
+	}
+	public static WebElement TotaalMaterieleVasteActivaFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idMva2R3C9"));
+		return element;
+	}
+	
+	//Financiële vaste activa 
+		
+	public static WebElement FinancieleVasteActivaCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C1"));
+		return element;
+	}
+	
+	public static WebElement FinancieleVasteActivaFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C3"));
+		return element;
+	}
+	
+	public static WebElement FinancieleVasteActivaCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C5"));
+		return element;
+	}
+	
+	public static WebElement FinancieleVasteActivaCF(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C7"));
+		return element;
+	}
+	public static WebElement FinancieleVasteActivaFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmh"));
+		return element;
+	}
+		
 	//Deelnemingen
-	
 	public static WebElement DeelnemingenCommercieel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idFva2R0C3"));
 		return element;
@@ -168,6 +297,10 @@ public class BalansActivaObjecten {
 	
 	public static WebElement DeelnemingenCF(WebDriver driver){
 		element = driver.findElement(By.id("idFva2R0C9"));
+		return element;
+	}
+	public static WebElement DeelnemingenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmc"));
 		return element;
 	}
 		
@@ -198,6 +331,11 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	
+	public static WebElement langlopendevordGroepsFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmd"));
+		return element;
+	}
+	
 	//Langlopende vorderingen participanten/maatschappijen
 
 	public static WebElement langlopendevordPartNominaleWaarde(WebDriver driver){
@@ -224,7 +362,11 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idFva2R2C9"));
 		return element;
 	}
-
+	
+	public static WebElement langlopendevordPartFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzme"));
+		return element;
+	}
 	
 	//Overige financiële vaste activa 
 
@@ -253,28 +395,89 @@ public class BalansActivaObjecten {
 			return element;
 		}
 	
-	//Voorraden, excl onderhanden werk 
+	public static WebElement OverigeFinActivaFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmg"));
+		return element;
+	}	
 	
-	public static WebElement VoorradenCommercieel_1_1(WebDriver driver){
-		element = driver.findElement(By.id("idVoo2R0C1"));
+	//Totaal financiële vaste activa
+	
+	public static WebElement TotaalFinVasteActivaCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C1"));
 		return element;
 	}
-
+	
+	public static WebElement TotaalFinVasteActivaFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C3"));
+		return element;
+	}
+	
+	public static WebElement TotaalFinVasteActivaCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C5"));
+		return element;
+	}
+	
+	public static WebElement TotaalFinVasteActivaCF(WebDriver driver){
+		element = driver.findElement(By.id("idFva1R0C7"));
+		return element;
+	}
+	public static WebElement TotaalFinVasteActivaFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmh"));
+		return element;
+	}
+	
+	//Voorraden
+	
+	public static WebElement VoorradenCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoo1R0C1"));
+		return element;
+	}
+	
 	public static WebElement VoorradenFiscaal_1_1(WebDriver driver){
-		element = driver.findElement(By.id("idVoo2R0C3"));
+		element = driver.findElement(By.id("idVoo1R0C3"));
 		return element;
 	}
 	
 	public static WebElement VoorradenCommercieel_31_12(WebDriver driver){
-		element = driver.findElement(By.id("idVoo2R0C5"));
+		element = driver.findElement(By.id("idVoo1R0C5"));
 		return element;
 	}
 	
 	public static WebElement VoorradenCF(WebDriver driver){
+		element = driver.findElement(By.id("idVoo1R0C7"));
+		return element;
+	}
+	public static WebElement VoorradenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmv"));
+		return element;
+	}
+	
+	//Voorraden, excl onderhanden werk 
+	
+	public static WebElement VoorradenExlCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R0C1"));
+		return element;
+	}
+
+	public static WebElement VoorradenExlFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R0C3"));
+		return element;
+	}
+	
+	public static WebElement VoorradenExlCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R0C5"));
+		return element;
+	}
+	
+	public static WebElement VoorradenExlCF(WebDriver driver){
 		element = driver.findElement(By.id("idVoo2R0C7"));
 		return element;
 	}
-		
+	public static WebElement VoorradenExlFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzms"));
+		return element;
+	}
+	
 	//Onderhanden werk
 	
 	public static WebElement OnderhandenCommercieel_1_1(WebDriver driver){
@@ -297,6 +500,65 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	
+	public static WebElement OnderhandenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmt"));
+		return element;
+	}
+	
+	//Totaal voorraden 
+	
+	public static WebElement TotaalVoorradenCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R2C1"));
+		return element;
+	}
+	
+	public static WebElement TotaalVoorradenFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R2C3"));
+		return element;
+	}
+
+	public static WebElement TotaalVoorradenCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R2C5"));
+		return element;
+	}
+	
+	public static WebElement TotaalVoorradenCF(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R2C7"));
+		return element;
+	}
+	
+	public static WebElement TotaalVoorradenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVoo2R2C9"));
+		return element;
+	}
+	
+	//Vorderingen
+	
+	public static WebElement VorderingenCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVor1R0C1"));
+		return element;
+	}
+	
+	public static WebElement VorderingenFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVor1R0C3"));
+		return element;
+	}
+
+	public static WebElement VorderingenCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVor1R0C5"));
+		return element;
+	}
+	
+	public static WebElement VorderingenCF(WebDriver driver){
+		element = driver.findElement(By.id("idVor1R0C7"));
+		return element;
+	}
+	
+	public static WebElement VorderingenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzn4"));
+		return element;
+	}
+			
 	//Handelsdebiteuren
 	
 	public static WebElement HandelsdebiteurenNominale(WebDriver driver){
@@ -323,7 +585,11 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idVor2R0C9"));
 		return element;
 	}
-		
+	public static WebElement HandelsdebiteurenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmx"));
+		return element;
+	}
+	
 	//Omzetbelasting
 	
 	public static WebElement OmzetBelastingCommercieel_1_1(WebDriver driver){
@@ -343,6 +609,11 @@ public class BalansActivaObjecten {
 	
 	public static WebElement OmzetBelastingCF(WebDriver driver){
 		element = driver.findElement(By.id("idVor2R1C9"));
+		return element;
+	}
+	
+	public static WebElement OmzetBelastingFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmy"));
 		return element;
 	}
 	
@@ -372,6 +643,10 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idVor2R2C9"));
 		return element;
 	}
+	public static WebElement KortVordGroepFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzn0"));
+		return element;
+	}
 	
 	//Kortlopende vorderingen participanten/ maatschappijen
 	
@@ -399,7 +674,12 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idVor2R3C9"));
 		return element;
 	}
-		
+	
+	public static WebElement KortVordPartFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzn1"));
+		return element;
+	}
+	
 	//Overige vorderingen 	
 	
 	public static WebElement OverigeVordCommercieel_1_1(WebDriver driver){
@@ -419,6 +699,41 @@ public class BalansActivaObjecten {
 	
 	public static WebElement OverigeVordCF(WebDriver driver){
 		element = driver.findElement(By.id("idVor2R4C9"));
+		return element;
+	}
+	
+	public static WebElement OverigeVordFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzn2"));
+		return element;
+	}
+	
+	
+	//Totaal vorderingen 
+	
+	
+	
+	public static WebElement TotaalVorderingenCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVor2R5C3"));
+		return element;
+	}
+	
+	public static WebElement TotaalVorderingenFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idVor2R5C5"));
+		return element;
+	}
+	
+	public static WebElement TotaalVorderingenCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVor2R5C7"));
+		return element;
+	}
+	
+	public static WebElement TotaalVorderingenCF(WebDriver driver){
+		element = driver.findElement(By.id("idVor2R5C9"));
+		return element;
+	}
+	
+	public static WebElement TotaalVorderingenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idVor2R5C11"));
 		return element;
 	}
 	
@@ -443,7 +758,12 @@ public class BalansActivaObjecten {
 		element = driver.findElement(By.id("idEff1R0C7"));
 		return element;
 	}
-		
+	
+	public static WebElement EffectenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idEff1R0C7"));
+		return element;
+	}
+	
 	//liquide middelen
 	
 	public static WebElement LiquideCommercieel_1_1(WebDriver driver){
@@ -466,18 +786,44 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	
+	public static WebElement LiquideFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tznb"));
+		return element;
+	}
+	
+	//Totaal Activa
+	
+	public static WebElement TotaalActivaCommercieel_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idTotAc1R0C1"));
+		return element;
+	}
+	
+	public static WebElement TotaalActivaFiscaal_1_1(WebDriver driver){
+		element = driver.findElement(By.id("idTotAc1R0C3"));
+		return element;
+	}
+	
+	public static WebElement TotaalActivaCommercieel_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idTotAc1R0C5"));
+		return element;
+	}
+	
+	public static WebElement TotaalActivaCF(WebDriver driver){
+		element = driver.findElement(By.id("idTotAc1R0C7"));
+		return element;
+	}
+	
+	public static WebElement TotaalActivaFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tznc"));
+		return element;
+	}
+	
 	// toelichting balans
 	
 	public static WebElement Toelichtingbalans(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzrm"));
 		return element;
 	}	
-	
-	
-	
-	
-	
-	
 	
 	
 }

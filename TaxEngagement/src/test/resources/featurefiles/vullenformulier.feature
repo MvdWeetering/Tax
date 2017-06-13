@@ -48,7 +48,7 @@ Feature: vullen formulieren
     And open the form Specificatie Deelnemingen
   	Then i can fill out the form Specificatie Deelnemingen
  		Then i can validate the error messages for Specificatie Deelnemingen form
- 
+
  
   @vullen_formulier @Toelichting_Balans
   Scenario: vullen formulier Toelichting Balans
@@ -70,7 +70,7 @@ Feature: vullen formulieren
     Then i can fill out the form Winst en Verlies rekening
     Then i can validate the totals for each column
  
-   @vullen_formulier @Balans_Activa
+  @vullen_formulier @Balans_Activa
   Scenario: vullen formulier Balans Activa
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
@@ -80,7 +80,7 @@ Feature: vullen formulieren
     Then i can fill out the form Balans Activa
     Then i can validate the totals for Balans Activa
        
-    @vullen_formulier @Balans_Passiva
+  @vullen_formulier @Balans_Passiva
   Scenario: vullen formulier Balans Passiva
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
