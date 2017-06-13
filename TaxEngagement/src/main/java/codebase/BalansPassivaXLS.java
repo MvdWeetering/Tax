@@ -99,10 +99,9 @@ package codebase;
 
 		public static void main(String[] args) {
 
-		System.out.println(codebase.BalansPassivaXLS.HaalData("B",11));
-		
+			String[] HaalText =codebase.BalansPassivaXLS.HaalText(62);
 			
-
+			System.out.println(HaalText[0]);
 
 		}
 	}
