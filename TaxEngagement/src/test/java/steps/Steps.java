@@ -1524,295 +1524,296 @@ public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Th
 	//goodwill fiscaal
 	
 	BalansActivaObjecten.GoodwillAanschaf(driver).clear();
-	BalansActivaObjecten.GoodwillAanschaf(driver).sendKeys(BalansActivaXLS.HaalData("B", 16));
+	BalansActivaObjecten.GoodwillAanschaf(driver).sendKeys(BalansActivaXLS.HaalData("B", 16, Tab));
+	
 	
 	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 16));
+	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 16, Tab));
 	
 	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 16));
+	BalansActivaObjecten.GoodwillFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 16, Tab));
 	
 	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 16));
+	BalansActivaObjecten.GoodwillCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 16, Tab));
 	 
 	BalansActivaObjecten.GoodwillCF(driver).clear();
-	BalansActivaObjecten.GoodwillCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 16));
+	BalansActivaObjecten.GoodwillCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 16, Tab));
 		
 	//Overige immateriele vaste activa
    	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).sendKeys(BalansActivaXLS.HaalData("B", 17));
+	BalansActivaObjecten.OverigeImmaterieleAanschaf(driver).sendKeys(BalansActivaXLS.HaalData("B", 17, Tab));
 	
 	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 17));
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 17, Tab));
 	
 	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 17));
+	BalansActivaObjecten.OverigeImmaterieleFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 17, Tab));
 	
 	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 17));
+	BalansActivaObjecten.OverigeImmaterieleCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 17, Tab));
 	
 	BalansActivaObjecten.OverigeImmaterieleCF(driver).clear();
-	BalansActivaObjecten.OverigeImmaterieleCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 17));
+	BalansActivaObjecten.OverigeImmaterieleCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 17, Tab));
 	
 	
 	 	
 	//Gebouwen en terreinen 
 	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 26));
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 26, Tab));
 	
 	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 26));
+	BalansActivaObjecten.GebouwenTerreinenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 26, Tab));
 	
 	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 26));
+	BalansActivaObjecten.GebouwenTerreinenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 26, Tab));
 	
 	BalansActivaObjecten.GebouwenTerreinenCF(driver).clear();
-	BalansActivaObjecten.GebouwenTerreinenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 26));
+	BalansActivaObjecten.GebouwenTerreinenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 26, Tab));
 	
 		
 	
 	//Machines en installaties 
 	BalansActivaObjecten.MachinesCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.MachinesCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 27));
+	BalansActivaObjecten.MachinesCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 27, Tab));
 	
 	BalansActivaObjecten.MachinesFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.MachinesFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 27));
+	BalansActivaObjecten.MachinesFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 27, Tab));
 	
 	BalansActivaObjecten.MachinesCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.MachinesCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 27));
+	BalansActivaObjecten.MachinesCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 27, Tab));
 	
 	BalansActivaObjecten.MachinesCF(driver).clear();
-	BalansActivaObjecten.MachinesCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 27));
+	BalansActivaObjecten.MachinesCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 27, Tab));
 	
 	
 	
 	//Andere vaste bedrijfsmiddelen 
 	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 28));
+	BalansActivaObjecten.AndereBedrijfsCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 28, Tab));
 	
 	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 28));
+	BalansActivaObjecten.AndereBedrijfsFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 28, Tab));
 	
 	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 28));
+	BalansActivaObjecten.AndereBedrijfsCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 28, Tab));
 	
 	BalansActivaObjecten.AndereBedrijfsCF(driver).clear();
-	BalansActivaObjecten.AndereBedrijfsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 28));
+	BalansActivaObjecten.AndereBedrijfsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 28, Tab));
 
 	
 	//Deelnemingen 
 	
 	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 37));
+	BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 37, Tab));
 	
 	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 37));
+	BalansActivaObjecten.DeelnemingenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 37, Tab));
 	
 	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 37));
+	BalansActivaObjecten.DeelnemingenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 37, Tab));
 	
 	BalansActivaObjecten.DeelnemingenCF(driver).clear();
-	BalansActivaObjecten.DeelnemingenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 37));
+	BalansActivaObjecten.DeelnemingenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 37, Tab));
 	
 		
 	//Langlopende vorderingen op groepsmaatschappijen
 	
 	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 38));
+	BalansActivaObjecten.langlopendevordGroepsNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 38, Tab));
 	
 	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 38));
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 38, Tab));
 	
 	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 38));
+	BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 38, Tab));
 	
 	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 38));
+	BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 38, Tab));
 	
 	BalansActivaObjecten.langlopendevordGroepsCF(driver).clear();
-	BalansActivaObjecten.langlopendevordGroepsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 38));
+	BalansActivaObjecten.langlopendevordGroepsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 38, Tab));
 	
 		
 	 
 	//Langlopende vorderingen participanten/maatschappijen
 	
 	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).clear();
-	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 39));
+	BalansActivaObjecten.langlopendevordPartNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 39, Tab));
 	
 	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 39));
+	BalansActivaObjecten.langlopendevordPartCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 39, Tab));
 	
 	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 39));
+	BalansActivaObjecten.langlopendevordPartFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 39, Tab));
 	
 	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 39));
+	BalansActivaObjecten.langlopendevordPartCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 39, Tab));
 	
 	BalansActivaObjecten.langlopendevordPartCF(driver).clear();
-	BalansActivaObjecten.langlopendevordPartCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 39));
+	BalansActivaObjecten.langlopendevordPartCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 39, Tab));
 	
 	
 		
 	//Overige financiele vaste activa 
 	
 	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 40));
+	BalansActivaObjecten.OverigeFinActivaNominaleWaarde(driver).sendKeys(BalansActivaXLS.HaalData("B", 40, Tab));
 	
 	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 40));
+	BalansActivaObjecten.OverigeFinActivaCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 40, Tab));
 	
 	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 40));
+	BalansActivaObjecten.OverigeFinActivaFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 40, Tab));
 	
 	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 40));
+	BalansActivaObjecten.OverigeFinActivaCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 40, Tab));
 	
 	BalansActivaObjecten.OverigeFinActivaCF(driver).clear();
-	BalansActivaObjecten.OverigeFinActivaCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 40));
+	BalansActivaObjecten.OverigeFinActivaCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 40, Tab));
 	
 	
 	//Voorraden, excl onderhanden werk 
 		
 	BalansActivaObjecten.VoorradenExlCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.VoorradenExlCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 48));
+	BalansActivaObjecten.VoorradenExlCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 48, Tab));
 	
 	BalansActivaObjecten.VoorradenExlFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.VoorradenExlFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 48));
+	BalansActivaObjecten.VoorradenExlFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 48, Tab));
 		
 	BalansActivaObjecten.VoorradenExlCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.VoorradenExlCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 48));
+	BalansActivaObjecten.VoorradenExlCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 48, Tab));
 	
 	BalansActivaObjecten.VoorradenExlCF(driver).clear();
-	BalansActivaObjecten.VoorradenExlCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 48));
+	BalansActivaObjecten.VoorradenExlCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 48, Tab));
 		
 	//Onderhanden werk
 	
 	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 49));
+	BalansActivaObjecten.OnderhandenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 49, Tab));
 	
 	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 49));
+	BalansActivaObjecten.OnderhandenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 49, Tab));
 	
 	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 49));
+	BalansActivaObjecten.OnderhandenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 49, Tab));
 	
 	BalansActivaObjecten.OnderhandenCF(driver).clear();
-	BalansActivaObjecten.OnderhandenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 49));
+	BalansActivaObjecten.OnderhandenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 49, Tab));
 	
 		
 	//Handelsdebiteuren 
 	
 	
 	BalansActivaObjecten.HandelsdebiteurenNominale(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenNominale(driver).sendKeys(BalansActivaXLS.HaalData("B", 57));
+	BalansActivaObjecten.HandelsdebiteurenNominale(driver).sendKeys(BalansActivaXLS.HaalData("B", 57, Tab));
 	
 	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 57));
+	BalansActivaObjecten.HandelsdebiteurenCommericeel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 57, Tab));
 	
 	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 57));
+	BalansActivaObjecten.HandelsdebiteurenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 57, Tab));
 	
 	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 57));
+	BalansActivaObjecten.HandelsdebiteurenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 57, Tab));
 	
 	BalansActivaObjecten.HandelsdebiteurenCF(driver).clear();
-	BalansActivaObjecten.HandelsdebiteurenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 57));
+	BalansActivaObjecten.HandelsdebiteurenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 57, Tab));
 	
 	
 	//Omzetbelasting
 	
 	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 58));
+	BalansActivaObjecten.OmzetBelastingCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 58, Tab));
 	
 	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 58));
+	BalansActivaObjecten.OmzetBelastingFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 58, Tab));
 	
 	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 58));
+	BalansActivaObjecten.OmzetBelastingCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 58, Tab));
 	
 	BalansActivaObjecten.OmzetBelastingCF(driver).clear();
-	BalansActivaObjecten.OmzetBelastingCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 58));
+	BalansActivaObjecten.OmzetBelastingCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 58, Tab));
 	
 	
 	//Kortlopende vorderingen op groepsmaatschappijen
 	
 	BalansActivaObjecten.KortVordGroepNominale(driver).clear();
-	BalansActivaObjecten.KortVordGroepNominale(driver).sendKeys(BalansActivaXLS.HaalData("B", 59));
+	BalansActivaObjecten.KortVordGroepNominale(driver).sendKeys(BalansActivaXLS.HaalData("B", 59, Tab));
 	
 	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 59));
+	BalansActivaObjecten.KortVordGroepCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 59, Tab));
 	
 	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 59));
+	BalansActivaObjecten.KortVordGroepFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 59, Tab));
 	
 	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 59));
+	BalansActivaObjecten.KortVordGroepCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 59, Tab));
 	
 	BalansActivaObjecten.KortVordGroepCF(driver).clear();
-	BalansActivaObjecten.KortVordGroepCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 59));
+	BalansActivaObjecten.KortVordGroepCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 59, Tab));
 	
 	
 	//Kortlopende vorderingen participanten/ maatschappijen
 	
 	BalansActivaObjecten.KortVordPartNominaal(driver).clear();
-	BalansActivaObjecten.KortVordPartNominaal(driver).sendKeys(BalansActivaXLS.HaalData("B", 60));
+	BalansActivaObjecten.KortVordPartNominaal(driver).sendKeys(BalansActivaXLS.HaalData("B", 60, Tab));
 	
 	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 60));
+	BalansActivaObjecten.KortVordPartCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 60, Tab));
 	
 	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 60));
+	BalansActivaObjecten.KortVordPartFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 60, Tab));
 	
 	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 60));
+	BalansActivaObjecten.KortVordPartCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 60, Tab));
 	
 	BalansActivaObjecten.KortVordPartCF(driver).clear();
-	BalansActivaObjecten.KortVordPartCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 60));	
+	BalansActivaObjecten.KortVordPartCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 60, Tab));	
 	
 	
 	//Overige vorderingen 
 	
 	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 61));
+	BalansActivaObjecten.OverigeVordCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 61, Tab));
 	
 	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 61));
+	BalansActivaObjecten.OverigeVordFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 61, Tab));
 	
 	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 61));
+	BalansActivaObjecten.OverigeVordCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 61, Tab));
 		
 	BalansActivaObjecten.OverigeVordCF(driver).clear();
-	BalansActivaObjecten.OverigeVordCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 61));
+	BalansActivaObjecten.OverigeVordCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 61, Tab));
 	
 	
 	//Effecten
 	
 	BalansActivaObjecten.EffectenCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.EffectenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 67));
+	BalansActivaObjecten.EffectenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 67, Tab));
 	
 	BalansActivaObjecten.EffectenFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.EffectenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 67));
+	BalansActivaObjecten.EffectenFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 67, Tab));
 	
 	BalansActivaObjecten.EffectenCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.EffectenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 67));
+	BalansActivaObjecten.EffectenCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 67, Tab));
 	
 	BalansActivaObjecten.EffectenCF(driver).clear();
-	BalansActivaObjecten.EffectenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 67));
+	BalansActivaObjecten.EffectenCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 67, Tab));
 	
 		
 	//liquide middelen
 	
 	BalansActivaObjecten.LiquideCommercieel_1_1(driver).clear();
-	BalansActivaObjecten.LiquideCommercieel_1_1(driver)	.sendKeys(BalansActivaXLS.HaalData("C", 72));
+	BalansActivaObjecten.LiquideCommercieel_1_1(driver)	.sendKeys(BalansActivaXLS.HaalData("C", 72, Tab));
 	
 	BalansActivaObjecten.LiquideFiscaal_1_1(driver).clear();
-	BalansActivaObjecten.LiquideFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 72));
+	BalansActivaObjecten.LiquideFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 72, Tab));
 	
 	BalansActivaObjecten.LiquideCommercieel_31_12(driver).clear();
-	BalansActivaObjecten.LiquideCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 72));
+	BalansActivaObjecten.LiquideCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 72, Tab));
 	
 	BalansActivaObjecten.LiquideCF(driver).clear();
-	BalansActivaObjecten.LiquideCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 72));
+	BalansActivaObjecten.LiquideCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 72, Tab));
 	
 	//toelichting balans
 	
@@ -1821,138 +1822,137 @@ public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Th
 	
 }
 
-@Then("^i can validate the totals for Balans Activa$")
-public void i_can_validate_the_totals_for_Balans_Activa() throws Throwable {
+@Then("^i can validate the totals for Balans Activa from tab \"(.*?)\"$")
+public void i_can_validate_the_totals_for_Balans_Activa_from_tab(String Tab) throws Throwable {
     
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 	
 	//Immateriele vaste activa 
 	
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",13)), "C13"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",13)), "D13"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",13)), "E13"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",13)), "F13"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",13)), "G13"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",13, Tab)), "C13"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",13, Tab)), "D13"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",13, Tab)), "E13"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",13, Tab)), "F13"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.ImmaterieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",13, Tab)), "G13"));
 	
 	//Goodwill fiscaal 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.GoodwillFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",16)), "G16"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.GoodwillFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",16, Tab)), "G16"));
 	
 	//Overige immateriele vaste activa
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OverigeImmaterieleFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",17)), "G17"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OverigeImmaterieleFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",17, Tab)), "G17"));
 	
 	//Totaal immateriele vaste activa 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",18)), "C18"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",18)), "D18"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",18)), "E18"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",18)), "F18"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",18)), "G18"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",18, Tab)), "C18"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",18, Tab)), "D18"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",18, Tab)), "E18"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",18, Tab)), "F18"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalImmaterieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",18, Tab)), "G18"));
 		
 	//Gebouwen en terreinen 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.GebouwenTerreinenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",26)), "G26"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.GebouwenTerreinenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",26, Tab)), "G26"));
 	
 	//Machines en installaties 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.MachinesFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",27)), "G27"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.MachinesFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",27, Tab)), "G27"));
 		
 	//Andere vaste bedrijfsmiddelen 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.AndereBedrijfsFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",28)), "G28"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.AndereBedrijfsFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",28, Tab)), "G28"));
 		
 	//Totaal materiele vaste activa 
 	
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",29)), "C29"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",29)), "D29"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",29)), "E29"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",29)), "F29"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",29)), "G18"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",29, Tab)), "C29"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",29, Tab)), "D29"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",29, Tab)), "E29"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",29, Tab)), "F29"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalMaterieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",29, Tab)), "G18"));
 		
 	//Financiele vaste activa 
 	
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",34)), "C34"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",34)), "D34"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",34)), "E34"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",34)), "F34"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",34)), "G34"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",34, Tab)), "C34"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",34, Tab)), "D34"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",34, Tab)), "E34"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",34, Tab)), "F34"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.FinancieleVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",34, Tab)), "G34"));
 		
 	//Deelnemingen
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.DeelnemingenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",37)), "G37"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.DeelnemingenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",37, Tab)), "G37"));
 	
 	//Langlopende vorderingen op groepsmaatschappijen
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.langlopendevordGroepsFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",38)), "G38"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.langlopendevordGroepsFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",38, Tab)), "G38"));
 	
 	//Langlopende vorderingen participanten/maatschappijen
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.langlopendevordPartFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",39)), "G39"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.langlopendevordPartFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",39, Tab)), "G39"));
 	
 	//Overige financiele vaste activa
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OverigeFinActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",40)), "G40"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OverigeFinActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",40, Tab)), "G40"));
 	
 	//Totaal financiele vaste activa
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",41)), "C41"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",41)), "D41"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",41)), "E41"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",41)), "F41"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",41)), "G41"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",41, Tab)), "C41"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",41, Tab)), "D41"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",41, Tab)), "E41"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",41, Tab)), "F41"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalFinVasteActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",41, Tab)), "G41"));
 		
 	//Voorraden 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",45)), "C45"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",45)), "D45"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",45)), "E45"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",45)), "F45"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",45)), "G45"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",45, Tab)), "C45"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",45, Tab)), "D45"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",45, Tab)), "E45"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",45, Tab)), "F45"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",45, Tab)), "G45"));
 		
 	//Voorraden, excl onderhanden werk 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenExlFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",48)), "G48"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VoorradenExlFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",48, Tab)), "G48"));
 		
 	//Onderhanden werk 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OnderhandenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",49)), "G49"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OnderhandenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",49, Tab)), "G49"));
 		
 	//Totaal voorraden 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",50)), "C50"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",50)), "D50"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",50)), "E50"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",50)), "F50"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",50)), "G50"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",50, Tab)), "C50"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",50, Tab)), "D50"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",50, Tab)), "E50"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",50, Tab)), "F50"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVoorradenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",50, Tab)), "G50"));
 		
 	//Vorderingen 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",54)), "C54"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",54)), "G54"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",54)), "E54"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",54)), "F54"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",54)), "G54"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",54, Tab)), "C54"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",54, Tab)), "G54"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",54, Tab)), "E54"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",54, Tab)), "F54"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.VorderingenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",54, Tab)), "G54"));
 	
 	//Handelsdebiteuren
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.HandelsdebiteurenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",57)), "G57"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.HandelsdebiteurenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",57, Tab)), "G57"));
 	
 	//Omzetbelasting
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OmzetBelastingFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",58)), "G58"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OmzetBelastingFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",58, Tab)), "G58"));
 	
 	//Kortlopende vorderingen op groepsmaatschappijen
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.KortVordGroepFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",59)), "G59"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.KortVordGroepFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",59, Tab)), "G59"));
 	
 	//Kortlopende vorderingen participanten/ maatschappijen
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.KortVordPartFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",60)), "G60"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.KortVordPartFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",60, Tab)), "G60"));
 	
 	//Overige vorderingen 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OverigeVordFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",61)), "G61"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.OverigeVordFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",61, Tab)), "G61"));
 	
 	//Totaal vorderingen
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",62)), "C62"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",62)), "D62"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",62)), "E62"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",62)), "F62"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",62)), "G62"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",62, Tab)), "C62"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",62, Tab)), "D62"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",62, Tab)), "E62"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",62, Tab)), "F62"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalVorderingenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",62, Tab)), "G62"));
 	
 	//Effecten 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.EffectenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",67)), "G67"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.EffectenFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",67, Tab)), "G67"));
 
 	//Liquide middelen
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.LiquideFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",72)), "G72"));
-
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.LiquideFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",72, Tab)), "G72"));
 		
 	//Totaal activa 
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",77)), "C77"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",77)), "D77"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",77)), "E77"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",77)), "F77"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",77)), "G77"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaCommercieel_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("C",77, Tab)), "C77"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_1_1(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("D",77, Tab)), "D77"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaCommercieel_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("E",77, Tab)), "E77"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",77, Tab)), "F77"));
+	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",77, Tab)), "G77"));
 		
 	System.out.println(ValidatieResultaat);
 	assertTrue(ValidatieResultaat.isEmpty());

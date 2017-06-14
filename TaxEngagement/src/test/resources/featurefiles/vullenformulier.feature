@@ -76,8 +76,9 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Balans Activa
-  	Then i can fill out the form Balans Activa from tab "TC01" 
-    Then i can validate the totals for Balans Activa
+  	Then i can fill out the form Balans Activa from tab "TC02" 
+    Then i can validate the totals for Balans Activa from tab "TC02"
+    
        
   @vullen_formulier @Balans_Passiva
   Scenario: vullen formulier Balans Passiva

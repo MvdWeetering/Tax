@@ -46,7 +46,7 @@ package codebase;
 		return resultaat;
 	}
 		
-		public static String HaalData(String Kolom, int Rij) {
+		public static String HaalData(String Kolom, int Rij, String Tab) {
 			
 			String resultaat = null;
 			int Column=0;
@@ -56,7 +56,7 @@ package codebase;
 				FileInputStream fis = new FileInputStream("C:\\testdata\\balans activa.xlsx");
 				
 				wb = new XSSFWorkbook(fis);
-				XSSFSheet sheet = wb.getSheet("TC01");
+				XSSFSheet sheet = wb.getSheet(Tab);
 				XSSFRow row = sheet.getRow(Rij-1);
 				
 				if (Kolom.equals("A")) {
@@ -99,8 +99,7 @@ package codebase;
 
 		public static void main(String[] args) {
 
-		String[] HaalText =codebase.BalansActivaXLS.HaalText(80, "TC01");
-		System.out.println(HaalText[0]);
+		System.out.println(BalansActivaXLS.HaalData("B", 16, "TC02"));
 
 		}
 	}
