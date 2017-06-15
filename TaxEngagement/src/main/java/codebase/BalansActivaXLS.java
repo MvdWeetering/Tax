@@ -93,13 +93,16 @@ package codebase;
 			catch (NullPointerException f) {
 				return "Cell has no value";
 			}
+			catch (IllegalStateException g) {
+				return "a";
+			}
 			
 			return resultaat;
 		}	
 
 		public static void main(String[] args) {
 
-		System.out.println(BalansActivaXLS.HaalData("B", 16, "TC02"));
+		System.out.println(BalansActivaXLS.HaalData("C", 13, "TC01"));
 
 		}
 	}

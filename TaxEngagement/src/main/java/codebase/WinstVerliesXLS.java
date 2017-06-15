@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class WinstVerliesXLS {
 	private static XSSFWorkbook wb;
 
-	public static String HaalData(String Kolom, int Rij) {
+	public static String HaalData(String Kolom, int Rij, String Tab) {
 		
 		String resultaat = null;
 		int Column=0;
@@ -26,7 +26,7 @@ public class WinstVerliesXLS {
 			FileInputStream fis = new FileInputStream("C:\\testdata\\Winst en verlies rekening formulier.xlsx");
 			
 			wb = new XSSFWorkbook(fis);
-			XSSFSheet sheet = wb.getSheet("TC01");
+			XSSFSheet sheet = wb.getSheet(Tab);
 			XSSFRow row = sheet.getRow(Rij-1);
 			
 			if (Kolom.equals("A")) {
@@ -63,9 +63,16 @@ public class WinstVerliesXLS {
 		catch (NullPointerException f) {
 			return "Cell has no value";
 		}
+		catch (IllegalStateException g) {
+			return "a";
+		}
 		
 		return resultaat;
-	}	
+	}
+	
+	public static void main(String[] args) {
 
-		
+	System.out.println(WinstVerliesXLS.HaalData("B", 7, "TC02"));
+
+	}
 }

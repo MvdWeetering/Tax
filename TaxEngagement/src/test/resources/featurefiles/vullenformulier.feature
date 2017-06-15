@@ -32,13 +32,17 @@ Feature: vullen formulieren
     And open the Project "dossier 19-05"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config <Id>
-		Then i can validate the error messages for the Specificatie Aandeelhouders form
-		
+    Then i can validate the error messages for the Specificatie Aandeelhouders form
+
     Examples: 
       | Id |
-      |  1|
-   
- 
+      |  1 |
+      |  2 |
+      |  3 |
+      |  4 |
+      |  5 |
+      |  6 |
+
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario: vullen formulier Specificatie Deelnemingen
     Given I want to login
@@ -46,9 +50,9 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Specificatie Deelnemingen
-  	Then i can fill out the form Specificatie Deelnemingen
- 		Then i can validate the error messages for Specificatie Deelnemingen form
- 
+    Then i can fill out the form Specificatie Deelnemingen
+    Then i can validate the error messages for Specificatie Deelnemingen form
+
   @vullen_formulier @Toelichting_Balans
   Scenario: vullen formulier Toelichting Balans
     Given I want to login
@@ -60,34 +64,49 @@ Feature: vullen formulieren
     Then i can validate the error messages for the Toelichting Balans form
 
   @vullen_formulier @Winst_en_verlies_rekening
-  Scenario: vullen formulier Winst en Verlies rekening
+  Scenario Outline: vullen formulier Winst en Verlies rekening
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Winst en Verlies rekening
-    Then i can fill out the form Winst en Verlies rekening
-    Then i can validate the totals for each column
- 
+    Then i can fill out the form Winst en Verlies rekening from tab <TCID>
+    Then i can validate the totals for each column from tab <TCID>
+
+    Examples: 
+      | TCID   |
+      | "TC01" |
+      | "TC02" |
+      | "TC03" |
+
   @vullen_formulier @Balans_Activa
-  Scenario: vullen formulier Balans Activa
+  Scenario Outline: vullen formulier Balans Activa
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Balans Activa
-  	Then i can fill out the form Balans Activa from tab "TC02" 
-    Then i can validate the totals for Balans Activa from tab "TC02"
-    
-       
+    Then i can fill out the form Balans Activa from tab <TCID>
+    Then i can validate the totals for Balans Activa from tab <TCID>
+
+    Examples: 
+      | TCID   |
+      | "TC01" |
+      | "TC02" |
+      | "TC03" |
+
   @vullen_formulier @Balans_Passiva
-  Scenario: vullen formulier Balans Passiva
+  Scenario Outline: vullen formulier Balans Passiva
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Balans Passiva
-    Then i can fill out the form Balans Passiva
-    Then i can validate the totals for Balans Passiva   
+    Then i can fill out the form Balans Passiva from tab <TCID>
+    Then i can validate the totals for Balans Passiva from tab <TCID>
     
-    
+        Examples: 
+      | TCID   |
+      | "TC01" |
+      | "TC02" |
+      | "TC03" |

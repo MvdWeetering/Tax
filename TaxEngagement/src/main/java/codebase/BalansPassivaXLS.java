@@ -16,9 +16,8 @@ package codebase;
 	public class BalansPassivaXLS {
 		
 		private static XSSFWorkbook wb;
-
 		
-		public static String[] HaalText(int RijNummer) {
+		public static String[] HaalText(int RijNummer, String Tab) {
 			
 			String[] resultaat = null;
 			RijNummer = RijNummer - 1; 
@@ -27,7 +26,7 @@ package codebase;
 				// Open the Excel file
 				FileInputStream fis = new FileInputStream("C:\\testdata\\balans passiva.xlsx");
 				wb = new XSSFWorkbook(fis);
-				XSSFSheet sheet = wb.getSheet("TC01");
+				XSSFSheet sheet = wb.getSheet(Tab);
 				XSSFRow row = sheet.getRow(RijNummer);
 
 				String[] opsommingresultaat; 
@@ -46,7 +45,7 @@ package codebase;
 		return resultaat;
 	}
 		
-		public static String HaalData(String Kolom, int Rij) {
+		public static String HaalData(String Kolom, int Rij, String Tab) {
 			
 			String resultaat = null;
 			int Column=0;
@@ -56,7 +55,7 @@ package codebase;
 				FileInputStream fis = new FileInputStream("C:\\testdata\\balans passiva.xlsx");
 				
 				wb = new XSSFWorkbook(fis);
-				XSSFSheet sheet = wb.getSheet("TC01");
+				XSSFSheet sheet = wb.getSheet(Tab);
 				XSSFRow row = sheet.getRow(Rij-1);
 				
 				if (Kolom.equals("A")) {
@@ -93,13 +92,16 @@ package codebase;
 			catch (NullPointerException f) {
 				return "Cell has no value";
 			}
+			catch (IllegalStateException g) {
+				return "a";
+			}
 			
 			return resultaat;
 		}	
 
 		public static void main(String[] args) {
 
-			String[] HaalText =codebase.BalansPassivaXLS.HaalText(62);
+			String[] HaalText =codebase.BalansPassivaXLS.HaalText(62, "TC03");
 			
 			System.out.println(HaalText[0]);
 
