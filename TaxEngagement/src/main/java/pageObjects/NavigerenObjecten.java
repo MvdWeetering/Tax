@@ -70,5 +70,12 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Balans: Passiva"));
 		return element;
 	}
-	
+	public static WebElement Investeringsaftrek(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Investeringsaftrek"));
+		return element;
+	}
+	public static WebElement Objectvrijstelling(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Objectvrijstelling"));
+		return element;
+	}
 }

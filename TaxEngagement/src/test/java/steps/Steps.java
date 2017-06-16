@@ -22,8 +22,10 @@ import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.BalansActivaObjecten;
 import pageObjects.BalansPassivaObjecten;
+import pageObjects.InvesteringsaftrekObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
+import pageObjects.ObjectvrijstellingObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
@@ -2454,7 +2456,68 @@ public void i_can_validate_the_totals_for_Balans_Passiva_from_tab(String Tab) th
 	driver.quit();
 }
 
+@When("^open the form Investeringsaftrek$")
+public void open_the_form_Investeringsaftrek() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
 
+	NavigerenObjecten.Investeringsaftrek(driver).click();
+	
+}
+
+@Then("^i can fill out the form Investeringsaftrek from tab <TCID>$")
+public void i_can_fill_out_the_form_Investeringsaftrek_from_tab_TCID() throws Throwable {
+    
+	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
+	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys("omschrijving bedrijfsmiddel");
+	
+	InvesteringsaftrekObjecten.DatumInvestering(driver).sendKeys("01012017");
+	InvesteringsaftrekObjecten.DatumIngebruikname(driver).sendKeys("01012017");
+	
+	InvesteringsaftrekObjecten.Investeringsbedrag(driver).clear();
+	InvesteringsaftrekObjecten.Investeringsbedrag(driver).sendKeys("1001");
+	
+	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).clear();
+	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).sendKeys("1002");
+	
+	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).clear();
+	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).sendKeys("1003");
+	
+	InvesteringsaftrekObjecten.kleinschaligheidsinvesteringsaftrek(driver).clear();
+	InvesteringsaftrekObjecten.kleinschaligheidsinvesteringsaftrek(driver).sendKeys("1004");
+	
+}
+
+@When("^open the form Objectvrijstelling$")
+public void open_the_form_Objectvrijstelling() throws Throwable {
+    NavigerenObjecten.Objectvrijstelling(driver).click();
+    
+}
+
+@Then("^i can fill out the form Objectvrijstelling from tab <TCID>$")
+public void i_can_fill_out_the_form_Objectvrijstelling_from_tab_TCID() throws Throwable {
+    
+	String[] invuldata = codebase.ObjectvrijstellingXLS.HaalText(1);
+	
+	ObjectvrijstellingObjecten.ObjectvrijstellingNaam(driver).clear();
+	ObjectvrijstellingObjecten.ObjectvrijstellingNaam(driver).sendKeys(invuldata[1]);
+	
+	ObjectvrijstellingObjecten.VestigingslandOnderneming(driver).sendKeys(invuldata[2]);
+	
+	ObjectvrijstellingObjecten.BuitenlandseOndernemingswinst(driver).clear();
+	ObjectvrijstellingObjecten.BuitenlandseOndernemingswinst(driver).sendKeys(invuldata[3]);
+	
+	ObjectvrijstellingObjecten.Intehalenverliezen(driver).clear();
+	ObjectvrijstellingObjecten.Intehalenverliezen(driver).sendKeys(invuldata[4]);
+	
+	ObjectvrijstellingObjecten.Stakingsverlies(driver).clear();
+	ObjectvrijstellingObjecten.Stakingsverlies(driver).sendKeys(invuldata[5]);
+	
+	ObjectvrijstellingObjecten.ObjectvrijstellingBuitenlandseOndernemingswinst(driver).clear();
+	ObjectvrijstellingObjecten.ObjectvrijstellingBuitenlandseOndernemingswinst(driver).sendKeys(invuldata[6]);
+	
+	ObjectvrijstellingObjecten.CumulatiefSaldo(driver).clear();
+	ObjectvrijstellingObjecten.CumulatiefSaldo(driver).sendKeys(invuldata[7]);
+	}
 }
 
 
