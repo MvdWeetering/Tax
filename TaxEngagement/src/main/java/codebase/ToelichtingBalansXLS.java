@@ -19,15 +19,16 @@ public class ToelichtingBalansXLS {
 		try {
 			// Open the Excel file
 			FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
-			int i;
-			i = 2;
+			
+			RijNummer = RijNummer +1;
+					
 			wb = new XSSFWorkbook(fis);
 			XSSFSheet sheet = wb.getSheet("Toelichting_balans");
-			XSSFRow row = sheet.getRow(i);
+			XSSFRow row = sheet.getRow(RijNummer);
 
 			String[] opsommingresultaat;
 
-			opsommingresultaat = new String[40];
+			opsommingresultaat = new String[41];
 			opsommingresultaat[0] = new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1] = new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2] = new DataFormatter().formatCellValue(row.getCell(2));
@@ -68,7 +69,8 @@ public class ToelichtingBalansXLS {
 			opsommingresultaat[37] = new DataFormatter().formatCellValue(row.getCell(37));
 			opsommingresultaat[38] = new DataFormatter().formatCellValue(row.getCell(38));
 			opsommingresultaat[39] = new DataFormatter().formatCellValue(row.getCell(39));
-
+			opsommingresultaat[40] = new DataFormatter().formatCellValue(row.getCell(40));
+			
 			resultaat = opsommingresultaat;
 
 			fis.close();
@@ -82,7 +84,7 @@ public class ToelichtingBalansXLS {
 
 		String[] invuldata = codebase.ToelichtingBalansXLS.HaalData(1);
 
-		System.out.println(invuldata[1]);
+		System.out.println(invuldata[4]);
 
 	}
 }

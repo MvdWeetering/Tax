@@ -54,14 +54,19 @@ Feature: vullen formulieren
     Then i can validate the error messages for Specificatie Deelnemingen form
 
   @vullen_formulier @Toelichting_Balans
-  Scenario: vullen formulier Toelichting Balans
+  Scenario Outline: vullen formulier Toelichting Balans
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Toelichting Balans
-    Then i can fill out the form Toelichting Balans with configId 1
+    Then i can fill out the form Toelichting Balans with configId <TCID>
     Then i can validate the error messages for the Toelichting Balans form
+
+    Examples: 
+      | TCID |
+      |    1 |
+      |    2 |
 
   @vullen_formulier @Winst_en_verlies_rekening
   Scenario Outline: vullen formulier Winst en Verlies rekening
@@ -104,8 +109,8 @@ Feature: vullen formulieren
     And open the form Balans Passiva
     Then i can fill out the form Balans Passiva from tab <TCID>
     Then i can validate the totals for Balans Passiva from tab <TCID>
-    
-        Examples: 
+
+    Examples: 
       | TCID   |
       | "TC01" |
       | "TC02" |

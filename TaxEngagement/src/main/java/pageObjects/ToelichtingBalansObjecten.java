@@ -26,6 +26,11 @@ public class ToelichtingBalansObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "Gebouwenzonderbodemwaarde_BodemWaarde3112")
+	public static WebElement Gebouwenzonderbodemwaarde_BodemWaarde3112(WebDriver driver){
+		element = driver.findElement(By.id("idtableToeMvaBedTer:1-7"));
+		return element;
+	}
 	//Gebouwen in eigen gebruik
 	
 	@FieldName(name = "GebouwenInEigenGebruikAanschafkosten")
