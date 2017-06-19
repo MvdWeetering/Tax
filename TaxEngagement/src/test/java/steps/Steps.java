@@ -2464,8 +2464,8 @@ public void open_the_form_Investeringsaftrek() throws Throwable {
 	
 }
 
-@Then("^i can fill out the form Investeringsaftrek from tab <TCID>$")
-public void i_can_fill_out_the_form_Investeringsaftrek_from_tab_TCID() throws Throwable {
+@Then("^i can fill out the form Investeringsaftrek$")
+public void i_can_fill_out_the_form_Investeringsaftrek() throws Throwable {
     
 	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
 	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys("omschrijving bedrijfsmiddel");
@@ -2493,10 +2493,10 @@ public void open_the_form_Objectvrijstelling() throws Throwable {
     
 }
 
-@Then("^i can fill out the form Objectvrijstelling from tab <TCID>$")
-public void i_can_fill_out_the_form_Objectvrijstelling_from_tab_TCID() throws Throwable {
+@Then("^i can fill out the form Objectvrijstelling from (\\d+)$")
+public void i_can_fill_out_the_form_Objectvrijstelling_from(int TCID) throws Throwable {
     
-	String[] invuldata = codebase.ObjectvrijstellingXLS.HaalText(1);
+	String[] invuldata = codebase.ObjectvrijstellingXLS.HaalText(TCID);
 	
 	ObjectvrijstellingObjecten.ObjectvrijstellingNaam(driver).clear();
 	ObjectvrijstellingObjecten.ObjectvrijstellingNaam(driver).sendKeys(invuldata[1]);
@@ -2517,6 +2517,27 @@ public void i_can_fill_out_the_form_Objectvrijstelling_from_tab_TCID() throws Th
 	
 	ObjectvrijstellingObjecten.CumulatiefSaldo(driver).clear();
 	ObjectvrijstellingObjecten.CumulatiefSaldo(driver).sendKeys(invuldata[7]);
+	
+	//extra click om lostfocus event van cumulatiefsaldo te triggeren en hiermee de waarde op te slaan
+	ObjectvrijstellingObjecten.ObjectvrijstellingNaam(driver).click();
+	
+	
+	}
+
+@Then("^i can validate the error messages for the formulier Objectvrijstelling$")
+public void i_can_validate_the_error_messages_for_the_formulier_Objectvrijstelling() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipObjectVrijstelling("BuitenlandseOndernemingswinst", 1, 70, true, false, driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipObjectVrijstelling("Intehalenverliezen", 1, 70, true, false, driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipObjectVrijstelling("Stakingsverlies", 1, 70, true, false, driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipObjectVrijstelling("ObjectvrijstellingBuitenlandseOndernemingswinst", 1, 70, true, false, driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipObjectVrijstelling("CumulatiefSaldo", 1, 70, true, false, driver));
+	
+	driver.quit();
+	assertTrue(ValidatieResultaat.isEmpty());	
+	
 	}
 }
 

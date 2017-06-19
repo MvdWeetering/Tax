@@ -4,50 +4,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ObjectvrijstellingObjecten {
-	
-	private static WebElement element = null;
+public class ObjectvrijstellingObjectenTooltips {
 
-	@FieldName(name = "ObjectvrijstellingNaam")
-	public static WebElement ObjectvrijstellingNaam(WebDriver driver){
-		element = driver.findElement(By.id("idxdt1nam"));
-		return element;
-	}
-	
-	@FieldName(name = "VestigingslandOnderneming")
-	public static WebElement VestigingslandOnderneming(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbm"));
-		return element;
-	}
+	private static WebElement element = null;
 	
 	@FieldName(name = "BuitenlandseOndernemingswinst")
 	public static WebElement BuitenlandseOndernemingswinst(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbo"));
+		element = driver.findElement(By.id("idxdt9tzbo-popover"));
 		return element;
 	}
 	
 	@FieldName(name = "Intehalenverliezen")
 	public static WebElement Intehalenverliezen(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbp"));
+		element = driver.findElement(By.id("idxdt9tzbp-popover"));
 		return element;
 	}
 	
 	@FieldName(name = "Stakingsverlies")
 	public static WebElement Stakingsverlies(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbq"));
+		element = driver.findElement(By.id("idxdt9tzbq-popover"));
 		return element;
 	}
 	
 	@FieldName(name = "ObjectvrijstellingBuitenlandseOndernemingswinst")
 	public static WebElement ObjectvrijstellingBuitenlandseOndernemingswinst(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbs"));
+		element = driver.findElement(By.id("idxdt9tzbs-popover"));
 		return element;
 	}
 	
 	@FieldName(name = "CumulatiefSaldo")
 	public static WebElement CumulatiefSaldo(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbt"));
+		element = driver.findElement(By.id("idxdt9tzbt-popover"));
 		return element;
 	}	
-	
 }
