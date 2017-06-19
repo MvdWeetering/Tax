@@ -6,14 +6,18 @@ Feature: vullen formulieren
   So that I can evaluate the form
 
   @vullen_formulier @Algemene_gegevens_vullen
-  Scenario: vullen formulier Algemene gegevens
+  Scenario Outline: vullen formulier Algemene gegevens
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Algemene Gegevens
-    Then i can fill out the form Algemene Gegevens with config 1
+    Then i can fill out the form Algemene Gegevens with config <Id>
     Then i can validate the error messages for the Algemene gegevens form
+	Examples: 
+      | Id |
+      |  1 |
+      |  2 |
 
   @vullen_formulier @Algemene_vragen
   Scenario: vullen formulier Algemene Vragen
@@ -65,7 +69,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID |
-      |    1 |
+
       |    2 |
 
   @vullen_formulier @Winst_en_verlies_rekening

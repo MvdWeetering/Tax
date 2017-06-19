@@ -160,13 +160,13 @@ public class ToelichtingBalansTooltipObjecten {
 		return element;
 	}
 	
-	/* Geen tooltip aanwezig
+	
 	@FieldName(name = "ToelichtingOndernemingsvermogen_Afschrijvingspercentage")
 	public static WebElement ToelichtingOndernemingsvermogen_Afschrijvingspercentage(WebDriver driver){
 		element = driver.findElement(By.id("idtable_TOV:0-6"));
 		return element;
 	}
-	*/
+	
 	
 	@FieldName(name = "ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding")
 	public static WebElement ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding(WebDriver driver){
