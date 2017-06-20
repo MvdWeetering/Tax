@@ -152,3 +152,19 @@ Feature: vullen formulieren
       |    1 |
       |    2 |
       |    3 |
+      
+      
+       @vullen_formulier @Innovatiebox
+  Scenario Outline: vullen formulier Innovatiebox
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 19-05"
+    And open the form Innovatiebox
+    Then i can fill out the form Innovatiebox from <TCID>
+    Then i can validate the error messages for the formulier Innovatiebox
+
+    Examples: 
+      | TCID |
+      |    1 |
+

@@ -23,6 +23,7 @@ import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.BalansActivaObjecten;
 import pageObjects.BalansPassivaObjecten;
+import pageObjects.InnovatieboxObjecten;
 import pageObjects.InvesteringsaftrekObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
@@ -2600,8 +2601,64 @@ public void i_can_validate_the_error_messages_for_the_formulier_Objectvrijstelli
 	
 	//driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());	
-	
 	}
+
+@When("^open the form Innovatiebox$")
+public void open_the_form_Innovatiebox() throws Throwable {
+   NavigerenObjecten.Innovatiebox(driver).click();
+   
+}
+
+@Then("^i can fill out the form Innovatiebox from (\\d+)$")
+public void i_can_fill_out_the_form_Innovatiebox_from(int arg1) throws Throwable {
+
+	InnovatieboxObjecten.Omschrijving(driver).clear();
+	InnovatieboxObjecten.Omschrijving(driver).sendKeys("Omschrijving");
+	
+	InnovatieboxObjecten.Voortbrengingkosten(driver).clear();
+	InnovatieboxObjecten.Voortbrengingkosten(driver).sendKeys("Voortbr kosten");
+	
+	InnovatieboxObjecten.forfaitaireRegeling_Ja(driver).click();
+	
+	InnovatieboxObjecten.SaldoDrempelInnovatie(driver).clear();
+	InnovatieboxObjecten.SaldoDrempelInnovatie(driver).sendKeys("saldo drempel");
+	
+	InnovatieboxObjecten.InnovatieboxVoortbrengingskosten(driver).clear();
+	InnovatieboxObjecten.InnovatieboxVoortbrengingskosten(driver).sendKeys("Tot voortbr kosten");
+	
+	InnovatieboxObjecten.InnovatieboxExploitatieverliezen(driver).clear();
+	InnovatieboxObjecten.InnovatieboxExploitatieverliezen(driver).sendKeys("expl verl");
+	
+	InnovatieboxObjecten.VoordelenOctrooi(driver).clear();
+	InnovatieboxObjecten.VoordelenOctrooi(driver).sendKeys("voordeel octrooi");
+	
+	InnovatieboxObjecten.OvergenomenDrempel(driver).clear();
+	InnovatieboxObjecten.OvergenomenDrempel(driver).sendKeys("overgenomen drempel");
+	
+	InnovatieboxObjecten.InTeLopenVoortbrengingsKosten(driver).clear();
+	InnovatieboxObjecten.InTeLopenVoortbrengingsKosten(driver).sendKeys("inlopen voortbr kosten");
+	
+	InnovatieboxObjecten.GenotenVoordeelOnder(driver).clear();
+	InnovatieboxObjecten.GenotenVoordeelOnder(driver).sendKeys("Onder");
+	
+	InnovatieboxObjecten.GenotenVoordeelBoven(driver).clear();
+	InnovatieboxObjecten.GenotenVoordeelBoven(driver).sendKeys("Boven");
+	
+	InnovatieboxObjecten.SaldoInTeLopen(driver).clear();
+	InnovatieboxObjecten.SaldoInTeLopen(driver).sendKeys("intelopen");
+	
+	
+	
+ 
+}
+
+@Then("^i can validate the error messages for the formulier Innovatiebox$")
+public void i_can_validate_the_error_messages_for_the_formulier_Innovatiebox() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    
+}
+
+
 }
 
 

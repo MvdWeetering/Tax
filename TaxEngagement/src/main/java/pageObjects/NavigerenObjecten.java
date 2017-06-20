@@ -5,20 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class NavigerenObjecten {
-
 	
 	private static WebElement element = null;
 	
 	public static WebElement NavigerenTax(WebDriver driver){
-	   /* 
-		String NavUrl = null;
-	    NavUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#Files?viewkey=CustomBundle9&filter=NL+Tax+Engagement&entityId=-1";
-	    driver.get(NavUrl);
-		return element;
-	    */
-		
-		//element =  driver.findElement(By.xpath("/html/body/div[@class='GOMEOCKDICD']/div[@class='GOMEOCKDECD speechBubbleWidget GOMEOCKDHCD']/div/div[@class='GOMEOCKDEJD']/div[@class='GOMEOCKDDJD'][1]/div[@class='GOMEOCKDCJD'][11]/a[@class='gwt-Anchor']/div[@class='gwt-Label']"));
-		
+	 		
 		element = driver.findElement(By.linkText("NL Tax Engagement"));
 		return element;
 	}
@@ -76,6 +67,10 @@ public class NavigerenObjecten {
 	}
 	public static WebElement Objectvrijstelling(WebDriver driver){
 	    element = driver.findElement(By.partialLinkText("Objectvrijstelling"));
+		return element;
+	}
+	public static WebElement Innovatiebox(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Innovatiebox"));
 		return element;
 	}
 }
