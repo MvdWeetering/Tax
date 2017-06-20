@@ -447,37 +447,37 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "RechtspersoonVoordeelOntgaan")
 	public static WebElement RechtspersoonVoordeelOntgaan(WebDriver driver){
-		element = driver.findElement(By.id("idtable_GR:0-0"));
+		element = driver.findElement(By.id("idtableVerDiv:0-0"));
 		return element;
 	}
 	
 	@FieldName(name = "RechtspersoonStraatnaam")
 	public static WebElement RechtspersoonStraatnaam(WebDriver driver){
-		element = driver.findElement(By.id("idtable_GR:0-2"));
+		element = driver.findElement(By.id("idtableVerDiv:0-2"));
 		return element;
 	}
 	
 	@FieldName(name = "RechtspersoonHuisnummer")
 	public static WebElement RechtspersoonHuisnummer(WebDriver driver){
-		element = driver.findElement(By.id("idtable_GR:0-4"));
+		element = driver.findElement(By.id("idtableVerDiv:0-4"));
 		return element;
 	}
 	
 	@FieldName(name = "RechtspersoonHuisnummerToevoeging")
 	public static WebElement RechtspersoonHuisnummerToevoeging(WebDriver driver){
-		element = driver.findElement(By.id("idtable_GR:0-6"));
+		element = driver.findElement(By.id("idtableVerDiv:0-6"));
 		return element;
 	}
 	
 	@FieldName(name = "RechtspersoonVestigingsplaats")
 	public static WebElement RechtspersoonVestigingsplaats(WebDriver driver){
-		element = driver.findElement(By.id("idtable_GR:0-8"));
+		element = driver.findElement(By.id("idtableVerDiv:0-8"));
 		return element;
 	}
 	
 	@FieldName(name = "RechtspersoonVestigingsLand")
 	public static WebElement RechtspersoonVestigingsLand(WebDriver driver){
-		element = driver.findElement(By.id("idtable_GR:0-10"));
+		element = driver.findElement(By.id("idtableVerDiv:0-10"));
 		return element;
 	}
 	

@@ -14,7 +14,8 @@ Feature: vullen formulieren
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
     Then i can validate the error messages for the Algemene gegevens form
-	Examples: 
+
+    Examples: 
       | Id |
       |  1 |
       |  2 |
@@ -48,14 +49,21 @@ Feature: vullen formulieren
       |  6 |
 
   @vullen_formulier @Specificatie_Deelnemingen
-  Scenario: vullen formulier Specificatie Deelnemingen
+  Scenario Outline: vullen formulier Specificatie Deelnemingen
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
     And open the Project "dossier 19-05"
     And open the form Specificatie Deelnemingen
-    Then i can fill out the form Specificatie Deelnemingen
+    Then i can fill out the form Specificatie Deelnemingen with configId <TCID>
     Then i can validate the error messages for Specificatie Deelnemingen form
+
+    Examples: 
+      | TCID |
+      |    1 |
+      |    2 |
+      |    3 |
+      |    4 |
 
   @vullen_formulier @Toelichting_Balans
   Scenario Outline: vullen formulier Toelichting Balans
@@ -69,7 +77,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID |
-
+      |    1 |
       |    2 |
 
   @vullen_formulier @Winst_en_verlies_rekening
@@ -119,27 +127,28 @@ Feature: vullen formulieren
       | "TC01" |
       | "TC02" |
       | "TC03" |
-        
-    @vullen_formulier @Investeringsaftrek
-  	Scenario: vullen formulier Investeringsaftrek
-	    Given I want to login
-	    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
-	    And Select the Tax engagement module
-	    And open the Project "dossier 19-05"
-	    And open the form Investeringsaftrek
-	    Then i can fill out the form Investeringsaftrek
 
-    @vullen_formulier @Objectvrijstelling
-  	Scenario Outline: vullen formulier Investeringsaftrek
-	    Given I want to login
-	    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
-	    And Select the Tax engagement module
-	    And open the Project "dossier 19-05"
-	    And open the form Objectvrijstelling
-	    Then i can fill out the form Objectvrijstelling from <TCID>
-	    Then i can validate the error messages for the formulier Objectvrijstelling
-	     
-	     Examples: 
+  @vullen_formulier @Investeringsaftrek
+  Scenario: vullen formulier Investeringsaftrek
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 19-05"
+    And open the form Investeringsaftrek
+    Then i can fill out the form Investeringsaftrek
+
+  @vullen_formulier @Objectvrijstelling
+  Scenario Outline: vullen formulier Investeringsaftrek
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 19-05"
+    And open the form Objectvrijstelling
+    Then i can fill out the form Objectvrijstelling from <TCID>
+    Then i can validate the error messages for the formulier Objectvrijstelling
+
+    Examples: 
       | TCID |
       |    1 |
       |    2 |
+      |    3 |

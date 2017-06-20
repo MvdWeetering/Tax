@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -360,10 +361,11 @@ public class Steps extends AbstractSteps {
 	
 	@Then("^i can validate the error messages for Specificatie Deelnemingen form$")
 	public void i_can_validate_the_error_messages_for_Specificatie_Deelnemingen_form() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	   
-		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,-250)", "");
 		
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
 		Thread.sleep(1500);
 		
@@ -380,7 +382,14 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("OntvRenteDeelneming", 1, 99, "GeheelGetal", driver));
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BetRenteDeelneming", 1, 99, "GeheelGetal", driver));
 		
-		// **
+		
+		//Is de deelneming in het boekjaar gevoegd in en/ of ontvoegd uit een fiscale eenheid met de belastingplichtige?
+		
+		if (pageObjects.SpecificatieDeelnemingenObjecten.DeelnemingGevoegd_Ja(driver).isSelected()) {
+			// tooltip checker 'valt niet binnen fiscale jaar bouwen			
+		}
+		
+		//Is de deelneming in het boekjaar verworven of is het belang in de deelneming in het boekjaar vergroot?
 		
 		if (pageObjects.SpecificatieDeelnemingenObjecten.DeelnemingVerworven_Ja(driver).isSelected()) {
 			
@@ -389,10 +398,67 @@ public class Steps extends AbstractSteps {
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("OpgeofferdbedragVerwerving", 1, 99, "GeheelGetal", driver));
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BrutoVoordelenMetDeelneming", 1, 99, "GeheelGetal", driver));
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("KostenVerwervingDeelneming", 1, 99, "GeheelGetal", driver));
+		}
+		
+		//Is de deelneming in het boekjaar vervreemd of is het belang in de deelneming in het boekjaar verkleind?
+
+		if (pageObjects.SpecificatieDeelnemingenObjecten.DeelnemingVervreemd_Ja(driver).isSelected()) {
+			
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("PercentageVervreemding", 1, 99, "GeheelGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("NominaleWaardeVervreemding", 1, 99, "GeheelGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("OpbrengstVervreemding", 1, 99, "GeheelGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BrutoVoordelenDelneming", 1, 99, "GeheelGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("KostenVervreemdingDeelneming", 1, 99, "GeheelGetal", driver));
+		}
+		
+		//Is de deelneming geliquideerd en is de vereffening in het boekjaar voltooid?
+		
+		if (pageObjects.SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Ja(driver).isSelected()) {
+			
+			// Tooltip checker fiscale jaar inbouwen voor Vereffeningsdatum deelneming
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("LiquidatieVerliesDeelneming", 1, 99, "PositiefGeheelGetal", driver));
+		}
+		
+		
+		//Is de deelneming een als belegging gehouden deelneming niet zijnde een kwalificerende beleggingsdeelneming?
+
+		if (pageObjects.SpecificatieDeelnemingenObjecten.DeelnemingNietKwalificerende_Ja(driver).isSelected()) {
+			
+			// Tooltip checker fiscale jaar inbouwen voor Vereffeningsdatum deelneming
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("WaardeEconomischVerkeer", 1, 99, "PositiefGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("Waarde25ProcentMutatie", 1, 99, "PositiefGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("BedragBruteringVoordeel", 1, 99, "PositiefGetal", driver));	
+		}
+		
+		//Is er sprake van meer dan 99 deelnemingen?
+		
+		if (pageObjects.SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).isSelected()) {
+			//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("ToelichtingMeerdan99Deelnemingen", 1, 99, "TextVeld", driver));
 			
 		}
 		
-		driver.quit();
+		//Verkapt divident
+		if (pageObjects.SpecificatieDeelnemingenObjecten.VerkaptDivident_ja(driver).isSelected()) {
+			
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("VerkaptDividentBedrag", 1, 99, "PositiefGeheelGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("WaaromVerkaptDivident", 1, 99, "TextVeld", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("NaamMoedermaatschappij", 1, 99, "TextVeld", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("StraatnaamMoederMaatschappij", 1, 99, "TextVeld", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("HuisnummerMoederMaatschappij", 1, 99, "PositiefGeheelGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("HuisnummerToevingMoederMaatschappij", 1, 99, "TextVeld", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("VestingsPlaatsMoederMaatschappij", 1, 99, "TextVeld", driver));
+			
+			if (pageObjects.SpecificatieDeelnemingenObjecten.DirecteDeelnemingOntgaan_nee(driver).isSelected()) {
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RechtspersoonVoordeelOntgaan", 1, 99, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RechtspersoonStraatnaam", 1, 99, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RechtspersoonHuisnummer", 1, 99, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RechtspersoonHuisnummerToevoeging", 1, 99, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RechtspersoonVestigingsplaats", 1, 99, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RechtspersoonVestigingsLand", 1, 99, "TextVeld", driver));
+			}
+		}
+		
+		//driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());	
 		
 	}
@@ -599,10 +665,10 @@ public class Steps extends AbstractSteps {
 
 	}
 
-	@Then("^i can fill out the form Specificatie Deelnemingen$")
-	public void i_can_fill_out_the_form_Specificatie_Deelnemingen() throws Throwable {
+	@Then("^i can fill out the form Specificatie Deelnemingen with configId (\\d+)$")
+	public void i_can_fill_out_the_form_Specificatie_Deelnemingen_with_configId(int Tcid) throws Throwable {
 		
-		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(1);
+		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(Tcid);
 		
 		
 		// algemene vragen
@@ -611,21 +677,19 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).clear();
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).sendKeys(invuldata[2]);
 		
-		/* Uitzetten ivm bug melding 281
-		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
-		SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys(invuldata[4]);
-		*/
-		
-		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).clear();
-		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).sendKeys(invuldata[5]);
 		SpecificatieDeelnemingenObjecten.Straatnaam(driver).clear();
 		SpecificatieDeelnemingenObjecten.Straatnaam(driver).sendKeys(invuldata[6]);
 		SpecificatieDeelnemingenObjecten.Huisnummer(driver).clear();
 		SpecificatieDeelnemingenObjecten.Huisnummer(driver).sendKeys(invuldata[7]);		
+		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
+		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
+		SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys(invuldata[4]);
+				
 		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).clear();
 		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).sendKeys(invuldata[8]);
-		
+				
+		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).clear();
+		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).sendKeys(invuldata[5]);
 		//Schulden en vorderingen
 		
 		SpecificatieDeelnemingenObjecten.NominaleWaardeAandelenBezit(driver).clear();
@@ -644,7 +708,6 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.OntvRenteDeelneming(driver).sendKeys(invuldata[15]);
 		SpecificatieDeelnemingenObjecten.BetRenteDeelneming(driver).clear();
 		SpecificatieDeelnemingenObjecten.BetRenteDeelneming(driver).sendKeys(invuldata[16]);
-		
 		
 		//Vragen inzake deelnemingen
 		
@@ -712,9 +775,11 @@ public class Steps extends AbstractSteps {
 			SpecificatieDeelnemingenObjecten.DeelnemingGeliquideerd_Nee(driver).click();
 		}
 		
+		// nog even op terugkomen. geen keuze if loop geimplementeerd
 		SpecificatieDeelnemingenObjecten.WaarderingsvoorschriftArt13_Ja(driver).click();
-
 		
+		//Is de deelneming een als belegging gehouden deelneming niet zijnde een kwalificerende beleggingsdeelneming?
+
 		if (invuldata[37].equals("ja")) {
 			
 			SpecificatieDeelnemingenObjecten.DeelnemingNietKwalificerende_Ja(driver).click();
@@ -725,9 +790,10 @@ public class Steps extends AbstractSteps {
 			if (invuldata[39].equals("ja")) {
 				SpecificatieDeelnemingenObjecten.BelangDeelnemingGedaald25Procent_Ja(driver).click();
 				}
-				else {
-					SpecificatieDeelnemingenObjecten.BelangDeelnemingGedaald25Procent_Nee(driver).click();
+			else {
+				SpecificatieDeelnemingenObjecten.BelangDeelnemingGedaald25Procent_Nee(driver).click();
 				}
+			
 			SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).clear();
 			SpecificatieDeelnemingenObjecten.Waarde25ProcentMutatie(driver).sendKeys(invuldata[38]);
 			SpecificatieDeelnemingenObjecten.BedragBruteringVoordeel(driver).clear();
@@ -741,7 +807,8 @@ public class Steps extends AbstractSteps {
 		else {		
 			SpecificatieDeelnemingenObjecten.VerkaptDivident_nee(driver).click();
 		}	
-				
+			
+		//beleggingsdeelneming
 		if (invuldata[41].equals("ja")) {
 		SpecificatieDeelnemingenObjecten.BeleggingsdeelnemingEULidstaat_Ja(driver).click();
 			if (invuldata[42].equals("ja")) {
@@ -774,61 +841,62 @@ public class Steps extends AbstractSteps {
 		
 		// Verkapt Divident
 		if (invuldata[40].equals("ja")) {
-		
+
 			SpecificatieDeelnemingenObjecten.VerkaptDividentBedrag(driver).clear();
 			SpecificatieDeelnemingenObjecten.VerkaptDividentBedrag(driver).sendKeys(invuldata[52]);
-			
+
 			SpecificatieDeelnemingenObjecten.WaaromVerkaptDivident(driver).clear();
 			SpecificatieDeelnemingenObjecten.WaaromVerkaptDivident(driver).sendKeys(invuldata[53]);
-			
+
 			SpecificatieDeelnemingenObjecten.NaamMoedermaatschappij(driver).clear();
 			SpecificatieDeelnemingenObjecten.NaamMoedermaatschappij(driver).sendKeys(invuldata[54]);
-			
+
 			SpecificatieDeelnemingenObjecten.StraatnaamMoederMaatschappij(driver).clear();
 			SpecificatieDeelnemingenObjecten.StraatnaamMoederMaatschappij(driver).sendKeys(invuldata[55]);
-			
+
 			SpecificatieDeelnemingenObjecten.HuisnummerMoederMaatschappij(driver).clear();
 			SpecificatieDeelnemingenObjecten.HuisnummerMoederMaatschappij(driver).sendKeys(invuldata[56]);
-			
+
 			SpecificatieDeelnemingenObjecten.HuisnummerToevingMoederMaatschappij(driver).clear();
 			SpecificatieDeelnemingenObjecten.HuisnummerToevingMoederMaatschappij(driver).sendKeys(invuldata[57]);
-			
+
 			SpecificatieDeelnemingenObjecten.VestingsPlaatsMoederMaatschappij(driver).clear();
 			SpecificatieDeelnemingenObjecten.VestingsPlaatsMoederMaatschappij(driver).sendKeys(invuldata[58]);
-			
+
 			SpecificatieDeelnemingenObjecten.VestigingslandMoederMaatschappij(driver).sendKeys(invuldata[59]);
-			
+
 			if (invuldata[60].equals("ja")) {
 				SpecificatieDeelnemingenObjecten.DirecteDeelnemingOntgaan_ja(driver).click();
 			}
 			else {
 				SpecificatieDeelnemingenObjecten.DirecteDeelnemingOntgaan_nee(driver).click();
 			}
-		}
-		
-		//Gegevens Rechtspersonen
-		
-		if (invuldata[40].equals("nee")) {
-		SpecificatieDeelnemingenObjecten.RechtspersoonVoordeelOntgaan(driver).clear();
-		SpecificatieDeelnemingenObjecten.RechtspersoonVoordeelOntgaan(driver).sendKeys(invuldata[46]);
-		
-		SpecificatieDeelnemingenObjecten.RechtspersoonStraatnaam(driver).clear();
-		SpecificatieDeelnemingenObjecten.RechtspersoonStraatnaam(driver).sendKeys(invuldata[47]);
-		
-		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummer(driver).clear();
-		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummer(driver).sendKeys(invuldata[48]);
-		
-		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummerToevoeging(driver).clear();
-		SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummerToevoeging(driver).sendKeys(invuldata[49]);
-		
-		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsplaats(driver).clear();
-		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsplaats(driver).sendKeys(invuldata[50]);
-		
-		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).clear();
-		SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).sendKeys(invuldata[51]);
-		}
-		
-		
+
+
+			//Is het uw directe deelneming die zich het voordeel heeft laten ontgaan?
+
+			if (invuldata[60].equals("nee")) {
+				SpecificatieDeelnemingenObjecten.RechtspersoonVoordeelOntgaan(driver).clear();
+				SpecificatieDeelnemingenObjecten.RechtspersoonVoordeelOntgaan(driver).sendKeys(invuldata[46]);
+
+				SpecificatieDeelnemingenObjecten.RechtspersoonStraatnaam(driver).clear();
+				SpecificatieDeelnemingenObjecten.RechtspersoonStraatnaam(driver).sendKeys(invuldata[47]);
+
+				SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummer(driver).clear();
+				SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummer(driver).sendKeys(invuldata[48]);
+
+				SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummerToevoeging(driver).clear();
+				SpecificatieDeelnemingenObjecten.RechtspersoonHuisnummerToevoeging(driver).sendKeys(invuldata[49]);
+
+				SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsplaats(driver).clear();
+				SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsplaats(driver).sendKeys(invuldata[50]);
+
+				SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).clear();
+				SpecificatieDeelnemingenObjecten.RechtspersoonVestigingsLand(driver).sendKeys(invuldata[51]);
+			}
+
+			
+		}	
 	}
 	
 	@When("^open the form Toelichting Balans$")
