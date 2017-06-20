@@ -154,7 +154,7 @@ Feature: vullen formulieren
       |    3 |
       
       
-       @vullen_formulier @Innovatiebox
+  @vullen_formulier @Innovatiebox
   Scenario Outline: vullen formulier Innovatiebox
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
@@ -167,4 +167,5 @@ Feature: vullen formulieren
     Examples: 
       | TCID |
       |    1 |
-
+      |    2 |
+      |    3 |

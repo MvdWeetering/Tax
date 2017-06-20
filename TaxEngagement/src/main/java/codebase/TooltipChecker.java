@@ -399,4 +399,78 @@ public class TooltipChecker extends AbstractSteps {
 		}
 		return TooltipResult;
 	}
+	public static ArrayList<String> CheckTooltipInnovatieBox(String Naamobject, int Minlengte, int Maxlengte, String SoortValidatie, WebDriver driver) throws Exception {
+		Actions action = new Actions(driver);
+		TooltipResult.clear();
+		Thread.sleep(600);
+		// mous-over naar naamobject
+		action.moveToElement(invoke(InnovatieboxObjecten.class, Naamobject, driver)).build().perform();
+
+		invoke(InnovatieboxObjecten.class, Naamobject, driver).click();
+
+		// checker
+		checker.clear();
+		checker = codebase.ValidatieChecker.CheckValue(invoke(InnovatieboxObjecten.class, Naamobject, driver).getAttribute("value"), Minlengte, Maxlengte, SoortValidatie);
+		if (!checker.isEmpty()) {
+			try {
+				WebElement elem = invoke(InnovatieboxObjecten.class, Naamobject, driver);
+				// Null indicates: expected tooltip text balloon is missing
+				if (elem == null) {
+					TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
+					System.out.println("Tooltip ontbreekt voor element:" + Naamobject);
+				} 
+
+				else {
+					if (checker.contains("BSN")) {
+						if (!invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText().contains("[11 Proef] Dit veld voldoet niet aan de 11 proef of bevat geen 9 cijfers")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[11 Proef] Dit veld voldoet niet aan de 11 proef of bevat geen 9 cijfers \r\n");
+						}
+					}
+					else {
+						if (checker.contains("Te lang")) {
+							if (!invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" + invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
+							}
+
+						}
+
+						if (checker.contains("Geen positief getal")) {
+							if (!invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Negatief] Dit veld moet een positief getal bevatten \r\n ");
+							}
+						}
+						if (checker.contains("Geheel Getal")) {
+							if (!invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText().contains("[Getal] Dit veld mag alleen getallen bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld mag alleen getallen bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Getal] Dit veld mag alleen getallen bevatten \r\n");
+							}
+						}
+						
+						if (checker.contains("Te Kort")) {
+							if (!invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(InnovatieboxTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
+							}
+						}
+					}
+				}
+			}
+			catch (NoSuchElementException e) {
+				e.printStackTrace();
+				// TODO Auto-generated catch block
+				System.out.println("no element found");
+			}
+		}
+		return TooltipResult;
+	}
 }

@@ -240,7 +240,7 @@ public class Steps extends AbstractSteps {
 		AlgemeneVragenObjecten.Toelichting(driver).clear();
 		AlgemeneVragenObjecten.Toelichting(driver).sendKeys(invuldata[19]);
 		
-		driver.quit();
+		//driver.quit();
 
 	}
 
@@ -2610,55 +2610,80 @@ public void open_the_form_Innovatiebox() throws Throwable {
 }
 
 @Then("^i can fill out the form Innovatiebox from (\\d+)$")
-public void i_can_fill_out_the_form_Innovatiebox_from(int arg1) throws Throwable {
+public void i_can_fill_out_the_form_Innovatiebox_from(int configId) throws Throwable {
 
+	
+	String[] invuldata = codebase.InnovatieboxXLS.HaalData(configId);
+	
 	InnovatieboxObjecten.Omschrijving(driver).clear();
-	InnovatieboxObjecten.Omschrijving(driver).sendKeys("Omschrijving");
+	InnovatieboxObjecten.Omschrijving(driver).sendKeys(invuldata[1]);
 	
 	InnovatieboxObjecten.Voortbrengingkosten(driver).clear();
-	InnovatieboxObjecten.Voortbrengingkosten(driver).sendKeys("Voortbr kosten");
+	InnovatieboxObjecten.Voortbrengingkosten(driver).sendKeys(invuldata[2]);
 	
-	InnovatieboxObjecten.forfaitaireRegeling_Ja(driver).click();
+	if (invuldata[3].equals("ja")) {
+		InnovatieboxObjecten.forfaitaireRegeling_Ja(driver).click();	
+		}
+	else {
+		InnovatieboxObjecten.forfaitaireRegeling_Nee(driver).click();
+	}
 	
 	InnovatieboxObjecten.SaldoDrempelInnovatie(driver).clear();
-	InnovatieboxObjecten.SaldoDrempelInnovatie(driver).sendKeys("saldo drempel");
+	InnovatieboxObjecten.SaldoDrempelInnovatie(driver).sendKeys(invuldata[4]);
 	
 	InnovatieboxObjecten.InnovatieboxVoortbrengingskosten(driver).clear();
-	InnovatieboxObjecten.InnovatieboxVoortbrengingskosten(driver).sendKeys("Tot voortbr kosten");
+	InnovatieboxObjecten.InnovatieboxVoortbrengingskosten(driver).sendKeys(invuldata[5]);
 	
 	InnovatieboxObjecten.InnovatieboxExploitatieverliezen(driver).clear();
-	InnovatieboxObjecten.InnovatieboxExploitatieverliezen(driver).sendKeys("expl verl");
+	InnovatieboxObjecten.InnovatieboxExploitatieverliezen(driver).sendKeys(invuldata[6]);
 	
 	InnovatieboxObjecten.VoordelenOctrooi(driver).clear();
-	InnovatieboxObjecten.VoordelenOctrooi(driver).sendKeys("voordeel octrooi");
+	InnovatieboxObjecten.VoordelenOctrooi(driver).sendKeys(invuldata[7]);
 	
 	InnovatieboxObjecten.OvergenomenDrempel(driver).clear();
-	InnovatieboxObjecten.OvergenomenDrempel(driver).sendKeys("overgenomen drempel");
+	InnovatieboxObjecten.OvergenomenDrempel(driver).sendKeys(invuldata[8]);
 	
 	InnovatieboxObjecten.InTeLopenVoortbrengingsKosten(driver).clear();
-	InnovatieboxObjecten.InTeLopenVoortbrengingsKosten(driver).sendKeys("inlopen voortbr kosten");
+	InnovatieboxObjecten.InTeLopenVoortbrengingsKosten(driver).sendKeys(invuldata[9]);
 	
 	InnovatieboxObjecten.GenotenVoordeelOnder(driver).clear();
-	InnovatieboxObjecten.GenotenVoordeelOnder(driver).sendKeys("Onder");
+	InnovatieboxObjecten.GenotenVoordeelOnder(driver).sendKeys(invuldata[10]);
 	
 	InnovatieboxObjecten.GenotenVoordeelBoven(driver).clear();
-	InnovatieboxObjecten.GenotenVoordeelBoven(driver).sendKeys("Boven");
+	InnovatieboxObjecten.GenotenVoordeelBoven(driver).sendKeys(invuldata[11]);
 	
 	InnovatieboxObjecten.SaldoInTeLopen(driver).clear();
-	InnovatieboxObjecten.SaldoInTeLopen(driver).sendKeys("intelopen");
-	
-	
-	
+	InnovatieboxObjecten.SaldoInTeLopen(driver).sendKeys(invuldata[12]);
  
 }
 
 @Then("^i can validate the error messages for the formulier Innovatiebox$")
 public void i_can_validate_the_error_messages_for_the_formulier_Innovatiebox() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
     
-}
+	
+	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("Voortbrengingkosten", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("SaldoDrempelInnovatie", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("InnovatieboxVoortbrengingskosten", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("InnovatieboxExploitatieverliezen", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("VoordelenOctrooi", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("InTeLopenVoortbrengingsKosten", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("GenotenVoordeelOnder", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("GenotenVoordeelBoven", 1, 10, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("SaldoInTeLopen", 1, 10, "PositiefGetal", driver));
 
-
+					
+	System.out.println("Validatie resultaat: " + ValidatieResultaat);
+	driver.quit();
+	
+	assertTrue(ValidatieResultaat.isEmpty());	
+	
+	
+	
+    
+	}
 }
 
 
