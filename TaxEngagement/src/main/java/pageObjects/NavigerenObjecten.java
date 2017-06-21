@@ -73,4 +73,12 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Innovatiebox"));
 		return element;
 	}
+	public static WebElement belastbaarbedrag(WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Berekening Belastbaar Bedrag"));
+		return element;
+	}
+	public static WebElement FiscaleVermogensVergelijking(WebDriver driver){
+	    element = driver.findElement(By.linkText("Fiscale Vermogensvergelijking"));
+		return element;
+	}
 }

@@ -14,7 +14,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import codebase.Inloggen;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -23,6 +22,7 @@ import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.BalansActivaObjecten;
 import pageObjects.BalansPassivaObjecten;
+import pageObjects.FiscaleVermogensVergelijkingObjecten;
 import pageObjects.InnovatieboxObjecten;
 import pageObjects.InvesteringsaftrekObjecten;
 import pageObjects.LoginObjecten;
@@ -2674,16 +2674,128 @@ public void i_can_validate_the_error_messages_for_the_formulier_Innovatiebox() t
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("GenotenVoordeelBoven", 1, 10, "PositiefGetal", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("SaldoInTeLopen", 1, 10, "PositiefGetal", driver));
 
-					
 	System.out.println("Validatie resultaat: " + ValidatieResultaat);
 	driver.quit();
 	
 	assertTrue(ValidatieResultaat.isEmpty());	
-	
-	
-	
-    
 	}
+
+@When("^open the form Belastbaarbedrag$")
+public void open_the_form_Belastbaarbedrag() throws Throwable {
+    
+	NavigerenObjecten.belastbaarbedrag(driver).click();
+}
+
+@Then("^i can fill out the form Belastbaarbedrag from (\\d+)$")
+public void i_can_fill_out_the_form_Belastbaarbedrag_from(int arg1) throws Throwable {
+ 
+}
+
+@Then("^i can validate the error messages for the formulier Belastbaarbedrag$")
+public void i_can_validate_the_error_messages_for_the_formulier_Belastbaarbedrag() throws Throwable {
+  
+}
+@When("^open the form FiscaleVermogensVergelijking$")
+public void open_the_form_FiscaleVermogensVergelijking() throws Throwable {
+
+	NavigerenObjecten.FiscaleVermogensVergelijking(driver).click();
+   
+}
+
+@Then("^i can fill out the form FiscaleVermogensVergelijking from (\\d+)$")
+public void i_can_fill_out_the_form_FiscaleVermogensVergelijking_from(int arg1) throws Throwable {
+
+	FiscaleVermogensVergelijkingObjecten.OndernemingsvermogenEindeJaar(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.OndernemingsvermogenEindeJaar(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",5, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.MutatiesKapitaal(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.MutatiesKapitaal(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",6, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.OndernemingsvermogenBeginJaar(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.OndernemingsvermogenBeginJaar(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",10, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.StortingKapitaal(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.StortingKapitaal(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",11, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A",26, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.DatumTerbeschikkingstelling_1(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("B",26, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.DatumAangifteDividendbelasting_1(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("C",26, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_1(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_1(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D",26, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_1(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_1(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",26, "TC01"));
+	
+// regel 2 
+	FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A",27, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.DatumTerbeschikkingstelling_2(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("B",27, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.DatumAangifteDividendbelasting_2(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("C",26, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D",27, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",27, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.VennootschapsbelastingFiscaalVermogenOnttrokken(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.VennootschapsbelastingFiscaalVermogenOnttrokken(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",29, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.BuitenlandseBelastingRegeling(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.BuitenlandseBelastingRegeling(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",30, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",33, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelWinstuitdelingenCooperaties(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelWinstuitdelingenCooperaties(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",34, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.AndereOpenlijkeVermomdeUitdelingenWinst(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.AndereOpenlijkeVermomdeUitdelingenWinst(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",37, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",39, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelBeloningenCommissarissen(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelBeloningenCommissarissen(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",40, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.Tantiemes(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.Tantiemes(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",44, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelTantiemes(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelTantiemes(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",45, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D",50, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelVergoedingenVooKapitaalverstrekking(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelVergoedingenVooKapitaalverstrekking(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D",51, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.UitkeringenIngevolgeStatutaireAndereVoorschriften(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.UitkeringenIngevolgeStatutaireAndereVoorschriften(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",54, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.ResultaatTijdelijkIngekochteAandelenWerknemeropties(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.ResultaatTijdelijkIngekochteAandelenWerknemeropties(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",55, "TC01"));
+	
+	FiscaleVermogensVergelijkingObjecten.KostenAankoopResterendeAandelenDochtermaatschappijen(driver).clear();
+	FiscaleVermogensVergelijkingObjecten.KostenAankoopResterendeAandelenDochtermaatschappijen(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",56, "TC01"));
+	
+	
+	
+}
+
+@Then("^i can validate the error messages for the formulier FiscaleVermogensVergelijking$")
+public void i_can_validate_the_error_messages_for_the_formulier_FiscaleVermogensVergelijking() throws Throwable {
+  
+	
+}
+
 }
 
 

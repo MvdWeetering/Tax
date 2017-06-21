@@ -169,3 +169,19 @@ Feature: vullen formulieren
       |    1 |
       |    2 |
       |    3 |
+
+      
+  @vullen_formulier @FiscaleVermogensVergelijking
+  Scenario Outline: vullen formulier FiscaleVermogensVergelijking
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 19-05"
+    And open the form FiscaleVermogensVergelijking
+    Then i can fill out the form FiscaleVermogensVergelijking from <TCID>
+    Then i can validate the error messages for the formulier FiscaleVermogensVergelijking
+
+    Examples: 
+      | TCID |
+      |    1 |
+   
