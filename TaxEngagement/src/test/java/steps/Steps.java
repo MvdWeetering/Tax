@@ -682,9 +682,17 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.Straatnaam(driver).sendKeys(invuldata[6]);
 		SpecificatieDeelnemingenObjecten.Huisnummer(driver).clear();
 		SpecificatieDeelnemingenObjecten.Huisnummer(driver).sendKeys(invuldata[7]);		
-		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
-		SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
-		SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys(invuldata[4]);
+		
+		try {
+			int n = Integer.parseInt(invuldata[2]);
+			if (!Elfproef.isValidBSN(n)) {
+				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
+				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
+				SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys(invuldata[4]);	
+			}
+		} catch (NumberFormatException e) {
+			System.out.println("ingevulde RSIN is geen getal");
+		}
 				
 		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).clear();
 		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).sendKeys(invuldata[8]);
@@ -1892,6 +1900,25 @@ public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Th
 	BalansActivaObjecten.Toelichtingbalans(driver).clear();
 	BalansActivaObjecten.Toelichtingbalans(driver).sendKeys(BalansActivaXLS.HaalText(80, "TC01"));
 	
+}
+
+@Then("^i can validate the error messages for the Balans Activa form from tab \"(.*?)\"$")
+public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_tab(String Tab) throws Throwable {
+
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	js.executeScript("window.scrollBy(0,-750)", "");
+		
+	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("NaamOnderneming", 1, 200, "TextVeld", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OmschrijvingActiviteit", 1, 70,"TextVeld", driver));
+					
+	System.out.println("Validatie resultaat: " + ValidatieResultaat);
+	//driver.quit();
+	
+	assertTrue(ValidatieResultaat.isEmpty());	
+
+
 }
 
 @Then("^i can validate the totals for Balans Activa from tab \"(.*?)\"$")

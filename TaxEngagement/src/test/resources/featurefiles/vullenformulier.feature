@@ -104,13 +104,14 @@ Feature: vullen formulieren
     And open the Project "dossier 19-05"
     And open the form Balans Activa
     Then i can fill out the form Balans Activa from tab <TCID>
+    Then i can validate the error messages for the Balans Activa form from tab <TCID>
     Then i can validate the totals for Balans Activa from tab <TCID>
 
     Examples: 
       | TCID   |
-      | "TC01" |
+ 
       | "TC02" |
-      | "TC03" |
+
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva
