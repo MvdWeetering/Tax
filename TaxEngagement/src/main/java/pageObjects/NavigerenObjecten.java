@@ -81,4 +81,8 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.linkText("Fiscale Vermogensvergelijking"));
 		return element;
 	}
+	public static WebElement WinstuitZeescheepvaart(WebDriver driver){
+	    element = driver.findElement(By.linkText("Winst uit Zeescheepvaart"));
+		return element;
+	}
 }

@@ -33,6 +33,7 @@ import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
 import pageObjects.ValidatieObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
+import pageObjects.ZeescheepvaarObjecten;
 import codebase.*;
 
 public class Steps extends AbstractSteps {
@@ -1918,7 +1919,6 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	
 	assertTrue(ValidatieResultaat.isEmpty());	
 
-
 }
 
 @Then("^i can validate the totals for Balans Activa from tab \"(.*?)\"$")
@@ -2840,9 +2840,45 @@ public void i_can_validate_the_error_messages_for_the_formulier_FiscaleVermogens
 	System.out.println(ValidatieResultaat);
 	assertTrue(ValidatieResultaat.isEmpty());
 	//driver.quit();
+	}
+@When("^open the form Zeescheepvaart$")
+public void open_the_form_Zeescheepvaart() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+   
+	NavigerenObjecten.WinstuitZeescheepvaart(driver).click();
 	
-}
+	
+	}
 
+@Then("^i can fill out the form Zeescheepvaart from (\\d+)$")
+public void i_can_fill_out_the_form_Zeescheepvaart_from(int Tcid) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    
+	String[] invuldata = codebase.ZeescheepvaartXLS.HaalData(Tcid);
+	
+	ZeescheepvaarObjecten.NaamSchip(driver).clear();
+	ZeescheepvaarObjecten.NaamSchip(driver).sendKeys(invuldata[1]);
+	
+	ZeescheepvaarObjecten.NettoTonnageSchip(driver).clear();
+	ZeescheepvaarObjecten.NettoTonnageSchip(driver).sendKeys(invuldata[2]);
+	
+	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).clear();
+	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).sendKeys(invuldata[3]);
+	
+	ZeescheepvaarObjecten.WinstperSchip(driver).clear();
+	ZeescheepvaarObjecten.WinstperSchip(driver).sendKeys(invuldata[4]);
+	
+	
+	}
+
+@Then("^i can validate the error messages for the formulier Zeescheepvaart$")
+public void i_can_validate_the_error_messages_for_the_formulier_Zeescheepvaart() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    
+	
+	
+	
+	}
 }
 
 

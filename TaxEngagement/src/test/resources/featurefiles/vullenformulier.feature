@@ -109,9 +109,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID   |
- 
       | "TC02" |
-
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva
@@ -183,3 +181,19 @@ Feature: vullen formulieren
     Examples: 
       | TCID   |
       | "TC01" |
+
+  @vullen_formulier @Zeescheepvaart
+  Scenario Outline: vullen formulier Zeescheepvaart
+    Given I want to login
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 19-05"
+    And open the form Zeescheepvaart
+    Then i can fill out the form Zeescheepvaart from <TCID>
+    Then i can validate the error messages for the formulier Zeescheepvaart
+
+    Examples: 
+      | TCID |
+      |    1 |
+      |    2 |
+      |    3 |
