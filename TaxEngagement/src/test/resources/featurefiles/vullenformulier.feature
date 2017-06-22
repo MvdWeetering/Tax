@@ -152,8 +152,7 @@ Feature: vullen formulieren
       |    1 |
       |    2 |
       |    3 |
-      
-      
+
   @vullen_formulier @Innovatiebox
   Scenario Outline: vullen formulier Innovatiebox
     Given I want to login
@@ -170,7 +169,6 @@ Feature: vullen formulieren
       |    2 |
       |    3 |
 
-      
   @vullen_formulier @FiscaleVermogensVergelijking
   Scenario Outline: vullen formulier FiscaleVermogensVergelijking
     Given I want to login
@@ -179,9 +177,8 @@ Feature: vullen formulieren
     And open the Project "dossier 19-05"
     And open the form FiscaleVermogensVergelijking
     Then i can fill out the form FiscaleVermogensVergelijking from <TCID>
-    Then i can validate the error messages for the formulier FiscaleVermogensVergelijking
+    Then i can validate the error messages for the formulier FiscaleVermogensVergelijking from <TCID>
 
     Examples: 
-      | TCID |
-      |    1 |
-   
+      | TCID   |
+      | "TC01" |
