@@ -17,21 +17,21 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	public static WebElement DochterMaatschappij_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzlj"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzlj']"));
 		return element;
 	}
 	
 	public static WebElement DochterMaatschappij_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzlj-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzlj-no']"));
 		return element;
 	}
 		
 	public static WebElement BoekjaarAgrarische_ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzll"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzll']"));
 		return element;
 	}
 	public static WebElement BoekjaarAgrarische_nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzll-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzll-no']"));
 		return element;
 	}
 		

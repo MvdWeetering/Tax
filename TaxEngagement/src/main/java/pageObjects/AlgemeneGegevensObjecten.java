@@ -29,34 +29,37 @@ public class AlgemeneGegevensObjecten {
 	}
 
 	public static WebElement StandpuntExplicieteUitspraak_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzez"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzez']"));
 		return element;
 	}
 
 	public static WebElement StandpuntExplicieteUitspraak_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzez-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzez-no']"));
 		return element;
 	}
 
+	
 	public static WebElement AangifteFiscaleEenheid_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tz68"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tz68']"));
 		return element;
 	}
 
 	public static WebElement AangifteFiscaleEenheid_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tz68-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tz68-no']"));
 		return element;
 	}
 
+	
 	public static WebElement FunctioneleValuta_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tz65"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tz65']"));
 		return element;
 	}
 
 	public static WebElement FunctioneleValuta_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tz65-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tz65-no']"));
 		return element;
 	}
+	
 	@FieldName(name = "Beconnummer")
 	public static WebElement Beconnummer(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tz5r"));

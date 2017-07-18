@@ -10,152 +10,152 @@ public class AlgemeneVragenObjecten {
 	private static WebElement element = null;
 
 	public static WebElement vraag1_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbx"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbx']"));
 		return element;
 	}
 	public static WebElement vraag1_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbx-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbx-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag2_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbz"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbz']"));
 		return element;
 	}
 	public static WebElement vraag2_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzbz-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbz-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag3_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzc0"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzc0']"));
 		return element;
 	}
 	public static WebElement vraag3_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzc0-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzc0-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag4_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzcc"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcc']"));
 		return element;
 	}
 	public static WebElement vraag4_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzcc-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcc-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag5_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzcl"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcl']"));
 		return element;
 	}
 	public static WebElement vraag5_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzcl-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcl-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag6_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzct"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzct']"));
 		return element;
 	}
 	public static WebElement vraag6_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzct-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzct-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag7_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzcz"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcz']"));
 		return element;
 	}
 	public static WebElement vraag7_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzcz-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcz-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag8_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd1"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd1']"));
 		return element;
 	}
 	public static WebElement vraag8_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd1-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd1-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag9_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd5"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd5']"));
 		return element;
 	}
 	public static WebElement vraag9_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd5-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd5-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag10_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzco"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzco']"));
 		return element;
 	}
 	public static WebElement vraag10_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzco-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzco-no']"));
 		return element;
 	}
 	public static WebElement vraag11_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd9"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd9']"));
 		return element;
 	}
 	public static WebElement vraag11_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd9-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd9-no']"));
 		return element;
 	}	public static WebElement vraag12_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd7"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd7']"));
 		return element;
 	}
 	public static WebElement vraag12_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzd7-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd7-no']"));
 		return element;
 	}	public static WebElement vraag13_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzda"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzda']"));
 		return element;
 	}
 	public static WebElement vraag13_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzda-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzda-no']"));
 		return element;
 	}	public static WebElement vraag14_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzde"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzde']"));
 		return element;
 	}
 	public static WebElement vraag14_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzde-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzde-no']"));
 		return element;
 	}	
 	public static WebElement vraag15_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzdh"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh']"));
 		return element;
 	}
 	public static WebElement vraag15_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzdh-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh-no']"));
 		return element;
 	}
 	public static WebElement vraag16_yes(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68ds"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68ds']"));
 		return element;
 	}
 	public static WebElement vraag16_no(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68ds-no"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68ds-no']"));
 		return element;
 	}
 	
-		
+	
 	public static WebElement Bedragmateriele(WebDriver driver){
 	element = driver.findElement(By.id("idxdt9tzdg"));
 	return element;
 		}
 	
 	public static WebElement vraag17_yes(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzdh"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh']"));
 		return element;
 	}
 	public static WebElement vraag17_no(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzdh-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh-no']"));
 		return element;
 	}
 	

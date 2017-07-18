@@ -118,13 +118,13 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "DeelnemingGevoegd_Ja")
 	public static WebElement DeelnemingGevoegd_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhg"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhg']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingGevoegd_Nee")
 	public static WebElement DeelnemingGevoegd_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhg-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhg-no']"));
 		return element;
 	}
 	
@@ -142,13 +142,13 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "DeelnemingVerworven_Ja")
 	public static WebElement DeelnemingVerworven_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhh"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhh']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingVerworven_Nee")
 	public static WebElement DeelnemingVerworven_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhh-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhh-no']"));
 		return element;
 	}
 	
@@ -172,25 +172,25 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "BelangDeelnemingVerworven_Ja")
 	public static WebElement BelangDeelnemingVerworven_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhv"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhv']"));
 		return element;
 	}
 	
 	@FieldName(name = "BelangDeelnemingVerworven_Nee")
 	public static WebElement BelangDeelnemingVerworven_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhv-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhv-no']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingVervreemd_Ja")
 	public static WebElement DeelnemingVervreemd_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhi"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhi']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingVervreemd_Nee")
 	public static WebElement DeelnemingVervreemd_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhi-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhi-no']"));
 		return element;
 	}
 	
@@ -226,25 +226,25 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "BelangVervreemdInBoekjaar_Ja")
 	public static WebElement BelangVervreemdInBoekjaar_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzi0"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzi0']"));
 		return element;
 	}
 	
 	@FieldName(name = "BelangVervreemdInBoekjaar_Nee")
 	public static WebElement BelangVervreemdInBoekjaar_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzi0-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzi0-no']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingGeliquideerd_Ja")
 	public static WebElement DeelnemingGeliquideerd_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhk"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhk']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingGeliquideerd_Nee")
 	public static WebElement DeelnemingGeliquideerd_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhk-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhk-no']"));
 		return element;
 	}
 	
@@ -256,13 +256,13 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "VerkaptDivident_ja")
 	public static WebElement VerkaptDivident_ja(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68fc"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68fc']"));
 		return element;
 	}
 	
 	@FieldName(name = "VerkaptDivident_nee")
 	public static WebElement VerkaptDivident_nee(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68fc-no"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68fc-no']"));
 		return element;
 	}
 		
@@ -274,25 +274,25 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "WaarderingsvoorschriftArt13_Ja")
 	public static WebElement WaarderingsvoorschriftArt13_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhl"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhl']"));
 		return element;
 	}
 	
 	@FieldName(name = "WaarderingsvoorschriftArt13_Nee")
 	public static WebElement WaarderingsvoorschriftArt13_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhl-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhl-no']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingNietKwalificerende_Ja")
 	public static WebElement DeelnemingNietKwalificerende_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhm"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhm']"));
 		return element;
 	}
 	
 	@FieldName(name = "DeelnemingNietKwalificerende_Nee")
 	public static WebElement DeelnemingNietKwalificerende_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzhm-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzhm-no']"));
 		return element;
 	}
 	
@@ -304,13 +304,13 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "BelangDeelnemingGedaald25Procent_Ja")
 	public static WebElement BelangDeelnemingGedaald25Procent_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzi9"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzi9']"));
 		return element;
 	}
 	
 	@FieldName(name = "BelangDeelnemingGedaald25Procent_Nee")
 	public static WebElement BelangDeelnemingGedaald25Procent_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzi9-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzi9-no']"));
 		return element;
 	}
 	
@@ -328,49 +328,49 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "BeleggingsdeelnemingEULidstaat_Ja")
 	public static WebElement BeleggingsdeelnemingEULidstaat_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzih"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzih']"));
 		return element;
 	}
 	
 	@FieldName(name = "BeleggingsdeelnemingEULidstaat_Nee")
 	public static WebElement BeleggingsdeelnemingEULidstaat_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzih-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzih-no']"));
 		return element;
 	}
 	
 	@FieldName(name = "VerzoektVerrekening_Ja")
 	public static WebElement VerzoektVerrekening_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzik"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzik']"));
 		return element;
 	}
 	
 	@FieldName(name = "VerzoektVerrekening_Nee")
 	public static WebElement VerzoektVerrekening_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzik-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzik-no']"));
 		return element;
 	}
 	
 	@FieldName(name = "VerzoektAfwijkendeVerrekening_Ja")
 	public static WebElement VerzoektAfwijkendeVerrekening_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzim"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzim']"));
 		return element;
 	}
 	
 	@FieldName(name = "VerzoektAfwijkendeVerrekening_Nee")
 	public static WebElement VerzoektAfwijkendeVerrekening_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzim-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzim-no']"));
 		return element;
 	}
 	
 	@FieldName(name = "Meerdan99Deelnemingen_Ja")
 	public static WebElement Meerdan99Deelnemingen_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLParticipations"));
+		element = driver.findElement(By.cssSelector("[for='idCWNLParticipations']"));
 		return element;
 	}
 	
 	@FieldName(name = "Meerdan99Deelnemingen_Nee")
 	public static WebElement Meerdan99Deelnemingen_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLParticipations-no"));
+		element = driver.findElement(By.cssSelector("[for='idCWNLParticipations-no']"));
 		return element;
 	}
 	
@@ -432,13 +432,13 @@ public class SpecificatieDeelnemingenObjecten {
 	
 	@FieldName(name = "DirecteDeelnemingOntgaan_ja")
 	public static WebElement DirecteDeelnemingOntgaan_ja(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68g8"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68g8']"));
 		return element;
 	}
 	
 	@FieldName(name = "DirecteDeelnemingOntgaan_nee")
 	public static WebElement DirecteDeelnemingOntgaan_nee(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68g8-no"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68g8-no']"));
 		return element;
 	}
 	

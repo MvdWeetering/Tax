@@ -16,13 +16,13 @@ public class SpecificatieAandeelhoudersObjecten {
 	
 	@FieldName(name = "Natuurlijkpersoon")
 	public static WebElement Natuurlijkpersoon(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLShareholder"));
+		element = driver.findElement(By.cssSelector("[for='idCWNLShareholder']"));
 		return element;
 	}
 	
 	@FieldName(name = "NatuurlijkpersoonNo")
 	public static WebElement Natuurlijkpersoon_nee(WebDriver driver){
-	element = driver.findElement(By.id("idCWNLShareholder-no"));
+	element = driver.findElement(By.cssSelector("[for='idCWNLShareholder-no']"));
 	return element;
 	
 	}
@@ -110,13 +110,13 @@ public class SpecificatieAandeelhoudersObjecten {
 	
 	@FieldName(name = "informeleKapitaalstorting")
 	public static WebElement informeleKapitaalstorting(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68gz"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68gz']"));
 		return element;
 	}
 
 	@FieldName(name = "informeleKapitaalstortingNee")
 	public static WebElement informeleKapitaalstortingNee(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68gz-no"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68gz-no']"));
 		return element;
 	}
 	
@@ -206,13 +206,13 @@ public class SpecificatieAandeelhoudersObjecten {
 	
 	@FieldName(name = "BevoordelingvanAandeelhouderJa")
 	public static WebElement BevoordelingvanAandeelhouderJa(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68h8"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68h8']"));
 		return element;
 	}
 	
 	@FieldName(name = "BevoordelingvanAandeelhouderNee")
 	public static WebElement BevoordelingvanAandeelhouderNee(WebDriver driver){
-		element = driver.findElement(By.id("idn26n68h8-no"));
+		element = driver.findElement(By.cssSelector("[for='idn26n68h8-no']"));
 		return element;
 	}
 }

@@ -62,15 +62,15 @@ public class NavigerenObjecten {
 		return element;
 	}
 	public static WebElement Investeringsaftrek(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Investeringsaftrek"));
+	    element = driver.findElement(By.partialLinkText("investeringsaftrek"));
 		return element;
 	}
 	public static WebElement Objectvrijstelling(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Objectvrijstelling"));
+	    element = driver.findElement(By.partialLinkText("objectvrijstelling"));
 		return element;
 	}
 	public static WebElement Innovatiebox(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Innovatiebox"));
+	    element = driver.findElement(By.partialLinkText("innovatiebox"));
 		return element;
 	}
 	public static WebElement belastbaarbedrag(WebDriver driver){
