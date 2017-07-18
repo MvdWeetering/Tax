@@ -8,10 +8,12 @@ public class BalansActivaObjecten {
 	private static WebElement element = null;
 
 	//Algemeen
+	@FieldName(name = "NaamOnderneming")
 	public static WebElement NaamOnderneming(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzlh"));
 		return element;
 	}
+	@FieldName(name = "OmschrijvingActiviteit")
 	public static WebElement OmschrijvingActiviteit(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzli"));
 		return element;
@@ -226,7 +228,7 @@ public class BalansActivaObjecten {
 		return element;
 	}
 		
-	//Totaal materiële vaste activa
+	//Totaal materiï¿½le vaste activa
 		
 	public static WebElement TotaalMaterieleVasteActivaCommercieel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idMva2R3C1"));
@@ -252,7 +254,7 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	
-	//Financiële vaste activa 
+	//Financiï¿½le vaste activa 
 		
 	public static WebElement FinancieleVasteActivaCommercieel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idFva1R0C1"));
@@ -367,7 +369,7 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	
-	//Overige financiële vaste activa 
+	//Overige financiï¿½le vaste activa 
 
 	public static WebElement OverigeFinActivaNominaleWaarde(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzmm"));
@@ -399,7 +401,7 @@ public class BalansActivaObjecten {
 		return element;
 	}	
 	
-	//Totaal financiële vaste activa
+	//Totaal financiï¿½le vaste activa
 	
 	public static WebElement TotaalFinVasteActivaCommercieel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idFva1R0C1"));
