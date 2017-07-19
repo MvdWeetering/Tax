@@ -37,6 +37,12 @@ public class FiscaleVermogensVergelijkingObjecten {
 		return element;
 	}
 	
+	public static WebElement DividentOntwWinstCheckbox(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLCBAanDivOndWinTot']"));
+		return element;
+	}
+	
+		
 	@FieldName(name = "TotaalBeginvermogenStortingen ")
 	public static WebElement TotaalBeginvermogenStortingen(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzub"));
@@ -63,13 +69,13 @@ public class FiscaleVermogensVergelijkingObjecten {
 	
 	@FieldName(name = "ResultaatWinstVerliesrekening ")
 	public static WebElement ResultaatWinstVerliesrekening(WebDriver driver){
-		element = driver.findElement(By.id("idresWinVer"));
+		element = driver.findElement(By.id("idCWNLResultaatWinVer"));
 		return element;
 	}
 	
 	@FieldName(name = "Verschil")
 	public static WebElement Verschil(WebDriver driver){
-		element = driver.findElement(By.id("idverschil"));
+		element = driver.findElement(By.id("idCWNLVerschilResWinstVerlBerFiscWinst"));
 		return element;
 	}
 	
@@ -87,25 +93,25 @@ public class FiscaleVermogensVergelijkingObjecten {
 	
 	@FieldName(name = "DatumTerbeschikkingstelling_1")
 	public static WebElement DatumTerbeschikkingstelling_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-1"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-2"));
 		return element;
 	}
 	
 	@FieldName(name = "DatumAangifteDividendbelasting_1")
 	public static WebElement DatumAangifteDividendbelasting_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-3"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-4"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragIngehoudenDividendbelasting_1")
 	public static WebElement BedragIngehoudenDividendbelasting_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-5"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-6"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragWinstuitdeling_1")
 	public static WebElement BedragWinstuitdeling_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-6"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-8"));
 		return element;
 	}
 	
@@ -117,25 +123,25 @@ public class FiscaleVermogensVergelijkingObjecten {
 	
 	@FieldName(name = "DatumTerbeschikkingstelling_2")
 	public static WebElement DatumTerbeschikkingstelling_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-1"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-2"));
 		return element;
 	}
 	
 	@FieldName(name = "DatumAangifteDividendbelasting_2")
 	public static WebElement DatumAangifteDividendbelasting_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-3"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-4"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragIngehoudenDividendbelasting_2")
 	public static WebElement BedragIngehoudenDividendbelasting_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-5"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-6"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragWinstuitdeling_2")
 	public static WebElement BedragWinstuitdeling_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-6"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-8"));
 		return element;
 	}
 	
@@ -157,15 +163,22 @@ public class FiscaleVermogensVergelijkingObjecten {
 		return element;
 	}
 	
+	public static WebElement NietAftrDeelWinstCoopCheckbox(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLCBNieAftDeeWinDooCooTot']"));
+		return element;
+	}
+	
+	
+	
 	@FieldName(name = "WinstuitdelingenCooperaties")
 	public static WebElement WinstuitdelingenCooperaties(WebDriver driver){
-		element = driver.findElement(By.id("idcellWinDooCoo"));
+		element = driver.findElement(By.id("idCWNLWinDooCoo"));
 		return element;
 	}
 	
 	@FieldName(name = "AftrekbaarDeelWinstuitdelingenCooperaties")
 	public static WebElement AftrekbaarDeelWinstuitdelingenCooperaties(WebDriver driver){
-		element = driver.findElement(By.id("idcellAftDeeWinDooCoo"));
+		element = driver.findElement(By.id("idCWNLAftDeeWinDooCoo"));
 		return element;
 	}
 	
@@ -181,6 +194,12 @@ public class FiscaleVermogensVergelijkingObjecten {
 		return element;
 	}
 	
+	public static WebElement NietAftrDeelCommCheckbox(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLCBNieAftDeeBelComTot']"));
+		return element;
+	}
+	
+	
 	@FieldName(name = "NietAftrekbaarDeelBeloningenCommissarissen")
 	public static WebElement NietAftrekbaarDeelBeloningenCommissarissen(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzeh"));
@@ -189,13 +208,13 @@ public class FiscaleVermogensVergelijkingObjecten {
 	
 	@FieldName(name = "BeloningenCommissarissen")
 	public static WebElement BeloningenCommissarissen(WebDriver driver){
-		element = driver.findElement(By.id("idcellBelCom"));
+		element = driver.findElement(By.id("idCWNLBelCom"));
 		return element;
 	}
 	
 	@FieldName(name = "AftrekbaarDeelBeloningenCommissarissen ")
 	public static WebElement AftrekbaarDeelBeloningenCommissarissen(WebDriver driver){
-		element = driver.findElement(By.id("idcellAftDeeBelCom"));
+		element = driver.findElement(By.id("idCWNLAftDeelBelCom"));
 		return element;
 	}
 	
@@ -211,21 +230,31 @@ public class FiscaleVermogensVergelijkingObjecten {
 		return element;
 	}
 	
+	public static WebElement NietAftrDeelTantiemesCheckbox(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLCBNieAftDeeTanTot']"));
+		return element;
+	}
+	
 	@FieldName(name = "Tantiemes")
 	public static WebElement Tantiemes(WebDriver driver){
-		element = driver.findElement(By.id("idcellTan"));
+		element = driver.findElement(By.id("idCWNLTantiemes"));
 		return element;
 	}
 	
 	@FieldName(name = "AftrekbaarDeelTantiemes")
 	public static WebElement AftrekbaarDeelTantiemes(WebDriver driver){
-		element = driver.findElement(By.id("idcellAftDeeTan"));
+		element = driver.findElement(By.id("idCWNLAftDeeTan"));
 		return element;
 	}
 	
 	@FieldName(name = "NietAftrekbaarDeelTantiemes_sub")
 	public static WebElement NietAftrekbaarDeelTantiemes_sub(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzek"));
+		return element;
+	}
+	
+	public static WebElement NietAftrDeelKapVerstrCheckbox(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLCBNieAftDeeVerVooKapTot']"));
 		return element;
 	}
 	
@@ -237,13 +266,13 @@ public class FiscaleVermogensVergelijkingObjecten {
 	
 	@FieldName(name = "VergoedingenVoorKapitaalverstrekking")
 	public static WebElement VergoedingenVoorKapitaalverstrekking(WebDriver driver){
-		element = driver.findElement(By.id("idcellVerVooKap"));
+		element = driver.findElement(By.id("idCWNLVerVooKap"));
 		return element;
 	}
 	
 	@FieldName(name = "AftrekbaarDeelVergoedingenVooKapitaalverstrekking")
 	public static WebElement AftrekbaarDeelVergoedingenVooKapitaalverstrekking(WebDriver driver){
-		element = driver.findElement(By.id("idcellAftDeeVerVooKap"));
+		element = driver.findElement(By.id("idCWNLAftDeeVerVooKap"));
 		return element;
 	}
 	

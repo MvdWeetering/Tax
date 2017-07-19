@@ -19,12 +19,12 @@ public class InnovatieboxObjecten {
 	}
 	
 	public static WebElement forfaitaireRegeling_Ja(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tz6q"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tz6q']"));
 		return element;
 	}
 	
 	public static WebElement forfaitaireRegeling_Nee(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tz6q-no"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tz6q-no']"));
 		return element;
 	}
 	@FieldName(name = "SaldoDrempelInnovatie")

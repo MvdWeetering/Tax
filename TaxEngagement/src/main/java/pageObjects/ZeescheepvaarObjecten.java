@@ -23,8 +23,8 @@ public class ZeescheepvaarObjecten {
 		   return element;
 		}
 	
-	public static WebElement WinstperSchip(WebDriver driver){
-		   element = driver.findElement(By.id("idxdt9tz43"));
+	public static WebElement aantalDagen(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tz3z"));
 		   return element;
 		}
 }

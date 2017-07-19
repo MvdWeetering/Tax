@@ -69,7 +69,7 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(2000);
 		NavigerenObjecten.NavigerenTax(driver).click();
 		Thread.sleep(3000);
-		System.out.println("click op tax");
+
 	}
 
 	@When("^open the Project \"([^\"]*)\"$")
@@ -358,7 +358,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TelefoonnummerOndertekenaar", 1, 35, "TextVeld", driver));		 
 		
 					
-		System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		driver.quit();
 		
 		assertTrue(ValidatieResultaat.isEmpty());	
@@ -1137,8 +1137,9 @@ public class Steps extends AbstractSteps {
 	 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar", 1, 99, "GeheelGetal", driver));
 	 		
 	 		//System.out.println(ValidatieResultaat);
-	 		assertTrue(ValidatieResultaat.isEmpty());
 	 		driver.quit();
+	 		assertTrue(ValidatieResultaat.isEmpty());
+	 		
 	 		
 	 	}
 	@When("^open the form Winst en Verlies rekening$")
@@ -1568,7 +1569,7 @@ public class Steps extends AbstractSteps {
 		
 			
 		driver.quit();
-		System.out.println(ValidatieResultaat);
+		//System.out.println(ValidatieResultaat);
 	}
 	
 
@@ -1610,8 +1611,6 @@ public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Th
 	
 	BalansActivaObjecten.GoodwillAanschaf(driver).clear();
 	BalansActivaObjecten.GoodwillAanschaf(driver).sendKeys(BalansActivaXLS.HaalData("B", 16, Tab));
-	
-	System.out.println(BalansActivaXLS.HaalData("B", 16, Tab));
 	
 	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).clear();
 	BalansActivaObjecten.GoodwillCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 16, Tab));
@@ -1919,7 +1918,7 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("NaamOnderneming", 1, 200, "TextVeld", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OmschrijvingActiviteit", 1, 70,"TextVeld", driver));
 					
-	System.out.println("Validatie resultaat: " + ValidatieResultaat);
+	//System.out.println("Validatie resultaat: " + ValidatieResultaat);
 	//driver.quit();
 	
 	assertTrue(ValidatieResultaat.isEmpty());	
@@ -2058,9 +2057,10 @@ public void i_can_validate_the_totals_for_Balans_Activa_from_tab(String Tab) thr
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaCF(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("F",77, Tab)), "F77"));
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",77, Tab)), "G77"));
 		
-	System.out.println(ValidatieResultaat);
-	assertTrue(ValidatieResultaat.isEmpty());
+	//System.out.println(ValidatieResultaat);
 	driver.quit();
+	assertTrue(ValidatieResultaat.isEmpty());
+	
 }
 
 @When("^open the form Balans Passiva$")
@@ -2547,9 +2547,10 @@ public void i_can_validate_the_totals_for_Balans_Passiva_from_tab(String Tab) th
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.TotaalPassivaCF(driver).getAttribute("value"), Double.parseDouble(BalansPassivaXLS.HaalData("E",59, Tab)), "E59"));
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.TotaalPassivaFiscaal31_12(driver).getAttribute("value"), Double.parseDouble(BalansPassivaXLS.HaalData("F",59, Tab)), "F59"));	
 	
-	System.out.println(ValidatieResultaat);
-	assertTrue(ValidatieResultaat.isEmpty());
+	//System.out.println(ValidatieResultaat);
 	driver.quit();
+	assertTrue(ValidatieResultaat.isEmpty());
+	
 }
 
 @When("^open the form Investeringsaftrek$")
@@ -2580,6 +2581,8 @@ public void i_can_fill_out_the_form_Investeringsaftrek() throws Throwable {
 	
 	InvesteringsaftrekObjecten.kleinschaligheidsinvesteringsaftrek(driver).clear();
 	InvesteringsaftrekObjecten.kleinschaligheidsinvesteringsaftrek(driver).sendKeys("1004");
+	
+	driver.quit();
 	
 }
 
@@ -2706,7 +2709,7 @@ public void i_can_validate_the_error_messages_for_the_formulier_Innovatiebox() t
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("GenotenVoordeelBoven", 1, 10, "PositiefGetal", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInnovatieBox("SaldoInTeLopen", 1, 10, "PositiefGetal", driver));
 
-	System.out.println("Validatie resultaat: " + ValidatieResultaat);
+	//System.out.println("Validatie resultaat: " + ValidatieResultaat);
 	driver.quit();
 	
 	assertTrue(ValidatieResultaat.isEmpty());	
@@ -2749,6 +2752,15 @@ public void i_can_fill_out_the_form_FiscaleVermogensVergelijking_from(String Tab
 	FiscaleVermogensVergelijkingObjecten.StortingKapitaal(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.StortingKapitaal(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",11, "TC01"));
 	
+	
+	if (driver.findElement(By.id("idCWNLCBAanDivOndWinTot")).isSelected()) {
+		//System.out.println("enabled");
+	} 
+	else {
+	FiscaleVermogensVergelijkingObjecten.DividentOntwWinstCheckbox(driver).click();
+	}
+	
+	
 	FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A",24, "TC01"));
 	
@@ -2782,6 +2794,15 @@ public void i_can_fill_out_the_form_FiscaleVermogensVergelijking_from(String Tab
 	FiscaleVermogensVergelijkingObjecten.BuitenlandseBelastingRegeling(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.BuitenlandseBelastingRegeling(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",28, "TC01"));
 	
+	
+	if (driver.findElement(By.id("idCWNLCBNieAftDeeWinDooCooTot")).isSelected()) {
+		//System.out.println("enabled");
+	} 
+	else {
+	FiscaleVermogensVergelijkingObjecten.NietAftrDeelWinstCoopCheckbox(driver).click();
+	}
+	
+		
 	FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",31, "TC01"));
 	
@@ -2791,17 +2812,43 @@ public void i_can_fill_out_the_form_FiscaleVermogensVergelijking_from(String Tab
 	FiscaleVermogensVergelijkingObjecten.AndereOpenlijkeVermomdeUitdelingenWinst(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.AndereOpenlijkeVermomdeUitdelingenWinst(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",35, "TC01"));
 	
+	
+	if (driver.findElement(By.id("idCWNLCBNieAftDeeBelComTot")).isSelected()) {
+		//System.out.println("enabled");
+	} 
+	else {
+	FiscaleVermogensVergelijkingObjecten.NietAftrDeelCommCheckbox(driver).click();
+	}
+		
 	FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",37, "TC01"));
 	
 	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelBeloningenCommissarissen(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelBeloningenCommissarissen(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",38, "TC01"));
 	
+	
+	
+	if (driver.findElement(By.id("idCWNLCBNieAftDeeTanTot")).isSelected()) {
+		//System.out.println("enabled");
+	} 
+	else {
+	FiscaleVermogensVergelijkingObjecten.NietAftrDeelTantiemesCheckbox(driver).click();
+	}
+	
 	FiscaleVermogensVergelijkingObjecten.Tantiemes(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.Tantiemes(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",42, "TC01"));
 	
 	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelTantiemes(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelTantiemes(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",43, "TC01"));
+	
+	
+	if (driver.findElement(By.id("idCWNLCBNieAftDeeWinDooCooTot")).isSelected()) {
+		//System.out.println("enabled");
+	} 
+	else {
+	FiscaleVermogensVergelijkingObjecten.NietAftrDeelKapVerstrCheckbox(driver).click();
+	}
+	
 	
 	FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver).clear();
 	FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",48, "TC01"));
@@ -2842,9 +2889,10 @@ public void i_can_validate_the_error_messages_for_the_formulier_FiscaleVermogens
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelVergoedingenKapitaalverstrekking_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",50, Tab)), "E50"));
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbareBedragen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",56, Tab)), "F56"));
 		
-	System.out.println(ValidatieResultaat);
+	//System.out.println(ValidatieResultaat);
+	driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());
-	//driver.quit();
+	
 	}
 @When("^open the form Zeescheepvaart$")
 public void open_the_form_Zeescheepvaart() throws Throwable {
@@ -2867,11 +2915,12 @@ public void i_can_fill_out_the_form_Zeescheepvaart_from(int Tcid) throws Throwab
 	ZeescheepvaarObjecten.NettoTonnageSchip(driver).clear();
 	ZeescheepvaarObjecten.NettoTonnageSchip(driver).sendKeys(invuldata[2]);
 	
-	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).clear();
-	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).sendKeys(invuldata[3]);
+	ZeescheepvaarObjecten.aantalDagen(driver).clear();
+	ZeescheepvaarObjecten.aantalDagen(driver).sendKeys(invuldata[3]);
 	
-	ZeescheepvaarObjecten.WinstperSchip(driver).clear();
-	ZeescheepvaarObjecten.WinstperSchip(driver).sendKeys(invuldata[4]);
+	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).clear();
+	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).sendKeys(invuldata[4]);
+
 	
 	
 	}
@@ -2881,7 +2930,7 @@ public void i_can_validate_the_error_messages_for_the_formulier_Zeescheepvaart()
     // Write code here that turns the phrase above into concrete actions
     
 	
-	
+	driver.quit();
 	
 	}
 }

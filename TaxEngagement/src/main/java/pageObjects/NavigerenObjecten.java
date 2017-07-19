@@ -78,11 +78,11 @@ public class NavigerenObjecten {
 		return element;
 	}
 	public static WebElement FiscaleVermogensVergelijking(WebDriver driver){
-	    element = driver.findElement(By.linkText("Fiscale Vermogensvergelijking"));
+	    element = driver.findElement(By.partialLinkText("Fiscale Vermogensvergelijking"));
 		return element;
 	}
 	public static WebElement WinstuitZeescheepvaart(WebDriver driver){
-	    element = driver.findElement(By.linkText("Winst uit Zeescheepvaart"));
+	    element = driver.findElement(By.partialLinkText("winst uit zeescheepvaart"));
 		return element;
 	}
 }
