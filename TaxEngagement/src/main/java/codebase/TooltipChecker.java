@@ -67,14 +67,6 @@ public class TooltipChecker extends AbstractSteps {
 								System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
 							}
 						}
-						if (checker.contains("Te Kort")) {
-							if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
-								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
-								System.out.println(Naamobject);
-								System.out.println("gelezen:" +invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText());
-								System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
-							}
-						}
 					}
 				}
 			}

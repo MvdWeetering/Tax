@@ -41,6 +41,13 @@ public class SpecificatieAandeelhoudersObjecten {
 		element = driver.findElement(By.id("idxdt9tzsi"));
 		return element;
 	}
+	
+	@FieldName(name = "HuisnummerBuitenl")
+	public static WebElement HuisnummerBuitenl(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68gn"));
+		return element;
+	}	
+	
 	@FieldName(name = "Postcode")
 	public static WebElement Postcode(WebDriver driver){
 		element = driver.findElement(By.id("idCWNLAandeelhouderPostcode"));

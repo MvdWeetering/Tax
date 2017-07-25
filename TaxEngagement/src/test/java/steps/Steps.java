@@ -32,7 +32,6 @@ import pageObjects.ObjectvrijstellingObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
-import pageObjects.ValidatieObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
 import pageObjects.ZeescheepvaarObjecten;
 import codebase.*;
@@ -94,15 +93,6 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(3500);
 	}
 
-	@Then("^I am succesfully logged into the Tax engagement module$")
-	public void I_am_succesfully_logged_into_the_Tax_engagement_module() throws Throwable {
-
-		WebElement HuidigeModule = ValidatieObjecten.BeoordelenHuidigeModule(driver);
-		String Module = (HuidigeModule.getText());
-		assertTrue(Module.equals("NL Tax Engagement"));
-		driver.quit();
-
-	}
 
 	@Then("^i can work on the project$")
 	public void i_can_work_on_the_project() throws Throwable {
@@ -359,7 +349,7 @@ public class Steps extends AbstractSteps {
 		
 					
 		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		driver.quit();
+		//driver.quit();
 		
 		assertTrue(ValidatieResultaat.isEmpty());	
 		
@@ -495,36 +485,39 @@ public class Steps extends AbstractSteps {
 			SpecificatieAandeelhoudersObjecten.Straatnaam(driver).sendKeys(invuldata[4]);
 			SpecificatieAandeelhoudersObjecten.Huisnummer(driver).clear();
 			SpecificatieAandeelhoudersObjecten.Huisnummer(driver).sendKeys(invuldata[5]);
+			SpecificatieAandeelhoudersObjecten.HuisnummerBuitenl(driver).clear();
+			SpecificatieAandeelhoudersObjecten.HuisnummerBuitenl(driver).sendKeys(invuldata[6]);
+			
 			SpecificatieAandeelhoudersObjecten.Postcode(driver).clear();
-			SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys(invuldata[6]);
+			SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys(invuldata[7]);
 			SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).clear();
-			SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).sendKeys(invuldata[7]);
+			SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).sendKeys(invuldata[8]);
 			SpecificatieAandeelhoudersObjecten.Woonplaats(driver).clear();
-			SpecificatieAandeelhoudersObjecten.Woonplaats(driver).sendKeys(invuldata[8]);
-			SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys(invuldata[9]);
+			SpecificatieAandeelhoudersObjecten.Woonplaats(driver).sendKeys(invuldata[9]);
+			SpecificatieAandeelhoudersObjecten.Land(driver).sendKeys(invuldata[10]);
 		}
 
 		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).sendKeys(invuldata[10]);
+		SpecificatieAandeelhoudersObjecten.NominalewaardeAandelen(driver).sendKeys(invuldata[11]);
 		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).sendKeys(invuldata[11]);
+		SpecificatieAandeelhoudersObjecten.NominalewaardePreferente(driver).sendKeys(invuldata[12]);
 		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).sendKeys(invuldata[12]);
+		SpecificatieAandeelhoudersObjecten.NominalewaardePrioriteits(driver).sendKeys(invuldata[13]);
 		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).clear();
-		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).sendKeys(invuldata[13]);
+		SpecificatieAandeelhoudersObjecten.PercentageNominaal(driver).sendKeys(invuldata[14]);
 		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).clear();
-		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).sendKeys(invuldata[14]);
+		SpecificatieAandeelhoudersObjecten.VorderingBelastingplichtige(driver).sendKeys(invuldata[15]);
 		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).clear();
-		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).sendKeys(invuldata[15]);
+		SpecificatieAandeelhoudersObjecten.SchuldBelastingplichtige(driver).sendKeys(invuldata[16]);
 		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys(invuldata[16]);
+		SpecificatieAandeelhoudersObjecten.BoekjaarOntvangenRente(driver).sendKeys(invuldata[17]);
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys(invuldata[17]);
+		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys(invuldata[18]);
 
 		
 		// informele kapitaalstorting = nee
 		
-		if (invuldata[18].equals("nee")) {
+		if (invuldata[19].equals("nee")) {
 		
 		SpecificatieAandeelhoudersObjecten.informeleKapitaalstortingNee(driver).click();
 		
@@ -535,44 +528,44 @@ public class Steps extends AbstractSteps {
 			
 		SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).click();
 		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).clear();
-		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys(invuldata[19]);
+		SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys(invuldata[20]);
 		
 		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).clear(); 
-		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).sendKeys(invuldata[20]);
+		SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).sendKeys(invuldata[21]);
 		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).clear();
-		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).sendKeys(invuldata[21]);
+		SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).sendKeys(invuldata[22]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).sendKeys(invuldata[22]);
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijStraatnaam(driver).sendKeys(invuldata[23]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).sendKeys(invuldata[23]);
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummer(driver).sendKeys(invuldata[24]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).sendKeys(invuldata[24]);
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijHuisnummerToev(driver).sendKeys(invuldata[25]);
 		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).clear();
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys(invuldata[25]);
-		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).sendKeys(invuldata[26]);
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsplaats(driver).sendKeys(invuldata[26]);
+		SpecificatieAandeelhoudersObjecten.MoederMaatschappijVestigingsland(driver).sendKeys(invuldata[27]);
 			
-			if (invuldata[27].equals("ja")) {
+			if (invuldata[28].equals("ja")) {
 			SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderJa(driver).click();
 			}
 			else {
 			SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).click();
 			
 			SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).clear();
-			SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys(invuldata[28]);
+			SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys(invuldata[29]);
 			
 			SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).clear();
-			SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys(invuldata[29]);
+			SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys(invuldata[30]);
 			
 			SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).clear();
-			SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys(invuldata[30]);
+			SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys(invuldata[31]);
 			
 			SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).clear();
-			SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys(invuldata[31]);
+			SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys(invuldata[32]);
 						
 			SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).clear(); 
-			SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys(invuldata[32]);
+			SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys(invuldata[33]);
 			
-			SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys(invuldata[33]);
+			SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys(invuldata[34]);
 			
 			}
 		}
@@ -588,79 +581,98 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.clear();
 	
 		// naam aandeelhouders
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 69, "TextVeld", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 70, "TextVeld", driver));
 				
 		// BSN
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BSN", 9, 9, "BSN", driver));			
 		
-		if (SpecificatieAandeelhoudersObjecten.Natuurlijkpersoon_nee(driver).isSelected()) {
+		if (driver.findElement(By.id("idCWNLShareholder-no")).isSelected()) {
 			// Straatnaam
-			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam",1, 24, "TextVeld", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam",1, 23, "TextVeld", driver));
 			
+			// Huisnummer
 			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5, "PositiefGetal", driver));
+						
+			//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Postcode", 1, 6, "TextVeld", driver));
 			
-			// postcode validatie nog niet geimplementeerd. na implementatie controleren.
-			 
-			// Postcode
-					
-			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Postcode", 1, 6, "TextVeld", driver));
-			
-			// Huisnummer toev validatie nog niet geimplementeerd. na implementatie controleren. 		
-			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnrToev",1, 5, "TextVeld", driver));
 			// Huisnummer toev
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnrToev",1, 4, "TextVeld", driver));
+
+			// Huisnummer buitenlands adres
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnummerBuitenl",1, 9, "TextVeld", driver));
+
 			
-			// Woonplaats uitzetten omdat deze de tooltip dubbel weergeeft. juist tekst wordt wel weergegeven.	
 			// Woonplaats
-			
-			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Woonplaats", 1, 20, "TextVeld", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Woonplaats", 1, 24, "TextVeld", driver));
 		
 		}
 		// nominale waarde aandelen
 		
-		/* Check uit ivm bug.
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, false, false, driver));
-		*/
-		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, "GeheelGetal", driver));
+				
 		// Nominale waarde preferente aandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente",1 , 20, "TextVeld", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente",1 , 20, "GeheelGetal", driver));
 				
 		// Nominale waarde prioriteitsaandelen einde boekjaar 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePrioriteits", 1, 20, "TextVeld", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePrioriteits", 1, 20, "GeheelGetal", driver));
 		
-		// Percentage nominaal geplaatst kapitaal 
+		// Percentage nominaal geplaatst kapitaal - FIXEN !! 
+		///ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("", 1, 20, "Procent", driver));
 		
 		// Vordering belastingplichtige op aandeelhouder
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("VorderingBelastingplichtige", 1, 20, "PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("VorderingBelastingplichtige", 1, 20, "PositiefGeheelGetal", driver));
 		
 		// Schuld belastingplichtige aan aandeelhouder
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("SchuldBelastingplichtige",1 , 20, "PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("SchuldBelastingplichtige",1 , 20, "PositiefGeheelGetal", driver));
 
 		// In het boekjaar ontvangen rente van de aandeelhouder
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarOntvangenRente",1 , 20, "PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarOntvangenRente",1 , 20, "PositiefGeheelGetal", driver));
 				
 		// boekjaar betaalde rente
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarBetaaldeRente",1 , 20, "PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BoekjaarBetaaldeRente",1 , 20, "PositiefGeheelGetal", driver));
 		
+		if (driver.findElement(By.id("idn26n68gz")).isSelected()) {
 		
-		if (SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).isSelected()) {
 		//informele kapitaalstorting
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BedragInformeleKapitaalStorting", 1 , 99,  "PositiefGetal", driver));
+					
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BedragInformeleKapitaalStorting", 1 ,20,  "PositiefGetal", driver));
+		
+		//mening informele kapitaal storting
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("WaaromInformeleKapitaalstorting",1 , 254, "TextVeld", driver));
+		
+		//Naam Uiteindelijke moedermaatschappij
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamMoedermaatschappij",1 , 200, "TextVeld", driver));
+		
+		//moeder maatschappij Straatnaam
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijStraatnaam",1 , 24, "TextVeld", driver));
 		
 		//moeder maatschappij huisnummer
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 5, "TextVeld", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummer",1 , 5, "PositiefGetal", driver));
 		
+		//moeder maatschappij huisnummer toev
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijHuisnummerToev",1 , 4, "TextVeld", driver));
 		
-			if (SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).isSelected()) {
+		//moeder maatschappij vestigingsplaats		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("MoederMaatschappijVestigingsplaats",1 , 24, "TextVeld", driver));
+		
+		//Rechtspersoon
+		
+			if (driver.findElement(By.id("idn26n68h8-no")).isSelected()) {
+				
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamRechtspersoon",1 , 200, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("StraatnaamRechtspersoon",1 , 24, "TextVeld", driver));
 				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnummerRechtspersoon",1 , 5, "TextVeld", driver));
 				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("ToevHuisnummerRechtspersoon",1 , 4, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("VestigingsplaatsRechtspersoon",1 , 24, "TextVeld", driver));
+				
 			}
 		
 		}
-				
+		
 			
 		// als validatieresultaat niet leeg is dan melding genereren.
-		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		driver.quit();
+		System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		//driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 		
 	}

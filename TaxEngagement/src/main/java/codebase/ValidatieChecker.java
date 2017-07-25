@@ -88,18 +88,24 @@ public class ValidatieChecker {
 			}
 		}
 
-		
+		// 4 Cijfers
 		if (SoortValidatie.equals("4cijfers")) {
 			if (!inputwaarde.matches("\\d{4}")) {
 			System.out.println("4Cijfers");
 			}
 		}
 		
+		if (SoortValidatie.equals("Procent")) {
+			if (!inputwaarde.matches("(\\d|\\d{2}|\\d{3})[.]\\d{2}")) {
+			System.out.println("Procent");
+			}
+		}
+				
 		return Feedback;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(CheckValue("1234", 1, 5, "4cijfers"));
+		System.out.println(CheckValue("-31000000000000000000", 1, 20, "PositiefGeheelGetal"));
 
 	}
 }

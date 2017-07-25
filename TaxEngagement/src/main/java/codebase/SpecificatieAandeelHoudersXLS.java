@@ -25,7 +25,7 @@ public class SpecificatieAandeelHoudersXLS {
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [34];
+			opsommingresultaat = new String [35];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -60,6 +60,7 @@ public class SpecificatieAandeelHoudersXLS {
 			opsommingresultaat[31]= new DataFormatter().formatCellValue(row.getCell(31));
 			opsommingresultaat[32]= new DataFormatter().formatCellValue(row.getCell(32));
 			opsommingresultaat[33]= new DataFormatter().formatCellValue(row.getCell(33));
+			opsommingresultaat[34]= new DataFormatter().formatCellValue(row.getCell(34));
 			
 			resultaat = opsommingresultaat;			
 
@@ -75,7 +76,7 @@ public class SpecificatieAandeelHoudersXLS {
 		
 		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(1);
 		
-		System.out.println(invuldata[27]);
+		System.out.println(invuldata[6]);
 		
 		}
 }

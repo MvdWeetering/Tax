@@ -47,6 +47,12 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		return element;
 	}
 	
+	@FieldName(name = "HuisnummerBuitenl")
+	public static WebElement HuisnummerBuitenl(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68gn-popover"));
+		return element;
+	}
+	
 	@FieldName(name = "Postcode")
 	public static WebElement Postcode (WebDriver driver){
 		element = driver.findElement(By.id(""));
@@ -82,22 +88,73 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tzss-popover"));
 		return element;
 	}
+	
+	@FieldName(name = "WaaromInformeleKapitaalstorting")
+	public static WebElement WaaromInformeleKapitaalstorting(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h1-popover"));
+		return element;
+	}
+	
 	@FieldName(name = "BedragInformeleKapitaalStorting")
 	public static WebElement BedragInformeleKapitaalStorting (WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h0-popover"));
 		return element;
 	}
+	
+	
+	//Moedermaatschappij gegevens
+		
+	@FieldName(name = "NaamMoedermaatschappij")
+	public static WebElement NaamMoedermaatschappij(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h2-popover"));
+		return element;
+	}
+	
+	@FieldName(name = "MoederMaatschappijStraatnaam")
+	public static WebElement MoederMaatschappijStraatnaam(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h3-popover"));
+		return element;
+	}
+	
 	@FieldName(name = "MoederMaatschappijHuisnummer")
 	public static WebElement MoederMaatschappijHuisnummer (WebDriver driver){
 		element = driver.findElement(By.id("idn26n68h4-popover"));
 		return element;
 	}
+		
+	@FieldName(name = "MoederMaatschappijHuisnummerToev")
+	public static WebElement MoederMaatschappijHuisnummerToev(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h5-popover"));
+		return element;
+	}
+	
+	@FieldName(name = "MoederMaatschappijVestigingsplaats")
+	public static WebElement MoederMaatschappijVestigingsplaats(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68h6-popover"));
+		return element;
+	}
+	
+	
 	@FieldName(name = "BSN")
 	public static WebElement BSN (WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzsc-popover"));
 		return element;
 	}
+
 	
+	//Rechtspersoon
+	@FieldName(name = "NaamRechtspersoon")
+	public static WebElement NaamRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68ha-popover"));
+		return element;
+	}
+	
+	@FieldName(name = "StraatnaamRechtspersoon")
+	public static WebElement StraatnaamRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68hb-popover"));
+		return element;
+	}
+		
 	@FieldName(name = "HuisnummerRechtspersoon")
 	public static WebElement HuisnummerRechtspersoon (WebDriver driver){
 		element = driver.findElement(By.id("idn26n68hc-popover"));
@@ -108,7 +165,11 @@ public class SpecificatieAandeelhoudersTooltipObjects {
 		element = driver.findElement(By.id("idn26n68hd-popover"));
 		return element;
 	}	
-	
+	@FieldName(name = "VestigingsplaatsRechtspersoon")
+	public static WebElement VestigingsplaatsRechtspersoon(WebDriver driver){
+		element = driver.findElement(By.id("idn26n68he-popover"));
+		return element;
+	}	
 	
 }
 
