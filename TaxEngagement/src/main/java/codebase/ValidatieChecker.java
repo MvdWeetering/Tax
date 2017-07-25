@@ -65,7 +65,6 @@ public class ValidatieChecker {
 			}
 		}
 		
-		
 		// Lengte checkers
 		if (inputwaarde.length() > Max) {
 			Feedback.add("Te lang");
@@ -89,12 +88,18 @@ public class ValidatieChecker {
 			}
 		}
 
+		
+		if (SoortValidatie.equals("4cijfers")) {
+			if (!inputwaarde.matches("\\d{4}")) {
+			System.out.println("4Cijfers");
+			}
+		}
+		
 		return Feedback;
 	}
 
 	public static void main(String[] args) {
-
-		System.out.println(CheckValue("1001", 1, 5, "GeheelGetal"));
+		System.out.println(CheckValue("1234", 1, 5, "4cijfers"));
 
 	}
 }
