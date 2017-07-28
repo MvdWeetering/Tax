@@ -18,6 +18,7 @@ Feature: vullen formulieren
     Examples: 
       | Id |
       |  1 |
+      |  2 |
 
   @vullen_formulier @Algemene_vragen
   Scenario: vullen formulier Algemene Vragen
@@ -107,9 +108,12 @@ Feature: vullen formulieren
     Then i can validate the error messages for the Balans Activa form from tab <TCID>
     Then i can validate the totals for Balans Activa from tab <TCID>
 
+
     Examples: 
       | TCID   |
       | "TC01" |
+      | "TC02" |
+      | "TC03" |
 
 
   @vullen_formulier @Balans_Passiva
@@ -120,7 +124,9 @@ Feature: vullen formulieren
     And open the Project "dossier 17072017"
     And open the form Balans Passiva
     Then i can fill out the form Balans Passiva from tab <TCID>
+    Then i can validate the error messages for the Balans Passiva form from tab <TCID>
     Then i can validate the totals for Balans Passiva from tab <TCID>
+
 
     Examples: 
       | TCID   |
@@ -178,6 +184,8 @@ Feature: vullen formulieren
     And open the form FiscaleVermogensVergelijking
     Then i can fill out the form FiscaleVermogensVergelijking from <TCID>
     Then i can validate the error messages for the formulier FiscaleVermogensVergelijking from <TCID>
+    Then i can validate the totals the formulier FiscaleVermogensVergelijking from  <TCID>
+
 
     Examples: 
       | TCID   |

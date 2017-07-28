@@ -10,7 +10,7 @@ public class BalansPassivaObjecten {
 	
 	//Ondernemingsvermogen
 	
-	
+
 	public static WebElement OndernemingsvermogenCommercieeel_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idOnv1R0C1"));
 		return element;
@@ -55,6 +55,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "GestortOpgevraagdFiscaal31_12")
 	public static WebElement GestortOpgevraagdFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tznh"));
 		return element;
@@ -105,7 +106,8 @@ public class BalansPassivaObjecten {
 		element = driver.findElement(By.id("idOnv2R2C7"));
 		return element;
 	}
-
+	
+	@FieldName(name = "AgioFiscaal31_12")
 	public static WebElement AgioFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tznj"));
 		return element;
@@ -156,6 +158,8 @@ public class BalansPassivaObjecten {
 		element = driver.findElement(By.id("idOnv2R4C7"));
 		return element;
 	}
+	
+	@FieldName(name = "KostenegalisatiereserveFiscaal31_12")	
 	public static WebElement KostenegalisatiereserveFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tznm"));
 		return element;
@@ -180,6 +184,8 @@ public class BalansPassivaObjecten {
 		element = driver.findElement(By.id("idOnv2R5C7"));
 		return element;
 	}
+	
+	@FieldName(name = "HerinvesteringsreserveFiscaal31_12")
 	public static WebElement HerinvesteringsreserveFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tznp"));
 		return element;
@@ -228,6 +234,8 @@ public class BalansPassivaObjecten {
 		element = driver.findElement(By.id("idOnv2R7C7"));
 		return element;
 	}
+	
+	@FieldName(name = "OverigeFiscaleReservesFiscaal31_12")
 	public static WebElement OverigeFiscaleReservesFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzny"));
 		return element;
@@ -353,6 +361,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "OverigeVoorzieningFiscaal31_12")
 	public static WebElement OverigeVoorzieningFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzo6"));
 		return element;
@@ -404,6 +413,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "LanglopendeSchuldenFiscaal31_12")
 	public static WebElement LanglopendeSchuldenFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzol"));
 		return element;
@@ -430,6 +440,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "ConverteerbareleningenFiscaal31_12")
 	public static WebElement ConverteerbareleningenFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzoc"));
 		return element;
@@ -454,7 +465,8 @@ public class BalansPassivaObjecten {
 		element = driver.findElement(By.id("idLls2R1C7"));
 		return element;
 	}
-
+	
+	@FieldName(name = "SchuldenKredietInstFiscaal31_12")
 	public static WebElement SchuldenKredietInstFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzod"));
 		return element;
@@ -480,6 +492,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "ObligatiesFiscaal31_12")
 	public static WebElement ObligatiesFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzog"));
 		return element;
@@ -507,6 +520,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "LanglopendeSchuldenGrMaatschFiscaal31_12")
 	public static WebElement LanglopendeSchuldenGrMaatschFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzoi"));
 		return element;
@@ -533,6 +547,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "LanglopendeSchuldenPartMaatschDeelnemingFiscaal31_12")
 	public static WebElement LanglopendeSchuldenPartMaatschDeelnemingFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzon"));
 		return element;
@@ -559,6 +574,7 @@ public class BalansPassivaObjecten {
 		return element;
 	}	
 	
+	@FieldName(name = "OverigeLangLopendeSchFiscaal31_12")
 	public static WebElement OverigeLangLopendeSchFiscaal31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzof"));
 		return element;

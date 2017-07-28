@@ -157,7 +157,7 @@ public class FiscaleVermogensVergelijkingObjecten {
 		return element;
 	}
 	
-	@FieldName(name = "NietAftrekbaarWinstuitdelingenCooperaties ")
+	@FieldName(name = "NietAftrekbaarWinstuitdelingenCooperaties")
 	public static WebElement NietAftrekbaarWinstuitdelingenCooperaties(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzed"));
 		return element;
@@ -168,8 +168,7 @@ public class FiscaleVermogensVergelijkingObjecten {
 		return element;
 	}
 	
-	
-	
+		
 	@FieldName(name = "WinstuitdelingenCooperaties")
 	public static WebElement WinstuitdelingenCooperaties(WebDriver driver){
 		element = driver.findElement(By.id("idCWNLWinDooCoo"));
@@ -184,7 +183,7 @@ public class FiscaleVermogensVergelijkingObjecten {
 	
 	@FieldName(name = "NietAftrekbaarWinstuitdelingenCooperaties_sub")
 	public static WebElement NietAftrekbaarWinstuitdelingenCooperaties_sub(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzed"));
+		element = driver.findElement(By.id("idCWNLTotNieAftDeeWinDooCoo"));
 		return element;
 	}
 	

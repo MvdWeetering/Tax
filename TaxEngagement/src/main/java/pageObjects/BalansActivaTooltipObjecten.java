@@ -81,15 +81,34 @@ public class BalansActivaTooltipObjecten {
 		return element;
 	}	
 	
+	@FieldName(name = "HandelsdebiteurenNominale")	
+	public static WebElement HandelsdebiteurenNominale(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzmz-popover"));
+		return element;
+	}
+		
 	@FieldName(name = "HandelsdebiteurenFiscaal_31_12")	
 	public static WebElement HandelsdebiteurenFiscaal_31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzmx-popover"));
 		return element;
 	}	
 	
+	@FieldName(name = "KortVordGroepNominale")	
+	public static WebElement KortVordGroepNominale(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzn7-popover"));
+		return element;
+	}
+	
+	
 	@FieldName(name = "KortVordGroepFiscaal_31_12")	
 	public static WebElement KortVordGroepFiscaal_31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzn0-popover"));
+		return element;
+	}
+	
+	@FieldName(name = "KortVordPartNominaal")
+	public static WebElement KortVordPartNominaal(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzn8-popover"));
 		return element;
 	}
 	
@@ -105,5 +124,10 @@ public class BalansActivaTooltipObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "EffectenFiscaal_31_12")
+	public static WebElement EffectenFiscaal_31_12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzn9-popover"));
+		return element;
+	}
 	
 }

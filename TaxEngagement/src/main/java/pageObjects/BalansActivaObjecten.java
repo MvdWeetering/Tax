@@ -575,6 +575,7 @@ public class BalansActivaObjecten {
 			
 	//Handelsdebiteuren
 	
+	@FieldName(name = "HandelsdebiteurenNominale")	
 	public static WebElement HandelsdebiteurenNominale(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzmz"));
 		return element;
@@ -634,7 +635,7 @@ public class BalansActivaObjecten {
 	}
 	
 	//Kortlopende vorderingen op groepsmaatschappijen
-	
+	@FieldName(name = "KortVordGroepNominale")	
 	public static WebElement KortVordGroepNominale(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzn7"));
 		return element;
@@ -668,6 +669,7 @@ public class BalansActivaObjecten {
 	
 	//Kortlopende vorderingen participanten/ maatschappijen
 	
+	@FieldName(name = "KortVordPartNominaal")
 	public static WebElement KortVordPartNominaal(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzn8"));
 		return element;
@@ -779,6 +781,7 @@ public class BalansActivaObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "EffectenFiscaal_31_12")
 	public static WebElement EffectenFiscaal_31_12(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzn9"));
 		return element;

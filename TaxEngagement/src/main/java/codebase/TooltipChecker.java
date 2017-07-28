@@ -81,6 +81,81 @@ public class TooltipChecker extends AbstractSteps {
 
 	}
 
+	public static ArrayList<String> CheckTooltipFiscaleVermogens(String Naamobject, int Minlengte, int Maxlengte,String SoortValidatie, WebDriver driver) throws Exception {
+		Actions action = new Actions(driver);
+		TooltipResult.clear();
+		Thread.sleep(600);
+		// mous-over naar naamobject
+		action.moveToElement(invoke(FiscaleVermogensVergelijkingObjecten.class, Naamobject, driver)).build().perform();
+
+		invoke(FiscaleVermogensVergelijkingObjecten.class, Naamobject, driver).click();
+
+		// checker
+		checker.clear();
+		checker = codebase.ValidatieChecker.CheckValue(invoke(FiscaleVermogensVergelijkingObjecten.class, Naamobject, driver).getAttribute("value"), Minlengte, Maxlengte, SoortValidatie);
+		if (!checker.isEmpty()) {
+			try {
+				WebElement elem = invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver);
+				// Null indicates: expected tooltip text balloon is missing
+				if (elem == null) {
+					TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
+					System.out.println("Tooltip ontbreekt voor element:" + Naamobject);
+				} 
+
+				else {
+					if (checker.contains("BSN")) {
+						if (!invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText().contains("[11 Proef] Dit veld voldoet niet aan de 11 proef of bevat geen 9 cijfers")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[11 Proef] Dit veld voldoet niet aan de 11 proef of bevat geen 9 cijfers \r\n");
+						}
+					}
+					else {
+						if (checker.contains("Te lang")) {
+							if (!invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" + invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
+							}
+
+						}
+
+						if (checker.contains("Geen positief getal")) {
+							if (!invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Negatief] Dit veld moet een positief getal bevatten \r\n ");
+							}
+						}
+						if (checker.contains("Geheel Getal")) {
+							if (!invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText().contains("[Getal] Dit veld mag alleen getallen bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld mag alleen getallen bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Getal] Dit veld mag alleen getallen bevatten \r\n");
+							}
+						}
+						if (checker.contains("Te Kort")) {
+							if (!invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
+							}
+						}
+					}
+				}
+			}
+			catch (NoSuchElementException e) {
+				e.printStackTrace();
+				// TODO Auto-generated catch block
+				System.out.println("no element found");
+			}
+		}
+		return TooltipResult;
+	}
+	
+	//
 	public static ArrayList<String> CheckTooltipAlgemeneGegevens(String Naamobject, int Minlengte, int Maxlengte,String SoortValidatie, WebDriver driver) throws Exception {
 		Actions action = new Actions(driver);
 		TooltipResult.clear();
@@ -466,6 +541,93 @@ public class TooltipChecker extends AbstractSteps {
 
 
 	}
+	
+	
+	public static ArrayList<String> CheckTooltipBalansPassiva(String Naamobject, int Minlengte, int Maxlengte, String SoortValidatie, WebDriver driver) throws Exception {
+		Actions action = new Actions(driver);
+		TooltipResult.clear();
+		Thread.sleep(800);
+		// mous-over naar naamobject
+		action.moveToElement(invoke(BalansPassivaObjecten.class, Naamobject, driver)).build().perform();
+
+		invoke(BalansPassivaObjecten.class, Naamobject, driver).click();
+
+		// checker
+		checker.clear();
+		checker = codebase.ValidatieChecker.CheckValue(invoke(BalansPassivaObjecten.class, Naamobject, driver).getAttribute("value"), Minlengte, Maxlengte, SoortValidatie);
+		if (!checker.isEmpty()) {
+			try {
+				WebElement elem = invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver);
+				// Null indicates: expected tooltip text balloon is missing
+				if (elem == null) {
+					TooltipResult.add("Tooltip ontbreekt voor element " + Naamobject);
+					System.out.println("Tooltip ontbreekt voor element:" + Naamobject);
+				} 
+
+				else {
+					if (checker.contains("BSN")) {
+						if (!invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText().contains("[11 Proef] Dit veld voldoet niet aan de 11 proef of bevat geen 9 cijfers")) {
+							TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[11 Proef] Dit veld voldoet niet aan de 11 proef of bevat geen 9 cijfers \r\n");
+						}
+					}
+					else {
+						if (checker.contains("Te lang")) {
+							if (!invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" + invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
+							}
+
+						}
+
+						if (checker.contains("Geen positief getal")) {
+							if (!invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Negatief] Dit veld moet een positief getal bevatten \r\n ");
+							}
+						}
+						if (checker.contains("Te Kort")) {
+							if (!invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
+							}
+						}
+						if (checker.contains("Te Kort")) {
+							if (!invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten\" \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
+							}
+						}
+					}
+				}
+			}
+			catch (NoSuchElementException e) {
+				e.printStackTrace();
+				// TODO Auto-generated catch block
+				System.out.println("no element found");
+			}
+		}
+		return TooltipResult;
+
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static ArrayList<String> CheckTooltipInnovatieBox(String Naamobject, int Minlengte, int Maxlengte, String SoortValidatie, WebDriver driver) throws Exception {
 		Actions action = new Actions(driver);
 		TooltipResult.clear();

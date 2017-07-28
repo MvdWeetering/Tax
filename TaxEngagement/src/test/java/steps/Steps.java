@@ -1938,6 +1938,54 @@ public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Th
 	
 }
 
+
+@Then("^i can validate the error messages for the Balans Passiva form from tab \"(.*?)\"$")
+public void i_can_validate_the_error_messages_for_the_Balans_Passiva_form_from_tab(String arg1) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+
+
+	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+	
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("GestortOpgevraagdFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("AgioFiscaal31_12", 1, 20, "PositiefGetal", driver));
+
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("KostenegalisatiereserveFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("HerinvesteringsreserveFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("OverigeFiscaleReservesFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("OverigeVoorzieningFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("ConverteerbareleningenFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("SchuldenKredietInstFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("ObligatiesFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("LanglopendeSchuldenGrMaatschFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("LanglopendeSchuldenPartMaatschDeelnemingFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("OverigeLangLopendeSchFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("LanglopendeSchuldenFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	
+	
+	
+	
+	
+	assertTrue(ValidatieResultaat.isEmpty());	
+}
+
+
+
+
+
+
+
 @Then("^i can validate the error messages for the Balans Activa form from tab \"(.*?)\"$")
 public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_tab(String Tab) throws Throwable {
 
@@ -1945,7 +1993,7 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	js.executeScript("window.scrollBy(0,-750)", "");
 		
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-	/*	
+		
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("NaamOnderneming", 1, 200, "TextVeld", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OmschrijvingActiviteit", 1, 70,"TextVeld", driver));
 		
@@ -1969,7 +2017,7 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	
 	//Machines en installaties
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("MachinesFiscaal_31_12", 1, 20,"PositiefGetal", driver));
-	*/		
+		
 	//Andere vaste bedrijfsmiddelen
 	//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("AndereBedrijfsFiscaal_31_12", 1, 20,"PositiefGetal", driver));
 		
@@ -1980,15 +2028,15 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("langlopendevordPartNominaleWaarde", 1, 20,"PositiefGetal", driver));
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OverigeFinActivaNominaleWaarde", 1, 20,"PositiefGetal", driver));
 				
-		//LOL !!		
+		//Loze click		
 		BalansActivaObjecten.DeelnemingenFiscaal_31_12(driver).click();
 		
-			//Fiscaal 31-12
+		//Fiscaal 31-12
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("langlopendevordGroepsFiscaal_31_12", 1, 20,"PositiefGetal", driver));
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("langlopendevordPartFiscaal_31_12", 1, 20,"PositiefGetal", driver));
 	
 	
-	//Overige financiële vaste activa
+	//Overige financiï¿½le vaste activa
 		//Nominale waarde
 		//Fiscaal 31-12
 	
@@ -2002,6 +2050,20 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	
 	//Handelsdebiteuren
 		//Nominale waarde
+		
+		//loze click
+		BalansActivaObjecten.TotaalVorderingenCommercieel_1_1(driver).click();
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("HandelsdebiteurenNominale", 1, 20,"PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("KortVordGroepNominale", 1, 20,"PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("KortVordPartNominaal", 1, 20,"PositiefGetal", driver));
+		
+		
+		//loze click
+		BalansActivaObjecten.OverigeVordFiscaal_31_12(driver).click();
+		
+		
+		
 		//Fiscaal 31-12
 	
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("HandelsdebiteurenFiscaal_31_12", 1, 20,"PositiefGetal", driver));
@@ -2019,7 +2081,9 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OverigeVordFiscaal_31_12", 1, 20,"PositiefGetal", driver));
 	
 		//Effecten
-	
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("EffectenFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+		
 	
 	//Liquide middelen
 	
@@ -2172,7 +2236,7 @@ public void i_can_validate_the_totals_for_Balans_Activa_from_tab(String Tab) thr
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",77, Tab)), "G77"));
 		
 	//System.out.println(ValidatieResultaat);
-	//driver.quit();
+	driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());
 	
 }
@@ -2662,7 +2726,7 @@ public void i_can_validate_the_totals_for_Balans_Passiva_from_tab(String Tab) th
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.TotaalPassivaFiscaal31_12(driver).getAttribute("value"), Double.parseDouble(BalansPassivaXLS.HaalData("F",59, Tab)), "F59"));	
 	
 	//System.out.println(ValidatieResultaat);
-	driver.quit();
+	//driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());
 	
 }
@@ -2980,32 +3044,46 @@ public void i_can_fill_out_the_form_FiscaleVermogensVergelijking_from(String Tab
 	FiscaleVermogensVergelijkingObjecten.KostenAankoopResterendeAandelenDochtermaatschappijen(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F",54, "TC01"));
 	
 }
+@Then("^i can validate the totals the formulier FiscaleVermogensVergelijking from  \"(.*?)\"$")
+public void i_can_validate_the_totals_the_formulier_FiscaleVermogensVergelijking_from(String Tab) throws Throwable {
+	  
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.TotaalEindvermogenTerugbetalingen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",8, Tab)), "F8"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.TotaalBeginvermogenStortingen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",13, Tab)), "F13"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.Vermogensverschil(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",14, Tab)), "F14"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbareBedragen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",15, Tab)), "F15"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.SaldoFiscaleWinstberekening(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",16, Tab)), "F16"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.ResultaatWinstVerliesrekening(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",18, Tab)), "F18"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.DividendOnderworpenWinstuitdelingen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",21, Tab)), "F21"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarWinstuitdelingenCooperaties(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",30, Tab)), "F30"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarWinstuitdelingenCooperaties_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",33, Tab)), "E33"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelBeloningenCommissarissen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",36, Tab)), "F36"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelBeloningenCommissarissen_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",39, Tab)), "E39"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelTantiemes(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",41, Tab)), "F41"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelTantiemes_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",21, Tab)), "F21"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelVergoedingenKapitaalverstrekking(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",47, Tab)), "F47"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelVergoedingenKapitaalverstrekking_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",50, Tab)), "E50"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbareBedragen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",56, Tab)), "F56"));
+			
+		//System.out.println(ValidatieResultaat);
+		//driver.quit();
+		assertTrue(ValidatieResultaat.isEmpty());
+   
+}
 
 @Then("^i can validate the error messages for the formulier FiscaleVermogensVergelijking from \"(.*?)\"$")
 public void i_can_validate_the_error_messages_for_the_formulier_FiscaleVermogensVergelijking_from(String Tab) throws Throwable {
-  
+
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 	
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.TotaalEindvermogenTerugbetalingen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",8, Tab)), "F8"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.TotaalBeginvermogenStortingen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",13, Tab)), "F13"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.Vermogensverschil(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",14, Tab)), "F14"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbareBedragen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",15, Tab)), "F15"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.SaldoFiscaleWinstberekening(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",16, Tab)), "F16"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.ResultaatWinstVerliesrekening(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",18, Tab)), "F18"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.DividendOnderworpenWinstuitdelingen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",21, Tab)), "F21"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarWinstuitdelingenCooperaties(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",30, Tab)), "F30"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarWinstuitdelingenCooperaties_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",33, Tab)), "E33"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelBeloningenCommissarissen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",36, Tab)), "F36"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelBeloningenCommissarissen_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",39, Tab)), "E39"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelTantiemes(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",41, Tab)), "F41"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelTantiemes_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",21, Tab)), "F21"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelVergoedingenKapitaalverstrekking(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",47, Tab)), "F47"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelVergoedingenKapitaalverstrekking_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",50, Tab)), "E50"));
-	ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbareBedragen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",56, Tab)), "F56"));
-		
-	//System.out.println(ValidatieResultaat);
-	driver.quit();
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipFiscaleVermogens("NietAftrekbaarWinstuitdelingenCooperaties", 1, 20,"PositiefGetal", driver));
+	
+	System.out.println(ValidatieResultaat);
+	//driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());
+	
+	
 	
 	}
 @When("^open the form Zeescheepvaart$")
