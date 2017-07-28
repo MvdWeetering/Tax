@@ -394,7 +394,7 @@ public class TooltipChecker extends AbstractSteps {
 	public static ArrayList<String> CheckTooltipBalansActiva(String Naamobject, int Minlengte, int Maxlengte, String SoortValidatie, WebDriver driver) throws Exception {
 		Actions action = new Actions(driver);
 		TooltipResult.clear();
-		Thread.sleep(600);
+		Thread.sleep(800);
 		// mous-over naar naamobject
 		action.moveToElement(invoke(BalansActivaObjecten.class, Naamobject, driver)).build().perform();
 

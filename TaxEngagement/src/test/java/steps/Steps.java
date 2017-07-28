@@ -3,18 +3,12 @@ package steps;
 
 import static org.junit.Assert.assertTrue;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.builder.CompareToBuilder;
-import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -23,6 +17,7 @@ import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.BalansActivaObjecten;
 import pageObjects.BalansPassivaObjecten;
+import pageObjects.FieldName;
 import pageObjects.FiscaleVermogensVergelijkingObjecten;
 import pageObjects.InnovatieboxObjecten;
 import pageObjects.InvesteringsaftrekObjecten;
@@ -312,12 +307,33 @@ public class Steps extends AbstractSteps {
 	   
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
+		
+		//Handelsnaam onderneming 
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("HandelsnaamOnderneming", 1, 200, "TextVeld", driver));
+		
 		// RSIN
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
 		
 		// Beconnummer
 		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 9, true, true, driver));
 		
+		//Toelichting verzoek
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
+		
+		
+		//Consulent **
+				
+		
+		//Becon 
+		
+		//Client groep
+		
+		//Naam koepelorganisatie fiscale dienstverleners
+		
+		//Beconnummer (intermediair)
+		
+		//Aanhef
 		
 		// Voorletters contactpersoon
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("VoorlettersContact", 1, 10, "TextVeld", driver));
@@ -326,11 +342,14 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TussenvoegselContact", 1, 10, "TextVeld", driver));
 		
 		// Achternaam contact
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("AchternaamContact", 1, 10, "TextVeld", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("AchternaamContact", 1, 200, "TextVeld", driver));
 		
 		// telefoonnummer contact
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TelefoonnummerContact", 1, 14, "TextVeld", driver));
 		
+				
+		//Ondertekenaar **
+				
 		// Voorletters ondertekenaar
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("VoorlettersOndertekenaar", 1, 10, "TextVeld", driver));
 		
@@ -345,7 +364,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("FunctieOndertekenaar", 1, 35, "TextVeld", driver));
 		
 		// Telefoonnummer ondertekenaar
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TelefoonnummerOndertekenaar", 1, 35, "TextVeld", driver));		 
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TelefoonnummerOndertekenaar", 1, 14, "TextVeld", driver));		 
 		
 					
 		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
@@ -1926,10 +1945,93 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	js.executeScript("window.scrollBy(0,-750)", "");
 		
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-		
+	/*	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("NaamOnderneming", 1, 200, "TextVeld", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OmschrijvingActiviteit", 1, 70,"TextVeld", driver));
-					
+		
+	
+	
+	//goodwill fiscaal 
+	
+		//aanschaf voortbr kosten
+		//Fiscaal 31-12
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("GoodwillFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+	
+	//overige immateriele vaste activa
+	
+		//aanschaf voortbr kosten
+		//Fiscaal 31-12
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OverigeImmaterieleFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+	
+	//Gebouwen en terreinen
+		
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("GebouwenTerreinenFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+	
+	//Machines en installaties
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("MachinesFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+	*/		
+	//Andere vaste bedrijfsmiddelen
+	//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("AndereBedrijfsFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+		
+	//Langlopende vorderingen op groepsmaatschappijen
+	
+	//nominaal
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("langlopendevordGroepsNominaleWaarde", 1, 20,"PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("langlopendevordPartNominaleWaarde", 1, 20,"PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OverigeFinActivaNominaleWaarde", 1, 20,"PositiefGetal", driver));
+				
+		//LOL !!		
+		BalansActivaObjecten.DeelnemingenFiscaal_31_12(driver).click();
+		
+			//Fiscaal 31-12
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("langlopendevordGroepsFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("langlopendevordPartFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+	
+	
+	//Overige financiële vaste activa
+		//Nominale waarde
+		//Fiscaal 31-12
+	
+	//voorraden
+		
+	//Voorraden, excl onderhanden werk
+	
+	//Onderhanden werk
+	
+	//Vorderingen
+	
+	//Handelsdebiteuren
+		//Nominale waarde
+		//Fiscaal 31-12
+	
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("HandelsdebiteurenFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+			
+	//Kortlopende vorderingen op groepsmaatschappijen
+	
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("KortVordGroepFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+		
+	//Kortlopende vorderingen participanten/ maatschappijen
+	
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("KortVordPartFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+		
+	//Overige vorderingen
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OverigeVordFiscaal_31_12", 1, 20,"PositiefGetal", driver));
+	
+		//Effecten
+	
+	
+	//Liquide middelen
+	
+	
+	//Toelichting balans activa 
+	
+	
+	
+	
+	
+	
+	
 	//System.out.println("Validatie resultaat: " + ValidatieResultaat);
 	//driver.quit();
 	
@@ -2070,7 +2172,7 @@ public void i_can_validate_the_totals_for_Balans_Activa_from_tab(String Tab) thr
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_31_12(driver).getAttribute("value"), Double.parseDouble(BalansActivaXLS.HaalData("G",77, Tab)), "G77"));
 		
 	//System.out.println(ValidatieResultaat);
-	driver.quit();
+	//driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());
 	
 }

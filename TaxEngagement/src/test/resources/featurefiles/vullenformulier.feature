@@ -18,7 +18,6 @@ Feature: vullen formulieren
     Examples: 
       | Id |
       |  1 |
-      |  2 |
 
   @vullen_formulier @Algemene_vragen
   Scenario: vullen formulier Algemene Vragen
@@ -102,7 +101,7 @@ Feature: vullen formulieren
     Given I want to login
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 17072017"
+    And open the Project "dossier 27072017"
     And open the form Balans Activa
     Then i can fill out the form Balans Activa from tab <TCID>
     Then i can validate the error messages for the Balans Activa form from tab <TCID>
@@ -111,8 +110,7 @@ Feature: vullen formulieren
     Examples: 
       | TCID   |
       | "TC01" |
-      | "TC02" |
-      | "TC03" |
+
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva

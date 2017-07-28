@@ -8,6 +8,12 @@ public class AlgemeneGegevensTooltipObjects {
 	
 	private static WebElement element = null;
 	
+	
+	@FieldName(name = "HandelsnaamOnderneming")
+	public static WebElement HandelsnaamOnderneming(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tz5o-popover"));
+		return element;
+	}
 	@FieldName(name = "RSIN")
 	public static WebElement RSIN(WebDriver driver){
 		element = driver.findElement(By.id("idcontextIdentifier-popover"));

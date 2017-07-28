@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 public class AlgemeneGegevensObjecten {
 	
 	private static WebElement element = null;
+	
 	@FieldName(name = "HandelsnaamOnderneming")
 	public static WebElement HandelsnaamOnderneming(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tz5o"));
