@@ -18,7 +18,7 @@ Feature: vullen formulieren
     Examples: 
       | Id |
       |  1 |
-      |  2 |
+
 
   @vullen_formulier @Algemene_vragen
   Scenario: vullen formulier Algemene Vragen
@@ -88,14 +88,14 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 17072017"
     And open the form Winst en Verlies rekening
-    Then i can fill out the form Winst en Verlies rekening from tab <TCID>
-    Then i can validate the totals for each column from tab <TCID>
+   
+    Then i can validate the error messages for the Winst en Verlies rekening form from tab <TCID>
+
 
     Examples: 
       | TCID   |
-      | "TC01" |
-      | "TC02" |
       | "TC03" |
+
 
   @vullen_formulier @Balans_Activa
   Scenario Outline: vullen formulier Balans Activa

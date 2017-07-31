@@ -381,6 +381,7 @@ public class WinstenVerliesRekeningObjecten {
 	
 	// Bedrijfsopbrengsten fiscaal 31-12
 	
+	@FieldName(name = "NettoOmzetFiscaal")
 	public static WebElement NettoOmzetFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzis"));
 		   return element;
@@ -391,11 +392,13 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	
+	@FieldName(name = "GeactiveerdeProdFiscaal")
 	public static WebElement GeactiveerdeProdFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tziu"));
 		   return element;
 		}
 	
+	@FieldName(name = "OverigeOpbrFiscaal")
 	public static WebElement OverigeOpbrFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tziw"));
 		   return element;
@@ -488,7 +491,7 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	public static WebElement TotaalPersKostenFiscaal(WebDriver driver){
-		   element = driver.findElement(By.id("idPerR5C5"));
+		   element = driver.findElement(By.id("idPerR6C5"));
 		   return element;
 		}
 	
@@ -596,25 +599,31 @@ public class WinstenVerliesRekeningObjecten {
 	
 	//Financiele baten
 	
+	@FieldName(name = "OpbrengstVordGroepMaatschFiscaal")
 	public static WebElement OpbrengstVordGroepMaatschFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzk5"));
 		   return element;
 		}
+	
+	@FieldName(name = "KwijtscheldingsWinstFiscaal")
 	public static WebElement KwijtscheldingsWinstFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzk8"));
 		   return element;
 		}
 	
+	@FieldName(name = "OpbrengstVordParticipantFiscaal")
 	public static WebElement OpbrengstVordParticipantFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzka"));
 		   return element;
 		}
 	
+	@FieldName(name = "OpbrengstOverigeVordFiscaal")
 	public static WebElement OpbrengstOverigeVordFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzkc"));
 		   return element;
 		}
 	
+	@FieldName(name = "OpbrengstBanktegoedFiscaal")
 	public static WebElement OpbrengstBanktegoedFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzkf"));
 		   return element;
@@ -630,6 +639,7 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	
+	@FieldName(name = "OntvangenDividentFiscaal")
 	public static WebElement OntvangenDividentFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzkk"));
 		   return element;

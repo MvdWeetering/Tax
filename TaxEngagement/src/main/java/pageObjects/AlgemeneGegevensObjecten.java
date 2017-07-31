@@ -66,6 +66,7 @@ public class AlgemeneGegevensObjecten {
 		element = driver.findElement(By.id("idxdt9tz5r"));
 		return element;
 	}
+	
 	@FieldName(name = "Clientgroep")
 	public static WebElement Clientgroep(WebDriver driver){
 		element = driver.findElement(By.id("idCWNLClientgroep"));
@@ -96,31 +97,19 @@ public class AlgemeneGegevensObjecten {
 		element = driver.findElement(By.id("idxdt9tz5w"));
 		return element;
 	}
-	@FieldName(name = "Straatnaam")
-	public static WebElement Straatnaam(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLConsulentStraatnaam"));
+	
+	@FieldName(name = "BeconnummerIntermediair")
+	public static WebElement BeconnummerIntermediair(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tz5y"));
 		return element;
 	}
-	@FieldName(name = "Huisnummer")
-	public static WebElement Huisnummer(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLConsulentHuisnummer"));
+
+	@FieldName(name = "NaamKoepelorgFisDienstverl")
+	public static WebElement NaamKoepelorgFisDienstverl(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tz61"));
 		return element;
 	}
-	@FieldName(name = "Postcode")
-	public static WebElement Postcode(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLConsulentPostcode"));
-		return element;
-	}
-	@FieldName(name = "HuisnummerToevoeging")
-	public static WebElement HuisnummerToevoeging(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLConsulentHuisnummertoevoeging"));
-		return element;
-	}
-	@FieldName(name = "Plaats")
-	public static WebElement Plaats(WebDriver driver){
-		element = driver.findElement(By.id("idCWNLConsulentPlaats"));
-		return element;
-	}
+	
 	@FieldName(name = "VoorlettersOndertekenaar")
 	public static WebElement VoorlettersOndertekenaar(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tz6a"));

@@ -37,6 +37,21 @@ public class AlgemeneGegevensTooltipObjects {
 		element = driver.findElement(By.id("idxdt9tz5u-popover"));
 		return element;
 	}
+	
+	
+	@FieldName(name = "BeconnummerIntermediair")
+	public static WebElement BeconnummerIntermediair(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tz5y-popover"));
+		return element;
+	}
+
+	@FieldName(name = "NaamKoepelorgFisDienstverl")
+	public static WebElement NaamKoepelorgFisDienstverl(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tz61-popover"));
+		return element;
+	}
+	
+	
 	@FieldName(name = "VoorlettersOndertekenaar")
 	public static WebElement VoorlettersOndertekenaar(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tz6a-popover"));
@@ -79,7 +94,11 @@ public class AlgemeneGegevensTooltipObjects {
 		return element;
 	}
 	
-	
+	@FieldName(name = "Toelichtingverzoek")
+	public static WebElement Toelichtingverzoek(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzf0-popover"));
+		return element;
+	}
 	
 }
 

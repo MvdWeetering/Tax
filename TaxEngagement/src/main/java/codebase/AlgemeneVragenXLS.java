@@ -25,7 +25,7 @@ public class AlgemeneVragenXLS {
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [20];
+			opsommingresultaat = new String [21];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -46,6 +46,7 @@ public class AlgemeneVragenXLS {
 			opsommingresultaat[17]= new DataFormatter().formatCellValue(row.getCell(17));
 			opsommingresultaat[18]= new DataFormatter().formatCellValue(row.getCell(18));
 			opsommingresultaat[19]= new DataFormatter().formatCellValue(row.getCell(19));
+			opsommingresultaat[20]= new DataFormatter().formatCellValue(row.getCell(20));
 			
 			resultaat = opsommingresultaat;			
 

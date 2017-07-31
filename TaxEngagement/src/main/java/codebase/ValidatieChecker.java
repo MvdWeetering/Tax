@@ -97,15 +97,22 @@ public class ValidatieChecker {
 		
 		if (SoortValidatie.equals("Procent")) {
 			if (!inputwaarde.matches("(\\d|\\d{2}|\\d{3})[.]\\d{2}")) {
-			System.out.println("Procent");
+				Feedback.add("Procent");
 			}
 		}
-				
+		
+		if (SoortValidatie.equals("Positief6")) {
+			
+			if (!inputwaarde.matches("[0-9]{6}")) {
+				Feedback.add("Positief6");
+			}
+		}
+							
 		return Feedback;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(CheckValue("-31000000000000000000", 1, 20, "PositiefGeheelGetal"));
+		System.out.println(CheckValue("0000001", 1, 99, "Positief6"));
 
 	}
 }

@@ -207,6 +207,11 @@ public class Steps extends AbstractSteps {
 		else {
 			AlgemeneVragenObjecten.vraag15_no(driver).click();
 		}
+		
+		AlgemeneVragenObjecten.SaldoUltimo(driver).clear();
+		AlgemeneVragenObjecten.SaldoUltimo(driver).sendKeys(invuldata[16]);
+		
+		
 		if (invuldata[16].equals("ja")) {
 			AlgemeneVragenObjecten.vraag16_yes(driver).click();
 		}
@@ -214,9 +219,9 @@ public class Steps extends AbstractSteps {
 			AlgemeneVragenObjecten.vraag16_no(driver).click();
 		}
 		
-		//Bug CWCNLTAX-713 - functionaliteit tijdelijk uitgezet om script door te laten lopen.
-		//AlgemeneVragenObjecten.Bedragmateriele(driver).clear();
-		//AlgemeneVragenObjecten.Bedragmateriele(driver).sendKeys(invuldata[17]);
+		
+		AlgemeneVragenObjecten.Bedragmateriele(driver).clear();
+		AlgemeneVragenObjecten.Bedragmateriele(driver).sendKeys(invuldata[18]);
 		
 		if (invuldata[18].equals("ja")) {
 			AlgemeneVragenObjecten.vraag17_yes(driver).click();
@@ -226,9 +231,9 @@ public class Steps extends AbstractSteps {
 		}
 		
 		AlgemeneVragenObjecten.Toelichting(driver).clear();
-		AlgemeneVragenObjecten.Toelichting(driver).sendKeys(invuldata[19]);
+		AlgemeneVragenObjecten.Toelichting(driver).sendKeys(invuldata[20]);
 		
-		driver.quit();
+		//driver.quit();
 
 	}
 
@@ -279,26 +284,24 @@ public class Steps extends AbstractSteps {
 		AlgemeneGegevensObjecten.AchternaamContact(driver).sendKeys(invuldata[14]);
 		AlgemeneGegevensObjecten.TelefoonnummerContact(driver).clear();
 		AlgemeneGegevensObjecten.TelefoonnummerContact(driver).sendKeys(invuldata[15]);
-		AlgemeneGegevensObjecten.Straatnaam(driver).clear();
-		AlgemeneGegevensObjecten.Straatnaam(driver).sendKeys(invuldata[16]);
-		AlgemeneGegevensObjecten.Huisnummer(driver).clear();
-		AlgemeneGegevensObjecten.Huisnummer(driver).sendKeys(invuldata[17]);
-		AlgemeneGegevensObjecten.Postcode(driver).clear();
-		AlgemeneGegevensObjecten.Postcode(driver).sendKeys(invuldata[18]);
-		AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).clear();
-		AlgemeneGegevensObjecten.HuisnummerToevoeging(driver).sendKeys(invuldata[19]);
-		AlgemeneGegevensObjecten.Plaats(driver).clear();
-		AlgemeneGegevensObjecten.Plaats(driver).sendKeys(invuldata[20]);
+
+		AlgemeneGegevensObjecten.BeconnummerIntermediair(driver).clear();
+		AlgemeneGegevensObjecten.BeconnummerIntermediair(driver).sendKeys(invuldata[16]);
+		AlgemeneGegevensObjecten.NaamKoepelorgFisDienstverl(driver).clear();
+		AlgemeneGegevensObjecten.NaamKoepelorgFisDienstverl(driver).sendKeys(invuldata[17]);
+		
+		
 		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).sendKeys(invuldata[21]);
+		AlgemeneGegevensObjecten.VoorlettersOndertekenaar(driver).sendKeys(invuldata[18]);
 		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).sendKeys(invuldata[22]);
+		AlgemeneGegevensObjecten.TussenvoegselOndertekenaar(driver).sendKeys(invuldata[19]);
 		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).sendKeys(invuldata[23]);
+		AlgemeneGegevensObjecten.AchternaamOndertekenaar(driver).sendKeys(invuldata[20]);
+		
 		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).sendKeys(invuldata[24]);
+		AlgemeneGegevensObjecten.FunctieOndertekenaar(driver).sendKeys(invuldata[21]);
 		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).clear();
-		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys(invuldata[25]);
+		AlgemeneGegevensObjecten.TelefoonnummerOndertekenaar(driver).sendKeys(invuldata[22]);
 		
 	}
 
@@ -312,14 +315,11 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("HandelsnaamOnderneming", 1, 200, "TextVeld", driver));
 		
 		// RSIN
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
 		
-		// Beconnummer
-		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 9, true, true, driver));
 		
 		//Toelichting verzoek
-		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Toelichtingverzoek", 1, 6930, "TextVeld", driver));
 		
 		
 		//Consulent **
@@ -327,13 +327,9 @@ public class Steps extends AbstractSteps {
 		
 		//Becon 
 		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 99, "Positief6", driver));
+		
 		//Client groep
-		
-		//Naam koepelorganisatie fiscale dienstverleners
-		
-		//Beconnummer (intermediair)
-		
-		//Aanhef
 		
 		// Voorletters contactpersoon
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("VoorlettersContact", 1, 10, "TextVeld", driver));
@@ -347,6 +343,12 @@ public class Steps extends AbstractSteps {
 		// telefoonnummer contact
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TelefoonnummerContact", 1, 14, "TextVeld", driver));
 		
+		//Beconnummer (intermediair)
+		
+		//Naam koepelorganisatie fiscale dienstverleners
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("NaamKoepelorgFisDienstverl", 1, 20, "TextVeld", driver));
+				
+		//Aanhef
 				
 		//Ondertekenaar **
 				
@@ -1250,11 +1252,11 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",30, Tab));
 		
-		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",31, Tab));
+		//WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).clear();
+		//WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",31, Tab));
 		
-		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",31, Tab));
+		//WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).clear();
+		//WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",31, Tab));
 				
 		//Afschrijvingen
 		
@@ -1598,9 +1600,11 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.SaldoFiscWinstBerCF(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("F",118, Tab)), "F118"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).getAttribute("value"), Double.parseDouble(WinstVerliesXLS.HaalData("G",118, Tab)), "G118"));
 		
-			
-		driver.quit();
-		//System.out.println(ValidatieResultaat);
+		
+		System.out.println(ValidatieResultaat);
+		assertTrue(ValidatieResultaat.isEmpty());
+		//driver.quit();
+		
 	}
 	
 
@@ -1609,6 +1613,38 @@ public void open_the_form_Balans_Activa() throws Throwable {
    
 	NavigerenObjecten.BalansActiva(driver).click();
    
+}
+
+@Then("^i can validate the error messages for the Winst en Verlies rekening form from tab \"(.*?)\"$")
+public void i_can_validate_the_error_messages_for_the_Winst_en_Verlies_rekening_form_from_tab(String arg1) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+   
+	
+	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("NettoOmzetFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("GeactiveerdeProdFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OverigeOpbrFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstVordGroepMaatschFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("KwijtscheldingsWinstFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstVordParticipantFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstOverigeVordFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstBanktegoedFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OntvangenDividentFiscaal", 1, 20, "PositiefGetal", driver));
+	
+	
+	
+	
+//	System.out.println(ValidatieResultaat);
+	assertTrue(ValidatieResultaat.isEmpty());
 }
 
 @Then("^i can fill out the form Balans Activa from tab \"(.*?)\"$")

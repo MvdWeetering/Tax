@@ -143,7 +143,11 @@ public class AlgemeneVragenObjecten {
 		element = driver.findElement(By.cssSelector("[for='idn26n68ds-no']"));
 		return element;
 	}
-	
+		
+	public static WebElement SaldoUltimo(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzdb"));
+		return element;
+	}
 	
 	public static WebElement Bedragmateriele(WebDriver driver){
 	element = driver.findElement(By.id("idxdt9tzdg"));
