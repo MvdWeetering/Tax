@@ -107,12 +107,44 @@ public class ValidatieChecker {
 				Feedback.add("Positief6");
 			}
 		}
-							
+		
+		if (SoortValidatie.equals("Positief10")) {
+			
+			try {
+				
+				Long n = Long.parseLong(inputwaarde);
+				Long max = Long.parseLong("9999999999");
+				
+				if (n < 0 || n > max) {
+					Feedback.add("Positief10");
+				}
+								
+			} catch (NumberFormatException e) {
+				Feedback.add("Positief10");
+			}
+		}
+		
+		if (SoortValidatie.equals("Positief3")) {
+			
+			try {
+				
+				Long n = Long.parseLong(inputwaarde);
+				Long max = Long.parseLong("999");
+				
+				if (n < 0 || n > max) {
+					Feedback.add("Positief3");
+				}
+								
+			} catch (NumberFormatException e) {
+				Feedback.add("Positief3");
+			}
+		}		
+	
 		return Feedback;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(CheckValue("0000001", 1, 99, "Positief6"));
+		System.out.println(CheckValue("1000", 1, 99, "Positief3"));
 
 	}
 }

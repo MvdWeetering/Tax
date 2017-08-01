@@ -70,5 +70,34 @@ public class WinstenVerliesRekeningTooltipObjecten {
 		   return element;
 		}
 	
+	@FieldName(name = "VoordelenOntvoegDochterFiscaal")
+	public static WebElement VoordelenOntvoegDochterFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl1-popover"));
+		   return element;
+		}
+	
+	@FieldName(name = "OverigeBuitenGewBatenFiscaal")
+	public static WebElement OverigeBuitenGewBatenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl2-popover"));
+		   return element;
+		}
+	
+	@FieldName(name = "AfboekenHerinvesteringReserveFiscaal")
+	public static WebElement AfboekenHerinvesteringReserveFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl7-popover"));
+		   return element;
+		}
+	
+	@FieldName(name = "UitkeringANBIFiscaal")
+	public static WebElement UitkeringANBIFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl8-popover"));
+		   return element;
+		}
+	
+	@FieldName(name = "OverigeBuitengewoneLastenFiscaal")
+	public static WebElement OverigeBuitengewoneLastenFiscaal(WebDriver driver){
+		   element = driver.findElement(By.id("idxdt9tzl9-popover"));
+		   return element;
+		}
 	
 }

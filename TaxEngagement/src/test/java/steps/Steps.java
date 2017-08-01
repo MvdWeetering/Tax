@@ -28,7 +28,7 @@ import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
-import pageObjects.ZeescheepvaarObjecten;
+import pageObjects.ZeescheepvaartObjecten;
 import codebase.*;
 
 public class Steps extends AbstractSteps {
@@ -1617,30 +1617,25 @@ public void open_the_form_Balans_Activa() throws Throwable {
 
 @Then("^i can validate the error messages for the Winst en Verlies rekening form from tab \"(.*?)\"$")
 public void i_can_validate_the_error_messages_for_the_Winst_en_Verlies_rekening_form_from_tab(String arg1) throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-   
-	
+
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	js.executeScript("window.scrollTo(0, 0);", "");
+   	
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("NettoOmzetFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("GeactiveerdeProdFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OverigeOpbrFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstVordGroepMaatschFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("KwijtscheldingsWinstFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstVordParticipantFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstOverigeVordFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OpbrengstBanktegoedFiscaal", 1, 20, "PositiefGetal", driver));
-	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OntvangenDividentFiscaal", 1, 20, "PositiefGetal", driver));
-	
-	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("VoordelenOntvoegDochterFiscaal", 1, 20, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OverigeBuitenGewBatenFiscaal", 1, 20, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("AfboekenHerinvesteringReserveFiscaal", 1, 20, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("UitkeringANBIFiscaal", 1, 20, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OverigeBuitengewoneLastenFiscaal", 1, 20, "PositiefGetal", driver));
 	
 	
 //	System.out.println(ValidatieResultaat);
@@ -2015,11 +2010,6 @@ public void i_can_validate_the_error_messages_for_the_Balans_Passiva_form_from_t
 	
 	assertTrue(ValidatieResultaat.isEmpty());	
 }
-
-
-
-
-
 
 
 @Then("^i can validate the error messages for the Balans Activa form from tab \"(.*?)\"$")
@@ -3125,10 +3115,8 @@ public void i_can_validate_the_error_messages_for_the_formulier_FiscaleVermogens
 @When("^open the form Zeescheepvaart$")
 public void open_the_form_Zeescheepvaart() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
-   
-	NavigerenObjecten.WinstuitZeescheepvaart(driver).click();
-	
-	
+   	NavigerenObjecten.WinstuitZeescheepvaart(driver).click();
+		
 	}
 
 @Then("^i can fill out the form Zeescheepvaart from (\\d+)$")
@@ -3137,19 +3125,18 @@ public void i_can_fill_out_the_form_Zeescheepvaart_from(int Tcid) throws Throwab
     
 	String[] invuldata = codebase.ZeescheepvaartXLS.HaalData(Tcid);
 	
-	ZeescheepvaarObjecten.NaamSchip(driver).clear();
-	ZeescheepvaarObjecten.NaamSchip(driver).sendKeys(invuldata[1]);
+	ZeescheepvaartObjecten.NaamSchip(driver).clear();
+	ZeescheepvaartObjecten.NaamSchip(driver).sendKeys(invuldata[1]);
 	
-	ZeescheepvaarObjecten.NettoTonnageSchip(driver).clear();
-	ZeescheepvaarObjecten.NettoTonnageSchip(driver).sendKeys(invuldata[2]);
+	ZeescheepvaartObjecten.NettoTonnageSchip(driver).clear();
+	ZeescheepvaartObjecten.NettoTonnageSchip(driver).sendKeys(invuldata[2]);
 	
-	ZeescheepvaarObjecten.aantalDagen(driver).clear();
-	ZeescheepvaarObjecten.aantalDagen(driver).sendKeys(invuldata[3]);
+	ZeescheepvaartObjecten.aantalDagen(driver).clear();
+	ZeescheepvaartObjecten.aantalDagen(driver).sendKeys(invuldata[3]);
 	
-	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).clear();
-	ZeescheepvaarObjecten.PercentageDeelnameSchip(driver).sendKeys(invuldata[4]);
+	ZeescheepvaartObjecten.PercentageDeelnameSchip(driver).clear();
+	ZeescheepvaartObjecten.PercentageDeelnameSchip(driver).sendKeys(invuldata[4]);
 
-	
 	
 	}
 
@@ -3157,8 +3144,24 @@ public void i_can_fill_out_the_form_Zeescheepvaart_from(int Tcid) throws Throwab
 public void i_can_validate_the_error_messages_for_the_formulier_Zeescheepvaart() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
     
+ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 	
-	driver.quit();
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipZeeScheepvaart("NaamSchip", 1, 70,"TextVeld", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipZeeScheepvaart("NettoTonnageSchip", 1, 70,"Positief10", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipZeeScheepvaart("aantalDagen", 1, 99,"Positief3", driver));
+		
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipZeeScheepvaart("PercentageDeelnameSchip", 1, 99,"Procent", driver));
+	
+	
+	//System.out.println(ValidatieResultaat);
+	//driver.quit();
+	assertTrue(ValidatieResultaat.isEmpty());
+	
+	
+	
+	//driver.quit();
 	
 	}
 }

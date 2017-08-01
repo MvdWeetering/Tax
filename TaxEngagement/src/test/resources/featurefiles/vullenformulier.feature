@@ -19,7 +19,6 @@ Feature: vullen formulieren
       | Id |
       |  1 |
 
-
   @vullen_formulier @Algemene_vragen
   Scenario: vullen formulier Algemene Vragen
     Given I want to login
@@ -65,7 +64,6 @@ Feature: vullen formulieren
       |    3 |
       |    4 |
 
-
   @vullen_formulier @Toelichting_Balans
   Scenario Outline: vullen formulier Toelichting Balans
     Given I want to login
@@ -88,14 +86,14 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 17072017"
     And open the form Winst en Verlies rekening
-   
+    Then i can fill out the form Winst en Verlies rekening from tab <TCID>
     Then i can validate the error messages for the Winst en Verlies rekening form from tab <TCID>
-
 
     Examples: 
       | TCID   |
+      | "TC01" |
+      | "TC02" |
       | "TC03" |
-
 
   @vullen_formulier @Balans_Activa
   Scenario Outline: vullen formulier Balans Activa
@@ -108,13 +106,11 @@ Feature: vullen formulieren
     Then i can validate the error messages for the Balans Activa form from tab <TCID>
     Then i can validate the totals for Balans Activa from tab <TCID>
 
-
     Examples: 
       | TCID   |
       | "TC01" |
       | "TC02" |
       | "TC03" |
-
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva
@@ -126,7 +122,6 @@ Feature: vullen formulieren
     Then i can fill out the form Balans Passiva from tab <TCID>
     Then i can validate the error messages for the Balans Passiva form from tab <TCID>
     Then i can validate the totals for Balans Passiva from tab <TCID>
-
 
     Examples: 
       | TCID   |
@@ -186,7 +181,6 @@ Feature: vullen formulieren
     Then i can validate the error messages for the formulier FiscaleVermogensVergelijking from <TCID>
     Then i can validate the totals the formulier FiscaleVermogensVergelijking from  <TCID>
 
-
     Examples: 
       | TCID   |
       | "TC01" |
@@ -206,3 +200,4 @@ Feature: vullen formulieren
       |    1 |
       |    2 |
       |    3 |
+      |    4 |

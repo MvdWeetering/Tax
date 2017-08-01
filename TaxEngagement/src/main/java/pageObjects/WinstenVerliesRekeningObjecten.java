@@ -731,11 +731,13 @@ public class WinstenVerliesRekeningObjecten {
 	
 	//Buitengewone bedrijfsbaten 
 	
+	@FieldName(name = "VoordelenOntvoegDochterFiscaal")
 	public static WebElement VoordelenOntvoegDochterFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzl1"));
 		   return element;
 		}
 	
+	@FieldName(name = "OverigeBuitenGewBatenFiscaal")
 	public static WebElement OverigeBuitenGewBatenFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzl2"));
 		   return element;
@@ -763,17 +765,19 @@ public class WinstenVerliesRekeningObjecten {
 	
 	
 	//Buitengewone bedrijfslasten
-	
+	@FieldName(name = "AfboekenHerinvesteringReserveFiscaal")
 	public static WebElement AfboekenHerinvesteringReserveFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzl7"));
 		   return element;
 		}
 	
+	@FieldName(name = "UitkeringANBIFiscaal")
 	public static WebElement UitkeringANBIFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzl8"));
 		   return element;
 		}
 	
+	@FieldName(name = "OverigeBuitengewoneLastenFiscaal")
 	public static WebElement OverigeBuitengewoneLastenFiscaal(WebDriver driver){
 		   element = driver.findElement(By.id("idxdt9tzl9"));
 		   return element;
