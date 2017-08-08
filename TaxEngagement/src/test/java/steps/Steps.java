@@ -37,19 +37,21 @@ import codebase.*;
 
 public class Steps extends AbstractSteps {
 
-	WebDriver driver = Inloggen.GetDriver();
+	public WebDriver driver = null;
 
-	@Given("^I want to login$")
-	public void i_want_to_login() throws Throwable {
+	@Given("^I want to login with browser \"(.*?)\"$")
+	public void i_want_to_login_with_browser(String Browser) throws Throwable {
 
+		driver= Inloggen.GetDriver(Browser);
+				
 		String InlogUrl = null;
 		
 		//Splat
-		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		//InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 		
 		
 		//Dev
-		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 		
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -57,9 +59,10 @@ public class Steps extends AbstractSteps {
 
 	@When("^I type username \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void i_type_username_and_password(String UserName, String Password) throws Throwable {
-
+		Thread.sleep(3000);
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
+		Thread.sleep(800);
 		LoginObjecten.buttonInloggen(driver).click();
 		Thread.sleep(2000);
 		//WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
