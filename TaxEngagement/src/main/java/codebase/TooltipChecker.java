@@ -291,11 +291,11 @@ public class TooltipChecker extends AbstractSteps {
 						}
 
 						if (checker.contains("Geen positief getal")) {
-							if (!invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+							if (!invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText().contains("[Getal] Dit veld mag alleen positieve gehele getallen bevatten.")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld mag alleen positieve gehele getallen bevatten.\" \r\n ");
 								System.out.println(Naamobject);
 								System.out.println("gelezen:" +invoke(FiscaleVermogensVergelijksTooltipObjecten.class, Naamobject, driver).getText());
-								System.out.println("verwacht:[Negatief] Dit veld moet een positief getal bevatten \r\n ");
+								System.out.println("verwacht:[Getal] Dit veld mag alleen positieve gehele getallen bevatten. \r\n ");
 							}
 						}
 						if (checker.contains("Geheel Getal")) {
@@ -681,15 +681,14 @@ public class TooltipChecker extends AbstractSteps {
 								System.out.println("gelezen:" + invoke(BalansActivaTooltipObjecten.class, Naamobject, driver).getText());
 								System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
 							}
-
 						}
 
 						if (checker.contains("Geen positief getal")) {
-							if (!invoke(BalansActivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+							if (!invoke(BalansActivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Getal] Dit veld mag alleen positieve gehele getallen bevatten.")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld mag alleen positieve gehele getallen bevatten.\" \r\n ");
 								System.out.println(Naamobject);
 								System.out.println("gelezen:" +invoke(BalansActivaTooltipObjecten.class, Naamobject, driver).getText());
-								System.out.println("verwacht:[Negatief] Dit veld moet een positief getal bevatten \r\n ");
+								System.out.println("verwacht:[Negatief] [Getal] Dit veld mag alleen positieve gehele getallen bevatten. \r\n ");
 							}
 						}
 						if (checker.contains("Te Kort")) {
@@ -762,11 +761,11 @@ public class TooltipChecker extends AbstractSteps {
 						}
 
 						if (checker.contains("Geen positief getal")) {
-							if (!invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Negatief] Dit veld moet een positief getal bevatten")) {
-								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Negatief] Dit veld moet een positief getal bevatten\" \r\n ");
+							if (!invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText().contains("[Getal] Dit veld mag alleen positieve gehele getallen bevatten.")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld mag alleen positieve gehele getallen bevatten.\" \r\n ");
 								System.out.println(Naamobject);
 								System.out.println("gelezen:" +invoke(BalansPassivaTooltipObjecten.class, Naamobject, driver).getText());
-								System.out.println("verwacht:[Negatief] Dit veld moet een positief getal bevatten \r\n ");
+								System.out.println("verwacht:[Getal] Dit veld mag alleen positieve gehele getallen bevatten. \r\n ");
 							}
 						}
 						if (checker.contains("Te Kort")) {

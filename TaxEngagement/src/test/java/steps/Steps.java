@@ -8,7 +8,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -39,7 +43,14 @@ public class Steps extends AbstractSteps {
 	public void i_want_to_login() throws Throwable {
 
 		String InlogUrl = null;
-		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		
+		//Splat
+		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		
+		
+		//Dev
+		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
 	}
@@ -233,7 +244,7 @@ public class Steps extends AbstractSteps {
 		AlgemeneVragenObjecten.Toelichting(driver).clear();
 		AlgemeneVragenObjecten.Toelichting(driver).sendKeys(invuldata[20]);
 		
-		//driver.quit();
+		driver.quit();
 
 	}
 
@@ -242,6 +253,13 @@ public class Steps extends AbstractSteps {
 
 		NavigerenObjecten.NavigerenAlgemeneGegevens(driver).click();
 
+		Thread.sleep(1500);
+		
+
+		
+		
+		
+		
 	}
 
 	@Then("^i can fill out the form Algemene Gegevens with config (\\d+)$")
@@ -370,7 +388,7 @@ public class Steps extends AbstractSteps {
 		
 					
 		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		//driver.quit();
+		driver.quit();
 		
 		assertTrue(ValidatieResultaat.isEmpty());	
 		
@@ -380,7 +398,7 @@ public class Steps extends AbstractSteps {
 	public void i_can_validate_the_error_messages_for_Specificatie_Deelnemingen_form() throws Throwable {
 
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,-250)", "");
+		js.executeScript("window.scrollTo(0, 0);", "");
 		
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
@@ -693,22 +711,38 @@ public class Steps extends AbstractSteps {
 			
 		// als validatieresultaat niet leeg is dan melding genereren.
 		System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		//driver.quit();
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 		
 	}
 
 	@When("^open the form Specificatie Deelnemingen$")
 	public void open_the_form_Specificatie_Deelnemingen() throws Throwable {
+		
 		NavigerenObjecten.NavigerenSpecificatie_Deelnemingen(driver).click();
 
+		
+		/*
+		//nieuwe tab maken		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("angular.element(document.body).injector().get('repeatFormService').createNewRepeatForm('vpbspecdeel')");
+		*/
+		
+		//Button New aanklikken
+		//driver.findElement(By.xpath("//button[contains(.,'New')]")).click();
+		
+		
+		
 	}
 
 	@Then("^i can fill out the form Specificatie Deelnemingen with configId (\\d+)$")
 	public void i_can_fill_out_the_form_Specificatie_Deelnemingen_with_configId(int Tcid) throws Throwable {
 		
 		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(Tcid);
-		
+	
+		//WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
+		//Select mySelect= new Select(mySelectElm);
+		//mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
 		
 		// algemene vragen
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();
@@ -1603,7 +1637,7 @@ public class Steps extends AbstractSteps {
 		
 		System.out.println(ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());
-		//driver.quit();
+		driver.quit();
 		
 	}
 	
@@ -1645,8 +1679,8 @@ public void i_can_validate_the_error_messages_for_the_Winst_en_Verlies_rekening_
 @Then("^i can fill out the form Balans Activa from tab \"(.*?)\"$")
 public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Throwable {
     
-	BalansActivaObjecten.NaamOnderneming(driver).clear();
-	BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalText(5, Tab));
+	//BalansActivaObjecten.NaamOnderneming(driver).clear();
+	//BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalText(5, Tab));
 	BalansActivaObjecten.OmschrijvingActiviteit(driver).clear();
 	BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys(BalansActivaXLS.HaalText(6, Tab));
 	
@@ -1973,7 +2007,8 @@ public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Th
 @Then("^i can validate the error messages for the Balans Passiva form from tab \"(.*?)\"$")
 public void i_can_validate_the_error_messages_for_the_Balans_Passiva_form_from_tab(String arg1) throws Throwable {
     // Write code here that turns the phrase above into concrete actions
-
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	js.executeScript("window.scrollTo(0, 0);", "");
 
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 	
@@ -2002,13 +2037,11 @@ public void i_can_validate_the_error_messages_for_the_Balans_Passiva_form_from_t
 	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("OverigeLangLopendeSchFiscaal31_12", 1, 20, "PositiefGetal", driver));
 	
-	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("LanglopendeSchuldenFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("LanglopendeSchuldenFiscaal31_12", 1, 20, "PositiefGetal", driver));
 	
+	System.out.println(ValidatieResultaat);
+	assertTrue(ValidatieResultaat.isEmpty());
 	
-	
-	
-	
-	assertTrue(ValidatieResultaat.isEmpty());	
 }
 
 
@@ -2016,11 +2049,11 @@ public void i_can_validate_the_error_messages_for_the_Balans_Passiva_form_from_t
 public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_tab(String Tab) throws Throwable {
 
 	JavascriptExecutor js = (JavascriptExecutor)driver;
-	js.executeScript("window.scrollBy(0,-750)", "");
+	js.executeScript("window.scrollTo(0, 0);", "");
 		
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		
-	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("NaamOnderneming", 1, 200, "TextVeld", driver));
+	//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("NaamOnderneming", 1, 200, "TextVeld", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OmschrijvingActiviteit", 1, 70,"TextVeld", driver));
 		
 	
@@ -2752,7 +2785,7 @@ public void i_can_validate_the_totals_for_Balans_Passiva_from_tab(String Tab) th
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.TotaalPassivaFiscaal31_12(driver).getAttribute("value"), Double.parseDouble(BalansPassivaXLS.HaalData("F",59, Tab)), "F59"));	
 	
 	//System.out.println(ValidatieResultaat);
-	//driver.quit();
+	driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());
 	
 }
@@ -3046,7 +3079,7 @@ public void i_can_fill_out_the_form_FiscaleVermogensVergelijking_from(String Tab
 	FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelTantiemes(driver).sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E",43, "TC01"));
 	
 	
-	if (driver.findElement(By.id("idCWNLCBNieAftDeeWinDooCooTot")).isSelected()) {
+	if (driver.findElement(By.id("idCWNLCBNieAftDeeVerVooKapTot")).isSelected()) {
 		//System.out.println("enabled");
 	} 
 	else {
@@ -3082,7 +3115,7 @@ public void i_can_validate_the_totals_the_formulier_FiscaleVermogensVergelijking
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.SaldoFiscaleWinstberekening(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",16, Tab)), "F16"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.ResultaatWinstVerliesrekening(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",18, Tab)), "F18"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.DividendOnderworpenWinstuitdelingen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",21, Tab)), "F21"));
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarWinstuitdelingenCooperaties(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",30, Tab)), "F30"));
+		//ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarWinstuitdelingenCooperaties(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",30, Tab)), "F30"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarWinstuitdelingenCooperaties_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",33, Tab)), "E33"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelBeloningenCommissarissen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",36, Tab)), "F36"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelBeloningenCommissarissen_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",39, Tab)), "E39"));
@@ -3092,7 +3125,7 @@ public void i_can_validate_the_totals_the_formulier_FiscaleVermogensVergelijking
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelVergoedingenKapitaalverstrekking_sub(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",50, Tab)), "E50"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(FiscaleVermogensVergelijkingObjecten.NietAftrekbareBedragen(driver).getAttribute("value"), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",56, Tab)), "F56"));
 			
-		//System.out.println(ValidatieResultaat);
+		System.out.println(ValidatieResultaat);
 		//driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
    
@@ -3123,6 +3156,18 @@ public void open_the_form_Zeescheepvaart() throws Throwable {
 public void i_can_fill_out_the_form_Zeescheepvaart_from(int Tcid) throws Throwable {
     // Write code here that turns the phrase above into concrete actions
     
+	//Button New aanklikken
+	
+	
+	if (Tcid != 1) {
+	driver.findElement(By.xpath("//button[contains(.,'New')]")).click();
+	
+	WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
+	Select mySelect= new Select(mySelectElm);
+	mySelect.selectByVisibleText("00" +Tcid + " Winst uit Zeescheepvaart");
+		
+	}
+		
 	String[] invuldata = codebase.ZeescheepvaartXLS.HaalData(Tcid);
 	
 	ZeescheepvaartObjecten.NaamSchip(driver).clear();

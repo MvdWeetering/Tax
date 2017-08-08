@@ -85,4 +85,7 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("winst uit zeescheepvaart"));
 		return element;
 	}
+	
+
+	
 }

@@ -46,7 +46,8 @@ public class ZeescheepvaartXLS {
 		
 		String[] invuldata = codebase.ZeescheepvaartXLS.HaalData(1);
 		
-		System.out.println(invuldata[2]);
+		System.out.println(invuldata[1]);
 		
 		}
 }
+
