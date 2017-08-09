@@ -14,6 +14,7 @@ import org.w3c.dom.NodeList;
 
 public class ReadXML {
 	
+		
 	public static ArrayList<String> GetXMLvalue(String TagName) throws Exception {
 
 		ArrayList<String> XmlList = new ArrayList<String>();
@@ -44,13 +45,9 @@ public class ReadXML {
 		return XmlList;
 	}
 	
-	
 	public static void main(String[] args) throws Exception {
-		System.out.println(GetXMLvalue("bd-bedr:SubsidiaryTaxEntityExists"));
+		System.out.println(GetXMLvalue("bd-bedr:ShareholderAddressStreetName"));
 	
 	}
-	
-	
-	
 	
 }

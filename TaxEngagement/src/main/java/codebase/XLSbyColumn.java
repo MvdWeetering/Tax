@@ -18,10 +18,10 @@ public class XLSbyColumn {
             
         	//FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
         	
-        	File f = new File("C:\\testdata\\TestdataTax.xlsx");
+        	File f = new File("C:\\testdata\\XBRL_Test.xlsx");
             FileInputStream ios = new FileInputStream(f);
             XSSFWorkbook workbook = new XSSFWorkbook(ios);
-            XSSFSheet sheet = workbook.getSheet("Zeescheepvaart");
+            XSSFSheet sheet = workbook.getSheet("Spec_aandeelh");
             Iterator<Row> rowIterator = sheet.iterator();
             columndata = new ArrayList<>();
 
@@ -46,7 +46,7 @@ public class XLSbyColumn {
                 }
             }
             ios.close();
-            System.out.println(columndata);
+           // System.out.println(columndata);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,7 +57,7 @@ public class XLSbyColumn {
 	
 	public static void main(String[] args) {
 		
-	extractExcelContentByColumnIndex(2);
+	System.out.println(extractExcelContentByColumnIndex(4));
 		
 		
 	}
