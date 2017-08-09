@@ -47,11 +47,11 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 		
 		//Splat
-		//InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 		
 		
 		//Dev
-		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 		
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -59,12 +59,12 @@ public class Steps extends AbstractSteps {
 
 	@When("^I type username \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void i_type_username_and_password(String UserName, String Password) throws Throwable {
-		Thread.sleep(3000);
+
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
-		Thread.sleep(800);
+		
 		LoginObjecten.buttonInloggen(driver).click();
-		Thread.sleep(2000);
+
 		//WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
 		//String User = (HuidigeUser.getText());
 		//assertTrue(User.equals("MW"));
@@ -72,7 +72,7 @@ public class Steps extends AbstractSteps {
 
 	@When("^Select the Tax engagement module$")
 	public void select_the_Tax_engagement_module() throws Throwable {
-
+		Thread.sleep(10000);
 		NavigerenObjecten.ClickCloud(driver).click();
 		Thread.sleep(2000);
 		NavigerenObjecten.NavigerenTax(driver).click();
@@ -506,6 +506,14 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(1000);
 		NavigerenObjecten.NavigerenSpecificatieAandeelhouders(driver).click();
 
+		
+		/*
+		WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
+		Select mySelect= new Select(mySelectElm);
+		mySelect.selectByVisibleText("002 Specificatie Aandeelhouders");
+		*/
+		
+		
 	}
 	
 	
@@ -558,6 +566,8 @@ public class Steps extends AbstractSteps {
 
 		
 		// informele kapitaalstorting = nee
+		
+		System.out.println(invuldata[19]);
 		
 		if (invuldata[19].equals("nee")) {
 		
@@ -743,9 +753,9 @@ public class Steps extends AbstractSteps {
 		
 		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(Tcid);
 	
-		//WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
-		//Select mySelect= new Select(mySelectElm);
-		//mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
+		WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
+		Select mySelect= new Select(mySelectElm);
+		mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
 		
 		// algemene vragen
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();

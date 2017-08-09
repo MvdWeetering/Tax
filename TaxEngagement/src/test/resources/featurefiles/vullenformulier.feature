@@ -37,36 +37,30 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 03082017"
+    And open the Project "dossier 09082017"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config <Id>
-    Then i can validate the error messages for the Specificatie Aandeelhouders form
+    #Then i can validate the error messages for the Specificatie Aandeelhouders form
 
     Examples: 
       | Id | Browser  |
-      |  1 | "Chrome" |
       |  2 | "Chrome" |
-      |  3 | "Chrome" |
-      |  4 | "Chrome" |
-      |  5 | "Chrome" |
-      |  6 | "Chrome" |
+
 
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario Outline: vullen formulier Specificatie Deelnemingen
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 03082017"
+    And open the Project "dossier 08082017"
     And open the form Specificatie Deelnemingen
     Then i can fill out the form Specificatie Deelnemingen with configId <TCID>
     Then i can validate the error messages for Specificatie Deelnemingen form
 
     Examples: 
       | TCID | Browser  |
-      |    1 | "Chrome" |
       |    2 | "Chrome" |
-      |    3 | "Chrome" |
-      |    4 | "Chrome" |
+
 
   @vullen_formulier @Toelichting_Balans
   Scenario Outline: vullen formulier Toelichting Balans

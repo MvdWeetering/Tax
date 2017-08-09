@@ -25,7 +25,7 @@ public class ReadXML {
 		DocumentBuilder builder = factory.newDocumentBuilder();
 
 		// Parsing of xml is done here
-		Document doc = builder.parse(new File("C:/Testbestanden/book.xml"));
+		Document doc = builder.parse(new File("C:/Testbestanden/export-xbrl.xbrl"));
 
 		// Here we get the root element of XML and print out
 		Element rootElement = doc.getDocumentElement();
@@ -46,7 +46,7 @@ public class ReadXML {
 	
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(GetXMLvalue("genre"));
+		System.out.println(GetXMLvalue("bd-bedr:SubsidiaryTaxEntityExists"));
 	
 	}
 	

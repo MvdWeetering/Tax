@@ -74,9 +74,9 @@ public class SpecificatieAandeelHoudersXLS {
 	public static void main(String[] args) {
 
 		
-		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(1);
+		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(2);
 		
-		System.out.println(invuldata[6]);
+		System.out.println(invuldata[19]);
 		
 		}
 }
