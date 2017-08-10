@@ -11,16 +11,19 @@ public class LoginObjecten {
 	private static WebElement element = null;
 
 	public static WebElement UserName(WebDriver driver){
-		element =  driver.findElement(By.cssSelector("input.GAQ-1UMBEYC.GAQ-1UMBFYC"));
+		element = driver.findElement(By.cssSelector("[type='email']"));
 		return element;
 	}
 
 	public static WebElement PassWord(WebDriver driver){
-		element =  driver.findElement(By.cssSelector("input.GAQ-1UMBEYC.GAQ-1UMBGYC"));
+		element = driver.findElement(By.cssSelector("[type='password']"));
+
 		return element;
 	}
 	
 	public static WebElement buttonInloggen(WebDriver driver){
+		
+		
 		element =  driver.findElement(By.className("GAQ-1UMBKYC"));
 		return element;
 	}

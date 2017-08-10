@@ -18,7 +18,7 @@ public class SpecificatieAandeelHoudersXLS {
 		
 		try {
 			// Open the Excel file
-			FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
+			FileInputStream fis = new FileInputStream("C:\\testdata\\XBRL_Test.xlsx");
 			wb = new XSSFWorkbook(fis);
 			XSSFSheet sheet = wb.getSheet("Spec_aandeelh");
 			XSSFRow row = sheet.getRow(RijNummer);

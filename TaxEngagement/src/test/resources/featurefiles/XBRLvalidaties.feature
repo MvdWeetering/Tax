@@ -5,5 +5,5 @@ Feature: XBRL Validation
 Scenario: XBRL Validation of Specificatie Aandeelhouders
 Given the reading of the XBRL is correct
 Given the reading of the XLS is correct
-When the elements of the XBRL and the XLS are compared 
+When the elements of the XBRL and the XLS for Specificatie aandeelhouders are compared 
 Then they contain the same values 

@@ -10,7 +10,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 03082017"
+    And open the Project "dossier 10082017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
     Then i can validate the error messages for the Algemene gegevens form
@@ -37,14 +37,14 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 09082017"
+    And open the Project "dossier 10082017"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config <Id>
     #Then i can validate the error messages for the Specificatie Aandeelhouders form
 
     Examples: 
       | Id | Browser  |
-      |  2 | "Chrome" |
+      |  1 | "Chrome" |
 
 
   @vullen_formulier @Specificatie_Deelnemingen

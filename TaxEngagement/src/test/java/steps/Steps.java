@@ -47,11 +47,11 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 		
 		//Splat
-		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		//InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 		
 		
 		//Dev
-		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 		
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -59,11 +59,11 @@ public class Steps extends AbstractSteps {
 
 	@When("^I type username \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void i_type_username_and_password(String UserName, String Password) throws Throwable {
-
+		Thread.sleep(1500);
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 		
-		LoginObjecten.buttonInloggen(driver).click();
+		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
 
 		//WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
 		//String User = (HuidigeUser.getText());
@@ -86,7 +86,7 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(1000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String oldTab = driver.getWindowHandle();
-
+		Thread.sleep(1000);
 		NavigerenObjecten.Zoekveld(driver).sendKeys(Project);
 
 		Thread.sleep(1500);
@@ -511,8 +511,7 @@ public class Steps extends AbstractSteps {
 		WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
 		Select mySelect= new Select(mySelectElm);
 		mySelect.selectByVisibleText("002 Specificatie Aandeelhouders");
-		*/
-		
+		*/		
 		
 	}
 	

@@ -39,12 +39,13 @@ public class NavigerenObjecten {
 	}
 	
 	public static WebElement ClickCloud(WebDriver driver){
-	    element = driver.findElement(By.className(("GAQ-1UMBA5C")));
+	    element = driver.findElement(By.className(("GJJ2145DCFD")));
 		return element;
 	}
 	public static WebElement Zoekveld(WebDriver driver){
-	    WebElement parent = driver.findElement(By.id("main"));
-	    element = parent.findElement(By.cssSelector("[class='gwt-TextBox GAQ-1UMBFDD']"));
+	    
+		WebElement parent = driver.findElement(By.id("main"));
+	    element = parent.findElement(By.cssSelector("[class='gwt-TextBox GJJ2145DCJD']"));
 		return element;
 	}
 	public static WebElement NavigerenWinstEnVerliesRekening(WebDriver driver){

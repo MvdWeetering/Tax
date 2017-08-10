@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -35,7 +36,10 @@ public class XLSbyColumn {
                         if(cell.getColumnIndex() == columnIndex){// To match column index
                             switch (cell.getCellType()) {
                             case Cell.CELL_TYPE_NUMERIC:
-                                columndata.add(cell.getNumericCellValue()+"");
+                            	
+                            	DataFormatter fmt = new DataFormatter();
+                            	String valueAsSeenInExcel = fmt.formatCellValue(cell);
+                                columndata.add(valueAsSeenInExcel+"");
                                 break;
                             case Cell.CELL_TYPE_STRING:
                                 columndata.add(cell.getStringCellValue());
@@ -57,7 +61,7 @@ public class XLSbyColumn {
 	
 	public static void main(String[] args) {
 		
-	System.out.println(extractExcelContentByColumnIndex(4));
+	System.out.println(extractExcelContentByColumnIndex(28));
 		
 		
 	}
