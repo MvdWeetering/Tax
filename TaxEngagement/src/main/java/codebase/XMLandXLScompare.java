@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class XMLandXLScompare {
 
-	public static ArrayList<String> XMLandXLSchecker(String Tag, int ColumnNr) throws Exception {
+	public static ArrayList<String> XMLandXLSchecker(String SheetName, String Tag, int ColumnNr) throws Exception {
 
 		ArrayList<String> CheckerResult = new ArrayList<String>();
 		
@@ -12,7 +12,7 @@ public class XMLandXLScompare {
 		ArrayList<String> XSLChecker = new ArrayList<String>();
 
 		XMLChecker = ReadXML.GetXMLvalue(Tag);
-		XSLChecker = XLSbyColumn.extractExcelContentByColumnIndex(ColumnNr);
+		XSLChecker = XLSbyColumn.extractExcelContentByColumnIndex(SheetName, ColumnNr);
 
 		if (!XMLChecker.equals(XSLChecker)) {
 			CheckerResult.add(Tag);

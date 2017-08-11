@@ -13,16 +13,16 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLSbyColumn {
 	
-	public static ArrayList<String> extractExcelContentByColumnIndex(int columnIndex){
+	public static ArrayList<String> extractExcelContentByColumnIndex(String SheetName, int columnIndex){
         ArrayList<String> columndata = null;
         try {
             
         	//FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
         	
-        	File f = new File("C:\\testdata\\XBRL_Test.xlsx");
+        	File f = new File("C:\\testbestanden\\XBRL_Test.xlsx");
             FileInputStream ios = new FileInputStream(f);
             XSSFWorkbook workbook = new XSSFWorkbook(ios);
-            XSSFSheet sheet = workbook.getSheet("Spec_aandeelh");
+            XSSFSheet sheet = workbook.getSheet(SheetName);
             Iterator<Row> rowIterator = sheet.iterator();
             columndata = new ArrayList<>();
 
@@ -61,7 +61,7 @@ public class XLSbyColumn {
 	
 	public static void main(String[] args) {
 		
-	System.out.println(extractExcelContentByColumnIndex(28));
+	System.out.println(extractExcelContentByColumnIndex("Algemene_gegevens", 6));
 		
 		
 	}

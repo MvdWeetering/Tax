@@ -10,10 +10,10 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 10082017"
+    And open the Project "dossier11082017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
-    Then i can validate the error messages for the Algemene gegevens form
+   # Then i can validate the error messages for the Algemene gegevens form
 
     Examples: 
       | Id | Browser  |
@@ -37,15 +37,14 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 10082017"
+    And open the Project "dossier11082017"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config <Id>
-    #Then i can validate the error messages for the Specificatie Aandeelhouders form
+    Then i can validate the error messages for the Specificatie Aandeelhouders form
 
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
-
 
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario Outline: vullen formulier Specificatie Deelnemingen
@@ -60,7 +59,6 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    2 | "Chrome" |
-
 
   @vullen_formulier @Toelichting_Balans
   Scenario Outline: vullen formulier Toelichting Balans
@@ -99,7 +97,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 03082017"
+    And open the Project "dossier11082017"
     And open the form Balans Activa
     Then i can fill out the form Balans Activa from tab <TCID>
     Then i can validate the error messages for the Balans Activa form from tab <TCID>
@@ -108,8 +106,8 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-      | "TC02" | "Chrome" |
-      | "TC03" | "Chrome" |
+  #   | "TC02" | "Chrome" |
+  #   | "TC03" | "Chrome" |
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva

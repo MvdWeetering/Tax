@@ -47,11 +47,11 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 		
 		//Splat
-		//InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 		
 		
 		//Dev
-		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 		
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -507,11 +507,9 @@ public class Steps extends AbstractSteps {
 		NavigerenObjecten.NavigerenSpecificatieAandeelhouders(driver).click();
 
 		
-		/*
-		WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
-		Select mySelect= new Select(mySelectElm);
-		mySelect.selectByVisibleText("002 Specificatie Aandeelhouders");
-		*/		
+		
+		
+				
 		
 	}
 	
@@ -521,6 +519,14 @@ public class Steps extends AbstractSteps {
 
 		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
 
+		if (configId==2) {
+		WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
+		Select mySelect= new Select(mySelectElm);
+		mySelect.selectByVisibleText("002 Specificatie Aandeelhouders");
+		}
+		
+		
+		
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys(invuldata[1]);
 		SpecificatieAandeelhoudersObjecten.BSN(driver).clear();

@@ -46,7 +46,7 @@ public class ReadXML {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(GetXMLvalue("bd-bedr:ShareholderAddressStreetName"));
+		System.out.println(GetXMLvalue("bd-bedr:IncomeTaxReturnSignatureSurname"));
 	
 	}
 	

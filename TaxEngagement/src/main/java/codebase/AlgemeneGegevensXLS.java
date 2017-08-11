@@ -62,9 +62,9 @@ public class AlgemeneGegevensXLS {
 	public static void main(String[] args) {
 
 		
-		String[] invuldata = codebase.AlgemeneGegevensXLS.HaalData(2);
+		String[] invuldata = codebase.AlgemeneGegevensXLS.HaalData(1);
 		
-		System.out.println(invuldata[17]);
+		System.out.println(invuldata[22]);
 		
 		}
 }
