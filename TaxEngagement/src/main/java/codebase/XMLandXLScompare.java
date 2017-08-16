@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class XMLandXLScompare {
 
-	public static ArrayList<String> XMLandXLSchecker(String SheetName, String Tag, int ColumnNr) throws Exception {
+	public static ArrayList<String> XMLandXLScheckerArrays(String SheetName, String Tag, int ColumnNr) throws Exception {
 
 		ArrayList<String> CheckerResult = new ArrayList<String>();
 		
@@ -20,4 +20,7 @@ public class XMLandXLScompare {
 		}
 		return CheckerResult;
 	}
+	
+	
+	
 }

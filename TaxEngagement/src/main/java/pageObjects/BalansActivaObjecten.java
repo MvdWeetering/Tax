@@ -72,22 +72,22 @@ public class BalansActivaObjecten {
 	}
 	
 	public static WebElement GoodwillCommercieel_1_1(WebDriver driver){
-		element = driver.findElement(By.id("idIva2R0C3"));
+		element = driver.findElement(By.id("idIva2R0C5"));
 		return element;
 	}
 
 	public static WebElement GoodwillFiscaal_1_1(WebDriver driver){
-		element = driver.findElement(By.id("idIva2R0C5"));
-		return element;
-	}
-	
-	public static WebElement GoodwillCommercieel_31_12(WebDriver driver){
 		element = driver.findElement(By.id("idIva2R0C7"));
 		return element;
 	}
 	
-	public static WebElement GoodwillCF(WebDriver driver){
+	public static WebElement GoodwillCommercieel_31_12(WebDriver driver){
 		element = driver.findElement(By.id("idIva2R0C9"));
+		return element;
+	}
+	
+	public static WebElement GoodwillCF(WebDriver driver){
+		element = driver.findElement(By.id("idIva2R0C11"));
 		return element;
 	}
 	

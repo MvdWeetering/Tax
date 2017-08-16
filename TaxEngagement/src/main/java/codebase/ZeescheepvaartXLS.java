@@ -31,7 +31,6 @@ public class ZeescheepvaartXLS {
 			opsommingresultaat[3]= new DataFormatter().formatCellValue(row.getCell(3));
 			opsommingresultaat[4]= new DataFormatter().formatCellValue(row.getCell(4));
 			
-			
 			resultaat = opsommingresultaat;			
 
 			fis.close();
@@ -43,9 +42,7 @@ public class ZeescheepvaartXLS {
 			
 	public static void main(String[] args) {
 
-		
 		String[] invuldata = codebase.ZeescheepvaartXLS.HaalData(1);
-		
 		System.out.println(invuldata[1]);
 		
 		}

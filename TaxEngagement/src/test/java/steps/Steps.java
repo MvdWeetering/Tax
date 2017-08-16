@@ -758,9 +758,11 @@ public class Steps extends AbstractSteps {
 		
 		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(Tcid);
 	
+		if (Tcid==2) {
 		WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
 		Select mySelect= new Select(mySelectElm);
 		mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
+		}
 		
 		// algemene vragen
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();
@@ -1010,7 +1012,7 @@ public class Steps extends AbstractSteps {
 	   
 	String[] invuldata = codebase.ToelichtingBalansXLS.HaalData(configId);
 		
-		
+		/*
 		//Gebouwen zonder bodemwaarde
 		ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_Aanschafkosten(driver).clear();
 		ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_Aanschafkosten(driver).sendKeys(invuldata[1]);
@@ -1105,7 +1107,7 @@ public class Steps extends AbstractSteps {
 		ToelichtingBalansObjecten.ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding(driver).clear();
 		ToelichtingBalansObjecten.ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding(driver).sendKeys(invuldata[26]);
 		
-		
+		*/
 		//Toelichting voorziening
 				
 		ToelichtingBalansObjecten.ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening(driver).clear();
@@ -2074,8 +2076,7 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("NaamOnderneming", 1, 200, "TextVeld", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("OmschrijvingActiviteit", 1, 70,"TextVeld", driver));
 		
-	
-	
+		
 	//goodwill fiscaal 
 	
 		//aanschaf voortbr kosten
@@ -2166,10 +2167,6 @@ public void i_can_validate_the_error_messages_for_the_Balans_Activa_form_from_ta
 	
 	
 	//Toelichting balans activa 
-	
-	
-	
-	
 	
 	
 	
@@ -2819,6 +2816,10 @@ public void open_the_form_Investeringsaftrek() throws Throwable {
 @Then("^i can fill out the form Investeringsaftrek$")
 public void i_can_fill_out_the_form_Investeringsaftrek() throws Throwable {
     
+	
+	
+	
+	
 	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
 	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys("omschrijving bedrijfsmiddel");
 	
@@ -2852,6 +2853,11 @@ public void i_can_fill_out_the_form_Objectvrijstelling_from(int TCID) throws Thr
     
 	String[] invuldata = codebase.ObjectvrijstellingXLS.HaalText(TCID);
 	
+	if (TCID==2) {
+		WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']")); 
+		Select mySelect= new Select(mySelectElm);
+		mySelect.selectByVisibleText("002 Objectvrijstelling");
+	}
 	//ObjectvrijstellingObjecten.ObjectvrijstellingNaam(driver).clear();
 	//ObjectvrijstellingObjecten.ObjectvrijstellingNaam(driver).sendKeys(invuldata[1]);
 	

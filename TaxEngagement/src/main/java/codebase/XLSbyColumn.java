@@ -61,7 +61,7 @@ public class XLSbyColumn {
 	
 	public static void main(String[] args) {
 		
-	System.out.println(extractExcelContentByColumnIndex("Algemene_gegevens", 6));
+	System.out.println(extractExcelContentByColumnIndex("Zeescheepvaart", 1));
 		
 		
 	}
