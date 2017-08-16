@@ -272,99 +272,133 @@ public class XBRLvalidate {
 		
 		//Goodwill fiscaal
 		//GoodwillFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:GoodwillFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",16, Tab)), "G17"));
 		
 		//Overige immateriële vaste activa fiscaal
 		//IntangibleFixedAssetsOtherFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:IntangibleFixedAssetsOtherFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",17, Tab)), "G17"));
 		
 		//Totaal immateriële vaste activa fiscaal
 		//IntangibleFixedAssetsTotalFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:IntangibleFixedAssetsTotalFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",18, Tab)), "G18"));		
 		
 		//Gebouwen en terreinen fiscaal
 		//BuildingsAndLandFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BuildingsAndLandFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",26, Tab)), "G26"));
 		
 		//Machines en installaties fiscaal
 		//MachinesAndInstallationsFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BuildingsAndLandFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",27, Tab)), "G27"));
 		
 		//Andere vaste bedrijfsmiddelen fiscaal
 		//FixedAssetsOtherFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:FixedAssetsOtherFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",28, Tab)), "G28"));
 		
 		//Totaal materiële vaste activa fiscaal
 		//TangibleFixedAssetsFiscalTotal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:TangibleFixedAssetsFiscalTotal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",29, Tab)), "G29"));
 		
 		//Deelnemingen fiscaal
 		//ParticipatingInterests
-		
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ParticipatingInterests").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",37, Tab)), "G37"));
+				
 		//Langlopende vorderingen op groepsmaatschappijen fiscaal
 		//LongTermReceivablesGroupCompaniesFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermReceivablesGroupCompaniesFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",38, Tab)), "G38"));
 		
 		//Langlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, fiscaal
 		//LongTermReceivablesParticipatingInterestCompaniesFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermReceivablesParticipatingInterestCompaniesFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",39, Tab)), "G39"));
 		
 		//Overige financiële vaste activa fiscaal
 		//FinancialFixedAssetsOtherFiscal
-		
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:FinancialFixedAssetsOtherFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",40, Tab)), "G40"));
+				
 		//Totaal financiële vaste activa fiscaal
 		//FinancialFixedAssetsTotalFiscal
-		
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:FinancialFixedAssetsTotalFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",41, Tab)), "G41"));
+				
 		//Langlopende vorderingen op groepsmaatschappijen nominaal
 		//LongTermReceivablesGroupCompaniesNominal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermReceivablesGroupCompaniesNominal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",38, Tab)), "B38"));
 		
 		//Langlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, nominaal
 		//LongTermReceivablesParticipatingInterestCompaniesNominal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermReceivablesParticipatingInterestCompaniesNominal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",39, Tab)), "B39"));
 		
 		//Overige financiële vaste activa fiscaal nominaal
 		//FinancialFixedAssetsOtherTaxNominalFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:FinancialFixedAssetsOtherTaxNominalFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",40, Tab)), "B40"));
 		
 		//Voorraden, exclusief onderhanden werk
 		//StockExcludingWorkInProgress
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:StockExcludingWorkInProgress").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",48, Tab)), "G48"));
 		
 		//Onderhanden werk fiscaal
 		//WorkInProgressFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:StockExcludingWorkInProgress").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",49, Tab)), "G49"));
 		
 		//Totaal voorraden fiscaal
 		//StockTotalFiscal
-		
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:StockTotalFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",50, Tab)), "G50"));
+				
 		//Vorderingen op handelsdebiteuren fiscaal
 		//TradeAccountsReceivableFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:TradeAccountsReceivableFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",57, Tab)), "G57"));
 		
 		//Vorderingen omzetbelasting fiscaal
 		//ValueAddedTaxReceivablesFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ValueAddedTaxReceivablesFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",58, Tab)), "G58"));
 		
 		//Kortlopende vorderingen op groepsmaatschappijen fiscaal
 		//ShortTermReceivablesGroupCompaniesFiscal
-		
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ShortTermReceivablesGroupCompaniesFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",59, Tab)), "G59"));
+				
 		//Kortlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, fiscaal
 		//ShortTermReceivablesParticipatingInterestCompaniesFiscal
-		
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ShortTermReceivablesParticipatingInterestCompaniesFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",60, Tab)), "G60"));
+				
 		//Overige vorderingen fiscaal
 		//ReceivablesOtherFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ReceivablesOtherFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",61, Tab)), "G61"));
 		
 		//Totaal vorderingen fiscaal
 		//ReceivablesTotalFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ReceivablesTotalFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",62, Tab)), "G62"));
 		
 		//Nominaal handelsdebiteuren fiscaal
 		//TradeReceivablesNominal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:TradeReceivablesNominal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",57, Tab)), "B57"));
+		
 		
 		//Kortlopende vorderingen op groepsmaatschappijen nominaal
 		//ShortTermReceivablesGroupCompaniesNominal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ShortTermReceivablesGroupCompaniesNominal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",59, Tab)), "B59"));
 		
 		//Kortlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, nominaal
 		//ShortTermReceivablesParticipatingInterestCompaniesNominal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ShortTermReceivablesParticipatingInterestCompaniesNominal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",60, Tab)), "B60"));
 		
 		//Effecten fiscaal
 		//SecuritiesFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:SecuritiesFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",67, Tab)), "G67"));
+		
 		
 		//Liquide middelen fiscaal
 		//LiquidAssetsTotalFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LiquidAssetsTotalFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",72, Tab)), "G72"));
 		
 		//Totaal activa fiscaal
 		//AssetsTotalAmountFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:AssetsTotalAmountFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("G",78, Tab)), "G78"));
 		
 		//Kosten aanschaf goodwill fiscaal
 		//GoodwillPurchaseCostsFiscal
-		
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:GoodwillPurchaseCostsFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",16, Tab)), "B16"));
+				
 		//Aanschaf/voortbrengingskosten overige immateriële vaste activa fiscaal
 		//IntangibleFixedAssetsOtherPurchaseOrProductionCostsFiscal
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:GoodwillPurchaseCostsFiscal").toString(), Double.parseDouble(BalansActivaXLS.HaalData("B",17, Tab)), "B17"));
 		
 		//Toelichting op balans activa
 		//BalanceSheetAssetsDescription
