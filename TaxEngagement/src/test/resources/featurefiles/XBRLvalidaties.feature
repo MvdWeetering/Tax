@@ -49,3 +49,10 @@ Given the reading of the XBRL is correct
 Given the reading of the XLS is correct
 When the elements of the XBRL and the XLS for Balans Passiva are compared
 Then they contain the same values
+
+@Balans_Passiva_xbrl
+Scenario: XBRL Validation Fiscale vermogensvergelijking
+  Given the reading of the XBRL is correct
+Given the reading of the XLS is correct
+When the elements of the XBRL and the XLS for Fiscale vermogensvergelijking are compared
+Then they contain the same values
