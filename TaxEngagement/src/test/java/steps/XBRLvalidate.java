@@ -413,124 +413,124 @@ public void the_elements_of_the_XBRL_and_the_XLS_for_Balans_Passiva_are_compared
 	
 	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ShipName").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("C",13, Tab)), "C13"));
 	
-	//BusinessActivitiesChangeExists	
-	//Activiteiten onderneming gewijzigd
 	
-	//BusinessName	
-	//Naam van de onderneming
+	//PaidCalledUpCapitalFiscal	
+	//Gestort en opgevraagd kapitaal fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PaidCalledUpCapitalFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",9, Tab)), "F9"));
 	
-	//BusinessActivitiesDescription	
-	//Omschrijving activiteiten van de onderneming
+	//InformalCapitalFiscal	
+	//Informeel kapitaal fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:InformalCapitalFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",10, Tab)), "F10"));
+	
+	//SharePremiumFiscal	
+	//Agio fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:SharePremiumFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",11, Tab)), "F11"));
+	
+	//RetainedProfitsFiscal	
+	//Winstreserve fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RetainedProfitsFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",12, Tab)), "F12"));
+	
+	//EqualizationReserveCostsFiscal	
+	//Kosten egalisatiereserve fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:EqualizationReserveCostsFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",13, Tab)), "F13"));
+	
+	//ReinvestmentReserveFiscal	
+	//Herinvesteringsreserve fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ReinvestmentReserveFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",14, Tab)), "F14"));
+	
+	//CompartmentReserveTaxed	
+	//Belaste compartimenteringsreserve
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CompartmentReserveTaxed").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",15, Tab)), "F15"));
+	
+	//TaxReservesOtherFiscal	
+	//Overige fiscale reserves
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:TaxReservesOtherFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",16, Tab)), "F16"));
+	
+	//EquityCapitalBusinessAssetsTotalFiscal	
+	//Eigen vermogen/fiscaal ondernemingsvermogen
+	
+	
+	//WarrantyProvisionFiscal	
+	//Garantievoorziening fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",25, Tab)), "F25"));
+	
+	//ProvisionAnnuityPensionAndRightOfStanding	
+	//Voorzieningen voor lijfrente, pensioen en stamrecht
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProvisionAnnuityPensionAndRightOfStanding").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",26, Tab)), "F26"));
+	
+	//ProvisionsOtherFiscal	
+	//Overige voorzieningen fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProvisionsOtherFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",27, Tab)), "F27"));
+	
+	//ProvisionsTotalFiscal	
+	//Totaal voorzieningen fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProvisionsTotalFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",28, Tab)), "F28"));
+	
+	//ConvertibleLoansFiscal	
+	//Converteerbare leningen fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ConvertibleLoansFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",36, Tab)), "F36"));
+	
+	//BondsFiscal	
+	//Obligaties fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BondsFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",38, Tab)), "F38"));
+	
+	//LongTermDebtsGroupCompanies	
+	//Langlopende schulden groepsmaatschappijen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermDebtsGroupCompanies").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",39, Tab)), "F39"));
+	
+	//LongTermDebtsParticipatingInterestCompanies	
+	//Langlopende schulden participanten/maatschappij waarin wordt deelgenomen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermDebtsParticipatingInterestCompanies").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",39, Tab)), "F39"));
+	
+	//PayablesCreditInstitutionFiscal	
+	//Schulden aan kredietinstellingen fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PayablesCreditInstitutionFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",40, Tab)), "F40"));
+	
+	//LongTermDebtsOther	
+	//Overige langlopende schulden
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermDebtsOther").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",41, Tab)), "F41"));
+	
+	//LongTermDebtsTotal	
+	//Totaal langlopende schulden
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LongTermDebtsOther").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",42, Tab)), "F42"));
 		
-	//SubsidiaryTaxEntityExists	
-	//Dochtermaatschappij fiscale eenheid
+	//AccountsPayableSuppliersTradeCreditors	
+	//Schulden aan leveranciers en handelskredieten
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:AccountsPayableSuppliersTradeCreditors").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",49, Tab)), "F49"));
 	
-	//AgriculturalActivitiesExist	
-	//Agrarische activiteiten
+	//ValueAddedTaxPayablesFiscal	
+	//Schulden omzetbelasting fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ValueAddedTaxPayablesFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",50, Tab)), "F50"));
 	
-	//GoodwillFiscal	
-	//Goodwill fiscaal
+	//ShortTermDebtsGroupCompanies	
+	//Kortlopende schulden groepsmaatschappijen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ShortTermDebtsGroupCompanies").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",52, Tab)), "F52"));
 	
-	//IntangibleFixedAssetsOtherFiscal	
-	//Overige immateriële vaste activa fiscaal
+	//WageTaxDebt	
+	//Loonheffingen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:WageTaxDebt").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",51, Tab)), "F51"));
 	
-	//IntangibleFixedAssetsTotalFiscal	
-	//Totaal immateriële vaste activa fiscaal
+	//ShortTermDebtsParticipatingInterestCompanies	
+	//Kortlopende schulden participanten/maatschappij waarin wordt deelgenomen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ValueAddedTaxPayablesFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",53, Tab)), "F53"));
 	
+	//ShortTermDebtsOther	
+	//Overige kortlopende schulden
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ValueAddedTaxPayablesFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",54, Tab)), "F54"));
 	
-	//BuildingsAndLandFiscal	
-	//Gebouwen en terreinen fiscaal
+	//ShortTermDebtsTotal	
+	//Totaal kortlopende schulden
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ShortTermDebtsTotal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",55, Tab)), "F55"));
 	
-	//MachinesAndInstallationsFiscal	
-	//Machines en installaties fiscaal
+	//LiabilitiesTotalFiscal	
+	//Totaal passiva fiscaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:LiabilitiesTotalFiscal").toString(), Double.parseDouble(BalansPassivaXLS.HaalData("F",59, Tab)), "F59"));
 	
-	
-	//FixedAssetsOtherFiscal	
-	//Andere vaste bedrijfsmiddelen fiscaal
-	
-	//TangibleFixedAssetsFiscalTotal	
-	//Totaal materiële vaste activa fiscaal
-	
-	//ParticipatingInterests	
-	//Deelnemingen fiscaal
-	
-	//LongTermReceivablesGroupCompaniesFiscal	
-	//Langlopende vorderingen op groepsmaatschappijen fiscaal
-	
-	//LongTermReceivablesParticipatingInterestCompaniesFiscal	
-	//Langlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, fiscaal
-	
-	//FinancialFixedAssetsOtherFiscal	
-	//Overige financiële vaste activa fiscaal
-	
-	//FinancialFixedAssetsTotalFiscal	
-	//Totaal financiële vaste activa fiscaal
-	
-	//LongTermReceivablesGroupCompaniesNominal	
-	//Langlopende vorderingen op groepsmaatschappijen nominaal
-	
-	//LongTermReceivablesParticipatingInterestCompaniesNominal	
-	//Langlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, nominaal
-	
-	//FinancialFixedAssetsOtherTaxNominalFiscal	
-	//Overige financiële vaste activa fiscaal nominaal
-	
-	//StockExcludingWorkInProgress	
-	//Voorraden, exclusief onderhanden werk
-	
-	//WorkInProgressFiscal	
-	//Onderhanden werk fiscaal
-	
-	//StockTotalFiscal	
-	//Totaal voorraden fiscaal
-	
-	//TradeAccountsReceivableFiscal	
-	//Vorderingen op handelsdebiteuren fiscaal
-	
-	//ValueAddedTaxReceivablesFiscal	
-	//Vorderingen omzetbelasting fiscaal
-	
-	//ShortTermReceivablesGroupCompaniesFiscal	
-	//Kortlopende vorderingen op groepsmaatschappijen fiscaal
-	
-	//ShortTermReceivablesParticipatingInterestCompaniesFiscal	
-	//Kortlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, fiscaal
-	
-	//ReceivablesOtherFiscal	
-	//Overige vorderingen fiscaal
-	
-	//ReceivablesTotalFiscal	
-	//Totaal vorderingen fiscaal
-	
-	//TradeReceivablesNominal	
-	//Nominaal handelsdebiteuren fiscaal
-	
-	//ShortTermReceivablesGroupCompaniesNominal	
-	//Kortlopende vorderingen op groepsmaatschappijen nominaal
-	
-	//ShortTermReceivablesParticipatingInterestCompaniesNominal	
-	//Kortlopende vorderingen participanten/maatschappij waarin wordt deelgenomen, nominaal
-	
-	//SecuritiesFiscal	
-	//Effecten fiscaal
-	
-	//LiquidAssetsTotalFiscal	
-	//Liquide middelen fiscaal
-	
-	//AssetsTotalAmountFiscal	
-	//Totaal activa fiscaal
-	
-	//GoodwillPurchaseCostsFiscal	
-	//Kosten aanschaf goodwill fiscaal
-	
-	//IntangibleFixedAssetsOtherPurchaseOrProductionCostsFiscal	
-	//Aanschaf/voortbrengingskosten overige immateriële vaste activa fiscaal
-	
-	//BalanceSheetAssetsDescription	
-	//Toelichting op balans activa
+	//BalanceSheetLiabilitiesDescription	
+	//Toelichting op balans passiva
+
 
 		
-	
 }
 
 	@Then("^they contain the same values$")
