@@ -7,6 +7,7 @@ import gherkin.formatter.model.Result;
 import pageObjects.BalansActivaObjecten;
 import codebase.BalansActivaXLS;
 import codebase.BalansPassivaXLS;
+import codebase.FiscaleVermogensvergelijkingXLS;
 import codebase.ReadXML;
 import codebase.XLSbyColumn;
 import codebase.XMLandXLScompare;
@@ -528,10 +529,115 @@ public void the_elements_of_the_XBRL_and_the_XLS_for_Balans_Passiva_are_compared
 	
 	//BalanceSheetLiabilitiesDescription	
 	//Toelichting op balans passiva
-
-
 		
 }
+
+@When("^the elements of the XBRL and the XLS for Fiscale vermogensvergelijking are compared$")
+public void the_elements_of_the_XBRL_and_the_XLS_for_Fiscale_vermogensvergelijking_are_compared() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+
+	String Tab = "TC01";
+
+//ProfitDistributionSubjectToDividendDate	
+//De datum waarop het dividend ter beschikking is gesteld
+
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionSubjectToDividendDate").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("B",24, Tab)), "B24"));
+
+	
+//DividendTaxReturnDate	
+//Datum aangifte dividendbelasting
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:DividendTaxReturnDate").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("C",24, Tab)), "C24"));
+	
+//DividendTaxWithheldAmount
+//Bedrag ingehouden dividendbelasting
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:DividendTaxWithheldAmount").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("D",25, Tab)), "D25"));
+
+//ProfitDistributionAmount	
+//Bedrag winstuitdeling
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionAmount").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",25, Tab)), "E25"));
+	
+//ProfitDistributionsSubjectToDividendTaxTotalAmount	
+//Totaal aan dividendbelasting onderworpen winstuitdelingen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionsSubjectToDividendTaxTotalAmount").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",21, Tab)), "F21"));
+	
+//CorporationTaxWithdrawnFromEquityCapital	
+//Vennootschapsbelasting aan fiscaal vermogen onttrokken
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CorporationTaxWithdrawnFromEquityCapital").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",27, Tab)), "F27"));
+	
+//ForeignTaxAmountThisFinancialYearAppliedDoubleTaxAvoidance	
+//Buitenlandse belasting over dit boekjaar voorzover hierop een regeling ter voorkoming van dubbele belasting van toepassing is
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ForeignTaxAmountThisFinancialYearAppliedDoubleTaxAvoidance").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",28, Tab)), "F28"));
+	
+//ProfitDistributionsByCooperationsNonDeductibelPart	
+//Niet aftrekbaar deel winstuitdelingen door coöperaties
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionsByCooperationsNonDeductibelPart").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",30, Tab)), "F30"));
+	
+//ProfitDistributionOtherNonDeductibleAmount	
+//Andere openlijke of vermomde uitdelingen van winst
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionsByCooperationsNonDeductibelPart").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",35, Tab)), "F35"));
+	
+//SupervisoryDirectorsFeesBalanceNonDeductiblePart	
+//Niet aftrekbaar deel beloningen commissarissen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:SupervisoryDirectorsFeesBalanceNonDeductiblePart").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",36, Tab)), "F36"));
+	
+//ProfitSharingBonusesNonDeductiblePart	
+//Niet aftrekbaar deel tantièmes
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitSharingBonusesNonDeductiblePart").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",41, Tab)), "F41"));
+
+//CapitalProvisionPaymentsNonDeductiblePart	
+//Niet aftrekbaar deel vergoedingen voor kapitaalsverstrekking
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalProvisionPaymentsNonDeductiblePart").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",47, Tab)), "F47"));
+	
+//PaymentsEnsuingFromArticlesOfAssociationEtcRegulationsTotal	
+//Totaal uitkeringen ingevolge statutaire en andere voorschriften
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PaymentsEnsuingFromArticlesOfAssociationEtcRegulationsTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",52, Tab)), "F52"));
+
+	//ResultTemporarilyPurchasedSharesEmployeeOptionsTotal	
+//Totaal resultaat tijdelijk ingekochte aandelen werknemersopties
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ResultTemporarilyPurchasedSharesEmployeeOptionsTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",53, Tab)), "F53"));
+
+//CostsUponTaxEntityPurchaseRemainingSharesSubsidiaryInTaxEntityTotal	
+//Totaal kosten bij aankoop resterende aandelen dochtermaatschappijen in fiscale eenheid
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CostsUponTaxEntityPurchaseRemainingSharesSubsidiaryInTaxEntityTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",54, Tab)), "F54"));
+	
+//BusinessCapitalTotalEndFinancialYearForComparisonMethod	
+//Ondernemingsvermogen bij het einde van het boekjaar
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessCapitalTotalEndFinancialYearForComparisonMethod").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",5, Tab)), "E5"));
+	
+//CapitalChangesAndWithdrawalsTotal	
+//Mutaties/onttrekkingen kapitaal in het boekjaar
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:FinalAssetsAndCapitalWithdrawalsTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",6, Tab)), "E6"));
+	
+//FinalAssetsAndCapitalWithdrawalsTotal
+//Totaal eindvermogen en terugbetalingen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:FinalAssetsAndCapitalWithdrawalsTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F",8, Tab)), "F8"));
+	
+//BusinessCapitalTotalStartFinancialYearForComparisonMethod	
+//Ondernemingsvermogen bij het begin van het boekjaar
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessCapitalTotalEndFinancialYearForComparisonMethod").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",10, Tab)), "E10"));
+	
+//CapitalContributionsTotal	
+//Stortingen van kapitaal
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalContributionsTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",11, Tab)), "E11"));
+	
+//InitialCapitalAndCapitalContributionsTotal	
+//Totaal beginvermogen en kapitaalstortingen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:InitialCapitalAndCapitalContributionsTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",13, Tab)), "E13"));
+	
+//CapitalComparisonDifferenceOfCapitalTotal	
+//Vermogensverschil
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalComparisonDifferenceOfCapitalTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",19, Tab)), "E19"));
+	
+//CorporationTaxNonDeductibleAmountsTotal	
+//Niet aftrekbare bedragen
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CorporationTaxNonDeductibleAmountsTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",15, Tab)), "E15"));
+	
+//BalanceProfitComparisonMethod	
+//Saldo fiscale winstberekening (volgens vermogensvergelijking)
+	Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalComparisonDifferenceOfCapitalTotal").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E",16, Tab)), "E16"));
+
+}
+
 
 	@Then("^they contain the same values$")
 	public void they_contain_the_same_values() throws Throwable {
