@@ -10,14 +10,14 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "14082017"
+    And open the Project "dossier 28082017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
-
-    # Then i can validate the error messages for the Algemene gegevens form
+    Then i can validate the error messages for the Algemene gegevens form
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
+      |  2 | "Chrome" |
 
   @vullen_formulier @Algemene_vragen
   Scenario Outline: vullen formulier Algemene Vragen

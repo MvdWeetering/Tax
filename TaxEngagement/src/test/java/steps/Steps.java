@@ -336,7 +336,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("HandelsnaamOnderneming", 1, 200, "TextVeld", driver));
 		
 		// RSIN
-		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
 		
 		
 		//Toelichting verzoek
@@ -379,7 +379,6 @@ public class Steps extends AbstractSteps {
 		// Tussenvoegsel ondertekenaar
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("TussenvoegselOndertekenaar", 1, 10, "TextVeld", driver));
 		
-		
 		// Achternaam ondertekenaar
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("AchternaamOndertekenaar", 1, 200, "TextVeld", driver));
 		
@@ -391,7 +390,7 @@ public class Steps extends AbstractSteps {
 		
 					
 		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		driver.quit();
+		//driver.quit();
 		
 		assertTrue(ValidatieResultaat.isEmpty());	
 		

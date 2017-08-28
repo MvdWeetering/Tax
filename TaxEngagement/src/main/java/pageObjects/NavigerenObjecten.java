@@ -20,7 +20,7 @@ public class NavigerenObjecten {
 	}
 	
 	public static WebElement NavigerenAlgemeneGegevens(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Algemene Gegevens"));
+	    element = driver.findElement(By.partialLinkText("Algemene gegevens"));
 		return element;
 	}
 	public static WebElement NavigerenSpecificatieAandeelhouders(WebDriver driver){
