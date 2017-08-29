@@ -229,9 +229,161 @@ public class XBRLvalidate {
 	@When("^the elements of the XBRL and the XLS for Specificatie Deelneming are compared$")
 	public void the_elements_of_the_XBRL_and_the_XLS_for_Specificatie_Deelneming_are_compared() throws Throwable {
 
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
-				"bd-bedr:RequestExplicitDecisionTaxAdministrationDescription", 6));
-
+		
+		
+		//ParticipatingInterestName	
+		//Naam deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestName", 1));
+		
+		//ParticipatingInterestIdentificationNumber	
+		//Identificatienummer deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestIdentificationNumber", 2));
+		
+		//PlaceOfEstablishmentParticipatingInterest	
+		//Vestigingsplaats deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-PlaceOfEstablishmentParticipatingInterest", 3));
+		
+		//EstablishmentParticipatingInterestCountry	
+		//Vestigingsland deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-EstablishmentParticipatingInterestCountry", 4));
+		
+		//ParticipatingInterestPercentageInterest	
+		//Percentage aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestPercentageInterest", 5));
+		
+		//InterestParticipatingInterestNominalValue	
+		//Nominale waarde aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestParticipatingInterestNominalValue", 9));
+		
+		//ParticipatingInterestSacrificedAmount	
+		//Opgeofferd bedrag aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestSacrificedAmount", 10));
+		
+		//SheetValuationParticipatingInterestBalance	
+		//Balanswaardering deelneming fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-SheetValuationParticipatingInterestBalance", 11));
+		
+		//ParticipatingInterestBenefits	
+		//Voordelen deelneming boekjaar
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestBenefits", 12));
+		
+		//ParticipatingInterestReceivableAmount	
+		//Bedrag vordering op deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestReceivableAmount", 13));
+		
+		//InterestReceivedFromParticipatingInterest	
+		//In het boekjaar ontvangen rente van de deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestReceivedFromParticipatingInterest", 15));
+		
+		//ParticipatingInterestPayableAmount	
+		//Bedrag schuld aan deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestPayableAmount", 14));
+		
+		//InterestPaidToParticipatingInterest	
+		//In het boekjaar betaalde rente aan de deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestPaidToParticipatingInterest", 16));
+		
+		//ParticipatingInterestJoiningOrRemovalTaxEntityExists	
+		//Voeging of ontvoeging van deelneming fiscale eenheid van belastingplichtige
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestJoiningOrRemovalTaxEntityExists", 17));
+		
+		//ParticipatingInterestObtainmentEnlargementExists	
+		//Verwerving of uitbreiding deelneming van toepassing
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementExists", 21));
+		
+		//ParticipatingInterestAlienationDiminutionExists	
+		//Vervreemding of verkleining deelneming van toepassing
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionExists", 25));
+		
+		//ParticipatingInterestLiquidationExists	
+		//Deelneming liquidatie
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestLiquidationExists", 33));
+		
+		//ParticipatingInterestApplicationValuationInstructionArticle13aApplied	
+		//Waarderingsvoorschrift artikel 13a op deelneming toegepast
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestApplicationValuationInstructionArticle13aApplied", 36));
+		
+		//ParticipatingInterestQualificationAsNotQualified	
+		//Kwalificatie als niet kwalificerende beleggingsdeelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestQualificationAsNotQualified",37));
+		
+		//TaxEntityJoiningDate	
+		//Voegingsdatum deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-TaxEntityJoiningDate", 18));
+		
+		//TaxEntityRemovalDate	
+		//Ontvoegingsdatum deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-TaxEntityRemovalDate", 19));
+		
+		//ParticipatingInterestObtainmentEnlargementPercentage	
+		//Percentage verwerving of uitbreiding aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementPercentage", 21));
+		
+		//ParticipatingInterestObtainmentEnlargementNominalValue	
+		//Nominale waarde verwerving of uitbreiding aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementNominalValue", 22));
+		
+		//ParticipatingInterestObtainmentEnlargementSacrificedAmount	
+		//Opgeofferd bedrag verwerving of uitbreiding aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementSacrificedAmount", 23));
+		
+		//ParticipatingInterestObtainedAffiliatedPerson	
+		//Deelneming is verworven van verbonden natuurlijk- of rechtspersoon
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainedAffiliatedPerson", 26));
+		
+		//ParticipatingInterestAlienationDiminutionPercentage	
+		//Percentage vervreemding of verkleining aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionPercentage", 28));
+		
+		//ParticipatingInterestAlienationDiminutionNominalValue	
+		//Nominale waarde vervreemding of verkleining aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionNominalValue", 29));
+		
+		//ParticipatingInterestAlienationDiminutionRevenue	
+		//Opbrengst vervreemding of verkleining aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionRevenue", 30));
+		
+		//ParticipatingInterestAlienationAffiliatedPerson	
+		//Deelneming is vervreemd aan verbonden natuurlijk- of rechtspersoon
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationAffiliatedPerson", 27));
+		
+		//InterestsWithParticipatingInterestSettlementDate	
+		//Vereffeningsdatum deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestsWithParticipatingInterestSettlementDate", 34));
+		
+		//ParticipatingInterestLiquidationLoss	
+		//Liquidatieverlies van deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestLiquidationLoss", 35));
+		
+		//ParticipatingInterestEconomicValue	
+		//Waarde in het economisch verkeer van deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEconomicValue", 38));
+		
+		//ParticipatingInterestPercentageFallenBelowTwentyFivePercent	
+		//Percentage in deelneming gedaald onder 25 procent
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestPercentageFallenBelowTwentyFivePercent", 36));
+		
+		//ParticipatingInterestValueAtTimeOfShareChangeToBelowTwentyFivePercent	
+		//Waarde van 25 procent-of-meer-belang op tijdstip mutatie
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestValueAtTimeOfShareChangeToBelowTwentyFivePercent", 38));
+		
+		//ParticipatingInterestEngrossmentBenefit	
+		//Brutering van voordeel bij deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEngrossmentBenefit", 39));
+		
+		//ParticipatingInterestEuropeanUnitProfitPaymentPartBenefit	
+		//EU-deelneming en winstuitkering als onderdeel van voordeel
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEuropeanUnitProfitPaymentPartBenefit", 41));
+		
+		//ParticipatingInterestEngrossmentAndSetoffWithEffectiveTaxExists	
+		//Brutering en verrekening met effectieve belasting deelneming
+		//Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEngrossmentAndSetoffWithEffectiveTaxExists", x));
+		
+		//ParticipatingInterestDifferentSetoffWithAlreadyTaxedBenefitExists	
+		//Afwijkende verrekening bij reeds belaste winstuitkering deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestDifferentSetoffWithAlreadyTaxedBenefitExists", 43));
+		
+		
 	}
 
 	@When("^the elements of the XBRL and the XLS for Toelichting Balans are compared$")
