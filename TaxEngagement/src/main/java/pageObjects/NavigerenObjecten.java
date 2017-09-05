@@ -63,7 +63,7 @@ public class NavigerenObjecten {
 		return element;
 	}
 	public static WebElement Investeringsaftrek(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("investeringsaftrek"));
+	    element = driver.findElement(By.partialLinkText("investeringsregeling"));
 		return element;
 	}
 	public static WebElement Objectvrijstelling(WebDriver driver){
@@ -87,6 +87,9 @@ public class NavigerenObjecten {
 		return element;
 	}
 	
-
+	public static WebElement VerliesVerrekening (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Verliesverrekening"));
+		return element;
+	}
 	
 }

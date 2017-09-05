@@ -44,8 +44,6 @@ public class InvesteringsaftrekObjecten {
 		element = driver.findElement(By.id("idcheckboxCaribbean"));
 		return element;
 	}
-	public static WebElement kleinschaligheidsinvesteringsaftrek (WebDriver driver){
-		element = driver.findElement(By.id("idcheckboxCarib"));
-		return element;
-	}
+
+	
 }

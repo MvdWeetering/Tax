@@ -33,6 +33,7 @@ import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
 import pageObjects.ZeescheepvaartObjecten;
+import pageObjects.winstVerliesVerrekeningObjecten;
 import codebase.*;
 
 public class Steps extends AbstractSteps {
@@ -47,11 +48,11 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 		
 		//Splat
-		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		//InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 		
 		
 		//Dev
-		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 		
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -63,7 +64,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 		
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		//WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
 		//String User = (HuidigeUser.getText());
@@ -1686,7 +1687,7 @@ public void i_can_validate_the_error_messages_for_the_Winst_en_Verlies_rekening_
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OntvangenDividentFiscaal", 1, 20, "PositiefGetal", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("VoordelenOntvoegDochterFiscaal", 1, 20, "PositiefGetal", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OverigeBuitenGewBatenFiscaal", 1, 20, "PositiefGetal", driver));
-	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("AfboekenHerinvesteringReserveFiscaal", 1, 20, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("AfboekenHeringReserveFiscaal", 1, 20, "PositiefGetal", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("UitkeringANBIFiscaal", 1, 20, "PositiefGetal", driver));
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesWinst("OverigeBuitengewoneLastenFiscaal", 1, 20, "PositiefGetal", driver));
 	
@@ -2038,7 +2039,7 @@ public void i_can_validate_the_error_messages_for_the_Balans_Passiva_form_from_t
 
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("KostenegalisatiereserveFiscaal31_12", 1, 20, "PositiefGetal", driver));
 	
-	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("HerinvesteringsreserveFiscaal31_12", 1, 20, "PositiefGetal", driver));
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("HeringsreserveFiscaal31_12", 1, 20, "PositiefGetal", driver));
 	
 	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansPassiva("OverigeFiscaleReservesFiscaal31_12", 1, 20, "PositiefGetal", driver));
 	
@@ -2393,7 +2394,7 @@ public void i_can_fill_out_the_form_Balans_Passiva_from_tab(String Tab) throws T
 	BalansPassivaObjecten.KostenegalisatiereserveCF(driver).clear();
 	BalansPassivaObjecten.KostenegalisatiereserveCF(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("E",13, Tab));
 	
-	//Herinvesteringsreserve
+	//Heringsreserve
 	
 	BalansPassivaObjecten.HerinvesteringsreserveCommercieeel_1_1(driver).clear();
 	BalansPassivaObjecten.HerinvesteringsreserveCommercieeel_1_1(driver).sendKeys(codebase.BalansPassivaXLS.HaalData("B",14, Tab));
@@ -2683,7 +2684,7 @@ public void i_can_validate_the_totals_for_Balans_Passiva_from_tab(String Tab) th
 	//Kostenegalisatiereserve
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.KostenegalisatiereserveFiscaal31_12(driver).getAttribute("value"), Double.parseDouble(BalansPassivaXLS.HaalData("F",13, Tab)), "F13"));
 		
-	//Herinvesteringsreserve
+	//Heringsreserve
 	ValidatieResultaat.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.HerinvesteringsreserveFiscaal31_12(driver).getAttribute("value"), Double.parseDouble(BalansPassivaXLS.HaalData("F",14, Tab)), "F14"));
 	
 	//Belaste compartimenteringsreserve 
@@ -2812,13 +2813,11 @@ public void open_the_form_Investeringsaftrek() throws Throwable {
 	
 }
 
-@Then("^i can fill out the form Investeringsaftrek$")
-public void i_can_fill_out_the_form_Investeringsaftrek() throws Throwable {
+@Then("^i can fill out the form Investeringsaftrek with config (\\d+)$")
+public void i_can_fill_out_the_form_Investeringsaftrek_with_config(int arg1) throws Throwable {
     
 	
-	
-	
-	
+		
 	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
 	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys("omschrijving bedrijfsmiddel");
 	
@@ -2834,9 +2833,7 @@ public void i_can_fill_out_the_form_Investeringsaftrek() throws Throwable {
 	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).clear();
 	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).sendKeys("1003");
 	
-	InvesteringsaftrekObjecten.kleinschaligheidsinvesteringsaftrek(driver).clear();
-	InvesteringsaftrekObjecten.kleinschaligheidsinvesteringsaftrek(driver).sendKeys("1004");
-	
+		
 	driver.quit();
 	
 }
@@ -3226,12 +3223,42 @@ ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 	//System.out.println(ValidatieResultaat);
 	//driver.quit();
 	assertTrue(ValidatieResultaat.isEmpty());
-	
-	
-	
 	//driver.quit();
 	
 	}
+
+@When("^open the form Verlies Verrekening$")
+public void open_the_form_Verlies_Verrekening() throws Throwable {
+
+	System.out.println("test");
+	NavigerenObjecten.VerliesVerrekening(driver).click();	
+	
+}
+
+@Then("^i can fill out the form Verlies Verrekening$")
+public void i_can_fill_out_the_form_Verlies_Verrekening() throws Throwable {
+
+	
+	winstVerliesVerrekeningObjecten.VerrekeningVerliesDitBoekjaar(driver).sendKeys("1000");
+	
+	winstVerliesVerrekeningObjecten.RSINMaatschappij(driver).sendKeys("1001");
+	winstVerliesVerrekeningObjecten.VerliesBoekjaar(driver).sendKeys("1002");
+	winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar(driver).sendKeys("1003");
+	
+	winstVerliesVerrekeningObjecten.Jaar(driver).sendKeys("2017");
+	winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar(driver).sendKeys("2001");
+	winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar(driver).sendKeys("2002");
+
+	winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).clear();
+	winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).sendKeys("123456");
+	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys("01012017");
+	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys("12312017");
+	winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar(driver).sendKeys("2003");
+	winstVerliesVerrekeningObjecten.TeVerrekenenVerlies(driver).sendKeys("2004");
+   
+}
+
+
 }
 
 

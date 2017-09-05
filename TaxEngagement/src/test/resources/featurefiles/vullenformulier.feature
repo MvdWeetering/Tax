@@ -14,6 +14,7 @@ Feature: vullen formulieren
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
     Then i can validate the error messages for the Algemene gegevens form
+
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
@@ -73,8 +74,8 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-	  # |    2 | "Chrome" |
-  
+      |    2 | "Chrome" |
+
   @vullen_formulier @Winst_en_verlies_rekening
   Scenario Outline: vullen formulier Winst en Verlies rekening
     Given I want to login with browser <Browser>
@@ -106,9 +107,9 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-  #   | "TC02" | "Chrome" |
-  #   | "TC03" | "Chrome" |
-  
+      | "TC02" | "Chrome" |
+      | "TC03" | "Chrome" |
+
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva
     Given I want to login with browser <Browser>
@@ -133,11 +134,12 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "14082017"
     And open the form Investeringsaftrek
-    Then i can fill out the form Investeringsaftrek
+    Then i can fill out the form Investeringsaftrek with config <Id>
 
     Examples: 
-      | Browser  |
-      | "chrome" |
+
+      | Id | Browser  |
+      |  1 | "Chrome" |
 
   @vullen_formulier @Objectvrijstelling
   Scenario Outline: vullen formulier Objectvrijstelling
@@ -147,8 +149,8 @@ Feature: vullen formulieren
     And open the Project "14082017"
     And open the form Objectvrijstelling
     Then i can fill out the form Objectvrijstelling from <TCID>
+    Then i can validate the error messages for the formulier Objectvrijstelling
 
-    #  Then i can validate the error messages for the formulier Objectvrijstelling
     Examples: 
       | TCID | Browser  |
       |    2 | "Chrome" |
@@ -198,5 +200,18 @@ Feature: vullen formulieren
       | TCID | Browser  |
       |    1 | "Chrome" |
       |    2 | "Chrome" |
-#     |    3 | "Chrome" |
-#     |    4 | "Chrome" |
+      |    3 | "Chrome" |
+      |    4 | "Chrome" |
+
+  @vullen_formulier @verlies_verrekening
+  Scenario Outline: vullen formulier Verlies verrekening
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 05082017"
+    And open the form Verlies Verrekening
+    Then i can fill out the form Verlies Verrekening
+
+    Examples: 
+      | Browser  |
+      | "Chrome" |

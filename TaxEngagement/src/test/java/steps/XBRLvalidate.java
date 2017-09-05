@@ -179,8 +179,12 @@ public class XBRLvalidate {
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Algemene_gegevens", "bd-bedr:LegalPersonName", 1));
 
 		// FunctionalCurrencySchemeExists
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Algemene_gegevens",
+				"bd-bedr:FunctionalCurrencySchemeExists", 8));
 
 		// TaxReturnConcernsTaxEntity
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Algemene_gegevens", "bd-bedr:TaxReturnConcernsTaxEntity", 7));
 
 		// TaxConsultantNumber
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Algemene_gegevens", "bd-alg:TaxConsultantNumber", 9));
@@ -219,6 +223,8 @@ public class XBRLvalidate {
 				"bd-bedr:IncomeTaxReturnSignatureTelephoneNumber", 22));
 
 		// RequestExplicitDecisionTaxAdministrationExists
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Algemene_gegevens",
+				"bd-alg:RequestExplicitDecisionTaxAdministrationExists", 6));
 
 		// RequestExplicitDecisionTaxAdministrationDescription
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Algemene_gegevens",
@@ -229,166 +235,373 @@ public class XBRLvalidate {
 	@When("^the elements of the XBRL and the XLS for Specificatie Deelneming are compared$")
 	public void the_elements_of_the_XBRL_and_the_XLS_for_Specificatie_Deelneming_are_compared() throws Throwable {
 
-		
-		
-		//ParticipatingInterestName	
-		//Naam deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestName", 1));
-		
-		//ParticipatingInterestIdentificationNumber	
-		//Identificatienummer deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestIdentificationNumber", 2));
-		
-		//PlaceOfEstablishmentParticipatingInterest	
-		//Vestigingsplaats deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-PlaceOfEstablishmentParticipatingInterest", 3));
-		
-		//EstablishmentParticipatingInterestCountry	
-		//Vestigingsland deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-EstablishmentParticipatingInterestCountry", 4));
-		
-		//ParticipatingInterestPercentageInterest	
-		//Percentage aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestPercentageInterest", 5));
-		
-		//InterestParticipatingInterestNominalValue	
-		//Nominale waarde aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestParticipatingInterestNominalValue", 9));
-		
-		//ParticipatingInterestSacrificedAmount	
-		//Opgeofferd bedrag aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestSacrificedAmount", 10));
-		
-		//SheetValuationParticipatingInterestBalance	
-		//Balanswaardering deelneming fiscaal
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-SheetValuationParticipatingInterestBalance", 11));
-		
-		//ParticipatingInterestBenefits	
-		//Voordelen deelneming boekjaar
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestBenefits", 12));
-		
-		//ParticipatingInterestReceivableAmount	
-		//Bedrag vordering op deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestReceivableAmount", 13));
-		
-		//InterestReceivedFromParticipatingInterest	
-		//In het boekjaar ontvangen rente van de deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestReceivedFromParticipatingInterest", 15));
-		
-		//ParticipatingInterestPayableAmount	
-		//Bedrag schuld aan deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestPayableAmount", 14));
-		
-		//InterestPaidToParticipatingInterest	
-		//In het boekjaar betaalde rente aan de deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestPaidToParticipatingInterest", 16));
-		
-		//ParticipatingInterestJoiningOrRemovalTaxEntityExists	
-		//Voeging of ontvoeging van deelneming fiscale eenheid van belastingplichtige
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestJoiningOrRemovalTaxEntityExists", 17));
-		
-		//ParticipatingInterestObtainmentEnlargementExists	
-		//Verwerving of uitbreiding deelneming van toepassing
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementExists", 21));
-		
-		//ParticipatingInterestAlienationDiminutionExists	
-		//Vervreemding of verkleining deelneming van toepassing
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionExists", 25));
-		
-		//ParticipatingInterestLiquidationExists	
-		//Deelneming liquidatie
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestLiquidationExists", 33));
-		
-		//ParticipatingInterestApplicationValuationInstructionArticle13aApplied	
-		//Waarderingsvoorschrift artikel 13a op deelneming toegepast
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestApplicationValuationInstructionArticle13aApplied", 36));
-		
-		//ParticipatingInterestQualificationAsNotQualified	
-		//Kwalificatie als niet kwalificerende beleggingsdeelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestQualificationAsNotQualified",37));
-		
-		//TaxEntityJoiningDate	
-		//Voegingsdatum deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-TaxEntityJoiningDate", 18));
-		
-		//TaxEntityRemovalDate	
-		//Ontvoegingsdatum deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-TaxEntityRemovalDate", 19));
-		
-		//ParticipatingInterestObtainmentEnlargementPercentage	
-		//Percentage verwerving of uitbreiding aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementPercentage", 21));
-		
-		//ParticipatingInterestObtainmentEnlargementNominalValue	
-		//Nominale waarde verwerving of uitbreiding aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementNominalValue", 22));
-		
-		//ParticipatingInterestObtainmentEnlargementSacrificedAmount	
-		//Opgeofferd bedrag verwerving of uitbreiding aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainmentEnlargementSacrificedAmount", 23));
-		
-		//ParticipatingInterestObtainedAffiliatedPerson	
-		//Deelneming is verworven van verbonden natuurlijk- of rechtspersoon
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestObtainedAffiliatedPerson", 26));
-		
-		//ParticipatingInterestAlienationDiminutionPercentage	
-		//Percentage vervreemding of verkleining aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionPercentage", 28));
-		
-		//ParticipatingInterestAlienationDiminutionNominalValue	
-		//Nominale waarde vervreemding of verkleining aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionNominalValue", 29));
-		
-		//ParticipatingInterestAlienationDiminutionRevenue	
-		//Opbrengst vervreemding of verkleining aandelenbezit deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationDiminutionRevenue", 30));
-		
-		//ParticipatingInterestAlienationAffiliatedPerson	
-		//Deelneming is vervreemd aan verbonden natuurlijk- of rechtspersoon
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestAlienationAffiliatedPerson", 27));
-		
-		//InterestsWithParticipatingInterestSettlementDate	
-		//Vereffeningsdatum deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-InterestsWithParticipatingInterestSettlementDate", 34));
-		
-		//ParticipatingInterestLiquidationLoss	
-		//Liquidatieverlies van deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestLiquidationLoss", 35));
-		
-		//ParticipatingInterestEconomicValue	
-		//Waarde in het economisch verkeer van deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEconomicValue", 38));
-		
-		//ParticipatingInterestPercentageFallenBelowTwentyFivePercent	
-		//Percentage in deelneming gedaald onder 25 procent
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestPercentageFallenBelowTwentyFivePercent", 36));
-		
-		//ParticipatingInterestValueAtTimeOfShareChangeToBelowTwentyFivePercent	
-		//Waarde van 25 procent-of-meer-belang op tijdstip mutatie
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestValueAtTimeOfShareChangeToBelowTwentyFivePercent", 38));
-		
-		//ParticipatingInterestEngrossmentBenefit	
-		//Brutering van voordeel bij deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEngrossmentBenefit", 39));
-		
-		//ParticipatingInterestEuropeanUnitProfitPaymentPartBenefit	
-		//EU-deelneming en winstuitkering als onderdeel van voordeel
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEuropeanUnitProfitPaymentPartBenefit", 41));
-		
-		//ParticipatingInterestEngrossmentAndSetoffWithEffectiveTaxExists	
-		//Brutering en verrekening met effectieve belasting deelneming
-		//Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEngrossmentAndSetoffWithEffectiveTaxExists", x));
-		
-		//ParticipatingInterestDifferentSetoffWithAlreadyTaxedBenefitExists	
-		//Afwijkende verrekening bij reeds belaste winstuitkering deelneming
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestDifferentSetoffWithAlreadyTaxedBenefitExists", 43));
-		
-		
+		// ParticipatingInterestName
+		// Naam deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming", "bd-ParticipatingInterestName", 1));
+
+		// ParticipatingInterestIdentificationNumber
+		// Identificatienummer deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestIdentificationNumber", 2));
+
+		// PlaceOfEstablishmentParticipatingInterest
+		// Vestigingsplaats deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-PlaceOfEstablishmentParticipatingInterest", 3));
+
+		// EstablishmentParticipatingInterestCountry
+		// Vestigingsland deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-EstablishmentParticipatingInterestCountry", 4));
+
+		// ParticipatingInterestPercentageInterest
+		// Percentage aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestPercentageInterest", 5));
+
+		// InterestParticipatingInterestNominalValue
+		// Nominale waarde aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-InterestParticipatingInterestNominalValue", 9));
+
+		// ParticipatingInterestSacrificedAmount
+		// Opgeofferd bedrag aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestSacrificedAmount", 10));
+
+		// SheetValuationParticipatingInterestBalance
+		// Balanswaardering deelneming fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-SheetValuationParticipatingInterestBalance", 11));
+
+		// ParticipatingInterestBenefits
+		// Voordelen deelneming boekjaar
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming", "bd-ParticipatingInterestBenefits", 12));
+
+		// ParticipatingInterestReceivableAmount
+		// Bedrag vordering op deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestReceivableAmount", 13));
+
+		// InterestReceivedFromParticipatingInterest
+		// In het boekjaar ontvangen rente van de deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-InterestReceivedFromParticipatingInterest", 15));
+
+		// ParticipatingInterestPayableAmount
+		// Bedrag schuld aan deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestPayableAmount", 14));
+
+		// InterestPaidToParticipatingInterest
+		// In het boekjaar betaalde rente aan de deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-InterestPaidToParticipatingInterest", 16));
+
+		// ParticipatingInterestJoiningOrRemovalTaxEntityExists
+		// Voeging of ontvoeging van deelneming fiscale eenheid van
+		// belastingplichtige
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestJoiningOrRemovalTaxEntityExists", 17));
+
+		// ParticipatingInterestObtainmentEnlargementExists
+		// Verwerving of uitbreiding deelneming van toepassing
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestObtainmentEnlargementExists", 21));
+
+		// ParticipatingInterestAlienationDiminutionExists
+		// Vervreemding of verkleining deelneming van toepassing
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestAlienationDiminutionExists", 25));
+
+		// ParticipatingInterestLiquidationExists
+		// Deelneming liquidatie
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestLiquidationExists", 33));
+
+		// ParticipatingInterestApplicationValuationInstructionArticle13aApplied
+		// Waarderingsvoorschrift artikel 13a op deelneming toegepast
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestApplicationValuationInstructionArticle13aApplied", 36));
+
+		// ParticipatingInterestQualificationAsNotQualified
+		// Kwalificatie als niet kwalificerende beleggingsdeelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestQualificationAsNotQualified", 37));
+
+		// TaxEntityJoiningDate
+		// Voegingsdatum deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming", "bd-TaxEntityJoiningDate", 18));
+
+		// TaxEntityRemovalDate
+		// Ontvoegingsdatum deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming", "bd-TaxEntityRemovalDate", 19));
+
+		// ParticipatingInterestObtainmentEnlargementPercentage
+		// Percentage verwerving of uitbreiding aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestObtainmentEnlargementPercentage", 21));
+
+		// ParticipatingInterestObtainmentEnlargementNominalValue
+		// Nominale waarde verwerving of uitbreiding aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestObtainmentEnlargementNominalValue", 22));
+
+		// ParticipatingInterestObtainmentEnlargementSacrificedAmount
+		// Opgeofferd bedrag verwerving of uitbreiding aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestObtainmentEnlargementSacrificedAmount", 23));
+
+		// ParticipatingInterestObtainedAffiliatedPerson
+		// Deelneming is verworven van verbonden natuurlijk- of rechtspersoon
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestObtainedAffiliatedPerson", 26));
+
+		// ParticipatingInterestAlienationDiminutionPercentage
+		// Percentage vervreemding of verkleining aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestAlienationDiminutionPercentage", 28));
+
+		// ParticipatingInterestAlienationDiminutionNominalValue
+		// Nominale waarde vervreemding of verkleining aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestAlienationDiminutionNominalValue", 29));
+
+		// ParticipatingInterestAlienationDiminutionRevenue
+		// Opbrengst vervreemding of verkleining aandelenbezit deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestAlienationDiminutionRevenue", 30));
+
+		// ParticipatingInterestAlienationAffiliatedPerson
+		// Deelneming is vervreemd aan verbonden natuurlijk- of rechtspersoon
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestAlienationAffiliatedPerson", 27));
+
+		// InterestsWithParticipatingInterestSettlementDate
+		// Vereffeningsdatum deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-InterestsWithParticipatingInterestSettlementDate", 34));
+
+		// ParticipatingInterestLiquidationLoss
+		// Liquidatieverlies van deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestLiquidationLoss", 35));
+
+		// ParticipatingInterestEconomicValue
+		// Waarde in het economisch verkeer van deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestEconomicValue", 38));
+
+		// ParticipatingInterestPercentageFallenBelowTwentyFivePercent
+		// Percentage in deelneming gedaald onder 25 procent
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestPercentageFallenBelowTwentyFivePercent", 36));
+
+		// ParticipatingInterestValueAtTimeOfShareChangeToBelowTwentyFivePercent
+		// Waarde van 25 procent-of-meer-belang op tijdstip mutatie
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestValueAtTimeOfShareChangeToBelowTwentyFivePercent", 38));
+
+		// ParticipatingInterestEngrossmentBenefit
+		// Brutering van voordeel bij deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestEngrossmentBenefit", 39));
+
+		// ParticipatingInterestEuropeanUnitProfitPaymentPartBenefit
+		// EU-deelneming en winstuitkering als onderdeel van voordeel
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestEuropeanUnitProfitPaymentPartBenefit", 41));
+
+		// ParticipatingInterestEngrossmentAndSetoffWithEffectiveTaxExists
+		// Brutering en verrekening met effectieve belasting deelneming
+		// Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming","bd-ParticipatingInterestEngrossmentAndSetoffWithEffectiveTaxExists",
+		// x));
+
+		// ParticipatingInterestDifferentSetoffWithAlreadyTaxedBenefitExists
+		// Afwijkende verrekening bij reeds belaste winstuitkering deelneming
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Spec_deelneming",
+				"bd-ParticipatingInterestDifferentSetoffWithAlreadyTaxedBenefitExists", 43));
+
 	}
 
 	@When("^the elements of the XBRL and the XLS for Toelichting Balans are compared$")
 	public void the_elements_of_the_XBRL_and_the_XLS_for_Toelichting_Balans_are_compared() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+
+		// EnvironmentalBusinessAssetsPurchaseCostsFiscal
+		// Aanschafkosten milieu-bedrijfsmiddelen fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ParticipatingInterestDifferentSetoffWithAlreadyTaxedBenefitExists", 1));
+
+		// EnvironmentalBusinessAssetsFiscal
+		// Milieu-bedrijfsmiddelen fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-EnvironmentalBusinessAssetsFiscal", 1));
+
+		// EnvironmentalBusinessAssetsResidualValueFiscal
+		// Restwaarde milieu-bedrijfsmiddelen fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-EnvironmentalBusinessAssetsResidualValueFiscal", 1));
+
+		// BuildingsOwnUsePurchaseCostsFiscal
+		// Aanschafkosten gebouwen in eigen gebruik fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsOwnUsePurchaseCostsFiscal", 1));
+
+		// BuildingsOwnUseFiscal
+		// Gebouwen in eigen gebruik fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-BuildingsOwnUseFiscal", 1));
+
+		// BuildingsOwnUseResidualValueFiscal
+		// Restwaarde gebouwen in eigen gebruik fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsOwnUseResidualValueFiscal", 1));
+
+		// BuildingsOwnUseSoilValueFiscal
+		// Bodemwaarde gebouwen in eigen gebruik fiscaal
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-BuildingsOwnUseSoilValueFiscal", 1));
+
+		// BuildingsForInvestmentPurposesPurchaseCostsFiscal
+		// Aanschafkosten gebouwen ter belegging fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsForInvestmentPurposesPurchaseCostsFiscal", 1));
+
+		// BuildingsForInvestmentPurposesFiscal
+		// Gebouwen ter belegging fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsForInvestmentPurposesFiscal", 1));
+
+		// BuildingsForInvestmentPurposesResidualValueFiscal
+		// Restwaarde gebouwen ter belegging fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsForInvestmentPurposesResidualValueFiscal", 1));
+
+		// BuildingsForInvestmentPurposesSoilValueFiscal
+		// Bodemwaarde gebouwen ter belegging fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsForInvestmentPurposesSoilValueFiscal", 1));
+
+		// BuildingsPurchaseCostsWithoutDepreciationFiscal
+		// Aanschafkosten gebouwen zonder afschrijving fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsPurchaseCostsWithoutDepreciationFiscal", 1));
+
+		// BuildingsWithoutDepreciationFiscal
+		// Gebouwen zonder afschrijving fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-BuildingsWithoutDepreciationFiscal", 1));
+
+		// CompanySitesFiscal
+		// Bedrijfsterreinen fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-CompanySitesFiscal", 1));
+
+		// CompanySitesPurchaseCostsFiscal
+		// Kosten aanschaf bedrijfsterreinen fiscaal
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-CompanySitesPurchaseCostsFiscal", 1));
+
+		// CompanySitesResidualValueFiscal
+		// Restwaarde bedrijfsterreinen fiscaal
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-CompanySitesResidualValueFiscal", 1));
+
+		// MachineryPurchaseCostsFiscal
+		// Kosten aanschaf machines fiscaal
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-MachineryPurchaseCostsFiscal", 1));
+
+		// MachineryResidualValueFiscal
+		// Restwaarde machines fiscaal
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-MachineryResidualValueFiscal", 1));
+
+		// FixedAssetsOtherPurchaseCostsFiscal
+		// Andere vaste bedrijfsmiddelen aanschafwaarde fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-FixedAssetsOtherPurchaseCostsFiscal", 1));
+
+		// FixedAssetsOtherResidualValueFiscal
+		// Andere vaste bedrijfsmiddelen restwaarde fiscaal
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-FixedAssetsOtherResidualValueFiscal", 1));
+
+		// ReinvestmentReserveDisposedBusinessAssetDescription
+		// Omschrijving vervreemd bedrijfsmiddel
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ReinvestmentReserveDisposedBusinessAssetDescription", 1));
+
+		// ReinvestmentReserveDisposedBusinessAssetYear
+		// Jaar vervreemding bedrijfsmiddel
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ReinvestmentReserveDisposedBusinessAssetYear", 1));
+
+		// ReinvestmentReserveDisposedBusinessAssetBookProfit
+		// Boekwinst vervreemde bedrijfsmiddel
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ReinvestmentReserveDisposedBusinessAssetBookProfit", 1));
+
+		// ReinvestmentReserveDisposedBusinessAssetDepreciationPercentage
+		// Afschrijvingspercentage vervreemd bedrijfsmiddel
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ReinvestmentReserveDisposedBusinessAssetDepreciationPercentage", 1));
+
+		// ReinvestmentReserveDisposedBusinessAssetBookValueAtTransferTime
+		// Boekwaarde bedrijfsmiddel op vervreemdingsmoment
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ReinvestmentReserveDisposedBusinessAssetBookValueAtTransferTime", 1));
+
+		// WarrantyProvisionDescription
+		// Omschrijving soort garantievoorziening
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-WarrantyProvisionDescription", 1));
+
+		// WarrantyProvisionAllocationAmount
+		// Dotatie garantievoorziening
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-WarrantyProvisionAllocationAmount", 1));
+
+		// WarrantyProvisionWithdrawal
+		// Onttrekking garantievoorziening
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-WarrantyProvisionWithdrawal", 1));
+
+		// WarrantyProvisionFiscalAmount
+		// Garantievoorziening fiscaal einde boekjaar
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-WarrantyProvisionFiscalAmount", 1));
+
+		// ProvisionsOtherDescription
+		// Omschrijving overige voorziening
+		Result.addAll(
+				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-ProvisionsOtherDescription", 1));
+
+		// ProvisionsOtherAllocation
+		// Dotatie overige voorziening
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-ProvisionsOtherAllocation", 1));
+
+		// ProvisionsOtherWithdrawal
+		// Onttrekking overige voorziening
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-ProvisionsOtherWithdrawal", 1));
+
+		// ProvisionsOtherAmount
+		// Overige voorziening einde boekjaar
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-ProvisionsOtherAmount", 1));
+
+		// ValueAddedTaxPayableOrReceivablePartThisFinancialyear
+		// Schuld/vordering over dit boekjaar
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ValueAddedTaxPayableOrReceivablePartThisFinancialyear", 1));
+
+		// ValueAddedTaxPayableOrReceivablePartPreviousFinancialyear
+		// Schuld/vordering over het vorig boekjaar
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ValueAddedTaxPayableOrReceivablePartPreviousFinancialyear", 1));
+
+		// ValueAddedTaxPayableOrReceivablePartPrecedingPreviousFinancialyear
+		// Schuld/vordering over oudere boekjaren
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
+				"bd-ValueAddedTaxPayableOrReceivablePartPrecedingPreviousFinancialyear", 1));
 
 	}
 
@@ -915,233 +1128,324 @@ public class XBRLvalidate {
 	@When("^the elements of the XBRL and the XLS for Winst en verliesrekening are compared$")
 	public void the_elements_of_the_XBRL_and_the_XLS_for_Winst_en_verliesrekening_are_compared() throws Throwable {
 		String Tab = "TC01";
-		
-		
-		//StockAndWorkInProgressChangeFiscal	
-		//Wijziging voorraad en onderhanden werk fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:StockAndWorkInProgressChangeFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 8, Tab)), "D8"));
-				
-		//CapitalizedProductionOwnBusinessFiscal	
-		//Geactiveerde productie eigen bedrijf fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalizedProductionOwnBusinessFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 9, Tab)), "D9"));
-		
-		//RevenuesOtherFiscal	
-		//Overige opbrengsten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOtherFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 10, Tab)), "D10"));
-		
-		//BusinessRevenuesFiscalTotal	
-		//Totaal bedrijfsopbrengsten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessRevenuesFiscalTotal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("G", 13, Tab)), "G13"));
-					
-		//RawAncillaryMaterialsPurchasePriceSalesFiscal
-		//Kosten grond- en hulpstoffen, inkoopprijs van de verkopen fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RawAncillaryMaterialsPurchasePriceSalesFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 20, Tab)), "D20"));
-		
-		//OutsourcedWorkCostsAndOtherExternalCostsFiscal	
-		//Kosten uitbesteed werk en andere externe kosten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RawAncillaryMaterialsPurchasePriceSalesFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 21, Tab)), "D21"));
-		
-		//WagesSalariesFiscal	
-		//Lonen en salarissen fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:WagesSalariesFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 27, Tab)), "D27"));
-				
-		//SocialSecurityCostsFiscal	
-		//Sociale lasten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:SocialSecurityCostsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 28, Tab)), "D28"));
-		
-		//PensionCostsFiscal	
-		//Pensioenlasten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PensionCostsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 29, Tab)), "D29"));
-		
-		//PersonnelCostsOtherFiscal	
-		//Overige personeelskosten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PersonnelCostsOtherFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 30, Tab)), "D30"));
-		
-		//BenefitsAndWageSubsidiesReceivedFiscal	
-		//Ontvangen uitkeringen en loonsubsidies fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BenefitsAndWageSubsidiesReceivedFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 31, Tab)), "D31"));
-		
-		//GoodwillDepreciationFiscal	
-		//Goodwill afschrijvingen fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:GoodwillDepreciationFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 37, Tab)), "D37"));
-		
-		//IntangibleFixedAssetsOtherDepreciation	
-		//Overige immateriële vaste activa afschrijvingen
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:IntangibleFixedAssetsOtherDepreciation").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 38, Tab)), "D38"));
-		
-		//CompanyBuildingsDepreciationFiscal	
-		//Afschrijving bedrijfsgebouwen fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CompanyBuildingsDepreciationFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 39, Tab)), "D39"));
-		
-		//MachineryDepreciationFiscal	
-		//Afschrijving machines en installaties fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:MachineryDepreciationFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 40, Tab)), "D40"));
-		
-		//TangibleFixedAssetsOtherDepreciation	
-		//Andere vaste bedrijfsmiddelen afschrijving
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:TangibleFixedAssetsOtherDepreciation").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 41, Tab)), "D41"));
-		
-		//TangibleAndIntangibleFixedAssetsOtherValuationChangeAmount	
-		//Overige waardeveranderingen van immateriële en materiële vaste activa
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:TangibleAndIntangibleFixedAssetsOtherValuationChangeAmount").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 47, Tab)), "D47"));
-		
-		//CurrentAssetsSpecialValuationDecreaseAmount	
-		//Bijzondere waardevermindering van vlottende activa
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CurrentAssetsSpecialValuationDecreaseAmount").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 51, Tab)), "D51"));
-		
-		//CarAndTransportCostsFiscal	
-		//Auto- en transportkosten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CarAndTransportCostsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 56, Tab)), "D56"));
-		
-		//AccommodationCostsFiscal	
-		//Huisvestingskosten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:AccommodationCostsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 57, Tab)), "D57"));
-		
-		//MaintenanceOtherTangibleFixedAssetsFiscal	
-		//Onderhoud overige materiële vaste activa fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:MaintenanceOtherTangibleFixedAssetsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 58, Tab)), "D58"));
-		
-		//SalesCostsFiscal	
-		//Verkoopkosten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:SalesCostsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 59, Tab)), "D59"));
-		
-		//CostOtherFiscal	
-		//Andere kosten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CostOtherFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 60, Tab)), "D60"));		
-		
-		//BusinessExpenditureFiscalTotal	
-		//Totaal bedrijfslasten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessExpenditureFiscalTotal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("G", 63, Tab)), "G63"));
-		
-		//RevenuesOnReceivablesGroupCompanies	
-		//Opbrengsten vorderingen groepsmaatschappijen
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOnReceivablesGroupCompanies").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 71, Tab)), "D71"));	
-		
-		//ProfitDueToDebtRemission	
-		//Kwijtscheldingswinst
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDueToDebtRemission").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 72, Tab)), "D72"));
-		
-		//RevenuesOnReceivablesParticipatingInterestCompanies	
-		//Opbrengsten vorderingen participant/maatschappijen waarin wordt deelgenomen
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOnReceivablesParticipatingInterestCompanies").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 73, Tab)), "D73"));
-		
-		//RevenuesOtherReceivablesFiscal	
-		//Opbrengsten overige vorderingen fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOtherReceivablesFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 74, Tab)), "D74"));
-		
-		//RevenuesBankCreditsFiscal	
-		//Opbrengsten banktegoeden fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOtherReceivablesFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 75, Tab)), "D75"));
-		
-		//ReceivablesValuationChangeAmount	
-		//Waardeverandering van vorderingen
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ReceivablesValuationChangeAmount").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 76, Tab)), "D76"));
-		
-		//StockValuationChangeAmount	
-		//Waardeverandering van effecten
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:StockValuationChangeAmount").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 77, Tab)), "D77"));
-		
-		//DividendExceptParticipatingInterestDividendFiscal	
-		//Ontvangen dividend (met uitzondering van deelnemingsdividend) fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:DividendExceptParticipatingInterestDividendFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 78, Tab)), "D78"));
-		
-		//CostsOnReceivablesParticipatingInterestCompanies	
-		//Kosten schulden participant/maatschappijen waarin wordt deelgenomen
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CostsOnReceivablesParticipatingInterestCompanies").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 84, Tab)), "D84"));
-		
-		//InterestExpenditureEtcCostsDebtsFiscal	
-		//Kosten schulden, rentelasten etc. fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:InterestExpenditureEtcCostsDebtsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 85, Tab)), "D85"));
-		
-		//CostsOnReceivablesGroupCompanies	
-		//Kosten van schulden aan groepsmaatschappijen
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CostsOnReceivablesGroupCompanies").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 86, Tab)), "D86"));
-		
-		//BusinessFinanciaResultFiscalTotal	
-		//Totaal financiële baten en lasten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessFinanciaResultFiscalTotal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("G", 90, Tab)), "D90"));
-		
-		//NormalBusinessActivitiesBusinessResultTotalFiscal	
-		//Resultaat gewone bedrijfsuitoefening fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:NormalBusinessActivitiesBusinessResultTotalFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("G", 91, Tab)), "D91"));
-		
-		//BenefitsOrLossesRemovalSubsidiaryTerminationTaxEntityFiscal	
-		//Voordelen ontvoeging dochtermaatschappij/beeindiging fiscale eenheid fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BenefitsOrLossesRemovalSubsidiaryTerminationTaxEntityFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 100, Tab)), "D100"));
-		
-		//ExtraordinaryIncomeBusinessOtherFiscal	
-		//Overige buitengewone baten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ExtraordinaryIncomeBusinessOtherFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 101, Tab)), "D101"));
-		
-		//AssetsBookProfitsFiscal	
-		//Boekwinst op activa fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:AssetsBookProfitsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 102, Tab)), "D102"));
-		
-		//ReinvestmentReservesWriteDownFiscal	
-		//Afboeking herinvesteringsreserve fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ReinvestmentReservesWriteDownFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 107, Tab)), "D107"));
-		
-		//PaymentsCharitiesFiscal	
-		//Uitkeringen aan algemeen nut beogende instellingen fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PaymentsCharitiesFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 108, Tab)), "D108"));
-		
-		//ExtraordinaryExpenditureBusinessOtherFiscal	
-		//Overige buitengewone lasten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PaymentsCharitiesFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 109, Tab)), "D109"));
-		
-		//ExtraordinaryBusinessResultsFiscal	
-		//Buitengewone resultaten fiscaal
-		
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ExtraordinaryBusinessResultsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("D", 110, Tab)), "D110"));
-		
-		//BalanceProfitCalculationForTaxPurposesFiscal	
-		//Saldo fiscale winstberekening
 
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ExtraordinaryBusinessResultsFiscal").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("G", 118, Tab)), "G118"));
+		// StockAndWorkInProgressChangeFiscal
+		// Wijziging voorraad en onderhanden werk fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:StockAndWorkInProgressChangeFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 8, Tab)), "D8"));
+
+		// CapitalizedProductionOwnBusinessFiscal
+		// Geactiveerde productie eigen bedrijf fiscaal
+
+		Result.addAll(
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalizedProductionOwnBusinessFiscal").toString(),
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 9, Tab)), "D9"));
+
+		// RevenuesOtherFiscal
+		// Overige opbrengsten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOtherFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 10, Tab)), "D10"));
+
+		// BusinessRevenuesFiscalTotal
+		// Totaal bedrijfsopbrengsten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessRevenuesFiscalTotal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 13, Tab)), "G13"));
+
+		// RawAncillaryMaterialsPurchasePriceSalesFiscal
+		// Kosten grond- en hulpstoffen, inkoopprijs van de verkopen fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:RawAncillaryMaterialsPurchasePriceSalesFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 20, Tab)), "D20"));
+
+		// OutsourcedWorkCostsAndOtherExternalCostsFiscal
+		// Kosten uitbesteed werk en andere externe kosten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:RawAncillaryMaterialsPurchasePriceSalesFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 21, Tab)), "D21"));
+
+		// WagesSalariesFiscal
+		// Lonen en salarissen fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:WagesSalariesFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 27, Tab)), "D27"));
+
+		// SocialSecurityCostsFiscal
+		// Sociale lasten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:SocialSecurityCostsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 28, Tab)), "D28"));
+
+		// PensionCostsFiscal
+		// Pensioenlasten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PensionCostsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 29, Tab)), "D29"));
+
+		// PersonnelCostsOtherFiscal
+		// Overige personeelskosten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PersonnelCostsOtherFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 30, Tab)), "D30"));
+
+		// BenefitsAndWageSubsidiesReceivedFiscal
+		// Ontvangen uitkeringen en loonsubsidies fiscaal
+
+		Result.addAll(
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BenefitsAndWageSubsidiesReceivedFiscal").toString(),
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 31, Tab)), "D31"));
+
+		// GoodwillDepreciationFiscal
+		// Goodwill afschrijvingen fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:GoodwillDepreciationFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 37, Tab)), "D37"));
+
+		// IntangibleFixedAssetsOtherDepreciation
+		// Overige immateriële vaste activa afschrijvingen
+
+		Result.addAll(
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:IntangibleFixedAssetsOtherDepreciation").toString(),
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 38, Tab)), "D38"));
+
+		// CompanyBuildingsDepreciationFiscal
+		// Afschrijving bedrijfsgebouwen fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CompanyBuildingsDepreciationFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 39, Tab)), "D39"));
+
+		// MachineryDepreciationFiscal
+		// Afschrijving machines en installaties fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:MachineryDepreciationFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 40, Tab)), "D40"));
+
+		// TangibleFixedAssetsOtherDepreciation
+		// Andere vaste bedrijfsmiddelen afschrijving
+
+		Result.addAll(
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:TangibleFixedAssetsOtherDepreciation").toString(),
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 41, Tab)), "D41"));
+
+		// TangibleAndIntangibleFixedAssetsOtherValuationChangeAmount
+		// Overige waardeveranderingen van immateriële en materiële vaste activa
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:TangibleAndIntangibleFixedAssetsOtherValuationChangeAmount").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 47, Tab)), "D47"));
+
+		// CurrentAssetsSpecialValuationDecreaseAmount
+		// Bijzondere waardevermindering van vlottende activa
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:CurrentAssetsSpecialValuationDecreaseAmount").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 51, Tab)), "D51"));
+
+		// CarAndTransportCostsFiscal
+		// Auto- en transportkosten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CarAndTransportCostsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 56, Tab)), "D56"));
+
+		// AccommodationCostsFiscal
+		// Huisvestingskosten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:AccommodationCostsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 57, Tab)), "D57"));
+
+		// MaintenanceOtherTangibleFixedAssetsFiscal
+		// Onderhoud overige materiële vaste activa fiscaal
+
+		Result.addAll(
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:MaintenanceOtherTangibleFixedAssetsFiscal").toString(),
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 58, Tab)), "D58"));
+
+		// SalesCostsFiscal
+		// Verkoopkosten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:SalesCostsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 59, Tab)), "D59"));
+
+		// CostOtherFiscal
+		// Andere kosten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CostOtherFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 60, Tab)), "D60"));
+
+		// BusinessExpenditureFiscalTotal
+		// Totaal bedrijfslasten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessExpenditureFiscalTotal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 63, Tab)), "G63"));
+
+		// RevenuesOnReceivablesGroupCompanies
+		// Opbrengsten vorderingen groepsmaatschappijen
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOnReceivablesGroupCompanies").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 71, Tab)), "D71"));
+
+		// ProfitDueToDebtRemission
+		// Kwijtscheldingswinst
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDueToDebtRemission").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 72, Tab)), "D72"));
+
+		// RevenuesOnReceivablesParticipatingInterestCompanies
+		// Opbrengsten vorderingen participant/maatschappijen waarin wordt
+		// deelgenomen
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:RevenuesOnReceivablesParticipatingInterestCompanies").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 73, Tab)), "D73"));
+
+		// RevenuesOtherReceivablesFiscal
+		// Opbrengsten overige vorderingen fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOtherReceivablesFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 74, Tab)), "D74"));
+
+		// RevenuesBankCreditsFiscal
+		// Opbrengsten banktegoeden fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:RevenuesOtherReceivablesFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 75, Tab)), "D75"));
+
+		// ReceivablesValuationChangeAmount
+		// Waardeverandering van vorderingen
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ReceivablesValuationChangeAmount").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 76, Tab)), "D76"));
+
+		// StockValuationChangeAmount
+		// Waardeverandering van effecten
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:StockValuationChangeAmount").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 77, Tab)), "D77"));
+
+		// DividendExceptParticipatingInterestDividendFiscal
+		// Ontvangen dividend (met uitzondering van deelnemingsdividend) fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:DividendExceptParticipatingInterestDividendFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 78, Tab)), "D78"));
+
+		// CostsOnReceivablesParticipatingInterestCompanies
+		// Kosten schulden participant/maatschappijen waarin wordt deelgenomen
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:CostsOnReceivablesParticipatingInterestCompanies").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 84, Tab)), "D84"));
+
+		// InterestExpenditureEtcCostsDebtsFiscal
+		// Kosten schulden, rentelasten etc. fiscaal
+
+		Result.addAll(
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:InterestExpenditureEtcCostsDebtsFiscal").toString(),
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 85, Tab)), "D85"));
+
+		// CostsOnReceivablesGroupCompanies
+		// Kosten van schulden aan groepsmaatschappijen
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CostsOnReceivablesGroupCompanies").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 86, Tab)), "D86"));
+
+		// BusinessFinanciaResultFiscalTotal
+		// Totaal financiële baten en lasten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BusinessFinanciaResultFiscalTotal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 90, Tab)), "D90"));
+
+		// NormalBusinessActivitiesBusinessResultTotalFiscal
+		// Resultaat gewone bedrijfsuitoefening fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:NormalBusinessActivitiesBusinessResultTotalFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 91, Tab)), "D91"));
+
+		// BenefitsOrLossesRemovalSubsidiaryTerminationTaxEntityFiscal
+		// Voordelen ontvoeging dochtermaatschappij/beeindiging fiscale eenheid
+		// fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(
+				ReadXML.GetXMLvalue("bd-bedr:BenefitsOrLossesRemovalSubsidiaryTerminationTaxEntityFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 100, Tab)), "D100"));
+
+		// ExtraordinaryIncomeBusinessOtherFiscal
+		// Overige buitengewone baten fiscaal
+
+		Result.addAll(
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ExtraordinaryIncomeBusinessOtherFiscal").toString(),
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 101, Tab)), "D101"));
+
+		// AssetsBookProfitsFiscal
+		// Boekwinst op activa fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:AssetsBookProfitsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 102, Tab)), "D102"));
+
+		// ReinvestmentReservesWriteDownFiscal
+		// Afboeking herinvesteringsreserve fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ReinvestmentReservesWriteDownFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 107, Tab)), "D107"));
+
+		// PaymentsCharitiesFiscal
+		// Uitkeringen aan algemeen nut beogende instellingen fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PaymentsCharitiesFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 108, Tab)), "D108"));
+
+		// ExtraordinaryExpenditureBusinessOtherFiscal
+		// Overige buitengewone lasten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:PaymentsCharitiesFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 109, Tab)), "D109"));
+
+		// ExtraordinaryBusinessResultsFiscal
+		// Buitengewone resultaten fiscaal
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ExtraordinaryBusinessResultsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 110, Tab)), "D110"));
+
+		// BalanceProfitCalculationForTaxPurposesFiscal
+		// Saldo fiscale winstberekening
+
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ExtraordinaryBusinessResultsFiscal").toString(),
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 118, Tab)), "G118"));
+
+	}
+
+	@When("^the elements of the XBRL and the XLS for Investeringsregeling are compared$")
+	public void the_elements_of_the_XBRL_and_the_XLS_for_Investeringsregeling_are_compared() throws Throwable {
+
+//		BusinessAssetEnvironmentalEnergyInvestmentDescription	
+//		Bedrijfsmiddel investering energie/milieu
 		
+//		BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount	
+//		Investeringsbedrag boekjaar
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate	
+//		Datum ingebruikname bedrijfsmiddel
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear	
+//		Bedrag in boekjaar betaald
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber	
+//		Meldingsnummer energie/milieu-investeringsaftrek
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentPercentage	
+//		Percentage energie/milieu-investeringsaftrek
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount	
+//		Berekende investeringsaftrek per investering
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear	
+//		Investeringsaftrek energie/milieu dit boekjaar
+
 	}
 
 	@Then("^they contain the same values$")
