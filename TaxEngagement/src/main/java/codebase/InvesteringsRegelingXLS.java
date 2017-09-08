@@ -24,7 +24,7 @@ public class InvesteringsRegelingXLS {
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [9];
+			opsommingresultaat = new String [11];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -35,6 +35,7 @@ public class InvesteringsRegelingXLS {
 			opsommingresultaat[7]= new DataFormatter().formatCellValue(row.getCell(7));
 			opsommingresultaat[8]= new DataFormatter().formatCellValue(row.getCell(8));
 			opsommingresultaat[9]= new DataFormatter().formatCellValue(row.getCell(9));
+			opsommingresultaat[10]= new DataFormatter().formatCellValue(row.getCell(10));
 		
 			
 			resultaat = opsommingresultaat;			
@@ -49,7 +50,7 @@ public class InvesteringsRegelingXLS {
 	public static void main(String[] args) {
 
 		
-		String[] invuldata = codebase.AlgemeneGegevensXLS.HaalData(1);
+		String[] invuldata = codebase.InvesteringsRegelingXLS.HaalData(1);
 		
 		System.out.println(invuldata[1]);
 		

@@ -1,5 +1,6 @@
 package codebase;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class ValidatieChecker {
@@ -46,24 +47,6 @@ public class ValidatieChecker {
 			}
 		}
 		
-		
-		// Positief geheel getal
-		if (SoortValidatie.equals("PositiefGeheelGetal")) {
-			{
-				try {
-					float n = Float.valueOf(inputwaarde);
-					if (n == Math.round(n) &&  n > 0) {
-						//Feedback.add("PositiefGeheelGetal");
-					}
-					
-					else {
-						Feedback.add("Geen Positief Geheel Getal");
-					}
-				} catch (NumberFormatException e) {
-					Feedback.add("GeenGetal");
-				}
-			}
-		}
 		
 		// Lengte checkers
 		if (inputwaarde.length() > Max) {
@@ -139,12 +122,28 @@ public class ValidatieChecker {
 				Feedback.add("Positief3");
 			}
 		}		
+		// Positief geheel getal
+		if (SoortValidatie.equals("PositiefGeheelGetal")) {
+			{
+				try {
 	
+					Double n =Double.valueOf(inputwaarde);
+					if (n != Math.round(n) ||  n < 0) {
+						Feedback.add("Geen Positief Geheel Getal");
+					}
+					
+					
+				} catch (NumberFormatException e) {
+					Feedback.add("GeenGetal");
+				}
+			}
+		}
+		
 		return Feedback;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(CheckValue("1000", 1, 99, "Positief3"));
+		System.out.println(CheckValue("9223372036854775807", 1, 21, "PositiefGeheelGetal"));
 
 	}
 }

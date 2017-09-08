@@ -135,7 +135,7 @@ Feature: vullen formulieren
     And open the Project "14082017"
     And open the form Investeringsaftrek
     Then i can fill out the form Investeringsaftrek with config <Id>
-
+		Then i can validate the error messages for the Investeringsaftrek form
     Examples: 
 
       | Id | Browser  |

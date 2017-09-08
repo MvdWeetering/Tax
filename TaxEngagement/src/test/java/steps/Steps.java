@@ -64,7 +64,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 		
-		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
 
 		//WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
 		//String User = (HuidigeUser.getText());
@@ -2814,29 +2814,70 @@ public void open_the_form_Investeringsaftrek() throws Throwable {
 }
 
 @Then("^i can fill out the form Investeringsaftrek with config (\\d+)$")
-public void i_can_fill_out_the_form_Investeringsaftrek_with_config(int arg1) throws Throwable {
+public void i_can_fill_out_the_form_Investeringsaftrek_with_config(int TcId) throws Throwable {
     
-	
+	String[] invuldata = codebase.InvesteringsRegelingXLS.HaalData(TcId);
 		
 	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
-	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys("omschrijving bedrijfsmiddel");
+	InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys(invuldata[1]);
 	
-	InvesteringsaftrekObjecten.DatumInvestering(driver).sendKeys("01012017");
-	InvesteringsaftrekObjecten.DatumIngebruikname(driver).sendKeys("01012017");
+	InvesteringsaftrekObjecten.DatumInvestering(driver).sendKeys(invuldata[2]);
+	InvesteringsaftrekObjecten.DatumIngebruikname(driver).sendKeys(invuldata[3]);
 	
 	InvesteringsaftrekObjecten.Investeringsbedrag(driver).clear();
-	InvesteringsaftrekObjecten.Investeringsbedrag(driver).sendKeys("1001");
+	InvesteringsaftrekObjecten.Investeringsbedrag(driver).sendKeys(invuldata[4]);
+	
+	if (invuldata[6].equals("ja")) {
+		InvesteringsaftrekObjecten.energieOfMilieuaftrek_ja(driver).click();
+		InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).clear();
+		InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).sendKeys(invuldata[7]);
+	}
+	else {
+		InvesteringsaftrekObjecten.energieOfMilieuaftrek_nee(driver).click();
+	}
 	
 	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).clear();
-	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).sendKeys("1002");
+	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).sendKeys(invuldata[5]);
 	
 	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).clear();
-	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).sendKeys("1003");
+	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).sendKeys(invuldata[8]);
+	
+	if (invuldata[9].equals("ja")) {
+		InvesteringsaftrekObjecten.CaribischeDeel_Ja(driver).click();
+		InvesteringsaftrekObjecten.AftrekKleinschalig(driver).sendKeys(invuldata[10]);
+	}
+	else {
+		InvesteringsaftrekObjecten.CaribischeDeel_Nee(driver).click();
+		
+	}
+	
 	
 		
-	driver.quit();
+	//driver.quit();
 	
 }
+
+@Then("^i can validate the error messages for the Investeringsaftrek form$")
+public void i_can_validate_the_error_messages_for_the_Investeringsaftrek_form() throws Throwable {
+	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+
+	//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("OmschrijvingBedrijfsmiddel", 1, 70,"TextVeld", driver));
+	
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("Investeringsbedrag", 1, 20,"PositiefGeheelGetal", driver));
+	
+	
+	
+	if (pageObjects.InvesteringsaftrekObjecten.energieOfMilieuaftrek_ja(driver).isSelected()) {
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("MeldingsnummerAftrek", 1, 20,"MELDINGNUMMER", driver));
+	}
+	
+	
+	assertTrue(ValidatieResultaat.isEmpty());	
+	
+}
+
+
+
 
 @When("^open the form Objectvrijstelling$")
 public void open_the_form_Objectvrijstelling() throws Throwable {
