@@ -99,9 +99,6 @@ public class TooltipChecker extends AbstractSteps {
 		checker = codebase.ValidatieChecker.CheckValue(invoke(InvesteringsaftrekObjecten.class, Naamobject, driver).getAttribute("value"), Minlengte, Maxlengte, SoortValidatie);
 		if (!checker.isEmpty()) {
 			
-			
-			System.out.println(checker);
-			
 			try {
 				WebElement elem = invoke(InvesteringsaftrekTooltipObjecten.class, Naamobject, driver);
 				// Null indicates: expected tooltip text balloon is missing
@@ -144,11 +141,11 @@ public class TooltipChecker extends AbstractSteps {
 							}
 						}
 						if (checker.contains("Geen Positief Geheel Getal")) {
-							if (!invoke(InvesteringsaftrekTooltipObjecten.class, Naamobject, driver).getText().contains(" [Getal] Dit veld moet een positief geheel getal bevatten.")) {
-								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld moet een positief geheel getal bevatten.\" \r\n");
+							if (!invoke(InvesteringsaftrekTooltipObjecten.class, Naamobject, driver).getText().contains(" [Getal] Dit veld mag alleen positieve gehele getallen bevatten.")) {
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld mag alleen positieve gehele getallen bevatten.\" \r\n");
 								System.out.println(Naamobject);
 								System.out.println("gelezen:" +invoke(InvesteringsaftrekTooltipObjecten.class, Naamobject, driver).getText());
-								System.out.println("verwacht: [Getal] Dit veld moet een positief geheel getal bevatten. \r\n");
+								System.out.println("verwacht: [Getal] Dit veld mag alleen positieve gehele getallen bevatten. \r\n");
 							}
 						}
 					}

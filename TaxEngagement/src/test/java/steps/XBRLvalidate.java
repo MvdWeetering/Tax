@@ -1424,28 +1424,37 @@ public class XBRLvalidate {
 
 //		BusinessAssetEnvironmentalEnergyInvestmentDescription	
 //		Bedrijfsmiddel investering energie/milieu
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
 		
 //		BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount	
 //		Investeringsbedrag boekjaar
 		
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount", 4));
+		
 //		BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate	
 //		Datum ingebruikname bedrijfsmiddel
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate", 3));
 		
 //		BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear	
 //		Bedrag in boekjaar betaald
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear", 5));
 		
 //		BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber	
 //		Meldingsnummer energie/milieu-investeringsaftrek
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber", 7));
 		
 //		BusinessAssetEnvironmentalEnergyInvestmentPercentage	
 //		Percentage energie/milieu-investeringsaftrek
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentPercentage", 1));
 		
 //		BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount	
 //		Berekende investeringsaftrek per investering
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount", 1));
 		
 //		BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear	
 //		Investeringsaftrek energie/milieu dit boekjaar
-
+		Result.addAll (XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling", "bd-BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear", 8));
+		
 	}
 
 	@Then("^they contain the same values$")

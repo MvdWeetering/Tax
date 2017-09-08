@@ -7,19 +7,24 @@ public class ValidatieChecker {
 
 	public static ArrayList<String> CheckValue(String inputwaarde, int Min, int Max, String SoortValidatie) {
 		ArrayList<String> Feedback = new ArrayList<String>();
+		if (inputwaarde.contains(".")) {
 
-		//Textveld
+			inputwaarde = inputwaarde.replaceAll("\\.", "");
+
+		}
+
+		// Textveld
 		if (SoortValidatie.equals("TextVeld")) {
-		
-			}
+
+		}
 		// Geheel getal
 		if (SoortValidatie.equals("GeheelGetal")) {
 			{
 				try {
-					float n = Float.valueOf(inputwaarde);
+					double n = Double.valueOf(inputwaarde);
 
 					if (n == Math.round(n)) {
-						//Feedback.add("GeheelGetal");
+						// Feedback.add("GeheelGetal");
 					} else {
 						Feedback.add("Geheel Getal");
 					}
@@ -33,21 +38,19 @@ public class ValidatieChecker {
 		if (SoortValidatie.equals("PositiefGetal")) {
 			{
 				try {
-					float n = Float.valueOf(inputwaarde);
+					double n = Double.valueOf(inputwaarde);
 
 					if (n < 0) {
 						Feedback.add("Geen positief getal");
-					}
-					else {
-						//Feedback.add("Positief getal");
+					} else {
+						// Feedback.add("Positief getal");
 					}
 				} catch (NumberFormatException e) {
 					Feedback.add("GeenGetal");
 				}
 			}
 		}
-		
-		
+
 		// Lengte checkers
 		if (inputwaarde.length() > Max) {
 			Feedback.add("Te lang");
@@ -74,76 +77,88 @@ public class ValidatieChecker {
 		// 4 Cijfers
 		if (SoortValidatie.equals("4cijfers")) {
 			if (!inputwaarde.matches("\\d{4}")) {
-			System.out.println("4Cijfers");
+				System.out.println("4Cijfers");
 			}
 		}
-		
+
 		if (SoortValidatie.equals("Procent")) {
 			if (!inputwaarde.matches("(\\d|\\d{2}|\\d{3})[.]\\d{2}")) {
 				Feedback.add("Procent");
 			}
 		}
-		
+
 		if (SoortValidatie.equals("Positief6")) {
-			
+
 			if (!inputwaarde.matches("[0-9]{6}")) {
 				Feedback.add("Positief6");
 			}
 		}
-		
+
 		if (SoortValidatie.equals("Positief10")) {
-			
+
 			try {
-				
+
 				Long n = Long.parseLong(inputwaarde);
 				Long max = Long.parseLong("9999999999");
-				
+
 				if (n < 0 || n > max) {
 					Feedback.add("Positief10");
 				}
-								
+
 			} catch (NumberFormatException e) {
 				Feedback.add("Positief10");
 			}
 		}
-		
+
 		if (SoortValidatie.equals("Positief3")) {
-			
+
 			try {
-				
+
 				Long n = Long.parseLong(inputwaarde);
 				Long max = Long.parseLong("999");
-				
+
 				if (n < 0 || n > max) {
 					Feedback.add("Positief3");
 				}
-								
+
 			} catch (NumberFormatException e) {
 				Feedback.add("Positief3");
 			}
-		}		
+		}
 		// Positief geheel getal
 		if (SoortValidatie.equals("PositiefGeheelGetal")) {
+
 			{
 				try {
-	
-					Double n =Double.valueOf(inputwaarde);
-					if (n != Math.round(n) ||  n < 0) {
+					Double n = Double.valueOf(inputwaarde);
+					if (n != Math.round(n) || n < 0) {
 						Feedback.add("Geen Positief Geheel Getal");
 					}
-					
-					
 				} catch (NumberFormatException e) {
 					Feedback.add("GeenGetal");
 				}
 			}
 		}
+
+		
+		if (SoortValidatie.equals("Meldingsnummer")) {
+
+			if (!inputwaarde.matches("[ME][0-9]{9}")) {
+			
+				Feedback.add("Meldingsnummer");
+			}
+		}
+			
+				
+			
+		
 		
 		return Feedback;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(CheckValue("9223372036854775807", 1, 21, "PositiefGeheelGetal"));
+
+		System.out.println(CheckValue("E123456789", 1, 21, "Meldingsnummer"));
 
 	}
 }

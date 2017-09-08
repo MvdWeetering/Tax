@@ -64,7 +64,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 		
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		//WebElement HuidigeUser = ValidatieObjecten.BeoordelenHuidigeUser(driver);
 		//String User = (HuidigeUser.getText());
@@ -2826,6 +2826,9 @@ public void i_can_fill_out_the_form_Investeringsaftrek_with_config(int TcId) thr
 	
 	InvesteringsaftrekObjecten.Investeringsbedrag(driver).clear();
 	InvesteringsaftrekObjecten.Investeringsbedrag(driver).sendKeys(invuldata[4]);
+
+	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).clear();
+	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).sendKeys(invuldata[5]);
 	
 	if (invuldata[6].equals("ja")) {
 		InvesteringsaftrekObjecten.energieOfMilieuaftrek_ja(driver).click();
@@ -2835,9 +2838,6 @@ public void i_can_fill_out_the_form_Investeringsaftrek_with_config(int TcId) thr
 	else {
 		InvesteringsaftrekObjecten.energieOfMilieuaftrek_nee(driver).click();
 	}
-	
-	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).clear();
-	InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).sendKeys(invuldata[5]);
 	
 	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).clear();
 	InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).sendKeys(invuldata[8]);
@@ -2861,16 +2861,37 @@ public void i_can_fill_out_the_form_Investeringsaftrek_with_config(int TcId) thr
 public void i_can_validate_the_error_messages_for_the_Investeringsaftrek_form() throws Throwable {
 	ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 
-	//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("OmschrijvingBedrijfsmiddel", 1, 70,"TextVeld", driver));
+	//Omschrijving bedrijfsmiddel
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("OmschrijvingBedrijfsmiddel", 1, 70,"TextVeld", driver));
 	
-	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("Investeringsbedrag", 1, 20,"PositiefGeheelGetal", driver));
+	//Investeringsbedrag
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("Investeringsbedrag", 1, 20,"GeheelGetal", driver));
 	
+	//Bedrag betaald in boekjaar
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("BedragBetaaldBoekjaar", 1, 20,"GeheelGetal", driver));
 	
+	//Is er sprake van energie- of milieuaftrek?
 	
-	if (pageObjects.InvesteringsaftrekObjecten.energieOfMilieuaftrek_ja(driver).isSelected()) {
-		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("MeldingsnummerAftrek", 1, 20,"MELDINGNUMMER", driver));
+		
+	if (driver.findElement(By.id("idmilieuaftrek")).isSelected()) {
+		
+		System.out.println("milleuaftrek");
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("MeldingsnummerAftrek", 1, 20,"Meldingsnummer", driver));
+	}
+	else {
+		System.out.println("not selected");
 	}
 	
+	
+	//Investeringsaftrek energie/milieu dit boekjaar
+	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("InvesteringsaftrekEnergieMilieu", 1, 20,"PositiefGeheelGetal", driver));
+	
+	//Vond de investering plaats in het Caribische deel van het Koninkrijk Nederland?
+	
+	if (pageObjects.InvesteringsaftrekObjecten.CaribischeDeel_Ja(driver).isSelected()) {
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipInvesteringsRegeling("AftrekKleinschalig", 1, 20,"PositiefGeheelGetal", driver));
+		}
 	
 	assertTrue(ValidatieResultaat.isEmpty());	
 	
@@ -3282,21 +3303,53 @@ public void i_can_fill_out_the_form_Verlies_Verrekening() throws Throwable {
 	
 	winstVerliesVerrekeningObjecten.VerrekeningVerliesDitBoekjaar(driver).sendKeys("1000");
 	
+	//Samenstelling te verrekenen verliezen
+	
+	//regel 1
 	winstVerliesVerrekeningObjecten.RSINMaatschappij(driver).sendKeys("1001");
 	winstVerliesVerrekeningObjecten.VerliesBoekjaar(driver).sendKeys("1002");
 	winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar(driver).sendKeys("1003");
 	
+	//regel 2
+	
+	winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).sendKeys("2001");
+	winstVerliesVerrekeningObjecten.VerliesBoekjaar2(driver).sendKeys("2002");
+	winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar2(driver).sendKeys("2003");
+	
+	
+	
+	//Specificatie Carry Forward (voorwaartse verliesverrekening)
+	
+	//regel 1
+	
 	winstVerliesVerrekeningObjecten.Jaar(driver).sendKeys("2017");
 	winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar(driver).sendKeys("2001");
 	winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar(driver).sendKeys("2002");
+	
+	//regel 2
+	winstVerliesVerrekeningObjecten.Jaar(driver).sendKeys("2017");
+	winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar(driver).sendKeys("2001");
+	winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar(driver).sendKeys("2002");
+	
 
+	//Samenstelling te verrekenen verliezen Fiscale Eenheid
+	
+	//regel 1
 	winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).clear();
 	winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).sendKeys("123456");
-	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys("01012017");
-	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys("12312017");
+	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys("01-01-2017");
+	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys("12-31-2017");
 	winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar(driver).sendKeys("2003");
 	winstVerliesVerrekeningObjecten.TeVerrekenenVerlies(driver).sendKeys("2004");
    
+	//regel 2 
+	winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).clear();
+	winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).sendKeys("123456");
+	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin2(driver).sendKeys("01-01-2017");
+	winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde2(driver).sendKeys("12-31-2017");
+	winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar2(driver).sendKeys("2003");
+	winstVerliesVerrekeningObjecten.TeVerrekenenVerlies2(driver).sendKeys("2004");
+	
 }
 
 

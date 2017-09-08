@@ -15,6 +15,7 @@ public class winstVerliesVerrekeningObjecten {
 	}
 	
 	
+	//regel1
 	@FieldName(name = "RSINMaatschappij")
 	public static WebElement RSINMaatschappij(WebDriver driver){
 		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:0-0"));
@@ -30,11 +31,36 @@ public class winstVerliesVerrekeningObjecten {
 		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEa:0-4"));
 		return element;
 	}
+	
+	//regel2
+	
+	@FieldName(name = "RSINMaatschappij2")
+	public static WebElement RSINMaatschappij2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEa:1-0"));
+		return element;
+	}
+	@FieldName(name = "VerliesBoekjaar2")
+	public static WebElement VerliesBoekjaar2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEa:1-2"));
+		return element;
+	}
+	@FieldName(name = "VerrekeningVerliesVorigBoekjaar2")
+	public static WebElement VerrekeningVerliesVorigBoekjaar2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEa:1-4"));
+		return element;
+	}
+
+	
+		
 	@FieldName(name = "RestantVerliesBoekjaar")
 	public static WebElement RestantVerliesBoekjaar(WebDriver driver){
 		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEa:0-6"));
 		return element;
 	}
+	
+	
+	
+	
 	@FieldName(name = "Jaar")
 	public static WebElement Jaar(WebDriver driver){
 		element = driver.findElement(By.id("idtableSpecCarryForward:0-0"));
@@ -50,6 +76,8 @@ public class winstVerliesVerrekeningObjecten {
 		element = driver.findElement(By.id("idtableSpecCarryForward:0-4"));
 		return element;
 	}
+	
+	//regel 1
 	@FieldName(name = "VerrekenenRSINMaatschappij")
 	public static WebElement VerrekenenRSINMaatschappij(WebDriver driver){
 		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:0-0"));
@@ -85,6 +113,43 @@ public class winstVerliesVerrekeningObjecten {
 	}
 	
 	
+	//regel 2
+	
+	@FieldName(name = "VerrekenenRSINMaatschappij2")
+	public static WebElement VerrekenenRSINMaatschappij2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:1-0"));
+		return element;
+	}
+	
+	
+	@FieldName(name = "VerrekenenFiscaleEenheidBoekjaarBegin2")
+	public static WebElement VerrekenenFiscaleEenheidBoekjaarBegin2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:1-2"));
+		return element;
+	}
+	
+	
+	@FieldName(name = "VerrekenenFiscaleEenheidBoekjaarEinde2")
+	public static WebElement VerrekenenFiscaleEenheidBoekjaarEinde2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:1-4"));
+		return element;
+	}
+	
+	
+	@FieldName(name = "VerrekenenVerliesEindeBoekjaar2")
+	public static WebElement VerrekenenVerliesEindeBoekjaar2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:1-6"));
+		return element;
+	}
+	
+	
+	@FieldName(name = "TeVerrekenenVerlies2")
+	public static WebElement TeVerrekenenVerlies2(WebDriver driver){
+		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:1-8"));
+		return element;
+	}
+	
+	//radio button
 	@FieldName(name = "HoudsterVerlies_ja")
 	public static WebElement HoudsterVerlies_ja(WebDriver driver){
 		element = driver.findElement(By.id("idtableSamenstellVerrVerlFEb:0-10"));
