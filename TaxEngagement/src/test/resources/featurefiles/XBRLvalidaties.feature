@@ -70,3 +70,11 @@ Feature: XBRL Validation
     Given the reading of the XLS is correct
     When the elements of the XBRL and the XLS for Investeringsregeling are compared
     Then they contain the same values
+    
+ 	@verliesverrekening_xbrl
+  Scenario: XBRL Validation verliesverrekening
+    Given the reading of the XBRL is correct
+    Given the reading of the XLS is correct
+    When the elements of the XBRL and the XLS for verliesverrekening_xbrl are compared
+    Then they contain the same values
+    
