@@ -19,4 +19,29 @@ public class Elfproef {
 
         return sum != 0 && sum % 11 == 0;
     }
+    
+    
+    public static boolean isValidRSIN(int candidate) {
+        if (candidate <= 0 || candidate > 999999) {
+            return false;
+        }
+        int sum = -1 * candidate % 10;
+
+        for (int multiplier = 2; candidate > 0; multiplier++) {
+            int val = (candidate /= 10) % 10;
+            sum += multiplier * val;
+        }
+
+        return sum != 0 && sum % 11 == 0;
+    }
+    
+public static void main(String[] args) {
+	
+	System.out.println(isValidRSIN(608282));
+	
+	
+}    
+    
+    
+    
 }

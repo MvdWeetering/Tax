@@ -211,7 +211,8 @@ Feature: vullen formulieren
     And open the Project "dossier 05082017"
     And open the form Verlies Verrekening
     Then i can fill out the form Verlies Verrekening
-
+ 		Then i can validate the error messages for the formulier verliesverrekening
+ 
     Examples: 
       | Browser  |
       | "Chrome" |

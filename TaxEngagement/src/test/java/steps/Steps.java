@@ -48,10 +48,10 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 
 		// Splat
-		// InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		 InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 
 		// Dev
-		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -4085,7 +4085,6 @@ public class Steps extends AbstractSteps {
 	@When("^open the form Verlies Verrekening$")
 	public void open_the_form_Verlies_Verrekening() throws Throwable {
 
-		System.out.println("test");
 		NavigerenObjecten.VerliesVerrekening(driver).click();
 
 	}
@@ -4165,5 +4164,26 @@ public class Steps extends AbstractSteps {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Nee(driver).click();
 		}
 	}
+	@Then("^i can validate the error messages for the formulier verliesverrekening$")
+	public void i_can_validate_the_error_messages_for_the_formulier_verliesverrekening() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+		
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij2", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij2", 1, 9, "BSN", driver));
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar", 1, 9, "PositiefGeheelGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar2", 1, 9, "PositiefGeheelGetal", driver));
+
+	
+		System.out.println(ValidatieResultaat);
+		
+		assertTrue(ValidatieResultaat.isEmpty());
+		// driver.quit();
+		
+	}
 }
