@@ -21,7 +21,7 @@ public class Elfproef {
     }
     
     
-    public static boolean isValidRSIN(int candidate) {
+    public static boolean isValidBecon(int candidate) {
         if (candidate <= 0 || candidate > 999999) {
             return false;
         }
@@ -37,7 +37,7 @@ public class Elfproef {
     
 public static void main(String[] args) {
 	
-	System.out.println(isValidRSIN(608282));
+	System.out.println(isValidBecon(608282));
 	
 	
 }    

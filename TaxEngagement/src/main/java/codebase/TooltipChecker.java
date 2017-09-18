@@ -515,7 +515,6 @@ public class TooltipChecker extends AbstractSteps {
 								System.out.println("gelezen:" + invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText());
 								System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
 							}
-
 						}
 
 						if (checker.contains("Geen positief getal")) {
@@ -554,6 +553,7 @@ public class TooltipChecker extends AbstractSteps {
 					}
 				}
 			}
+			
 			catch (NoSuchElementException e) {
 				e.printStackTrace();
 				// TODO Auto-generated catch block

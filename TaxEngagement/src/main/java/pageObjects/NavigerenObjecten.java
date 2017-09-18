@@ -29,7 +29,7 @@ public class NavigerenObjecten {
 	}
 	
 	public static WebElement NavigerenSpecificatie_Deelnemingen(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Specificatie Deelnemingen"));
+	    element = driver.findElement(By.partialLinkText("Specificatie deelnemingen"));
 		return element;
 	}
 	

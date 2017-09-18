@@ -59,6 +59,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID | Browser  |
+      |    1 | "Chrome" |
       |    2 | "Chrome" |
 
   @vullen_formulier @Toelichting_Balans
@@ -135,9 +136,9 @@ Feature: vullen formulieren
     And open the Project "14082017"
     And open the form Investeringsaftrek
     Then i can fill out the form Investeringsaftrek with config <Id>
-		Then i can validate the error messages for the Investeringsaftrek form
-    Examples: 
+    Then i can validate the error messages for the Investeringsaftrek form
 
+    Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
 
@@ -210,9 +211,10 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 05082017"
     And open the form Verlies Verrekening
-    Then i can fill out the form Verlies Verrekening
- 		Then i can validate the error messages for the formulier verliesverrekening
- 
+    Then i can fill out the form Verlies Verrekening from <TCID>
+    Then i can validate the error messages for the formulier verliesverrekening
+
     Examples: 
-      | Browser  |
-      | "Chrome" |
+      | TCID   | Browser  |
+      | "Tc01" | "Chrome" |
+      | "Tc02" | "Chrome" |

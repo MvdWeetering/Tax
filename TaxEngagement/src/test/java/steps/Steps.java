@@ -326,8 +326,7 @@ public class Steps extends AbstractSteps {
 
 		// Becon
 
-		ValidatieResultaat.addAll(
-				codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 99, "Positief6", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 99, "Positief6", driver));
 
 		// Client groep
 
@@ -4089,34 +4088,34 @@ public class Steps extends AbstractSteps {
 
 	}
 
-	@Then("^i can fill out the form Verlies Verrekening$")
-	public void i_can_fill_out_the_form_Verlies_Verrekening() throws Throwable {
+	@Then("^i can fill out the form Verlies Verrekening from \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Verlies_Verrekening_from(String TCid) throws Throwable {
 
-		winstVerliesVerrekeningObjecten.VerrekeningVerliesDitBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 7, "Tc01"));
+		winstVerliesVerrekeningObjecten.VerrekeningVerliesDitBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 7, TCid));
 
 		// Samenstelling te verrekenen verliezen
 
 		// regel 1
 		winstVerliesVerrekeningObjecten.RSINMaatschappij(driver).clear();
-		winstVerliesVerrekeningObjecten.RSINMaatschappij(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 13, "Tc01"));
+		winstVerliesVerrekeningObjecten.RSINMaatschappij(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 13, TCid));
 		
-		winstVerliesVerrekeningObjecten.VerliesBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 13, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 13, "Tc01"));
+		winstVerliesVerrekeningObjecten.VerliesBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 13, TCid));
+		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 13, TCid));
 
 		// regel 2
 		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).clear();
-		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 14, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerliesBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 14, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 14, "Tc01"));
+		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 14, TCid));
+		winstVerliesVerrekeningObjecten.VerliesBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 14, TCid));
+		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 14, TCid));
 
 		// Specificatie Carry Forward (voorwaartse verliesverrekening)
 
 		// regel 1
-		winstVerliesVerrekeningObjecten.Jaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 21, "Tc01"));
-		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 21, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 21, "Tc01"));
+		winstVerliesVerrekeningObjecten.Jaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 21, TCid));
+		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 21,TCid));
+		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 21,TCid));
 
-		if (VerliesVerrekeningXLS.HaalData("E", 21, "Tc01").equals("1")) {
+		if (VerliesVerrekeningXLS.HaalData("E", 21, TCid).equals("1")) {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren1_Ja(driver).click();
 		}
 		else {
@@ -4124,11 +4123,11 @@ public class Steps extends AbstractSteps {
 		}
 			
 		// regel 2
-		winstVerliesVerrekeningObjecten.Jaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 22, "Tc01"));
-		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 22, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 22, "Tc01"));
+		winstVerliesVerrekeningObjecten.Jaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 22, TCid));
+		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 22, TCid));
+		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 22, TCid));
 		
-		if (VerliesVerrekeningXLS.HaalData("E", 22, "Tc01").equals("1")) {
+		if (VerliesVerrekeningXLS.HaalData("E", 22, TCid).equals("1")) {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Ja(driver).click();
 		}
 		else {
@@ -4139,12 +4138,13 @@ public class Steps extends AbstractSteps {
 
 		// regel 1
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).clear();
-		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 28, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 28, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 28, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 28, "Tc01"));
+		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 28, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 28, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 28, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 28, TCid));
+		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies(driver).sendKeys(VerliesVerrekeningXLS.HaalData("E", 28, TCid));
 		
-		if (VerliesVerrekeningXLS.HaalData("F", 28, "Tc01").equals("1")) {
+		if (VerliesVerrekeningXLS.HaalData("F", 28, TCid).equals("1")) {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren3_Ja(driver).click();
 		}
 		else {
@@ -4152,12 +4152,13 @@ public class Steps extends AbstractSteps {
 		}
 		// regel 2
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).clear();
-		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 29, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 29, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 29, "Tc01"));
-		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 29, "Tc01"));
+		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 29, TCid));
+		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("E", 29, TCid));
 		
-		if (VerliesVerrekeningXLS.HaalData("F", 28, "Tc01").equals("1")) {
+		if (VerliesVerrekeningXLS.HaalData("F", 28, TCid).equals("1")) {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Ja(driver).click();
 		}
 		else {

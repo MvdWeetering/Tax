@@ -17,6 +17,11 @@ public class XMLandXLScompare {
 		if (!XMLChecker.equals(XSLChecker)) {
 			CheckerResult.add(Tag);
 			System.out.println("Difference at tag " + Tag);
+			System.out.println(XMLChecker);
+			System.out.println(XSLChecker);
+			
+			
+			
 		}
 		return CheckerResult;
 	}

@@ -74,6 +74,21 @@ public class ValidatieChecker {
 			}
 		}
 
+		
+		//BECON
+		
+		if (SoortValidatie.equals("BECON")) {
+			try {
+				Integer.parseInt(inputwaarde);
+				int n = Integer.parseInt(inputwaarde);
+				if (!Elfproef.isValidBecon(n)) {
+					Feedback.add("BECON");
+				}
+			} catch (NumberFormatException e) {
+				Feedback.add("BECON");
+			}
+		}
+		
 		// 4 Cijfers
 		if (SoortValidatie.equals("4cijfers")) {
 			if (!inputwaarde.matches("\\d{4}")) {
@@ -149,16 +164,12 @@ public class ValidatieChecker {
 			}
 		}
 			
-				
-			
-		
-		
 		return Feedback;
 	}
 
 	public static void main(String[] args) {
 
-		System.out.println(CheckValue("E123456789", 1, 21, "Meldingsnummer"));
+		System.out.println(CheckValue("396631", 1, 21, "BECON"));
 
 	}
 }
