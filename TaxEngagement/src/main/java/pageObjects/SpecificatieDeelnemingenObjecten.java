@@ -188,6 +188,7 @@ public class SpecificatieDeelnemingenObjecten {
 		return element;
 	}
 	
+	
 	@FieldName(name = "DeelnemingVervreemd_Nee")
 	public static WebElement DeelnemingVervreemd_Nee(WebDriver driver){
 		element = driver.findElement(By.cssSelector("[for='idxdt9tzhi-no']"));

@@ -65,11 +65,21 @@ public class TooltipChecker extends AbstractSteps {
 								System.out.println("verwacht:[Aantal karakters] Dit veld moet minimaal " + Minlengte + " karakters bevatten \r\n");
 							}
 						}
+
+						if (checker.contains("Positief6")) {
+							if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText().contains("[Getal] Dit veld moet een positief getal bevatten tussen 0 een 99.999.")) {
+								TooltipResult.add("Tooltip " + Naamobject + "[Getal] Dit veld moet een positief getal bevatten tussen 0 een 99.999. \r\n");
+								System.out.println(Naamobject);
+								System.out.println("gelezen:" +invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText());
+								System.out.println("verwacht:[Getal] Dit veld moet een positief getal bevatten tussen 0 een 99.999. \r\n");
+							}
+						}
+						
 						if (checker.contains("Geen Positief Geheel Getal")) {
-							if (!invoke(InvesteringsaftrekTooltipObjecten.class, Naamobject, driver).getText().contains(" [Getal] Dit veld mag alleen positieve gehele getallen bevatten.")) {
+							if (!invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText().contains("[Getal] Dit veld mag alleen positieve gehele getallen bevatten.")) {
 								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Getal] Dit veld mag alleen positieve gehele getallen bevatten.\" \r\n");
 								System.out.println(Naamobject);
-								System.out.println("gelezen:" +invoke(InvesteringsaftrekTooltipObjecten.class, Naamobject, driver).getText());
+								System.out.println("gelezen:" +invoke(SpecificatieAandeelhoudersTooltipObjects.class, Naamobject, driver).getText());
 								System.out.println("verwacht: [Getal] Dit veld mag alleen positieve gehele getallen bevatten. \r\n");
 							}
 						}

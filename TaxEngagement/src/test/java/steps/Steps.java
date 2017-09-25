@@ -48,10 +48,10 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 
 		// Splat
-		 InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		 //InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 
 		// Dev
-		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -347,7 +347,10 @@ public class Steps extends AbstractSteps {
 				"TextVeld", driver));
 
 		// Beconnummer (intermediair)
-
+		
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("BeconnummerIntermediair", 1, 20, "Positief6", driver));
+	
+		
 		// Naam koepelorganisatie fiscale dienstverleners
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("NaamKoepelorgFisDienstverl", 1,
 				20, "TextVeld", driver));
@@ -658,8 +661,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.clear();
 
 		// naam aandeelhouders
-		ValidatieResultaat.addAll(
-				codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 70, "TextVeld", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 70, "TextVeld", driver));
 
 		// BSN
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BSN", 9, 9, "BSN", driver));
@@ -670,8 +672,7 @@ public class Steps extends AbstractSteps {
 					codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam", 1, 23, "TextVeld", driver));
 
 			// Huisnummer
-			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5,
-					"PositiefGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5, "PositiefGetal", driver));
 
 			// ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Postcode",
 			// 1, 6, "TextVeld", driver));
@@ -691,8 +692,7 @@ public class Steps extends AbstractSteps {
 		}
 		// nominale waarde aandelen
 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1,
-				20, "GeheelGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, "GeheelGetal", driver));
 
 		// Nominale waarde preferente aandelen einde boekjaar
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente", 1,
@@ -757,25 +757,21 @@ public class Steps extends AbstractSteps {
 
 			if (driver.findElement(By.id("idn26n68h8-no")).isSelected()) {
 
-				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamRechtspersoon", 1,
-						200, "TextVeld", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker
-						.CheckTooltipSpecAandeelhouders("StraatnaamRechtspersoon", 1, 24, "TextVeld", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker
-						.CheckTooltipSpecAandeelhouders("HuisnummerRechtspersoon", 1, 5, "TextVeld", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker
-						.CheckTooltipSpecAandeelhouders("ToevHuisnummerRechtspersoon", 1, 4, "TextVeld", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker
-						.CheckTooltipSpecAandeelhouders("VestigingsplaatsRechtspersoon", 1, 24, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamRechtspersoon", 1, 200, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("StraatnaamRechtspersoon", 1, 24, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnummerRechtspersoon", 1, 20, "Positief6", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("ToevHuisnummerRechtspersoon", 1, 4, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("VestigingsplaatsRechtspersoon", 1, 24, "TextVeld", driver));
 
 			}
 
 		}
 
 		// als validatieresultaat niet leeg is dan melding genereren.
-		System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		driver.quit();
+		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		
 		assertTrue(ValidatieResultaat.isEmpty());
+		//driver.quit();
 
 	}
 
@@ -801,11 +797,11 @@ public class Steps extends AbstractSteps {
 
 		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(Tcid);
 
-		if (Tcid == 2) {
-			WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
-			Select mySelect = new Select(mySelectElm);
-			mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
-		}
+//		if (Tcid == 2) {
+//			WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+//			Select mySelect = new Select(mySelectElm);
+//			mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
+//		}
 
 		// algemene vragen
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();
@@ -892,6 +888,7 @@ public class Steps extends AbstractSteps {
 
 		if (invuldata[27].equals("ja")) {
 			SpecificatieDeelnemingenObjecten.DeelnemingVervreemd_Ja(driver).click();
+			Thread.sleep(300);
 			SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).clear();
 			SpecificatieDeelnemingenObjecten.PercentageVervreemding(driver).sendKeys(invuldata[28]);
 			SpecificatieDeelnemingenObjecten.NominaleWaardeVervreemding(driver).clear();
@@ -3811,11 +3808,11 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.StortingKapitaal(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 11, "TC01"));
 
-		if (driver.findElement(By.id("idCWNLCBAanDivOndWinTot")).isSelected()) {
-			// System.out.println("enabled");
-		} else {
-			FiscaleVermogensVergelijkingObjecten.DividentOntwWinstCheckbox(driver).click();
-		}
+//		if (driver.findElement(By.id("idCWNLCBAanDivOndWinTot")).isSelected()) {
+//			// System.out.println("enabled");
+//		} else {
+//			FiscaleVermogensVergelijkingObjecten.DividentOntwWinstCheckbox(driver).click();
+//		}
 
 		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver)

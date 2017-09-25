@@ -59,7 +59,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID | Browser  |
-      |    1 | "Chrome" |
+    # |    1 | "Chrome" |
       |    2 | "Chrome" |
 
   @vullen_formulier @Toelichting_Balans
@@ -108,8 +108,7 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-      | "TC02" | "Chrome" |
-      | "TC03" | "Chrome" |
+
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva

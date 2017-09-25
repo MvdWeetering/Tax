@@ -104,21 +104,21 @@ public class BalansActivaObjecten {
 	}
 	
 	public static WebElement OverigeImmaterieleCommercieel_1_1(WebDriver driver){
-		element = driver.findElement(By.id("idIva2R1C3"));
-		return element;
-	}
-	
-	public static WebElement OverigeImmaterieleFiscaal_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idIva2R1C5"));
 		return element;
 	}
 	
-	public static WebElement OverigeImmaterieleCommercieel_31_12(WebDriver driver){
+	public static WebElement OverigeImmaterieleFiscaal_1_1(WebDriver driver){
 		element = driver.findElement(By.id("idIva2R1C7"));
 		return element;
 	}
-	public static WebElement OverigeImmaterieleCF(WebDriver driver){
+	
+	public static WebElement OverigeImmaterieleCommercieel_31_12(WebDriver driver){
 		element = driver.findElement(By.id("idIva2R1C9"));
+		return element;
+	}
+	public static WebElement OverigeImmaterieleCF(WebDriver driver){
+		element = driver.findElement(By.id("idIva2R1C11"));
 		return element;
 	}
 	

@@ -24,7 +24,7 @@ public class NavigerenObjecten {
 		return element;
 	}
 	public static WebElement NavigerenSpecificatieAandeelhouders(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Specificatie Aandeelhouders"));
+	    element = driver.findElement(By.partialLinkText("Specificatie aandeelhouders"));
 		return element;
 	}
 	
@@ -43,11 +43,11 @@ public class NavigerenObjecten {
 		return element;
 	}
 	public static WebElement Zoekveld(WebDriver driver){
-	    
 		WebElement parent = driver.findElement(By.id("main"));
-	    element = parent.findElement(By.cssSelector("[class='gwt-TextBox GJJ2145DCJD']"));
+	    element = parent.findElement(By.cssSelector("[placeholder='Zoeken...']"));
 		return element;
 	}
+	
 	public static WebElement NavigerenWinstEnVerliesRekening(WebDriver driver){
 	    element = driver.findElement(By.partialLinkText("Winst- en verliesrekening"));
 		return element;

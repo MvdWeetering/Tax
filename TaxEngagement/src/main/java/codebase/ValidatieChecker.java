@@ -169,7 +169,7 @@ public class ValidatieChecker {
 
 	public static void main(String[] args) {
 
-		System.out.println(CheckValue("396631", 1, 21, "BECON"));
+		System.out.println(CheckValue("huisnr bevoord", 1, 21, "Positief6"));
 
 	}
 }

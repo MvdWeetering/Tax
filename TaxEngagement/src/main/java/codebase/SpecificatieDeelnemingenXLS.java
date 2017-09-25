@@ -104,7 +104,7 @@ public class SpecificatieDeelnemingenXLS {
 		
 		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(1);
 		
-		System.out.println(invuldata[40]);
+		System.out.println(invuldata[27]);
 		
 		
 	}

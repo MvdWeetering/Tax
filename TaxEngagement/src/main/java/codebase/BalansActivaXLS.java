@@ -97,7 +97,7 @@ package codebase;
 				return "a";
 			}
 			
-			return resultaat;
+			return resultaat.replaceAll("\\.0","");
 		}	
 
 		public static void main(String[] args) {
