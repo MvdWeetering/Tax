@@ -815,7 +815,7 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.Huisnummer(driver).sendKeys(invuldata[7]);
 
 		try {
-			int n = Integer.parseInt(invuldata[2]);
+			int n = Integer.parseInt(invuldata[2].replaceAll("\\.",""));
 			if (!Elfproef.isValidBSN(n)) {
 				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
 				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
@@ -3859,11 +3859,14 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.BuitenlandseBelastingRegeling(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F", 28, "TC01"));
 
+		
+		/*
 		if (driver.findElement(By.id("idCWNLCBNieAftDeeWinDooCooTot")).isSelected()) {
 			// System.out.println("enabled");
 		} else {
 			FiscaleVermogensVergelijkingObjecten.NietAftrDeelWinstCoopCheckbox(driver).click();
 		}
+		 */
 
 		FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver)
@@ -3877,12 +3880,14 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.AndereOpenlijkeVermomdeUitdelingenWinst(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F", 35, "TC01"));
 
+		/*
 		if (driver.findElement(By.id("idCWNLCBNieAftDeeBelComTot")).isSelected()) {
 			// System.out.println("enabled");
 		} else {
 			FiscaleVermogensVergelijkingObjecten.NietAftrDeelCommCheckbox(driver).click();
 		}
-
+		 */
+		
 		FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 37, "TC01"));
@@ -3891,11 +3896,13 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelBeloningenCommissarissen(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 38, "TC01"));
 
+		/*
 		if (driver.findElement(By.id("idCWNLCBNieAftDeeTanTot")).isSelected()) {
 			// System.out.println("enabled");
 		} else {
 			FiscaleVermogensVergelijkingObjecten.NietAftrDeelTantiemesCheckbox(driver).click();
 		}
+		*/
 
 		FiscaleVermogensVergelijkingObjecten.Tantiemes(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.Tantiemes(driver)
@@ -3905,12 +3912,14 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelTantiemes(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 43, "TC01"));
 
+		/*
 		if (driver.findElement(By.id("idCWNLCBNieAftDeeVerVooKapTot")).isSelected()) {
 			// System.out.println("enabled");
 		} else {
 			FiscaleVermogensVergelijkingObjecten.NietAftrDeelKapVerstrCheckbox(driver).click();
 		}
-
+		 */
+		
 		FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 48, "TC01"));
@@ -4006,8 +4015,7 @@ public class Steps extends AbstractSteps {
 
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipFiscaleVermogens(
-				"NietAftrekbaarWinstuitdelingenCooperaties", 1, 20, "PositiefGetal", driver));
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipFiscaleVermogens("NietAftrekbaarWinstuitdelingenCooperaties", 1, 20, "PositiefGetal", driver));
 
 		System.out.println(ValidatieResultaat);
 		// driver.quit();

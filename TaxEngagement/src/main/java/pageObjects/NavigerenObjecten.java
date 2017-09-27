@@ -79,7 +79,7 @@ public class NavigerenObjecten {
 		return element;
 	}
 	public static WebElement FiscaleVermogensVergelijking(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Fiscale Vermogensvergelijking"));
+	    element = driver.findElement(By.partialLinkText("Fiscale vermogensvergelijking"));
 		return element;
 	}
 	public static WebElement WinstuitZeescheepvaart(WebDriver driver){

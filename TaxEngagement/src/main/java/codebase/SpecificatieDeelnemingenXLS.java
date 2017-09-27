@@ -102,7 +102,7 @@ public class SpecificatieDeelnemingenXLS {
 	public static void main(String[] args) {
 
 		
-		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(1);
+		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(2);
 		
 		System.out.println(invuldata[27]);
 		

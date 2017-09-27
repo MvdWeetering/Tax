@@ -37,7 +37,7 @@ public class Elfproef {
     
 public static void main(String[] args) {
 	
-	System.out.println(isValidBecon(608282));
+	System.out.println(isValidBSN(384049497));
 	
 	
 }    

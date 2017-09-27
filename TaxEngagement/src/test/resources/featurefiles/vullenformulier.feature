@@ -176,7 +176,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "14082017"
+    And open the Project "dossier 27092017"
     And open the form FiscaleVermogensVergelijking
     Then i can fill out the form FiscaleVermogensVergelijking from <TCID>
     Then i can validate the error messages for the formulier FiscaleVermogensVergelijking from <TCID>

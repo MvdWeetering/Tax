@@ -87,61 +87,61 @@ public class FiscaleVermogensVergelijkingObjecten {
 	
 	@FieldName(name = "OmschrijvingUitdeling_1")
 	public static WebElement OmschrijvingUitdeling_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-1"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-0"));
 		return element;
 	}
 	
 	@FieldName(name = "DatumTerbeschikkingstelling_1")
 	public static WebElement DatumTerbeschikkingstelling_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-3"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-2"));
 		return element;
 	}
 	
 	@FieldName(name = "DatumAangifteDividendbelasting_1")
 	public static WebElement DatumAangifteDividendbelasting_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-5"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-4"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragIngehoudenDividendbelasting_1")
 	public static WebElement BedragIngehoudenDividendbelasting_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-7"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-6"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragWinstuitdeling_1")
 	public static WebElement BedragWinstuitdeling_1(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:0-9"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:0-8"));
 		return element;
 	}
 	
 	@FieldName(name = "OmschrijvingUitdeling_2")
 	public static WebElement OmschrijvingUitdeling_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-1"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-0"));
 		return element;
 	}
 	
 	@FieldName(name = "DatumTerbeschikkingstelling_2")
 	public static WebElement DatumTerbeschikkingstelling_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-3"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-2"));
 		return element;
 	}
 	
 	@FieldName(name = "DatumAangifteDividendbelasting_2")
 	public static WebElement DatumAangifteDividendbelasting_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-5"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-4"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragIngehoudenDividendbelasting_2")
 	public static WebElement BedragIngehoudenDividendbelasting_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-7"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-6"));
 		return element;
 	}
 	
 	@FieldName(name = "BedragWinstuitdeling_2")
 	public static WebElement BedragWinstuitdeling_2(WebDriver driver){
-		element = driver.findElement(By.id("idtableAanDivOndWin:1-9"));
+		element = driver.findElement(By.id("idtableAanDivOndWin:1-8"));
 		return element;
 	}
 	

@@ -60,7 +60,7 @@ public class FiscaleVermogensvergelijkingXLS {
 			return "Cell has no value";
 		}
 		catch (IllegalStateException g) {
-			return "a";
+			return "illegal state";
 		}
 		
 		return resultaat;
@@ -114,15 +114,16 @@ public class FiscaleVermogensvergelijkingXLS {
 			return "Cell has no value";
 		}
 		catch (IllegalStateException g) {
-			return "a";
+			return "Illegal state";
 		}
+		
 		
 		return resultaat.replaceAll("\\.0","");
 	}	
 
 	public static void main(String[] args) {
 
-	System.out.println(FiscaleVermogensvergelijkingXLS.HaalData("E", 5, "TC01"));
+	System.out.println(FiscaleVermogensvergelijkingXLS.HaalData("E", 10, "TC01"));
 
 	}
 }

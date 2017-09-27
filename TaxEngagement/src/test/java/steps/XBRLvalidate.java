@@ -982,12 +982,12 @@ public class XBRLvalidate {
 
 		Result.addAll(
 				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionSubjectToDividendDate").toString(),
-						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("B", 24, Tab)), "B24"));
+						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalText("B", 24, Tab)), "B24"));
 
 		// DividendTaxReturnDate
 		// Datum aangifte dividendbelasting
 		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:DividendTaxReturnDate").toString(),
-				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("C", 24, Tab)), "C24"));
+				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalText("C", 24, Tab)), "C24"));
 
 		// DividendTaxWithheldAmount
 		// Bedrag ingehouden dividendbelasting
@@ -1027,7 +1027,7 @@ public class XBRLvalidate {
 		// ProfitDistributionOtherNonDeductibleAmount
 		// Andere openlijke of vermomde uitdelingen van winst
 		Result.addAll(vergelijk.Vergelijk(
-				ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionsByCooperationsNonDeductibelPart").toString(),
+				ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionOtherNonDeductibleAmount").toString(),
 				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 35, Tab)), "F35"));
 
 		// SupervisoryDirectorsFeesBalanceNonDeductiblePart
@@ -1077,7 +1077,7 @@ public class XBRLvalidate {
 		// CapitalChangesAndWithdrawalsTotal
 		// Mutaties/onttrekkingen kapitaal in het boekjaar
 		Result.addAll(
-				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:FinalAssetsAndCapitalWithdrawalsTotal").toString(),
+				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalChangesAndWithdrawalsTotal").toString(),
 						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 6, Tab)), "E6"));
 
 		// FinalAssetsAndCapitalWithdrawalsTotal
@@ -1090,7 +1090,7 @@ public class XBRLvalidate {
 		// Ondernemingsvermogen bij het begin van het boekjaar
 		Result.addAll(vergelijk.Vergelijk(
 				ReadXML.GetXMLvalue("bd-bedr:BusinessCapitalTotalEndFinancialYearForComparisonMethod").toString(),
-				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 10, Tab)), "E10"));
+				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 5, Tab)), "E5"));
 
 		// CapitalContributionsTotal
 		// Stortingen van kapitaal
@@ -1101,26 +1101,28 @@ public class XBRLvalidate {
 		// Totaal beginvermogen en kapitaalstortingen
 		Result.addAll(vergelijk.Vergelijk(
 				ReadXML.GetXMLvalue("bd-bedr:InitialCapitalAndCapitalContributionsTotal").toString(),
-				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 13, Tab)), "E13"));
+				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 13, Tab)), "F13"));
 
 		// CapitalComparisonDifferenceOfCapitalTotal
 		// Vermogensverschil
 		Result.addAll(
 				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalComparisonDifferenceOfCapitalTotal").toString(),
-						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 19, Tab)), "E19"));
+						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 14, Tab)), "F14"));
 
 		// CorporationTaxNonDeductibleAmountsTotal
 		// Niet aftrekbare bedragen
 		Result.addAll(
 				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CorporationTaxNonDeductibleAmountsTotal").toString(),
-						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 15, Tab)), "E15"));
+						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 15, Tab)), "F15"));
 
 		// BalanceProfitComparisonMethod
 		// Saldo fiscale winstberekening (volgens vermogensvergelijking)
-		Result.addAll(
-				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:CapitalComparisonDifferenceOfCapitalTotal").toString(),
-						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 16, Tab)), "E16"));
+		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BalanceProfitComparisonMethod").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 16, Tab)), "F16"));
 
+		
+		
+		
+		
 	}
 
 	@When("^the elements of the XBRL and the XLS for Winst en verliesrekening are compared$")
@@ -1501,6 +1503,7 @@ public class XBRLvalidate {
 
 	@Then("^they contain the same values$")
 	public void they_contain_the_same_values() throws Throwable {
+		System.out.println(Result);
 		assertTrue(Result.isEmpty());
 	}
 }
