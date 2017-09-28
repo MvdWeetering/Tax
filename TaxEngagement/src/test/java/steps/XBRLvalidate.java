@@ -12,6 +12,7 @@ import codebase.ReadXML;
 import codebase.WinstVerliesXLS;
 import codebase.XLSbyColumn;
 import codebase.XMLandXLScompare;
+import codebase.convertDate;
 import codebase.vergelijk;
 
 import static org.junit.Assert.assertTrue;
@@ -980,24 +981,25 @@ public class XBRLvalidate {
 		// ProfitDistributionSubjectToDividendDate
 		// De datum waarop het dividend ter beschikking is gesteld
 
-		Result.addAll(
-				vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionSubjectToDividendDate").toString(),
-						Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalText("B", 24, Tab)), "B24"));
-
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionSubjectToDividendDate").toString(), convertDate.changedateformat(FiscaleVermogensvergelijkingXLS.HaalText("B", 24, Tab)), convertDate.changedateformat(FiscaleVermogensvergelijkingXLS.HaalText("B", 25, Tab))));
+		
 		// DividendTaxReturnDate
 		// Datum aangifte dividendbelasting
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:DividendTaxReturnDate").toString(),
-				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalText("C", 24, Tab)), "C24"));
+
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:DividendTaxReturnDate").toString(), convertDate.changedateformat(FiscaleVermogensvergelijkingXLS.HaalText("C", 24, Tab)), convertDate.changedateformat(FiscaleVermogensvergelijkingXLS.HaalText("C", 25, Tab))));
+		
 
 		// DividendTaxWithheldAmount
 		// Bedrag ingehouden dividendbelasting
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:DividendTaxWithheldAmount").toString(),
-				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("D", 25, Tab)), "D25"));
-
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:DividendTaxWithheldAmount").toString(), FiscaleVermogensvergelijkingXLS.HaalData("D", 24, Tab), FiscaleVermogensvergelijkingXLS.HaalData("D", 25, Tab)));
+		
+		
 		// ProfitDistributionAmount
 		// Bedrag winstuitdeling
-		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionAmount").toString(),
-				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 25, Tab)), "E25"));
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:ProfitDistributionAmount").toString(), FiscaleVermogensvergelijkingXLS.HaalData("E", 24, Tab), FiscaleVermogensvergelijkingXLS.HaalData("E", 25, Tab)));
+		
 
 		// ProfitDistributionsSubjectToDividendTaxTotalAmount
 		// Totaal aan dividendbelasting onderworpen winstuitdelingen
@@ -1119,7 +1121,6 @@ public class XBRLvalidate {
 		// Saldo fiscale winstberekening (volgens vermogensvergelijking)
 		Result.addAll(vergelijk.Vergelijk(ReadXML.GetXMLvalue("bd-bedr:BalanceProfitComparisonMethod").toString(), Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 16, Tab)), "F16"));
 
-		
 		
 		
 		
