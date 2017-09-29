@@ -63,7 +63,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);

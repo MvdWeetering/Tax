@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         format = { "pretty", "html:target/Reports/html/" },
         glue = {"steps"},
         features = "classpath:featurefiles/",
-        tags = {"@Fiscale_Vermogensvergelijking_xbrl"}
+        tags = {"@Balans_Activa"}
        
 )
 public class TestRunner {
