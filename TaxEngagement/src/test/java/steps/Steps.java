@@ -2509,9 +2509,12 @@ public class Steps extends AbstractSteps {
 		// Handelsdebiteuren
 		// Nominale waarde
 
-		// loze click
-		BalansActivaObjecten.TotaalVorderingenCommercieel_1_1(driver).click();
-
+		// scroll down
+		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+		
+		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("HandelsdebiteurenNominale", 1, 20,
 				"PositiefGetal", driver));
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("KortVordGroepNominale", 1, 20,
@@ -2568,9 +2571,11 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"),
 				Double.parseDouble(BalansActivaXLS.HaalData("C", 13, Tab)), "C13"));
+		
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				BalansActivaObjecten.ImmaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"),
 				Double.parseDouble(BalansActivaXLS.HaalData("D", 13, Tab)), "D13"));
+		
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"),
 				Double.parseDouble(BalansActivaXLS.HaalData("E", 13, Tab)), "E13"));
@@ -2823,7 +2828,8 @@ public class Steps extends AbstractSteps {
 				vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_31_12(driver).getAttribute("value"),
 						Double.parseDouble(BalansActivaXLS.HaalData("G", 77, Tab)), "G77"));
 
-		// System.out.println(ValidatieResultaat);
+
+		System.out.println(ValidatieResultaat);
 		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 

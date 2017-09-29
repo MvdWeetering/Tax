@@ -99,15 +99,15 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "14082017"
+    And open the Project "dossier 27092017"
     And open the form Balans Activa
-    Then i can fill out the form Balans Activa from tab <TCID>
-    Then i can validate the error messages for the Balans Activa form from tab <TCID>
+    #Then i can fill out the form Balans Activa from tab <TCID>
+    #Then i can validate the error messages for the Balans Activa form from tab <TCID>
     Then i can validate the totals for Balans Activa from tab <TCID>
 
     Examples: 
       | TCID   | Browser  |
-      | "TC01" | "Chrome" |
+      | "TC04" | "Chrome" |
 
 
   @vullen_formulier @Balans_Passiva
@@ -115,7 +115,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "14082017"
+    And open the Project "dossier 27092017"
     And open the form Balans Passiva
     Then i can fill out the form Balans Passiva from tab <TCID>
     Then i can validate the error messages for the Balans Passiva form from tab <TCID>
