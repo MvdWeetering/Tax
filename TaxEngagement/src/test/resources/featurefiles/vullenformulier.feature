@@ -209,7 +209,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 05082017"
+    And open the Project "dossier 27092017"
     And open the form Verlies Verrekening
     Then i can fill out the form Verlies Verrekening from <TCID>
     Then i can validate the error messages for the formulier verliesverrekening
@@ -217,4 +217,4 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "Tc01" | "Chrome" |
-      | "Tc02" | "Chrome" |
+ #     | "Tc02" | "Chrome" |

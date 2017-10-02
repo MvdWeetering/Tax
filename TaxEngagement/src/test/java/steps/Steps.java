@@ -4149,9 +4149,15 @@ public class Steps extends AbstractSteps {
 
 		// regel 1
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).clear();
+		
+		
+		
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 28, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 28, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 28, TCid));
+		
+		
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("B", 28, TCid));
+		
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("C", 28, TCid));
 		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 28, TCid));
 		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies(driver).sendKeys(VerliesVerrekeningXLS.HaalData("E", 28, TCid));
 		
@@ -4164,8 +4170,8 @@ public class Steps extends AbstractSteps {
 		// regel 2
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).clear();
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 29, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 29, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin2(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("B", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde2(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("C", 29, TCid));
 		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 29, TCid));
 		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("E", 29, TCid));
 		
@@ -4175,6 +4181,7 @@ public class Steps extends AbstractSteps {
 		else {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Nee(driver).click();
 		}
+		
 	}
 	@Then("^i can validate the error messages for the formulier verliesverrekening$")
 	public void i_can_validate_the_error_messages_for_the_formulier_verliesverrekening() throws Throwable {
@@ -4190,7 +4197,7 @@ public class Steps extends AbstractSteps {
 		
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar", 1, 9, "PositiefGeheelGetal", driver));
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar2", 1, 9, "PositiefGeheelGetal", driver));
-
+	
 	
 		System.out.println(ValidatieResultaat);
 		

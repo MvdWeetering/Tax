@@ -9,6 +9,7 @@ import codebase.BalansActivaXLS;
 import codebase.BalansPassivaXLS;
 import codebase.FiscaleVermogensvergelijkingXLS;
 import codebase.ReadXML;
+import codebase.VerliesVerrekeningXLS;
 import codebase.WinstVerliesXLS;
 import codebase.XLSbyColumn;
 import codebase.XMLandXLScompare;
@@ -1468,29 +1469,27 @@ public class XBRLvalidate {
 		
 //		LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber	
 //		RSIN maatschappij herkomst verlies
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("A", 1, Tab)), "A1"));
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber").toString(),Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
 
 //		LossesToBeSettledTaxEntityThisFinancialYearStart	
 //		Boekjaar maatschappij herkomst verlies, begin
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearStart").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("A", 1, Tab)), "A1"));
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearStart").toString(),Double.parseDouble(VerliesVerrekeningXLS.HaalData("B", 13, Tab)), "B13"));
 		
 //		LossesToBeSettledTaxEntityThisFinancialYearEnd	
 //		Boekjaar maatschappij herkomst verlies, eind
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearEnd").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("A", 1, Tab)), "A1"));
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearEnd").toString(),Double.parseDouble(VerliesVerrekeningXLS.HaalData("C", 13, Tab)), "C13"));
 		
 //		LossesToBeSettledTaxEntityThisFinancialYearCompany	
 //		Verrekening verlies maatschappij dit boekjaar
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompany").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("A", 1, Tab)), "A1"));
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompany").toString(),Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
 		
 //		BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber	
 //		RSIN maatschappij toerekening verlies
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("A", 1, Tab)), "A1"));
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber").toString(),Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
 	
 //		BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear	
 //		Verrekening verlies naar voorgaand boekjaar
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear").toString(),Double.parseDouble(WinstVerliesXLS.HaalData("A", 1, Tab)), "A1"));
-		
-		
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear").toString(),Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
 		
 		
 
