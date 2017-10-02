@@ -102,7 +102,7 @@ package codebase;
 
 		public static void main(String[] args) {
 
-		System.out.println(BalansActivaXLS.HaalData("B", 16, "TC01"));
+		System.out.println(BalansActivaXLS.HaalData("G", 16, "TC04"));
 
 		}
 	}

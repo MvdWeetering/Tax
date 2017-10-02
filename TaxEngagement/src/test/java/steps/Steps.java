@@ -3314,20 +3314,20 @@ public class Steps extends AbstractSteps {
 
 		// Eigen vermogen
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.EigenvermogenCommercieeel_1_1(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("B", 17, Tab)), "B17"));
+				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenCommercieeel_1_1(driver).getAttribute("value"),
+						Double.parseDouble(BalansPassivaXLS.HaalData("B", 7, Tab)), "B7"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.EigenvermogenFiscaal_1_1(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("C", 17, Tab)), "C17"));
+				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenFiscaal_1_1(driver).getAttribute("value"),
+						Double.parseDouble(BalansPassivaXLS.HaalData("C", 7, Tab)), "C7"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.EigenvermogenCommercieeel_31_12(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("D", 17, Tab)), "D17"));
+				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenCommercieeel_31_12(driver).getAttribute("value"),
+						Double.parseDouble(BalansPassivaXLS.HaalData("D", 7, Tab)), "D7"));
 		ValidatieResultaat
-				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.EigenvermogenCF(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("E", 17, Tab)), "E17"));
+				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenCF(driver).getAttribute("value"),
+						Double.parseDouble(BalansPassivaXLS.HaalData("E", 7, Tab)), "E7"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.EigenvermogenFiscaal31_12(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("F", 17, Tab)), "F17"));
+				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenFiscaal31_12(driver).getAttribute("value"),
+						Double.parseDouble(BalansPassivaXLS.HaalData("F", 7, Tab)), "F7"));
 
 		// Voorzieningen
 		ValidatieResultaat.addAll(
@@ -3364,19 +3364,19 @@ public class Steps extends AbstractSteps {
 
 		// Totaal voorzieningen
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.TotaalVoorzieningCommercieeel_1_1(driver).getAttribute("value"),
+				BalansPassivaObjecten.VoorzieningenCommercieeel_1_1(driver).getAttribute("value"),
 				Double.parseDouble(BalansPassivaXLS.HaalData("B", 28, Tab)), "B28"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.TotaalVoorzieningFiscaal_1_1(driver).getAttribute("value"),
+				vergelijk.Vergelijk(BalansPassivaObjecten.VoorzieningenFiscaal_1_1(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("C", 28, Tab)), "C28"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.TotaalVoorzieningCommercieeel_31_12(driver).getAttribute("value"),
+				BalansPassivaObjecten.VoorzieningenCommercieeel_31_12(driver).getAttribute("value"),
 				Double.parseDouble(BalansPassivaXLS.HaalData("D", 28, Tab)), "D28"));
 		ValidatieResultaat
-				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.TotaalVoorzieningCF(driver).getAttribute("value"),
+				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.VoorzieningenCF(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("E", 28, Tab)), "E28"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.TotaalVoorzieningFiscaal31_12(driver).getAttribute("value"),
+				vergelijk.Vergelijk(BalansPassivaObjecten.VoorzieningenFiscaal31_12(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("F", 28, Tab)), "F28"));
 
 		// Langlopende schulden
@@ -3430,19 +3430,19 @@ public class Steps extends AbstractSteps {
 		// Totaal langlopende schulden
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.TotaalLangLopSchuldCommercieeel_1_1(driver).getAttribute("value"),
+				BalansPassivaObjecten.LanglopendeSchuldenCommercieeel_1_1(driver).getAttribute("value"),
 				Double.parseDouble(BalansPassivaXLS.HaalData("B", 42, Tab)), "B42"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.TotaalLangLopSchuldFiscaal_1_1(driver).getAttribute("value"),
+				vergelijk.Vergelijk(BalansPassivaObjecten.LanglopendeSchuldenFiscaal_1_1(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("C", 42, Tab)), "C42"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.TotaalLangLopSchuldCommercieeel_31_12(driver).getAttribute("value"),
+				BalansPassivaObjecten.LanglopendeSchuldenCommercieeel_31_12(driver).getAttribute("value"),
 				Double.parseDouble(BalansPassivaXLS.HaalData("D", 42, Tab)), "D42"));
 		ValidatieResultaat
-				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.TotaalLangLopSchuldCF(driver).getAttribute("value"),
+				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.LanglopendeSchuldenCF(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("E", 42, Tab)), "E42"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.TotaalLangLopSchuldFiscaal31_12(driver).getAttribute("value"),
+				vergelijk.Vergelijk(BalansPassivaObjecten.LanglopendeSchuldenFiscaal31_12(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("F", 42, Tab)), "F42"));
 
 		// Kortlopende schulden
@@ -3497,19 +3497,19 @@ public class Steps extends AbstractSteps {
 		// Totaal kortlopende schulden
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.TotaalKortlSchuldCommercieeel_1_1(driver).getAttribute("value"),
+				BalansPassivaObjecten.KortLopendeSchuldCommercieeel_1_1(driver).getAttribute("value"),
 				Double.parseDouble(BalansPassivaXLS.HaalData("B", 55, Tab)), "B55"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.TotaalKortlSchuldFiscaal_1_1(driver).getAttribute("value"),
+				vergelijk.Vergelijk(BalansPassivaObjecten.KortLopendeSchuldFiscaal_1_1(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("C", 55, Tab)), "F55"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.TotaalKortlSchuldCommercieeel_31_12(driver).getAttribute("value"),
+				BalansPassivaObjecten.KortLopendeSchuldCommercieeel_31_12(driver).getAttribute("value"),
 				Double.parseDouble(BalansPassivaXLS.HaalData("D", 55, Tab)), "D55"));
 		ValidatieResultaat
-				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.TotaalKortlSchuldCF(driver).getAttribute("value"),
+				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.KortLopendeSchuldCF(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("E", 55, Tab)), "E55"));
 		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.TotaalKortlSchuldFiscaal31_12(driver).getAttribute("value"),
+				vergelijk.Vergelijk(BalansPassivaObjecten.KortLopendeSchuldFiscaal31_12(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("F", 55, Tab)), "F55"));
 
 		// Totaal passiva

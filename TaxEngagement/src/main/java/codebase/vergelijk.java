@@ -18,6 +18,11 @@ public class vergelijk {
 
 		if (!WebText.equals("[" + XlsText + "]")) {
 			VergelijkResult.add("Web waarden wijken af van Cel " + Cel + "\r\n");
+			System.out.println(XlsText);
+			System.out.println(WebText);
+			
+			
+			
 		}
 		return VergelijkResult;
 	}
@@ -50,9 +55,7 @@ public class vergelijk {
 		DecimalFormat df = new DecimalFormat("###.#");
 		String XlsText = df.format(XLSformatter).toString();
 		
-
-		
-		
+	
 		if (!WebText.equals(XlsText)) {
 			VergelijkResult.add("Web waarden wijken af van Cel " + Cel + "\r\n");
 			System.out.println(XlsText);

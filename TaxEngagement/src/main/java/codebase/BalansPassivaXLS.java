@@ -101,9 +101,7 @@ package codebase;
 
 		public static void main(String[] args) {
 
-			String[] HaalText =codebase.BalansPassivaXLS.HaalText(62, "TC03");
-			
-			System.out.println(HaalText[0]);
+			System.out.println(BalansPassivaXLS.HaalData("F", 39, "TC04"));
 
 		}
 	}
