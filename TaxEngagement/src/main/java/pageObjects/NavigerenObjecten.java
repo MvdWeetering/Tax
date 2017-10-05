@@ -44,7 +44,7 @@ public class NavigerenObjecten {
 	}
 	public static WebElement Zoekveld(WebDriver driver){
 		WebElement parent = driver.findElement(By.id("main"));
-	    element = parent.findElement(By.cssSelector("[placeholder='Search...']"));
+	    element = parent.findElement(By.cssSelector("[placeholder='Zoeken...']"));
 		return element;
 	}
 	
@@ -91,5 +91,11 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Verliesverrekening"));
 		return element;
 	}
+	
+	public static WebElement toelichtingOverigeVoorzieningen (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Toelichting overige voorzieningen"));
+		return element;
+	}
+	
 	
 }

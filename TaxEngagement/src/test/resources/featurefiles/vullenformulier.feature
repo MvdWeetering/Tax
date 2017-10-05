@@ -59,7 +59,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID | Browser  |
-    # |    1 | "Chrome" |
+      # |    1 | "Chrome" |
       |    2 | "Chrome" |
 
   @vullen_formulier @Toelichting_Balans
@@ -99,16 +99,15 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 27092017"
+    And open the Project "dossier 05102017"
     And open the form Balans Activa
     Then i can fill out the form Balans Activa from tab <TCID>
     #Then i can validate the error messages for the Balans Activa form from tab <TCID>
-    #Then i can validate the totals for Balans Activa from tab <TCID>
+    Then i can validate the totals for Balans Activa from tab <TCID>
 
     Examples: 
       | TCID   | Browser  |
       | "TC04" | "Chrome" |
-
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva
@@ -117,15 +116,15 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 27092017"
     And open the form Balans Passiva
-   #Then i can fill out the form Balans Passiva from tab <TCID>
-   # Then i can validate the error messages for the Balans Passiva form from tab <TCID>
+    #Then i can fill out the form Balans Passiva from tab <TCID>
+    # Then i can validate the error messages for the Balans Passiva form from tab <TCID>
     Then i can validate the totals for Balans Passiva from tab <TCID>
 
     Examples: 
       | TCID   | Browser  |
-    # | "TC01" | "Chrome" |
-    # | "TC02" | "Chrome" |
-    # | "TC03" | "Chrome" |
+      # | "TC01" | "Chrome" |
+      # | "TC02" | "Chrome" |
+      # | "TC03" | "Chrome" |
       | "TC04" | "Chrome" |
 
   @vullen_formulier @Investeringsaftrek
@@ -217,4 +216,32 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "Tc01" | "Chrome" |
- #     | "Tc02" | "Chrome" |
+      | "Tc02" | "Chrome" |
+
+  @vullen_formulier @Toelichting_overige_voorziening
+  Scenario Outline: vullen formulier overige voorziening
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 05102017"
+    And open the form Verlies toelichting overige voorziening
+    Then i can fill out the form toelichting overige voorziening from <TCID>
+    Then i can validate the error messages for the formulier toelichting overige voorziening
+
+    Examples: 
+      | TCID | Browser  |
+      |    1 | "Chrome" |
+
+  @vullen_formulier @Toelichting_Materiele_vaste_activa
+  Scenario Outline: vullen formulier Toelichting Materiele vaste activa
+    #Given I want to login with browser <Browser>
+    #When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    #And Select the Tax engagement module
+    #And open the Project "dossier 05102017"
+    #And open the form Verlies toelichting overige voorziening
+    Then i can fill out the form Toelichting Materiele vaste activa <TCID>
+    Then i can validate the error messages for the formulier Toelichting Materiele vaste activa
+
+    Examples: 
+      | TCID   | Browser  |
+      | "TC01" | "Chrome" |

@@ -9,6 +9,7 @@ import codebase.BalansActivaXLS;
 import codebase.BalansPassivaXLS;
 import codebase.FiscaleVermogensvergelijkingXLS;
 import codebase.ReadXML;
+import codebase.ToelichtingOverigeVoorzXLS;
 import codebase.VerliesVerrekeningXLS;
 import codebase.WinstVerliesXLS;
 import codebase.XLSbyColumn;
@@ -1490,11 +1491,37 @@ public class XBRLvalidate {
 //		BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear	
 //		Verrekening verlies naar voorgaand boekjaar
 		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear").toString(),Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
-		
-		
-
 	}
 
+
+	@When("^the elements of the XBRL and the XLS for Toelichting_overige_voorziening_xbrl are compared$")
+	public void the_elements_of_the_XBRL_and_the_XLS_for_Toelichting_overige_voorziening_xbrl_are_compared() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	
+		
+		String Tab = "ToelichtingOverigeVoorziening";
+
+//		WarrantyProvisionDescription	
+//		Omschrijving soort garantievoorziening
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionDescription").toString(), ToelichtingOverigeVoorzXLS.HaalText("B", 2, Tab), ToelichtingOverigeVoorzXLS.HaalText("B", 3, Tab)));
+		
+//		WarrantyProvisionAllocationAmount	
+//		Dotatie garantievoorziening
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionAllocationAmount").toString(),ToelichtingOverigeVoorzXLS.HaalData("C", 2, Tab), ToelichtingOverigeVoorzXLS.HaalData("C", 3, Tab)));
+		
+//		WarrantyProvisionWithdrawal	
+//		Onttrekking garantievoorziening
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionWithdrawal").toString(), ToelichtingOverigeVoorzXLS.HaalData("D", 2, Tab), ToelichtingOverigeVoorzXLS.HaalData("D", 3, Tab)));
+		
+//		WarrantyProvisionFiscalAmount	
+//		Garantievoorziening fiscaal einde boekjaar
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-WarrantyProvisionFiscalAmount").toString(), ToelichtingOverigeVoorzXLS.HaalData("E", 2, Tab), ToelichtingOverigeVoorzXLS.HaalData("E", 3, Tab)));
+
+		
+		
+	}
+	
+	
 	@Then("^they contain the same values$")
 	public void they_contain_the_same_values() throws Throwable {
 		System.out.println(Result);

@@ -31,6 +31,7 @@ import pageObjects.ObjectvrijstellingObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
+import pageObjects.ToelichtingOverigeVoorzieningObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
 import pageObjects.ZeescheepvaartObjecten;
 import pageObjects.winstVerliesVerrekeningObjecten;
@@ -48,10 +49,10 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 
 		// Splat
-		 //InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
 
 		// Dev
-		InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -63,7 +64,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -4205,4 +4206,49 @@ public class Steps extends AbstractSteps {
 		// driver.quit();
 		
 	}
+	@Given("^open the form Verlies toelichting overige voorziening$")
+	public void open_the_form_Verlies_toelichting_overige_voorziening() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		NavigerenObjecten.toelichtingOverigeVoorzieningen(driver).click();
+		
+	}
+
+	@Then("^i can fill out the form toelichting overige voorziening from (\\d+)$")
+	public void i_can_fill_out_the_form_toelichting_overige_voorziening_from(int Tcid) throws Throwable {
+
+		//rij 1
+		
+		ToelichtingOverigeVoorzieningObjecten.Omschrijving1(driver).clear();
+		ToelichtingOverigeVoorzieningObjecten.Omschrijving1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B", 2, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C", 2, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 2, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 2, "ToelichtingOverigeVoorziening"));
+		
+		//rij 2
+		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).clear();
+		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B", 3, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C", 3, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 3, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 3, "ToelichtingOverigeVoorziening"));
+	}
+
+	@Then("^i can validate the error messages for the formulier toelichting overige voorziening$")
+	public void i_can_validate_the_error_messages_for_the_formulier_toelichting_overige_voorziening() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	
+	}
+	
+	@Then("^i can fill out the form Toelichting Materiele vaste activa \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Toelichting_Materiele_vaste_activa(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("^i can validate the error messages for the formulier Toelichting Materiele vaste activa$")
+	public void i_can_validate_the_error_messages_for_the_formulier_Toelichting_Materiele_vaste_activa() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+	
+	
 }
