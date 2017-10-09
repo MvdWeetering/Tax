@@ -234,11 +234,11 @@ Feature: vullen formulieren
 
   @vullen_formulier @Toelichting_Materiele_vaste_activa
   Scenario Outline: vullen formulier Toelichting Materiele vaste activa
-    #Given I want to login with browser <Browser>
-    #When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
-    #And Select the Tax engagement module
-    #And open the Project "dossier 05102017"
-    #And open the form Verlies toelichting overige voorziening
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 05102017"
+    And open the form Verlies toelichting Materiele vaste activa
     Then i can fill out the form Toelichting Materiele vaste activa <TCID>
     Then i can validate the error messages for the formulier Toelichting Materiele vaste activa
 

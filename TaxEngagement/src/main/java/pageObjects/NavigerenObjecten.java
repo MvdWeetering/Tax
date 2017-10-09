@@ -97,5 +97,13 @@ public class NavigerenObjecten {
 		return element;
 	}
 	
+	public static WebElement ToelichtingMaterieleVasteActiva (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Toelichting mater"));
+		return element;
+	}
+	
+	
+	
+	
 	
 }

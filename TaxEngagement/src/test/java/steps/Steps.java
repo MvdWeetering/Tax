@@ -31,6 +31,7 @@ import pageObjects.ObjectvrijstellingObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
+import pageObjects.ToelichtingMaterieleVasteActivaObjecten;
 import pageObjects.ToelichtingOverigeVoorzieningObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
 import pageObjects.ZeescheepvaartObjecten;
@@ -4231,17 +4232,68 @@ public class Steps extends AbstractSteps {
 		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 3, "ToelichtingOverigeVoorziening"));
 		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 3, "ToelichtingOverigeVoorziening"));
 	}
-
+	
+	@Given("^open the form Verlies toelichting Materiele vaste activa$")
+	public void open_the_form_Verlies_toelichting_Materiele_vaste_activa() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	
+		NavigerenObjecten.ToelichtingMaterieleVasteActiva(driver).click();
+				
+	}
+	
 	@Then("^i can validate the error messages for the formulier toelichting overige voorziening$")
 	public void i_can_validate_the_error_messages_for_the_formulier_toelichting_overige_voorziening() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	    
+		
+		
+		
+		
+		
 	
 	}
 	
 	@Then("^i can fill out the form Toelichting Materiele vaste activa \"(.*?)\"$")
 	public void i_can_fill_out_the_form_Toelichting_Materiele_vaste_activa(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+		//Gebouwen zonder bodemwaarde
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeAanschaf(driver).sendKeys("1001");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeFiscale3112(driver).sendKeys("1002");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeRestwaarde3112(driver).sendKeys("1003");
+				
+				//Gebouwen in eigen gebruik
+				
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikAanschaf(driver).sendKeys("2001");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikFiscale3112(driver).sendKeys("2002");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikRestwaarde3112(driver).sendKeys("2003");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikBodemwaarde3112(driver).sendKeys("2004");
+						
+				//Gebouwen ter belegging gehouden
+				
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingAanschaf(driver).sendKeys("3001");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingFiscale3112(driver).sendKeys("3002");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingRestwaarde3112(driver).sendKeys("3003");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingBodemwaarde3112(driver).sendKeys("3004");
+				
+				//Gebouwen zonder afschrijving
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingAanschaf(driver).sendKeys("4001");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingFiscale3112(driver).sendKeys("4002");
+						
+				//Bedrijfsterreinen
+				
+				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenAanschaf(driver).sendKeys("5001");
+				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenFiscale3112(driver).sendKeys("5002");
+				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenRestwaarde3112(driver).sendKeys("5003");
+				
+				//Machines
+				ToelichtingMaterieleVasteActivaObjecten.MachinesAanschaf(driver).sendKeys("6001");
+				ToelichtingMaterieleVasteActivaObjecten.MachinesRestwaarde3112(driver).sendKeys("6002");
+				
+				//Andere vaste bedrijfsmiddelen
+						
+				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenAanschaf(driver).sendKeys("7001");
+				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenRestwaarde3112(driver).sendKeys("7002");
+				
+				
 	}
 
 	@Then("^i can validate the error messages for the formulier Toelichting Materiele vaste activa$")
@@ -4250,5 +4302,6 @@ public class Steps extends AbstractSteps {
 	    
 	}
 	
-	
+
+
 }
