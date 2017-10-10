@@ -102,7 +102,10 @@ public class NavigerenObjecten {
 		return element;
 	}
 	
-	
+	public static WebElement ToelichtingGarantievoorziening (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Toelichting garantievoorzieningen"));
+		return element;
+	}
 	
 	
 	

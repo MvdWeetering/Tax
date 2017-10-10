@@ -111,4 +111,10 @@ public class ToelichtingMaterieleVasteActivaObjecten {
 		return element;
 	}
 	
+	//Totaal
+	public static WebElement Totaal(WebDriver driver){
+		element = driver.findElement(By.id("idCWNLTotFis3112GebEnTer"));
+		return element;
+	}
+	
 }

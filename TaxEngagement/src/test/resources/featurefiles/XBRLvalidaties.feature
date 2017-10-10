@@ -84,3 +84,19 @@ Feature: XBRL Validation
     Given the reading of the XLS is correct
     When the elements of the XBRL and the XLS for Toelichting_overige_voorziening_xbrl are compared
     Then they contain the same values
+    
+  @Toelichting_materiele_vaste_activa_xbrl 
+  Scenario: XBRL Validation Toelichting overige voorziening
+    Given the reading of the XBRL is correct
+    Given the reading of the XLS is correct
+    When the elements of the XBRL and the XLS for Toelichting materiele vaste activa are compared
+    Then they contain the same values
+    
+    
+  @Toelichting_garantievoorziening_xbrl 
+  Scenario: XBRL Validation Toelichting garantievoorziening
+    Given the reading of the XBRL is correct
+    Given the reading of the XLS is correct
+    When the elements of the XBRL and the XLS for Toelichting garantievoorziening are compared
+    Then they contain the same values
+    

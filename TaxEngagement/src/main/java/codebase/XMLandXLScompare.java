@@ -26,6 +26,8 @@ public class XMLandXLScompare {
 		return CheckerResult;
 	}
 	
-	
+	public static void main(String[] args) throws Exception {
+		XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",	"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1);
+	}
 	
 }

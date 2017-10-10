@@ -31,6 +31,7 @@ import pageObjects.ObjectvrijstellingObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
 import pageObjects.ToelichtingBalansObjecten;
+import pageObjects.ToelichtingGarantieVoorzieningObjecten;
 import pageObjects.ToelichtingMaterieleVasteActivaObjecten;
 import pageObjects.ToelichtingOverigeVoorzieningObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
@@ -4244,55 +4245,51 @@ public class Steps extends AbstractSteps {
 	@Then("^i can validate the error messages for the formulier toelichting overige voorziening$")
 	public void i_can_validate_the_error_messages_for_the_formulier_toelichting_overige_voorziening() throws Throwable {
 	    
-		
-		
-		
-		
-		
 	
 	}
 	
 	@Then("^i can fill out the form Toelichting Materiele vaste activa \"(.*?)\"$")
-	public void i_can_fill_out_the_form_Toelichting_Materiele_vaste_activa(String arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		//Gebouwen zonder bodemwaarde
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeAanschaf(driver).sendKeys("1001");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeFiscale3112(driver).sendKeys("1002");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeRestwaarde3112(driver).sendKeys("1003");
+	public void i_can_fill_out_the_form_Toelichting_Materiele_vaste_activa(String Tab) throws Throwable {
+
+				String Locatie = "C:\\testdata\\Toelichting materiele vaste activa.xlsx";
+				//Gebouwen zonder bodemwaarde
+		
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 6, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 6, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 6, Tab, Locatie));
 				
 				//Gebouwen in eigen gebruik
 				
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikAanschaf(driver).sendKeys("2001");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikFiscale3112(driver).sendKeys("2002");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikRestwaarde3112(driver).sendKeys("2003");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikBodemwaarde3112(driver).sendKeys("2004");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 9, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 9, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 9, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikBodemwaarde3112(driver).sendKeys(LeesXLS.HaalData("E", 9, Tab, Locatie));
 						
 				//Gebouwen ter belegging gehouden
 				
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingAanschaf(driver).sendKeys("3001");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingFiscale3112(driver).sendKeys("3002");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingRestwaarde3112(driver).sendKeys("3003");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingBodemwaarde3112(driver).sendKeys("3004");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 10, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 10, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 10, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingBodemwaarde3112(driver).sendKeys(LeesXLS.HaalData("E", 10, Tab, Locatie));
 				
 				//Gebouwen zonder afschrijving
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingAanschaf(driver).sendKeys("4001");
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingFiscale3112(driver).sendKeys("4002");
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 11, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 11, Tab, Locatie));
 						
 				//Bedrijfsterreinen
 				
-				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenAanschaf(driver).sendKeys("5001");
-				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenFiscale3112(driver).sendKeys("5002");
-				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenRestwaarde3112(driver).sendKeys("5003");
+				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 12, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 12, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 12, Tab, Locatie));
 				
 				//Machines
-				ToelichtingMaterieleVasteActivaObjecten.MachinesAanschaf(driver).sendKeys("6001");
-				ToelichtingMaterieleVasteActivaObjecten.MachinesRestwaarde3112(driver).sendKeys("6002");
+				ToelichtingMaterieleVasteActivaObjecten.MachinesAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 17, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.MachinesRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 17, Tab, Locatie));
 				
 				//Andere vaste bedrijfsmiddelen
 						
-				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenAanschaf(driver).sendKeys("7001");
-				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenRestwaarde3112(driver).sendKeys("7002");
-				
+				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 18, Tab, Locatie));
+				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 18, Tab, Locatie));
 				
 	}
 
@@ -4301,7 +4298,60 @@ public class Steps extends AbstractSteps {
 	    // Write code here that turns the phrase above into concrete actions
 	    
 	}
-	
+	@Then("^i can validate the totals on the formulier Toelichting Materiele vaste activa from \"(.*?)\"$")
+	public void i_can_validate_the_totals_on_the_formulier_Toelichting_Materiele_vaste_activa_from(String Tab) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		
+		String Locatie = "C:\\testdata\\Toelichting materiele vaste activa.xlsx";
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(ToelichtingMaterieleVasteActivaObjecten.Totaal(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("C", 13, Tab, Locatie)), "C13"));
+		
+		System.out.println(ValidatieResultaat);
+		assertTrue(ValidatieResultaat.isEmpty());
 
+	}
 
+	@Given("^open the form Toelichting garantievoorzieningen$")
+	public void open_the_form_Toelichting_garantievoorzieningen() throws Throwable {
+
+		NavigerenObjecten.ToelichtingGarantievoorziening(driver).click(); 
+	   
+	}
+
+	@Then("^i can fill out the form Toelichting garantievoorzieningen with \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Toelichting_garantievoorzieningen_with(String arg1) throws Throwable {
+	   
+		String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx";
+		String Tab = "TC01";
+		//regel 1
+		ToelichtingGarantieVoorzieningObjecten.Omschrijving1(driver).clear();
+		ToelichtingGarantieVoorzieningObjecten.Omschrijving1(driver).sendKeys(LeesXLS.HaalText("A", 4, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening1(driver).sendKeys(LeesXLS.HaalData("B", 4, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening1(driver).sendKeys(LeesXLS.HaalData("C", 4, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar1(driver).sendKeys(LeesXLS.HaalData("D", 4, Tab, Locatie));
+		
+		//regel 2
+		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).clear();
+		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).sendKeys(LeesXLS.HaalText("A", 5, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("B", 5, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("C", 5, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar2(driver).sendKeys(LeesXLS.HaalData("D", 5, Tab, Locatie));
+		
+		
+	   
+	}
+
+	@Then("^i can validate the totals on the formulier Toelichting garantievoorzieningen from \"(.*?)\"$")
+	public void i_can_validate_the_totals_on_the_formulier_Toelichting_garantievoorzieningen_from(String arg1) throws Throwable {
+		
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
+		String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx";
+		String Tab = "TC01";
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(ToelichtingGarantieVoorzieningObjecten.Totaal(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 6, Tab, Locatie)), "D6"));
+		
+		System.out.println(ValidatieResultaat);
+		assertTrue(ValidatieResultaat.isEmpty());
+
+	}
 }

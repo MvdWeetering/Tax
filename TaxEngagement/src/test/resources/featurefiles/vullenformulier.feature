@@ -132,7 +132,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 27092017"
+    And open the Project "dossier 05102017"
     And open the form Investeringsaftrek
     Then i can fill out the form Investeringsaftrek with config <Id>
     Then i can validate the error messages for the Investeringsaftrek form
@@ -208,7 +208,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 27092017"
+    And open the Project "dossier 05102017"
     And open the form Verlies Verrekening
     Then i can fill out the form Verlies Verrekening from <TCID>
     Then i can validate the error messages for the formulier verliesverrekening
@@ -216,7 +216,7 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "Tc01" | "Chrome" |
-      | "Tc02" | "Chrome" |
+
 
   @vullen_formulier @Toelichting_overige_voorziening
   Scenario Outline: vullen formulier overige voorziening
@@ -240,8 +240,23 @@ Feature: vullen formulieren
     And open the Project "dossier 05102017"
     And open the form Verlies toelichting Materiele vaste activa
     Then i can fill out the form Toelichting Materiele vaste activa <TCID>
-    Then i can validate the error messages for the formulier Toelichting Materiele vaste activa
+		Then i can validate the totals on the formulier Toelichting Materiele vaste activa from <TCID>
 
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
+
+@vullen_formulier @Toelichting_garantievoorzieningen
+  Scenario Outline: vullen formulier Toelichting garantievoorzieningen
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
+    And Select the Tax engagement module
+    And open the Project "dossier 05102017"
+    And open the form Toelichting garantievoorzieningen
+    Then i can fill out the form Toelichting garantievoorzieningen with <TCID>
+		Then i can validate the totals on the formulier Toelichting garantievoorzieningen from <TCID>
+
+    Examples: 
+      | TCID   | Browser  |
+      | "TC01" | "Chrome" |
+      
