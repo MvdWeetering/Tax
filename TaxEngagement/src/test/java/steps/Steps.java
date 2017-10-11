@@ -1718,7 +1718,7 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver)
 				.sendKeys(WinstVerliesXLS.HaalData("C", 109, Tab));
 
-		WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).click();
+		//WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).click();
 
 	}
 
@@ -3664,8 +3664,8 @@ public class Steps extends AbstractSteps {
 		ObjectvrijstellingObjecten.ObjectvrijstellingBuitenlandseOndernemingswinst(driver).clear();
 		ObjectvrijstellingObjecten.ObjectvrijstellingBuitenlandseOndernemingswinst(driver).sendKeys(invuldata[6]);
 
-		ObjectvrijstellingObjecten.CumulatiefSaldo(driver).clear();
-		ObjectvrijstellingObjecten.CumulatiefSaldo(driver).sendKeys(invuldata[7]);
+//		ObjectvrijstellingObjecten.CumulatiefSaldo(driver).clear();
+//		ObjectvrijstellingObjecten.CumulatiefSaldo(driver).sendKeys(invuldata[7]);
 
 		// extra click om lostfocus event van cumulatiefsaldo te triggeren en
 		// hiermee de waarde op te slaan

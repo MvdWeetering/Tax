@@ -15,7 +15,7 @@ public class NavigerenObjecten {
 	}
 	
 	public static WebElement NavigerenAlgemeneVragen(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Algemene Vragen"));
+	    element = driver.findElement(By.partialLinkText("Algemene vragen"));
 		return element;
 	}
 	
@@ -34,7 +34,7 @@ public class NavigerenObjecten {
 	}
 	
 	public static WebElement NavigerenToelichting_Balans(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("Toelichting balans"));
+	    element = driver.findElement(By.partialLinkText("Toelichting Balans"));
 		return element;
 	}
 	

@@ -482,12 +482,12 @@ public class WinstenVerliesRekeningObjecten {
 		}
 		
 	public static WebElement TotaalPersKostenCommercieel(WebDriver driver){
-		   element = driver.findElement(By.id("idPerR5C1"));
+		   element = driver.findElement(By.id("idPerR6C1"));
 		   return element;
 		}
 	
 	public static WebElement TotaalPersKostenCF(WebDriver driver){
-		   element = driver.findElement(By.id("idPerR5C3"));
+		   element = driver.findElement(By.id("idPerR6C3"));
 		   return element;
 		}
 	public static WebElement TotaalPersKostenFiscaal(WebDriver driver){
