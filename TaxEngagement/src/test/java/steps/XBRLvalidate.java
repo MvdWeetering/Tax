@@ -1441,47 +1441,48 @@ public class XBRLvalidate {
 	@When("^the elements of the XBRL and the XLS for Investeringsregeling are compared$")
 	public void the_elements_of_the_XBRL_and_the_XLS_for_Investeringsregeling_are_compared() throws Throwable {
 
-		// BusinessAssetEnvironmentalEnergyInvestmentDescription
-		// Bedrijfsmiddel investering energie/milieu
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentDescription	
+//		Bedrijfsmiddel investering energie/milieu
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
-
-		// BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount
-		// Investeringsbedrag boekjaar
-
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount	
+//		Investeringsbedrag boekjaar
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount", 4));
-
-		// BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate
-		// Datum ingebruikname bedrijfsmiddel
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate	
+//		Datum ingebruikname bedrijfsmiddel
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate", 3));
-
-		// BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear
-		// Bedrag in boekjaar betaald
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear	
+//		Bedrag in boekjaar betaald
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear", 5));
-
-		// BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber
-		// Meldingsnummer energie/milieu-investeringsaftrek
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber	
+//		Meldingsnummer energie/milieu-investeringsaftrek
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber", 7));
-
-		// BusinessAssetEnvironmentalEnergyInvestmentPercentage
-		// Percentage energie/milieu-investeringsaftrek
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPercentage", 1));
-
-		// BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount
-		// Berekende investeringsaftrek per investering
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount", 1));
-
-		// BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear
-		// Investeringsaftrek energie/milieu dit boekjaar
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear", 8));
-
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentPercentage	
+//		Percentage energie/milieu-investeringsaftrek
+//		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+//				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPercentage", 1));
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount	
+//		Berekende investeringsaftrek per investering
+//		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+//				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
+		
+//		BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear	
+//		Investeringsaftrek energie/milieu dit boekjaar
+//		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+//				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
+		
+		
 	}
 
 	@When("^the elements of the XBRL and the XLS for verliesverrekening_xbrl are compared$")
@@ -1686,7 +1687,7 @@ public void the_elements_of_the_XBRL_and_the_XLS_for_Toelichting_garantievoorzie
 		
 	@Then("^they contain the same values$")
 	public void they_contain_the_same_values() throws Throwable {
-		System.out.println(Result);
+		//System.out.println(Result);
 		assertTrue(Result.isEmpty());
 	}
 }

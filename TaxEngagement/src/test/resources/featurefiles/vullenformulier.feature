@@ -132,7 +132,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom01"
     And Select the Tax engagement module
-    And open the Project "dossier 05102017"
+    And open the Project "dossier 11102017"
     And open the form Investeringsaftrek
     Then i can fill out the form Investeringsaftrek with config <Id>
     Then i can validate the error messages for the Investeringsaftrek form

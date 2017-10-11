@@ -14,6 +14,10 @@ public class XMLandXLScompare {
 		XMLChecker = ReadXML.GetXMLvalue(Tag);
 		XSLChecker = XLSbyColumn.extractExcelContentByColumnIndex(SheetName, ColumnNr);
 
+		
+		
+		
+		
 		if (!XMLChecker.equals(XSLChecker)) {
 			CheckerResult.add(Tag);
 			System.out.println("Difference at tag " + Tag);
