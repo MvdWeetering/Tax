@@ -24,7 +24,7 @@ public class convertDate {
 	
 	public static void main(String[] args) throws ParseException {
 		
-		System.out.println(changedateformat("01-01-2016"));
+		System.out.println(changedateformat("01-01-2017"));
 		
 	}
 	

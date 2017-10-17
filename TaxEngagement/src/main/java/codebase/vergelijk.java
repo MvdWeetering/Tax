@@ -1,8 +1,11 @@
 package codebase;
 
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import org.apache.poi.util.SystemOutLogger;
 
 public class vergelijk {
 
@@ -20,9 +23,7 @@ public class vergelijk {
 			VergelijkResult.add("Web waarden wijken af van Cel " + Cel + "\r\n");
 			System.out.println(XlsText);
 			System.out.println(WebText);
-			
-			
-			
+				
 		}
 		return VergelijkResult;
 	}
@@ -63,9 +64,11 @@ public class vergelijk {
 		}
 		return VergelijkResult;
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException, Exception {
 
-	
+		String Tab = "Tc01"; 
+		
+System.out.println(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearEnd").toString(), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 28, Tab)), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 29, Tab))));
 
 	}
 }

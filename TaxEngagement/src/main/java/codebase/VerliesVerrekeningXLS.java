@@ -152,8 +152,8 @@ public class VerliesVerrekeningXLS {
 	}
 	
 	public static void main(String[] args) {
-
-	System.out.println(VerliesVerrekeningXLS.HaalDatum("B", 28, "TC01"));
+		String Tab = "Tc01";
+	System.out.println(VerliesVerrekeningXLS.HaalData("A", 13, Tab));
 
 	}
 }

@@ -1492,41 +1492,37 @@ public class XBRLvalidate {
 
 		// LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber
 		// RSIN maatschappij herkomst verlies
-		Result.addAll(vergelijk.VergelijkXBRL(
-				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber")
-						.toString(),
-				Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
+		
+		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber").toString(), VerliesVerrekeningXLS.HaalData("A", 28, Tab), VerliesVerrekeningXLS.HaalData("A", 28, Tab));
+		
+
 
 		// LossesToBeSettledTaxEntityThisFinancialYearStart
 		// Boekjaar maatschappij herkomst verlies, begin
-		Result.addAll(vergelijk.VergelijkXBRL(
-				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearStart").toString(),
-				Double.parseDouble(VerliesVerrekeningXLS.HaalData("B", 13, Tab)), "B13"));
-
-		// LossesToBeSettledTaxEntityThisFinancialYearEnd
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearStart").toString(), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("B", 28, Tab)), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("B", 29, Tab))));
+		
+		// LossesToBeSettledTaxEntityThisFinancialYearEnd@
 		// Boekjaar maatschappij herkomst verlies, eind
-		Result.addAll(vergelijk.VergelijkXBRL(
-				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearEnd").toString(),
-				Double.parseDouble(VerliesVerrekeningXLS.HaalData("C", 13, Tab)), "C13"));
-
+				
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearEnd").toString(), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 28, Tab)), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 29, Tab))));
+		
 		// LossesToBeSettledTaxEntityThisFinancialYearCompany
 		// Verrekening verlies maatschappij dit boekjaar
-		Result.addAll(vergelijk.VergelijkXBRL(
-				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompany").toString(),
-				Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
 
+		
+		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompany").toString(), VerliesVerrekeningXLS.HaalData("E", 28, Tab), VerliesVerrekeningXLS.HaalData("E", 29, Tab));
+		
 		// BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber
 		// RSIN maatschappij toerekening verlies
-		Result.addAll(vergelijk.VergelijkXBRL(
-				ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber").toString(),
-				Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
+		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber").toString(), VerliesVerrekeningXLS.HaalData("A", 13, Tab), VerliesVerrekeningXLS.HaalData("A", 14, Tab));
 
 		// BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear
 		// Verrekening verlies naar voorgaand boekjaar
-		Result.addAll(vergelijk.VergelijkXBRL(
-				ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear")
-						.toString(),
-				Double.parseDouble(VerliesVerrekeningXLS.HaalData("A", 13, Tab)), "A13"));
+		
+		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear").toString(), VerliesVerrekeningXLS.HaalData("C", 13, Tab), VerliesVerrekeningXLS.HaalData("D", 14, Tab));
+		
+		
 	}
 
 	@When("^the elements of the XBRL and the XLS for Toelichting_overige_voorziening_xbrl are compared$")
@@ -1687,7 +1683,7 @@ public void the_elements_of_the_XBRL_and_the_XLS_for_Toelichting_garantievoorzie
 		
 	@Then("^they contain the same values$")
 	public void they_contain_the_same_values() throws Throwable {
-		//System.out.println(Result);
+		System.out.println(Result);
 		assertTrue(Result.isEmpty());
 	}
 }

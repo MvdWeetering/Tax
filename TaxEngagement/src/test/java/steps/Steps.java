@@ -51,7 +51,7 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 
 		// Splat
-		InlogUrl = "http://localhost:7777/nl-se-develop/webapps/#login";
+		InlogUrl = "http://localhost:7777/test-cwnltest/webapps/#login";
 
 		// Dev
 		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
