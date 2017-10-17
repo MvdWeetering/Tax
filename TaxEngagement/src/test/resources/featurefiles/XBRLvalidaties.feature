@@ -99,4 +99,19 @@ Feature: XBRL Validation
     Given the reading of the XLS is correct
     When the elements of the XBRL and the XLS for Toelichting garantievoorziening are compared
     Then they contain the same values
+  
+  @Innovatiebox_xbrl 
+  Scenario: XBRL Validation Innovatiebox
+    Given the reading of the XBRL is correct
+    Given the reading of the XLS is correct
+    When the elements of the XBRL and the XLS for Innovatiebox are compared
+    Then they contain the same values
+    
+    @objectvrijstelling_xbrl 
+  Scenario: XBRL Validation objectvrijstelling
+    Given the reading of the XBRL is correct
+    Given the reading of the XLS is correct
+    When the elements of the XBRL and the XLS for objectvrijstelling are compared
+    Then they contain the same values
+    
     

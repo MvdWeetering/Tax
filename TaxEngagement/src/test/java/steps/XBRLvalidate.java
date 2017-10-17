@@ -556,7 +556,7 @@ public class XBRLvalidate {
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans",
 				"bd-ReinvestmentReserveDisposedBusinessAssetBookValueAtTransferTime", 1));
 
-		// 
+		//
 		// Omschrijving soort garantievoorziening
 		Result.addAll(
 				XMLandXLScompare.XMLandXLScheckerArrays("Toelichting_balans", "bd-WarrantyProvisionDescription", 1));
@@ -1441,48 +1441,46 @@ public class XBRLvalidate {
 	@When("^the elements of the XBRL and the XLS for Investeringsregeling are compared$")
 	public void the_elements_of_the_XBRL_and_the_XLS_for_Investeringsregeling_are_compared() throws Throwable {
 
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentDescription	
-//		Bedrijfsmiddel investering energie/milieu
+		// BusinessAssetEnvironmentalEnergyInvestmentDescription
+		// Bedrijfsmiddel investering energie/milieu
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount	
-//		Investeringsbedrag boekjaar
+
+		// BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount
+		// Investeringsbedrag boekjaar
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount", 4));
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate	
-//		Datum ingebruikname bedrijfsmiddel
+
+		// BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate
+		// Datum ingebruikname bedrijfsmiddel
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate", 3));
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear	
-//		Bedrag in boekjaar betaald
+
+		// BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear
+		// Bedrag in boekjaar betaald
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear", 5));
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber	
-//		Meldingsnummer energie/milieu-investeringsaftrek
+
+		// BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber
+		// Meldingsnummer energie/milieu-investeringsaftrek
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber", 7));
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentPercentage	
-//		Percentage energie/milieu-investeringsaftrek
-//		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-//				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPercentage", 1));
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount	
-//		Berekende investeringsaftrek per investering
-//		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-//				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
-		
-//		BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear	
-//		Investeringsaftrek energie/milieu dit boekjaar
-//		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-//				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
-		
-		
+
+		// BusinessAssetEnvironmentalEnergyInvestmentPercentage
+		// Percentage energie/milieu-investeringsaftrek
+		// Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+		// "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPercentage", 1));
+
+		// BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount
+		// Berekende investeringsaftrek per investering
+		// Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+		// "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
+
+		// BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear
+		// Investeringsaftrek energie/milieu dit boekjaar
+		// Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+		// "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
+
 	}
 
 	@When("^the elements of the XBRL and the XLS for verliesverrekening_xbrl are compared$")
@@ -1492,37 +1490,49 @@ public class XBRLvalidate {
 
 		// LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber
 		// RSIN maatschappij herkomst verlies
-		
-		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber").toString(), VerliesVerrekeningXLS.HaalData("A", 28, Tab), VerliesVerrekeningXLS.HaalData("A", 28, Tab));
-		
 
+		vergelijk.VergelijkTupple(
+				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompanyIdentificationNumber")
+						.toString(),
+				VerliesVerrekeningXLS.HaalData("A", 28, Tab), VerliesVerrekeningXLS.HaalData("A", 28, Tab));
 
 		// LossesToBeSettledTaxEntityThisFinancialYearStart
 		// Boekjaar maatschappij herkomst verlies, begin
-		
-		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearStart").toString(), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("B", 28, Tab)), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("B", 29, Tab))));
-		
+
+		Result.addAll(vergelijk.VergelijkTupple(
+				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearStart").toString(),
+				convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("B", 28, Tab)),
+				convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("B", 29, Tab))));
+
 		// LossesToBeSettledTaxEntityThisFinancialYearEnd@
 		// Boekjaar maatschappij herkomst verlies, eind
-				
-		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearEnd").toString(), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 28, Tab)), convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 29, Tab))));
-		
+
+		Result.addAll(vergelijk.VergelijkTupple(
+				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearEnd").toString(),
+				convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 28, Tab)),
+				convertDate.changedateformat(VerliesVerrekeningXLS.HaalDatum("C", 29, Tab))));
+
 		// LossesToBeSettledTaxEntityThisFinancialYearCompany
 		// Verrekening verlies maatschappij dit boekjaar
 
-		
-		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompany").toString(), VerliesVerrekeningXLS.HaalData("E", 28, Tab), VerliesVerrekeningXLS.HaalData("E", 29, Tab));
-		
+		vergelijk.VergelijkTupple(
+				ReadXML.GetXMLvalue("bd-bedr:LossesToBeSettledTaxEntityThisFinancialYearCompany").toString(),
+				VerliesVerrekeningXLS.HaalData("E", 28, Tab), VerliesVerrekeningXLS.HaalData("E", 29, Tab));
+
 		// BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber
 		// RSIN maatschappij toerekening verlies
-		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber").toString(), VerliesVerrekeningXLS.HaalData("A", 13, Tab), VerliesVerrekeningXLS.HaalData("A", 14, Tab));
+		vergelijk.VergelijkTupple(
+				ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityCompanyIdentificationNumber").toString(),
+				VerliesVerrekeningXLS.HaalData("A", 13, Tab), VerliesVerrekeningXLS.HaalData("A", 14, Tab));
 
 		// BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear
 		// Verrekening verlies naar voorgaand boekjaar
-		
-		vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear").toString(), VerliesVerrekeningXLS.HaalData("C", 13, Tab), VerliesVerrekeningXLS.HaalData("D", 14, Tab));
-		
-		
+
+		vergelijk.VergelijkTupple(
+				ReadXML.GetXMLvalue("bd-bedr:BackwardLossesToBeSettledTaxEntityLossToBeSettledPreviousFinancialYear")
+						.toString(),
+				VerliesVerrekeningXLS.HaalData("C", 13, Tab), VerliesVerrekeningXLS.HaalData("D", 14, Tab));
+
 	}
 
 	@When("^the elements of the XBRL and the XLS for Toelichting_overige_voorziening_xbrl are compared$")
@@ -1557,130 +1567,269 @@ public class XBRLvalidate {
 	@When("^the elements of the XBRL and the XLS for Toelichting materiele vaste activa are compared$")
 	public void the_elements_of_the_XBRL_and_the_XLS_for_Toelichting_materiele_vaste_activa_are_compared()
 			throws Throwable {
-		
-		
-		String Locatie = "C:\\testdata\\Toelichting materiele vaste activa.xlsx"; 
+
+		String Locatie = "C:\\testdata\\Toelichting materiele vaste activa.xlsx";
 		String Tab = "TC01";
-		
-//		EnvironmentalBusinessAssetsPurchaseCostsFiscal	
-//		Aanschafkosten milieu-bedrijfsmiddelen fiscaal
-		
-//		EnvironmentalBusinessAssetsFiscal	
-//		Milieu-bedrijfsmiddelen fiscaal
-		
-//		EnvironmentalBusinessAssetsResidualValueFiscal	
-//		Restwaarde milieu-bedrijfsmiddelen fiscaal
-		
-//		BuildingsOwnUsePurchaseCostsFiscal	
-//		Aanschafkosten gebouwen in eigen gebruik fiscaal
 
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUsePurchaseCostsFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("B", 9, Tab, Locatie)), "B9"));
-		
-//		BuildingsOwnUseFiscal	
-//		Gebouwen in eigen gebruik fiscaal
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUseFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("C", 9, Tab, Locatie)), "C9"));
-		
-//		BuildingsOwnUseResidualValueFiscal	
-//		Restwaarde gebouwen in eigen gebruik fiscaal
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUseResidualValueFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("D", 9, Tab, Locatie)), "D9"));
-		
-//		BuildingsOwnUseSoilValueFiscal	
-//		Bodemwaarde gebouwen in eigen gebruik fiscaal
+		// EnvironmentalBusinessAssetsPurchaseCostsFiscal
+		// Aanschafkosten milieu-bedrijfsmiddelen fiscaal
 
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUseSoilValueFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("E", 9, Tab, Locatie)), "E9"));
-		
-//		BuildingsForInvestmentPurposesPurchaseCostsFiscal	
-//		Aanschafkosten gebouwen ter belegging fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesPurchaseCostsFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("B", 10, Tab, Locatie)), "B10"));
-				
-//		BuildingsForInvestmentPurposesFiscal	
-//		Gebouwen ter belegging fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("C", 10, Tab, Locatie)), "C10"));
-		
-//		BuildingsForInvestmentPurposesResidualValueFiscal	
-//		Restwaarde gebouwen ter belegging fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesResidualValueFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("D", 10, Tab, Locatie)), "D10"));
-		
-//		BuildingsForInvestmentPurposesSoilValueFiscal	
-//		Bodemwaarde gebouwen ter belegging fiscaal
-	
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesSoilValueFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("E", 10, Tab, Locatie)), "E10"));
-		
-//		BuildingsPurchaseCostsWithoutDepreciationFiscal	
-//		Aanschafkosten gebouwen zonder afschrijving fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsPurchaseCostsWithoutDepreciationFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("B", 11, Tab, Locatie)), "B11"));
-		
-//		BuildingsWithoutDepreciationFiscal	
-//		Gebouwen zonder afschrijving fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsWithoutDepreciationFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("C", 11, Tab, Locatie)), "C11"));
-		
-//		CompanySitesFiscal	
-//		Bedrijfsterreinen fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:CompanySitesFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("C", 12, Tab, Locatie)), "C12"));
-		
-//		CompanySitesPurchaseCostsFiscal	
-//		Kosten aanschaf bedrijfsterreinen fiscaal
+		// EnvironmentalBusinessAssetsFiscal
+		// Milieu-bedrijfsmiddelen fiscaal
 
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:CompanySitesPurchaseCostsFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("B", 12, Tab, Locatie)), "B12"));
-		
-//		CompanySitesResidualValueFiscal	
-//		Restwaarde bedrijfsterreinen fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:CompanySitesResidualValueFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("D", 12, Tab, Locatie)), "D12"));
-		
-//		MachineryPurchaseCostsFiscal	
-//		Kosten aanschaf machines fiscaal
-		
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:MachineryPurchaseCostsFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("B", 17, Tab, Locatie)), "B17"));
-		
-//		MachineryResidualValueFiscal	
-//		Restwaarde machines fiscaal
+		// EnvironmentalBusinessAssetsResidualValueFiscal
+		// Restwaarde milieu-bedrijfsmiddelen fiscaal
 
-		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:MachineryResidualValueFiscal").toString(), Double.parseDouble(LeesXLS.HaalData("D", 17, Tab, Locatie)), "D17"));
+		// BuildingsOwnUsePurchaseCostsFiscal
+		// Aanschafkosten gebouwen in eigen gebruik fiscaal
+
+		Result.addAll(
+				vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUsePurchaseCostsFiscal").toString(),
+						Double.parseDouble(LeesXLS.HaalData("B", 9, Tab, Locatie)), "B9"));
+
+		// BuildingsOwnUseFiscal
+		// Gebouwen in eigen gebruik fiscaal
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUseFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("C", 9, Tab, Locatie)), "C9"));
+
+		// BuildingsOwnUseResidualValueFiscal
+		// Restwaarde gebouwen in eigen gebruik fiscaal
+		Result.addAll(
+				vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUseResidualValueFiscal").toString(),
+						Double.parseDouble(LeesXLS.HaalData("D", 9, Tab, Locatie)), "D9"));
+
+		// BuildingsOwnUseSoilValueFiscal
+		// Bodemwaarde gebouwen in eigen gebruik fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsOwnUseSoilValueFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("E", 9, Tab, Locatie)), "E9"));
+
+		// BuildingsForInvestmentPurposesPurchaseCostsFiscal
+		// Aanschafkosten gebouwen ter belegging fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(
+				ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesPurchaseCostsFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("B", 10, Tab, Locatie)), "B10"));
+
+		// BuildingsForInvestmentPurposesFiscal
+		// Gebouwen ter belegging fiscaal
+
+		Result.addAll(
+				vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesFiscal").toString(),
+						Double.parseDouble(LeesXLS.HaalData("C", 10, Tab, Locatie)), "C10"));
+
+		// BuildingsForInvestmentPurposesResidualValueFiscal
+		// Restwaarde gebouwen ter belegging fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(
+				ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesResidualValueFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("D", 10, Tab, Locatie)), "D10"));
+
+		// BuildingsForInvestmentPurposesSoilValueFiscal
+		// Bodemwaarde gebouwen ter belegging fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(
+				ReadXML.GetXMLvalue("bd-bedr:BuildingsForInvestmentPurposesSoilValueFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("E", 10, Tab, Locatie)), "E10"));
+
+		// BuildingsPurchaseCostsWithoutDepreciationFiscal
+		// Aanschafkosten gebouwen zonder afschrijving fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(
+				ReadXML.GetXMLvalue("bd-bedr:BuildingsPurchaseCostsWithoutDepreciationFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("B", 11, Tab, Locatie)), "B11"));
+
+		// BuildingsWithoutDepreciationFiscal
+		// Gebouwen zonder afschrijving fiscaal
+
+		Result.addAll(
+				vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:BuildingsWithoutDepreciationFiscal").toString(),
+						Double.parseDouble(LeesXLS.HaalData("C", 11, Tab, Locatie)), "C11"));
+
+		// CompanySitesFiscal
+		// Bedrijfsterreinen fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:CompanySitesFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("C", 12, Tab, Locatie)), "C12"));
+
+		// CompanySitesPurchaseCostsFiscal
+		// Kosten aanschaf bedrijfsterreinen fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:CompanySitesPurchaseCostsFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("B", 12, Tab, Locatie)), "B12"));
+
+		// CompanySitesResidualValueFiscal
+		// Restwaarde bedrijfsterreinen fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:CompanySitesResidualValueFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("D", 12, Tab, Locatie)), "D12"));
+
+		// MachineryPurchaseCostsFiscal
+		// Kosten aanschaf machines fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:MachineryPurchaseCostsFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("B", 17, Tab, Locatie)), "B17"));
+
+		// MachineryResidualValueFiscal
+		// Restwaarde machines fiscaal
+
+		Result.addAll(vergelijk.VergelijkXBRL(ReadXML.GetXMLvalue("bd-bedr:MachineryResidualValueFiscal").toString(),
+				Double.parseDouble(LeesXLS.HaalData("D", 17, Tab, Locatie)), "D17"));
 
 	}
 
+	@When("^the elements of the XBRL and the XLS for Toelichting garantievoorziening are compared$")
+	public void the_elements_of_the_XBRL_and_the_XLS_for_Toelichting_garantievoorziening_are_compared()
+			throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 
-@When("^the elements of the XBRL and the XLS for Toelichting garantievoorziening are compared$")
-public void the_elements_of_the_XBRL_and_the_XLS_for_Toelichting_garantievoorziening_are_compared() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
- 
-	String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx"; 
-	String Tab = "TC01";
-	
-//	WarrantyProvisionDescription	
-//	Omschrijving soort garantievoorziening
-	
-	Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionDescription").toString(),
-			LeesXLS.HaalText("A", 4, Tab, Locatie), LeesXLS.HaalText("A", 5, Tab, Locatie)));
-	
-	
-//	WarrantyProvisionAllocationAmount	
-//	Dotatie garantievoorziening
-	
-	Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionAllocationAmount").toString(),
-			LeesXLS.HaalData("B", 4, Tab, Locatie), LeesXLS.HaalData("B", 5, Tab, Locatie)));
-	
-//	WarrantyProvisionWithdrawal	
-//	Onttrekking garantievoorziening
-	
-	Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionWithdrawal").toString(),
-			LeesXLS.HaalData("C", 4, Tab, Locatie), LeesXLS.HaalData("C", 5, Tab, Locatie)));
-	
-//	WarrantyProvisionFiscalAmount	
-//	Garantievoorziening fiscaal einde boekjaar
+		String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx";
+		String Tab = "TC01";
 
-	Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionFiscalAmount").toString(),
-			LeesXLS.HaalData("D", 4, Tab, Locatie), LeesXLS.HaalData("D", 5, Tab, Locatie)));
+		// WarrantyProvisionDescription
+		// Omschrijving soort garantievoorziening
 
-}
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionDescription").toString(),
+				LeesXLS.HaalText("A", 4, Tab, Locatie), LeesXLS.HaalText("A", 5, Tab, Locatie)));
+
+		// WarrantyProvisionAllocationAmount
+		// Dotatie garantievoorziening
+
+		Result.addAll(
+				vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionAllocationAmount").toString(),
+						LeesXLS.HaalData("B", 4, Tab, Locatie), LeesXLS.HaalData("B", 5, Tab, Locatie)));
+
+		// WarrantyProvisionWithdrawal
+		// Onttrekking garantievoorziening
+
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionWithdrawal").toString(),
+				LeesXLS.HaalData("C", 4, Tab, Locatie), LeesXLS.HaalData("C", 5, Tab, Locatie)));
+
+		// WarrantyProvisionFiscalAmount
+		// Garantievoorziening fiscaal einde boekjaar
+
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:WarrantyProvisionFiscalAmount").toString(),
+				LeesXLS.HaalData("D", 4, Tab, Locatie), LeesXLS.HaalData("D", 5, Tab, Locatie)));
+
+	}
+
+	@When("^the elements of the XBRL and the XLS for Innovatiebox are compared$")
+	public void the_elements_of_the_XBRL_and_the_XLS_for_Innovatiebox_are_compared() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 		
+		String Tab = "Innovatiebox";
+		String Locatie = "C:\\testdata\\TestdataTax.xlsx";
+		
+		
+//		InnovationBoxBusinessAssetsDescription	
+//		Activum in innovatiebox omschrijving
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBusinessAssetsDescription").toString(),
+				LeesXLS.HaalText("B", 2, Tab, Locatie), LeesXLS.HaalText("B", 3, Tab, Locatie)));
+
+//		InnovationBoxBusinessAssetsProductionCosts	
+//		Activum in innovatiebox voortbrengingskosten
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBusinessAssetsDescription").toString(),
+				LeesXLS.HaalData("C", 2, Tab, Locatie), LeesXLS.HaalData("C", 3, Tab, Locatie)));
+		
+//		InnovationBoxFlatRateArrangementExists	
+//		Innovatiebox forfaitaire regeling
+
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxFlatRateArrangementExists").toString(),
+				LeesXLS.HaalText("D", 2, Tab, Locatie), LeesXLS.HaalText("D", 3, Tab, Locatie)));
+		
+			
+//		InnovationBoxBalanceThresholdPreviousFinancialYear	
+//		Saldo drempel innovatiebox vorig boekjaar
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBalanceThresholdPreviousFinancialYear").toString(),
+				LeesXLS.HaalData("E", 2, Tab, Locatie), LeesXLS.HaalData("E", 3, Tab, Locatie)));
+		
+//		InnovationBoxProductionCostsTotal	
+//		Innovatiebox voortbrengingskosten totaal
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxProductionCostsTotal").toString(),
+				LeesXLS.HaalData("F", 2, Tab, Locatie), LeesXLS.HaalData("F", 3, Tab, Locatie)));
+	
+//		InnovationBoxExploitationLoss	
+//		Innovatiebox exploitatieverliezen in dit boekjaar
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxExploitationLoss").toString(),
+				LeesXLS.HaalData("G", 2, Tab, Locatie), LeesXLS.HaalData("G", 3, Tab, Locatie)));
+		
+//		BenefitsForegoingYearGrantPatent	
+//		Voordelen genoten voorafgaand aan jaar octrooi verlening
+		
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:BenefitsForegoingYearGrantPatent").toString(),
+				LeesXLS.HaalData("H", 2, Tab, Locatie), LeesXLS.HaalData("H", 3, Tab, Locatie)));
+		
+//		InnovationBoxThresholdTakenOverOccasionJoiningOrRemovalSubsidiary	
+//		Overgenomen drempel innovatiebox bij voeging en ontvoeging
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxThresholdTakenOverOccasionJoiningOrRemovalSubsidiary").toString(),
+				LeesXLS.HaalData("I", 2, Tab, Locatie), LeesXLS.HaalData("I", 3, Tab, Locatie)));
+		
+//		InnovationBoxProductionCostsToOvertake	
+//		In te lopen voortbrengingskosten innovatiebox in dit boekjaar
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxProductionCostsToOvertake").toString(),
+				LeesXLS.HaalData("J", 2, Tab, Locatie), LeesXLS.HaalData("J", 3, Tab, Locatie)));
+		
+//		InnovationBoxBenefitsLessThanThreshold	
+//		Genoten voordeel onder drempel innovatiebox
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBenefitsLessThanThreshold").toString(),
+				LeesXLS.HaalData("K", 2, Tab, Locatie), LeesXLS.HaalData("K", 3, Tab, Locatie)));
+		
+//		InnovationBoxBenefitsExceedingThreshold	
+//		Genoten voordeel boven drempel innovatiebox
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBenefitsExceedingThreshold").toString(),
+				LeesXLS.HaalData("L", 2, Tab, Locatie), LeesXLS.HaalData("L", 3, Tab, Locatie)));
+		
+//		InnovationBoxBalanceThresholdEndFinancialYear	
+//		Saldo in te lopen voortbrengingskosten einde boekjaar
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBalanceThresholdEndFinancialYear").toString(),
+				LeesXLS.HaalData("M", 2, Tab, Locatie), LeesXLS.HaalData("M", 3, Tab, Locatie)));
+		
+	}
+	
+	@When("^the elements of the XBRL and the XLS for objectvrijstelling are compared$")
+	public void the_elements_of_the_XBRL_and_the_XLS_for_objectvrijstelling_are_compared() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+
+		String Tab = "Objectvrijstelling";
+		String Locatie = "C:\\testdata\\TestdataTax.xlsx";
+		
+//		CountryForeignCompany	
+//		Vestigingsland buitenlandse onderneming
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:CountryForeignCompany").toString(),
+				LeesXLS.HaalText("C", 2, Tab, Locatie), LeesXLS.HaalText("C", 3, Tab, Locatie)));
+		
+//		ForeignBusinessProfitEuroFunctionalCurrency	
+//		Buitenlandse ondernemingswinst in euro of functionele valuta
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:ForeignBusinessProfitEuroFunctionalCurrency").toString(),
+				LeesXLS.HaalData("D", 2, Tab, Locatie), LeesXLS.HaalData("D", 3, Tab, Locatie)));
+		
+//		LossBefore1January2012ToOvertake	
+//		In te halen verliezen uit jaren voor 1 januari 2012
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossBefore1January2012ToOvertake").toString(),
+				LeesXLS.HaalData("E", 2, Tab, Locatie), LeesXLS.HaalData("E", 3, Tab, Locatie)));
+		
+//		LossCessationForeignCompany	
+//		Stakingsverlies buitenlandse onderneming
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:LossCessationForeignCompany").toString(),
+				LeesXLS.HaalData("F", 2, Tab, Locatie), LeesXLS.HaalData("F", 3, Tab, Locatie)));
+		
+//		ObjectExemptionForeignBusinessProfitPerCountry	
+//		Objectvrijstelling buitenl ondernemingswinst per land
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:ObjectExemptionForeignBusinessProfitPerCountry").toString(),
+				LeesXLS.HaalData("G", 2, Tab, Locatie), LeesXLS.HaalData("G", 3, Tab, Locatie)));
+		
+//		ForeignBusinessProfitBalanceCumulative	
+//		Cumulatief saldo buitenlandse ondernemingswinst
+		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:ForeignBusinessProfitBalanceCumulative").toString(),
+				LeesXLS.HaalData("D", 6, Tab, Locatie), LeesXLS.HaalData("D", 6, Tab, Locatie)));
+		
+		
+	}
+
 	@Then("^they contain the same values$")
 	public void they_contain_the_same_values() throws Throwable {
 		System.out.println(Result);

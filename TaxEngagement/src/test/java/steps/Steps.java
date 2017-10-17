@@ -176,20 +176,17 @@ public class Steps extends AbstractSteps {
 
 		if (invuldata[10].equals("ja")) {
 			AlgemeneVragenObjecten.vraag10_yes(driver).click();
+			
 		} else {
 			AlgemeneVragenObjecten.vraag10_no(driver).click();
 		}
 
 		if (invuldata[11].equals("ja")) {
 			AlgemeneVragenObjecten.vraag11_yes(driver).click();
+			AlgemeneVragenObjecten.vraag12(driver).clear();
+			AlgemeneVragenObjecten.vraag12(driver).sendKeys(invuldata[12]);
 		} else {
 			AlgemeneVragenObjecten.vraag11_no(driver).click();
-		}
-
-		if (invuldata[12].equals("ja")) {
-			AlgemeneVragenObjecten.vraag12_yes(driver).click();
-		} else {
-			AlgemeneVragenObjecten.vraag12_no(driver).click();
 		}
 
 		if (invuldata[13].equals("ja")) {
@@ -209,31 +206,61 @@ public class Steps extends AbstractSteps {
 		} else {
 			AlgemeneVragenObjecten.vraag15_no(driver).click();
 		}
-
-		AlgemeneVragenObjecten.SaldoUltimo(driver).clear();
-		AlgemeneVragenObjecten.SaldoUltimo(driver).sendKeys(invuldata[16]);
-
+	
 		if (invuldata[16].equals("ja")) {
 			AlgemeneVragenObjecten.vraag16_yes(driver).click();
 		} else {
 			AlgemeneVragenObjecten.vraag16_no(driver).click();
-		}
-
-		AlgemeneVragenObjecten.Bedragmateriele(driver).clear();
-		AlgemeneVragenObjecten.Bedragmateriele(driver).sendKeys(invuldata[18]);
-
-		if (invuldata[18].equals("ja")) {
+		}	
+		
+		if (invuldata[17].equals("ja")) {
 			AlgemeneVragenObjecten.vraag17_yes(driver).click();
 		} else {
 			AlgemeneVragenObjecten.vraag17_no(driver).click();
+		}	
+		
+		if (invuldata[18].equals("ja")) {
+			AlgemeneVragenObjecten.vraag18_yes(driver).click();
+		} else {
+			AlgemeneVragenObjecten.vraag18_no(driver).click();
+		}	
+		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+		
+		AlgemeneVragenObjecten.vraag19(driver).sendKeys(invuldata[19]);
+		
+		if (invuldata[20].equals("ja")) {
+			AlgemeneVragenObjecten.vraag20_yes(driver).click();
+			AlgemeneVragenObjecten.vraag21(driver).sendKeys(invuldata[21]);
+		} else {
+			AlgemeneVragenObjecten.vraag20_no(driver).click();
+		}	
+		
+		
+		if (invuldata[22].equals("ja")) {
+			AlgemeneVragenObjecten.vraag22_yes(driver).click();
+		} else {
+			AlgemeneVragenObjecten.vraag22_no(driver).click();
+		}	
+		
+		if (invuldata[23].equals("ja")) {
+			AlgemeneVragenObjecten.vraag23_yes(driver).click();
+		} else {
+			AlgemeneVragenObjecten.vraag23_no(driver).click();
 		}
-
-		AlgemeneVragenObjecten.Toelichting(driver).clear();
-		AlgemeneVragenObjecten.Toelichting(driver).sendKeys(invuldata[20]);
-
-		driver.quit();
-
-	}
+		if (invuldata[24].equals("ja")) {
+			AlgemeneVragenObjecten.vraag24_yes(driver).click();
+		} else {
+			AlgemeneVragenObjecten.vraag24_no(driver).click();
+		}
+		
+		AlgemeneVragenObjecten.vraag25(driver).clear();
+		AlgemeneVragenObjecten.vraag25(driver).sendKeys(invuldata[25]);
+		
+		
+		//driver.quit();
+}
 
 	@When("^open the form Algemene Gegevens$")
 	public void open_the_form_Algemene_Gegevens() throws Throwable {

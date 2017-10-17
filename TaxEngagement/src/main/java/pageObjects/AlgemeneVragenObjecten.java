@@ -64,113 +64,167 @@ public class AlgemeneVragenObjecten {
 	}
 	
 	public static WebElement vraag7_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzcz']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcw']"));
 		return element;
 	}
 	public static WebElement vraag7_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzcz-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcw-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag8_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd1']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcz']"));
 		return element;
 	}
 	public static WebElement vraag8_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd1-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzcz-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag9_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd5']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd1']"));
 		return element;
 	}
 	public static WebElement vraag9_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd5-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd1-no']"));
 		return element;
 	}
 	
 	public static WebElement vraag10_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzco']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd3']"));
 		return element;
 	}
 	public static WebElement vraag10_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzco-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd3-no']"));
 		return element;
 	}
+	
+	
 	public static WebElement vraag11_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd9']"));
+		element = driver.findElement(By.cssSelector("[for='idCWNLParticipations']"));
 		return element;
 	}
 	public static WebElement vraag11_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd9-no']"));
-		return element;
-	}	public static WebElement vraag12_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd7']"));
+		element = driver.findElement(By.cssSelector("[for='idCWNLParticipations-no']"));
 		return element;
 	}
-	public static WebElement vraag12_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzd7-no']"));
-		return element;
-	}	public static WebElement vraag13_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzda']"));
+	
+	// 99 deelnemingen toelichting
+			
+	public static WebElement vraag12(WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzin"));
 		return element;
 	}
+	
+	public static WebElement vraag13_yes(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd5']"));
+		return element;
+	}
+	
 	public static WebElement vraag13_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzda-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd5-no']"));
 		return element;
-	}	public static WebElement vraag14_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzde']"));
+	}	
+	
+	public static WebElement vraag14_yes(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd6']"));
 		return element;
 	}
 	public static WebElement vraag14_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzde-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd6-no']"));
 		return element;
 	}	
 	public static WebElement vraag15_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzco']"));
 		return element;
 	}
 	public static WebElement vraag15_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzco-no']"));
 		return element;
 	}
 	public static WebElement vraag16_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idn26n68ds']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd9']"));
 		return element;
 	}
 	public static WebElement vraag16_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idn26n68ds-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd9-no']"));
 		return element;
 	}
 		
-	public static WebElement SaldoUltimo(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzdb"));
-		return element;
-	}
-	
-	public static WebElement Bedragmateriele(WebDriver driver){
-	element = driver.findElement(By.id("idxdt9tzdg"));
-	return element;
-		}
-	
 	public static WebElement vraag17_yes(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd7']"));
 		return element;
 	}
 	public static WebElement vraag17_no(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idxdt9tzdh-no']"));
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzd7-no']"));
 		return element;
 	}
 	
+// **	
 	
+public static WebElement vraag18_yes(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idxdt9tzda']"));
+	return element;
+}
+public static WebElement vraag18_no(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idxdt9tzda-no']"));
+	return element;
+}
+
+public static WebElement vraag19(WebDriver driver){
+	element = driver.findElement(By.id("idxdt9tzdb"));
+	return element;
+}
+
+
+public static WebElement vraag20_yes(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idxdt9tzda']"));
+	return element;
+}
+public static WebElement vraag20_no(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idxdt9tzda-no']"));
+	return element;
+}
+
+// bedrag boekjaar
+public static WebElement vraag21(WebDriver driver){
+	element = driver.findElement(By.id("idxdt9tzdg"));
+	return element;
+}	
 	
-	
-	public static WebElement Toelichting(WebDriver driver){
+public static WebElement vraag22_yes(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idn26n68dr']"));
+	return element;
+}
+public static WebElement vraag22_no(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idn26n68dr-no']"));
+	return element;
+}
+
+public static WebElement vraag23_yes(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idn26n68ds']"));
+	return element;
+}
+public static WebElement vraag23_no(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idn26n68ds-no']"));
+	return element;
+}
+
+public static WebElement vraag24_yes(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idxdt9tzdh']"));
+	return element;
+}
+public static WebElement vraag24_no(WebDriver driver){
+	element = driver.findElement(By.cssSelector("[for='idxdt9tzdh-no']"));
+	return element;
+}
+
+public static WebElement vraag25(WebDriver driver){
 	element = driver.findElement(By.id("idxdt9tzdj"));
 	return element;
-	}
+}
 
-	
-	
+
+
+
 }

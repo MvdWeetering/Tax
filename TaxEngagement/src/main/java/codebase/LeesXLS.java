@@ -49,6 +49,21 @@ public class LeesXLS {
 			if (Kolom.equals("H")) {
 				Column = 7;
 			}
+			if (Kolom.equals("I")) {
+				Column = 8;
+			}
+			if (Kolom.equals("J")) {
+				Column = 9;
+			}
+			if (Kolom.equals("K")) {
+				Column = 10;
+			}
+			if (Kolom.equals("L")) {
+				Column = 11;
+			}
+			if (Kolom.equals("M")) {
+				Column = 12;
+			}
 			
 			resultaat =String.valueOf((row.getCell(Column).getNumericCellValue()));		
 						
@@ -104,7 +119,21 @@ public class LeesXLS {
 			if (Kolom.equals("H")) {
 				Column = 7;
 			}
-			
+			if (Kolom.equals("I")) {
+				Column = 8;
+			}
+			if (Kolom.equals("J")) {
+				Column = 9;
+			}
+			if (Kolom.equals("K")) {
+				Column = 10;
+			}
+			if (Kolom.equals("L")) {
+				Column = 11;
+			}
+			if (Kolom.equals("M")) {
+				Column = 12;
+			}
 			resultaat =String.valueOf((row.getCell(Column).getStringCellValue()));		
 						
 			fis.close();
