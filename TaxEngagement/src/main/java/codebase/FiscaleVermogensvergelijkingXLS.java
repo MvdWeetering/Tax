@@ -123,7 +123,7 @@ public class FiscaleVermogensvergelijkingXLS {
 
 	public static void main(String[] args) {
 
-	System.out.println(FiscaleVermogensvergelijkingXLS.HaalData("E", 10, "TC01"));
+	System.out.println(FiscaleVermogensvergelijkingXLS.HaalData("F", 8, "TC01"));
 
 	}
 }

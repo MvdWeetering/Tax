@@ -259,7 +259,7 @@ public class Steps extends AbstractSteps {
 		AlgemeneVragenObjecten.vraag25(driver).sendKeys(invuldata[25]);
 		
 		
-		//driver.quit();
+		driver.quit();
 }
 
 	@When("^open the form Algemene Gegevens$")
@@ -410,7 +410,7 @@ public class Steps extends AbstractSteps {
 				14, "TextVeld", driver));
 
 		// System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		// driver.quit();
+		driver.quit();
 
 		assertTrue(ValidatieResultaat.isEmpty());
 
@@ -519,11 +519,10 @@ public class Steps extends AbstractSteps {
 
 		// Is er sprake van meer dan 99 deelnemingen?
 
-		if (pageObjects.SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).isSelected()) {
+	//	if (pageObjects.SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).isSelected()) {
 			// ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("ToelichtingMeerdan99Deelnemingen",
 			// 1, 99, "TextVeld", driver));
-
-		}
+//		}
 
 		// Verkapt divident
 		if (pageObjects.SpecificatieDeelnemingenObjecten.VerkaptDivident_ja(driver).isSelected()) {
@@ -799,9 +798,9 @@ public class Steps extends AbstractSteps {
 
 		// als validatieresultaat niet leeg is dan melding genereren.
 		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
-		//driver.quit();
+		
 
 	}
 
@@ -995,12 +994,12 @@ public class Steps extends AbstractSteps {
 			SpecificatieDeelnemingenObjecten.BeleggingsdeelnemingEULidstaat_Nee(driver).click();
 		}
 
-		if (invuldata[44].equals("ja")) {
-			SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
-			SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys(invuldata[45]);
-		} else {
-			SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Nee(driver).click();
-		}
+//		if (invuldata[44].equals("ja")) {
+//			SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
+//			SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys(invuldata[45]);
+//		} else {
+//			SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Nee(driver).click();
+//		}
 
 		// Implementatie verkapt divident of Gegevens Rechtspersonen
 
@@ -2048,8 +2047,9 @@ public class Steps extends AbstractSteps {
 				Double.parseDouble(WinstVerliesXLS.HaalData("G", 118, Tab)), "G118"));
 
 		System.out.println(ValidatieResultaat);
-		assertTrue(ValidatieResultaat.isEmpty());
 		driver.quit();
+		assertTrue(ValidatieResultaat.isEmpty());
+		
 
 	}
 
@@ -4026,7 +4026,7 @@ public class Steps extends AbstractSteps {
 				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 41, Tab)), "F41"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelTantiemes_sub(driver).getAttribute("value"),
-				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 21, Tab)), "F21"));
+				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("E", 44, Tab)), "E44"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				FiscaleVermogensVergelijkingObjecten.NietAftrekbaarDeelVergoedingenKapitaalverstrekking(driver)
 						.getAttribute("value"),
@@ -4040,7 +4040,7 @@ public class Steps extends AbstractSteps {
 				Double.parseDouble(FiscaleVermogensvergelijkingXLS.HaalData("F", 56, Tab)), "F56"));
 
 		System.out.println(ValidatieResultaat);
-		// driver.quit();
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 
 	}
@@ -4378,6 +4378,7 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(ToelichtingGarantieVoorzieningObjecten.Totaal(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 6, Tab, Locatie)), "D6"));
 		
 		System.out.println(ValidatieResultaat);
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 
 	}

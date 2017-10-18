@@ -60,8 +60,8 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID | Browser  |
-      # |    1 | "Chrome" |
-      |    2 | "Chrome" |
+      |    1 | "Chrome" |
+    # |    2 | "Chrome" |
 
   @vullen_formulier @Toelichting_Balans
   Scenario Outline: vullen formulier Toelichting Balans
@@ -76,17 +76,16 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-      |    2 | "Chrome" |
+ #    |    2 | "Chrome" |
 
   @vullen_formulier @Winst_en_verlies_rekening
   Scenario Outline: vullen formulier Winst en Verlies rekening
     Given I want to login with browser <Browser>
-    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom012323"
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
     And Select the Tax engagement module
     And open the Project "dossier 16102017"
     And open the form Winst en Verlies rekening
     Then i can fill out the form Winst en Verlies rekening from tab <TCID>
-    #Then i can validate the error messages for the Winst en Verlies rekening form from tab <TCID>
     Then i can validate the totals for each column from tab <TCID>
 
     Examples: 
@@ -104,7 +103,6 @@ Feature: vullen formulieren
     And open the Project "dossier 16102017"
     And open the form Balans Activa
     Then i can fill out the form Balans Activa from tab <TCID>
-    #Then i can validate the error messages for the Balans Activa form from tab <TCID>
     Then i can validate the totals for Balans Activa from tab <TCID>
 
     Examples: 
@@ -119,7 +117,6 @@ Feature: vullen formulieren
     And open the Project "dossier 16102017"
     And open the form Balans Passiva
     Then i can fill out the form Balans Passiva from tab <TCID>
-    # Then i can validate the error messages for the Balans Passiva form from tab <TCID>
     Then i can validate the totals for Balans Passiva from tab <TCID>
 
     Examples: 
@@ -181,7 +178,6 @@ Feature: vullen formulieren
     And open the Project "dossier 16102017"
     And open the form FiscaleVermogensVergelijking
     Then i can fill out the form FiscaleVermogensVergelijking from <TCID>
-   # Then i can validate the error messages for the formulier FiscaleVermogensVergelijking from <TCID>
     Then i can validate the totals the formulier FiscaleVermogensVergelijking from  <TCID>
 
     Examples: 
@@ -201,9 +197,9 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-      |    2 | "Chrome" |
-      |    3 | "Chrome" |
-      |    4 | "Chrome" |
+      #|    2 | "Chrome" |
+      #|    3 | "Chrome" |
+      #|    4 | "Chrome" |
 
   @vullen_formulier @verlies_verrekening
   Scenario Outline: vullen formulier Verlies verrekening

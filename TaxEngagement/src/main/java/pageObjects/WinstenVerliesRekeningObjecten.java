@@ -723,7 +723,7 @@ public class WinstenVerliesRekeningObjecten {
 		}
 	
 	public static WebElement ResultaatDeelnemingFiscaal(WebDriver driver){
-		   element = driver.findElement(By.id("idDeelR0C5"));
+		   element = driver.findElement(By.id("idxdt9tzkv"));
 		   return element;
 		}
 	
