@@ -25,6 +25,7 @@ import pageObjects.FieldName;
 import pageObjects.FiscaleVermogensVergelijkingObjecten;
 import pageObjects.InnovatieboxObjecten;
 import pageObjects.InvesteringsaftrekObjecten;
+import pageObjects.InvesteringsregelingenObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
 import pageObjects.ObjectvrijstellingObjecten;
@@ -106,6 +107,8 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(3500);
 	}
 
+
+	
 	@Then("^i can work on the project$")
 	public void i_can_work_on_the_project() throws Throwable {
 		// nog geen validatie mogelijk, website aan te passen indien van
@@ -1061,354 +1064,6 @@ public class Steps extends AbstractSteps {
 		}
 	}
 
-	@When("^open the form Toelichting Balans$")
-	public void open_the_form_Toelichting_Balans() throws Throwable {
-
-		NavigerenObjecten.NavigerenToelichting_Balans(driver).click();
-
-	}
-
-	@Then("^i can fill out the form Toelichting Balans with configId (\\d+)$")
-	public void i_can_fill_out_the_form_Toelichting_Balans_with_configId(int configId) throws Throwable {
-
-		String[] invuldata = codebase.ToelichtingBalansXLS.HaalData(configId);
-
-		/*
-		 * //Gebouwen zonder bodemwaarde
-		 * ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_Aanschafkosten(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_Aanschafkosten(
-		 * driver).sendKeys(invuldata[1]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * Gebouwenzonderbodemwaarde_FiscaleBoekwaarde3112(driver).clear();
-		 * ToelichtingBalansObjecten.
-		 * Gebouwenzonderbodemwaarde_FiscaleBoekwaarde3112(driver).sendKeys(
-		 * invuldata[2]);
-		 * 
-		 * ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_RestWaarde3112(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_RestWaarde3112(
-		 * driver).sendKeys(invuldata[3]);
-		 * 
-		 * ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_BodemWaarde3112(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.Gebouwenzonderbodemwaarde_BodemWaarde3112(
-		 * driver).sendKeys(invuldata[4]);
-		 * 
-		 * 
-		 * //Gebouwen in eigen gebruik
-		 * 
-		 * ToelichtingBalansObjecten.GebouwenInEigenGebruikAanschafkosten(driver
-		 * ).clear();
-		 * ToelichtingBalansObjecten.GebouwenInEigenGebruikAanschafkosten(driver
-		 * ).sendKeys(invuldata[5]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * GebouwenInEigenGebruik_FiscaleBoekwaarde3112(driver).clear();
-		 * ToelichtingBalansObjecten.
-		 * GebouwenInEigenGebruik_FiscaleBoekwaarde3112(driver).sendKeys(
-		 * invuldata[6]);
-		 * 
-		 * ToelichtingBalansObjecten.GebouwenInEigenGebruik_Restwaarde3112(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.GebouwenInEigenGebruik_Restwaarde3112(
-		 * driver).sendKeys(invuldata[7]);
-		 * 
-		 * ToelichtingBalansObjecten.GebouwenInEigenGebruik_Bodemwaarde3112(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.GebouwenInEigenGebruik_Bodemwaarde3112(
-		 * driver).sendKeys(invuldata[8]);
-		 * 
-		 * //Gebouwen ter belegging gehouden
-		 * 
-		 * ToelichtingBalansObjecten.GebouwenTerBeleggingGehouden_Aanschafkosten
-		 * (driver).clear();
-		 * ToelichtingBalansObjecten.GebouwenTerBeleggingGehouden_Aanschafkosten
-		 * (driver).sendKeys(invuldata[9]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * GebouwenTerBeleggingGehouden_FiscaleBoekwaarde3112(driver).clear();
-		 * ToelichtingBalansObjecten.
-		 * GebouwenTerBeleggingGehouden_FiscaleBoekwaarde3112(driver).sendKeys(
-		 * invuldata[10]);
-		 * 
-		 * ToelichtingBalansObjecten.GebouwenTerBeleggingGehouden_Restwaarde3112
-		 * (driver).clear();
-		 * ToelichtingBalansObjecten.GebouwenTerBeleggingGehouden_Restwaarde3112
-		 * (driver).sendKeys(invuldata[11]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * GebouwenTerBeleggingGehouden_Bodemwaarde3112(driver).clear();
-		 * ToelichtingBalansObjecten.
-		 * GebouwenTerBeleggingGehouden_Bodemwaarde3112(driver).sendKeys(
-		 * invuldata[12]);
-		 * 
-		 * //Gebouwen zonder afschrijving
-		 * 
-		 * ToelichtingBalansObjecten.GebouwenZonderafschrijving_Aanschafkosten(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.GebouwenZonderafschrijving_Aanschafkosten(
-		 * driver).sendKeys(invuldata[13]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * GebouwenZonderafschrijving_FiscaleBoekwaarde3112(driver).clear();
-		 * ToelichtingBalansObjecten.
-		 * GebouwenZonderafschrijving_FiscaleBoekwaarde3112(driver).sendKeys(
-		 * invuldata[14]);
-		 * 
-		 * 
-		 * //Bedrijfsterreinen
-		 * 
-		 * ToelichtingBalansObjecten.Bedrijfsterreinen_Aanschafkosten(driver).
-		 * clear();
-		 * ToelichtingBalansObjecten.Bedrijfsterreinen_Aanschafkosten(driver).
-		 * sendKeys(invuldata[15]);
-		 * 
-		 * ToelichtingBalansObjecten.Bedrijfsterreinen_FiscaleBoekwaarde3112(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.Bedrijfsterreinen_FiscaleBoekwaarde3112(
-		 * driver).sendKeys(invuldata[16]);
-		 * 
-		 * ToelichtingBalansObjecten.Bedrijfsterreinen_Restwaarde3112(driver).
-		 * clear();
-		 * ToelichtingBalansObjecten.Bedrijfsterreinen_Restwaarde3112(driver).
-		 * sendKeys(invuldata[17]);
-		 * 
-		 * //Machines
-		 * 
-		 * ToelichtingBalansObjecten.Machines_Aanschafwaarde(driver).clear();
-		 * ToelichtingBalansObjecten.Machines_Aanschafwaarde(driver).sendKeys(
-		 * invuldata[18]);
-		 * 
-		 * ToelichtingBalansObjecten.Machines_Restwaarde3112(driver).clear();
-		 * ToelichtingBalansObjecten.Machines_Restwaarde3112(driver).sendKeys(
-		 * invuldata[19]);
-		 * 
-		 * //Andere vaste bedrijfsmiddelen
-		 * 
-		 * ToelichtingBalansObjecten.AndereVasteBedrijfsmiddelen_Aanschafwaarde(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.AndereVasteBedrijfsmiddelen_Aanschafwaarde(
-		 * driver).sendKeys(invuldata[20]);
-		 * 
-		 * ToelichtingBalansObjecten.AndereVasteBedrijfsmiddelen_Restwaarde3112(
-		 * driver).clear();
-		 * ToelichtingBalansObjecten.AndereVasteBedrijfsmiddelen_Restwaarde3112(
-		 * driver).sendKeys(invuldata[21]);
-		 * 
-		 * //Toeliching ondernemingsvermogen
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel(driver).
-		 * clear(); ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel(driver).
-		 * sendKeys(invuldata[22]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_JaarVervreemdingbedrijfsmiddel(driver
-		 * ).sendKeys(invuldata[23]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_Boekwinstvervreemdebedrijfsmiddel(
-		 * driver).clear(); ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_Boekwinstvervreemdebedrijfsmiddel(
-		 * driver).sendKeys(invuldata[24]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_Afschrijvingspercentage(driver).clear
-		 * (); ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_Afschrijvingspercentage(driver).
-		 * sendKeys(invuldata[25]);
-		 * 
-		 * ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding
-		 * (driver).clear(); ToelichtingBalansObjecten.
-		 * ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding
-		 * (driver).sendKeys(invuldata[26]);
-		 * 
-		 */
-		// Toelichting voorziening
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening(driver)
-				.sendKeys(invuldata[27]);
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_DotatieGarantievoorziening(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_DotatieGarantievoorziening(driver).sendKeys(invuldata[28]);
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OnttrekkingGarantieVoorzieningen(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OnttrekkingGarantieVoorzieningen(driver)
-				.sendKeys(invuldata[29]);
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_GarantieVoorzieningEindeBoekjaar(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_GarantieVoorzieningEindeBoekjaar(driver)
-				.sendKeys(invuldata[30]);
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen(driver)
-				.sendKeys(invuldata[31]);
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_DotatieOverigeVoorzieningen(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_DotatieOverigeVoorzieningen(driver).sendKeys(invuldata[32]);
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OnttrekkingOverigeVoorzieningen(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OnttrekkingOverigeVoorzieningen(driver)
-				.sendKeys(invuldata[33]);
-
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OverigeVoorzieningEindeBoekjaar(driver).clear();
-		ToelichtingBalansObjecten.ToelichtingVoorziening_OverigeVoorzieningEindeBoekjaar(driver)
-				.sendKeys(invuldata[34]);
-
-		// Toelichting omzetbelasting
-
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalbeginboekjaar(driver)
-				.clear();
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalbeginboekjaar(driver)
-				.sendKeys(invuldata[35]);
-
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalbeginboekjaar(driver).clear();
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalbeginboekjaar(driver)
-				.sendKeys(invuldata[36]);
-
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalbeginboekjaar(driver).clear();
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalbeginboekjaar(driver)
-				.sendKeys(invuldata[37]);
-
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar(driver)
-				.clear();
-		ToelichtingBalansObjecten.ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar(driver)
-				.sendKeys(invuldata[38]);
-
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar(driver).clear();
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar(driver)
-				.sendKeys(invuldata[39]);
-
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar(driver).clear();
-		ToelichtingBalansObjecten
-				.ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar(driver)
-				.sendKeys(invuldata[40]);
-
-	}
-
-	@Then("^i can validate the error messages for the Toelichting Balans form$")
-	public void i_can_validate_the_error_messages_for_the_Toelichting_Balans_form() throws Throwable {
-
-		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-
-		// Gebouwen zonder bodemwaarde
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"Gebouwenzonderbodemwaarde_Aanschafkosten", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"Gebouwenzonderbodemwaarde_FiscaleBoekwaarde3112", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"Gebouwenzonderbodemwaarde_RestWaarde3112", 1, 99, "PositiefGetal", driver));
-
-		// Gebouwen in eigen gebruik
-		ValidatieResultaat.addAll(codebase.TooltipChecker
-				.CheckTooltipToelichtingBalans("GebouwenInEigenGebruikAanschafkosten", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenInEigenGebruik_FiscaleBoekwaarde3112", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenInEigenGebruik_Restwaarde3112", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenInEigenGebruik_Bodemwaarde3112", 1, 99, "PositiefGetal", driver));
-
-		// Gebouwen ter belegging gehouden
-
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenTerBeleggingGehouden_Aanschafkosten", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenTerBeleggingGehouden_FiscaleBoekwaarde3112", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenTerBeleggingGehouden_Restwaarde3112", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenTerBeleggingGehouden_Bodemwaarde3112", 1, 99, "PositiefGetal", driver));
-
-		// Gebouwen zonder afschrijving
-
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenZonderafschrijving_Aanschafkosten", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"GebouwenZonderafschrijving_FiscaleBoekwaarde3112", 1, 99, "PositiefGetal", driver));
-
-		// Bedrijfsterreinen
-
-		ValidatieResultaat.addAll(codebase.TooltipChecker
-				.CheckTooltipToelichtingBalans("Bedrijfsterreinen_Aanschafkosten", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"Bedrijfsterreinen_FiscaleBoekwaarde3112", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker
-				.CheckTooltipToelichtingBalans("Bedrijfsterreinen_Restwaarde3112", 1, 99, "PositiefGetal", driver));
-
-		// Machines
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Machines_Aanschafwaarde", 1,
-				99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans("Machines_Restwaarde3112", 1,
-				99, "PositiefGetal", driver));
-
-		// Andere vaste bedrijfsmiddelen
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"AndereVasteBedrijfsmiddelen_Aanschafwaarde", 1, 99, "PositiefGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"AndereVasteBedrijfsmiddelen_Restwaarde3112", 1, 99, "PositiefGetal", driver));
-
-		// Toeliching ondernemingsvermogen
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOndernemingsvermogen_Omschrijvingbedrijfsmiddel", 1, 70, "TextVeld", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOndernemingsvermogen_JaarVervreemdingbedrijfsmiddel", 1, 99, "TextVeld", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOndernemingsvermogen_Boekwinstvervreemdebedrijfsmiddel", 1, 99, "TextVeld", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOndernemingsvermogen_Afschrijvingspercentage", 1, 99, "GeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOndernemingsvermogen_BoekwaardeBedrijfsmiddelOpMomentVervreemding", 1, 99, "TextVeld",
-				driver));
-
-		// Toelichting voorziening
-
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_OmschrijvingSoortGarantievoorziening", 1, 70, "TextVeld", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_DotatieGarantievoorziening", 1, 99, "GeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_OnttrekkingGarantieVoorzieningen", 1, 99, "GeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_GarantieVoorzieningEindeBoekjaar", 1, 99, "GeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_OmschrijvingOverigeVoorzieningen", 1, 70, "TextVeld", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_DotatieOverigeVoorzieningen", 1, 99, "GeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_OnttrekkingOverigeVoorzieningen", 1, 99, "GeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingVoorziening_OverigeVoorzieningEindeBoekjaar", 1, 99, "GeheelGetal", driver));
-
-		// Toelichting omzetbelasting
-
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOmzetbelasting_SchuldOmzetbelastingDitboekjaarFiscaalEindeBoekjaar", 1, 99, "GeheelGetal",
-				driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOmzetbelasting_SchuldOmzetbelastingVorigboekjaarFiscaalEindeBoekjaar", 1, 99, "GeheelGetal",
-				driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipToelichtingBalans(
-				"ToelichtingOmzetbelasting_SchuldOmzetbelastingOudereboekjarenFiscaalEindeBoekjaar", 1, 99,
-				"GeheelGetal", driver));
-
-		// System.out.println(ValidatieResultaat);
-		driver.quit();
-		assertTrue(ValidatieResultaat.isEmpty());
-
-	}
 
 	@When("^open the form Winst en Verlies rekening$")
 	public void open_the_form_Winst_en_Verlies_rekening() throws Throwable {
@@ -3577,7 +3232,7 @@ public class Steps extends AbstractSteps {
 	@Then("^i can fill out the form Investeringsaftrek with config (\\d+)$")
 	public void i_can_fill_out_the_form_Investeringsaftrek_with_config(int TcId) throws Throwable {
 
-		String[] invuldata = codebase.InvesteringsRegelingXLS.HaalData(TcId);
+		String[] invuldata = codebase.InvesteringsAftrekXLS.HaalData(TcId);
 
 		InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
 		InvesteringsaftrekObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys(invuldata[1]);
@@ -3591,25 +3246,36 @@ public class Steps extends AbstractSteps {
 		InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).clear();
 		InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).sendKeys(invuldata[5]);
 
-		if (invuldata[6].equals("ja")) {
-			InvesteringsaftrekObjecten.energieOfMilieuaftrek_ja(driver).click();
-			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).clear();
-			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).sendKeys(invuldata[7]);
-		} else {
-			InvesteringsaftrekObjecten.energieOfMilieuaftrek_nee(driver).click();
+		
+		if (invuldata[7].equals("ja")) {
+			InvesteringsaftrekObjecten.energieInvesteringsAftrek_ja(driver).click();
+			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).sendKeys(invuldata[4]);
+		}
+		else {
+			InvesteringsaftrekObjecten.energieInvesteringsAftrek_nee(driver).click();
+		}
+		
+		if (invuldata[8].equals("ja")) {
+			InvesteringsaftrekObjecten.MilleuInvesteringsAftrek_ja(driver).click();
+			InvesteringsaftrekObjecten.MilleuCategorie(driver).sendKeys(invuldata[10]);
+			WebElement mySelectElm = InvesteringsaftrekObjecten.MilleuCategorie(driver);
+			Select mySelect = new Select(mySelectElm);
+			mySelect.selectByVisibleText(invuldata[10]);
+		}
+		else {
+			InvesteringsaftrekObjecten.MilleuInvesteringsAftrek_nee(driver).click();
 		}
 
-		InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).clear();
-		InvesteringsaftrekObjecten.InvesteringsaftrekEnergieMilieu(driver).sendKeys(invuldata[8]);
+		InvesteringsaftrekObjecten.AandelingInvestering(driver).sendKeys(invuldata[11]);
 
-		if (invuldata[9].equals("ja")) {
+		if (invuldata[16].equals("ja")) {
 			InvesteringsaftrekObjecten.CaribischeDeel_Ja(driver).click();
-			InvesteringsaftrekObjecten.AftrekKleinschalig(driver).sendKeys(invuldata[10]);
-		} else {
-			InvesteringsaftrekObjecten.CaribischeDeel_Nee(driver).click();
-
+			InvesteringsaftrekObjecten.AftrekKleinschalig(driver).sendKeys(invuldata[17]);
 		}
-
+		else {
+			InvesteringsaftrekObjecten.CaribischeDeel_Nee(driver).click();
+		}
+		
 		// driver.quit();
 
 	}
@@ -4072,14 +3738,14 @@ public class Steps extends AbstractSteps {
 
 		// Button New aanklikken
 
-		if (Tcid != 1) {
-			driver.findElement(By.xpath("//button[contains(.,'New')]")).click();
+//		if (Tcid != 1) {
+//			driver.findElement(By.xpath("//button[contains(.,'New')]")).click();
+//
+//			WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+//			Select mySelect = new Select(mySelectElm);
+//			mySelect.selectByVisibleText("00" + Tcid + " Winst uit Zeescheepvaart");
 
-			WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
-			Select mySelect = new Select(mySelectElm);
-			mySelect.selectByVisibleText("00" + Tcid + " Winst uit Zeescheepvaart");
-
-		}
+//		}
 
 		String[] invuldata = codebase.ZeescheepvaartXLS.HaalData(Tcid);
 
@@ -4363,8 +4029,6 @@ public class Steps extends AbstractSteps {
 		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("B", 5, Tab, Locatie));
 		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("C", 5, Tab, Locatie));
 		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar2(driver).sendKeys(LeesXLS.HaalData("D", 5, Tab, Locatie));
-		
-		
 	   
 	}
 
@@ -4382,4 +4046,66 @@ public class Steps extends AbstractSteps {
 		assertTrue(ValidatieResultaat.isEmpty());
 
 	}
+	
+	@Given("^open the form Specificatie Investeringsregelingen$")
+	public void open_the_form_Specificatie_Investeringsregelingen() throws Throwable {
+	    
+		NavigerenObjecten.SpecificatieInvesteringsregelingen(driver).click();
+	
+	}
+
+	@Then("^i can fill out the form Specificatie Investeringsregelingen with \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Specificatie_Investeringsregelingen_with(String Tcid) throws Throwable {
+
+		
+		String[] invuldata = codebase.investeringsregelingXLS.HaalData(1);
+		
+		if (invuldata[0].equals("ja")) {
+			InvesteringsregelingenObjecten.GrondslagKostprijs_ja(driver).click();
+		} else {
+			InvesteringsregelingenObjecten.GrondslagKostprijs_nee(driver).click();
+		}
+	
+		if (invuldata[1].equals("ja")) {
+			InvesteringsregelingenObjecten.BeroepOpOntheffingNaasteVerwanten_ja(driver).click();
+		} else {
+			InvesteringsregelingenObjecten.BeroepOpOntheffingNaasteVerwanten_nee(driver).click();
+		}
+		
+		if (invuldata[2].equals("ja")) {
+			InvesteringsregelingenObjecten.BeroepOpOntheffingNaasteNalatenschap_ja(driver).click();
+		} else {
+			InvesteringsregelingenObjecten.BeroepOpOntheffingNaasteNalatenschap_nee(driver).click();
+		}
+
+		if (invuldata[3].equals("ja")) {
+			InvesteringsregelingenObjecten.InvesteringsAftrek_ja(driver).click();
+		} else {
+			InvesteringsregelingenObjecten.InvesteringsAftrek_nee(driver).click();
+		}
+		
+		if (invuldata[4].equals("ja")) {
+			InvesteringsregelingenObjecten.DesinvesteringsAftrek_ja(driver).click();
+		} else {
+			InvesteringsregelingenObjecten.DesinvesteringsAftrek_nee(driver).click();
+		}
+		if (invuldata[5].equals("ja")) {
+			InvesteringsregelingenObjecten.ResearchAndDevelopment_ja(driver).click();
+			
+		} else {
+			InvesteringsregelingenObjecten.ResearchAndDevelopment_nee(driver).click();
+		}
+		
+		InvesteringsregelingenObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys(invuldata[6]);
+		InvesteringsregelingenObjecten.bedrag(driver).sendKeys(invuldata[7]);
+		InvesteringsregelingenObjecten.TotaalKleinschalig(driver).sendKeys(invuldata[8]);
+		
+	}
+
+	@Then("^i can validate the totals on the formulier Specificatie Investeringsregelingen from \"(.*?)\"$")
+	public void i_can_validate_the_totals_on_the_formulier_Specificatie_Investeringsregelingen_from(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	
+	}
+	
 }

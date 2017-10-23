@@ -8,7 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class InvesteringsRegelingXLS {
+public class InvesteringsAftrekXLS {
 	private static XSSFWorkbook wb;
 
 	public static String[] HaalData(int RijNummer) {
@@ -19,12 +19,12 @@ public class InvesteringsRegelingXLS {
 			// Open the Excel file
 			FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
 			wb = new XSSFWorkbook(fis);
-			XSSFSheet sheet = wb.getSheet("investeringsregeling");
+			XSSFSheet sheet = wb.getSheet("investeringsaftrek");
 			XSSFRow row = sheet.getRow(RijNummer);
 
 			String[] opsommingresultaat; 
 			
-			opsommingresultaat = new String [11];
+			opsommingresultaat = new String [18];
 			opsommingresultaat[0]= new DataFormatter().formatCellValue(row.getCell(0));
 			opsommingresultaat[1]= new DataFormatter().formatCellValue(row.getCell(1));
 			opsommingresultaat[2]= new DataFormatter().formatCellValue(row.getCell(2));
@@ -36,7 +36,13 @@ public class InvesteringsRegelingXLS {
 			opsommingresultaat[8]= new DataFormatter().formatCellValue(row.getCell(8));
 			opsommingresultaat[9]= new DataFormatter().formatCellValue(row.getCell(9));
 			opsommingresultaat[10]= new DataFormatter().formatCellValue(row.getCell(10));
-		
+			opsommingresultaat[11]= new DataFormatter().formatCellValue(row.getCell(11));
+			opsommingresultaat[12]= new DataFormatter().formatCellValue(row.getCell(12));
+			opsommingresultaat[13]= new DataFormatter().formatCellValue(row.getCell(13));
+			opsommingresultaat[14]= new DataFormatter().formatCellValue(row.getCell(14));
+			opsommingresultaat[15]= new DataFormatter().formatCellValue(row.getCell(15));
+			opsommingresultaat[16]= new DataFormatter().formatCellValue(row.getCell(16));
+			opsommingresultaat[17]= new DataFormatter().formatCellValue(row.getCell(17));
 			
 			resultaat = opsommingresultaat;			
 
@@ -50,9 +56,9 @@ public class InvesteringsRegelingXLS {
 	public static void main(String[] args) {
 
 		
-		String[] invuldata = codebase.InvesteringsRegelingXLS.HaalData(1);
+		String[] invuldata = codebase.InvesteringsAftrekXLS.HaalData(1);
 		
-		System.out.println(invuldata[1]);
+		System.out.println(invuldata[17]);
 		
 		}
 }

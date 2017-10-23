@@ -63,7 +63,7 @@ public class NavigerenObjecten {
 		return element;
 	}
 	public static WebElement Investeringsaftrek(WebDriver driver){
-	    element = driver.findElement(By.partialLinkText("investeringsregeling"));
+	    element = driver.findElement(By.partialLinkText("Toelichting investeringsaftrek"));
 		return element;
 	}
 	public static WebElement Objectvrijstelling(WebDriver driver){
@@ -106,7 +106,11 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Toelichting garantievoorzieningen"));
 		return element;
 	}
+	public static WebElement SpecificatieInvesteringsregelingen (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Specificatie investeringsregelingen"));
+		return element;
+	}
 	
 	
-	
+	//Specificatie investeringsregelingen
 }

@@ -16,7 +16,7 @@ public class InvesteringsaftrekObjecten {
 	
 	@FieldName(name = "DatumInvestering")
 	public static WebElement DatumInvestering(WebDriver driver){
-		element = driver.findElement(By.id("iddateInvestment"));
+		element = driver.findElement(By.id("idCWNLdateInvestment"));
 		return element;
 	}
 	
@@ -38,16 +38,36 @@ public class InvesteringsaftrekObjecten {
 		return element;
 	}
 	
-
-	public static WebElement energieOfMilieuaftrek_ja(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idmilieuaftrek']"));
+	public static WebElement energieInvesteringsAftrek_ja(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLEIA']"));
 		return element;
 	}
 	
-	public static WebElement energieOfMilieuaftrek_nee(WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idmilieuaftrek-no']"));
+	public static WebElement energieInvesteringsAftrek_nee(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLEIA-no']"));
 		return element;
 	}
+	
+	public static WebElement MilleuInvesteringsAftrek_ja(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLMIA']"));
+		return element;
+	}
+	
+	public static WebElement MilleuInvesteringsAftrek_nee(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLMIA-no']"));
+		return element;
+	}
+	
+	public static WebElement MilleuCategorie(WebDriver driver){
+		element = driver.findElement(By.id("idCWNLMIACategorie"));
+		return element;
+	}
+	
+	public static WebElement AandelingInvestering(WebDriver driver){
+		element = driver.findElement(By.id("idCWNLAandeelInvestering"));
+		return element;
+	}
+	
 	
 	@FieldName(name = "MeldingsnummerAftrek")
 	public static WebElement MeldingsnummerAftrek(WebDriver driver){
@@ -62,18 +82,18 @@ public class InvesteringsaftrekObjecten {
 	}
 	
 	public static WebElement CaribischeDeel_Ja (WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idCarib']"));
+		element = driver.findElement(By.cssSelector("[for='idCWNLCarib']"));
 		return element;
 	}
 	
 	public static WebElement CaribischeDeel_Nee (WebDriver driver){
-		element = driver.findElement(By.cssSelector("[for='idCarib-no']"));
+		element = driver.findElement(By.cssSelector("[for='idCWNLCarib-no']"));
 		return element;
 	}
 	
 	@FieldName(name = "AftrekKleinschalig")
 	public static WebElement AftrekKleinschalig (WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tztw"));
+		element = driver.findElement(By.id("idCWNLKIACarib"));
 		return element;
 	}	
 	
