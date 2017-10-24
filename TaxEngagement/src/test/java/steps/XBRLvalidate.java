@@ -1438,48 +1438,48 @@ public class XBRLvalidate {
 
 	}
 
-	@When("^the elements of the XBRL and the XLS for Investeringsregeling are compared$")
-	public void the_elements_of_the_XBRL_and_the_XLS_for_Investeringsregeling_are_compared() throws Throwable {
+	@When("^the elements of the XBRL and the XLS for Investeringsaftrek are compared$")
+	public void the_elements_of_the_XBRL_and_the_XLS_for_Investeringsaftrek_are_compared() throws Throwable {
 
 		// BusinessAssetEnvironmentalEnergyInvestmentDescription
 		// Bedrijfsmiddel investering energie/milieu
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount
 		// Investeringsbedrag boekjaar
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentFinancialYearAmount", 4));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate
 		// Datum ingebruikname bedrijfsmiddel
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentInitialStartingDate", 3));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear
 		// Bedrag in boekjaar betaald
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
 				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPaidThisFinancialYear", 5));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber
 		// Meldingsnummer energie/milieu-investeringsaftrek
-		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber", 7));
+		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
+				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber", 4));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentPercentage
 		// Percentage energie/milieu-investeringsaftrek
-		// Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-		// "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPercentage", 1));
+		 Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
+		 "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentPercentage", 14));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount
 		// Berekende investeringsaftrek per investering
-		// Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-		// "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
+		 Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
+		 "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 13));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear
 		// Investeringsaftrek energie/milieu dit boekjaar
-		// Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsregeling",
-		// "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 1));
+		 Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
+		 "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 15));
 
 	}
 

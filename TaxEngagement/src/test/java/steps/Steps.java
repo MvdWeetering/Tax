@@ -31,7 +31,9 @@ import pageObjects.NavigerenObjecten;
 import pageObjects.ObjectvrijstellingObjecten;
 import pageObjects.SpecificatieAandeelhoudersObjecten;
 import pageObjects.SpecificatieDeelnemingenObjecten;
+import pageObjects.SpecificatieDochtermaatschappijObjecten;
 import pageObjects.ToelichtingBalansObjecten;
+import pageObjects.ToelichtingDesinvesteringsbijtellingObjecten;
 import pageObjects.ToelichtingGarantieVoorzieningObjecten;
 import pageObjects.ToelichtingMaterieleVasteActivaObjecten;
 import pageObjects.ToelichtingOverigeVoorzieningObjecten;
@@ -3249,13 +3251,16 @@ public class Steps extends AbstractSteps {
 		
 		if (invuldata[7].equals("ja")) {
 			InvesteringsaftrekObjecten.energieInvesteringsAftrek_ja(driver).click();
-			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).sendKeys(invuldata[4]);
+
 		}
 		else {
 			InvesteringsaftrekObjecten.energieInvesteringsAftrek_nee(driver).click();
 		}
 		
 		if (invuldata[8].equals("ja")) {
+			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).clear();
+			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).sendKeys(invuldata[4]);
+			
 			InvesteringsaftrekObjecten.MilleuInvesteringsAftrek_ja(driver).click();
 			InvesteringsaftrekObjecten.MilleuCategorie(driver).sendKeys(invuldata[10]);
 			WebElement mySelectElm = InvesteringsaftrekObjecten.MilleuCategorie(driver);
@@ -4096,7 +4101,9 @@ public class Steps extends AbstractSteps {
 			InvesteringsregelingenObjecten.ResearchAndDevelopment_nee(driver).click();
 		}
 		
+		InvesteringsregelingenObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
 		InvesteringsregelingenObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys(invuldata[6]);
+		InvesteringsregelingenObjecten.bedrag(driver).clear();
 		InvesteringsregelingenObjecten.bedrag(driver).sendKeys(invuldata[7]);
 		InvesteringsregelingenObjecten.TotaalKleinschalig(driver).sendKeys(invuldata[8]);
 		
@@ -4104,8 +4111,154 @@ public class Steps extends AbstractSteps {
 
 	@Then("^i can validate the totals on the formulier Specificatie Investeringsregelingen from \"(.*?)\"$")
 	public void i_can_validate_the_totals_on_the_formulier_Specificatie_Investeringsregelingen_from(String arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
 	
 	}
 	
+	@Given("^open the form Toelichting desinvesteringsbijtelling$")
+	public void open_the_form_Toelichting_desinvesteringsbijtelling() throws Throwable {
+		NavigerenObjecten.ToelichtingDesinvesteringsbijtelling(driver).click();
+	}
+
+	@Then("^i can fill out the form Toelichting desinvesteringsbijtelling with \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Toelichting_desinvesteringsbijtelling_with(String Tcid) throws Throwable {
+
+		String[] invuldata = codebase.ToelichtingDesinvesteringsbijtellingXLS.HaalData(1);
+		
+		ToelichtingDesinvesteringsbijtellingObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
+		ToelichtingDesinvesteringsbijtellingObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys(invuldata[0]);
+		
+		ToelichtingDesinvesteringsbijtellingObjecten.Investeringsbedrag(driver).sendKeys(invuldata[1]);
+		
+		WebElement mySelectElm = ToelichtingDesinvesteringsbijtellingObjecten.Investeringsjaar(driver);
+		Select mySelect = new Select(mySelectElm);
+		mySelect.selectByVisibleText(invuldata[2]);
+		
+		ToelichtingDesinvesteringsbijtellingObjecten.PercentageKleinschaligheidsaftrek(driver).sendKeys(invuldata[3]);
+		
+		ToelichtingDesinvesteringsbijtellingObjecten.Overdrachtsprijs(driver).sendKeys(invuldata[4]);
+		
+		ToelichtingDesinvesteringsbijtellingObjecten.AandeelInvestering(driver).sendKeys(invuldata[5]);
+	}
+
+	@Then("^i can validate the totals on the formulier Toelichting desinvesteringsbijtelling from \"(.*?)\"$")
+	public void i_can_validate_the_totals_on_the_formulier_Toelichting_desinvesteringsbijtelling_from(String arg1) throws Throwable {
+	   
+	}
+	
+	@When("^open the form Specificatie Dochtermaatschappij$")
+	public void open_the_form_Specificatie_Dochtermaatschappij() throws Throwable {
+		NavigerenObjecten.SpecificatieDochtermaatschappij(driver).click();
+		
+
+	}
+
+	@Then("^i can fill out the form Specificatie Dochtermaatschappij with \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Specificatie_Dochtermaatschappij_with(String Tc01) throws Throwable {
+		String Locatie = "C:\\testdata\\spec dochtermaatschappij.xlsx";
+		String Tab = "Tc01";
+		
+		
+		SpecificatieDochtermaatschappijObjecten.NaamDochtermaatschappij(driver).clear();
+		SpecificatieDochtermaatschappijObjecten.NaamDochtermaatschappij(driver).sendKeys(LeesXLS.HaalText("B", 5, Tab, Locatie));
+		
+		SpecificatieDochtermaatschappijObjecten.RSINFiscaalNummer(driver).clear();
+		SpecificatieDochtermaatschappijObjecten.RSINFiscaalNummer(driver).sendKeys(LeesXLS.HaalData("B", 6, Tab, Locatie));
+		
+		SpecificatieDochtermaatschappijObjecten.ActiviteitenOnderneming(driver).clear();
+		SpecificatieDochtermaatschappijObjecten.ActiviteitenOnderneming(driver).sendKeys(LeesXLS.HaalText("B", 7, Tab, Locatie));
+		
+		// Uitvouw moment 1 
+		if (LeesXLS.HaalText("B", 9, Tab, Locatie).equals("ja")) {
+			SpecificatieDochtermaatschappijObjecten.dochtermaatschappijGevoegd_ja(driver).click();
+
+			SpecificatieDochtermaatschappijObjecten.WaarderingSchuldBalansDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 13, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingVorderingBalansAndereMaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 14, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.BelasteVrijvalSchuldDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 15, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingSchuldBalansAndereMaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 16, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingVorderingBalansDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 17, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.BelasteVrijvalSchuldAndereMaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 18, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaardeEconomischVerkeerDeelnemingDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 19, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingDeelnemingDochtermaatschappijBalansMoeder(driver).sendKeys(LeesXLS.HaalData("B", 20, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.FiscaalVermogenDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 21, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.HerwaarderingDeelnemingVoorafgaandeAangifteMoedermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 22, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			
+		
+		}
+		else {			
+			SpecificatieDochtermaatschappijObjecten.dochtermaatschappijGevoegd_nee(driver).click();
+		}
+		
+		// Uitvouw moment 2
+		if (LeesXLS.HaalText("B", 10, Tab, Locatie).equals("ja")) {
+			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijOntvoegd_ja(driver).click();
+			
+//			Voor ontvoegde dochtermaatschappij opgeofferd bedrag
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Waardering onderlinge vordering ontvoegende dochtermaatschappij 
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Waardering onderlinge schuld ontvoegende dochtermaatschappij
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Waardering onderlinge vordering van andere maatschappij 
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Waardering onderlinge schuld van andere maatschappij 
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Is het tijdstip dat onmiddellijk aan het ontvoegingstijdstip vooraf gaat, sprake van een verplichte herwaardering van vermogensbestanddelen omdat binnen de fiscale eenheid aan of door de ontvoegende dochtermaatschappij een of meer vermogensbestanddelen zijn overgedragen waarvan, op het moment van de overdracht, de waarde in het economisch verkeer hoger was dan de boekwaarde (art. 15ai Wet VPB)?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Is het betreffende vermogensbestanddeel nog in bezit van de overnemer?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Heeft de overnemer het betreffende vermogensbestanddeel voorafgaand aan de ontvoeging ontvreemd? 
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			De waarde in het economisch verkeer op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip van het/de overgedragen vermogensbestandde(e)l(en) dat/die nog in bezit zijn van de overnemer. De waarde in het economisch verkeer dient alleen ingevuld te worden als de belastingplichtige geen gebruik maakt van de tegenbewijsregeling van art. 15ai-2.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			De waarde in het economisch verkeer van het overgedragen bestanddeel op het tijdstip van de overdracht, verminderd met de in aanmerking te nemen afschrijving.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			De fiscale boekwaarde op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip van het/de overgedragen vermogensbestandde(e)l(en) dat/die nog in bezit is/zijn van de overnemer.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Het bedrag dat als gevolg van de overdracht van het/de vermogensbestandde(e)l(en) tot de winst van de fiscale eenheid wordt gerekend.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Heeft de overnemer bij de vervreemding van het vermogensbestanddeel een herinvesteringsreserve gevormd?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Is de betreffende herinvesteringsreserve al afgeboekt op een vervangend bedrijfsmiddel? 
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			De winst van de fiscale eenheid vanwege vrijval door de overnemer gevormde herinvesteringsreserve. 
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			De waarde in het economisch verkeer op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip van het vervangende bedrijfsmiddel.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			De boekwaarde, op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip, van het vervangende bedrijfsmiddel.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Het bedrag zijnde het verschil tussen de waarde in het economisch verkeer en de fiscale boekwaarde van het vervangende bedrijfmiddel op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip. Dit bedrag wordt tot de winst van de fiscale eenheid gerekend.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Staat op de balans van de ontvoegende dochtermaatschappij een herinvesteringsreserve waarvan het bij die reserve behorende voornemen tot vervanging berust bij een andere maatschappij?SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+//			Staat op de balans van een andere maatschappij een herinvesteringsreserve waarvan het bij die reserve behorende voornemen tot vervanging berust bij de ontvoegende dochtermaatschappij?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));			
+			
+			
+			
+			
+			
+		}
+		else {			
+			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijOntvoegd_nee(driver).click();
+		}
+		
+		
+		// Uitvouw moment 3
+		if (LeesXLS.HaalText("B", 11, Tab, Locatie).equals("ja")) {
+			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeëindigd_ja(driver).click();
+		}
+		else {			
+			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeëindigd_nee(driver).click();
+		}
+		
+		
+		
+	}
+
+	@Then("^i can validate the totals on the formulier Specificatie Dochtermaatschappijbr(\\d+) from \"(.*?)\"$")
+	public void i_can_validate_the_totals_on_the_formulier_Specificatie_Dochtermaatschappijbr_from(int arg1, String arg2) throws Throwable {
+
+
+	}	
 }

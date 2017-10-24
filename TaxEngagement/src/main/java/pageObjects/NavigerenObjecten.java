@@ -110,7 +110,14 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Specificatie investeringsregelingen"));
 		return element;
 	}
+	public static WebElement ToelichtingDesinvesteringsbijtelling (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Toelichting desinvesteringsbijtelling"));
+		return element;
+	}
+	public static WebElement SpecificatieDochtermaatschappij (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Specificatie dochtermaatschappij"));
+		return element;
+	}
 	
-	
-	//Specificatie investeringsregelingen
+	//Toelichting desinvesteringsbijtelling
 }

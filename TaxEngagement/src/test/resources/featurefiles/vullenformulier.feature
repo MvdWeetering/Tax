@@ -256,4 +256,33 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID   | Browser  |
-      | "TC01" | "Chrome" |     
+      | "TC01" | "Chrome" | 
+      
+      
+ @vullen_formulier @Toelichting_desinvesteringsbijtelling
+  Scenario Outline: vullen formulier Specificatie Investeringsregelingen
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
+    And Select the Tax engagement module
+    And open the Project "dossier 19102017"
+    And open the form Toelichting desinvesteringsbijtelling
+    Then i can fill out the form Toelichting desinvesteringsbijtelling with <TCID>
+		Then i can validate the totals on the formulier Toelichting desinvesteringsbijtelling from <TCID>
+
+    Examples: 
+      | TCID   | Browser  |
+      | "TC01" | "Chrome" |   
+              
+ @vullen_formulier @Specificatie_dochtermaatschappij
+  Scenario Outline: vullen formulier Specificatie Dochtermaatschappij
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
+    And Select the Tax engagement module
+    And open the Project "dossier 19102017"
+    And open the form Specificatie Dochtermaatschappij
+    Then i can fill out the form Specificatie Dochtermaatschappij with <TCID>
+		Then i can validate the totals on the formulier Specificatie Dochtermaatschappijbr6122 from <TCID>
+
+    Examples: 
+      | TCID   | Browser  |
+      | "TC01" | "Chrome" |   

@@ -64,11 +64,11 @@ Feature: XBRL Validation
     When the elements of the XBRL and the XLS for Winst en verliesrekening are compared
     Then they contain the same values
 
-  @investerings_regeling_xbrl
+  @investerings_aftrek_xbrl
   Scenario: XBRL Validation Investeringsregeling
     Given the reading of the XBRL is correct
     Given the reading of the XLS is correct
-    When the elements of the XBRL and the XLS for Investeringsregeling are compared
+    When the elements of the XBRL and the XLS for Investeringsaftrek are compared
     Then they contain the same values
     
  	@verliesverrekening_xbrl
@@ -91,7 +91,6 @@ Feature: XBRL Validation
     Given the reading of the XLS is correct
     When the elements of the XBRL and the XLS for Toelichting materiele vaste activa are compared
     Then they contain the same values
-    
     
   @Toelichting_garantievoorziening_xbrl 
   Scenario: XBRL Validation Toelichting garantievoorziening

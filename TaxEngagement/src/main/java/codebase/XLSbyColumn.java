@@ -19,7 +19,7 @@ public class XLSbyColumn {
             
         	//FileInputStream fis = new FileInputStream("C:\\testdata\\TestdataTax.xlsx");
         	
-        	File f = new File("C:\\testbestanden\\XBRL_Test.xlsx");
+        	File f = new File("C:\\testdata\\TestdataTax.xlsx");
             FileInputStream ios = new FileInputStream(f);
             XSSFWorkbook workbook = new XSSFWorkbook(ios);
             XSSFSheet sheet = workbook.getSheet(SheetName);
