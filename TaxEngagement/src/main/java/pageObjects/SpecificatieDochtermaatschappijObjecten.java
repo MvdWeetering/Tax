@@ -219,14 +219,14 @@ public class SpecificatieDochtermaatschappijObjecten {
 				
 	
 	//Uitklap 3
-	//Is de dochtermaatschappij beëindigd door ontbinding en vereffening?
+	//Is de dochtermaatschappij beï¿½indigd door ontbinding en vereffening?
 	
-	public static WebElement DochtermaatschappijBeëindigd_ja (WebDriver driver){
+	public static WebElement DochtermaatschappijBeeindigd_ja (WebDriver driver){
 		element = driver.findElement(By.cssSelector("[for='idxdt9tzdp']"));
 		return element;
 	}
 
-	public static WebElement DochtermaatschappijBeëindigd_nee (WebDriver driver){
+	public static WebElement DochtermaatschappijBeeindigd_nee (WebDriver driver){
 		element = driver.findElement(By.cssSelector("[for='idxdt9tzdp-no']"));
 		return element;
 	}

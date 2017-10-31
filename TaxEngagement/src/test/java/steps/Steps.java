@@ -69,7 +69,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -4246,10 +4246,10 @@ public class Steps extends AbstractSteps {
 		
 		// Uitvouw moment 3
 		if (LeesXLS.HaalText("B", 11, Tab, Locatie).equals("ja")) {
-			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeëindigd_ja(driver).click();
+			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeeindigd_ja(driver).click();
 		}
 		else {			
-			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeëindigd_nee(driver).click();
+			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeeindigd_nee(driver).click();
 		}
 		
 		
