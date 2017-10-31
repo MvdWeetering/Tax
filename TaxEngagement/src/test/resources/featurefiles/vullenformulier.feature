@@ -5,7 +5,6 @@ Feature: vullen formulieren
   And fill out the form
   So that I can evaluate the form
 
-
   @vullen_formulier @Algemene_gegevens_vullen
   Scenario Outline: vullen formulier Algemene gegevens
     Given I want to login with browser <Browser>
@@ -14,13 +13,13 @@ Feature: vullen formulieren
     And open the Project "dossier 19102017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
-    Then i can validate the error messages for the Algemene gegevens form
+    #Then i can validate the error messages for the Algemene gegevens form
 
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
-     #|  2 | "Chrome" |
 
+  #|  2 | "Chrome" |
   @vullen_formulier @Algemene_vragen
   Scenario Outline: vullen formulier Algemene Vragen
     Given I want to login with browser <Browser>
@@ -61,8 +60,8 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-    # |    2 | "Chrome" |
-  
+
+  # |    2 | "Chrome" |
   @vullen_formulier @Winst_en_verlies_rekening
   Scenario Outline: vullen formulier Winst en Verlies rekening
     Given I want to login with browser <Browser>
@@ -75,11 +74,11 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID   | Browser  |
-      #| "TC01" | "Chrome" |
-      #| "TC02" | "Chrome" |
-      #| "TC03" | "Chrome" |
-		| "TC04" | "Chrome" |
+      | "TC01" | "Chrome" |
 
+  #| "TC02" | "Chrome" |
+  #| "TC03" | "Chrome" |
+  #| "TC04" | "Chrome" |
   @vullen_formulier @Balans_Activa
   Scenario Outline: vullen formulier Balans Activa
     Given I want to login with browser <Browser>
@@ -92,7 +91,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID   | Browser  |
-      | "TC04" | "Chrome" |
+      | "TC01" | "Chrome" |
 
   @vullen_formulier @Balans_Passiva
   Scenario Outline: vullen formulier Balans Passiva
@@ -105,12 +104,12 @@ Feature: vullen formulieren
     Then i can validate the totals for Balans Passiva from tab <TCID>
 
     Examples: 
-        | TCID   | Browser  |
-      # | "TC01" | "Chrome" |
-      # | "TC02" | "Chrome" |
-      # | "TC03" | "Chrome" |
-      | "TC04" | "Chrome" |
+      | TCID   | Browser  |
+      | "TC01" | "Chrome" |
 
+  # | "TC02" | "Chrome" |
+  # | "TC03" | "Chrome" |
+  #| "TC04" | "Chrome" |
   @vullen_formulier @Investeringsaftrek
   Scenario Outline: vullen formulier Investeringsaftrek
     Given I want to login with browser <Browser>
@@ -119,8 +118,8 @@ Feature: vullen formulieren
     And open the Project "dossier 19102017"
     And open the form Investeringsaftrek
     Then i can fill out the form Investeringsaftrek with config <Id>
-    #Then i can validate the error messages for the Investeringsaftrek form
 
+    #Then i can validate the error messages for the Investeringsaftrek form
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
@@ -137,7 +136,7 @@ Feature: vullen formulieren
 
     Examples: 
       | TCID | Browser  |
-      |   1 | "Chrome" |
+      |    1 | "Chrome" |
 
   @vullen_formulier @Innovatiebox
   Scenario Outline: vullen formulier Innovatiebox
@@ -152,9 +151,9 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-      #|    2 | "Chrome" |
-      #|    3 | "Chrome" |
 
+  #|    2 | "Chrome" |
+  #|    3 | "Chrome" |
   @vullen_formulier @FiscaleVermogensVergelijking
   Scenario Outline: vullen formulier FiscaleVermogensVergelijking
     Given I want to login with browser <Browser>
@@ -182,10 +181,10 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-      #|    2 | "Chrome" |
-      #|    3 | "Chrome" |
-      #|    4 | "Chrome" |
 
+  #|    2 | "Chrome" |
+  #|    3 | "Chrome" |
+  #|    4 | "Chrome" |
   @vullen_formulier @verlies_verrekening
   Scenario Outline: vullen formulier Verlies verrekening
     Given I want to login with browser <Browser>
@@ -199,7 +198,6 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "Tc01" | "Chrome" |
-
 
   @vullen_formulier @Toelichting_overige_voorziening
   Scenario Outline: vullen formulier overige voorziening
@@ -223,13 +221,13 @@ Feature: vullen formulieren
     And open the Project "dossier 19102017"
     And open the form Verlies toelichting Materiele vaste activa
     Then i can fill out the form Toelichting Materiele vaste activa <TCID>
-		Then i can validate the totals on the formulier Toelichting Materiele vaste activa from <TCID>
+    Then i can validate the totals on the formulier Toelichting Materiele vaste activa from <TCID>
 
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
 
-@vullen_formulier @Toelichting_garantievoorzieningen
+  @vullen_formulier @Toelichting_garantievoorzieningen
   Scenario Outline: vullen formulier Toelichting garantievoorzieningen
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
@@ -237,14 +235,13 @@ Feature: vullen formulieren
     And open the Project "dossier 19102017"
     And open the form Toelichting garantievoorzieningen
     Then i can fill out the form Toelichting garantievoorzieningen with <TCID>
-		Then i can validate the totals on the formulier Toelichting garantievoorzieningen from <TCID>
+    Then i can validate the totals on the formulier Toelichting garantievoorzieningen from <TCID>
 
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-      
-      
- @vullen_formulier @Specificatie_Investeringsregelingen
+
+  @vullen_formulier @Specificatie_Investeringsregelingen
   Scenario Outline: vullen formulier Specificatie Investeringsregelingen
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
@@ -252,14 +249,13 @@ Feature: vullen formulieren
     And open the Project "dossier 19102017"
     And open the form Specificatie Investeringsregelingen
     Then i can fill out the form Specificatie Investeringsregelingen with <TCID>
-		Then i can validate the totals on the formulier Specificatie Investeringsregelingen from <TCID>
+    Then i can validate the totals on the formulier Specificatie Investeringsregelingen from <TCID>
 
     Examples: 
       | TCID   | Browser  |
-      | "TC01" | "Chrome" | 
-      
-      
- @vullen_formulier @Toelichting_desinvesteringsbijtelling
+      | "TC01" | "Chrome" |
+
+  @vullen_formulier @Toelichting_desinvesteringsbijtelling
   Scenario Outline: vullen formulier Specificatie Investeringsregelingen
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
@@ -267,13 +263,13 @@ Feature: vullen formulieren
     And open the Project "dossier 19102017"
     And open the form Toelichting desinvesteringsbijtelling
     Then i can fill out the form Toelichting desinvesteringsbijtelling with <TCID>
-		Then i can validate the totals on the formulier Toelichting desinvesteringsbijtelling from <TCID>
+    Then i can validate the totals on the formulier Toelichting desinvesteringsbijtelling from <TCID>
 
     Examples: 
       | TCID   | Browser  |
-      | "TC01" | "Chrome" |   
-              
- @vullen_formulier @Specificatie_dochtermaatschappij
+      | "TC01" | "Chrome" |
+
+  @vullen_formulier @Specificatie_dochtermaatschappij
   Scenario Outline: vullen formulier Specificatie Dochtermaatschappij
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
@@ -281,8 +277,8 @@ Feature: vullen formulieren
     And open the Project "dossier 19102017"
     And open the form Specificatie Dochtermaatschappij
     Then i can fill out the form Specificatie Dochtermaatschappij with <TCID>
-		Then i can validate the totals on the formulier Specificatie Dochtermaatschappijbr6122 from <TCID>
+    Then i can validate the totals on the formulier Specificatie Dochtermaatschappijbr6122 from <TCID>
 
     Examples: 
       | TCID   | Browser  |
-      | "TC01" | "Chrome" |   
+      | "TC01" | "Chrome" |

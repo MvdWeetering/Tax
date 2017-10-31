@@ -54,7 +54,7 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 
 		// Splat
-		InlogUrl = "http://localhost:7777/test-cwnltest/webapps/#login";
+		InlogUrl = "http://eu.casewarecloud.com/test-cwnltest/webapps/#login";
 
 		// Dev
 		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
@@ -3540,23 +3540,23 @@ public class Steps extends AbstractSteps {
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 24, "TC01"));
 
 		// regel 2
-		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver).clear();
-		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver)
-				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A", 25, "TC01"));
-
-		FiscaleVermogensVergelijkingObjecten.DatumTerbeschikkingstelling_2(driver)
-				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("B", 25, "TC01"));
-
-		FiscaleVermogensVergelijkingObjecten.DatumAangifteDividendbelasting_2(driver)
-				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("C", 25, "TC01"));
-
-		FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver).clear();
-		FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver)
-				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D", 25, "TC01"));
-
-		FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver).clear();
-		FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver)
-				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 25, "TC01"));
+//		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver).clear();
+//		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver)
+//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A", 25, "TC01"));
+//
+//		FiscaleVermogensVergelijkingObjecten.DatumTerbeschikkingstelling_2(driver)
+//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("B", 25, "TC01"));
+//
+//		FiscaleVermogensVergelijkingObjecten.DatumAangifteDividendbelasting_2(driver)
+//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("C", 25, "TC01"));
+//
+//		FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver).clear();
+//		FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver)
+//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D", 25, "TC01"));
+//
+//		FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver).clear();
+//		FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver)
+//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 25, "TC01"));
 
 		FiscaleVermogensVergelijkingObjecten.VennootschapsbelastingFiscaalVermogenOnttrokken(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.VennootschapsbelastingFiscaalVermogenOnttrokken(driver)
@@ -3815,10 +3815,10 @@ public class Steps extends AbstractSteps {
 		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 13, TCid));
 
 		// regel 2
-		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).clear();
-		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 14, TCid));
-		winstVerliesVerrekeningObjecten.VerliesBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 14, TCid));
-		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 14, TCid));
+//		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).clear();
+//		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 14, TCid));
+//		winstVerliesVerrekeningObjecten.VerliesBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 14, TCid));
+//		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 14, TCid));
 
 		// Specificatie Carry Forward (voorwaartse verliesverrekening)
 
@@ -3835,16 +3835,16 @@ public class Steps extends AbstractSteps {
 		}
 			
 		// regel 2
-		winstVerliesVerrekeningObjecten.Jaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 22, TCid));
-		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 22, TCid));
-		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 22, TCid));
-		
-		if (VerliesVerrekeningXLS.HaalData("E", 22, TCid).equals("1")) {
-			winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Ja(driver).click();
-		}
-		else {
-			winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Nee(driver).click();
-		}
+//		winstVerliesVerrekeningObjecten.Jaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 22, TCid));
+//		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 22, TCid));
+//		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 22, TCid));
+//		
+//		if (VerliesVerrekeningXLS.HaalData("E", 22, TCid).equals("1")) {
+//			winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Ja(driver).click();
+//		}
+//		else {
+//			winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Nee(driver).click();
+//		}
 		
 		// Samenstelling te verrekenen verliezen Fiscale Eenheid
 
@@ -3925,11 +3925,11 @@ public class Steps extends AbstractSteps {
 		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 2, "ToelichtingOverigeVoorziening"));
 		
 		//rij 2
-		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).clear();
-		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B", 3, "ToelichtingOverigeVoorziening"));
-		ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C", 3, "ToelichtingOverigeVoorziening"));
-		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 3, "ToelichtingOverigeVoorziening"));
-		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 3, "ToelichtingOverigeVoorziening"));
+//		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).clear();
+//		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B", 3, "ToelichtingOverigeVoorziening"));
+//		ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C", 3, "ToelichtingOverigeVoorziening"));
+//		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 3, "ToelichtingOverigeVoorziening"));
+//		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 3, "ToelichtingOverigeVoorziening"));
 	}
 	
 	@Given("^open the form Verlies toelichting Materiele vaste activa$")
@@ -4017,10 +4017,10 @@ public class Steps extends AbstractSteps {
 	}
 
 	@Then("^i can fill out the form Toelichting garantievoorzieningen with \"(.*?)\"$")
-	public void i_can_fill_out_the_form_Toelichting_garantievoorzieningen_with(String arg1) throws Throwable {
+	public void i_can_fill_out_the_form_Toelichting_garantievoorzieningen_with(String Tab) throws Throwable {
 	   
 		String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx";
-		String Tab = "TC01";
+
 		//regel 1
 		ToelichtingGarantieVoorzieningObjecten.Omschrijving1(driver).clear();
 		ToelichtingGarantieVoorzieningObjecten.Omschrijving1(driver).sendKeys(LeesXLS.HaalText("A", 4, Tab, Locatie));
@@ -4029,11 +4029,11 @@ public class Steps extends AbstractSteps {
 		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar1(driver).sendKeys(LeesXLS.HaalData("D", 4, Tab, Locatie));
 		
 		//regel 2
-		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).clear();
-		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).sendKeys(LeesXLS.HaalText("A", 5, Tab, Locatie));
-		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("B", 5, Tab, Locatie));
-		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("C", 5, Tab, Locatie));
-		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar2(driver).sendKeys(LeesXLS.HaalData("D", 5, Tab, Locatie));
+//		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).clear();
+//		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).sendKeys(LeesXLS.HaalText("A", 5, Tab, Locatie));
+//		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("B", 5, Tab, Locatie));
+//		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("C", 5, Tab, Locatie));
+//		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar2(driver).sendKeys(LeesXLS.HaalData("D", 5, Tab, Locatie));
 	   
 	}
 
@@ -4044,7 +4044,7 @@ public class Steps extends AbstractSteps {
 		String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx";
 		String Tab = "TC01";
 		
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(ToelichtingGarantieVoorzieningObjecten.Totaal(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 6, Tab, Locatie)), "D6"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(ToelichtingGarantieVoorzieningObjecten.Totaal(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 5, Tab, Locatie)), "D5"));
 		
 		System.out.println(ValidatieResultaat);
 		driver.quit();
