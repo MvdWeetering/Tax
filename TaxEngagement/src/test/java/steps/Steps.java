@@ -21,6 +21,7 @@ import pageObjects.AlgemeneGegevensObjecten;
 import pageObjects.AlgemeneVragenObjecten;
 import pageObjects.BalansActivaObjecten;
 import pageObjects.BalansPassivaObjecten;
+import pageObjects.BerekeningBelastbaarBedragObjecten;
 import pageObjects.FieldName;
 import pageObjects.FiscaleVermogensVergelijkingObjecten;
 import pageObjects.InnovatieboxObjecten;
@@ -57,7 +58,8 @@ public class Steps extends AbstractSteps {
 		InlogUrl = "http://eu.casewarecloud.com/test-cwnltest/webapps/#login";
 
 		// Dev
-		//InlogUrl = "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
+		// InlogUrl =
+		// "https://eu.casewarecloud.com/nl-se-develop/webapps/#login";
 
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
@@ -109,8 +111,6 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(3500);
 	}
 
-
-	
 	@Then("^i can work on the project$")
 	public void i_can_work_on_the_project() throws Throwable {
 		// nog geen validatie mogelijk, website aan te passen indien van
@@ -181,7 +181,7 @@ public class Steps extends AbstractSteps {
 
 		if (invuldata[10].equals("ja")) {
 			AlgemeneVragenObjecten.vraag10_yes(driver).click();
-			
+
 		} else {
 			AlgemeneVragenObjecten.vraag10_no(driver).click();
 		}
@@ -211,44 +211,43 @@ public class Steps extends AbstractSteps {
 		} else {
 			AlgemeneVragenObjecten.vraag15_no(driver).click();
 		}
-	
+
 		if (invuldata[16].equals("ja")) {
 			AlgemeneVragenObjecten.vraag16_yes(driver).click();
 		} else {
 			AlgemeneVragenObjecten.vraag16_no(driver).click();
-		}	
-		
+		}
+
 		if (invuldata[17].equals("ja")) {
 			AlgemeneVragenObjecten.vraag17_yes(driver).click();
 		} else {
 			AlgemeneVragenObjecten.vraag17_no(driver).click();
-		}	
-		
+		}
+
 		if (invuldata[18].equals("ja")) {
 			AlgemeneVragenObjecten.vraag18_yes(driver).click();
 		} else {
 			AlgemeneVragenObjecten.vraag18_no(driver).click();
-		}	
-		
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		}
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,250)", "");
-		
+
 		AlgemeneVragenObjecten.vraag19(driver).sendKeys(invuldata[19]);
-		
+
 		if (invuldata[20].equals("ja")) {
 			AlgemeneVragenObjecten.vraag20_yes(driver).click();
 			AlgemeneVragenObjecten.vraag21(driver).sendKeys(invuldata[21]);
 		} else {
 			AlgemeneVragenObjecten.vraag20_no(driver).click();
-		}	
-		
-		
+		}
+
 		if (invuldata[22].equals("ja")) {
 			AlgemeneVragenObjecten.vraag22_yes(driver).click();
 		} else {
 			AlgemeneVragenObjecten.vraag22_no(driver).click();
-		}	
-		
+		}
+
 		if (invuldata[23].equals("ja")) {
 			AlgemeneVragenObjecten.vraag23_yes(driver).click();
 		} else {
@@ -259,13 +258,12 @@ public class Steps extends AbstractSteps {
 		} else {
 			AlgemeneVragenObjecten.vraag24_no(driver).click();
 		}
-		
+
 		AlgemeneVragenObjecten.vraag25(driver).clear();
 		AlgemeneVragenObjecten.vraag25(driver).sendKeys(invuldata[25]);
-		
-		
+
 		driver.quit();
-}
+	}
 
 	@When("^open the form Algemene Gegevens$")
 	public void open_the_form_Algemene_Gegevens() throws Throwable {
@@ -361,7 +359,8 @@ public class Steps extends AbstractSteps {
 
 		// Becon
 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 99, "Positief6", driver));
+		ValidatieResultaat.addAll(
+				codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Beconnummer", 1, 99, "Positief6", driver));
 
 		// Client groep
 
@@ -382,10 +381,10 @@ public class Steps extends AbstractSteps {
 				"TextVeld", driver));
 
 		// Beconnummer (intermediair)
-		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("BeconnummerIntermediair", 1, 20, "Positief6", driver));
-	
-		
+
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("BeconnummerIntermediair", 1, 20,
+				"Positief6", driver));
+
 		// Naam koepelorganisatie fiscale dienstverleners
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("NaamKoepelorgFisDienstverl", 1,
 				20, "TextVeld", driver));
@@ -524,10 +523,12 @@ public class Steps extends AbstractSteps {
 
 		// Is er sprake van meer dan 99 deelnemingen?
 
-	//	if (pageObjects.SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).isSelected()) {
-			// ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("ToelichtingMeerdan99Deelnemingen",
-			// 1, 99, "TextVeld", driver));
-//		}
+		// if
+		// (pageObjects.SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).isSelected())
+		// {
+		// ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("ToelichtingMeerdan99Deelnemingen",
+		// 1, 99, "TextVeld", driver));
+		// }
 
 		// Verkapt divident
 		if (pageObjects.SpecificatieDeelnemingenObjecten.VerkaptDivident_ja(driver).isSelected()) {
@@ -695,7 +696,8 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.clear();
 
 		// naam aandeelhouders
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 70, "TextVeld", driver));
+		ValidatieResultaat.addAll(
+				codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamAandeelhouder", 1, 70, "TextVeld", driver));
 
 		// BSN
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("BSN", 9, 9, "BSN", driver));
@@ -706,7 +708,8 @@ public class Steps extends AbstractSteps {
 					codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Straatnaam", 1, 23, "TextVeld", driver));
 
 			// Huisnummer
-			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5, "PositiefGetal", driver));
+			ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Huisnummer", 1, 5,
+					"PositiefGetal", driver));
 
 			// ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("Postcode",
 			// 1, 6, "TextVeld", driver));
@@ -726,7 +729,8 @@ public class Steps extends AbstractSteps {
 		}
 		// nominale waarde aandelen
 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1, 20, "GeheelGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardeAandelen", 1,
+				20, "GeheelGetal", driver));
 
 		// Nominale waarde preferente aandelen einde boekjaar
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NominalewaardePreferente", 1,
@@ -791,21 +795,25 @@ public class Steps extends AbstractSteps {
 
 			if (driver.findElement(By.id("idn26n68h8-no")).isSelected()) {
 
-				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamRechtspersoon", 1, 200, "TextVeld", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("StraatnaamRechtspersoon", 1, 24, "TextVeld", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("HuisnummerRechtspersoon", 1, 20, "Positief6", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("ToevHuisnummerRechtspersoon", 1, 4, "TextVeld", driver));
-				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("VestigingsplaatsRechtspersoon", 1, 24, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecAandeelhouders("NaamRechtspersoon", 1,
+						200, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker
+						.CheckTooltipSpecAandeelhouders("StraatnaamRechtspersoon", 1, 24, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker
+						.CheckTooltipSpecAandeelhouders("HuisnummerRechtspersoon", 1, 20, "Positief6", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker
+						.CheckTooltipSpecAandeelhouders("ToevHuisnummerRechtspersoon", 1, 4, "TextVeld", driver));
+				ValidatieResultaat.addAll(codebase.TooltipChecker
+						.CheckTooltipSpecAandeelhouders("VestigingsplaatsRechtspersoon", 1, 24, "TextVeld", driver));
 
 			}
 
 		}
 
 		// als validatieresultaat niet leeg is dan melding genereren.
-		//System.out.println("Validatie resultaat: " + ValidatieResultaat);
+		// System.out.println("Validatie resultaat: " + ValidatieResultaat);
 		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
-		
 
 	}
 
@@ -831,11 +839,12 @@ public class Steps extends AbstractSteps {
 
 		String[] invuldata = codebase.SpecificatieDeelnemingenXLS.HaalData(Tcid);
 
-//		if (Tcid == 2) {
-//			WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
-//			Select mySelect = new Select(mySelectElm);
-//			mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
-//		}
+		// if (Tcid == 2) {
+		// WebElement mySelectElm =
+		// driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+		// Select mySelect = new Select(mySelectElm);
+		// mySelect.selectByVisibleText("002 Specificatie Deelnemingen");
+		// }
 
 		// algemene vragen
 		SpecificatieDeelnemingenObjecten.NaamDeelneming(driver).clear();
@@ -849,7 +858,7 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.Huisnummer(driver).sendKeys(invuldata[7]);
 
 		try {
-			int n = Integer.parseInt(invuldata[2].replaceAll("\\.",""));
+			int n = Integer.parseInt(invuldata[2].replaceAll("\\.", ""));
 			if (!Elfproef.isValidBSN(n)) {
 				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
 				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
@@ -999,12 +1008,12 @@ public class Steps extends AbstractSteps {
 			SpecificatieDeelnemingenObjecten.BeleggingsdeelnemingEULidstaat_Nee(driver).click();
 		}
 
-//		if (invuldata[44].equals("ja")) {
-//			SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
-//			SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys(invuldata[45]);
-//		} else {
-//			SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Nee(driver).click();
-//		}
+		// if (invuldata[44].equals("ja")) {
+		// SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Ja(driver).click();
+		// SpecificatieDeelnemingenObjecten.ToelichtingMeerdan99Deelnemingen(driver).sendKeys(invuldata[45]);
+		// } else {
+		// SpecificatieDeelnemingenObjecten.Meerdan99Deelnemingen_Nee(driver).click();
+		// }
 
 		// Implementatie verkapt divident of Gegevens Rechtspersonen
 
@@ -1065,7 +1074,6 @@ public class Steps extends AbstractSteps {
 
 		}
 	}
-
 
 	@When("^open the form Winst en Verlies rekening$")
 	public void open_the_form_Winst_en_Verlies_rekening() throws Throwable {
@@ -1401,7 +1409,7 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver)
 				.sendKeys(WinstVerliesXLS.HaalData("C", 109, Tab));
 
-		//WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).click();
+		// WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).click();
 
 	}
 
@@ -1706,7 +1714,6 @@ public class Steps extends AbstractSteps {
 		System.out.println(ValidatieResultaat);
 		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
-		
 
 	}
 
@@ -2197,11 +2204,10 @@ public class Steps extends AbstractSteps {
 		// Nominale waarde
 
 		// scroll down
-		
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,250)", "");
-		
-		
+
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("HandelsdebiteurenNominale", 1, 20,
 				"PositiefGetal", driver));
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipBalansActiva("KortVordGroepNominale", 1, 20,
@@ -2258,11 +2264,11 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_1_1(driver).getAttribute("value"),
 				Double.parseDouble(BalansActivaXLS.HaalData("C", 13, Tab)), "C13"));
-		
+
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				BalansActivaObjecten.ImmaterieleVasteActivaFiscaal_1_1(driver).getAttribute("value"),
 				Double.parseDouble(BalansActivaXLS.HaalData("D", 13, Tab)), "D13"));
-		
+
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				BalansActivaObjecten.ImmaterieleVasteActivaCommercieel_31_12(driver).getAttribute("value"),
 				Double.parseDouble(BalansActivaXLS.HaalData("E", 13, Tab)), "E13"));
@@ -2514,7 +2520,6 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(BalansActivaObjecten.TotaalActivaFiscaal_31_12(driver).getAttribute("value"),
 						Double.parseDouble(BalansActivaXLS.HaalData("G", 77, Tab)), "G77"));
-
 
 		System.out.println(ValidatieResultaat);
 		driver.quit();
@@ -3000,21 +3005,21 @@ public class Steps extends AbstractSteps {
 				Double.parseDouble(BalansPassivaXLS.HaalData("F", 16, Tab)), "F16"));
 
 		// Eigen vermogen
-		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenCommercieeel_1_1(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("B", 7, Tab)), "B7"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(
+				BalansPassivaObjecten.OndernemingsvermogenCommercieeel_1_1(driver).getAttribute("value"),
+				Double.parseDouble(BalansPassivaXLS.HaalData("B", 7, Tab)), "B7"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenFiscaal_1_1(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("C", 7, Tab)), "C7"));
-		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenCommercieeel_31_12(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("D", 7, Tab)), "D7"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(
+				BalansPassivaObjecten.OndernemingsvermogenCommercieeel_31_12(driver).getAttribute("value"),
+				Double.parseDouble(BalansPassivaXLS.HaalData("D", 7, Tab)), "D7"));
 		ValidatieResultaat
 				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenCF(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("E", 7, Tab)), "E7"));
-		ValidatieResultaat.addAll(
-				vergelijk.Vergelijk(BalansPassivaObjecten.OndernemingsvermogenFiscaal31_12(driver).getAttribute("value"),
-						Double.parseDouble(BalansPassivaXLS.HaalData("F", 7, Tab)), "F7"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(
+				BalansPassivaObjecten.OndernemingsvermogenFiscaal31_12(driver).getAttribute("value"),
+				Double.parseDouble(BalansPassivaXLS.HaalData("F", 7, Tab)), "F7"));
 
 		// Voorzieningen
 		ValidatieResultaat.addAll(
@@ -3050,15 +3055,15 @@ public class Steps extends AbstractSteps {
 						Double.parseDouble(BalansPassivaXLS.HaalData("F", 27, Tab)), "F27"));
 
 		// Totaal voorzieningen
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.VoorzieningenCommercieeel_1_1(driver).getAttribute("value"),
-				Double.parseDouble(BalansPassivaXLS.HaalData("B", 28, Tab)), "B28"));
+		ValidatieResultaat.addAll(
+				vergelijk.Vergelijk(BalansPassivaObjecten.VoorzieningenCommercieeel_1_1(driver).getAttribute("value"),
+						Double.parseDouble(BalansPassivaXLS.HaalData("B", 28, Tab)), "B28"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(BalansPassivaObjecten.VoorzieningenFiscaal_1_1(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("C", 28, Tab)), "C28"));
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				BalansPassivaObjecten.VoorzieningenCommercieeel_31_12(driver).getAttribute("value"),
-				Double.parseDouble(BalansPassivaXLS.HaalData("D", 28, Tab)), "D28"));
+		ValidatieResultaat.addAll(
+				vergelijk.Vergelijk(BalansPassivaObjecten.VoorzieningenCommercieeel_31_12(driver).getAttribute("value"),
+						Double.parseDouble(BalansPassivaXLS.HaalData("D", 28, Tab)), "D28"));
 		ValidatieResultaat
 				.addAll(vergelijk.Vergelijk(BalansPassivaObjecten.VoorzieningenCF(driver).getAttribute("value"),
 						Double.parseDouble(BalansPassivaXLS.HaalData("E", 28, Tab)), "E28"));
@@ -3248,26 +3253,23 @@ public class Steps extends AbstractSteps {
 		InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).clear();
 		InvesteringsaftrekObjecten.BedragBetaaldBoekjaar(driver).sendKeys(invuldata[5]);
 
-		
 		if (invuldata[7].equals("ja")) {
 			InvesteringsaftrekObjecten.energieInvesteringsAftrek_ja(driver).click();
 
-		}
-		else {
+		} else {
 			InvesteringsaftrekObjecten.energieInvesteringsAftrek_nee(driver).click();
 		}
-		
+
 		if (invuldata[8].equals("ja")) {
 			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).clear();
 			InvesteringsaftrekObjecten.MeldingsnummerAftrek(driver).sendKeys(invuldata[4]);
-			
+
 			InvesteringsaftrekObjecten.MilleuInvesteringsAftrek_ja(driver).click();
 			InvesteringsaftrekObjecten.MilleuCategorie(driver).sendKeys(invuldata[10]);
 			WebElement mySelectElm = InvesteringsaftrekObjecten.MilleuCategorie(driver);
 			Select mySelect = new Select(mySelectElm);
 			mySelect.selectByVisibleText(invuldata[10]);
-		}
-		else {
+		} else {
 			InvesteringsaftrekObjecten.MilleuInvesteringsAftrek_nee(driver).click();
 		}
 
@@ -3276,11 +3278,10 @@ public class Steps extends AbstractSteps {
 		if (invuldata[16].equals("ja")) {
 			InvesteringsaftrekObjecten.CaribischeDeel_Ja(driver).click();
 			InvesteringsaftrekObjecten.AftrekKleinschalig(driver).sendKeys(invuldata[17]);
-		}
-		else {
+		} else {
 			InvesteringsaftrekObjecten.CaribischeDeel_Nee(driver).click();
 		}
-		
+
 		// driver.quit();
 
 	}
@@ -3362,8 +3363,8 @@ public class Steps extends AbstractSteps {
 		ObjectvrijstellingObjecten.ObjectvrijstellingBuitenlandseOndernemingswinst(driver).clear();
 		ObjectvrijstellingObjecten.ObjectvrijstellingBuitenlandseOndernemingswinst(driver).sendKeys(invuldata[6]);
 
-//		ObjectvrijstellingObjecten.CumulatiefSaldo(driver).clear();
-//		ObjectvrijstellingObjecten.CumulatiefSaldo(driver).sendKeys(invuldata[7]);
+		// ObjectvrijstellingObjecten.CumulatiefSaldo(driver).clear();
+		// ObjectvrijstellingObjecten.CumulatiefSaldo(driver).sendKeys(invuldata[7]);
 
 		// extra click om lostfocus event van cumulatiefsaldo te triggeren en
 		// hiermee de waarde op te slaan
@@ -3515,11 +3516,12 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.StortingKapitaal(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 11, "TC01"));
 
-//		if (driver.findElement(By.id("idCWNLCBAanDivOndWinTot")).isSelected()) {
-//			// System.out.println("enabled");
-//		} else {
-//			FiscaleVermogensVergelijkingObjecten.DividentOntwWinstCheckbox(driver).click();
-//		}
+		// if
+		// (driver.findElement(By.id("idCWNLCBAanDivOndWinTot")).isSelected()) {
+		// // System.out.println("enabled");
+		// } else {
+		// FiscaleVermogensVergelijkingObjecten.DividentOntwWinstCheckbox(driver).click();
+		// }
 
 		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver)
@@ -3540,23 +3542,23 @@ public class Steps extends AbstractSteps {
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 24, "TC01"));
 
 		// regel 2
-//		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver).clear();
-//		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver)
-//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A", 25, "TC01"));
-//
-//		FiscaleVermogensVergelijkingObjecten.DatumTerbeschikkingstelling_2(driver)
-//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("B", 25, "TC01"));
-//
-//		FiscaleVermogensVergelijkingObjecten.DatumAangifteDividendbelasting_2(driver)
-//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("C", 25, "TC01"));
-//
-//		FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver).clear();
-//		FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver)
-//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D", 25, "TC01"));
-//
-//		FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver).clear();
-//		FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver)
-//				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 25, "TC01"));
+		// FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver).clear();
+		// FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_2(driver)
+		// .sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A", 25, "TC01"));
+		//
+		// FiscaleVermogensVergelijkingObjecten.DatumTerbeschikkingstelling_2(driver)
+		// .sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("B", 25, "TC01"));
+		//
+		// FiscaleVermogensVergelijkingObjecten.DatumAangifteDividendbelasting_2(driver)
+		// .sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("C", 25, "TC01"));
+		//
+		// FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver).clear();
+		// FiscaleVermogensVergelijkingObjecten.BedragIngehoudenDividendbelasting_2(driver)
+		// .sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("D", 25, "TC01"));
+		//
+		// FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver).clear();
+		// FiscaleVermogensVergelijkingObjecten.BedragWinstuitdeling_2(driver)
+		// .sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 25, "TC01"));
 
 		FiscaleVermogensVergelijkingObjecten.VennootschapsbelastingFiscaalVermogenOnttrokken(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.VennootschapsbelastingFiscaalVermogenOnttrokken(driver)
@@ -3566,13 +3568,11 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.BuitenlandseBelastingRegeling(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F", 28, "TC01"));
 
-		
 		/*
-		if (driver.findElement(By.id("idCWNLCBNieAftDeeWinDooCooTot")).isSelected()) {
-			// System.out.println("enabled");
-		} else {
-			FiscaleVermogensVergelijkingObjecten.NietAftrDeelWinstCoopCheckbox(driver).click();
-		}
+		 * if (driver.findElement(By.id("idCWNLCBNieAftDeeWinDooCooTot")).
+		 * isSelected()) { // System.out.println("enabled"); } else {
+		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelWinstCoopCheckbox(
+		 * driver).click(); }
 		 */
 
 		FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver).clear();
@@ -3588,13 +3588,13 @@ public class Steps extends AbstractSteps {
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F", 35, "TC01"));
 
 		/*
-		if (driver.findElement(By.id("idCWNLCBNieAftDeeBelComTot")).isSelected()) {
-			// System.out.println("enabled");
-		} else {
-			FiscaleVermogensVergelijkingObjecten.NietAftrDeelCommCheckbox(driver).click();
-		}
+		 * if
+		 * (driver.findElement(By.id("idCWNLCBNieAftDeeBelComTot")).isSelected()
+		 * ) { // System.out.println("enabled"); } else {
+		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelCommCheckbox(driver)
+		 * .click(); }
 		 */
-		
+
 		FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 37, "TC01"));
@@ -3604,12 +3604,12 @@ public class Steps extends AbstractSteps {
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 38, "TC01"));
 
 		/*
-		if (driver.findElement(By.id("idCWNLCBNieAftDeeTanTot")).isSelected()) {
-			// System.out.println("enabled");
-		} else {
-			FiscaleVermogensVergelijkingObjecten.NietAftrDeelTantiemesCheckbox(driver).click();
-		}
-		*/
+		 * if
+		 * (driver.findElement(By.id("idCWNLCBNieAftDeeTanTot")).isSelected()) {
+		 * // System.out.println("enabled"); } else {
+		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelTantiemesCheckbox(
+		 * driver).click(); }
+		 */
 
 		FiscaleVermogensVergelijkingObjecten.Tantiemes(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.Tantiemes(driver)
@@ -3620,13 +3620,12 @@ public class Steps extends AbstractSteps {
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 43, "TC01"));
 
 		/*
-		if (driver.findElement(By.id("idCWNLCBNieAftDeeVerVooKapTot")).isSelected()) {
-			// System.out.println("enabled");
-		} else {
-			FiscaleVermogensVergelijkingObjecten.NietAftrDeelKapVerstrCheckbox(driver).click();
-		}
+		 * if (driver.findElement(By.id("idCWNLCBNieAftDeeVerVooKapTot")).
+		 * isSelected()) { // System.out.println("enabled"); } else {
+		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelKapVerstrCheckbox(
+		 * driver).click(); }
 		 */
-		
+
 		FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 48, "TC01"));
@@ -3722,7 +3721,8 @@ public class Steps extends AbstractSteps {
 
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 
-		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipFiscaleVermogens("NietAftrekbaarWinstuitdelingenCooperaties", 1, 20, "PositiefGetal", driver));
+		// ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipFiscaleVermogens("NietAftrekbaarWinstuitdelingenCooperaties",
+		// 1, 20, "PositiefGetal", driver));
 
 		System.out.println(ValidatieResultaat);
 		// driver.quit();
@@ -3743,14 +3743,16 @@ public class Steps extends AbstractSteps {
 
 		// Button New aanklikken
 
-//		if (Tcid != 1) {
-//			driver.findElement(By.xpath("//button[contains(.,'New')]")).click();
-//
-//			WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
-//			Select mySelect = new Select(mySelectElm);
-//			mySelect.selectByVisibleText("00" + Tcid + " Winst uit Zeescheepvaart");
+		// if (Tcid != 1) {
+		// driver.findElement(By.xpath("//button[contains(.,'New')]")).click();
+		//
+		// WebElement mySelectElm =
+		// driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+		// Select mySelect = new Select(mySelectElm);
+		// mySelect.selectByVisibleText("00" + Tcid + " Winst uit
+		// Zeescheepvaart");
 
-//		}
+		// }
 
 		String[] invuldata = codebase.ZeescheepvaartXLS.HaalData(Tcid);
 
@@ -3803,207 +3805,260 @@ public class Steps extends AbstractSteps {
 	@Then("^i can fill out the form Verlies Verrekening from \"(.*?)\"$")
 	public void i_can_fill_out_the_form_Verlies_Verrekening_from(String TCid) throws Throwable {
 
-		winstVerliesVerrekeningObjecten.VerrekeningVerliesDitBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 7, TCid));
+		winstVerliesVerrekeningObjecten.VerrekeningVerliesDitBoekjaar(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("C", 7, TCid));
 
 		// Samenstelling te verrekenen verliezen
 
 		// regel 1
 		winstVerliesVerrekeningObjecten.RSINMaatschappij(driver).clear();
-		winstVerliesVerrekeningObjecten.RSINMaatschappij(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 13, TCid));
-		
+		winstVerliesVerrekeningObjecten.RSINMaatschappij(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("A", 13, TCid));
+
 		winstVerliesVerrekeningObjecten.VerliesBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 13, TCid));
-		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 13, TCid));
+		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("C", 13, TCid));
 
 		// regel 2
-//		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).clear();
-//		winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 14, TCid));
-//		winstVerliesVerrekeningObjecten.VerliesBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 14, TCid));
-//		winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 14, TCid));
+		// winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).clear();
+		// winstVerliesVerrekeningObjecten.RSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A",
+		// 14, TCid));
+		// winstVerliesVerrekeningObjecten.VerliesBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B",
+		// 14, TCid));
+		// winstVerliesVerrekeningObjecten.VerrekeningVerliesVorigBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C",
+		// 14, TCid));
 
 		// Specificatie Carry Forward (voorwaartse verliesverrekening)
 
 		// regel 1
 		winstVerliesVerrekeningObjecten.Jaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 21, TCid));
-		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 21,TCid));
-		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 21,TCid));
+		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("B", 21, TCid));
+		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("C", 21, TCid));
 
 		if (VerliesVerrekeningXLS.HaalData("E", 21, TCid).equals("1")) {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren1_Ja(driver).click();
-		}
-		else {
+		} else {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren1_Nee(driver).click();
 		}
-			
+
 		// regel 2
-//		winstVerliesVerrekeningObjecten.Jaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 22, TCid));
-//		winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B", 22, TCid));
-//		winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C", 22, TCid));
-//		
-//		if (VerliesVerrekeningXLS.HaalData("E", 22, TCid).equals("1")) {
-//			winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Ja(driver).click();
-//		}
-//		else {
-//			winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Nee(driver).click();
-//		}
-		
+		// winstVerliesVerrekeningObjecten.Jaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A",
+		// 22, TCid));
+		// winstVerliesVerrekeningObjecten.RestantVerrekenenVerliesBeginBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("B",
+		// 22, TCid));
+		// winstVerliesVerrekeningObjecten.VerrekendVerliesDitBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("C",
+		// 22, TCid));
+		//
+		// if (VerliesVerrekeningXLS.HaalData("E", 22, TCid).equals("1")) {
+		// winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Ja(driver).click();
+		// }
+		// else {
+		// winstVerliesVerrekeningObjecten.VerliesKwalificeren2_Nee(driver).click();
+		// }
+
 		// Samenstelling te verrekenen verliezen Fiscale Eenheid
 
 		// regel 1
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).clear();
-		
-		
-		
-		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 28, TCid));
-		
-		
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("B", 28, TCid));
-		
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("C", 28, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 28, TCid));
-		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies(driver).sendKeys(VerliesVerrekeningXLS.HaalData("E", 28, TCid));
-		
+
+		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("A", 28, TCid));
+
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalDatum("B", 28, TCid));
+
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalDatum("C", 28, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("D", 28, TCid));
+		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("E", 28, TCid));
+
 		if (VerliesVerrekeningXLS.HaalData("F", 28, TCid).equals("1")) {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren3_Ja(driver).click();
-		}
-		else {
+		} else {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren3_Nee(driver).click();
 		}
 		// regel 2
 		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).clear();
-		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("A", 29, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin2(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("B", 29, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde2(driver).sendKeys(VerliesVerrekeningXLS.HaalDatum("C", 29, TCid));
-		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("D", 29, TCid));
-		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies2(driver).sendKeys(VerliesVerrekeningXLS.HaalData("E", 29, TCid));
-		
+		winstVerliesVerrekeningObjecten.VerrekenenRSINMaatschappij2(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("A", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarBegin2(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalDatum("B", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenFiscaleEenheidBoekjaarEinde2(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalDatum("C", 29, TCid));
+		winstVerliesVerrekeningObjecten.VerrekenenVerliesEindeBoekjaar2(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("D", 29, TCid));
+		winstVerliesVerrekeningObjecten.TeVerrekenenVerlies2(driver)
+				.sendKeys(VerliesVerrekeningXLS.HaalData("E", 29, TCid));
+
 		if (VerliesVerrekeningXLS.HaalData("F", 28, TCid).equals("1")) {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Ja(driver).click();
-		}
-		else {
+		} else {
 			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Nee(driver).click();
 		}
-		
+
 	}
+
 	@Then("^i can validate the error messages for the formulier verliesverrekening$")
 	public void i_can_validate_the_error_messages_for_the_formulier_verliesverrekening() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
-		
+		// Write code here that turns the phrase above into concrete actions
+
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij", 1, 9, "BSN", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij2", 1, 9, "BSN", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij", 1, 9, "BSN", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij2", 1, 9, "BSN", driver));
-		
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar", 1, 9, "PositiefGeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar2", 1, 9, "PositiefGeheelGetal", driver));
-	
-	
+		ValidatieResultaat.addAll(
+				codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(
+				codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij2", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij",
+				1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij2",
+				1, 9, "BSN", driver));
+
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening(
+				"VerrekeningVerliesVorigBoekjaar", 1, 9, "PositiefGeheelGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening(
+				"VerrekeningVerliesVorigBoekjaar2", 1, 9, "PositiefGeheelGetal", driver));
+
 		System.out.println(ValidatieResultaat);
-		
+
 		assertTrue(ValidatieResultaat.isEmpty());
 		// driver.quit();
-		
+
 	}
+
 	@Given("^open the form Verlies toelichting overige voorziening$")
 	public void open_the_form_Verlies_toelichting_overige_voorziening() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+		// Write code here that turns the phrase above into concrete actions
 		NavigerenObjecten.toelichtingOverigeVoorzieningen(driver).click();
-		
+
 	}
 
 	@Then("^i can fill out the form toelichting overige voorziening from (\\d+)$")
 	public void i_can_fill_out_the_form_toelichting_overige_voorziening_from(int Tcid) throws Throwable {
 
-		//rij 1
-		
+		// rij 1
+
 		ToelichtingOverigeVoorzieningObjecten.Omschrijving1(driver).clear();
-		ToelichtingOverigeVoorzieningObjecten.Omschrijving1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B", 2, "ToelichtingOverigeVoorziening"));
-		ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C", 2, "ToelichtingOverigeVoorziening"));
-		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 2, "ToelichtingOverigeVoorziening"));
-		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar1(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 2, "ToelichtingOverigeVoorziening"));
-		
-		//rij 2
-//		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).clear();
-//		ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B", 3, "ToelichtingOverigeVoorziening"));
-//		ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C", 3, "ToelichtingOverigeVoorziening"));
-//		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 3, "ToelichtingOverigeVoorziening"));
-//		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 3, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.Omschrijving1(driver)
+				.sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B", 2, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening1(driver)
+				.sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C", 2, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening1(driver)
+				.sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D", 2, "ToelichtingOverigeVoorziening"));
+		ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar1(driver)
+				.sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E", 2, "ToelichtingOverigeVoorziening"));
+
+		// rij 2
+		// ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).clear();
+		// ToelichtingOverigeVoorzieningObjecten.Omschrijving2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalText("B",
+		// 3, "ToelichtingOverigeVoorziening"));
+		// ToelichtingOverigeVoorzieningObjecten.DotatieOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("C",
+		// 3, "ToelichtingOverigeVoorziening"));
+		// ToelichtingOverigeVoorzieningObjecten.OnttrekkingOverigeVoorziening2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("D",
+		// 3, "ToelichtingOverigeVoorziening"));
+		// ToelichtingOverigeVoorzieningObjecten.OverigeVoorzieningEindeBoekjaar2(driver).sendKeys(ToelichtingOverigeVoorzXLS.HaalData("E",
+		// 3, "ToelichtingOverigeVoorziening"));
 	}
-	
+
 	@Given("^open the form Verlies toelichting Materiele vaste activa$")
 	public void open_the_form_Verlies_toelichting_Materiele_vaste_activa() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	
+		// Write code here that turns the phrase above into concrete actions
+
 		NavigerenObjecten.ToelichtingMaterieleVasteActiva(driver).click();
-				
+
 	}
-	
+
 	@Then("^i can validate the error messages for the formulier toelichting overige voorziening$")
 	public void i_can_validate_the_error_messages_for_the_formulier_toelichting_overige_voorziening() throws Throwable {
-	    
-	
+
 	}
-	
+
 	@Then("^i can fill out the form Toelichting Materiele vaste activa \"(.*?)\"$")
 	public void i_can_fill_out_the_form_Toelichting_Materiele_vaste_activa(String Tab) throws Throwable {
 
-				String Locatie = "C:\\testdata\\Toelichting materiele vaste activa.xlsx";
-				//Gebouwen zonder bodemwaarde
-		
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 6, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 6, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 6, Tab, Locatie));
-				
-				//Gebouwen in eigen gebruik
-				
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 9, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 9, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 9, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikBodemwaarde3112(driver).sendKeys(LeesXLS.HaalData("E", 9, Tab, Locatie));
-						
-				//Gebouwen ter belegging gehouden
-				
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 10, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 10, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 10, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingBodemwaarde3112(driver).sendKeys(LeesXLS.HaalData("E", 10, Tab, Locatie));
-				
-				//Gebouwen zonder afschrijving
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 11, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 11, Tab, Locatie));
-						
-				//Bedrijfsterreinen
-				
-				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 12, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenFiscale3112(driver).sendKeys(LeesXLS.HaalData("C", 12, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 12, Tab, Locatie));
-				
-				//Machines
-				ToelichtingMaterieleVasteActivaObjecten.MachinesAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 17, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.MachinesRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 17, Tab, Locatie));
-				
-				//Andere vaste bedrijfsmiddelen
-						
-				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenAanschaf(driver).sendKeys(LeesXLS.HaalData("B", 18, Tab, Locatie));
-				ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenRestwaarde3112(driver).sendKeys(LeesXLS.HaalData("D", 18, Tab, Locatie));
-				
+		String Locatie = "C:\\testdata\\Toelichting materiele vaste activa.xlsx";
+		// Gebouwen zonder bodemwaarde
+
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeAanschaf(driver)
+				.sendKeys(LeesXLS.HaalData("B", 6, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeFiscale3112(driver)
+				.sendKeys(LeesXLS.HaalData("C", 6, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderBodemwaardeRestwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("D", 6, Tab, Locatie));
+
+		// Gebouwen in eigen gebruik
+
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikAanschaf(driver)
+				.sendKeys(LeesXLS.HaalData("B", 9, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikFiscale3112(driver)
+				.sendKeys(LeesXLS.HaalData("C", 9, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikRestwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("D", 9, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenInEigenGebruikBodemwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("E", 9, Tab, Locatie));
+
+		// Gebouwen ter belegging gehouden
+
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingAanschaf(driver)
+				.sendKeys(LeesXLS.HaalData("B", 10, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingFiscale3112(driver)
+				.sendKeys(LeesXLS.HaalData("C", 10, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingRestwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("D", 10, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenTerBeleggingBodemwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("E", 10, Tab, Locatie));
+
+		// Gebouwen zonder afschrijving
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingAanschaf(driver)
+				.sendKeys(LeesXLS.HaalData("B", 11, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.GebouwenZonderAfschrijvingFiscale3112(driver)
+				.sendKeys(LeesXLS.HaalData("C", 11, Tab, Locatie));
+
+		// Bedrijfsterreinen
+
+		ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenAanschaf(driver)
+				.sendKeys(LeesXLS.HaalData("B", 12, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenFiscale3112(driver)
+				.sendKeys(LeesXLS.HaalData("C", 12, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.BedrijfsterreinenRestwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("D", 12, Tab, Locatie));
+
+		// Machines
+		ToelichtingMaterieleVasteActivaObjecten.MachinesAanschaf(driver)
+				.sendKeys(LeesXLS.HaalData("B", 17, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.MachinesRestwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("D", 17, Tab, Locatie));
+
+		// Andere vaste bedrijfsmiddelen
+
+		ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenAanschaf(driver)
+				.sendKeys(LeesXLS.HaalData("B", 18, Tab, Locatie));
+		ToelichtingMaterieleVasteActivaObjecten.AndereVasteBedrijfsmiddelenRestwaarde3112(driver)
+				.sendKeys(LeesXLS.HaalData("D", 18, Tab, Locatie));
+
 	}
 
 	@Then("^i can validate the error messages for the formulier Toelichting Materiele vaste activa$")
-	public void i_can_validate_the_error_messages_for_the_formulier_Toelichting_Materiele_vaste_activa() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+	public void i_can_validate_the_error_messages_for_the_formulier_Toelichting_Materiele_vaste_activa()
+			throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
 	}
+
 	@Then("^i can validate the totals on the formulier Toelichting Materiele vaste activa from \"(.*?)\"$")
-	public void i_can_validate_the_totals_on_the_formulier_Toelichting_Materiele_vaste_activa_from(String Tab) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	public void i_can_validate_the_totals_on_the_formulier_Toelichting_Materiele_vaste_activa_from(String Tab)
+			throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
-		
+
 		String Locatie = "C:\\testdata\\Toelichting materiele vaste activa.xlsx";
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(ToelichtingMaterieleVasteActivaObjecten.Totaal(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("C", 13, Tab, Locatie)), "C13"));
-		
+		ValidatieResultaat.addAll(
+				vergelijk.Vergelijk(ToelichtingMaterieleVasteActivaObjecten.Totaal(driver).getAttribute("value"),
+						Double.parseDouble(LeesXLS.HaalData("C", 13, Tab, Locatie)), "C13"));
+
 		System.out.println(ValidatieResultaat);
 		assertTrue(ValidatieResultaat.isEmpty());
 
@@ -4012,71 +4067,80 @@ public class Steps extends AbstractSteps {
 	@Given("^open the form Toelichting garantievoorzieningen$")
 	public void open_the_form_Toelichting_garantievoorzieningen() throws Throwable {
 
-		NavigerenObjecten.ToelichtingGarantievoorziening(driver).click(); 
-	   
+		NavigerenObjecten.ToelichtingGarantievoorziening(driver).click();
+
 	}
 
 	@Then("^i can fill out the form Toelichting garantievoorzieningen with \"(.*?)\"$")
 	public void i_can_fill_out_the_form_Toelichting_garantievoorzieningen_with(String Tab) throws Throwable {
-	   
+
 		String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx";
 
-		//regel 1
+		// regel 1
 		ToelichtingGarantieVoorzieningObjecten.Omschrijving1(driver).clear();
 		ToelichtingGarantieVoorzieningObjecten.Omschrijving1(driver).sendKeys(LeesXLS.HaalText("A", 4, Tab, Locatie));
-		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening1(driver).sendKeys(LeesXLS.HaalData("B", 4, Tab, Locatie));
-		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening1(driver).sendKeys(LeesXLS.HaalData("C", 4, Tab, Locatie));
-		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar1(driver).sendKeys(LeesXLS.HaalData("D", 4, Tab, Locatie));
-		
-		//regel 2
-//		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).clear();
-//		ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).sendKeys(LeesXLS.HaalText("A", 5, Tab, Locatie));
-//		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("B", 5, Tab, Locatie));
-//		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("C", 5, Tab, Locatie));
-//		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar2(driver).sendKeys(LeesXLS.HaalData("D", 5, Tab, Locatie));
-	   
+		ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening1(driver)
+				.sendKeys(LeesXLS.HaalData("B", 4, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening1(driver)
+				.sendKeys(LeesXLS.HaalData("C", 4, Tab, Locatie));
+		ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar1(driver)
+				.sendKeys(LeesXLS.HaalData("D", 4, Tab, Locatie));
+
+		// regel 2
+		// ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).clear();
+		// ToelichtingGarantieVoorzieningObjecten.Omschrijving2(driver).sendKeys(LeesXLS.HaalText("A",
+		// 5, Tab, Locatie));
+		// ToelichtingGarantieVoorzieningObjecten.DotatieGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("B",
+		// 5, Tab, Locatie));
+		// ToelichtingGarantieVoorzieningObjecten.OnttrekkingGarantieVoorziening2(driver).sendKeys(LeesXLS.HaalData("C",
+		// 5, Tab, Locatie));
+		// ToelichtingGarantieVoorzieningObjecten.GarantieVoorzieningEindeboekjaar2(driver).sendKeys(LeesXLS.HaalData("D",
+		// 5, Tab, Locatie));
+
 	}
 
 	@Then("^i can validate the totals on the formulier Toelichting garantievoorzieningen from \"(.*?)\"$")
-	public void i_can_validate_the_totals_on_the_formulier_Toelichting_garantievoorzieningen_from(String arg1) throws Throwable {
-		
+	public void i_can_validate_the_totals_on_the_formulier_Toelichting_garantievoorzieningen_from(String arg1)
+			throws Throwable {
+
 		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 		String Locatie = "C:\\testdata\\Toelichting garantievoorziening.xlsx";
 		String Tab = "TC01";
-		
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(ToelichtingGarantieVoorzieningObjecten.Totaal(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 5, Tab, Locatie)), "D5"));
-		
+
+		ValidatieResultaat
+				.addAll(vergelijk.Vergelijk(ToelichtingGarantieVoorzieningObjecten.Totaal(driver).getAttribute("value"),
+						Double.parseDouble(LeesXLS.HaalData("D", 5, Tab, Locatie)), "D5"));
+
 		System.out.println(ValidatieResultaat);
 		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 
 	}
-	
+
 	@Given("^open the form Specificatie Investeringsregelingen$")
 	public void open_the_form_Specificatie_Investeringsregelingen() throws Throwable {
-	    
+
 		NavigerenObjecten.SpecificatieInvesteringsregelingen(driver).click();
-	
+
 	}
 
 	@Then("^i can fill out the form Specificatie Investeringsregelingen with \"(.*?)\"$")
 	public void i_can_fill_out_the_form_Specificatie_Investeringsregelingen_with(String Tcid) throws Throwable {
 
-		
 		String[] invuldata = codebase.investeringsregelingXLS.HaalData(1);
-		
+
 		if (invuldata[0].equals("ja")) {
 			InvesteringsregelingenObjecten.GrondslagKostprijs_ja(driver).click();
 		} else {
 			InvesteringsregelingenObjecten.GrondslagKostprijs_nee(driver).click();
 		}
-	
+
 		if (invuldata[1].equals("ja")) {
 			InvesteringsregelingenObjecten.BeroepOpOntheffingNaasteVerwanten_ja(driver).click();
 		} else {
 			InvesteringsregelingenObjecten.BeroepOpOntheffingNaasteVerwanten_nee(driver).click();
 		}
-		
+
 		if (invuldata[2].equals("ja")) {
 			InvesteringsregelingenObjecten.BeroepOpOntheffingNaasteNalatenschap_ja(driver).click();
 		} else {
@@ -4088,7 +4152,7 @@ public class Steps extends AbstractSteps {
 		} else {
 			InvesteringsregelingenObjecten.InvesteringsAftrek_nee(driver).click();
 		}
-		
+
 		if (invuldata[4].equals("ja")) {
 			InvesteringsregelingenObjecten.DesinvesteringsAftrek_ja(driver).click();
 		} else {
@@ -4096,24 +4160,25 @@ public class Steps extends AbstractSteps {
 		}
 		if (invuldata[5].equals("ja")) {
 			InvesteringsregelingenObjecten.ResearchAndDevelopment_ja(driver).click();
-			
+
 		} else {
 			InvesteringsregelingenObjecten.ResearchAndDevelopment_nee(driver).click();
 		}
-		
+
 		InvesteringsregelingenObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
 		InvesteringsregelingenObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys(invuldata[6]);
 		InvesteringsregelingenObjecten.bedrag(driver).clear();
 		InvesteringsregelingenObjecten.bedrag(driver).sendKeys(invuldata[7]);
 		InvesteringsregelingenObjecten.TotaalKleinschalig(driver).sendKeys(invuldata[8]);
-		
+
 	}
 
 	@Then("^i can validate the totals on the formulier Specificatie Investeringsregelingen from \"(.*?)\"$")
-	public void i_can_validate_the_totals_on_the_formulier_Specificatie_Investeringsregelingen_from(String arg1) throws Throwable {
-	
+	public void i_can_validate_the_totals_on_the_formulier_Specificatie_Investeringsregelingen_from(String arg1)
+			throws Throwable {
+
 	}
-	
+
 	@Given("^open the form Toelichting desinvesteringsbijtelling$")
 	public void open_the_form_Toelichting_desinvesteringsbijtelling() throws Throwable {
 		NavigerenObjecten.ToelichtingDesinvesteringsbijtelling(driver).click();
@@ -4123,32 +4188,32 @@ public class Steps extends AbstractSteps {
 	public void i_can_fill_out_the_form_Toelichting_desinvesteringsbijtelling_with(String Tcid) throws Throwable {
 
 		String[] invuldata = codebase.ToelichtingDesinvesteringsbijtellingXLS.HaalData(1);
-		
+
 		ToelichtingDesinvesteringsbijtellingObjecten.OmschrijvingBedrijfsmiddel(driver).clear();
 		ToelichtingDesinvesteringsbijtellingObjecten.OmschrijvingBedrijfsmiddel(driver).sendKeys(invuldata[0]);
-		
+
 		ToelichtingDesinvesteringsbijtellingObjecten.Investeringsbedrag(driver).sendKeys(invuldata[1]);
-		
+
 		WebElement mySelectElm = ToelichtingDesinvesteringsbijtellingObjecten.Investeringsjaar(driver);
 		Select mySelect = new Select(mySelectElm);
 		mySelect.selectByVisibleText(invuldata[2]);
-		
+
 		ToelichtingDesinvesteringsbijtellingObjecten.PercentageKleinschaligheidsaftrek(driver).sendKeys(invuldata[3]);
-		
+
 		ToelichtingDesinvesteringsbijtellingObjecten.Overdrachtsprijs(driver).sendKeys(invuldata[4]);
-		
+
 		ToelichtingDesinvesteringsbijtellingObjecten.AandeelInvestering(driver).sendKeys(invuldata[5]);
 	}
 
 	@Then("^i can validate the totals on the formulier Toelichting desinvesteringsbijtelling from \"(.*?)\"$")
-	public void i_can_validate_the_totals_on_the_formulier_Toelichting_desinvesteringsbijtelling_from(String arg1) throws Throwable {
-	   
+	public void i_can_validate_the_totals_on_the_formulier_Toelichting_desinvesteringsbijtelling_from(String arg1)
+			throws Throwable {
+
 	}
-	
+
 	@When("^open the form Specificatie Dochtermaatschappij$")
 	public void open_the_form_Specificatie_Dochtermaatschappij() throws Throwable {
 		NavigerenObjecten.SpecificatieDochtermaatschappij(driver).click();
-		
 
 	}
 
@@ -4156,109 +4221,222 @@ public class Steps extends AbstractSteps {
 	public void i_can_fill_out_the_form_Specificatie_Dochtermaatschappij_with(String Tc01) throws Throwable {
 		String Locatie = "C:\\testdata\\spec dochtermaatschappij.xlsx";
 		String Tab = "Tc01";
-		
-		
+
 		SpecificatieDochtermaatschappijObjecten.NaamDochtermaatschappij(driver).clear();
-		SpecificatieDochtermaatschappijObjecten.NaamDochtermaatschappij(driver).sendKeys(LeesXLS.HaalText("B", 5, Tab, Locatie));
-		
+		SpecificatieDochtermaatschappijObjecten.NaamDochtermaatschappij(driver)
+				.sendKeys(LeesXLS.HaalText("B", 5, Tab, Locatie));
+
 		SpecificatieDochtermaatschappijObjecten.RSINFiscaalNummer(driver).clear();
-		SpecificatieDochtermaatschappijObjecten.RSINFiscaalNummer(driver).sendKeys(LeesXLS.HaalData("B", 6, Tab, Locatie));
-		
+		SpecificatieDochtermaatschappijObjecten.RSINFiscaalNummer(driver)
+				.sendKeys(LeesXLS.HaalData("B", 6, Tab, Locatie));
+
 		SpecificatieDochtermaatschappijObjecten.ActiviteitenOnderneming(driver).clear();
-		SpecificatieDochtermaatschappijObjecten.ActiviteitenOnderneming(driver).sendKeys(LeesXLS.HaalText("B", 7, Tab, Locatie));
-		
-		// Uitvouw moment 1 
+		SpecificatieDochtermaatschappijObjecten.ActiviteitenOnderneming(driver)
+				.sendKeys(LeesXLS.HaalText("B", 7, Tab, Locatie));
+
+		// Uitvouw moment 1
 		if (LeesXLS.HaalText("B", 9, Tab, Locatie).equals("ja")) {
 			SpecificatieDochtermaatschappijObjecten.dochtermaatschappijGevoegd_ja(driver).click();
 
-			SpecificatieDochtermaatschappijObjecten.WaarderingSchuldBalansDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 13, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.WaarderingVorderingBalansAndereMaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 14, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.BelasteVrijvalSchuldDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 15, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.WaarderingSchuldBalansAndereMaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 16, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.WaarderingVorderingBalansDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 17, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.BelasteVrijvalSchuldAndereMaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 18, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.WaardeEconomischVerkeerDeelnemingDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 19, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.WaarderingDeelnemingDochtermaatschappijBalansMoeder(driver).sendKeys(LeesXLS.HaalData("B", 20, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.FiscaalVermogenDochtermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 21, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.HerwaarderingDeelnemingVoorafgaandeAangifteMoedermaatschappij(driver).sendKeys(LeesXLS.HaalData("B", 22, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-			
-		
-		}
-		else {			
+			SpecificatieDochtermaatschappijObjecten.WaarderingSchuldBalansDochtermaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 13, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingVorderingBalansAndereMaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 14, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.BelasteVrijvalSchuldDochtermaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 15, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingSchuldBalansAndereMaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 16, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingVorderingBalansDochtermaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 17, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.BelasteVrijvalSchuldAndereMaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 18, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaardeEconomischVerkeerDeelnemingDochtermaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 19, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.WaarderingDeelnemingDochtermaatschappijBalansMoeder(driver)
+					.sendKeys(LeesXLS.HaalData("B", 20, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.FiscaalVermogenDochtermaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 21, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten
+					.HerwaarderingDeelnemingVoorafgaandeAangifteMoedermaatschappij(driver)
+					.sendKeys(LeesXLS.HaalData("B", 22, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+
+		} else {
 			SpecificatieDochtermaatschappijObjecten.dochtermaatschappijGevoegd_nee(driver).click();
 		}
-		
+
 		// Uitvouw moment 2
 		if (LeesXLS.HaalText("B", 10, Tab, Locatie).equals("ja")) {
 			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijOntvoegd_ja(driver).click();
-			
-//			Voor ontvoegde dochtermaatschappij opgeofferd bedrag
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Waardering onderlinge vordering ontvoegende dochtermaatschappij 
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Waardering onderlinge schuld ontvoegende dochtermaatschappij
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Waardering onderlinge vordering van andere maatschappij 
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Waardering onderlinge schuld van andere maatschappij 
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Is het tijdstip dat onmiddellijk aan het ontvoegingstijdstip vooraf gaat, sprake van een verplichte herwaardering van vermogensbestanddelen omdat binnen de fiscale eenheid aan of door de ontvoegende dochtermaatschappij een of meer vermogensbestanddelen zijn overgedragen waarvan, op het moment van de overdracht, de waarde in het economisch verkeer hoger was dan de boekwaarde (art. 15ai Wet VPB)?
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Is het betreffende vermogensbestanddeel nog in bezit van de overnemer?
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Heeft de overnemer het betreffende vermogensbestanddeel voorafgaand aan de ontvoeging ontvreemd? 
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			De waarde in het economisch verkeer op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip van het/de overgedragen vermogensbestandde(e)l(en) dat/die nog in bezit zijn van de overnemer. De waarde in het economisch verkeer dient alleen ingevuld te worden als de belastingplichtige geen gebruik maakt van de tegenbewijsregeling van art. 15ai-2.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			De waarde in het economisch verkeer van het overgedragen bestanddeel op het tijdstip van de overdracht, verminderd met de in aanmerking te nemen afschrijving.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			De fiscale boekwaarde op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip van het/de overgedragen vermogensbestandde(e)l(en) dat/die nog in bezit is/zijn van de overnemer.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Het bedrag dat als gevolg van de overdracht van het/de vermogensbestandde(e)l(en) tot de winst van de fiscale eenheid wordt gerekend.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Heeft de overnemer bij de vervreemding van het vermogensbestanddeel een herinvesteringsreserve gevormd?
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Is de betreffende herinvesteringsreserve al afgeboekt op een vervangend bedrijfsmiddel? 
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			De winst van de fiscale eenheid vanwege vrijval door de overnemer gevormde herinvesteringsreserve. 
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			De waarde in het economisch verkeer op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip van het vervangende bedrijfsmiddel.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			De boekwaarde, op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip, van het vervangende bedrijfsmiddel.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Het bedrag zijnde het verschil tussen de waarde in het economisch verkeer en de fiscale boekwaarde van het vervangende bedrijfmiddel op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip. Dit bedrag wordt tot de winst van de fiscale eenheid gerekend.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Staat op de balans van de ontvoegende dochtermaatschappij een herinvesteringsreserve waarvan het bij die reserve behorende voornemen tot vervanging berust bij een andere maatschappij?SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-//			Staat op de balans van een andere maatschappij een herinvesteringsreserve waarvan het bij die reserve behorende voornemen tot vervanging berust bij de ontvoegende dochtermaatschappij?
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));			
-			
-			
-			
-			
-			
-		}
-		else {			
+
+			// Voor ontvoegde dochtermaatschappij opgeofferd bedrag
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Waardering onderlinge vordering ontvoegende dochtermaatschappij
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Waardering onderlinge schuld ontvoegende dochtermaatschappij
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Waardering onderlinge vordering van andere maatschappij
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Waardering onderlinge schuld van andere maatschappij
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Is het tijdstip dat onmiddellijk aan het ontvoegingstijdstip
+			// vooraf gaat, sprake van een verplichte herwaardering van
+			// vermogensbestanddelen omdat binnen de fiscale eenheid aan of door
+			// de ontvoegende dochtermaatschappij een of meer
+			// vermogensbestanddelen zijn overgedragen waarvan, op het moment
+			// van de overdracht, de waarde in het economisch verkeer hoger was
+			// dan de boekwaarde (art. 15ai Wet VPB)?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Is het betreffende vermogensbestanddeel nog in bezit van de
+			// overnemer?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Heeft de overnemer het betreffende vermogensbestanddeel
+			// voorafgaand aan de ontvoeging ontvreemd?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// De waarde in het economisch verkeer op het tijdstip dat
+			// onmiddellijk voorafgaat aan het ontvoegingstijdstip van het/de
+			// overgedragen vermogensbestandde(e)l(en) dat/die nog in bezit zijn
+			// van de overnemer. De waarde in het economisch verkeer dient
+			// alleen ingevuld te worden als de belastingplichtige geen gebruik
+			// maakt van de tegenbewijsregeling van art. 15ai-2.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// De waarde in het economisch verkeer van het overgedragen
+			// bestanddeel op het tijdstip van de overdracht, verminderd met de
+			// in aanmerking te nemen afschrijving.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// De fiscale boekwaarde op het tijdstip dat onmiddellijk voorafgaat
+			// aan het ontvoegingstijdstip van het/de overgedragen
+			// vermogensbestandde(e)l(en) dat/die nog in bezit is/zijn van de
+			// overnemer.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Het bedrag dat als gevolg van de overdracht van het/de
+			// vermogensbestandde(e)l(en) tot de winst van de fiscale eenheid
+			// wordt gerekend.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Heeft de overnemer bij de vervreemding van het
+			// vermogensbestanddeel een herinvesteringsreserve gevormd?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Is de betreffende herinvesteringsreserve al afgeboekt op een
+			// vervangend bedrijfsmiddel?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// De winst van de fiscale eenheid vanwege vrijval door de overnemer
+			// gevormde herinvesteringsreserve.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// De waarde in het economisch verkeer op het tijdstip dat
+			// onmiddellijk voorafgaat aan het ontvoegingstijdstip van het
+			// vervangende bedrijfsmiddel.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// De boekwaarde, op het tijdstip dat onmiddellijk voorafgaat aan
+			// het ontvoegingstijdstip, van het vervangende bedrijfsmiddel.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Het bedrag zijnde het verschil tussen de waarde in het economisch
+			// verkeer en de fiscale boekwaarde van het vervangende
+			// bedrijfmiddel op het tijdstip dat onmiddellijk voorafgaat aan het
+			// ontvoegingstijdstip. Dit bedrag wordt tot de winst van de fiscale
+			// eenheid gerekend.
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Staat op de balans van de ontvoegende dochtermaatschappij een
+			// herinvesteringsreserve waarvan het bij die reserve behorende
+			// voornemen tot vervanging berust bij een andere
+			// maatschappij?SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B",
+			// 23, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			// Staat op de balans van een andere maatschappij een
+			// herinvesteringsreserve waarvan het bij die reserve behorende
+			// voornemen tot vervanging berust bij de ontvoegende
+			// dochtermaatschappij?
+			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
+					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+
+		} else {
 			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijOntvoegd_nee(driver).click();
 		}
-		
-		
+
 		// Uitvouw moment 3
 		if (LeesXLS.HaalText("B", 11, Tab, Locatie).equals("ja")) {
 			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeeindigd_ja(driver).click();
-		}
-		else {			
+		} else {
 			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeeindigd_nee(driver).click();
 		}
-		
-		
-		
+
 	}
 
 	@Then("^i can validate the totals on the formulier Specificatie Dochtermaatschappijbr(\\d+) from \"(.*?)\"$")
-	public void i_can_validate_the_totals_on_the_formulier_Specificatie_Dochtermaatschappijbr_from(int arg1, String arg2) throws Throwable {
+	public void i_can_validate_the_totals_on_the_formulier_Specificatie_Dochtermaatschappijbr_from(int arg1,
+			String arg2) throws Throwable {
+	}
 
+	@When("^open the form Berekening Belastbaar Bedrag$")
+	public void open_the_form_Berekening_Belastbaar_Bedrag() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		
+		NavigerenObjecten.BerekeningBelastbaarBedrag(driver).click();
+	}
 
-	}	
+	@Then("^i can fill out the form Berekening Belastbaar Bedrag with \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Berekening_Belastbaar_Bedrag_with(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		
+		Thread.sleep(700);
+		
+		//Berekening Belastbaar Bedrag
+		BerekeningBelastbaarBedragObjecten.BosbouwLandbouwvrijstelling(driver).sendKeys("1000");
+		BerekeningBelastbaarBedragObjecten.Kwijtscheldingswinst(driver).sendKeys("1001");
+		BerekeningBelastbaarBedragObjecten.WinstSplitsingJuridischeFusie(driver).sendKeys("1002");
+		BerekeningBelastbaarBedragObjecten.Mobiliteitsprojectvrijstelling(driver).sendKeys("1003");
+		BerekeningBelastbaarBedragObjecten.VrijgesteldeVoordelenOverheidsondernemingen(driver).sendKeys("1004");
+		BerekeningBelastbaarBedragObjecten.OverigeVrijgesteldeWinstbestanddelen(driver).sendKeys("1005");
+		
+		//Tabel kosten
+		
+		BerekeningBelastbaarBedragObjecten.OmschrijvingVanNietAftrekbareKosten(driver).sendKeys("1006");
+		BerekeningBelastbaarBedragObjecten.BedragNietAftrekbareBoetes(driver).sendKeys("1007");
+		BerekeningBelastbaarBedragObjecten.OmschrijvingOverigeVanAftrekBeperkteKosten(driver).sendKeys("1008");
+		BerekeningBelastbaarBedragObjecten.BedragOverigeAftrekUitgeslotenAftrekBeperkteBosten(driver).sendKeys("1009");
+		
+		//Tabel reserves
+		
+		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveToevoeging(driver).sendKeys("1010");
+		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveOnttrekking(driver).sendKeys("1011");
+		
+		
+		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveToevoeging(driver).sendKeys("1012");
+		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveOnttrekking(driver).sendKeys("1013");
+		
+		
+		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveToevoeging(driver).sendKeys("1014");
+		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveOnttrekking(driver).sendKeys("1015");
+		
+		
+		
+		
+		
+	
+	}
+
+	@Then("^i can validate the totals on the formulier Berekening Belastbaar Bedrag from \"(.*?)\"$")
+	public void i_can_validate_the_totals_on_the_formulier_Berekening_Belastbaar_Bedrag_from(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		
+	}
 }

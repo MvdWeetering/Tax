@@ -118,6 +118,10 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Specificatie dochtermaatschappij"));
 		return element;
 	}
+	public static WebElement BerekeningBelastbaarBedrag (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Berekening belastbaar bedrag"));
+		return element;
+	}
 	
-	//Toelichting desinvesteringsbijtelling
+	
 }
