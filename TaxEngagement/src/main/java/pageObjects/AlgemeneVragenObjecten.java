@@ -27,6 +27,8 @@ public class AlgemeneVragenObjecten {
 		return element;
 	}
 	
+	
+	
 	public static WebElement vraag3_yes(WebDriver driver){
 		element = driver.findElement(By.cssSelector("[for='idxdt9tzc0']"));
 		return element;

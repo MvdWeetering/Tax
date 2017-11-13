@@ -32,8 +32,8 @@ public class XBRLvalidate {
 	public void the_reading_of_the_XBRL_is_correct() throws Throwable {
 
 		ArrayList<String> CheckEmpty = new ArrayList<String>();
-		CheckEmpty = ReadXML.GetXMLvalue("xbrli:measure");
-		assertTrue(!CheckEmpty.isEmpty());
+		CheckEmpty = ReadXML.GetXMLvalue("xbrli:xbrl");
+	//	assertTrue(!CheckEmpty.isEmpty());
 	}
 
 	@Given("^the reading of the XLS is correct$")
@@ -1464,7 +1464,7 @@ public class XBRLvalidate {
 		// BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber
 		// Meldingsnummer energie/milieu-investeringsaftrek
 		Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
-				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber", 4));
+				"bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentNotificationNumber", 9));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentPercentage
 		// Percentage energie/milieu-investeringsaftrek
@@ -1474,12 +1474,12 @@ public class XBRLvalidate {
 		// BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount
 		// Berekende investeringsaftrek per investering
 		 Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
-		 "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 13));
+		 "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentAllowancePerInvestmentAmount", 13));
 
 		// BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear
 		// Investeringsaftrek energie/milieu dit boekjaar
 		 Result.addAll(XMLandXLScompare.XMLandXLScheckerArrays("investeringsaftrek",
-		 "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentDescription", 15));
+		 "bd-bedr:BusinessAssetEnvironmentalEnergyInvestmentAllowanceThisFinancialYear", 15));
 
 	}
 
@@ -1725,68 +1725,68 @@ public class XBRLvalidate {
 //		Activum in innovatiebox omschrijving
 		
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBusinessAssetsDescription").toString(),
-				LeesXLS.HaalText("B", 2, Tab, Locatie), LeesXLS.HaalText("B", 3, Tab, Locatie)));
+				LeesXLS.HaalText("B", 2, Tab, Locatie), LeesXLS.HaalText("B", 2, Tab, Locatie)));
 
 //		InnovationBoxBusinessAssetsProductionCosts	
 //		Activum in innovatiebox voortbrengingskosten
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBusinessAssetsDescription").toString(),
-				LeesXLS.HaalData("C", 2, Tab, Locatie), LeesXLS.HaalData("C", 3, Tab, Locatie)));
+				LeesXLS.HaalData("C", 2, Tab, Locatie), LeesXLS.HaalData("C",2, Tab, Locatie)));
 		
 //		InnovationBoxFlatRateArrangementExists	
 //		Innovatiebox forfaitaire regeling
 
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxFlatRateArrangementExists").toString(),
-				LeesXLS.HaalText("D", 2, Tab, Locatie), LeesXLS.HaalText("D", 3, Tab, Locatie)));
+				LeesXLS.HaalText("D", 2, Tab, Locatie), LeesXLS.HaalText("D", 2, Tab, Locatie)));
 		
 			
 //		InnovationBoxBalanceThresholdPreviousFinancialYear	
 //		Saldo drempel innovatiebox vorig boekjaar
 		
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBalanceThresholdPreviousFinancialYear").toString(),
-				LeesXLS.HaalData("E", 2, Tab, Locatie), LeesXLS.HaalData("E", 3, Tab, Locatie)));
+				LeesXLS.HaalData("E", 2, Tab, Locatie), LeesXLS.HaalData("E", 2, Tab, Locatie)));
 		
 //		InnovationBoxProductionCostsTotal	
 //		Innovatiebox voortbrengingskosten totaal
 		
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxProductionCostsTotal").toString(),
-				LeesXLS.HaalData("F", 2, Tab, Locatie), LeesXLS.HaalData("F", 3, Tab, Locatie)));
+				LeesXLS.HaalData("F", 2, Tab, Locatie), LeesXLS.HaalData("F", 2, Tab, Locatie)));
 	
 //		InnovationBoxExploitationLoss	
 //		Innovatiebox exploitatieverliezen in dit boekjaar
 		
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxExploitationLoss").toString(),
-				LeesXLS.HaalData("G", 2, Tab, Locatie), LeesXLS.HaalData("G", 3, Tab, Locatie)));
+				LeesXLS.HaalData("G", 2, Tab, Locatie), LeesXLS.HaalData("G",2, Tab, Locatie)));
 		
 //		BenefitsForegoingYearGrantPatent	
 //		Voordelen genoten voorafgaand aan jaar octrooi verlening
 		
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:BenefitsForegoingYearGrantPatent").toString(),
-				LeesXLS.HaalData("H", 2, Tab, Locatie), LeesXLS.HaalData("H", 3, Tab, Locatie)));
+				LeesXLS.HaalData("H", 2, Tab, Locatie), LeesXLS.HaalData("H", 2, Tab, Locatie)));
 		
 //		InnovationBoxThresholdTakenOverOccasionJoiningOrRemovalSubsidiary	
 //		Overgenomen drempel innovatiebox bij voeging en ontvoeging
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxThresholdTakenOverOccasionJoiningOrRemovalSubsidiary").toString(),
-				LeesXLS.HaalData("I", 2, Tab, Locatie), LeesXLS.HaalData("I", 3, Tab, Locatie)));
+				LeesXLS.HaalData("I", 2, Tab, Locatie), LeesXLS.HaalData("I", 2, Tab, Locatie)));
 		
 //		InnovationBoxProductionCostsToOvertake	
 //		In te lopen voortbrengingskosten innovatiebox in dit boekjaar
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxProductionCostsToOvertake").toString(),
-				LeesXLS.HaalData("J", 2, Tab, Locatie), LeesXLS.HaalData("J", 3, Tab, Locatie)));
+				LeesXLS.HaalData("J", 2, Tab, Locatie), LeesXLS.HaalData("J", 2, Tab, Locatie)));
 		
 //		InnovationBoxBenefitsLessThanThreshold	
 //		Genoten voordeel onder drempel innovatiebox
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBenefitsLessThanThreshold").toString(),
-				LeesXLS.HaalData("K", 2, Tab, Locatie), LeesXLS.HaalData("K", 3, Tab, Locatie)));
+				LeesXLS.HaalData("K", 2, Tab, Locatie), LeesXLS.HaalData("K", 2, Tab, Locatie)));
 		
 //		InnovationBoxBenefitsExceedingThreshold	
 //		Genoten voordeel boven drempel innovatiebox
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBenefitsExceedingThreshold").toString(),
-				LeesXLS.HaalData("L", 2, Tab, Locatie), LeesXLS.HaalData("L", 3, Tab, Locatie)));
+				LeesXLS.HaalData("L", 2, Tab, Locatie), LeesXLS.HaalData("L", 2, Tab, Locatie)));
 		
 //		InnovationBoxBalanceThresholdEndFinancialYear	
 //		Saldo in te lopen voortbrengingskosten einde boekjaar
 		Result.addAll(vergelijk.VergelijkTupple(ReadXML.GetXMLvalue("bd-bedr:InnovationBoxBalanceThresholdEndFinancialYear").toString(),
-				LeesXLS.HaalData("M", 2, Tab, Locatie), LeesXLS.HaalData("M", 3, Tab, Locatie)));
+				LeesXLS.HaalData("M", 2, Tab, Locatie), LeesXLS.HaalData("M", 2, Tab, Locatie)));
 		
 	}
 	

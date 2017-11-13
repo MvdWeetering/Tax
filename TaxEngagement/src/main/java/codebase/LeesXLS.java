@@ -152,8 +152,11 @@ public class LeesXLS {
 	}
 	
 	public static void main(String[] args) {
-	Locatie = "C:\\testdata\\spec dochtermaatschappij.xlsx";
-	System.out.println(LeesXLS.HaalText("B", 5, "TC01", Locatie));
+	
+		String Tab = "Tc01";
+		String Locatie = "C:\\testdata\\toelichting winst en verliesrekening.xlsx";
+		
+		System.out.println(LeesXLS.HaalData("B", 5, Tab, Locatie));
 
 	}
 }

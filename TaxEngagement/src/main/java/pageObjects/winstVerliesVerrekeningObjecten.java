@@ -9,7 +9,7 @@ public class winstVerliesVerrekeningObjecten {
 
 	@FieldName(name = "VerrekeningVerliesDitBoekjaar")
 	public static WebElement VerrekeningVerliesDitBoekjaar(WebDriver driver) {
-		element = driver.findElement(By.id("idVerrVerlDitBoek"));
+		element = driver.findElement(By.id("idxdt9tzxv"));
 		return element;
 	}
 

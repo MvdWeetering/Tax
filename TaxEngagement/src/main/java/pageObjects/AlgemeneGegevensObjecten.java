@@ -104,9 +104,18 @@ public class AlgemeneGegevensObjecten {
 		return element;
 	}
 
-	@FieldName(name = "NaamKoepelorgFisDienstverl")
+	public static WebElement EenofMeerKoepel_ja(WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idCWNLKoepelOrg']"));
+		return element;
+	}
+
+	public static WebElement EenofMeerKoepel_nee(WebDriver driver){
+		element = driver.findElement(By.id("idCWNLKoepelOrg-no"));
+		return element;
+	}
+	
 	public static WebElement NaamKoepelorgFisDienstverl(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tz61"));
+		element = driver.findElement(By.id("idtableAG3:0-2"));
 		return element;
 	}
 	

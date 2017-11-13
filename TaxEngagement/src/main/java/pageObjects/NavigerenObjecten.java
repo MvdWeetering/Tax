@@ -39,12 +39,12 @@ public class NavigerenObjecten {
 	}
 	
 	public static WebElement ClickCloud(WebDriver driver){
-	    element = driver.findElement(By.className(("GJJ2145DCFD")));
+	    element = driver.findElement(By.className(("GKQUE3LBGGD")));
 		return element;
 	}
 	public static WebElement Zoekveld(WebDriver driver){
 		WebElement parent = driver.findElement(By.id("main"));
-	    element = parent.findElement(By.cssSelector("[placeholder='Search...']"));
+	    element = parent.findElement(By.cssSelector("[placeholder='Zoeken...']"));
 		return element;
 	}
 	
@@ -122,6 +122,9 @@ public class NavigerenObjecten {
 	    element = driver.findElement(By.partialLinkText("Berekening belastbaar bedrag"));
 		return element;
 	}
-	
+	public static WebElement toelichtingWinstenVerliesRekening (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Toelichting winst- en verliesrekening"));
+		return element;
+	}	
 	
 }

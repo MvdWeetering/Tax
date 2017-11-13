@@ -167,28 +167,28 @@ public class BerekeningBelastbaarBedragObjecten {
 //	Overige fiscale reserves Toevoeging
 	@FieldName(name = "OverigeFiscaleReservesToevoeging")
 	public static WebElement OverigeFiscaleReservesToevoeging(WebDriver driver){
-		element = driver.findElement(By.id(""));
+		element = driver.findElement(By.id("idxdt9tzvm"));
 		return element;
 	}
 	
 //	Overige fiscale reserves Onttrekking
 	@FieldName(name = "OverigeFiscaleReservesOnttrekking")
 	public static WebElement OverigeFiscaleReservesOnttrekking(WebDriver driver){
-		element = driver.findElement(By.id(""));
+		element = driver.findElement(By.id("idxdt9tzvo"));
 		return element;
 	}	
 	
 //	Totalen Toevoeging
 	@FieldName(name = "TotalenToevoeging")
 	public static WebElement TotalenToevoeging(WebDriver driver){
-		element = driver.findElement(By.id(""));
+		element = driver.findElement(By.id("idxdt9tzvr"));
 		return element;
 		
 	}	
 //	Totalen Onttrekking
 	@FieldName(name = "TotalenOnttrekking")
 	public static WebElement TotalenOnttrekking(WebDriver driver){
-		element = driver.findElement(By.id(""));
+		element = driver.findElement(By.id("idxdt9tzvq"));
 		return element;
 	}
 	
@@ -389,19 +389,19 @@ public class BerekeningBelastbaarBedragObjecten {
 //	Belastbare winst na tijdstip belangenwijziging
 	@FieldName(name = "BelastbareWinstNaTijdstipBelangenwijziging")
 	public static WebElement BelastbareWinstNaTijdstipBelangenwijziging(WebDriver driver){
-		element = driver.findElement(By.id(""));
+		element = driver.findElement(By.id("idxdt9tzx7"));
 		return element;
 	}
 //	Eliminatie winst boekjaar
 	@FieldName(name = "EliminatieWinstBoekjaar")
 	public static WebElement EliminatieWinstBoekjaar(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzx7"));
+		element = driver.findElement(By.id("idxdt9tzx8"));
 		return element;
 	}
 //	Imputatie winst vorig boekjaar
 	@FieldName(name = "ImputatieWinstVorigBoekjaar")
 	public static WebElement ImputatieWinstVorigBoekjaar(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzx8"));
+		element = driver.findElement(By.id("idxdt9tzxa"));
 		return element;
 	}
 //	Belastbare winst

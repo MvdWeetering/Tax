@@ -203,20 +203,90 @@ public class SpecificatieDochtermaatschappijObjecten {
 	
 //	Heeft de overnemer bij de vervreemding van het vermogensbestanddeel een herinvesteringsreserve gevormd?
 	
+	public static WebElement OvernemerVervreemdVermogensbestanddeelHerinvesteringsreserve_ja (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzb1']"));
+		return element;
+	}
+	
+	public static WebElement OvernemerVervreemdVermogensbestanddeelHerinvesteringsreserve_nee (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzb1-no']"));
+		return element;
+	}
+	
+	
 //	Is de betreffende herinvesteringsreserve al afgeboekt op een vervangend bedrijfsmiddel? 
+
+	public static WebElement BetreffendeHerinvesteringsReserveAfgeboekt_ja (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzb3']"));
+		return element;
+	}
+	
+	public static WebElement BetreffendeHerinvesteringsReserveAfgeboekt_nee (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzb3-no']"));
+		return element;
+	}
 	
 //	De winst van de fiscale eenheid vanwege vrijval door de overnemer gevormde herinvesteringsreserve. 
+
+	public static WebElement WinstFiscaleEenheidvanwegeVrijval (WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzb6"));
+		return element;
+	}
 	
 //	De waarde in het economisch verkeer op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip van het vervangende bedrijfsmiddel.
+
+	public static WebElement WaardeEconomischVerkeerTijdstipVoorafgaatOntvoegingstijdstip (WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzar"));
+		return element;
+	}		
 	
 //	De boekwaarde, op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip, van het vervangende bedrijfsmiddel.
 	
+	public static WebElement BoekwaardeOpTijdstipOnmiddelijkvoorafgaatOntvoegingsTijdstip (WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzau"));
+		return element;
+	}
+	
 //	Het bedrag zijnde het verschil tussen de waarde in het economisch verkeer en de fiscale boekwaarde van het vervangende bedrijfmiddel op het tijdstip dat onmiddellijk voorafgaat aan het ontvoegingstijdstip. Dit bedrag wordt tot de winst van de fiscale eenheid gerekend.
+	
+	public static WebElement BedragZijndeVerschilWaardeEconomischVerkeerEnFiscaleBoekwaarde (WebDriver driver){
+		element = driver.findElement(By.id("idxdt9tzau"));
+		return element;
+	}	
+	
+	
 	
 //	Staat op de balans van de ontvoegende dochtermaatschappij een herinvesteringsreserve waarvan het bij die reserve behorende voornemen tot vervanging berust bij een andere maatschappij?SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
 	
+	
+	public static WebElement BalansOntvoegendeDochterMaatschappijHerinvesteringsreserve_ja (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbc']"));
+		return element;
+	}
+	
+	public static WebElement BalansOntvoegendeDochterMaatschappijHerinvesteringsreserve_nee (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbc-no']"));
+		return element;
+	}
+		
+	
+	
 //	Staat op de balans van een andere maatschappij een herinvesteringsreserve waarvan het bij die reserve behorende voornemen tot vervanging berust bij de ontvoegende dochtermaatschappij?
 				
+	
+	public static WebElement BalansAndereMaatschappijHerinvesteringsReserveVoornemen_ja (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbc-no']"));
+		return element;
+	}
+	
+	
+	public static WebElement BalansAndereMaatschappijHerinvesteringsReserveVoornemen_nee (WebDriver driver){
+		element = driver.findElement(By.cssSelector("[for='idxdt9tzbc-no']"));
+		return element;
+	}
+	
+	
+	
 	
 	//Uitklap 3
 	//Is de dochtermaatschappij be�indigd door ontbinding en vereffening?
