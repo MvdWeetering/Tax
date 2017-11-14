@@ -52,7 +52,7 @@ public class Steps extends AbstractSteps {
 	public void i_want_to_login_with_browser(String Browser) throws Throwable {
 
 		driver = Inloggen.GetDriver(Browser);
-
+		
 		String InlogUrl = null;
 
 		//test 
@@ -65,6 +65,7 @@ public class Steps extends AbstractSteps {
 
 		driver.get(InlogUrl);
 		driver.manage().window().maximize();
+		
 	}
 
 	@When("^I type username \"([^\"]*)\" and password \"([^\"]*)\"$")
@@ -73,7 +74,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -88,7 +89,6 @@ public class Steps extends AbstractSteps {
 		Thread.sleep(2000);
 		NavigerenObjecten.NavigerenTax(driver).click();
 		Thread.sleep(3000);
-
 	}
 
 	@When("^open the Project \"([^\"]*)\"$")
@@ -4335,8 +4335,10 @@ public class Steps extends AbstractSteps {
 			// van de overnemer. De waarde in het economisch verkeer dient
 			// alleen ingevuld te worden als de belastingplichtige geen gebruik
 			// maakt van de tegenbewijsregeling van art. 15ai-2.
+			
 			SpecificatieDochtermaatschappijObjecten.WaardeEconomischVerkeerOpTijdstipOnmiddellijkVoorafgaatAanOntvoegingstijdstip(driver)
 					.sendKeys(LeesXLS.HaalData("B", 33, Tab, Locatie));
+			
 			// De waarde in het economisch verkeer van het overgedragen
 			// bestanddeel op het tijdstip van de overdracht, verminderd met de
 			// in aanmerking te nemen afschrijving.
@@ -4358,62 +4360,77 @@ public class Steps extends AbstractSteps {
 			// vermogensbestanddeel een herinvesteringsreserve gevormd?
 			
 			if (LeesXLS.HaalText("B", 37, Tab, Locatie).equals("ja")) {
-			//	SpecificatieDochtermaatschappijObjecten.herin(driver);
+				SpecificatieDochtermaatschappijObjecten.OvernemerVervreemdVermogensbestanddeelHerinvesteringsreserve_ja(driver).click();;
 			}
 			else {
-				SpecificatieDochtermaatschappijObjecten.OvernemerBetreffendeVermogensbestanddeelVoorafgaandOntvoegingOntvreemd_nee(driver).click();
+				SpecificatieDochtermaatschappijObjecten.OvernemerVervreemdVermogensbestanddeelHerinvesteringsreserve_nee(driver).click();
 			}
-			
-					
+								
 			// Is de betreffende herinvesteringsreserve al afgeboekt op een
 			// vervangend bedrijfsmiddel?
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
-					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			if (LeesXLS.HaalText("B", 38, Tab, Locatie).equals("ja")) {
+				SpecificatieDochtermaatschappijObjecten.BetreffendeHerinvesteringsReserveAfgeboekt_ja(driver).click();;
+			}
+			else {
+				SpecificatieDochtermaatschappijObjecten.BetreffendeHerinvesteringsReserveAfgeboekt_nee(driver).click();
+			}
+			
 			// De winst van de fiscale eenheid vanwege vrijval door de overnemer
 			// gevormde herinvesteringsreserve.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
-					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			
+			SpecificatieDochtermaatschappijObjecten.WinstFiscaleEenheidvanwegeVrijval(driver)
+					.sendKeys(LeesXLS.HaalData("B", 39, Tab, Locatie));
+			
 			// De waarde in het economisch verkeer op het tijdstip dat
 			// onmiddellijk voorafgaat aan het ontvoegingstijdstip van het
 			// vervangende bedrijfsmiddel.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
-					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			
+			SpecificatieDochtermaatschappijObjecten.WaardeEconomischVerkeerOpTijdstipOnmiddellijkVoorafgaatAanOntvoegingstijdstip(driver)
+					.sendKeys(LeesXLS.HaalData("B", 40, Tab, Locatie));
 			// De boekwaarde, op het tijdstip dat onmiddellijk voorafgaat aan
 			// het ontvoegingstijdstip, van het vervangende bedrijfsmiddel.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
-					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			
+			SpecificatieDochtermaatschappijObjecten.BoekwaardeOpTijdstipOnmiddelijkvoorafgaatOntvoegingsTijdstip(driver)
+					.sendKeys(LeesXLS.HaalData("B", 41, Tab, Locatie));
+			
 			// Het bedrag zijnde het verschil tussen de waarde in het economisch
 			// verkeer en de fiscale boekwaarde van het vervangende
 			// bedrijfmiddel op het tijdstip dat onmiddellijk voorafgaat aan het
 			// ontvoegingstijdstip. Dit bedrag wordt tot de winst van de fiscale
 			// eenheid gerekend.
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
-					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			SpecificatieDochtermaatschappijObjecten.BedragZijndeVerschilWaardeEconomischVerkeerEnFiscaleBoekwaarde(driver)
+					.sendKeys(LeesXLS.HaalData("B", 42, Tab, Locatie));
+			
 			// Staat op de balans van de ontvoegende dochtermaatschappij een
 			// herinvesteringsreserve waarvan het bij die reserve behorende
 			// voornemen tot vervanging berust bij een andere
-			// maatschappij?SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B",
-			// 23, Tab, Locatie));
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
-					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
+			
+			if (LeesXLS.HaalText("B", 43, Tab, Locatie).equals("ja")) {
+				SpecificatieDochtermaatschappijObjecten.BalansOntvoegendeDochterMaatschappijHerinvesteringsreserve_ja(driver).click();;
+			}
+			else {
+				SpecificatieDochtermaatschappijObjecten.BalansOntvoegendeDochterMaatschappijHerinvesteringsreserve_nee(driver).click();
+			}
+			
 			// Staat op de balans van een andere maatschappij een
 			// herinvesteringsreserve waarvan het bij die reserve behorende
 			// voornemen tot vervanging berust bij de ontvoegende
 			// dochtermaatschappij?
-			SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver)
-					.sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-
-		} else {
-			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijOntvoegd_nee(driver).click();
-		}
-
+			
+			if (LeesXLS.HaalText("B", 44, Tab, Locatie).equals("ja")) {
+				SpecificatieDochtermaatschappijObjecten.BalansAndereMaatschappijHerinvesteringsReserveVoornemen_ja(driver).click();;
+			}
+			else {
+				SpecificatieDochtermaatschappijObjecten.BalansAndereMaatschappijHerinvesteringsReserveVoornemen_ja(driver).click();
+			}
+		} 
+		
 		// Uitvouw moment 3
 		if (LeesXLS.HaalText("B", 11, Tab, Locatie).equals("ja")) {
 			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeeindigd_ja(driver).click();
 		} else {
 			SpecificatieDochtermaatschappijObjecten.DochtermaatschappijBeeindigd_nee(driver).click();
 		}
-
 	}
 
 	@Then("^i can validate the totals on the formulier Specificatie Dochtermaatschappijbr(\\d+) from \"(.*?)\"$")

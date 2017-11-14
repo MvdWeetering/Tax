@@ -253,12 +253,9 @@ public class SpecificatieDochtermaatschappijObjecten {
 		element = driver.findElement(By.id("idxdt9tzau"));
 		return element;
 	}	
-	
-	
-	
+		
 //	Staat op de balans van de ontvoegende dochtermaatschappij een herinvesteringsreserve waarvan het bij die reserve behorende voornemen tot vervanging berust bij een andere maatschappij?SpecificatieDochtermaatschappijObjecten.VermogenssprongMoedermaatschappijVoeging(driver).sendKeys(LeesXLS.HaalData("B", 23, Tab, Locatie));
-	
-	
+		
 	public static WebElement BalansOntvoegendeDochterMaatschappijHerinvesteringsreserve_ja (WebDriver driver){
 		element = driver.findElement(By.cssSelector("[for='idxdt9tzbc']"));
 		return element;
