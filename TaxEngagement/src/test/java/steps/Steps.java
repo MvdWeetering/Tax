@@ -36,6 +36,7 @@ import pageObjects.SpecificatieDochtermaatschappijObjecten;
 import pageObjects.ToelichtingBalansObjecten;
 import pageObjects.ToelichtingDesinvesteringsbijtellingObjecten;
 import pageObjects.ToelichtingGarantieVoorzieningObjecten;
+import pageObjects.ToelichtingHerinvesteringsReserveObjecten;
 import pageObjects.ToelichtingMaterieleVasteActivaObjecten;
 import pageObjects.ToelichtingOverigeVoorzieningObjecten;
 import pageObjects.WinstenVerliesRekeningObjecten;
@@ -74,7 +75,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -4589,7 +4590,6 @@ public class Steps extends AbstractSteps {
 		
 		toelichtingWinstenVerliesRekeningObjecten.ToelichtingWinstEnVerliesRekening(driver).clear();
 		toelichtingWinstenVerliesRekeningObjecten.ToelichtingWinstEnVerliesRekening(driver).sendKeys(LeesXLS.HaalText("A", 19, Tab, Locatie));
-
 	}
 
 	@Then("^i can validate the totals on the formulier toelichting winst en verliesrekening from \"(.*?)\"$")
@@ -4603,13 +4603,35 @@ public class Steps extends AbstractSteps {
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(toelichtingWinstenVerliesRekeningObjecten.GebouwenInEigenGebruikFiscaal3112(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 6, Tab, Locatie)), "D6"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(toelichtingWinstenVerliesRekeningObjecten.GebouwenTerBeleggingFiscaal3112(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 7, Tab, Locatie)), "D7"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(toelichtingWinstenVerliesRekeningObjecten.BedrijfsterreinenFiscaal3112(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 8, Tab, Locatie)), "D8"));
-		
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(toelichtingWinstenVerliesRekeningObjecten.TotaalAfschrijvingen(driver).getAttribute("value"), Double.parseDouble(LeesXLS.HaalData("D", 10, Tab, Locatie)), "D10"));
 		
 		System.out.println(ValidatieResultaat);
 		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
+	}
+
+	@Given("^open the form Toelichting herinvesteringsreserve$")
+	public void open_the_form_Toelichting_herinvesteringsreserve() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   NavigerenObjecten.ToelichtingHerinvesteringsreserve(driver).click();
+	   
+	}
+
+	@Then("^i can fill out the form Toelichting herinvesteringsreserve with \"(.*?)\"$")
+	public void i_can_fill_out_the_form_Toelichting_herinvesteringsreserve_with(String arg1) throws Throwable {
+
+		String[] invuldata = codebase.ToelichtingHerinvesteringsReserveXLS.HaalData(1);
 		
+		ToelichtingHerinvesteringsReserveObjecten.Omschrijving(driver).sendKeys(invuldata[1]);
+		ToelichtingHerinvesteringsReserveObjecten.JaarVervreemding(driver).sendKeys(invuldata[2]);
+		ToelichtingHerinvesteringsReserveObjecten.BoekwinstVervreemd(driver).sendKeys(invuldata[3]);
+		ToelichtingHerinvesteringsReserveObjecten.AfschrijvingsPercentage(driver).sendKeys(invuldata[4]);
+		ToelichtingHerinvesteringsReserveObjecten.BoekwaardeBedrijfsmiddel(driver).sendKeys(invuldata[5]);
+	
+	}
+
+	@Then("^i can validate the totals on the formulier Toelichting herinvesteringsreserve from \"(.*?)\"$")
+	public void i_can_validate_the_totals_on_the_formulier_Toelichting_herinvesteringsreserve_from(String arg1) throws Throwable {
 
 	}
 	

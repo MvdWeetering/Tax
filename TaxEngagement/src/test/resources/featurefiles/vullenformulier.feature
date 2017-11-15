@@ -13,8 +13,8 @@ Feature: vullen formulieren
     And open the Project "dossier 08112017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
-    #Then i can validate the error messages for the Algemene gegevens form
 
+    #Then i can validate the error messages for the Algemene gegevens form
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
@@ -60,8 +60,8 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-  	# |    2 | "Chrome" |
-  
+
+  # |    2 | "Chrome" |
   @vullen_formulier @Winst_en_verlies_rekening
   Scenario Outline: vullen formulier Winst en Verlies rekening
     Given I want to login with browser <Browser>
@@ -75,10 +75,10 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-	  #	| "TC02" | "Chrome" |
-  	#	| "TC03" | "Chrome" |
-  	#	| "TC04" | "Chrome" |
-  
+
+  #	| "TC02" | "Chrome" |
+  #	| "TC03" | "Chrome" |
+  #	| "TC04" | "Chrome" |
   @vullen_formulier @Balans_Activa
   Scenario Outline: vullen formulier Balans Activa
     Given I want to login with browser <Browser>
@@ -106,10 +106,10 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-	  #	| "TC02" | "Chrome" |
-  	# | "TC03" | "Chrome" |
-  	#	| "TC04" | "Chrome" |
-  
+
+  #	| "TC02" | "Chrome" |
+  # | "TC03" | "Chrome" |
+  #	| "TC04" | "Chrome" |
   @vullen_formulier @Investeringsaftrek
   Scenario Outline: vullen formulier Investeringsaftrek
     Given I want to login with browser <Browser>
@@ -118,8 +118,8 @@ Feature: vullen formulieren
     And open the Project "dossier 08112017"
     And open the form Investeringsaftrek
     Then i can fill out the form Investeringsaftrek with config <Id>
+
     #Then i can validate the error messages for the Investeringsaftrek form
-    
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
@@ -151,9 +151,9 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-	 	# |    2 | "Chrome" |
-  	# |    3 | "Chrome" |
-  
+
+  # |    2 | "Chrome" |
+  # |    3 | "Chrome" |
   @vullen_formulier @FiscaleVermogensVergelijking
   Scenario Outline: vullen formulier FiscaleVermogensVergelijking
     Given I want to login with browser <Browser>
@@ -181,10 +181,10 @@ Feature: vullen formulieren
     Examples: 
       | TCID | Browser  |
       |    1 | "Chrome" |
-  	# |    2 | "Chrome" |
-   	#	|    3 | "Chrome" |
-  	# |    4 | "Chrome" |
-  
+
+  # |    2 | "Chrome" |
+  #	|    3 | "Chrome" |
+  # |    4 | "Chrome" |
   @vullen_formulier @verlies_verrekening
   Scenario Outline: vullen formulier Verlies verrekening
     Given I want to login with browser <Browser>
@@ -296,9 +296,8 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-      
-      
-      @vullen_formulier @toelichting_winst_verlies_rekening
+
+  @vullen_formulier @toelichting_winst_verlies_rekening
   Scenario Outline: vullen formulier Toelichting winst en verlies rekening
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
@@ -306,10 +305,22 @@ Feature: vullen formulieren
     And open the Project "dossier 08112017"
     And open the form toelichting winst en verliesrekening
     Then i can fill out the form toelichting winst en verliesrekening with <TCID>
-  #  Then i can validate the totals on the formulier toelichting winst en verliesrekening from <TCID>
+
+    #  Then i can validate the totals on the formulier toelichting winst en verliesrekening from <TCID>
+    Examples: 
+      | TCID   | Browser  |
+      | "TC01" | "Chrome" |
+
+  @vullen_formulier @Toelichting_herinvesteringsreserve
+  Scenario Outline: vullen formulier Toelichting herinvesteringsreserve
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
+    And Select the Tax engagement module
+    And open the Project "dossier 08112017"
+    And open the form Toelichting herinvesteringsreserve
+    Then i can fill out the form Toelichting herinvesteringsreserve with <TCID>
+    Then i can validate the totals on the formulier Toelichting herinvesteringsreserve from <TCID>
 
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
-      
-      
