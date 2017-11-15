@@ -129,5 +129,9 @@ public class NavigerenObjecten {
 	public static WebElement ToelichtingHerinvesteringsreserve (WebDriver driver){
 	    element = driver.findElement(By.partialLinkText("Toelichting herinvesteringsreserve"));
 		return element;
+	}
+	public static WebElement ToelichtingOmzetbelasting (WebDriver driver){
+	    element = driver.findElement(By.partialLinkText("Toelichting omzetbelasting"));
+		return element;
 	}	
 }

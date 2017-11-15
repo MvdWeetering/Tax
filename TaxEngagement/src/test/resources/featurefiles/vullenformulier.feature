@@ -324,3 +324,17 @@ Feature: vullen formulieren
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
+
+  @vullen_formulier @Toelichting_omzetbelasting
+  Scenario Outline: vullen formulier Toelichting omzetbelasting
+    Given I want to login with browser <Browser>
+    When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
+    And Select the Tax engagement module
+    And open the Project "dossier 08112017"
+    And open the form Toelichting omzetbelasting
+    Then i can fill out the form Toelichting omzetbelasting with <TCID>
+    Then i can validate the totals on the Toelichting omzetbelasting from <TCID>
+
+    Examples: 
+      | TCID   | Browser  |
+      | "TC01" | "Chrome" |
