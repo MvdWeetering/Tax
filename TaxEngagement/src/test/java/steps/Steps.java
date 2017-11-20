@@ -76,7 +76,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -1778,9 +1778,15 @@ public class Steps extends AbstractSteps {
 	@Then("^i can fill out the form Balans Activa from tab \"(.*?)\"$")
 	public void i_can_fill_out_the_form_Balans_Activa_from_tab(String Tab) throws Throwable {
 
-		// BalansActivaObjecten.NaamOnderneming(driver).clear();
-		// BalansActivaObjecten.NaamOnderneming(driver).sendKeys(BalansActivaXLS.HaalText(5,
-		// Tab));
+		
+		// uitklappen Immateriële vaste activa
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiIva2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}
+		
+		
 		BalansActivaObjecten.OmschrijvingActiviteit(driver).clear();
 		BalansActivaObjecten.OmschrijvingActiviteit(driver).sendKeys(BalansActivaXLS.HaalText(6, Tab));
 
@@ -1834,6 +1840,15 @@ public class Steps extends AbstractSteps {
 		BalansActivaObjecten.OverigeImmaterieleCF(driver).clear();
 		BalansActivaObjecten.OverigeImmaterieleCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 17, Tab));
 
+		
+		
+//		// uitklappen Materiële vaste activa
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiMva2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}
+		
 		// Gebouwen en terreinen
 		BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).clear();
 		BalansActivaObjecten.GebouwenTerreinenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 26, Tab));
@@ -1874,6 +1889,15 @@ public class Steps extends AbstractSteps {
 		BalansActivaObjecten.AndereBedrijfsCF(driver).clear();
 		BalansActivaObjecten.AndereBedrijfsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 28, Tab));
 
+		
+		// Financiële vaste activa
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiFva2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}
+		
+		
 		// Deelnemingen
 
 		BalansActivaObjecten.DeelnemingenCommercieel_1_1(driver).clear();
@@ -1902,8 +1926,7 @@ public class Steps extends AbstractSteps {
 		BalansActivaObjecten.langlopendevordGroepsFiscaal_1_1(driver).sendKeys(BalansActivaXLS.HaalData("D", 38, Tab));
 
 		BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).clear();
-		BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver)
-				.sendKeys(BalansActivaXLS.HaalData("E", 38, Tab));
+		BalansActivaObjecten.langlopendevordGroepsCommercieel_31_12(driver).sendKeys(BalansActivaXLS.HaalData("E", 38, Tab));
 
 		BalansActivaObjecten.langlopendevordGroepsCF(driver).clear();
 		BalansActivaObjecten.langlopendevordGroepsCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 38, Tab));
@@ -1946,6 +1969,14 @@ public class Steps extends AbstractSteps {
 
 		// Voorraden, excl onderhanden werk
 
+	
+		// Voorraden uitklappen
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiVoo2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}
+						
 		BalansActivaObjecten.VoorradenExlCommercieel_1_1(driver).clear();
 		BalansActivaObjecten.VoorradenExlCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 48, Tab));
 
@@ -1974,6 +2005,13 @@ public class Steps extends AbstractSteps {
 
 		// Handelsdebiteuren
 
+		// Voorraden uitklappen
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiVor2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}		
+				
 		BalansActivaObjecten.HandelsdebiteurenNominale(driver).clear();
 		BalansActivaObjecten.HandelsdebiteurenNominale(driver).sendKeys(BalansActivaXLS.HaalData("B", 57, Tab));
 
@@ -2053,7 +2091,7 @@ public class Steps extends AbstractSteps {
 		BalansActivaObjecten.OverigeVordCF(driver).sendKeys(BalansActivaXLS.HaalData("F", 61, Tab));
 
 		// Effecten
-
+		
 		BalansActivaObjecten.EffectenCommercieel_1_1(driver).clear();
 		BalansActivaObjecten.EffectenCommercieel_1_1(driver).sendKeys(BalansActivaXLS.HaalData("C", 67, Tab));
 
@@ -2547,6 +2585,14 @@ public class Steps extends AbstractSteps {
 
 		// Gestort en opgevraagd kapitaal
 
+		// uitklappen Ondernemingsvermogen
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBPGiOnv2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}
+				
 		BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver).clear();
 		BalansPassivaObjecten.GestortOpgevraagdCommercieeel_1_1(driver)
 				.sendKeys(codebase.BalansPassivaXLS.HaalData("B", 9, Tab));
@@ -2684,6 +2730,14 @@ public class Steps extends AbstractSteps {
 
 		// Garantievoorziening
 
+		// uitklappen Voorzieningen
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiVoz2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}		
+		
 		BalansPassivaObjecten.GarantieVoorzieningCommercieeel_1_1(driver).clear();
 		BalansPassivaObjecten.GarantieVoorzieningCommercieeel_1_1(driver)
 				.sendKeys(codebase.BalansPassivaXLS.HaalData("B", 25, Tab));
@@ -2735,6 +2789,14 @@ public class Steps extends AbstractSteps {
 
 		// Converteerbare leningen
 
+		// uitklappen Voorzieningen
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiLls2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}	
+		
 		BalansPassivaObjecten.ConverteerbareleningenCommercieeel_1_1(driver).clear();
 		BalansPassivaObjecten.ConverteerbareleningenCommercieeel_1_1(driver)
 				.sendKeys(codebase.BalansPassivaXLS.HaalData("B", 36, Tab));
@@ -2841,6 +2903,15 @@ public class Steps extends AbstractSteps {
 
 		// Schulden aan leveranciers en handelskredieten
 
+		
+		// uitklappen Voorzieningen
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiKls2Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("element is al uitgeklapt");
+		}			
+		
 		BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver).clear();
 		BalansPassivaObjecten.SchuldenLeveranciersHandelsKrCommercieeel_1_1(driver)
 				.sendKeys(codebase.BalansPassivaXLS.HaalData("B", 49, Tab));
@@ -4744,7 +4815,12 @@ public class Steps extends AbstractSteps {
 
 	@Then("^i can fill out the form Toelichting omzetbelasting with \"(.*?)\"$")
 	public void i_can_fill_out_the_form_Toelichting_omzetbelasting_with(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+
+
+		
+		
+		
+		
 
 	}
 
