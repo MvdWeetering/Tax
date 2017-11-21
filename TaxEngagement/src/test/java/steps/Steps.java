@@ -4536,165 +4536,65 @@ public class Steps extends AbstractSteps {
 		String Locatie = "C:\\testdata\\belastbaar bedrag.xlsx";
 		Thread.sleep(1000);
 
-		// Berekening Belastbaar Bedrag
-		BerekeningBelastbaarBedragObjecten.BosbouwLandbouwvrijstelling(driver)
-				.sendKeys(LeesXLS.HaalData("C", 6, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.Kwijtscheldingswinst(driver)
-				.sendKeys(LeesXLS.HaalData("C", 7, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.WinstSplitsingJuridischeFusie(driver)
-				.sendKeys(LeesXLS.HaalData("C", 8, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.Mobiliteitsprojectvrijstelling(driver)
-				.sendKeys(LeesXLS.HaalData("C", 9, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VrijgesteldeVoordelenOverheidsondernemingen(driver)
-				.sendKeys(LeesXLS.HaalData("C", 10, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.OverigeVrijgesteldeWinstbestanddelen(driver)
-				.sendKeys(LeesXLS.HaalData("C", 11, "TC01", Locatie));
-
-		// Tabel kosten
-
-		BerekeningBelastbaarBedragObjecten.OmschrijvingVanNietAftrekbareKosten(driver).clear();
-		BerekeningBelastbaarBedragObjecten.OmschrijvingVanNietAftrekbareKosten(driver)
-				.sendKeys(LeesXLS.HaalData("A", 19, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BedragNietAftrekbareBoetes(driver)
-				.sendKeys(LeesXLS.HaalData("B", 19, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.OmschrijvingOverigeVanAftrekBeperkteKosten(driver).clear();
-		BerekeningBelastbaarBedragObjecten.OmschrijvingOverigeVanAftrekBeperkteKosten(driver)
-				.sendKeys(LeesXLS.HaalData("A", 22, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BedragOverigeAftrekUitgeslotenAftrekBeperkteBosten(driver)
-				.sendKeys(LeesXLS.HaalData("B", 22, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.FictievePersoneelskostenInstellingenAlgemeenSociaalBelang(driver)
-				.sendKeys(LeesXLS.HaalData("C", 25, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.WinstAnbiBehaaldMetKenbaarFondswervendeActiviteiten(driver)
-				.sendKeys(LeesXLS.HaalData("C", 26, "TC01", Locatie));
-
-		// Tabel reserves
-
-		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveToevoeging(driver)
-				.sendKeys(LeesXLS.HaalData("B", 32, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveOnttrekking(driver)
-				.sendKeys(LeesXLS.HaalData("C", 32, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveToevoeging(driver)
-				.sendKeys(LeesXLS.HaalData("B", 33, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveOnttrekking(driver)
-				.sendKeys(LeesXLS.HaalData("C", 33, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveToevoeging(driver)
-				.sendKeys(LeesXLS.HaalData("B", 34, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveOnttrekking(driver)
-				.sendKeys(LeesXLS.HaalData("C", 34, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesToevoeging(driver)
-				.sendKeys(LeesXLS.HaalData("B", 35, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesOnttrekking(driver)
-				.sendKeys(LeesXLS.HaalData("C", 35, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.SaldoNietAftrekbareRentenEnRoyaltys(driver)
-				.sendKeys(LeesXLS.HaalData("D", 38, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.NietAftrekbareRente(driver)
-				.sendKeys(LeesXLS.HaalData("C", 42, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VergoedingenEnWaardemutaties(driver)
-				.sendKeys(LeesXLS.HaalData("C", 43, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BovenmatigeDeelnemingsrente(driver)
-				.sendKeys(LeesXLS.HaalData("C", 44, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.RenteOvernameschulden(driver)
-				.sendKeys(LeesXLS.HaalData("C", 45, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.AftrekbareVoorheenGetemporiseerdeRente(driver)
-				.sendKeys(LeesXLS.HaalData("D", 49, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.NettoVoordelenUitDeelnemingen(driver)
-				.sendKeys(LeesXLS.HaalData("C", 52, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VoordelenUitNietKwalificerendeBeleggingsdeelnemingen(driver)
-				.sendKeys(LeesXLS.HaalData("C", 53, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.ToevoegingAanWinstVolgensArtikel13cVpb(driver)
-				.sendKeys(LeesXLS.HaalData("C", 54, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.LiquidatieverliesVolgensArtikel13dVpb(driver)
-				.sendKeys(LeesXLS.HaalData("C", 55, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13hVpb(driver)
-				.sendKeys(LeesXLS.HaalData("C", 56, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13Lid17Vpb(driver)
-				.sendKeys(LeesXLS.HaalData("C", 57, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BruteringVoordelenUitKwalificerendeBeleggingsdeelnemingen(driver)
-				.sendKeys(LeesXLS.HaalData("B", 59, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.VerliesbruteringLaagbelasteBuitenlandseBeleggingsondernemingen(driver)
-				.sendKeys(LeesXLS.HaalData("C", 65, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.GrondslagVPBGiftenCultureleInstellingen(driver)
-				.sendKeys(LeesXLS.HaalData("B", 69, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.OverigeGiften(driver).sendKeys(LeesXLS.HaalData("C", 71, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.BelastbareWinstVoorSplitsingBijBelangenwijziging(driver)
-				.sendKeys(LeesXLS.HaalData("C", 74, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BelastbareWinstVoorTijdstipBelangenwijziging(driver)
-				.sendKeys(LeesXLS.HaalData("C", 75, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BelastbareWinstNaTijdstipBelangenwijziging(driver)
-				.sendKeys(LeesXLS.HaalData("C", 76, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.EliminatieWinstBoekjaar(driver)
-				.sendKeys(LeesXLS.HaalData("C", 77, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.ImputatieWinstVorigBoekjaar(driver)
-				.sendKeys(LeesXLS.HaalData("C", 78, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.InDitBoekjaarTeVerrekenenVerliezenMUVhoudsterverliezen(driver)
-				.sendKeys(LeesXLS.HaalData("C", 81, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.InDitBoekjaarTotaalTeVerrekenenVerliezen(driver)
-				.sendKeys(LeesXLS.HaalData("C", 83, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.GrondslagVermeerderingBelastingIVMongedaanMakenHerkapitalisatie(driver)
-				.sendKeys(LeesXLS.HaalData("C", 91, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VermeerderingBelastingIVMongedaanMakenHerkapitalisatie(driver)
-				.sendKeys(LeesXLS.HaalData("C", 92, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.GrondslagVermeerderingBelastingIVMafkoopPensioenVUTArt23aWetVpB(driver)
-				.sendKeys(LeesXLS.HaalData("C", 93, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VermeerderingBelastingIVMafkoopPensioenVUTart23aWetVpB(driver)
-				.sendKeys(LeesXLS.HaalData("C", 94, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.PercentageIVMbeeindigingKredietinstelling(driver)
-				.sendKeys(LeesXLS.HaalData("C", 95, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.GrondslagVermeerderingBelastingIVMbeeindigingKredietinstelling(driver)
-				.sendKeys(LeesXLS.HaalData("C", 96, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VermeerderingBelastingIVMbeeindigingKredietinstelling(driver)
-				.sendKeys(LeesXLS.HaalData("C", 97, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten
-				.GrondslagVermeerderingBelastingIVMhetNietVoldoenAanDeStamrechtvrijstelling(driver)
-				.sendKeys(LeesXLS.HaalData("C", 98, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VermeerderingBelastingIVMHetNietVoldoenAanDeStamrechtvrijstelling(driver)
-				.sendKeys(LeesXLS.HaalData("C", 99, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.SaldoBelastingVoorEldersBelast(driver)
-				.sendKeys(LeesXLS.HaalData("C", 100, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.EldersBelast(driver).sendKeys(LeesXLS.HaalData("C", 105, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.BerekendeDeelnemingsverrekeningDitBoekjaar(driver)
-				.sendKeys(LeesXLS.HaalData("B", 107, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.VoortTeWentelenDeelnemingsverrekening(driver)
-				.sendKeys(LeesXLS.HaalData("B", 108, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.DitBoekjaarTeVerrekenenDeelnemingsverrekening(driver)
-				.sendKeys(LeesXLS.HaalData("B", 109, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BerekendeVerrekeningBuitenlandseOndernemingswinsten(driver)
-				.sendKeys(LeesXLS.HaalData("B", 112, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.OverTeBrengenVerrekeningBuitenlandseOndernemingswinsten(driver)
-				.sendKeys(LeesXLS.HaalData("B", 113, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.GemiddeldeKoersBoekjaarInVerbandRegelingFunctioneleValuta(driver)
-				.sendKeys(LeesXLS.HaalData("C", 118, "TC01", Locatie));
-		Select mySelect = new Select(
-				BerekeningBelastbaarBedragObjecten.ValutafactorInVerbandMetRegelingVoorFunctioneleValuta(driver));
-		mySelect.selectByVisibleText(LeesXLS.HaalData("C", 119, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.BelastbaarBedragGrondslagVoorBerekeningBelasting(driver)
-				.sendKeys(LeesXLS.HaalData("C", 120, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.Dividendbelasting(driver)
-				.sendKeys(LeesXLS.HaalData("C", 125, "TC01", Locatie));
-		BerekeningBelastbaarBedragObjecten.Kansspelbelasting(driver)
-				.sendKeys(LeesXLS.HaalData("C", 126, "TC01", Locatie));
-
-		BerekeningBelastbaarBedragObjecten.Toelichting(driver).clear();
-		BerekeningBelastbaarBedragObjecten.Toelichting(driver).sendKeys(LeesXLS.HaalText("A", 132, "TC01", Locatie));
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@Then("^i can validate the totals on the formulier Berekening Belastbaar Bedrag from \"(.*?)\"$")

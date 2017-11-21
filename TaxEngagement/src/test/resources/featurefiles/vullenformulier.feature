@@ -306,8 +306,7 @@ Feature: vullen formulieren
     And open the Project "dossier 08112017"
     And open the form toelichting winst en verliesrekening
     Then i can fill out the form toelichting winst en verliesrekening with <TCID>
-
-    #  Then i can validate the totals on the formulier toelichting winst en verliesrekening from <TCID>
+     Then i can validate the totals on the formulier toelichting winst en verliesrekening from <TCID>
     Examples: 
       | TCID   | Browser  |
       | "TC01" | "Chrome" |
