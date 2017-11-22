@@ -4868,11 +4868,6 @@ public class Steps extends AbstractSteps {
 	public void i_can_fill_out_the_form_Toelichting_omzetbelasting_with(String arg1) throws Throwable {
 
 
-		
-		
-		
-		
-
 	}
 
 	@Then("^i can validate the totals on the Toelichting omzetbelasting from \"(.*?)\"$")
