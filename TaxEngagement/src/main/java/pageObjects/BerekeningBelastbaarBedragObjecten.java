@@ -517,14 +517,14 @@ public class BerekeningBelastbaarBedragObjecten {
 	
 //	Afkoop pensioen/VUT op basis van art. 23a Wet VpB Grondslag
 	@FieldName(name = "AfkoopPensioenVUTOpBasisVanArt23aWetVpBGrondslag")
-	public static WebElement AfkoopPensioenVUTOpBasisVanArt23aWetVpBGrondslag(WebDriver driver){
+	public static WebElement AfkoopPensioenVUTArt23aWetVpBGrondslag(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzyg"));
 		return element;
 	}
 	
 //	Beeïndiging kredietinstelling, beleggingsinstelling Grondslag
 	@FieldName(name = "BeeindigingKredietinstellingBeleggingsinstellingGrondslag")
-	public static WebElement BeeindigingKredietinstellingBeleggingsinstellingOfGrondslag(WebDriver driver){
+	public static WebElement BeeindigingKredietinstellingBeleggingsinstellingGrondslag(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzyk"));
 		return element;
 	}
@@ -553,7 +553,7 @@ public class BerekeningBelastbaarBedragObjecten {
 	
 //	Beeïndiging kredietinstelling, beleggingsinstelling Percentage
 	@FieldName(name = "BeeïndigingKredietinstellingBeleggingsinstellingPercentage")
-	public static WebElement BeeïndigingKredietinstellingBeleggingsinstellingPercentage(WebDriver driver){
+	public static WebElement BeeindigingKredietinstellingBeleggingsinstellingPercentage(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzyi"));
 		return element;
 	}
@@ -604,7 +604,7 @@ public class BerekeningBelastbaarBedragObjecten {
 //	Saldo belasting voor elders belast
 	@FieldName(name = "SaldoBelastingVoorEldersBelast")
 	public static WebElement SaldoBelastingVoorEldersBelast(WebDriver driver){
-		element = driver.findElement(By.id("idxdt9tzyr"));
+		element = driver.findElement(By.id("idxdt9tzyz"));
 		return element;
 	}
 	

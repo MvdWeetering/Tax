@@ -289,7 +289,7 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
     And Select the Tax engagement module
-    And open the Project "dossier 08112017"
+    And open the Project "dossier 10202017"
     And open the form Berekening Belastbaar Bedrag
     Then i can fill out the form Berekening Belastbaar Bedrag with <TCID>
     Then i can validate the totals on the formulier Berekening Belastbaar Bedrag from <TCID>

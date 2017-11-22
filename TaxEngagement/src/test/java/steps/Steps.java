@@ -76,7 +76,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -4530,67 +4530,218 @@ public class Steps extends AbstractSteps {
 	}
 
 	@Then("^i can fill out the form Berekening Belastbaar Bedrag with \"(.*?)\"$")
-	public void i_can_fill_out_the_form_Berekening_Belastbaar_Bedrag_with(String arg1) throws Throwable {
+	public void i_can_fill_out_the_form_Berekening_Belastbaar_Bedrag_with(String Tab) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 
-		String Locatie = "C:\\testdata\\belastbaar bedrag.xlsx";
-		Thread.sleep(1000);
+		String Locatie = "C:\\testdata\\Berekening belastbaar bedrag.xlsx";
+		Thread.sleep(500);
+
+		// glyphy 1 Kosten en lasten die niet of gedeeltelijk niet aftrekbaar zijn
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiKostLastNieAftHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 1");
+		}
+		
+		
+		BerekeningBelastbaarBedragObjecten.NietAftrekbareKostenOmschrijving(driver).clear();
+		BerekeningBelastbaarBedragObjecten.NietAftrekbareKostenOmschrijving(driver).sendKeys(LeesXLS.HaalText("A", 8, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietAftrekbareKostenBedrag(driver).sendKeys(LeesXLS.HaalData("B", 8, Tab, Locatie));	
+//		
+		BerekeningBelastbaarBedragObjecten.OverigeVanAftrekUitgeslotenAftrekBeperkteKostenOmschrijving(driver).clear();
+		BerekeningBelastbaarBedragObjecten.OverigeVanAftrekUitgeslotenAftrekBeperkteKostenOmschrijving(driver).sendKeys(LeesXLS.HaalText("A", 12, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverigeVanAftrekUitgeslotenAftrekBeperkteKostenBedrag(driver).sendKeys(LeesXLS.HaalData("B", 12, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.SaldoNietAftrekbareRentenRoyaltys(driver).sendKeys(LeesXLS.HaalData("C", 15, Tab, Locatie));
+		
+		// glyphy 2 Totaal niet aftrekbare rente
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiNietAftRenteHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 2");
+		}
+			
+		BerekeningBelastbaarBedragObjecten.NietAftrekbareRente(driver).sendKeys(LeesXLS.HaalData("B", 17, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.VergoedingenEnWaardemutaties(driver).sendKeys(LeesXLS.HaalData("B", 18, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BovenmatigeDeelnemingsrente(driver).sendKeys(LeesXLS.HaalData("B", 19, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.RenteOvernameschulden(driver).sendKeys(LeesXLS.HaalData("B", 20, Tab, Locatie));
+		
+		// glyphy 3 Vrijgestelde winstbestanddelen, zonder deelnemingsvrijstelling
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiVrWiZoDeHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 3");
+		}
+		
+		BerekeningBelastbaarBedragObjecten.BosbouwLandbouwvrijstelling(driver).sendKeys(LeesXLS.HaalData("B", 26, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.Kwijtscheldingswinst(driver).sendKeys(LeesXLS.HaalData("B", 27, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.WinstAfsplitsingOfJuridischeFusie(driver).sendKeys(LeesXLS.HaalData("B", 28, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.Mobiliteitsprojectvrijstelling(driver).sendKeys(LeesXLS.HaalData("B", 29, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.VrijgesteldeVoordelenOverheidsondernemingen(driver).sendKeys(LeesXLS.HaalData("B", 30, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverigeVrijgesteldeWinstbestanddelen(driver).sendKeys(LeesXLS.HaalData("B", 31, Tab, Locatie));
+		
+		
+		BerekeningBelastbaarBedragObjecten.FictievePersoneelskostenInstellingenAlgemeenSociaalBelang(driver).sendKeys(LeesXLS.HaalData("C", 35, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.WinstAnbiBehaaldMetKenbaarFondswervendeActiviteiten(driver).sendKeys(LeesXLS.HaalData("C", 36, Tab, Locatie));
+	
+		//glyphy 4 Wijzigingen toelaatbare fiscale reserves (onttrekkingen -/- toevoegingen)
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiToelFiscReserHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 4");
+		}
+		
+		
+		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 42, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 42, Tab, Locatie));
+		
+		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 43, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 43, Tab, Locatie));
+		
+		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 44, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 44, Tab, Locatie));
+		
+		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 45, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 45, Tab, Locatie));
+		
+		BerekeningBelastbaarBedragObjecten.NietInAanmerkingTeNemenVoordeelInnovatiebox(driver).sendKeys(LeesXLS.HaalData("D", 48, Tab, Locatie));
+		
+		//glyphy 5 Saldo deelnemingsvrijstelling
 
 		
 		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiDeelnemingsVrijstHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 5");
+		}
+		
+		
+		BerekeningBelastbaarBedragObjecten.VoordelenUitNietKwalificerendeBeleggingsdeelnemingen(driver).sendKeys(LeesXLS.HaalData("C", 52, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.ToevoegingAanDeWinstVolgensArtikel13cVpb(driver).sendKeys(LeesXLS.HaalData("C", 53, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13hVpb(driver).sendKeys(LeesXLS.HaalData("C", 54, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13lid17Vpb(driver).sendKeys(LeesXLS.HaalData("C", 55, Tab, Locatie));
+	
+		
+			
+		//glyphy 6 Extracomptabele belaste bedragen
+		try {
+		driver.findElement(By.cssSelector("[num='CWNLBAGiDeelnemingsVrijst1Hide']")).click();
+		} catch (Exception e) {
+		System.out.println("glyphy 6");
+		}
+		
+		
+		BerekeningBelastbaarBedragObjecten.ToevoegingArt13aaLid6Vpb(driver).sendKeys(LeesXLS.HaalData("C", 58, Tab, Locatie));
+		
+		
+		//glyphy 7 Buitenlandse ondernemingswinsten
+		
+		try {
+		driver.findElement(By.cssSelector("[num='CWNLBAGiBuitOnderwinHide']")).click();
+		} catch (Exception e) {
+		System.out.println("glyphy 7");
+		}
+		
+		
+		BerekeningBelastbaarBedragObjecten.VerliesbruteringLaagbelasteBuitenlandseBeleggingsondernemingen(driver).sendKeys(LeesXLS.HaalData("C", 66, Tab, Locatie));
+		
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,1000)", "");
+		
+		//glyphy 8 Aftrekbare giften
+				
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiAftGiftenHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 8");
+		}
+		
+		jse.executeScript("window.scrollBy(0,1000)", "");
+			
+		BerekeningBelastbaarBedragObjecten.GrondslagVPBgiftenCultureleInstellingen(driver).sendKeys(LeesXLS.HaalData("B", 70, Tab, Locatie));
+		
+		BerekeningBelastbaarBedragObjecten.OverigeGiften(driver).sendKeys(LeesXLS.HaalData("C", 72, Tab, Locatie));
+		
+		
+		//glyphy 9 Aftrekbare, voorheen getemporiseerde, rente
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiAftVoorhGetempRentHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 9");
+		}
+				
+		BerekeningBelastbaarBedragObjecten.BoekjaarTeVerrekenenVerliezenMuvHoudsterverliezen(driver).sendKeys(LeesXLS.HaalData("C", 79, Tab, Locatie));
+		
+		//glyphy 10 Belastingvermeerdering
+				
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiBelVermeerHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 10");
+		}
+		
+		
+		BerekeningBelastbaarBedragObjecten.OngedaanMakenHerkapitalisatieGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 93, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.AfkoopPensioenVUTArt23aWetVpBGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 94, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 95, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingPercentage(driver).sendKeys(LeesXLS.HaalData("C", 95, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietVoldoenAanStamrechtvrijstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 96, Tab, Locatie));
+				
+		
+		//glyphy 11 Belastingvermindering
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiBelVerminHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 11");
+		}
+		
+		
+		BerekeningBelastbaarBedragObjecten.SaldoBelastingVoorEldersBelast(driver).sendKeys(LeesXLS.HaalData("D", 101, Tab, Locatie));
+		
+		//glyphy 12 Deelnemingsverrekening niet-kwalificerende beleggingsdeelnemingen
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiBelVermin1Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 12");
+		}
+			
+		BerekeningBelastbaarBedragObjecten.BerekendeDeelnemingsverrekeningDitBoekjaar(driver).sendKeys(LeesXLS.HaalData("C", 103, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.VoortTeWentelenDeelnemingsverrekening(driver).sendKeys(LeesXLS.HaalData("C", 104, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.DitBoekjaarTeVerrekenenDeelnemingsverrekening(driver).sendKeys(LeesXLS.HaalData("C", 105, Tab, Locatie));
+		
+		//glyphy 13 Verrekening belasting buitenlandse ondernemingswinsten
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiBelVermin3Hide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 13");
+		}
+				
+		BerekeningBelastbaarBedragObjecten.BerekendeVerrekeningBuitenlandseOndernemingswinsten(driver).sendKeys(LeesXLS.HaalData("C", 109, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverTeBrengenVerrekeningBuitenlandseOndernemingswinsten(driver).sendKeys(LeesXLS.HaalData("C", 110, Tab, Locatie));
+		
+		
+		//glyphy 14 Voorheffingen
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiVoorhefHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 13");
+		}
+		
+		BerekeningBelastbaarBedragObjecten.Dividendbelasting(driver).sendKeys(LeesXLS.HaalData("D", 118, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.Kansspelbelasting(driver).sendKeys(LeesXLS.HaalData("D", 119, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.ToelichtingOpFiscaleWinstberekening(driver).sendKeys(LeesXLS.HaalText("A", 124, Tab, Locatie));
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+				
 		
 		
 		
