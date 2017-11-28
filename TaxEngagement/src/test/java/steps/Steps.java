@@ -76,7 +76,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -4548,7 +4548,7 @@ public class Steps extends AbstractSteps {
 		BerekeningBelastbaarBedragObjecten.NietAftrekbareKostenOmschrijving(driver).clear();
 		BerekeningBelastbaarBedragObjecten.NietAftrekbareKostenOmschrijving(driver).sendKeys(LeesXLS.HaalText("A", 8, Tab, Locatie));
 		BerekeningBelastbaarBedragObjecten.NietAftrekbareKostenBedrag(driver).sendKeys(LeesXLS.HaalData("B", 8, Tab, Locatie));	
-//		
+		
 		BerekeningBelastbaarBedragObjecten.OverigeVanAftrekUitgeslotenAftrekBeperkteKostenOmschrijving(driver).clear();
 		BerekeningBelastbaarBedragObjecten.OverigeVanAftrekUitgeslotenAftrekBeperkteKostenOmschrijving(driver).sendKeys(LeesXLS.HaalText("A", 12, Tab, Locatie));
 		BerekeningBelastbaarBedragObjecten.OverigeVanAftrekUitgeslotenAftrekBeperkteKostenBedrag(driver).sendKeys(LeesXLS.HaalData("B", 12, Tab, Locatie));
@@ -4574,16 +4574,16 @@ public class Steps extends AbstractSteps {
 			System.out.println("glyphy 3");
 		}
 		
-		BerekeningBelastbaarBedragObjecten.BosbouwLandbouwvrijstelling(driver).sendKeys(LeesXLS.HaalData("B", 26, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.Kwijtscheldingswinst(driver).sendKeys(LeesXLS.HaalData("B", 27, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.WinstAfsplitsingOfJuridischeFusie(driver).sendKeys(LeesXLS.HaalData("B", 28, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.Mobiliteitsprojectvrijstelling(driver).sendKeys(LeesXLS.HaalData("B", 29, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.VrijgesteldeVoordelenOverheidsondernemingen(driver).sendKeys(LeesXLS.HaalData("B", 30, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.OverigeVrijgesteldeWinstbestanddelen(driver).sendKeys(LeesXLS.HaalData("B", 31, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BosbouwLandbouwvrijstelling(driver).sendKeys(LeesXLS.HaalData("B", 27, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.Kwijtscheldingswinst(driver).sendKeys(LeesXLS.HaalData("B", 28, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.WinstAfsplitsingOfJuridischeFusie(driver).sendKeys(LeesXLS.HaalData("B", 29, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.Mobiliteitsprojectvrijstelling(driver).sendKeys(LeesXLS.HaalData("B", 30, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.VrijgesteldeVoordelenOverheidsondernemingen(driver).sendKeys(LeesXLS.HaalData("B", 31, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverigeVrijgesteldeWinstbestanddelen(driver).sendKeys(LeesXLS.HaalData("B", 32, Tab, Locatie));
 		
 		
-		BerekeningBelastbaarBedragObjecten.FictievePersoneelskostenInstellingenAlgemeenSociaalBelang(driver).sendKeys(LeesXLS.HaalData("C", 35, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.WinstAnbiBehaaldMetKenbaarFondswervendeActiviteiten(driver).sendKeys(LeesXLS.HaalData("C", 36, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.FictievePersoneelskostenInstellingenAlgemeenSociaalBelang(driver).sendKeys(LeesXLS.HaalData("C", 36, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.WinstAnbiBehaaldMetKenbaarFondswervendeActiviteiten(driver).sendKeys(LeesXLS.HaalData("C", 37, Tab, Locatie));
 	
 		//glyphy 4 Wijzigingen toelaatbare fiscale reserves (onttrekkingen -/- toevoegingen)
 		
@@ -4593,20 +4593,19 @@ public class Steps extends AbstractSteps {
 			System.out.println("glyphy 4");
 		}
 		
+		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 43, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 43, Tab, Locatie));
 		
-		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 42, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.KostenegalisatiereserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 42, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 44, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 44, Tab, Locatie));
 		
-		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 43, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.HerinvesteringsreserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 43, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 45, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 45, Tab, Locatie));
 		
-		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 44, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.BelasteCompartimenteringsreserveOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 44, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 46, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 46, Tab, Locatie));
 		
-		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesToevoeging(driver).sendKeys(LeesXLS.HaalData("B", 45, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.OverigeFiscaleReservesOnttrekking(driver).sendKeys(LeesXLS.HaalData("C", 45, Tab, Locatie));
-		
-		BerekeningBelastbaarBedragObjecten.NietInAanmerkingTeNemenVoordeelInnovatiebox(driver).sendKeys(LeesXLS.HaalData("D", 48, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietInAanmerkingTeNemenVoordeelInnovatiebox(driver).sendKeys(LeesXLS.HaalData("D", 49, Tab, Locatie));
 		
 		//glyphy 5 Saldo deelnemingsvrijstelling
 
@@ -4619,10 +4618,10 @@ public class Steps extends AbstractSteps {
 		}
 		
 		
-		BerekeningBelastbaarBedragObjecten.VoordelenUitNietKwalificerendeBeleggingsdeelnemingen(driver).sendKeys(LeesXLS.HaalData("C", 52, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.ToevoegingAanDeWinstVolgensArtikel13cVpb(driver).sendKeys(LeesXLS.HaalData("C", 53, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13hVpb(driver).sendKeys(LeesXLS.HaalData("C", 54, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13lid17Vpb(driver).sendKeys(LeesXLS.HaalData("C", 55, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.VoordelenUitNietKwalificerendeBeleggingsdeelnemingen(driver).sendKeys(LeesXLS.HaalData("C", 53, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.ToevoegingAanDeWinstVolgensArtikel13cVpb(driver).sendKeys(LeesXLS.HaalData("C", 54, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13hVpb(driver).sendKeys(LeesXLS.HaalData("C", 55, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietVrijgesteldVoordeelVolgensArtikel13lid17Vpb(driver).sendKeys(LeesXLS.HaalData("C", 56, Tab, Locatie));
 	
 		
 			
@@ -4633,9 +4632,8 @@ public class Steps extends AbstractSteps {
 		System.out.println("glyphy 6");
 		}
 		
-		
-		BerekeningBelastbaarBedragObjecten.ToevoegingArt13aaLid6Vpb(driver).sendKeys(LeesXLS.HaalData("C", 58, Tab, Locatie));
-		
+		//BerekeningBelastbaarBedragObjecten.BruteringVanVoordelenUitNietKwalificerendeBeleggingsdeelnemingen(driver).sendKeys(LeesXLS.HaalData("B", 58, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.ToevoegingArt13aaLid6Vpb(driver).sendKeys(LeesXLS.HaalData("B", 59, Tab, Locatie));
 		
 		//glyphy 7 Buitenlandse ondernemingswinsten
 		
@@ -4646,7 +4644,7 @@ public class Steps extends AbstractSteps {
 		}
 		
 		
-		BerekeningBelastbaarBedragObjecten.VerliesbruteringLaagbelasteBuitenlandseBeleggingsondernemingen(driver).sendKeys(LeesXLS.HaalData("C", 66, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.VerliesbruteringLaagbelasteBuitenlandseBeleggingsondernemingen(driver).sendKeys(LeesXLS.HaalData("C", 67, Tab, Locatie));
 		
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,1000)", "");
@@ -4661,9 +4659,9 @@ public class Steps extends AbstractSteps {
 		
 		jse.executeScript("window.scrollBy(0,1000)", "");
 			
-		BerekeningBelastbaarBedragObjecten.GrondslagVPBgiftenCultureleInstellingen(driver).sendKeys(LeesXLS.HaalData("B", 70, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.GrondslagVPBgiftenCultureleInstellingen(driver).sendKeys(LeesXLS.HaalData("B", 71, Tab, Locatie));
 		
-		BerekeningBelastbaarBedragObjecten.OverigeGiften(driver).sendKeys(LeesXLS.HaalData("C", 72, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverigeGiften(driver).sendKeys(LeesXLS.HaalData("C", 73, Tab, Locatie));
 		
 		
 		//glyphy 9 Aftrekbare, voorheen getemporiseerde, rente
@@ -4674,7 +4672,7 @@ public class Steps extends AbstractSteps {
 			System.out.println("glyphy 9");
 		}
 				
-		BerekeningBelastbaarBedragObjecten.BoekjaarTeVerrekenenVerliezenMuvHoudsterverliezen(driver).sendKeys(LeesXLS.HaalData("C", 79, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BoekjaarTeVerrekenenVerliezenMuvHoudsterverliezen(driver).sendKeys(LeesXLS.HaalData("C", 80, Tab, Locatie));
 		
 		//glyphy 10 Belastingvermeerdering
 				
@@ -4685,11 +4683,11 @@ public class Steps extends AbstractSteps {
 		}
 		
 		
-		BerekeningBelastbaarBedragObjecten.OngedaanMakenHerkapitalisatieGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 93, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.AfkoopPensioenVUTArt23aWetVpBGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 94, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 95, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingPercentage(driver).sendKeys(LeesXLS.HaalData("C", 95, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.NietVoldoenAanStamrechtvrijstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 96, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OngedaanMakenHerkapitalisatieGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 94, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.AfkoopPensioenVUTArt23aWetVpBGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 95, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 96, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingPercentage(driver).sendKeys(LeesXLS.HaalData("C", 96, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.NietVoldoenAanStamrechtvrijstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 97, Tab, Locatie));
 				
 		
 		//glyphy 11 Belastingvermindering
@@ -4701,7 +4699,7 @@ public class Steps extends AbstractSteps {
 		}
 		
 		
-		BerekeningBelastbaarBedragObjecten.SaldoBelastingVoorEldersBelast(driver).sendKeys(LeesXLS.HaalData("D", 101, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.SaldoBelastingVoorEldersBelast(driver).sendKeys(LeesXLS.HaalData("D", 102, Tab, Locatie));
 		
 		//glyphy 12 Deelnemingsverrekening niet-kwalificerende beleggingsdeelnemingen
 		
@@ -4711,9 +4709,9 @@ public class Steps extends AbstractSteps {
 			System.out.println("glyphy 12");
 		}
 			
-		BerekeningBelastbaarBedragObjecten.BerekendeDeelnemingsverrekeningDitBoekjaar(driver).sendKeys(LeesXLS.HaalData("C", 103, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.VoortTeWentelenDeelnemingsverrekening(driver).sendKeys(LeesXLS.HaalData("C", 104, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.DitBoekjaarTeVerrekenenDeelnemingsverrekening(driver).sendKeys(LeesXLS.HaalData("C", 105, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BerekendeDeelnemingsverrekeningDitBoekjaar(driver).sendKeys(LeesXLS.HaalData("C", 104, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.VoortTeWentelenDeelnemingsverrekening(driver).sendKeys(LeesXLS.HaalData("C", 105, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.DitBoekjaarTeVerrekenenDeelnemingsverrekening(driver).sendKeys(LeesXLS.HaalData("C", 106, Tab, Locatie));
 		
 		//glyphy 13 Verrekening belasting buitenlandse ondernemingswinsten
 		
@@ -4723,8 +4721,8 @@ public class Steps extends AbstractSteps {
 			System.out.println("glyphy 13");
 		}
 				
-		BerekeningBelastbaarBedragObjecten.BerekendeVerrekeningBuitenlandseOndernemingswinsten(driver).sendKeys(LeesXLS.HaalData("C", 109, Tab, Locatie));
-		BerekeningBelastbaarBedragObjecten.OverTeBrengenVerrekeningBuitenlandseOndernemingswinsten(driver).sendKeys(LeesXLS.HaalData("C", 110, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.BerekendeVerrekeningBuitenlandseOndernemingswinsten(driver).sendKeys(LeesXLS.HaalData("C", 110, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.OverTeBrengenVerrekeningBuitenlandseOndernemingswinsten(driver).sendKeys(LeesXLS.HaalData("C", 111, Tab, Locatie));
 		
 		
 		//glyphy 14 Voorheffingen
@@ -4737,22 +4735,143 @@ public class Steps extends AbstractSteps {
 		
 		BerekeningBelastbaarBedragObjecten.Dividendbelasting(driver).sendKeys(LeesXLS.HaalData("D", 118, Tab, Locatie));
 		BerekeningBelastbaarBedragObjecten.Kansspelbelasting(driver).sendKeys(LeesXLS.HaalData("D", 119, Tab, Locatie));
+		BerekeningBelastbaarBedragObjecten.ToelichtingOpFiscaleWinstberekening(driver).clear();
 		BerekeningBelastbaarBedragObjecten.ToelichtingOpFiscaleWinstberekening(driver).sendKeys(LeesXLS.HaalText("A", 124, Tab, Locatie));
-		
-		
-		
-				
-		
-		
-		
 		
 	}
 
 	@Then("^i can validate the totals on the formulier Berekening Belastbaar Bedrag from \"(.*?)\"$")
-	public void i_can_validate_the_totals_on_the_formulier_Berekening_Belastbaar_Bedrag_from(String arg1)
+	public void i_can_validate_the_totals_on_the_formulier_Berekening_Belastbaar_Bedrag_from(String Tab)
 			throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+		
+		String Locatie = "C:\\testdata\\Berekening belastbaar bedrag.xlsx";
+		
+		ArrayList<String> ValidatieResultaat = new ArrayList<String>();
 
+		// Ondernemingsvermogen
+
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.KostenEnLastenNietOfGedeeltelijkNietAftrekbaar(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 4, Tab,Locatie )), "C4"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalNietAftrekbareRente(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 4, Tab,Locatie )), "C16"));
+	
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalBijtellingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 23, Tab,Locatie )), "D23"));
+	
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.VrijgesteldeWinstbestanddelenZonderDeelnemingsvrijstelling(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 24, Tab,Locatie )), "D24"));
+				
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalVrijgesteldeWinstbestanddelen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("B", 34, Tab,Locatie )), "B34"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalInvesteringsregelingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 38, Tab,Locatie )), "C38"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.WijzigingenToelaatbareFiscaleReserves(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 39, Tab,Locatie )), "C39"));
+		
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotalenOnttrekking(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("B", 47, Tab,Locatie )), "B47"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotalenToevoeging(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 47, Tab,Locatie )), "C47"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.SaldoDeelnemingsvrijstelling(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 50, Tab,Locatie )), "D50"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.NettoVoordelenUitDeelnemingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 52, Tab,Locatie )), "C52"));
+
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.ExtracomptabeleBelasteBedragen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 57, Tab,Locatie )), "C57"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.LiquidatieverliesVolgensArtikel13dVpb(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 62, Tab,Locatie )), "C62"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.ObjectvrijstellingVoorBuitenlandseOndernemingswinsten(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 66, Tab,Locatie )), "C66"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.AftrekbareGiften(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 68, Tab,Locatie )), "C68"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.BedragAftrekCultureleGiften(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 74, Tab,Locatie )), "C74"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.AftrekbareVoorheenGetemporiseerdeRente(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 78, Tab,Locatie )), "D78"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.BelastbareWinst(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 79, Tab,Locatie )), "D79"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.boekjaarTotaalTeVerrekenenVerliezen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 83, Tab,Locatie )), "D83"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.BelastbaarBedragGrondslagVoorBerekeningBelasting(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 83, Tab,Locatie )), "D83"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.BelastbaarBedragGrondslagVoorBerekeningBelasting(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 89, Tab,Locatie )), "D89"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.BelastingbedragVoorVermeerderingenVerminderingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("E", 90, Tab,Locatie )), "E90"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.Belastingvermeerdering(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("E", 91, Tab,Locatie )), "E91"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.AfkoopPensioenVUTart23aWetVpBPercentage(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 95, Tab,Locatie )), "C95"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.AfkoopPensioenVUTart23aWetVpBVermeerdering(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 95, Tab,Locatie )), "D95"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingVermeerdering(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 96, Tab,Locatie )), "D96"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.NietVoldoenAanDeStamrechtvrijstellingPercentage(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 97, Tab,Locatie )), "C97"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.NietVoldoenAanDeStamrechtvrijstellingVermeerdering(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 97, Tab,Locatie )), "D97"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalBelastingvermeerdering(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 98, Tab,Locatie )), "D98"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.SaldoBelastingVoorEldersBelast(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("E", 100, Tab,Locatie )), "E100"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.Belastingvermindering(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("E", 100, Tab,Locatie )), "E100"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.DeelnemingsverrekeningNietKwalificerendeBeleggingsdeelnemingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 103, Tab,Locatie )), "D103"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.VerrekeningBelastingBuitenlandseOndernemingswinsten(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 103, Tab,Locatie )), "D103"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalVerrekeningBelastingBuitenlandseOndernemingswinsten(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("C", 111, Tab,Locatie )), "C111"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalBelastingverminderingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 115, Tab,Locatie )), "D115"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.Belastingbedrag(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("E", 116, Tab,Locatie )), "C116"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.Voorheffingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("E", 117, Tab,Locatie )), "C117"));
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalVoorheffingen(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("D", 120, Tab,Locatie )), "D120"));		
+		
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(BerekeningBelastbaarBedragObjecten.TotaalVerschuldigd(driver).getAttribute("value"),
+				Double.parseDouble(LeesXLS.HaalData("E", 122, Tab,Locatie )), "E122"));		
+		
+		
+		
+		
+		assertTrue(ValidatieResultaat.isEmpty());
 	}
 
 	@When("^open the form toelichting winst en verliesrekening$")

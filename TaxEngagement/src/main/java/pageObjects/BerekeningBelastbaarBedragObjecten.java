@@ -522,7 +522,7 @@ public class BerekeningBelastbaarBedragObjecten {
 		return element;
 	}
 	
-//	Beeïndiging kredietinstelling, beleggingsinstelling Grondslag
+//	Beeï¿½ndiging kredietinstelling, beleggingsinstelling Grondslag
 	@FieldName(name = "BeeindigingKredietinstellingBeleggingsinstellingGrondslag")
 	public static WebElement BeeindigingKredietinstellingBeleggingsinstellingGrondslag(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzyk"));
@@ -551,8 +551,8 @@ public class BerekeningBelastbaarBedragObjecten {
 		return element;
 	}
 	
-//	Beeïndiging kredietinstelling, beleggingsinstelling Percentage
-	@FieldName(name = "BeeïndigingKredietinstellingBeleggingsinstellingPercentage")
+//	Beeï¿½ndiging kredietinstelling, beleggingsinstelling Percentage
+	@FieldName(name = "Beeï¿½ndigingKredietinstellingBeleggingsinstellingPercentage")
 	public static WebElement BeeindigingKredietinstellingBeleggingsinstellingPercentage(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzyi"));
 		return element;
@@ -576,13 +576,13 @@ public class BerekeningBelastbaarBedragObjecten {
 //	Afkoop pensioen/VUT op basis van art. 23a Wet VpB Vermeerdering
 	@FieldName(name = "AfkoopPensioenVUTart23aWetVpBVermeerdering")
 	public static WebElement AfkoopPensioenVUTart23aWetVpBVermeerdering(WebDriver driver){
-		element = driver.findElement(By.id(""));
+		element = driver.findElement(By.id("idxdt9tzye"));
 		return element;
 	}
 	
-//	Beeïndiging kredietinstelling, beleggingsinstelling of Vermeerdering
-	@FieldName(name = "BeeïndigingKredietinstellingBeleggingsinstellingVermeerdering")
-	public static WebElement BeeïndigingKredietinstellingBeleggingsinstellingVermeerdering(WebDriver driver){
+//	Beeï¿½ndiging kredietinstelling, beleggingsinstelling of Vermeerdering
+	@FieldName(name = "Beeï¿½ndigingKredietinstellingBeleggingsinstellingVermeerdering")
+	public static WebElement BeeindigingKredietinstellingBeleggingsinstellingVermeerdering(WebDriver driver){
 		element = driver.findElement(By.id("idxdt9tzyl"));
 		return element;
 	}

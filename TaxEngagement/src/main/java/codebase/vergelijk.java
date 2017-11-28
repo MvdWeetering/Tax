@@ -21,8 +21,10 @@ public class vergelijk {
 
 		if (!WebText.equals("[" + XlsText + "]")) {
 			VergelijkResult.add("Web waarden wijken af van Cel " + Cel + "\r\n");
-			System.out.println(XlsText);
-			System.out.println(WebText);
+
+//			uncomment voor debugdoeleinden
+//			System.out.println(XlsText);
+//			System.out.println(WebText);
 				
 		}
 		return VergelijkResult;
