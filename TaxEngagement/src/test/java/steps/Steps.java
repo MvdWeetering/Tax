@@ -1173,251 +1173,246 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.OverigePersoneelskostenCF(driver)
 				.sendKeys(WinstVerliesXLS.HaalData("C", 30, Tab));
 
-		// WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).clear();
-		// WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",31,
-		// Tab));
-
-		// WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).clear();
-		// WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",31,
-		// Tab));
+		 WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B",33, Tab));
+		 WinstenVerliesRekeningObjecten.OntvangenUitkeringenenLoonsubsidiesCF(driver).sendKeys(WinstVerliesXLS.HaalData("C",33, Tab));
 
 		// Afschrijvingen
 
 		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B", 37, Tab));
+		WinstenVerliesRekeningObjecten.GoodWillCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B", 39, Tab));
 
 		WinstenVerliesRekeningObjecten.GoodWillCF(driver).clear();
-		WinstenVerliesRekeningObjecten.GoodWillCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 37, Tab));
+		WinstenVerliesRekeningObjecten.GoodWillCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 39, Tab));
 
 		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 38, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 40, Tab));
 
 		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeImmaterieleActivaCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 38, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 40, Tab));
 
 		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 39, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 41, Tab));
 
 		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 39, Tab));
+		WinstenVerliesRekeningObjecten.BedrijfsgebouwenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 41, Tab));
 
 		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 40, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 42, Tab));
 
 		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCF(driver).clear();
 		WinstenVerliesRekeningObjecten.MachinesenInstallatiesCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 40, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 42, Tab));
 
 		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 41, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 43, Tab));
 
 		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.AndereVasteBedrijfsmiddelenCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 41, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 43, Tab));
 
 		// Overige waardeverandering van immateriele en materiele vaste activa
 
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 47, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 49, Tab));
 
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeWaardeveranderingCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 47, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 49, Tab));
 
 		// Bijzondere waardevermindering van vlottende activa
 
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 52, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 54, Tab));
 
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver).clear();
 		WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingVlottendeActivaCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 52, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 54, Tab));
 
 		// Overige bedrijfskosten
 
 		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.TransportKostenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 56, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 58, Tab));
 
 		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 56, Tab));
+		WinstenVerliesRekeningObjecten.TransportKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 58, Tab));
 
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 57, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 59, Tab));
 
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 57, Tab));
+		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 59, Tab));
 
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 58, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 60, Tab));
 
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 58, Tab));
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 60, Tab));
 
 		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 59, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 61, Tab));
 
 		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 59, Tab));
+		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 61, Tab));
 
 		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B", 60, Tab));
+		WinstenVerliesRekeningObjecten.AndereKostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B", 62, Tab));
 
 		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 60, Tab));
+		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 62, Tab));
 
 		// Financiele baten en lasten
 
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 71, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 73, Tab));
 
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 71, Tab));
+		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 73, Tab));
 
 		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 72, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 74, Tab));
 
 		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 72, Tab));
+		WinstenVerliesRekeningObjecten.KwijtscheldingswinstCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 74, Tab));
 
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 73, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 75, Tab));
 
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OpbrengstVordParticipantCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 73, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 75, Tab));
 
 		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 74, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 76, Tab));
 
 		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 74, Tab));
+		WinstenVerliesRekeningObjecten.OpbrengstOverigeVordCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 76, Tab));
 
 		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 75, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 77, Tab));
 
 		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 75, Tab));
+		WinstenVerliesRekeningObjecten.OpbrengstBanktegoedCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 77, Tab));
 
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 76, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 78, Tab));
 
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.WaardeVeranderingVorderingenCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 76, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 78, Tab));
 
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 77, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 79, Tab));
 
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 77, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 79, Tab));
 
 		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OntvangenDividendCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 78, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 80, Tab));
 
 		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).clear();
-		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 78, Tab));
+		WinstenVerliesRekeningObjecten.OntvangenDividendCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 80, Tab));
 
 		// Financiele lasten
 
 		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.KostenParticipantCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 84, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 86, Tab));
 
 		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).clear();
-		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 84, Tab));
+		WinstenVerliesRekeningObjecten.KostenParticipantCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 86, Tab));
 
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 85, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 87, Tab));
 
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 85, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 87, Tab));
 
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 86, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 88, Tab));
 
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.KostenSchuldenGroepsmaatschappijenCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 86, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 88, Tab));
 
 		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("E", 94, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("E", 96, Tab));
 
 		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).clear();
-		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).sendKeys(WinstVerliesXLS.HaalData("F", 94, Tab));
+		WinstenVerliesRekeningObjecten.ResultaatDeelnemingenCF(driver).sendKeys(WinstVerliesXLS.HaalData("F", 96, Tab));
 
 		// Buitengewone bedrijfsbaten
 
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 100, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 102, Tab));
 
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCF(driver).clear();
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 100, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 102, Tab));
 
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 101, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 103, Tab));
 
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneBatenCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 101, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 103, Tab));
 
 		WinstenVerliesRekeningObjecten.BoekWinstActivaCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.BoekWinstActivaCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 102, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 104, Tab));
 
 		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).clear();
-		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 102, Tab));
+		WinstenVerliesRekeningObjecten.BoekWinstActivaCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 104, Tab));
 
 		// Buitengewone bedrijfslasten
 
 		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 107, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 109, Tab));
 
 		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCF(driver).clear();
 		WinstenVerliesRekeningObjecten.AfboekingHerinvesteringsReserveCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 107, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 109, Tab));
 
 		WinstenVerliesRekeningObjecten.UitkeringenANBICommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.UitkeringenANBICommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 108, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 110, Tab));
 
 		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).clear();
-		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 108, Tab));
+		WinstenVerliesRekeningObjecten.UitkeringenANBICF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 110, Tab));
 
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 109, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("B", 111, Tab));
 
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OverigeBuitenGewoneLastenCF(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("C", 109, Tab));
+				.sendKeys(WinstVerliesXLS.HaalData("C", 111, Tab));
 
 		// WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).click();
 
@@ -1504,153 +1499,153 @@ public class Steps extends AbstractSteps {
 
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.GoodWillFiscaal(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("D", 37, Tab)), "D37"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 39, Tab)), "D39"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.OverigeImmaterielActFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 38, Tab)), "D38"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 40, Tab)), "D40"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.BedrijfsgebouwenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 39, Tab)), "D39"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 41, Tab)), "D41"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.MachinesInstallatiesFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 40, Tab)), "D40"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 42, Tab)), "D42"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.AndereVasteActFiscaal(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("D", 41, Tab)), "D41"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 43, Tab)), "D43"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalAfschrijvCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("B", 42, Tab)), "B42"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("B", 44, Tab)), "B44"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.TotaalAfschrijvCF(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("C", 42, Tab)), "C42"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("C", 44, Tab)), "C44"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.TotaalAfschrijvFiscaal(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("D", 42, Tab)), "D42"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 44, Tab)), "D44"));
 
 		// Overige waardeveranderingen van immateriele en materiele vaste activa
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.OverigeWaardeVeranderingFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 47, Tab)), "D47"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 49, Tab)), "D49"));
 
 		// Bijzondere waardevermindering van vlottende activa
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.BijzondereWaardeVerminderingFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 52, Tab)), "D52"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 54, Tab)), "D54"));
 
 		// Overige bedrijfskosten
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.AutoTransportKostenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 56, Tab)), "D56"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 58, Tab)), "D58"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.HuisvestingsKostenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 57, Tab)), "D57"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 59, Tab)), "D59"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.onderhoudOverigeMatrActFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 58, Tab)), "D58"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 60, Tab)), "D60"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.VerkoopkostenFiscaal(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("D", 59, Tab)), "D59"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 61, Tab)), "D61"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.AndereKostenFiscaal(driver).getAttribute("value"),
 						Double.parseDouble(WinstVerliesXLS.HaalData("D", 60, Tab)), "D60"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaaloverigeBedrKostenCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("B", 61, Tab)), "B61"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("B", 63, Tab)), "B63"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaaloverigeBedrKostenCF(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("C", 61, Tab)), "C61"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("C", 63, Tab)), "C63"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaaloverigeBedrKostenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 61, Tab)), "D61"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 63, Tab)), "D63"));
 
 		// Financiele Baten
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.OpbrengstVordGroepMaatschFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 71, Tab)), "D71"));
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.KwijtscheldingsWinstFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 72, Tab)), "D72"));
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.OpbrengstVordParticipantFiscaal(driver).getAttribute("value"),
 				Double.parseDouble(WinstVerliesXLS.HaalData("D", 73, Tab)), "D73"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.OpbrengstOverigeVordFiscaal(driver).getAttribute("value"),
+				WinstenVerliesRekeningObjecten.KwijtscheldingsWinstFiscaal(driver).getAttribute("value"),
 				Double.parseDouble(WinstVerliesXLS.HaalData("D", 74, Tab)), "D74"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.OpbrengstBanktegoedFiscaal(driver).getAttribute("value"),
+				WinstenVerliesRekeningObjecten.OpbrengstVordParticipantFiscaal(driver).getAttribute("value"),
 				Double.parseDouble(WinstVerliesXLS.HaalData("D", 75, Tab)), "D75"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.WaardeVeranderingVordFiscaal(driver).getAttribute("value"),
+				WinstenVerliesRekeningObjecten.OpbrengstOverigeVordFiscaal(driver).getAttribute("value"),
 				Double.parseDouble(WinstVerliesXLS.HaalData("D", 76, Tab)), "D76"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenFiscaal(driver).getAttribute("value"),
+				WinstenVerliesRekeningObjecten.OpbrengstBanktegoedFiscaal(driver).getAttribute("value"),
 				Double.parseDouble(WinstVerliesXLS.HaalData("D", 77, Tab)), "D77"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.OntvangenDividentFiscaal(driver).getAttribute("value"),
+				WinstenVerliesRekeningObjecten.WaardeVeranderingVordFiscaal(driver).getAttribute("value"),
 				Double.parseDouble(WinstVerliesXLS.HaalData("D", 78, Tab)), "D78"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
+				WinstenVerliesRekeningObjecten.WaardeVeranderingEffectenFiscaal(driver).getAttribute("value"),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 79, Tab)), "D79"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(
+				WinstenVerliesRekeningObjecten.OntvangenDividentFiscaal(driver).getAttribute("value"),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 80, Tab)), "D80"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaleFinancieleBatenCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("B", 79, Tab)), "B79"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("B", 81, Tab)), "B81"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaleFinancieleBatenCF(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("C", 79, Tab)), "C79"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("C", 81, Tab)), "C81"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaleFinancieleBatenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 79, Tab)), "D79"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 81, Tab)), "D81"));
 
 		// Financiele Lasten
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.KostenSchuldenParticipantFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 84, Tab)), "D84"));
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 85, Tab)), "D85"));
-		ValidatieResultaat.addAll(vergelijk.Vergelijk(
-				WinstenVerliesRekeningObjecten.KostenSchuldenGroepsMaatschFiscaal(driver).getAttribute("value"),
 				Double.parseDouble(WinstVerliesXLS.HaalData("D", 86, Tab)), "D86"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
+				WinstenVerliesRekeningObjecten.KostenSchuldenRentelastenFiscaal(driver).getAttribute("value"),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 87, Tab)), "D87"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(
+				WinstenVerliesRekeningObjecten.KostenSchuldenGroepsMaatschFiscaal(driver).getAttribute("value"),
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 88, Tab)), "D88"));
+		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalFinLastenCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("B", 87, Tab)), "B87"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("B", 89, Tab)), "B89"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.TotaalFinLastenCF(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("C", 87, Tab)), "C87"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("C", 89, Tab)), "C89"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.TotaalFinLastenFiscaal(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("D", 87, Tab)), "D87"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 89, Tab)), "D89"));
 
 		// Totaal financiele baten en lasten
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalfinancieleBatenLastenCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("E", 90, Tab)), "E90"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("E", 92, Tab)), "E92"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalfinancieleBatenLastenCF(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("F", 90, Tab)), "F90"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("F", 92, Tab)), "F92"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalfinancieleBatenLastenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("G", 90, Tab)), "G90"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 92, Tab)), "G92"));
 
 		// Resultaat uit gewone bedrijfsuitoefening
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.ResultaatGewoneBedrijfsuitoefCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("E", 91, Tab)), "E91"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("E", 93, Tab)), "E93"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.ResultaatGewoneBedrijfsuitoefCF(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("F", 91, Tab)), "F91"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("F", 93, Tab)), "F93"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.ResultaatGewoneBedrijfsuitoefFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("G", 91, Tab)), "G91"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 93, Tab)), "G93"));
 
 		// Resultaat uit deelnemingen
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.ResultaatDeelnemingFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("G", 94, Tab)), "G94"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 96, Tab)), "G96"));
 
 		// Buitengewone bedrijfsbaten en lasten ****
 
@@ -1658,68 +1653,68 @@ public class Steps extends AbstractSteps {
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.VoordelenOntvoegDochterFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 100, Tab)), "D100"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 102, Tab)), "D102"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.OverigeBuitenGewBatenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 101, Tab)), "D101"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 103, Tab)), "D103"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.BoekwinstActivaFiscaal(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("D", 102, Tab)), "D102"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 104, Tab)), "D104"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalBuitenGewBedrijfsBatenCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("B", 103, Tab)), "B103"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("B", 105, Tab)), "B105"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalBuitenGewBedrijfsBatenCF(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("C", 103, Tab)), "C103"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("C", 105, Tab)), "C105"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalBuitenGewBedrijfsBatenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 103, Tab)), "D103"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 105, Tab)), "D105"));
 
 		// Buitengewone bedrijfslasten
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.AfboekenHerinvesteringReserveFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 107, Tab)), "D107"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 109, Tab)), "D109"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.UitkeringANBIFiscaal(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("D", 108, Tab)), "D108"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("D", 110, Tab)), "D110"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.OverigeBuitengewoneLastenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 109, Tab)), "D109"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 111, Tab)), "D111"));
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalBuitengewBedrLastenCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("B", 110, Tab)), "B110"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("B", 112, Tab)), "B112"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalBuitengewBedrLastenCF(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("C", 110, Tab)), "C110"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("C", 112, Tab)), "C112"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.TotaalBuitengewBedrLastenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("D", 110, Tab)), "D110"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("D", 112, Tab)), "D112"));
 
 		// Buitengewone resultaten
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.BuitenGewoneResultatenCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("E", 113, Tab)), "E113"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("E", 115, Tab)), "E115"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.BuitenGewoneResultatenCF(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("F", 113, Tab)), "F113"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("F", 115, Tab)), "F115"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.BuitenGewoneResultatenFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("G", 113, Tab)), "G113"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 115, Tab)), "G115"));
 
 		// Saldo fiscale winstberekening
 
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.SaldoFiscWinstBerCommercieel(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("E", 118, Tab)), "E118"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("E", 120, Tab)), "E120"));
 		ValidatieResultaat.addAll(
 				vergelijk.Vergelijk(WinstenVerliesRekeningObjecten.SaldoFiscWinstBerCF(driver).getAttribute("value"),
-						Double.parseDouble(WinstVerliesXLS.HaalData("F", 118, Tab)), "F118"));
+						Double.parseDouble(WinstVerliesXLS.HaalData("F", 120, Tab)), "F120"));
 		ValidatieResultaat.addAll(vergelijk.Vergelijk(
 				WinstenVerliesRekeningObjecten.SaldoFiscWinstBerFiscaal(driver).getAttribute("value"),
-				Double.parseDouble(WinstVerliesXLS.HaalData("G", 118, Tab)), "G118"));
+				Double.parseDouble(WinstVerliesXLS.HaalData("G", 120, Tab)), "G120"));
 
 		System.out.println(ValidatieResultaat);
 		driver.quit();

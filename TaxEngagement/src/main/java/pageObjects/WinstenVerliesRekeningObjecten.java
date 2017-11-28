@@ -99,11 +99,11 @@ public class WinstenVerliesRekeningObjecten {
 		   return element;
 		}
 	public static WebElement OntvangenUitkeringenenLoonsubsidiesCommercieel(WebDriver driver){
-		   element = driver.findElement(By.id("idPerR4C1"));
+		   element = driver.findElement(By.id("idPerR5C1"));
 		   return element;
 		}
 	public static WebElement OntvangenUitkeringenenLoonsubsidiesCF(WebDriver driver){
-		   element = driver.findElement(By.id("idPerR4C3"));
+		   element = driver.findElement(By.id("idPerR5C3"));
 		   return element;
 		}
 	
