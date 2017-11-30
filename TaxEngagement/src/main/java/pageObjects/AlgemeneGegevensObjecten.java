@@ -114,6 +114,7 @@ public class AlgemeneGegevensObjecten {
 		return element;
 	}
 	
+	@FieldName(name = "NaamKoepelorgFisDienstverl")
 	public static WebElement NaamKoepelorgFisDienstverl(WebDriver driver){
 		element = driver.findElement(By.id("idtableAG3:0-2"));
 		return element;

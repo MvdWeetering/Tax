@@ -13,8 +13,7 @@ Feature: vullen formulieren
     And open the Project "dossier 28112017"
     And open the form Algemene Gegevens
     Then i can fill out the form Algemene Gegevens with config <Id>
-
-    #Then i can validate the error messages for the Algemene gegevens form
+    Then i can validate the error messages for the Algemene gegevens form
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
@@ -69,7 +68,7 @@ Feature: vullen formulieren
     And Select the Tax engagement module
     And open the Project "dossier 28112017"
     And open the form Winst en Verlies rekening
- #   Then i can fill out the form Winst en Verlies rekening from tab <TCID>
+    Then i can fill out the form Winst en Verlies rekening from tab <TCID>
     Then i can validate the totals for each column from tab <TCID>
 
     Examples: 
@@ -85,10 +84,10 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
     And Select the Tax engagement module
-    And open the Project "dossier 10202017"
+    And open the Project "dossier 28112017"
     And open the form Balans Activa
     Then i can fill out the form Balans Activa from tab <TCID>
-   #Then i can validate the totals for Balans Activa from tab <TCID>
+   Then i can validate the totals for Balans Activa from tab <TCID>
 
     Examples: 
       | TCID   | Browser  |
@@ -119,8 +118,7 @@ Feature: vullen formulieren
     And open the Project "dossier 28112017"
     And open the form Investeringsaftrek
     Then i can fill out the form Investeringsaftrek with config <Id>
-
-    #Then i can validate the error messages for the Investeringsaftrek form
+    Then i can validate the error messages for the Investeringsaftrek form
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
@@ -147,7 +145,7 @@ Feature: vullen formulieren
     And open the Project "dossier 28112017"
     And open the form Innovatiebox
     Then i can fill out the form Innovatiebox from <TCID>
-    #Then i can validate the error messages for the formulier Innovatiebox
+    Then i can validate the error messages for the formulier Innovatiebox
 
     Examples: 
       | TCID | Browser  |
@@ -289,9 +287,9 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "Michel.van.de.Weetering@caseware.nl" and password "Welkom0123"
     And Select the Tax engagement module
-    And open the Project "dossier 10202017"
+    And open the Project "dossier 28112017"
     And open the form Berekening Belastbaar Bedrag
-   # Then i can fill out the form Berekening Belastbaar Bedrag with <TCID>
+    Then i can fill out the form Berekening Belastbaar Bedrag with <TCID>
     Then i can validate the totals on the formulier Berekening Belastbaar Bedrag from <TCID>
 
     Examples: 

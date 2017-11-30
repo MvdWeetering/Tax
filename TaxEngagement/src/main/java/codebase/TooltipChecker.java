@@ -520,10 +520,10 @@ public class TooltipChecker extends AbstractSteps {
 					else {
 						if (checker.contains("Te lang")) {
 							if (!invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText().contains("[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten")) {
-								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
+								TooltipResult.add("Tooltip " + Naamobject + " onjuist: verwachte text was: \"Dit veld mag maximaal " + Maxlengte + " karakters bevatten\" \r\n");
 								System.out.println(Naamobject);
 								System.out.println("gelezen:" + invoke(AlgemeneGegevensTooltipObjects.class, Naamobject, driver).getText());
-								System.out.println("verwacht:[Aantal karakters] Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
+								System.out.println("verwacht:Dit veld mag maximaal " + Maxlengte + " karakters bevatten \r\n");
 							}
 						}
 

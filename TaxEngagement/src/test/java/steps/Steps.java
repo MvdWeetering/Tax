@@ -76,7 +76,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -361,10 +361,13 @@ public class Steps extends AbstractSteps {
 		// RSIN
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("RSIN", 1, 9, "BSN", driver));
 
+		// radiobutton Wordt in deze aangifte een standpunt ingenomen waarover de belastingplichtige een expliciete uitspraak van de belastingdienst verlangt? = ja
+		if (driver.findElement(By.id("idxdt9tzez")).isSelected()) {
+				
 		// Toelichting verzoek
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Toelichtingverzoek", 1, 6930,
-				"TextVeld", driver));
-
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipAlgemeneGegevens("Toelichtingverzoek", 1, 6930,"TextVeld", driver));
+		
+		}
 		// Consulent **
 
 		// Becon
@@ -444,8 +447,11 @@ public class Steps extends AbstractSteps {
 				"TextVeld", driver));
 		ValidatieResultaat.addAll(
 				codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("RSINdeelneming", 1, 9, "BSN", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("Huisnummer", 1, 99,
-				"PositiefGetal", driver));
+		
+		
+	//	ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("Huisnummer", 1, 99,	"PositiefGetal", driver));
+		
+		
 		ValidatieResultaat.addAll(codebase.TooltipChecker
 				.CheckTooltipSpecificatieDeelnemingen("NominaleWaardeAandelenBezit", 1, 99, "GeheelGetal", driver));
 		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipSpecificatieDeelnemingen("OpgeofferdBedrag", 1,
@@ -862,14 +868,14 @@ public class Steps extends AbstractSteps {
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).clear();
 		SpecificatieDeelnemingenObjecten.RSINdeelneming(driver).sendKeys(invuldata[2]);
 
-		SpecificatieDeelnemingenObjecten.Straatnaam(driver).clear();
-		SpecificatieDeelnemingenObjecten.Straatnaam(driver).sendKeys(invuldata[6]);
-		SpecificatieDeelnemingenObjecten.Huisnummer(driver).clear();
-		SpecificatieDeelnemingenObjecten.Huisnummer(driver).sendKeys(invuldata[7]);
 
 		try {
 			int n = Integer.parseInt(invuldata[2].replaceAll("\\.", ""));
 			if (!Elfproef.isValidBSN(n)) {
+				SpecificatieDeelnemingenObjecten.Straatnaam(driver).clear();
+				SpecificatieDeelnemingenObjecten.Straatnaam(driver).sendKeys(invuldata[6]);
+				SpecificatieDeelnemingenObjecten.Huisnummer(driver).clear();
+				SpecificatieDeelnemingenObjecten.Huisnummer(driver).sendKeys(invuldata[7]);				
 				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).clear();
 				SpecificatieDeelnemingenObjecten.VestigingsplaatsDeelneming(driver).sendKeys(invuldata[3]);
 				SpecificatieDeelnemingenObjecten.VestigingsLandDeelneming(driver).sendKeys(invuldata[4]);
@@ -878,8 +884,7 @@ public class Steps extends AbstractSteps {
 			System.out.println("ingevulde RSIN is geen getal");
 		}
 
-		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).clear();
-		SpecificatieDeelnemingenObjecten.HuisnummerBuitenlandsAdres(driver).sendKeys(invuldata[8]);
+
 
 		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).clear();
 		SpecificatieDeelnemingenObjecten.PercentageAandelenbezit(driver).sendKeys(invuldata[5]);
@@ -2291,7 +2296,7 @@ public class Steps extends AbstractSteps {
 		// Toelichting balans activa
 
 		// System.out.println("Validatie resultaat: " + ValidatieResultaat);
-		// driver.quit();
+		driver.quit();
 
 		assertTrue(ValidatieResultaat.isEmpty());
 
@@ -3380,7 +3385,7 @@ public class Steps extends AbstractSteps {
 
 		// Is er sprake van energie- of milieuaftrek?
 
-		if (driver.findElement(By.id("idmilieuaftrek")).isSelected()) {
+		if (driver.findElement(By.id("idCWNLEIA")).isSelected()) {
 
 			System.out.println("milleuaftrek");
 
@@ -3592,13 +3597,12 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.StortingKapitaal(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 11, "TC01"));
 
-		// if
-		// (driver.findElement(By.id("idCWNLCBAanDivOndWinTot")).isSelected()) {
-		// // System.out.println("enabled");
-		// } else {
-		// FiscaleVermogensVergelijkingObjecten.DividentOntwWinstCheckbox(driver).click();
-		// }
-
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiAanDivOndWinHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 1");
+		}
+		
 		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.OmschrijvingUitdeling_1(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalText("A", 24, "TC01"));
@@ -3644,13 +3648,12 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.BuitenlandseBelastingRegeling(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F", 28, "TC01"));
 
-		/*
-		 * if (driver.findElement(By.id("idCWNLCBNieAftDeeWinDooCooTot")).
-		 * isSelected()) { // System.out.println("enabled"); } else {
-		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelWinstCoopCheckbox(
-		 * driver).click(); }
-		 */
-
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiNietAftDeeWinDooCooHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 2");
+		}
+		
 		FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.WinstuitdelingenCooperaties(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 31, "TC01"));
@@ -3663,14 +3666,13 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.AndereOpenlijkeVermomdeUitdelingenWinst(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F", 35, "TC01"));
 
-		/*
-		 * if
-		 * (driver.findElement(By.id("idCWNLCBNieAftDeeBelComTot")).isSelected()
-		 * ) { // System.out.println("enabled"); } else {
-		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelCommCheckbox(driver)
-		 * .click(); }
-		 */
 
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiNietAftDeeBelComHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 3");
+		}
+		
 		FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.BeloningenCommissarissen(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 37, "TC01"));
@@ -3679,13 +3681,12 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelBeloningenCommissarissen(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 38, "TC01"));
 
-		/*
-		 * if
-		 * (driver.findElement(By.id("idCWNLCBNieAftDeeTanTot")).isSelected()) {
-		 * // System.out.println("enabled"); } else {
-		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelTantiemesCheckbox(
-		 * driver).click(); }
-		 */
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiNieAftDeeTanHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 4");
+		}
+		
 
 		FiscaleVermogensVergelijkingObjecten.Tantiemes(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.Tantiemes(driver)
@@ -3695,13 +3696,11 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.AftrekbaarDeelTantiemes(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 43, "TC01"));
 
-		/*
-		 * if (driver.findElement(By.id("idCWNLCBNieAftDeeVerVooKapTot")).
-		 * isSelected()) { // System.out.println("enabled"); } else {
-		 * FiscaleVermogensVergelijkingObjecten.NietAftrDeelKapVerstrCheckbox(
-		 * driver).click(); }
-		 */
-
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLBAGiNieAftDeeVerVooKapHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 5");
+		}
 		FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver).clear();
 		FiscaleVermogensVergelijkingObjecten.VergoedingenVoorKapitaalverstrekking(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("E", 48, "TC01"));
@@ -3722,6 +3721,8 @@ public class Steps extends AbstractSteps {
 		FiscaleVermogensVergelijkingObjecten.KostenAankoopResterendeAandelenDochtermaatschappijen(driver)
 				.sendKeys(FiscaleVermogensvergelijkingXLS.HaalData("F", 54, "TC01"));
 
+		FiscaleVermogensVergelijkingObjecten.ResultaatTijdelijkIngekochteAandelenWerknemeropties(driver).click();
+		
 	}
 
 	@Then("^i can validate the totals the formulier FiscaleVermogensVergelijking from  \"(.*?)\"$")
@@ -3801,7 +3802,7 @@ public class Steps extends AbstractSteps {
 		// 1, 20, "PositiefGetal", driver));
 
 		System.out.println(ValidatieResultaat);
-		// driver.quit();
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
 
 	}
@@ -3865,9 +3866,9 @@ public class Steps extends AbstractSteps {
 				"Procent", driver));
 
 		// System.out.println(ValidatieResultaat);
-		// driver.quit();
+		driver.quit();
 		assertTrue(ValidatieResultaat.isEmpty());
-		// driver.quit();
+
 
 	}
 
@@ -3970,11 +3971,11 @@ public class Steps extends AbstractSteps {
 		// winstVerliesVerrekeningObjecten.TeVerrekenenVerlies2(driver)
 		// .sendKeys(VerliesVerrekeningXLS.HaalData("E", 29, TCid));
 
-		if (VerliesVerrekeningXLS.HaalData("F", 28, TCid).equals("1")) {
-			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Ja(driver).click();
-		} else {
-			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Nee(driver).click();
-		}
+//		if (VerliesVerrekeningXLS.HaalData("F", 28, TCid).equals("1")) {
+//			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Ja(driver).click();
+//		} else {
+//			winstVerliesVerrekeningObjecten.VerliesKwalificeren4_Nee(driver).click();
+//		}
 
 	}
 
@@ -3986,22 +3987,17 @@ public class Steps extends AbstractSteps {
 
 		ValidatieResultaat.addAll(
 				codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij", 1, 9, "BSN", driver));
-		ValidatieResultaat.addAll(
-				codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij2", 1, 9, "BSN", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij",
-				1, 9, "BSN", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij2",
-				1, 9, "BSN", driver));
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("RSINMaatschappij2", 1, 9, "BSN", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij", 1, 9, "BSN", driver));
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekenenRSINMaatschappij2", 1, 9, "BSN", driver));
 
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening(
-				"VerrekeningVerliesVorigBoekjaar", 1, 9, "PositiefGeheelGetal", driver));
-		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening(
-				"VerrekeningVerliesVorigBoekjaar2", 1, 9, "PositiefGeheelGetal", driver));
+		ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar", 1, 9, "PositiefGeheelGetal", driver));
+		//ValidatieResultaat.addAll(codebase.TooltipChecker.CheckTooltipVerliesVerrekening("VerrekeningVerliesVorigBoekjaar2", 1, 9, "PositiefGeheelGetal", driver));
 
 		System.out.println(ValidatieResultaat);
 
 		assertTrue(ValidatieResultaat.isEmpty());
-		// driver.quit();
+		driver.quit();
 
 	}
 
