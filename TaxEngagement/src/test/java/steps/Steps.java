@@ -58,7 +58,7 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 
 		// test
-		InlogUrl = "localhost:7777/test-cwnltest/webapps/#login";
+		InlogUrl = "https://eu.casewarecloud.com/test-cwnltest/webapps/#login";
 		// Splat
 		// InlogUrl = "localhost:7777/nl-se-develop/webapps/#login";
 
@@ -77,7 +77,7 @@ public class Steps extends AbstractSteps {
 		LoginObjecten.UserName(driver).sendKeys(UserName);
 		LoginObjecten.PassWord(driver).sendKeys(Password);
 
-		driver.findElement(By.xpath("//button[contains(.,'Aanmelden')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
 
 		// WebElement HuidigeUser =
 		// ValidatieObjecten.BeoordelenHuidigeUser(driver);
@@ -1158,7 +1158,7 @@ public class Steps extends AbstractSteps {
 		// bedrijfsopbrengsten
 		
 		try {
-			driver.findElement(By.cssSelector("[num='CWNLWVGiBeOHide']")).click();
+			driver.findElement(By.cssSelector("[num='tableBeOTot']")).click();
 		} catch (Exception e) {
 			System.out.println("glyphy 1");
 		}
@@ -1192,7 +1192,12 @@ public class Steps extends AbstractSteps {
 				.sendKeys(WinstVerliesXLS.HaalData("C", 10, Tab));
 
 		// Kosten grond en hulpstoffen
-
+		try {
+			driver.findElement(By.cssSelector("[num='tableTotBeL']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 2");
+		}
+		
 		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.KostenGrondHulpstoffenCommercieel(driver)
 				.sendKeys(WinstVerliesXLS.HaalData("B", 20, Tab));
@@ -1209,7 +1214,7 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.KostenUitbesteedCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 21, Tab));
 
 		// Personeelskosten
-
+		
 		WinstenVerliesRekeningObjecten.LonenSalarissenCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.LonenSalarissenCommercieel(driver)
 				.sendKeys(WinstVerliesXLS.HaalData("B", 27, Tab));
@@ -1318,15 +1323,13 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.HuisvestingkostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 59, Tab));
 
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 60, Tab));
+		WinstenVerliesRekeningObjecten.OnderhoudOverigCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B", 60, Tab));
 
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).clear();
 		WinstenVerliesRekeningObjecten.OnderhoudOverigCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 60, Tab));
 
 		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).clear();
-		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver)
-				.sendKeys(WinstVerliesXLS.HaalData("B", 61, Tab));
+		WinstenVerliesRekeningObjecten.VerkoopKostenCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B", 61, Tab));
 
 		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.VerkoopKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 61, Tab));
@@ -1337,8 +1340,21 @@ public class Steps extends AbstractSteps {
 		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).clear();
 		WinstenVerliesRekeningObjecten.AndereKostenCF(driver).sendKeys(WinstVerliesXLS.HaalData("C", 62, Tab));
 
+		
+		
+		
+		
+		
 		// Financiele baten en lasten
-
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+		
+		try {
+			driver.findElement(By.cssSelector("[num='tableTotFinBatLas']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 3");
+		}	
+		
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.OpbrengstVordMaatschCommercieel(driver)
 				.sendKeys(WinstVerliesXLS.HaalData("B", 73, Tab));
@@ -1432,6 +1448,17 @@ public class Steps extends AbstractSteps {
 
 		// Buitengewone bedrijfsbaten
 
+		
+		//JavascriptExecutor jse = (JavascriptExecutor) driver;
+		
+		jse.executeScript("window.scrollBy(0,250)", "");
+		
+		try {
+			driver.findElement(By.cssSelector("[num='tableTotBuiRes']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 4");
+		}			
+		
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.VoordelenOntvoegingDochterMaatschCommercieel(driver)
 				.sendKeys(WinstVerliesXLS.HaalData("B", 102, Tab));
@@ -4733,15 +4760,13 @@ public class Steps extends AbstractSteps {
 		} catch (Exception e) {
 			System.out.println("glyphy 10");
 		}
-		
-		
+				
 		BerekeningBelastbaarBedragObjecten.OngedaanMakenHerkapitalisatieGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 94, Tab, Locatie));
 		BerekeningBelastbaarBedragObjecten.AfkoopPensioenVUTArt23aWetVpBGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 95, Tab, Locatie));
 		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 96, Tab, Locatie));
 		BerekeningBelastbaarBedragObjecten.BeeindigingKredietinstellingBeleggingsinstellingPercentage(driver).sendKeys(LeesXLS.HaalData("C", 96, Tab, Locatie));
 		BerekeningBelastbaarBedragObjecten.NietVoldoenAanStamrechtvrijstellingGrondslag(driver).sendKeys(LeesXLS.HaalData("B", 97, Tab, Locatie));
 				
-		
 		//glyphy 11 Belastingvermindering
 		
 		try {
@@ -4749,8 +4774,7 @@ public class Steps extends AbstractSteps {
 		} catch (Exception e) {
 			System.out.println("glyphy 11");
 		}
-		
-		
+				
 		BerekeningBelastbaarBedragObjecten.SaldoBelastingVoorEldersBelast(driver).sendKeys(LeesXLS.HaalData("D", 102, Tab, Locatie));
 		
 		//glyphy 12 Deelnemingsverrekening niet-kwalificerende beleggingsdeelnemingen
