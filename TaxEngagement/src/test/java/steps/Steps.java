@@ -4,6 +4,7 @@ package steps;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -57,7 +58,7 @@ public class Steps extends AbstractSteps {
 		String InlogUrl = null;
 
 		// test
-		InlogUrl = "http://eu.casewarecloud.com/test-cwnltest/webapps/#login";
+		InlogUrl = "localhost:7777/test-cwnltest/webapps/#login";
 		// Splat
 		// InlogUrl = "localhost:7777/nl-se-develop/webapps/#login";
 
@@ -595,12 +596,63 @@ public class Steps extends AbstractSteps {
 	@Then("^i can fill out the form Specificatie Aandeelhouders with config (\\d+)$")
 	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders_with_config(int configId) throws Throwable {
 
-		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
+		//String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
+		List<WebElement> options = null;
+		String nav = null;
+		
+		if (configId != 1) {
+						
+			WebElement dropdown = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+		    Select select = new Select(dropdown);
+		    int i = 0;
+		    
+		    options = select.getOptions();
 
-		if (configId == 2) {
-			WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
-			Select mySelect = new Select(mySelectElm);
-			mySelect.selectByVisibleText("002 Specificatie Aandeelhouders");
+		        for (WebElement exist : options) {
+		        	
+		        	System.out.println(i);
+		        	
+		    	if ((exist.getText().contains("00" + configId))) {
+		    		nav = exist.getText();
+		    		
+		    		System.out.println(nav + " iteratie 1");
+		    		
+		    	}
+
+		    	
+		    	i++;
+		    	
+		    } // einde for loop
+		    
+		        System.out.println("na for loop");
+		    
+		   if (nav.contains("00"+ configId)) {
+			   
+				WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+				Select mySelect = new Select(mySelectElm);
+										
+				mySelect.selectByVisibleText(nav);
+				
+ 		   }
+		    
+		   else {
+			   
+			   driver.findElement(By.xpath("//button[contains(.,'Nieuw')]")).click(); 
+			   
+			   nav = "00" + configId + " Specificatie Aandeelhouders"; 
+			   WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+			   Select mySelect = new Select(mySelectElm);
+			   mySelect.selectByVisibleText(nav);
+			   
+		   }
+		   
+		    
+		} //einde if
+	
+					    
+			System.out.println("na if loop");		
+			
+	/*	
 		}
 
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
@@ -699,9 +751,12 @@ public class Steps extends AbstractSteps {
 				SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys(invuldata[34]);
 
 			}
+			
+			*/
+		
 		}
 
-	}
+
 
 	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")
 	public void i_can_validate_the_error_messages_for_the_Specificatie_Aandeelhouders_form() throws Throwable {
@@ -1101,7 +1156,13 @@ public class Steps extends AbstractSteps {
 	public void i_can_fill_out_the_form_Winst_en_Verlies_rekening_from_tab(String Tab) throws Throwable {
 
 		// bedrijfsopbrengsten
-
+		
+		try {
+			driver.findElement(By.cssSelector("[num='CWNLWVGiBeOHide']")).click();
+		} catch (Exception e) {
+			System.out.println("glyphy 1");
+		}
+		
 		WinstenVerliesRekeningObjecten.NettoOmzetCommercieel(driver).clear();
 		WinstenVerliesRekeningObjecten.NettoOmzetCommercieel(driver).sendKeys(WinstVerliesXLS.HaalData("B", 7, Tab));
 

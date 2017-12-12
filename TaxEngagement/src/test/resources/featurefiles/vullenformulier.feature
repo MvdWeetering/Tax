@@ -40,11 +40,11 @@ Feature: vullen formulieren
     And open the Project "dossier 28112017"
     And open the form Specificatie Aandeelhouders
     Then i can fill out the form Specificatie Aandeelhouders with config <Id>
-    Then i can validate the error messages for the Specificatie Aandeelhouders form
+ #   Then i can validate the error messages for the Specificatie Aandeelhouders form
 
     Examples: 
       | Id | Browser  |
-      |  1 | "Chrome" |
+      |  2 | "Chrome" |
 
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario Outline: vullen formulier Specificatie Deelnemingen
