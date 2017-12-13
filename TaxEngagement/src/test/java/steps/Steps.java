@@ -596,64 +596,40 @@ public class Steps extends AbstractSteps {
 	@Then("^i can fill out the form Specificatie Aandeelhouders with config (\\d+)$")
 	public void i_can_fill_out_the_form_Specificatie_Aandeelhouders_with_config(int configId) throws Throwable {
 
-		//String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
+		String[] invuldata = codebase.SpecificatieAandeelHoudersXLS.HaalData(configId);
 		List<WebElement> options = null;
-		String nav = null;
-		
+		String nav = "";
+
 		if (configId != 1) {
-						
+
 			WebElement dropdown = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
-		    Select select = new Select(dropdown);
-		    int i = 0;
-		    
-		    options = select.getOptions();
+			Select select = new Select(dropdown);
+			int i = 0;
+			options = select.getOptions();
 
-		        for (WebElement exist : options) {
-		        	
-		        	System.out.println(i);
-		        	
-		    	if ((exist.getText().contains("00" + configId))) {
-		    		nav = exist.getText();
-		    		
-		    		System.out.println(nav + " iteratie 1");
-		    		
-		    	}
+			for (WebElement exist : options) {
 
-		    	
-		    	i++;
-		    	
-		    } // einde for loop
-		    
-		        System.out.println("na for loop");
-		    
-		   if (nav.contains("00"+ configId)) {
-			   
+				if ((exist.getText().contains("00" + configId))) {
+					nav = exist.getText();
+					System.out.println(nav + " iteratie 1");
+				}
+				i++;
+			} // einde for loop
+
+			if (nav.contains("00"+ configId)) {
 				WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
 				Select mySelect = new Select(mySelectElm);
-										
 				mySelect.selectByVisibleText(nav);
-				
- 		   }
-		    
-		   else {
-			   
-			   driver.findElement(By.xpath("//button[contains(.,'Nieuw')]")).click(); 
-			   
-			   nav = "00" + configId + " Specificatie Aandeelhouders"; 
-			   WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
-			   Select mySelect = new Select(mySelectElm);
-			   mySelect.selectByVisibleText(nav);
-			   
-		   }
-		   
-		    
+			}
+
+			else {
+				driver.findElement(By.xpath("//button[contains(.,'Nieuw')]")).click(); 
+				nav = "00" + configId + " Specificatie Aandeelhouders"; 
+				WebElement mySelectElm = driver.findElement(By.cssSelector("[ng-model='currentRepeatForm']"));
+				Select mySelect = new Select(mySelectElm);
+				mySelect.selectByVisibleText(nav);
+			}
 		} //einde if
-	
-					    
-			System.out.println("na if loop");		
-			
-	/*	
-		}
 
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).clear();
 		SpecificatieAandeelhoudersObjecten.NaamAandeelhouder(driver).sendKeys(invuldata[1]);
@@ -670,7 +646,6 @@ public class Steps extends AbstractSteps {
 			SpecificatieAandeelhoudersObjecten.Huisnummer(driver).sendKeys(invuldata[5]);
 			SpecificatieAandeelhoudersObjecten.HuisnummerBuitenl(driver).clear();
 			SpecificatieAandeelhoudersObjecten.HuisnummerBuitenl(driver).sendKeys(invuldata[6]);
-
 			SpecificatieAandeelhoudersObjecten.Postcode(driver).clear();
 			SpecificatieAandeelhoudersObjecten.Postcode(driver).sendKeys(invuldata[7]);
 			SpecificatieAandeelhoudersObjecten.HuisnrToev(driver).clear();
@@ -698,22 +673,15 @@ public class Steps extends AbstractSteps {
 		SpecificatieAandeelhoudersObjecten.BoekjaarBetaaldeRente(driver).sendKeys(invuldata[18]);
 
 		// informele kapitaalstorting = nee
-
-		System.out.println(invuldata[19]);
-
 		if (invuldata[19].equals("nee")) {
-
 			SpecificatieAandeelhoudersObjecten.informeleKapitaalstortingNee(driver).click();
-
 		}
 
 		// informele kapitaalstorting = ja
 		else {
-
 			SpecificatieAandeelhoudersObjecten.informeleKapitaalstorting(driver).click();
 			SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).clear();
 			SpecificatieAandeelhoudersObjecten.BedragInformeleKapitaalStorting(driver).sendKeys(invuldata[20]);
-
 			SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).clear();
 			SpecificatieAandeelhoudersObjecten.WaaromInformeleKapitaalstorting(driver).sendKeys(invuldata[21]);
 			SpecificatieAandeelhoudersObjecten.NaamMoedermaatschappij(driver).clear();
@@ -732,31 +700,20 @@ public class Steps extends AbstractSteps {
 				SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderJa(driver).click();
 			} else {
 				SpecificatieAandeelhoudersObjecten.BevoordelingvanAandeelhouderNee(driver).click();
-
 				SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).clear();
 				SpecificatieAandeelhoudersObjecten.NaamRechtspersoon(driver).sendKeys(invuldata[29]);
-
 				SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).clear();
 				SpecificatieAandeelhoudersObjecten.StraatnaamRechtspersoon(driver).sendKeys(invuldata[30]);
-
 				SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).clear();
 				SpecificatieAandeelhoudersObjecten.HuisnummerRechtspersoon(driver).sendKeys(invuldata[31]);
-
 				SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).clear();
 				SpecificatieAandeelhoudersObjecten.ToevHuisnummerRechtspersoon(driver).sendKeys(invuldata[32]);
-
 				SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).clear();
 				SpecificatieAandeelhoudersObjecten.VestigingsplaatsRechtspersoon(driver).sendKeys(invuldata[33]);
-
 				SpecificatieAandeelhoudersObjecten.VestigingslandRechtspersoon(driver).sendKeys(invuldata[34]);
-
 			}
-			
-			*/
-		
-		}
-
-
+		}	
+	}
 
 	@Then("^i can validate the error messages for the Specificatie Aandeelhouders form$")
 	public void i_can_validate_the_error_messages_for_the_Specificatie_Aandeelhouders_form() throws Throwable {

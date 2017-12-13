@@ -45,6 +45,7 @@ Feature: vullen formulieren
     Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
+      |  2 | "Chrome" |
 
   @vullen_formulier @Specificatie_Deelnemingen
   Scenario Outline: vullen formulier Specificatie Deelnemingen
